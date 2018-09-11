@@ -1,0 +1,5273 @@
+{
+  "@context": {
+    "dli": "http://contexts.dliv.in/ontology/core#",
+    "pot": "http://contexts.dliv.in/ontology/pot#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "vs": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "dct": "http://purl.org/dc/terms/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "cc": "http://creativecommons.org/ns#",
+    "rak": "http://uri.suomi.fi/datamodel/ns/rak#",
+    "title": "dli:title",
+    "description": "dli:description",
+    "name": "dli:name",
+    "context": "dli:context",
+    "type": "dli:type",
+    "defines": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "comment": "rdfs:comment",
+    "label": "rdfs:label",
+    "preferredPrefix": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+    "cc:license": {
+      "@type": "@id"
+    },
+    "cc:attributionURL": {
+      "@type": "@id"
+    },
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@vocab"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@vocab"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@vocab"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@vocab"
+    },
+    "seeAlso": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id"
+    }
+  },
+  "@id": "http://contexts.dliv.in/ontology/pot",
+  "@type": "owl:Ontology",
+  "dct:title": "PoT Core Ontology",
+  "dct:description": "The Platform of Trust Core Ontology is the base for all PoT APIs.",
+  "label": "PoT Core Ontology",
+  "comment": "A vocabulary used in the Platform of Trust APIs.",
+  "dct:abstract": "TODO",
+  "preferredPrefix": "pot",
+  "preferredUri": "http://contexts.dliv.in/ontology/pot",
+  "dct:rights": "TODO",
+  "dct:publisher": "Tilaajavastuu Oy",
+  "cc:license": "https://tldrlegal.com/license/mit-license",
+  "cc:attributionName": "Platform of Trust Core Ontology",
+  "cc:attributionURL": "http://www.tilaajavastuu.fi",
+  "defines": [
+    {
+      "@id": "pot:Person",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Person"
+        },
+        {
+          "@language": "fi",
+          "@value": "Henkilö"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Person"
+        },
+        {
+          "@language": "fi",
+          "@value": "Henkilö"
+        }
+      ],
+      "owl:sameAs": "schema:Person",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Organization",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Organization"
+        },
+        {
+          "@language": "fi",
+          "@value": "Organisaatio"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Organization"
+        },
+        {
+          "@language": "fi",
+          "@value": "Organisaatio"
+        }
+      ],
+      "owl:sameAs": "schema:Organization",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Event",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Event"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tapahtuma"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Event"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tapahtuma"
+        }
+      ],
+      "owl:sameAs": "schema:Event",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Contract",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Contract"
+        },
+        {
+          "@language": "fi",
+          "@value": "Sopimus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Contract"
+        },
+        {
+          "@language": "fi",
+          "@value": "Sopimus"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Collection",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Collection"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kokoelma"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Collection"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kokoelma"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:RealEstate",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Real Estate"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kiinteistö"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Real Estate"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kiinteistö"
+        }
+      ],
+      "owl:sameAs": "rak.Kiinteistö",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Site",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Site"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kohde"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Site"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kohde"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Construction",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Construction"
+        },
+        {
+          "@language": "fi",
+          "@value": "Rakennelma"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Construction"
+        },
+        {
+          "@language": "fi",
+          "@value": "Rakennelma"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Building",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Building"
+        },
+        {
+          "@language": "fi",
+          "@value": "Rakennus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Building"
+        },
+        {
+          "@language": "fi",
+          "@value": "Rakennus"
+        }
+      ],
+      "owl:sameAs": "rak:Rakennus",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Floor",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Floor"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kerros"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Floor"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kerros"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Space",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Space"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tila"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Space"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tila"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Device",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Device"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laite"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Device"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laite"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Structure",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Structure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Rakenne"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Structure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Rakenne"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Spot",
+      "@type": "rdfs:Class",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Spot"
+        },
+        {
+          "@language": "fi",
+          "@value": "Paikka"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Spot"
+        },
+        {
+          "@language": "fi",
+          "@value": "Paikka"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:permanentBuildingNumber",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Permanent Building Number"
+        },
+        {
+          "@language": "fi",
+          "@value": "Pysyvä rakennustunnus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Permanent Building Number"
+        },
+        {
+          "@language": "fi",
+          "@value": "Pysyvä rakennustunnus"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Site",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:buildingName",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Building Name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Rakennuksen nimi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Building Name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Rakennuksen nimi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Site",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:lineofBusiness",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Line of Business"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kohteen toimiala"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Line of Business"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kohteen toimiala"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Site",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:buildingmanagerarea",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Building manager area"
+        },
+        {
+          "@language": "fi",
+          "@value": "kohteen isännöintialue"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Building manager area"
+        },
+        {
+          "@language": "fi",
+          "@value": "kohteen isännöintialue"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Site",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:city",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "City"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kohteen kaupunki"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "City"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kohteen kaupunki"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Site",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:address",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Address"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kohteen osoite"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Address"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kohteen osoite"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Site",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:addressnumber",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Address number"
+        },
+        {
+          "@language": "fi",
+          "@value": "Osoitteen numero"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Address number"
+        },
+        {
+          "@language": "fi",
+          "@value": "Osoitteen numero"
+        }
+      ],
+      "range": "xsd:integer",
+      "domain": "pot:Site",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:manufacturername",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Manufacturer name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valmistajan nimi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Manufacturer name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valmistajan nimi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:manufacturerURL",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Manufacturer URL"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valmistajan internetsivusto"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Manufacturer URL"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valmistajan internetsivusto"
+        }
+      ],
+      "range": "xsd:link",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelName",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mallin nimi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mallin nimi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelNumber",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Number"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mallinumero valmistajalta"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Number"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mallinumero valmistajalta"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelPhysicalSizeLength",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Length"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin pituus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Length"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin pituus"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelPhysicalSizeWidth",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Width"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin leveys"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Width"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin leveys"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelPhysicalSizeHeight",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Height"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin korkeus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Height"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin korkeus"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelPhysicalSizeVolume",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Volume"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin tilavuus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Volume"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin tilavuus"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelPhysicalSizeThickness",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Thickness"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin paksuus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Thickness"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin paksuus"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelPhysicalSizeGrossFloorArea",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Gross Floor Area"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin käyttämä brutto lattiapinta-ala"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Gross Floor Area"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin käyttämä brutto lattiapinta-ala"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelPhysicalSizeNetFloorArea",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Net Floor Area"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin käyttämä netto lattiapinta-ala"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Net Floor Area"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin käyttämä netto lattiapinta-ala"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelPhysicalSizeWeight",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Weight"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin paino"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Weight"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin paino"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:modelPhysicalSizeMaintenanceSpace",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Maintenance Space"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin vaatima huoltotila"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Model Physical Size / Maintenance Space"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin vaatima huoltotila"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:url",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "URL"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen Internet sivu"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "URL"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen Internet sivu"
+        }
+      ],
+      "range": "xsd:link",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:productSeries",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Product Series"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mallisarja, johon laite kuuluu"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Product Series"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mallisarja, johon laite kuuluu"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:productDescription",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Product Description"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen kuvaus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Product Description"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen kuvaus"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:sensorTypes",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Sensor Types"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteesta luettavan sensorin tyyppi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Sensor Types"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteesta luettavan sensorin tyyppi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:sensorAccuracy",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Sensor Accuracy"
+        },
+        {
+          "@language": "fi",
+          "@value": "Luettavan Sensorin tarkkuus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Sensor Accuracy"
+        },
+        {
+          "@language": "fi",
+          "@value": "Luettavan Sensorin tarkkuus"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:sensorCertification",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Sensor Certification"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mahdollinen sertifikaatti, jonka sensori on suorittanut"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Sensor Certification"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mahdollinen sertifikaatti, jonka sensori on suorittanut"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:eTIMMinusClass",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "ETIM-Class"
+        },
+        {
+          "@language": "fi",
+          "@value": "ETIM ryhmä, johon laite kuuluu"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "ETIM-Class"
+        },
+        {
+          "@language": "fi",
+          "@value": "ETIM ryhmä, johon laite kuuluu"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:gTINCode",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "GTIN Code"
+        },
+        {
+          "@language": "fi",
+          "@value": "GTIN koodi laitteelle"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "GTIN Code"
+        },
+        {
+          "@language": "fi",
+          "@value": "GTIN koodi laitteelle"
+        }
+      ],
+      "range": "xsd:number",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:deviceGroupID",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Device Group ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin ryhmän ID numero"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Device Group ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin ryhmän ID numero"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:deviceGroup",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Device Group"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin ryhmä"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Device Group"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin ryhmä"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:designUsageDesignTemperatureMin",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Design Usage / Design Temperature Min"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin minimi käyttölämpötila"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Design Usage / Design Temperature Min"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin minimi käyttölämpötila"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:designUsageDesignTemperatureMax",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Design Usage / Design Temperature Max"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin maksimi käyttölämpötila"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Design Usage / Design Temperature Max"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin maksimi käyttölämpötila"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:designUsageDesignHumidityMin",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Design Usage / Design Humidity Min"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin minimi käyttökosteusprosentti"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Design Usage / Design Humidity Min"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin minimi käyttökosteusprosentti"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:designUsageDesignHumidityMax",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Design Usage / Design Humidity Max"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin maksimi käyttökosteusprosentti"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Design Usage / Design Humidity Max"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitemallin maksimi käyttökosteusprosentti"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:listofpossibledatatypes",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "List of possible data types"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lista laittemallista luettavista tietokentistä"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "List of possible data types"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lista laittemallista luettavista tietokentistä"
+        }
+      ],
+      "range": "xsd:array",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:note",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Note"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vapaavalintainen kenttä kommenteille"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Note"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vapaavalintainen kenttä kommenteille"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:sku",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "SKU"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laittevalmistajan antama SKU numero laitteelle"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "SKU"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laittevalmistajan antama SKU numero laitteelle"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:nameofSensorinuse",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Name of Sensor in use"
+        },
+        {
+          "@language": "fi",
+          "@value": "Sensorin nimi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Name of Sensor in use"
+        },
+        {
+          "@language": "fi",
+          "@value": "Sensorin nimi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ownerType",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Owner Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Omistajan tyyppi, esim yritys, luonnollinen henkilö yms."
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Owner Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Omistajan tyyppi, esim yritys, luonnollinen henkilö yms."
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:owner",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Owner"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen omistaja"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Owner"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen omistaja"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:deviceLocalRunningID",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Device Local Running ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Paikallinen laitteen juokseva numerointi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Device Local Running ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Paikallinen laitteen juokseva numerointi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:installationInstallDate",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Installation / Install Date"
+        },
+        {
+          "@language": "fi",
+          "@value": "Milloin laite on asennettu"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Installation / Install Date"
+        },
+        {
+          "@language": "fi",
+          "@value": "Milloin laite on asennettu"
+        }
+      ],
+      "range": "xsd:datetime",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:installationMethodofinstallation",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Installation / Method of installation"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen asennustyyppi (esim pinta-asennus)"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Installation / Method of installation"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen asennustyyppi (esim pinta-asennus)"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:installationInstallationHeightfromfloor",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Installation / Installation Height from floor"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen asennuskorkeus lattiasta"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Installation / Installation Height from floor"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen asennuskorkeus lattiasta"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:installationInstallationHeightabsolute",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Installation / Installation Height absolute"
+        },
+        {
+          "@language": "fi",
+          "@value": "Asennuksen tarkka asennuskorkeus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Installation / Installation Height absolute"
+        },
+        {
+          "@language": "fi",
+          "@value": "Asennuksen tarkka asennuskorkeus"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:installationExistingInstallation",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Installation / Existing Installation"
+        },
+        {
+          "@language": "fi",
+          "@value": "Uusi asennus vai jo olemassa oleva laite"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Installation / Existing Installation"
+        },
+        {
+          "@language": "fi",
+          "@value": "Uusi asennus vai jo olemassa oleva laite"
+        }
+      ],
+      "range": "xsd:boolean",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:installationInstallationCompany",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Installation / Installation Company"
+        },
+        {
+          "@language": "fi",
+          "@value": "Asennuksen suorittanut yritys"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Installation / Installation Company"
+        },
+        {
+          "@language": "fi",
+          "@value": "Asennuksen suorittanut yritys"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:installationProcurementPackage",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Installation / Procurement Package"
+        },
+        {
+          "@language": "fi",
+          "@value": "mahdollinen laite- tai asennuspaketti, johon kuuluu"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Installation / Procurement Package"
+        },
+        {
+          "@language": "fi",
+          "@value": "mahdollinen laite- tai asennuspaketti, johon kuuluu"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:installationSpecialInstallation",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Installation / Special Installation"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mahdollinen erikoisaesnnus, joka on suoritettu"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Installation / Special Installation"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mahdollinen erikoisaesnnus, joka on suoritettu"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:serialNumber",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Serial Number"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen sarjanumero"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Serial Number"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen sarjanumero"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:deviceID",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Device ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Yksilöllinen LaiteID, jolla laite pystytään tunnistamaan"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Device ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Yksilöllinen LaiteID, jolla laite pystytään tunnistamaan"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:deviceGroupCode",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Device Group Code"
+        },
+        {
+          "@language": "fi",
+          "@value": "Joistain ryhmistä löytyvä koodi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Device Group Code"
+        },
+        {
+          "@language": "fi",
+          "@value": "Joistain ryhmistä löytyvä koodi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:deviceGroupName",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Device Group Name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ihmisystävällinen nimi laiteryhmälle"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Device Group Name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ihmisystävällinen nimi laiteryhmälle"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:secondaryDeviceID",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Secondary Device ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaihtoehtoinen LaiteID, löytyy joistain laitteista"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Secondary Device ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaihtoehtoinen LaiteID, löytyy joistain laitteista"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationCoordinateX",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Coordinate X"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen X koordinaatti"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Coordinate X"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen X koordinaatti"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationCoordinateY",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Coordinate Y"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen Y koordinaatti"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Coordinate Y"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen Y koordinaatti"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationCoordinateZ",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Coordinate Z"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen Z koordinaatti"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Coordinate Z"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen Z koordinaatti"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationCoordinateSystem",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Coordinate System"
+        },
+        {
+          "@language": "fi",
+          "@value": "Käytetty Koordinaatti taulukko"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Coordinate System"
+        },
+        {
+          "@language": "fi",
+          "@value": "Käytetty Koordinaatti taulukko"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationAccuracy",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Accuracy"
+        },
+        {
+          "@language": "fi",
+          "@value": "Käytetyn sijainnin tarkkuus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Accuracy"
+        },
+        {
+          "@language": "fi",
+          "@value": "Käytetyn sijainnin tarkkuus"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationSpaceSpaceName",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Space Name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tilan nimi, jossa laite sijaitsee"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Space Name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tilan nimi, jossa laite sijaitsee"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Space",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationSpaceSpaceID",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Space ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tilan numero, jossa laite sijaitsee"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Space ID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tilan numero, jossa laite sijaitsee"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Space",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationSpaceSpaceType",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Space Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tilan käyttötarkoitus, jossa laite sijaitsee"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Space Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Tilan käyttötarkoitus, jossa laite sijaitsee"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Space",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationSpaceFloor",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Floor"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kerros, jossa laite sijaitsee"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Floor"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kerros, jossa laite sijaitsee"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Space",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationSpaceStair",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Stair"
+        },
+        {
+          "@language": "fi",
+          "@value": "Porras, jossa laite sijaitsee"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Space / Stair"
+        },
+        {
+          "@language": "fi",
+          "@value": "Porras, jossa laite sijaitsee"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Space",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationLocationDescription",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location / Location Description"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vapaavalintainen kuvaus laitteen sijainnista"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location / Location Description"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vapaavalintainen kuvaus laitteen sijainnista"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:serviceAreaServiceAreaType",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Service Area / Service Area Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaikutusalueen käyttötarkoitus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Service Area / Service Area Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaikutusalueen käyttötarkoitus"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:serviceAreaServiceAreaSpacesList",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Service Area / Service Area Spaces List"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaikutusalueet listana, Listaan tilat, joihin / joissa laite vaikuttaa"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Service Area / Service Area Spaces List"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaikutusalueet listana, Listaan tilat, joihin / joissa laite vaikuttaa"
+        }
+      ],
+      "range": "xsd:array",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:serviceAreaServiceAreaCode",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Service Area / Service Area Code"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaikutusalueen koodi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Service Area / Service Area Code"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaikutusalueen koodi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationAlternativeCoordinateX",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location Alternative / Coordinate X"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaihtoehtoinen X koordinaatti"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location Alternative / Coordinate X"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaihtoehtoinen X koordinaatti"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationAlternativeCoordinateY",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location Alternative / Coordinate Y"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaihtoehtoinen Y koordinaatti"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location Alternative / Coordinate Y"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaihtoehtoinen Y koordinaatti"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationAlternativeCoordinateZ",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location Alternative / Coordinate Z"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaihtoehtoinen Z koordinaatti"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location Alternative / Coordinate Z"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen vaihtoehtoinen Z koordinaatti"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:locationAlternativeCoordinateSystem",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Location Alternative / Coordinate System"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaihtoehtoinen Käytettävä Koordinaatti taulukko"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Location Alternative / Coordinate System"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaihtoehtoinen Käytettävä Koordinaatti taulukko"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:status",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Status"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen tila (päällä, ei päällä, virhetilassa yms)"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Status"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen tila (päällä, ei päällä, virhetilassa yms)"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:batteryStatus",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Battery Status"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen mahdollisen akun / patterin varaustaso prosentteina"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Battery Status"
+        },
+        {
+          "@language": "fi",
+          "@value": "Laitteen mahdollisen akun / patterin varaustaso prosentteina"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:lod",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "LOD"
+        },
+        {
+          "@language": "fi",
+          "@value": "Level of Developement"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "LOD"
+        },
+        {
+          "@language": "fi",
+          "@value": "Level of Developement"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:loi",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "LOI"
+        },
+        {
+          "@language": "fi",
+          "@value": "Level of Information"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "LOI"
+        },
+        {
+          "@language": "fi",
+          "@value": "Level of Information"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:log",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "LOG"
+        },
+        {
+          "@language": "fi",
+          "@value": "Level of Geometry"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "LOG"
+        },
+        {
+          "@language": "fi",
+          "@value": "Level of Geometry"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:datavalues",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Data values"
+        },
+        {
+          "@language": "fi",
+          "@value": "Luettavien tietokenttien määrä"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Data values"
+        },
+        {
+          "@language": "fi",
+          "@value": "Luettavien tietokenttien määrä"
+        }
+      ],
+      "range": "xsd:numeric",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:timestamp",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Timestamp"
+        },
+        {
+          "@language": "fi",
+          "@value": "Luennan aikaleima"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Timestamp"
+        },
+        {
+          "@language": "fi",
+          "@value": "Luennan aikaleima"
+        }
+      ],
+      "range": "xsd:datetime",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltPhase1",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Volttilukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Volttilukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltPhase2",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 Volttilukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 Volttilukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltPhase3",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 Volttilukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 Volttilukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltPhase1Plus2",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 1 + 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheiden 1 + 2 Volttilukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 1 + 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheiden 1 + 2 Volttilukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltPhase1Plus3",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 1 + 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheiden 1 + 3 Volttilukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 1 + 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheiden 1 + 3 Volttilukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltPhase2Plus3",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 2 + 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheiden 2 + 3 Volttilukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Phase 2 + 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheiden 2 + 3 Volttilukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltTotal",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Volttilukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Volt / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Volttilukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityAmperePhase1",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Ampere / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Ampeeri lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Ampere / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Ampeeri lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityAmperePhase2",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Ampere / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 Ampeeri lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Ampere / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 Ampeeri lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityAmperePhase3",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Ampere / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 Ampeeri lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Ampere / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 Ampeeri lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityAmpereTotal",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Ampere / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Ampeeri lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Ampere / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Ampeeri lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityHz",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Hz"
+        },
+        {
+          "@language": "fi",
+          "@value": "Hertsit Mittarilta luettuna"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Hz"
+        },
+        {
+          "@language": "fi",
+          "@value": "Hertsit Mittarilta luettuna"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityWattPhase1",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Watt / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Watti lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Watt / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Watti lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityWattPhase2",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Watt / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 watti lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Watt / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 watti lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityWattPhase3",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Watt / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 watti lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Watt / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 watti lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityWattTotal",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Watt / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin watti lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Watt / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin watti lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltAmperePhase1",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / VoltAmpere / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Volttiamppeeri lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / VoltAmpere / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Volttiamppeeri lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltAmperePhase2",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / VoltAmpere / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 Volttiampeeri lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / VoltAmpere / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 Volttiampeeri lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltAmperePhase3",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / VoltAmpere / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 Volttiampeeri lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / VoltAmpere / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 Volttiampeeri lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVoltAmpereTotal",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / VoltAmpere / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Volttiampeeri lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / VoltAmpere / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Volttiampeeri lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVarPhase1",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Var / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Var lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Var / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 Var lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVarPhase2",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Var / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 Var lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Var / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 Var lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVarPhase3",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Var / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 Var lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Var / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 Var lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityVarTotal",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Var / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Var lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Var / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Var lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityKvarhPlusTotal",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Kvarh+ / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Kvarh + -lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Kvarh+ / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Kvarh + -lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityKvarhPlusPartial",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Kvarh+ / Partial"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarille käyttäjän asettama osittainen Kvarh+ lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Kvarh+ / Partial"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarille käyttäjän asettama osittainen Kvarh+ lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricityKvarhMinusTotal",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Kvarh- / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Kvarh - -lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / Kvarh- / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin Kvarh - -lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhPlusPhase1",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 kWh+ lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 kWh+ lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhPlusPhase2",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 kWh+ lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 kWh+ lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhPlusPhase3",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 kWh+ lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 kWh+ lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhPlusTotal",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin kWh+ lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin kWh+ lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhPlusTarif1",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Tarif 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 kWh+ lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Tarif 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 kWh+ lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhPlusTarif2",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Tarif 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 kWh+ lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Tarif 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 kWh+ lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhPlusPartial",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Partial"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarille käyttäjän asettama osittainen kWh+ lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh+ / Partial"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarille käyttäjän asettama osittainen kWh+ lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhMinusPhase1",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh- / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 kWh- lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh- / Phase 1"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 1 kWh- lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhMinusPhase2",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh- / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 kWh- lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh- / Phase 2"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 2 kWh- lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhMinusPhase3",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh- / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 kWh- lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh- / Phase 3"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vaiheen 3 kWh- lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:electricitykWhMinusTotal",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh- / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin kWh- lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Electricity / kWh- / Total"
+        },
+        {
+          "@language": "fi",
+          "@value": "Mittarin kWh- lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:waterValue",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Water / Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vesilukema mittarilta"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Water / Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Vesilukema mittarilta"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:temperatureValue",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Temperature / Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöanturin lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Temperature / Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöanturin lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:districtHeatkWh",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "District Heat / kWh"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kaukolämmön kWh lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "District Heat / kWh"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kaukolämmön kWh lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:districtHeatWatertemperaturein",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "District Heat / Water temperature in"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kaukolämmön veden lämpö sisään tultaessa"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "District Heat / Water temperature in"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kaukolämmön veden lämpö sisään tultaessa"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:districtHeatWatertemperatureout",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "District Heat / Water temperature out"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kaukolämmön veden lämpö ulos mentäessä"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "District Heat / Water temperature out"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kaukolämmön veden lämpö ulos mentäessä"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:districtHeatWaterValue",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "District Heat / Water Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kaukolämmön veden kulkeminen"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "District Heat / Water Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kaukolämmön veden kulkeminen"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:humidityValue",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Humidity / Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ilmankosteuden lukema"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Humidity / Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ilmankosteuden lukema"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:wasteValue",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Waste / Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Jätteen määrä"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Waste / Value"
+        },
+        {
+          "@language": "fi",
+          "@value": "Jätteen määrä"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:wasteType",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Waste / Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Jätteen tyyppi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Waste / Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Jätteen tyyppi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:accessManagementAccessEnable",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Access Management / Access Enable"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kulku sallittu / kielletty"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Access Management / Access Enable"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kulku sallittu / kielletty"
+        }
+      ],
+      "range": "xsd:boolean",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:accessManagementReferenceID",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Access Management / ReferenceID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kulkutunnisteen tunniste"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Access Management / ReferenceID"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kulkutunnisteen tunniste"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationDesignPressure",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Pressure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Suunniteltu paine"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Pressure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Suunniteltu paine"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationPressure",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Pressure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Todellinen paine"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Pressure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Todellinen paine"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationDesignPressureLost",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Pressure Lost"
+        },
+        {
+          "@language": "fi",
+          "@value": "Suuniteltu painehäviö"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Pressure Lost"
+        },
+        {
+          "@language": "fi",
+          "@value": "Suuniteltu painehäviö"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationPressureLost",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Pressure Lost"
+        },
+        {
+          "@language": "fi",
+          "@value": "Todellinen Painehäviö"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Pressure Lost"
+        },
+        {
+          "@language": "fi",
+          "@value": "Todellinen Painehäviö"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationDiameterDN",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / DiameterDN"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / DiameterDN"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationDesignVolumeFlow",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Volume Flow"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Volume Flow"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationVolumeFlow",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Volume Flow"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Volume Flow"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationDesignVolumeFlowSetpoint",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Volume Flow Setpoint"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Volume Flow Setpoint"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationVolumeFlowSetpoint",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Volume Flow Setpoint"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Volume Flow Setpoint"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationVelocity",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Velocity"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Velocity"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationKMinusFactor",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / K-Factor"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / K-Factor"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationDesignSoundLevel",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Sound Level"
+        },
+        {
+          "@language": "fi",
+          "@value": "Suunniteltu äänitaso"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Design Sound Level"
+        },
+        {
+          "@language": "fi",
+          "@value": "Suunniteltu äänitaso"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationSoundLevel",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Sound Level"
+        },
+        {
+          "@language": "fi",
+          "@value": "Todellinen äänitaso"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Sound Level"
+        },
+        {
+          "@language": "fi",
+          "@value": "Todellinen äänitaso"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationPower",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Power"
+        },
+        {
+          "@language": "fi",
+          "@value": "Teho"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Power"
+        },
+        {
+          "@language": "fi",
+          "@value": "Teho"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationUsgeHours",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Usge Hours"
+        },
+        {
+          "@language": "fi",
+          "@value": "IV- koneen käyttötunnit"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Usge Hours"
+        },
+        {
+          "@language": "fi",
+          "@value": "IV- koneen käyttötunnit"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireLampType",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Lamp Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaistuksen lampputyyppi"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Lamp Type"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaistuksen lampputyyppi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireNumberofLamps",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Number of Lamps"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lamppujen määrä"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Number of Lamps"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lamppujen määrä"
+        }
+      ],
+      "range": "xsd:integer",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireLampPower",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Lamp Power"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lamppujen teho"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Lamp Power"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lamppujen teho"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireLuminairePower",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Luminaire Power"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen teho"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Luminaire Power"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen teho"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireColourTemperature",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Colour Temperature"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen valon väri"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Colour Temperature"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen valon väri"
+        }
+      ],
+      "range": "xsd:integer",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireLuminousFlux",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Luminous Flux"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valoteho"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Luminous Flux"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valoteho"
+        }
+      ],
+      "range": "xsd:integer",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireAmpere",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Ampere"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen käyttämä Ampeerimäärä"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Ampere"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen käyttämä Ampeerimäärä"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireDegreeofProtection",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Degree of Protection"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen suojausluokka"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Degree of Protection"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen suojausluokka"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireVoltage",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Voltage"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen käyttämä Volttimäärä"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Voltage"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen käyttämä Volttimäärä"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireControlAddress",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Control Address"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen hallinta osoite"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Control Address"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen hallinta osoite"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:luminaireControlUnit",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Control Unit"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen hallinta laite"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Luminaire / Control Unit"
+        },
+        {
+          "@language": "fi",
+          "@value": "Valaisimen hallinta laite"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:buildingAutomationAlert",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Building Automation / Alert"
+        },
+        {
+          "@language": "fi",
+          "@value": "RAU Hälytystieto automaation mukaisesti"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Building Automation / Alert"
+        },
+        {
+          "@language": "fi",
+          "@value": "RAU Hälytystieto automaation mukaisesti"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:ventilationTemperaturein",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Temperature in"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ilmanvaihdon meno lämpötila"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Ventilation / Temperature in"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ilmanvaihdon meno lämpötila"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:domesticWatertemperaturein",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Domestic / Water temperature in"
+        },
+        {
+          "@language": "fi",
+          "@value": "Käyttövenden menoveden lämpötila"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Domestic / Water temperature in"
+        },
+        {
+          "@language": "fi",
+          "@value": "Käyttövenden menoveden lämpötila"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:radiatorTemperature",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Radiator / Temperature"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöpatterin lämpötila"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Radiator / Temperature"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöpatterin lämpötila"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:radiatorPressure",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Radiator / Pressure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöpatterin paine"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Radiator / Pressure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöpatterin paine"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:radiatorWatertemperaturein",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Radiator / Water temperature in"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöpatterin veden lämpö sisään tultaessa"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Radiator / Water temperature in"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöpatterin veden lämpö sisään tultaessa"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:radiatorWatertemperatureout",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Radiator / Water temperature out"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöpatterin veden lämpö ulos mentäessä"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Radiator / Water temperature out"
+        },
+        {
+          "@language": "fi",
+          "@value": "Lämpöpatterin veden lämpö ulos mentäessä"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomEnviromentTemperature",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Temperature"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen lämpötila"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Temperature"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen lämpötila"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomEnviromentPressure",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Pressure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen paine"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Pressure"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen paine"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomEnviromentHumidity",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Humidity"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen kosteus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Humidity"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen kosteus"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomEnviromentCarbondioxide",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Carbon dioxide"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen hiilidioksidi pitoisuus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Carbon dioxide"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen hiilidioksidi pitoisuus"
+        }
+      ],
+      "range": "xsd:desimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomEnviromenttVoc",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / tVoc"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen haihtuvat orgaanien yhdisteiden"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / tVoc"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen haihtuvat orgaanien yhdisteiden"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomEnviromentParticles",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Particles"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen pienhiukkaspäästöjen"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Particles"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen pienhiukkaspäästöjen"
+        }
+      ],
+      "range": "xsd:decimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomEnviromentOccupation",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Occupation"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen käytön mittaus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Enviroment / Occupation"
+        },
+        {
+          "@language": "fi",
+          "@value": "Huoneen käytön mittaus"
+        }
+      ],
+      "range": "xsd:boolean",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:outsideEnviromentLuminous",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Outside Enviroment / Luminous"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ulkovaloisuus"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Outside Enviroment / Luminous"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ulkovaloisuus"
+        }
+      ],
+      "range": "xsd:desimal",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:outsideEnviromentTemperature",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Outside Enviroment / Temperature"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ulkoilman lämpötila"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Outside Enviroment / Temperature"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ulkoilman lämpötila"
+        }
+      ],
+      "range": "xsd:deciaml",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomOccupationPeopleflowincount",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Occupation / People flow in count"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ihmisten määrä sisään"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Occupation / People flow in count"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ihmisten määrä sisään"
+        }
+      ],
+      "range": "xsd:integer",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomOccupationPeopleflowoutcount",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Occupation / People flow out count"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ihmisten määrä ulos"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Occupation / People flow out count"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ihmisten määrä ulos"
+        }
+      ],
+      "range": "xsd:integer",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:roomOccupationPeopleinsideroom",
+      "@type": "owl:AnnotationProperty",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Room Occupation / People inside room"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ihmisten määrä huoneessa"
+        }
+      ],
+      "comment": [
+        {
+          "@language": "en",
+          "@value": "Room Occupation / People inside room"
+        },
+        {
+          "@language": "fi",
+          "@value": "Ihmisten määrä huoneessa"
+        }
+      ],
+      "range": "xsd:integer",
+      "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    }
+  ]
+}

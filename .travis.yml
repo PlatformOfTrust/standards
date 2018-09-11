@@ -1,0 +1,18 @@
+services:
+  - docker
+
+before_install:
+  - docker build -t doc-build .
+
+install: true
+
+script: docker-run.sh
+
+# Deploy to GitHub pages
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local-dir: /artifacts
+  github-token: $GITHUB_TOKEN
+  target-branch: gh-pages
+  repo: PlatformOfTrust/standards
