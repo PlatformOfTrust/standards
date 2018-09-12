@@ -1,7 +1,17 @@
-FROM frolvlad/alpine-oraclejdk8
+FROM frolvlad/alpine-python3
+
+RUN apk add --update --no-cache \
+    python3-dev \
+    build-base \
+    linux-headers
 
 ADD . /src
 WORKDIR /src
 
-RUN wget https://github.com/dgarijo/Widoco/releases/download/v1.4.5/widoco-1.4.5-jar-with-dependencies.jar -O /src/widoco.jar
+RUN chmod +x build.sh && chmod +x docker-run.sh && chmod +x setup.sh && ./setup.sh
+
+RUN apk del \
+    python-dev \
+    build-base \
+    linux-headers
 
