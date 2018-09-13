@@ -1,11 +1,16 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-JAVA=$(which java)
-WORKDIR=/src
+readonly WORKDIR="/src"
+readonly ONT_FILE="/src/ontologies/pot.jsonld"
+readonly OUT_FOLDER="/tmp/html"
+readonly ARTIFACTS="/artifacts"
+readonly THEME="darkly"
 
 cd "${WORKDIR}"
 
-"${JAVA}" -jar widoco.jar -ontFile /src/ontologies/pot.rdf \
--outFolder /artifacts/ -getOntologyMetadata -rewriteAll -lang en-fi \
--includeImportedOntologies -webVowl -ignoreIndividuals \
--includeAnnotationProperties
+mkdir "${OUT_FOLDER}"
+
+# Need to choose type of export, 2 = Multi-site HTML.
+echo 2 | ontodocs "${ONT_FILE}" -o "${OUT_FOLDER}" -t "Platform Of Trust" --theme="${THEME}"
+
+cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
