@@ -8,7 +8,7 @@ RUN apk add --update --no-cache \
 ADD . /src
 WORKDIR /src
 
-RUN chmod +x build.sh && chmod +x docker-run.sh && chmod +x setup.sh && ./setup.sh
+RUN chmod +x *.sh && ./setup.sh
 
 RUN apk del \
     python-dev \
