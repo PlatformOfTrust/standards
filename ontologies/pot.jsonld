@@ -1,7 +1,7 @@
 {
   "@context": {
-    "dli": "http://contexts.dliv.in/ontology/core#",
-    "pot": "http://contexts.dliv.in/ontology/pot#",
+    "dli": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+    "pot": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -12,8 +12,8 @@
     "cc": "http://creativecommons.org/ns#",
     "rak": "http://uri.suomi.fi/datamodel/ns/rak#",
     "vann": "http://purl.org/vocab/vann/",
-    "@vocab": "http://contexts.dliv.in/ontology/pot#",
-    "@base": "http://contexts.dliv.in/ontology/pot#",
+    "@vocab": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld#",
+    "@base": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld#",
     "defines": {
       "@reverse": "rdfs:isDefinedBy"
     },
@@ -40,7 +40,7 @@
       "@type": "@vocab"
     }
   },
-  "@id": "http://contexts.dliv.in/ontology/pot",
+  "@id": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld",
   "@type": "owl:Ontology",
   "dct:title": "Platform Of Trust Core Ontology",
   "dct:description": "The Platform of Trust Core Ontology is the base for all PoT APIs.",
@@ -48,7 +48,7 @@
   "rdfs:comment": "An ontology used in the Platform of Trust APIs.",
   "dct:abstract": "The Platform Of Trust ontology aims to provide a comprehensive set of classes and properties to describe real world entities.",
   "vann:preferredNamespacePrefix": "pot",
-  "vann:preferredNamespaceUri": "http://contexts.dliv.in/ontology/pot",
+  "vann:preferredNamespaceUri": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld",
   "dct:rights": "TODO",
   "dct:publisher": "Suomen Tilaajavastuu Oy",
   "cc:license": "https://tldrlegal.com/license/mit-license",
@@ -5258,6 +5258,277 @@
       ],
       "range": "xsd:integer",
       "domain": "pot:Device",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:User",
+      "@type": "owl:Class",
+      "subClassOf": "pot:Person",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "A user"
+        },
+        {
+          "@language": "fi",
+          "@value": "Käyttäjä"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "A person who is a user of the platform"
+        },
+        {
+          "@language": "fi",
+          "@value": "Henkilö joka on alustan käyttäjä"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:username",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "Username"
+        },
+        {
+          "@language": "fi",
+          "@value": "Käyttäjänimi"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "A unique identifier of a user in the platform"
+        },
+        {
+          "@language": "fi",
+          "@value": "Käyttäjän käyttäjänimi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:User",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:password",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "Password"
+        },
+        {
+          "@language": "fi",
+          "@value": "Salasana"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "A password"
+        },
+        {
+          "@language": "fi",
+          "@value": "Salasana"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:User",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:first_name",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "First name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Etunimi"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "A person's first name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Henkilön etunimi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:User",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:last_name",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "Last name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Sukunimi"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "A person's last name"
+        },
+        {
+          "@language": "fi",
+          "@value": "Henkilön sukunimi"
+        }
+      ],
+      "range": "xsd:string",
+      "domain": "pot:User",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:created_by",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "Created by"
+        },
+        {
+          "@language": "fi",
+          "@value": "Luonut"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "Who created the identity"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kuka loi identiteetin"
+        }
+      ],
+      "range": "xsd:string",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:updated_by",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "Updated by"
+        },
+        {
+          "@language": "fi",
+          "@value": "Päivitetty (kuka)"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "Who updated the identity"
+        },
+        {
+          "@language": "fi",
+          "@value": "Kuka päivitti identiteetin"
+        }
+      ],
+      "range": "xsd:string",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:created_at",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "Created at"
+        },
+        {
+          "@language": "fi",
+          "@value": "Luotu"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "When the identity was created"
+        },
+        {
+          "@language": "fi",
+          "@value": "Milloin identiteetti luotiin"
+        }
+      ],
+      "range": "pot:Rfc3339",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:updated_at",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "Updated at"
+        },
+        {
+          "@language": "fi",
+          "@value": "Päivitetty (aika)"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "When the identity was updated"
+        },
+        {
+          "@language": "fi",
+          "@value": "Milloin identiteetti päivitettiin"
+        }
+      ],
+      "range": "pot:Rfc3339",
+      "vs:term_status": "unstable",
+      "owl:versionInfo": "DRAFT"
+    },
+    {
+      "@id": "pot:Rfc3339",
+      "@type": "rdfs:Datatype",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "RFC3339 datetime"
+        },
+        {
+          "@language": "fi",
+          "@value": "RFC3339 aikaleima"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "A datetime format as defined by RFC6570."
+        }
+      ],
+      "range": "xsd:string",
+      "rdfs:seeAlso": "https://tools.ietf.org/html/rfc3339",
       "vs:term_status": "unstable",
       "owl:versionInfo": "DRAFT"
     }
