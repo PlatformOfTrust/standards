@@ -11,7 +11,7 @@ WORKDIR /src
 RUN chmod +x *.sh && ./setup.sh
 
 RUN apk del \
-    python-dev \
+    python3-dev \
     build-base \
     linux-headers
 
