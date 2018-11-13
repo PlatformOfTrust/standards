@@ -18,6 +18,6 @@ cp -R "${WORKDIR}/ontologies" "${ARTIFACTS}"/
 cp -R "${WORKDIR}/contexts" "${ARTIFACTS}"/
 
 # Need to choose type of export, 2 = Multi-site HTML.
-echo 2 | ontodocs "${ONT_URL}" -o "${OUT_FOLDER}" -t "Platform Of Trust" --theme="${THEME}"
+echo 2 | ontodocs "${ONT_FILE}" -o "${OUT_FOLDER}" -t "Platform Of Trust" --theme="${THEME}"
 
 cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
