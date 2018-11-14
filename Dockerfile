@@ -8,6 +8,8 @@ RUN apk add --update --no-cache \
 ADD . /src
 WORKDIR /src
 
+RUN mkdir /artifacts
+
 RUN chmod +x *.sh && ./setup.sh
 
 RUN apk del \
