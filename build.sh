@@ -21,3 +21,4 @@ cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
 # Copy over the ontologies and contexts to GH pages
 cp -R "${WORKDIR}/ontologies" "${ARTIFACTS}"/
 cp -R "${WORKDIR}/contexts" "${ARTIFACTS}"/
+cp -R "${WORKDIR}/vocabularies" "${ARTIFACTS}"/
