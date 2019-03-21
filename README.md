@@ -10,16 +10,15 @@ Each data file of identity should reference context file. All properties excludi
 
 ```JSON
 {
-    "@context": "https://platformoftrust.github.io/standards/contexts/identity-apartment.jsonld",
+    "@context": "https://platformoftrust.github.io/standards/contexts/identity-building.jsonld",
     "@id": "<identity id>",
-    "@type": "Apartment",
-    "name": "A 18",
+    "@type": "Building",
+    "name": "Houmenta",
     "data": {
-        "description": "The apartment A 18 has 3 rooms, sauna and kitchen",
-        "completionYear": 2005,
-        "inaugurationYear": 2006,
-        "height": 3,
-        "usageType": "Apartment"
+        "lifeCycleInaugurationMomentYear": 1943,
+		"lifecycleInspectionYear": 2017,
+        "physicalAreaSquareMeterNet": 5200,
+        "physicalVolumeCubic": 40000
     }
 }
 ```
