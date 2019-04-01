@@ -7,7 +7,7 @@ The Platform Of Trust core ontology can be found as a JSON-LD
 ontology file under [ontologies/pot.jsonld](ontologies/pot.jsonld).
 
 The HTML version of the ontology documentation is hosted at our 
-[Github Pages](https://platformoftrust.github.io/standards/)
+[Github Pages](https://standards.oftrust.net/)
 
 _Please note that this repository is under active development, and the IRIs
 and URIs in the ontology files are subject to change at any time._
@@ -38,9 +38,9 @@ therefore defines the following:
 
     "@context": {
         "@version": 1.1,
-        "@vocab": "https://platformoftrust.github.io/standards/vocabularies/app.jsonld#",
+        "@vocab": "https://standards.oftrust.net/vocabularies/app.jsonld#",
         "pot": {
-          "@id": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld#",
+          "@id": "https://standards.oftrust.net/ontologies/pot.jsonld#",
           "@prefix": true
         },
         "dli": {
@@ -76,7 +76,7 @@ inaugurationYear, height and usageType should be nested under the
 `data`-object, e.g.
 
     {
-        "@context": "https://platformoftrust.github.io/standards/contexts/identity-apartment.jsonld",
+        "@context": "https://standards.oftrust.net/contexts/identity-apartment.jsonld",
         "@id": "<identity id>",
         "@type": "Apartment",
         "name": "A 18",
@@ -99,7 +99,7 @@ contexts. The vocabularies can be found under the [vocabularies](vocabularies)
 folder.
 
 The context defines 
-`@vocab: https://platformoftrust.github.io/standards/vocabularies/apartment.jsonld#`
+`@vocab: https://standards.oftrust.net/vocabularies/apartment.jsonld#`
 from where the information can be found.
 
 The `supportedClass` is a list of supported types for the identity in question.

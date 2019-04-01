@@ -8,7 +8,9 @@ before_install:
 
 install: true
 
-script: ./docker-run.sh
+script:
+  - ./docker-run.sh
+  - echo 'standards.oftrust.net' > artifacts/CNAME
 
 # Deploy to GitHub pages
 deploy:
@@ -18,3 +20,5 @@ deploy:
   github-token: $GITHUB_TOKEN
   target-branch: gh-pages
   repo: PlatformOfTrust/standards
+  on:
+    branch: master
