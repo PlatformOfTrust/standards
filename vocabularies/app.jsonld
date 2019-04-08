@@ -1,0 +1,138 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rdf": {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "@prefix": true
+    },
+    "rdfs": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#",
+      "@prefix": true
+    },
+    "dli": {
+      "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+      "@prefix": true
+    },
+    "pot": {
+      "@id": "https://standards.oftrust.net/ontologies/pot.jsonld#",
+      "@prefix": true
+    },
+    "vocab": "https://standards.oftrust.net/vocabularies/app.jsonld#"
+  },
+  "@id": "https://standards.oftrust.net/vocabularies/app.jsonld",
+  "@type": "pot:Vocabulary",
+  "pot:supportedClass": [
+    {
+      "@id": "dli:App",
+      "@type": "dli:App",
+      "dli:title": "App",
+      "dli:description": null,
+      "pot:supportedAttribute": [
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "pot:name",
+          "dli:title": "Name",
+          "dli:description": "The name of the app.",
+          "dli:required": true
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:data",
+          "dli:title": "Data",
+          "dli:description": "Additional key-value data to be saved for the app.",
+          "dli:required": false,
+          "dli:valueType": "xsd:object",
+          "dli:defaultValue": null
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:platform",
+          "dli:title": "Platform",
+          "dli:description": "The platform this app belongs to.",
+          "dli:required": true
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:grantType",
+          "dli:title": "Grant type",
+          "dli:description": "The grant type the app supports.",
+          "dli:required": true,
+          "dli:defaultValue": "authorization_code",
+          "dli:supportedValue": [
+            "authorization_code"
+          ]
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:scopes",
+          "dli:title": "Scopes",
+          "dli:description": "A comma-separated list of scopes.",
+          "dli:required": true,
+          "dli:defaultValue": ""
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:defaultScopes",
+          "dli:title": "Default scopes",
+          "dli:description": "The default scopes for the app",
+          "dli:required": true,
+          "dli:defaultValue": ""
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:redirectUris",
+          "dli:title": "Redirect URIs",
+          "dli:description": "A comma-separated list of redirect URIs.",
+          "dli:required": true
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:defaultRedirectUri",
+          "dli:title": "Default redirect URI",
+          "dli:description": "The default redirect URI",
+          "dli:required": true,
+          "dli:defaultValue": ""
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:responseType",
+          "dli:title": "Response type",
+          "dli:description": "The response type for the app. Must be 'code'.",
+          "dli:required": true,
+          "dli:defaultValue": "code",
+          "dli:supportedValue": [
+            "code"
+          ]
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:description",
+          "dli:title": "Description",
+          "dli:description": "The description of the app",
+          "dli:required": true
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:privacyPolicyUrl",
+          "dli:title": "Privacy policy URL",
+          "dli:description": "The URL to the app privacy policy",
+          "dli:required": true
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:iconUrl",
+          "dli:title": "Icon URL",
+          "dli:description": "The URL to the icon for the app.",
+          "dli:required": false
+        },
+        {
+          "@type": "pot:SupportedAttribute",
+          "dli:attribute": "dli:webPageUrl",
+          "dli:title": "Web page URL",
+          "dli:description": "The URL to the app web page/home page.",
+          "dli:required": false
+        }
+      ]
+    }
+  ]
+}

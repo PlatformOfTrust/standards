@@ -10,7 +10,7 @@ Each data file of identity should reference context file. All properties excludi
 
 ```JSON
 {
-    "@context": "https://platformoftrust.github.io/standards/contexts/identity-building.jsonld",
+    "@context": "https://standards.oftrust.net/contexts/identity-building.jsonld",
     "@id": "<identity id>",
     "@type": "Building",
     "name": "Houmenta",
@@ -37,7 +37,7 @@ We also have a set of properties:
 
 The decision to allow multiple domains and ranges was purely pragmatic. While the computational properties of systems with a single domain and range are easier to understand, in practice, this forces the creation of a lot of artifical classes, which are there purely to act as the domain/range of some properties.
 
-All classes and properties can be investigated in [Data Model structure documentation](https://romansavran.github.io/PoT/).
+All classes and properties can be investigated in [Data Model structure documentation](https://standards.oftrust.net/).
 
 ## Data model source code
 Data model source code is organized in following way:
@@ -50,7 +50,7 @@ Core ontology should be understood as core terms vocabulary including all classe
 All JSON-LD source files are available under [GitHub Repository](https://github.com/PlatformOfTrust/standards).
 
 ## Links and additional information
-All classes and properties can be investigated in [Data Model structure documentation](https://romansavran.github.io/PoT/).
+All classes and properties can be investigated in [Data Model structure documentation](https://standards.oftrust.net/).
 
 All JSON-LD source files are available under [GitHub Repository](https://github.com/PlatformOfTrust/standards).
 
