@@ -1,7 +1,7 @@
 {
   "@context": {
     "dli": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
-    "pot": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld#",
+    "pot": "https://standards.oftrust.net/ontologies/pot.jsonld#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -12,8 +12,8 @@
     "cc": "http://creativecommons.org/ns#",
     "rak": "http://uri.suomi.fi/datamodel/ns/rak#",
     "vann": "http://purl.org/vocab/vann/",
-    "@vocab": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld#",
-    "@base": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld#",
+    "@vocab": "https://standards.oftrust.net/ontologies/pot.jsonld#",
+    "@base": "https://standards.oftrust.net/ontologies/pot.jsonld#",
     "defines": {
       "@reverse": "rdfs:isDefinedBy"
     },
@@ -40,7 +40,7 @@
       "@type": "@vocab"
     }
   },
-  "@id": "https://platformoftrust.github.io/standards/ontologies/pot",
+  "@id": "https://standards.oftrust.net/ontologies/pot",
   "@type": "owl:Ontology",
   "dct:title": "Platform Of Trust Core Ontology",
   "dct:description": "The Platform of Trust Core Ontology is the base for all PoT APIs.",
@@ -48,7 +48,7 @@
   "rdfs:comment": "An ontology used in the Platform of Trust APIs.",
   "dct:abstract": "The Platform Of Trust ontology aims to provide a comprehensive set of classes and properties to describe real world entities.",
   "vann:preferredNamespacePrefix": "pot",
-  "vann:preferredNamespaceUri": "https://platformoftrust.github.io/standards/ontologies/pot",
+  "vann:preferredNamespaceUri": "https://standards.oftrust.net/ontologies/pot",
   "dct:rights": "TODO",
   "dct:publisher": "Suomen Tilaajavastuu Oy",
   "cc:license": "https://tldrlegal.com/license/mit-license",
@@ -209,6 +209,7 @@
   {
     "@id": "pot:Contact",
     "@type": "pot:Class",
+    "subClassOf": "dli:VirtualThing",
     "rdfs:label": [
       {
         "@language": "en",
@@ -219,56 +220,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:Contract",
-    "@type": "pot:Class",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Contract"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Product",
-    "@type": "pot:Class",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Product"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Thing",
-    "@type": "pot:Class",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Thing"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Process",
-    "@type": "pot:Class",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Process"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
     "@id": "pot:Event",
     "@type": "pot:Class",
+    "subClassOf": "dli:VirtualThing",
     "rdfs:label": [
       {
         "@language": "en",
@@ -279,123 +233,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:Role",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Relationship",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Role"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Link",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Relationship",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Link"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Relationship",
-    "@type": "pot:Class",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Relationship"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Party",
-    "@type": "pot:Class",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Party"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Group",
-    "@type": "pot:Class",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Group"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Organization",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Party",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Organization"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Person",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Party",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Person"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Construction",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Thing",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Construction"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Building",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Construction",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Building"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
     "@id": "pot:Floor",
     "@type": "pot:Class",
-    "subClassOf": "pot:Construction",
+    "subClassOf": "pot:Element",
     "rdfs:label": [
       {
         "@language": "en",
@@ -406,22 +246,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:Space",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Thing",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Space"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
     "@id": "pot:Apartment",
     "@type": "pot:Class",
-    "subClassOf": "pot:Space",
+    "subClassOf": "dli:Space",
     "rdfs:label": [
       {
         "@language": "en",
@@ -432,13 +259,26 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:Room",
+    "@id": "pot:RoomVirtual",
     "@type": "pot:Class",
-    "subClassOf": "pot:Space",
+    "subClassOf": "dli:Space",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Room"
+        "@value": "Virtual Room"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:RoomPhysical",
+    "@type": "pot:Class",
+    "subClassOf": "dli:Space",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Physical Room"
       }
     ],
     "vs:term_status": "unstable",
@@ -447,7 +287,7 @@
   {
     "@id": "pot:ET",
     "@type": "pot:Class",
-    "subClassOf": "pot:Room",
+    "subClassOf": "pot:RoomPhysical",
     "rdfs:label": [
       {
         "@language": "en",
@@ -460,7 +300,7 @@
   {
     "@id": "pot:MH",
     "@type": "pot:Class",
-    "subClassOf": "pot:Room",
+    "subClassOf": "pot:RoomPhysical",
     "rdfs:label": [
       {
         "@language": "en",
@@ -473,7 +313,7 @@
   {
     "@id": "pot:KPH",
     "@type": "pot:Class",
-    "subClassOf": "pot:Room",
+    "subClassOf": "pot:RoomPhysical",
     "rdfs:label": [
       {
         "@language": "en",
@@ -486,7 +326,7 @@
   {
     "@id": "pot:AH",
     "@type": "pot:Class",
-    "subClassOf": "pot:Room",
+    "subClassOf": "pot:RoomPhysical",
     "rdfs:label": [
       {
         "@language": "en",
@@ -499,7 +339,7 @@
   {
     "@id": "pot:RealEstate",
     "@type": "pot:Class",
-    "subClassOf": "pot:Thing",
+    "subClassOf": "dli:Space",
     "rdfs:label": [
       {
         "@language": "en",
@@ -512,7 +352,7 @@
   {
     "@id": "pot:Device",
     "@type": "pot:Class",
-    "subClassOf": "pot:Thing",
+    "subClassOf": "dli:HumanWorld",
     "rdfs:label": [
       {
         "@language": "en",
@@ -525,11 +365,115 @@
   {
     "@id": "pot:Element",
     "@type": "pot:Class",
-    "subClassOf": "pot:Thing",
+    "subClassOf": "dli:HumanWorld",
     "rdfs:label": [
       {
         "@language": "en",
         "@value": "Element"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:NonListedCompany",
+    "@type": "pot:Class",
+    "subClassOf": "dli:Group",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Non Listed Company"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:LimitedCompany",
+    "@type": "pot:Class",
+    "subClassOf": "pot:NonListedCompany",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Limited Company"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:HousingCooperative",
+    "@type": "pot:Class",
+    "subClassOf": "pot:LimitedCompany",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Housing Cooperative"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:Electrical",
+    "@type": "pot:Class",
+    "subClassOf": "pot:Device",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Electrical"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:Air",
+    "@type": "pot:Class",
+    "subClassOf": "pot:Device",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Air"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:Water",
+    "@type": "pot:Class",
+    "subClassOf": "pot:Device",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Water"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:Heat",
+    "@type": "pot:Class",
+    "subClassOf": "pot:Device",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Heat"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:Case",
+    "@type": "pot:Class",
+    "subClassOf": "dli:Process",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Case"
       }
     ],
     "vs:term_status": "unstable",
@@ -614,14 +558,14 @@
     ],
     "domain": [
       "pot:Contact",
-      "pot:Contract",
-      "pot:Product",
-      "pot:Thing",
-      "pot:Process",
+      "dli:Contract",
+      "dli:Product",
+      "dli:Thing",
+      "dli:Process",
       "pot:Event",
       "pot:Relationship",
       "pot:Party",
-      "pot:Group"
+      "dli:Group"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -640,8 +584,8 @@
       }
     ],
     "domain": [
-      "pot:Building",
-      "pot:Space",
+      "dli:Building",
+      "dli:Space",
       "pot:Room",
       "pot:RealEstate"
     ],
@@ -719,7 +663,7 @@
       }
     ],
     "domain": [
-      "pot:Building"
+      "dli:Building"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -738,7 +682,7 @@
       }
     ],
     "domain": [
-      "pot:Thing"
+      "dli:Thing"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -814,7 +758,7 @@
       }
     ],
     "domain": [
-      "pot:Space",
+      "dli:Space",
       "pot:Room"
     ],
     "vs:term_status": "unstable",
@@ -872,7 +816,7 @@
       }
     ],
     "domain": [
-      "pot:Thing"
+      "dli:Thing"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -891,8 +835,8 @@
       }
     ],
     "domain": [
-      "pot:Thing",
-      "pot:Product"
+      "dli:Thing",
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -930,7 +874,7 @@
       }
     ],
     "domain": [
-      "pot:Building"
+      "dli:Building"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -949,7 +893,7 @@
       }
     ],
     "domain": [
-      "pot:Building"
+      "dli:Building"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -968,7 +912,7 @@
       }
     ],
     "domain": [
-      "pot:Space",
+      "dli:Space",
       "pot:Apartment"
     ],
     "vs:term_status": "unstable",
@@ -988,7 +932,7 @@
       }
     ],
     "domain": [
-      "pot:Building"
+      "dli:Building"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1007,7 +951,7 @@
       }
     ],
     "domain": [
-      "pot:Space",
+      "dli:Space",
       "pot:Apartment"
     ],
     "vs:term_status": "unstable",
@@ -1027,7 +971,7 @@
       }
     ],
     "domain": [
-      "pot:Thing"
+      "dli:Thing"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1046,7 +990,7 @@
       }
     ],
     "domain": [
-      "pot:Building"
+      "dli:Building"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1103,7 +1047,7 @@
       }
     ],
     "domain": [
-      "pot:Building"
+      "dli:Building"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1122,7 +1066,7 @@
       }
     ],
     "domain": [
-      "pot:Thing"
+      "dli:Thing"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1141,7 +1085,7 @@
       }
     ],
     "domain": [
-      "pot:Thing",
+      "dli:Thing",
       "pot:Element",
       "pot:Device"
     ],
@@ -1162,7 +1106,7 @@
       }
     ],
     "domain": [
-      "pot:Thing",
+      "dli:Thing",
       "pot:Element",
       "pot:Device"
     ],
@@ -1202,7 +1146,7 @@
       }
     ],
     "domain": [
-      "pot:Space",
+      "dli:Space",
       "pot:Apartment"
     ],
     "vs:term_status": "unstable",
@@ -1222,7 +1166,7 @@
       }
     ],
     "domain": [
-      "pot:Thing"
+      "dli:Thing"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1241,7 +1185,7 @@
       }
     ],
     "domain": [
-      "pot:Thing"
+      "dli:Thing"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1260,7 +1204,7 @@
       }
     ],
     "domain": [
-      "pot:Thing"
+      "dli:Thing"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1279,7 +1223,7 @@
       }
     ],
     "domain": [
-      "pot:Thing"
+      "dli:Thing"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1298,8 +1242,8 @@
       }
     ],
     "domain": [
-      "pot:Building",
-      "pot:Space"
+      "dli:Building",
+      "dli:Space"
     ],
     "range": [
       "pot:Year",
@@ -1322,8 +1266,8 @@
       }
     ],
     "domain": [
-      "pot:Building",
-      "pot:Space"
+      "dli:Building",
+      "dli:Space"
     ],
     "range": [
       "pot:Year",
@@ -1346,8 +1290,8 @@
       }
     ],
     "domain": [
-      "pot:Building",
-      "pot:Space"
+      "dli:Building",
+      "dli:Space"
     ],
     "range": [
       "pot:Year"
@@ -1369,9 +1313,9 @@
       }
     ],
     "domain": [
-      "pot:Thing",
-      "pot:Product",
-      "pot:Process"
+      "dli:Thing",
+      "dli:Product",
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1390,7 +1334,7 @@
       }
     ],
     "domain": [
-      "pot:Space"
+      "dli:Space"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1409,9 +1353,9 @@
       }
     ],
     "domain": [
-      "pot:Building",
+      "dli:Building",
       "pot:Floor",
-      "pot:Space",
+      "dli:Space",
       "pot:RealEstate"
     ],
     "vs:term_status": "unstable",
@@ -1431,9 +1375,9 @@
       }
     ],
     "domain": [
-      "pot:Building",
+      "dli:Building",
       "pot:Floor",
-      "pot:Space",
+      "dli:Space",
       "pot:RealEstate"
     ],
     "vs:term_status": "unstable",
@@ -1453,9 +1397,9 @@
       }
     ],
     "domain": [
-      "pot:Building",
+      "dli:Building",
       "pot:Floor",
-      "pot:Space",
+      "dli:Space",
       "pot:RealEstate"
     ],
     "vs:term_status": "unstable",
@@ -1475,9 +1419,9 @@
       }
     ],
     "domain": [
-      "pot:Building",
+      "dli:Building",
       "pot:Floor",
-      "pot:Space",
+      "dli:Space",
       "pot:RealEstate"
     ],
     "vs:term_status": "unstable",
@@ -1497,8 +1441,8 @@
       }
     ],
     "domain": [
-      "pot:Building",
-      "pot:Space"
+      "dli:Building",
+      "dli:Space"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1517,8 +1461,8 @@
       }
     ],
     "domain": [
-      "pot:Building",
-      "pot:Space"
+      "dli:Building",
+      "dli:Space"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1971,7 +1915,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -1990,7 +1934,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2009,7 +1953,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2028,7 +1972,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2047,7 +1991,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2066,7 +2010,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2085,7 +2029,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2104,7 +2048,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2123,7 +2067,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2142,7 +2086,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2161,7 +2105,7 @@
       }
     ],
     "domain": [
-      "pot:Product"
+      "dli:Product"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2180,7 +2124,7 @@
       }
     ],
     "domain": [
-      "pot:Process"
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2199,7 +2143,7 @@
       }
     ],
     "domain": [
-      "pot:Process"
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2218,7 +2162,7 @@
       }
     ],
     "domain": [
-      "pot:Process"
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2237,7 +2181,7 @@
       }
     ],
     "domain": [
-      "pot:Process"
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2256,7 +2200,7 @@
       }
     ],
     "domain": [
-      "pot:Process"
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2275,7 +2219,7 @@
       }
     ],
     "domain": [
-      "pot:Process"
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2294,7 +2238,7 @@
       }
     ],
     "domain": [
-      "pot:Process"
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2313,7 +2257,7 @@
       }
     ],
     "domain": [
-      "pot:Process"
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
@@ -2332,7 +2276,7 @@
       }
     ],
     "domain": [
-      "pot:Process"
+      "dli:Process"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
