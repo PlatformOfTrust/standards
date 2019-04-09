@@ -14,12 +14,12 @@
             "@prefix": true
         },
         "pot": {
-            "@id": "https://platformoftrust.github.io/standards/ontologies/pot.jsonld#",
+            "@id": "https://standards.oftrust.net/ontologies/pot.jsonld#",
             "@prefix": true
         },
-        "vocab": "https://platformoftrust.github.io/standards/vocabularies/apartment.jsonld#"
+        "vocab": "https://standards.oftrust.net/vocabularies/apartment.jsonld#"
     },
-    "@id": "https://platformoftrust.github.io/standards/vocabularies/apartment.jsonld",
+    "@id": "https://standards.oftrust.net/vocabularies/apartment.jsonld",
     "@type": "pot:Vocabulary",
     "pot:supportedClass": {
         "@id": "pot:Apartment",
@@ -44,10 +44,20 @@
             },
             {
                 "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:physicalVolumeCubic",
-                "dli:title": "Volume cubicmeter",
-                "dli:description": "Volume cubicmeter",
+                "dli:attribute": "pot:idNameApartment",
+                "dli:title": "Appartment Name",
+                "dli:description": "Appartment Name",
                 "dli:required": false
+            },
+            {
+                "@type": "pot:SupportedAttribute",
+                "dli:attribute": "pot:lifecycleInspectionYear",
+                "dli:title": "Inspection Year",
+                "dli:description": "Inspection Year",
+                "dli:required": false,
+                "dli:valueType": [
+                    "pot:Year"
+                ]
             },
             {
                 "@type": "pot:SupportedAttribute",
@@ -58,10 +68,14 @@
             },
             {
                 "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:descriptionContractCorporate",
-                "dli:title": "Coopertive Contract",
-                "dli:description": "Coopertive Contract",
-                "dli:required": false
+                "dli:attribute": "pot:lifeCycleCompletionMomentYear",
+                "dli:title": "Completion Year",
+                "dli:description": "Completion Year",
+                "dli:required": false,
+                "dli:valueType": [
+                    "pot:Year",
+                    "pot:Date"
+                ]
             },
             {
                 "@type": "pot:SupportedAttribute",
@@ -79,20 +93,6 @@
             },
             {
                 "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:categorizationUsageCommonSpace",
-                "dli:title": "Common Space Usage Type",
-                "dli:description": "Common Space Usage Type",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:physicalAreaSquareMeterLivingNet",
-                "dli:title": "Area squaremeter Living Net",
-                "dli:description": "Area squaremeter Living Net",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
                 "dli:attribute": "pot:categorizationUsageMain",
                 "dli:title": "Main Usage",
                 "dli:description": "Main Usage",
@@ -100,30 +100,16 @@
             },
             {
                 "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:lifeCycleInaugurationMomentYear",
-                "dli:title": "Inauguration Year",
-                "dli:description": "Inauguration Year",
-                "dli:required": false,
-                "dli:valueType": [
-                    "pot:Year",
-                    "pot:Date"
-                ]
+                "dli:attribute": "pot:physicalHeightMeter",
+                "dli:title": "Height meter",
+                "dli:description": "Height meter",
+                "dli:required": false
             },
             {
                 "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:lifecycleInspectionYear",
-                "dli:title": "Inspection Year",
-                "dli:description": "Inspection Year",
-                "dli:required": false,
-                "dli:valueType": [
-                    "pot:Year"
-                ]
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:idNameApartment",
-                "dli:title": "Appartment Name",
-                "dli:description": "Appartment Name",
+                "dli:attribute": "pot:descriptionContractCorporate",
+                "dli:title": "Coopertive Contract",
+                "dli:description": "Coopertive Contract",
                 "dli:required": false
             },
             {
@@ -135,20 +121,34 @@
             },
             {
                 "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:lifeCycleCompletionMomentYear",
-                "dli:title": "Completion Year",
-                "dli:description": "Completion Year",
+                "dli:attribute": "pot:physicalAreaSquareMeterLivingNet",
+                "dli:title": "Area squaremeter Living Net",
+                "dli:description": "Area squaremeter Living Net",
+                "dli:required": false
+            },
+            {
+                "@type": "pot:SupportedAttribute",
+                "dli:attribute": "pot:physicalVolumeCubic",
+                "dli:title": "Volume cubicmeter",
+                "dli:description": "Volume cubicmeter",
+                "dli:required": false
+            },
+            {
+                "@type": "pot:SupportedAttribute",
+                "dli:attribute": "pot:lifeCycleInaugurationMomentYear",
+                "dli:title": "Inauguration Year",
+                "dli:description": "Inauguration Year",
                 "dli:required": false,
                 "dli:valueType": [
-                    "pot:Year",
-                    "pot:Date"
+                    "pot:Date",
+                    "pot:Year"
                 ]
             },
             {
                 "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:physicalHeightMeter",
-                "dli:title": "Height meter",
-                "dli:description": "Height meter",
+                "dli:attribute": "pot:categorizationUsageCommonSpace",
+                "dli:title": "Common Space Usage Type",
+                "dli:description": "Common Space Usage Type",
                 "dli:required": false
             },
             {
@@ -160,100 +160,9 @@
             },
             {
                 "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:descriptionAdditional",
-                "dli:title": "Additional Description",
-                "dli:description": "Additional Description",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:idNfc",
-                "dli:title": "NFC",
-                "dli:description": "NFC",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:idRfid",
-                "dli:title": "RFID",
-                "dli:description": "RFID",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:idQr",
-                "dli:title": "QR code",
-                "dli:description": "QR code",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:idGtin",
-                "dli:title": "Barcode",
-                "dli:description": "Barcode",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:categorizationLocal",
-                "dli:title": "Type",
-                "dli:description": "Type",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:idPot",
-                "dli:title": "Pot id",
-                "dli:description": "Pot id",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:lifeCycleStatusCurrent",
-                "dli:title": "Current Status",
-                "dli:description": "Current Status",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:description",
-                "dli:title": "Description",
-                "dli:description": "Description",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:idIfcGuid",
-                "dli:title": "IFC id",
-                "dli:description": "IFC id",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:idGovernment",
-                "dli:title": "Goverment Id",
-                "dli:description": "Goverment Id",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:idName",
-                "dli:title": "Name",
-                "dli:description": "Name",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:descriptionApartment",
-                "dli:title": "Appartment Description",
-                "dli:description": "Appartment Description",
-                "dli:required": false
-            },
-            {
-                "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:categorizationOccupancyRestriction",
-                "dli:title": "Occupance Restriction",
-                "dli:description": "Occupance Restriction",
+                "dli:attribute": "pot:categorizationUsageBuilding",
+                "dli:title": "Building Usage Type",
+                "dli:description": "Building Usage Type",
                 "dli:required": false
             },
             {
@@ -272,9 +181,16 @@
             },
             {
                 "@type": "pot:SupportedAttribute",
-                "dli:attribute": "pot:categorizationUsageBuilding",
-                "dli:title": "Building Usage Type",
-                "dli:description": "Building Usage Type",
+                "dli:attribute": "pot:descriptionApartment",
+                "dli:title": "Appartment Description",
+                "dli:description": "Appartment Description",
+                "dli:required": false
+            },
+            {
+                "@type": "pot:SupportedAttribute",
+                "dli:attribute": "pot:categorizationOccupancyRestriction",
+                "dli:title": "Occupance Restriction",
+                "dli:description": "Occupance Restriction",
                 "dli:required": false
             }
         ]
