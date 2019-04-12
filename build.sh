@@ -2,6 +2,7 @@
 
 set -eo pipefail
 
+readonly CNAME_ADDRESS="standards.oftrust.net"
 readonly WORKDIR="/src"
 readonly ONT_FILE="/src/ontologies/pot.jsonld"
 readonly OUT_FOLDER="/tmp/html"
@@ -22,3 +23,4 @@ cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
 cp -R "${WORKDIR}/ontologies" "${ARTIFACTS}"/
 cp -R "${WORKDIR}/contexts" "${ARTIFACTS}"/
 cp -R "${WORKDIR}/vocabularies" "${ARTIFACTS}"/
+echo "${CNAME_ADDRESS}" > "${ARTIFACTS}"/CNAME

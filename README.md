@@ -53,11 +53,3 @@ All JSON-LD source files are available under [GitHub Repository](https://github.
 All classes and properties can be investigated in [Data Model structure documentation](https://standards.oftrust.net/).
 
 All JSON-LD source files are available under [GitHub Repository](https://github.com/PlatformOfTrust/standards).
-
-If you are application developer, it might be a good idea to read [Application Development Guide](/developers/getstarted/build-apps) first. 
-
-If you are integrating data and creating data products, take a look at the [Data Product Guide](/developers/getstarted/data-products). 
-
-Digital Twins are fundamental features of the platform, take a look at the [Digital Twin Guide](/developers/getstarted/twins).
-
-Open sandbox is your friend! Isolated environment for testing applications and data product integrations, read more from [Sandbox Guide](/developers/getstarted/sandbox).
