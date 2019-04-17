@@ -376,7 +376,7 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:Air",
+    "@id": "pot:Sensor",
     "@type": "pot:Class",
     "subClassOf": "pot:Device",
     "rdfs:label": [
@@ -389,13 +389,26 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:AirSensor",
+    "@id": "pot:SensorCO2",
     "@type": "pot:Class",
-    "subClassOf": "pot:Air",
+    "subClassOf": "pot:Sensor",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Air sensor"
+        "@value": "Sensor CO2"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:SensorTemperature",
+    "@type": "pot:Class",
+    "subClassOf": "pot:Sensor",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Sensor Temperature"
       }
     ],
     "vs:term_status": "unstable",
@@ -409,32 +422,6 @@
       {
         "@language": "en",
         "@value": "Water"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Heat",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Device",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Heat"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:HeatSensor",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Heat",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Heat sensor"
       }
     ],
     "vs:term_status": "unstable",
@@ -544,7 +531,7 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:ResidentialBuilding",
+    "@id": "pot:BuildingResidental",
     "@type": "pot:Class",
     "subClassOf": "dli:Building",
     "rdfs:label": [
@@ -554,16 +541,16 @@
       },
       {
         "@language": "fi",
-        "@value": "Asuinrakennukset"
+        "@value": "Asuinrakennus"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:DetachedAndSemiDetachedHouse",
+    "@id": "pot:BuildingResidentalDetached",
     "@type": "pot:Class",
-    "subClassOf": "pot:ResidentialBuilding",
+    "subClassOf": "pot:BuildingResidental",
     "rdfs:label": [
       {
         "@language": "en",
@@ -578,9 +565,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:OneDwellingHouse",
+    "@id": "pot:BuildingResidentalDetachedDwellingSingle",
     "@type": "pot:Class",
-    "subClassOf": "pot:DetachedAndSemiDetachedHouse",
+    "subClassOf": "pot:BuildingResidentalDetached",
     "rdfs:label": [
       {
         "@language": "en",
@@ -595,9 +582,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:TwoDwellingHouse",
+    "@id": "pot:BuildingResidentalDetachedDwellingDouble",
     "@type": "pot:Class",
-    "subClassOf": "pot:DetachedAndSemiDetachedHouse",
+    "subClassOf": "pot:BuildingResidentalDetached",
     "rdfs:label": [
       {
         "@language": "en",
@@ -612,9 +599,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:TerracedHouse",
+    "@id": "pot:BuildingResidentalDetachedTerraced",
     "@type": "pot:Class",
-    "subClassOf": "pot:DetachedAndSemiDetachedHouse",
+    "subClassOf": "pot:BuildingResidentalDetached",
     "rdfs:label": [
       {
         "@language": "en",
@@ -629,9 +616,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:BlockOfFlat",
+    "@id": "pot:BuildingResidentalBlockOfFlat",
     "@type": "pot:Class",
-    "subClassOf": "pot:ResidentialBuilding",
+    "subClassOf": "pot:BuildingResidental",
     "rdfs:label": [
       {
         "@language": "en",
@@ -646,9 +633,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:LowRiseBlockOfFlat",
+    "@id": "pot:BuildingResidentalBlockOfFlatLowrise",
     "@type": "pot:Class",
-    "subClassOf": "pot:BlockOfFlat",
+    "subClassOf": "pot:BuildingResidentalBlockOfFlat",
     "rdfs:label": [
       {
         "@language": "en",
@@ -663,26 +650,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:ResidentialBlockOfFlat",
+    "@id": "pot:BuildingResidentalCommunity",
     "@type": "pot:Class",
-    "subClassOf": "pot:BlockOfFlat",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Residential block of flat"
-      },
-      {
-        "@language": "fi",
-        "@value": "Asuinkerrostalo"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:ResidentialBuildingForCommunities",
-    "@type": "pot:Class",
-    "subClassOf": "pot:ResidentialBuilding",
+    "subClassOf": "pot:BuildingResidental",
     "rdfs:label": [
       {
         "@language": "en",
@@ -697,9 +667,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:DwellingForSpecialGroups",
+    "@id": "pot:BuildingResidentalSpecialGroup",
     "@type": "pot:Class",
-    "subClassOf": "pot:ResidentialBuilding",
+    "subClassOf": "pot:BuildingResidental",
     "rdfs:label": [
       {
         "@language": "en",
@@ -714,26 +684,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:FreeTimeResidentialBuildings",
+    "@id": "pot:BuildingFreetime",
     "@type": "pot:Class",
     "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Free-time residential buildings"
-      },
-      {
-        "@language": "fi",
-        "@value": "Vapaa-ajan asuinrakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:FreeTimeResidentialBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:FreeTimeResidentialBuildings",
     "rdfs:label": [
       {
         "@language": "en",
@@ -748,9 +701,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:FreeTimeResidentialBuildingSuitableForYearRoundUse",
+    "@id": "pot:BuildingFreetimeYearRound",
     "@type": "pot:Class",
-    "subClassOf": "pot:FreeTimeResidentialBuilding",
+    "subClassOf": "pot:BuildingFreetime",
     "rdfs:label": [
       {
         "@language": "en",
@@ -765,9 +718,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:FreeTimeResidentialBuildingSuitableForUsePartOfTheYear",
+    "@id": "pot:BuildingFreetimeYearPart",
     "@type": "pot:Class",
-    "subClassOf": "pot:FreeTimeResidentialBuilding",
+    "subClassOf": "pot:BuildingFreetime",
     "rdfs:label": [
       {
         "@language": "en",
@@ -782,13 +735,13 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:CommercialBuildings",
+    "@id": "pot:BuildingCommercial",
     "@type": "pot:Class",
     "subClassOf": "dli:Building",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Commercial buildings"
+        "@value": "Commercial building"
       },
       {
         "@language": "fi",
@@ -799,13 +752,13 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:WholesaleAndRetailTradeBuilding",
+    "@id": "pot:BuildingCommenrcialRetail",
     "@type": "pot:Class",
-    "subClassOf": "pot:CommercialBuildings",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Wholesale and retail trade building"
+        "@value": "Retail trade building"
       },
       {
         "@language": "fi",
@@ -816,1518 +769,60 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:ShoppingHall",
+    "@id": "pot:BuildingCommenrcialRetailShoppingCenter",
     "@type": "pot:Class",
-    "subClassOf": "pot:WholesaleAndRetailTradeBuilding",
+    "subClassOf": "pot:BuildingCommenrcialRetail",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Shopping hall"
+        "@value": "Shopping center"
       },
       {
         "@language": "fi",
-        "@value": "Tukku- ja vähittäiskaupan myymälähalli"
+        "@value": "Kauppakeskus"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:ShopsDepartmentStoreAndShoppingCentre",
+    "@id": "pot:BuildingCommercialEnergy",
     "@type": "pot:Class",
-    "subClassOf": "pot:WholesaleAndRetailTradeBuilding",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Shops, department store and shopping centre"
+        "@value": "Energy supply building"
       },
       {
         "@language": "fi",
-        "@value": "Kauppakeskus ja liike- ja tavaratalo"
+        "@value": "Energiahuoltorakennus"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:OtherWholesaleAndRetailTradeBuilding",
+    "@id": "pot:BuildingCommercialUtility",
     "@type": "pot:Class",
-    "subClassOf": "pot:WholesaleAndRetailTradeBuilding",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Other wholesale and retail trade building"
+        "@value": "Public utility building"
       },
       {
         "@language": "fi",
-        "@value": "Muut myymälärakennus"
+        "@value": "Yhdyskuntatekniikan rakennus"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:HotelBuilding",
+    "@id": "pot:BuildingCommercialWarehouse",
     "@type": "pot:Class",
-    "subClassOf": "pot:CommercialBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Hotel building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Majoitusliikerakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Hotel",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HotelBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Hotel"
-      },
-      {
-        "@language": "fi",
-        "@value": "Hotellit"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:MotelHostelAndSimilarAccommodationBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HotelBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Motel, hostel and similar accommodation building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Motellit, hostellit ja vastaavat majoitusliikerakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:HolidayRestAndRecreationHome",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HotelBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Holiday, rest and recreation home"
-      },
-      {
-        "@language": "fi",
-        "@value": "Loma-, lepo- ja virkistyskodit"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherHotelBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HotelBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other hotel building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muut majoitusliikerakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:RestaurantAndOtherSimilarBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:CommercialBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Restaurant and other similar building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Ravintolarakennus ja vastaavat liikerakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OfficeBuildings",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Office buildings"
-      },
-      {
-        "@language": "fi",
-        "@value": "Toimistorakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OfficeBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OfficeBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Office building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Toimistorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:TransportAndCommunicationsBuildings",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Transport and communications buildings"
-      },
-      {
-        "@language": "fi",
-        "@value": "Liikenteen rakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:TransportAndTransportationIndustryBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:TransportAndCommunicationsBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Transport and transportation industry building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Liikenne- ja kuljetusalan rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:StationBuildingAndTerminal",
-    "@type": "pot:Class",
-    "subClassOf": "pot:TransportAndTransportationIndustryBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Station building and terminal"
-      },
-      {
-        "@language": "fi",
-        "@value": "Asemarakennus ja terminaalit"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:VehicleDepotForProfessionalTransport",
-    "@type": "pot:Class",
-    "subClassOf": "pot:TransportAndTransportationIndustryBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Vehicle depot for professional transport"
-      },
-      {
-        "@language": "fi",
-        "@value": "Ammattiliikenteen kaluston suojarakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:VehicleServiceBuildingForProfessionalTransport",
-    "@type": "pot:Class",
-    "subClassOf": "pot:TransportAndTransportationIndustryBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Vehicle service building for professional transport"
-      },
-      {
-        "@language": "fi",
-        "@value": "Ammattiliikenteen kaluston huoltorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:CarParksAndMultiStoreyCarPark",
-    "@type": "pot:Class",
-    "subClassOf": "pot:TransportAndTransportationIndustryBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Car parks and multi-storey car park"
-      },
-      {
-        "@language": "fi",
-        "@value": "Pysäköintitalo ja -halli"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:VehiclePort",
-    "@type": "pot:Class",
-    "subClassOf": "pot:TransportAndTransportationIndustryBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Vehicle port"
-      },
-      {
-        "@language": "fi",
-        "@value": "Kulkuneuvojen katos"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:InformationAndCommunicationsTechnologyBuildings",
-    "@type": "pot:Class",
-    "subClassOf": "pot:TransportAndCommunicationsBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Information and communications technology buildings"
-      },
-      {
-        "@language": "fi",
-        "@value": "Tieto- ja viestintätekniikan rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:DataCentreAndItArea",
-    "@type": "pot:Class",
-    "subClassOf": "pot:InformationAndCommunicationsTechnologyBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Data centre and IT area"
-      },
-      {
-        "@language": "fi",
-        "@value": "Datakeskus ja laitetila"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:CommunicationsBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:InformationAndCommunicationsTechnologyBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Communications building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Tietoliikenteen rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherTransportAndCommunicationsBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:TransportAndCommunicationsBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other transport and communications building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muut liikenteen rakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:BuildingsForInstitutionalCare",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Buildings for institutional care"
-      },
-      {
-        "@language": "fi",
-        "@value": "Hoitoalan rakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:HealthCareBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingsForInstitutionalCare",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Health care building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Terveydenhuoltorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:HealthCareAndWellnessCentre",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HealthCareBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Health care and wellness centre"
-      },
-      {
-        "@language": "fi",
-        "@value": "Terveys- ja hyvinvointikeskus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:CentralHospital",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HealthCareBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Central hospital"
-      },
-      {
-        "@language": "fi",
-        "@value": "Keskussairaala"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:SpecialHospitalAndLaboratoryBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HealthCareBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Special hospital and laboratory building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Erikoissairaala ja laboratoriorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherHospital",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HealthCareBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other hospital"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu sairaala"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:RehabilitationInstitute",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HealthCareBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Rehabilitation institute"
-      },
-      {
-        "@language": "fi",
-        "@value": "Kuntoutuslaitos"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherHealthCareBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:HealthCareBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other health care building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu terveydenhuoltorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:SocialWorkActivityBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingsForInstitutionalCare",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Social work activity building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Sosiaalipalvelurakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:ResidentialCareActivityBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:SocialWorkActivityBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Residential care activity building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Laitospalvelujen rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:BuildingForSocialWorkActivitiesWithoutAccommodation",
-    "@type": "pot:Class",
-    "subClassOf": "pot:SocialWorkActivityBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Building for social work activities without accommodation"
-      },
-      {
-        "@language": "fi",
-        "@value": "Avopalvelujen rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Prison",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingsForInstitutionalCare",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Prison"
-      },
-      {
-        "@language": "fi",
-        "@value": "Vankilarakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:AssemblyBuildings",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Assembly buildings"
-      },
-      {
-        "@language": "fi",
-        "@value": "Kokoontumisrakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:CulturalBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:AssemblyBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Cultural building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Kulttuurirakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:TheatreMusicAndCongressBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:CulturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Theatre, music and congress building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Teatteri, musiikki- ja kongressitalo"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Cinema",
-    "@type": "pot:Class",
-    "subClassOf": "pot:CulturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Cinema"
-      },
-      {
-        "@language": "fi",
-        "@value": "Elokuvateatteri"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:LibraryAndArchive",
-    "@type": "pot:Class",
-    "subClassOf": "pot:CulturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Library and archive"
-      },
-      {
-        "@language": "fi",
-        "@value": "Kirjasto ja arkisto"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:MuseumAndArtGallery",
-    "@type": "pot:Class",
-    "subClassOf": "pot:CulturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Museum and art gallery"
-      },
-      {
-        "@language": "fi",
-        "@value": "Museo ja taidegalleria"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:ExhibitionAndTradeFairHall",
-    "@type": "pot:Class",
-    "subClassOf": "pot:CulturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Exhibition and trade fair hall"
-      },
-      {
-        "@language": "fi",
-        "@value": "Näyttely- ja messuhalli"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:AssociationAndClubBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:AssemblyBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Association and club building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Seura- ja kerhorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:BuildingOfReligiousCommunities",
-    "@type": "pot:Class",
-    "subClassOf": "pot:AssemblyBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Building of religious communities"
-      },
-      {
-        "@language": "fi",
-        "@value": "Uskonnollisten yhteisöjen rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:BuildingForPracticingReligion",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingOfReligiousCommunities",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Building for practicing religion"
-      },
-      {
-        "@language": "fi",
-        "@value": "Uskonnonharjoittamisrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:ParishHall",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingOfReligiousCommunities",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Parish hall"
-      },
-      {
-        "@language": "fi",
-        "@value": "Seurakuntatalo"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherBuildingOfReligiousCommunities",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingOfReligiousCommunities",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other building of religious communities"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu uskonnollisten yhteisöjen rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:BuildingForSportsAndPhysicalExercise",
-    "@type": "pot:Class",
-    "subClassOf": "pot:AssemblyBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Building for sports and physical exercise"
-      },
-      {
-        "@language": "fi",
-        "@value": "Urheilu- ja liikuntarakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:IndoorIceRink",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingForSportsAndPhysicalExercise",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Indoor ice rink"
-      },
-      {
-        "@language": "fi",
-        "@value": "Jäähalli"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:IndoorSwimmingPool",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingForSportsAndPhysicalExercise",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Indoor swimming pool"
-      },
-      {
-        "@language": "fi",
-        "@value": "Uimahalli"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Gymnasia",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingForSportsAndPhysicalExercise",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Gymnasia"
-      },
-      {
-        "@language": "fi",
-        "@value": "Monitoimihalli"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:SportsAndBallGameHall",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingForSportsAndPhysicalExercise",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Sports and ball game hall"
-      },
-      {
-        "@language": "fi",
-        "@value": "Urheilu- ja palloiluhalli"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:StadiumAndSpectatorBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingForSportsAndPhysicalExercise",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Stadium and spectator building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Stadion- ja katsomorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherBuildingForSportsAndExercise",
-    "@type": "pot:Class",
-    "subClassOf": "pot:BuildingForSportsAndPhysicalExercise",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other building for sports and exercise"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu urheilu- ja liikuntarakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherAssemblyBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:AssemblyBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other assembly building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muut kokoontumisrakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:EducationalBuildings",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Educational buildings"
-      },
-      {
-        "@language": "fi",
-        "@value": "Opetusrakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:EarlyChildhoodEducationBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EducationalBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Early childhood education building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Varhaiskasvatuksen rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Children'SDayCareCentre",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EarlyChildhoodEducationBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Children's day care centre"
-      },
-      {
-        "@language": "fi",
-        "@value": "Lasten päiväkoti"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:GeneralEducationBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EducationalBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "General education building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Yleissivistävien oppilaitosten rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:VocationalEducationBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EducationalBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Vocational education building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Ammatillisten oppilaitosten rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:UniversityAndResearchInstituteBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EducationalBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "University and research institute building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Korkeakoulu- ja tutkimuslaitosrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:UniversityBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:UniversityAndResearchInstituteBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "University building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Korkeakoulurakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:ResearchInstituteBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:UniversityAndResearchInstituteBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Research institute building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Tutkimuslaitosrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherEducationalBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EducationalBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other educational building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muut opetusrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:EducationalBuildingForVoluntaryAdultEducation",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherEducationalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Educational building for voluntary adult education"
-      },
-      {
-        "@language": "fi",
-        "@value": "Vapaan sivistystyön opetusrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:EducationalBuildingOfOrganisationsUnionsEmployersAndSimilar",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherEducationalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Educational building of organisations, unions, employers and similar"
-      },
-      {
-        "@language": "fi",
-        "@value": "Järjestöjen, liittojen, työnantajien ja vastaavien opetusrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:IndustrialAndMiningAndQuarryingBuildings",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Industrial and mining and quarrying buildings"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:IndustrialProductionBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:IndustrialAndMiningAndQuarryingBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Industrial production building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Teollisuuden tuotantorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:GeneralPurposeIndustrialBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:IndustrialProductionBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "General purpose industrial building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Yleiskäyttöinen teollisuushalli"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:HeavyIndustryFactoryBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:IndustrialProductionBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Heavy industry factory building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Raskaan teollisuuden tehdasrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:FoodIndustryProductionBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:IndustrialProductionBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Food industry production building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Elintarviketeollisuuden tuotantorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherIndustrialProductionBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:IndustrialProductionBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other industrial production building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu teollisuuden tuotantorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:WorkshopForIndustryAndSmallScaleIndustry",
-    "@type": "pot:Class",
-    "subClassOf": "pot:IndustrialAndMiningAndQuarryingBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Workshop for industry and small-scale industry"
-      },
-      {
-        "@language": "fi",
-        "@value": "Teollisuus- ja pienteollisuustalot"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:MiningAndQuarryingBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:IndustrialAndMiningAndQuarryingBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Mining and quarrying building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Kaivannaistoiminnan rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:ProcessingBuildingForMetalOres",
-    "@type": "pot:Class",
-    "subClassOf": "pot:MiningAndQuarryingBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Processing building for metal ores"
-      },
-      {
-        "@language": "fi",
-        "@value": "Metallimalmien käsittelyrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherMiningAndQuarryingBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:MiningAndQuarryingBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other mining and quarrying building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu kaivannaistoiminnan rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:EnergySupplyBuildings",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Energy supply buildings"
-      },
-      {
-        "@language": "fi",
-        "@value": "Energiahuoltorakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:EnergyProductionBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EnergySupplyBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Energy production building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Energiantuotantorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:ProductionBuildingForElectricalEnergy",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EnergyProductionBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Production building for electrical energy"
-      },
-      {
-        "@language": "fi",
-        "@value": "Sähköenergian tuotantorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:ProductionBuildingForThermalAndColdEnergy",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EnergyProductionBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Production building for thermal and cold energy"
-      },
-      {
-        "@language": "fi",
-        "@value": "Lämpö- ja kylmäenergian tuotantorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherEnergySupplyBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:EnergySupplyBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other energy supply building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muut energiahuoltorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:EnergyTransferBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherEnergySupplyBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Energy transfer building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Energiansiirtorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:EnergyStorageBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherEnergySupplyBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Energy storage building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Energianvarastointirakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:PublicUtilityBuildings",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Public utility buildings"
-      },
-      {
-        "@language": "fi",
-        "@value": "Yhdyskuntatekniikan rakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:WaterSupplyBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:PublicUtilityBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Water supply building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Vesihuollon rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:WaterIntakeWaterTreatmentAndWaterDistributionBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:WaterSupplyBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Water intake, water treatment and water distribution building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Vedenotto-, vedenpuhdistus- ja vedenjakelurakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:WasteManagementBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:PublicUtilityBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Waste management building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Jätehuollon rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:WasteCollectionWasteTreatmentAndWasteStorageBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:WasteManagementBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Waste collection, waste treatment and waste storage building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Jätteenkeruu-, jätteenkäsittely- ja jätteenvarastointirakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:MaterialRecyclingBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:PublicUtilityBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Material recycling building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Materiaalien kierrätysrakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Warehouses",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Warehouses"
-      },
-      {
-        "@language": "fi",
-        "@value": "Varastorakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Warehouse",
-    "@type": "pot:Class",
-    "subClassOf": "pot:Warehouses",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
@@ -2342,128 +837,468 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:UnheatedWarehouse",
+    "@id": "pot:BuildingCommenrciaWholesale",
     "@type": "pot:Class",
-    "subClassOf": "pot:Warehouse",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Unheated warehouse"
+        "@value": "Wholesale trade building"
       },
       {
         "@language": "fi",
-        "@value": "Lämmittämätön varastot"
+        "@value": "Tukku- ja vähittäiskaupan myymälähalli"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:HeatedWarehouse",
+    "@id": "pot:BuildingCommercialAccommodation",
     "@type": "pot:Class",
-    "subClassOf": "pot:Warehouse",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Heated warehouse"
+        "@value": "Accommodation Building"
       },
       {
         "@language": "fi",
-        "@value": "Lämmin varastot"
+        "@value": "Majoitusliikerakennus"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:ColdAndFreezerWarehouse",
+    "@id": "pot:BuildingCommercialAccommodationHotel",
     "@type": "pot:Class",
-    "subClassOf": "pot:Warehouse",
+    "subClassOf": "pot:BuildingCommercialAccommodation",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Cold and freezer warehouse"
+        "@value": "Hotel"
       },
       {
         "@language": "fi",
-        "@value": "Kylmä- ja pakastevarasto"
+        "@value": "Hotelli"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:OtherWarehouseWithControlledConditions",
+    "@id": "pot:BuildingCommercialAccommodationHostel",
     "@type": "pot:Class",
-    "subClassOf": "pot:Warehouse",
+    "subClassOf": "pot:BuildingCommercialAccommodation",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Other warehouse with controlled conditions"
+        "@value": "Motel, hostel and similar accommodation building"
       },
       {
         "@language": "fi",
-        "@value": "Muu olosuhteiltaan säädellyt varasto"
+        "@value": "Hostelli tai motelli rakennus"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:LogisticsCentreAndOtherMultiPurposeWarehouseBuilding",
+    "@id": "pot:BuildingCommercialAccommodationRecreation",
     "@type": "pot:Class",
-    "subClassOf": "pot:Warehouse",
+    "subClassOf": "pot:BuildingCommercialAccommodation",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Logistics centre and other multi-purpose warehouse building"
+        "@value": "Recreation home"
       },
       {
         "@language": "fi",
-        "@value": "Logistiikkakeskus ja muu monikäyttöiset varastorakennus"
+        "@value": "Loma-, lepo- ja virkistysrakennus"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:Shed",
+    "@id": "pot:BuildingCommercialRestaurant",
     "@type": "pot:Class",
-    "subClassOf": "pot:Warehouse",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Shed"
+        "@value": "Restaurant and other similar building"
       },
       {
         "@language": "fi",
-        "@value": "Varastokatos"
+        "@value": "Ravintolarakennus ja vastaavat liikerakennus"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:RescueServiceBuildings",
+    "@id": "pot:BuildingCommercialOffice",
     "@type": "pot:Class",
-    "subClassOf": "dli:Building",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Rescue service buildings"
+        "@value": "Office building"
       },
       {
         "@language": "fi",
-        "@value": "Pelastustoimen rakennukset"
+        "@value": "Toimistorakennus"
       }
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:RescueServiceBuilding",
+    "@id": "pot:BuildingCommercialTransport",
     "@type": "pot:Class",
-    "subClassOf": "pot:RescueServiceBuildings",
+    "subClassOf": "pot:BuildingCommercial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Transport and communications buildings"
+      },
+      {
+        "@language": "fi",
+        "@value": "Liikennerakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialCare",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Buildings for institutional care"
+      },
+      {
+        "@language": "fi",
+        "@value": "Hoitoalan rakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialCareHealtCare",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialCare",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Health care building"
+      },
+      {
+        "@language": "fi",
+        "@value": "Terveydenhuoltorakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialCareHospital",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialCare",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Central hospital"
+      },
+      {
+        "@language": "fi",
+        "@value": "Keskussairaala"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialCareRehabilitation",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialCare",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Rehabilitation institute"
+      },
+      {
+        "@language": "fi",
+        "@value": "Kuntoutuslaitos"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialCareSocialWork",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialCare",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Social work activity building"
+      },
+      {
+        "@language": "fi",
+        "@value": "Sosiaalipalvelurakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialCarePrison",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialCare",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Prison"
+      },
+      {
+        "@language": "fi",
+        "@value": "Vankilarakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocial",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Social building"
+      },
+      {
+        "@language": "fi",
+        "@value": "Kokoontumisrakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialTheater",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Theatre, music and congress building"
+      },
+      {
+        "@language": "fi",
+        "@value": "Teatterirakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialSportHall",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Building for sports and physical exercise"
+      },
+      {
+        "@language": "fi",
+        "@value": "Urheilu- ja liikuntarakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialCongressHall",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Congress Hall"
+      },
+      {
+        "@language": "fi",
+        "@value": "Kongressikeskus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialMusicHall",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Music Hall"
+      },
+      {
+        "@language": "fi",
+        "@value": "Musiikitalo"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialCinema",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Cinema"
+      },
+      {
+        "@language": "fi",
+        "@value": "Elokuvateatteri"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialLibrary",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Library and archive"
+      },
+      {
+        "@language": "fi",
+        "@value": "Kirjasto ja arkisto"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialMuseum",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Museum and art gallery"
+      },
+      {
+        "@language": "fi",
+        "@value": "Museo ja taidegalleria"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialExhibitionHall",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Exhibition and trade fair hall"
+      },
+      {
+        "@language": "fi",
+        "@value": "Näyttely- ja messuhalli"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialClub",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Association and club building"
+      },
+      {
+        "@language": "fi",
+        "@value": "Seura- ja kerhorakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialSocialReligious",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercialSocial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Religion building"
+      },
+      {
+        "@language": "fi",
+        "@value": "Uskonnollisten yhteisöjen rakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingCommercialIndustrial",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Industrial and mining and quarrying building"
+      },
+      {
+        "@language": "fi",
+        "@value": "Teollisuusrakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingEducational",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercial",
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Educational building"
+      },
+      {
+        "@language": "fi",
+        "@value": "Opetusrakennus"
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BuildingRescue",
+    "@type": "pot:Class",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
@@ -2478,9 +1313,9 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:FireStation",
+    "@id": "pot:BuildingRescueFireStation",
     "@type": "pot:Class",
-    "subClassOf": "pot:RescueServiceBuilding",
+    "subClassOf": "pot:BuildingRescue",
     "rdfs:label": [
       {
         "@language": "en",
@@ -2495,408 +1330,17 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:CivilDefenceShelter",
+    "@id": "pot:BuildingAgriculture",
     "@type": "pot:Class",
-    "subClassOf": "pot:RescueServiceBuilding",
+    "subClassOf": "pot:BuildingCommercial",
     "rdfs:label": [
       {
         "@language": "en",
-        "@value": "Civil defence shelter"
+        "@value": "Agricultural building"
       },
       {
         "@language": "fi",
-        "@value": "Väestönsuoja"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherRescueServiceBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:RescueServiceBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other rescue service building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu pelastustoimen rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:AgriculturalBuildingsAndLivestockShelters",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Agricultural buildings and livestock shelters"
-      },
-      {
-        "@language": "fi",
-        "@value": "Maatalousrakennukset ja eläinsuojat"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:LivestockBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:AgriculturalBuildingsAndLivestockShelters",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Livestock building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Kotieläinrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:BuildingForDairyCattle",
-    "@type": "pot:Class",
-    "subClassOf": "pot:LivestockBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Building for dairy cattle"
-      },
-      {
-        "@language": "fi",
-        "@value": "Lypsykarjarakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:BeefCattleBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:LivestockBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Beef cattle building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Lihakarjarakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Piggery",
-    "@type": "pot:Class",
-    "subClassOf": "pot:LivestockBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Piggery"
-      },
-      {
-        "@language": "fi",
-        "@value": "Sikalat"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:SheepfoldAndGoatBarn",
-    "@type": "pot:Class",
-    "subClassOf": "pot:LivestockBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Sheepfold and goat barn"
-      },
-      {
-        "@language": "fi",
-        "@value": "Lampola ja vuohinavetta"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:HorseStable",
-    "@type": "pot:Class",
-    "subClassOf": "pot:LivestockBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Horse stable"
-      },
-      {
-        "@language": "fi",
-        "@value": "Hevostalli"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:PoultryBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:LivestockBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Poultry building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Siipikarjarakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:FurAnimalBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:LivestockBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Fur animal building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Turkiseläinrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherAnimalShelter",
-    "@type": "pot:Class",
-    "subClassOf": "pot:LivestockBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other animal shelter"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu eläinsuoja"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherAgriculturalBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:AgriculturalBuildingsAndLivestockShelters",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other agricultural building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu maatalousrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Greenhouse",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherAgriculturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Greenhouse"
-      },
-      {
-        "@language": "fi",
-        "@value": "Kasvihuone"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:GrainDryingAndStorageBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherAgriculturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Grain drying and storage building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Viljankuivaamo ja viljansäilytysrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:AgriculturalStorageBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherAgriculturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Agricultural storage building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Maatalouden varastorakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:ManureStorage",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherAgriculturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Manure storage"
-      },
-      {
-        "@language": "fi",
-        "@value": "Lantala"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherBuildingInAgricultureForestryAndFishing",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherAgriculturalBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other building in agriculture, forestry and fishing"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu maa-, metsä- ja kalatalouden rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherBuildings",
-    "@type": "pot:Class",
-    "subClassOf": "dli:Building",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other buildings"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muut rakennukset"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:OtherBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherBuildings",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Other building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Muu rakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:SaunaBuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Sauna building"
-      },
-      {
-        "@language": "fi",
-        "@value": "Saunarakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:Outbuilding",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Outbuilding"
-      },
-      {
-        "@language": "fi",
-        "@value": "Talousrakennus"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:HutAndLodge",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "Hut and lodge"
-      },
-      {
-        "@language": "fi",
-        "@value": "Maja ja tupa"
-      }
-    ],
-    "vs:term_status": "unstable",
-    "owl:versionInfo": "DRAFT"
-  },
-  {
-    "@id": "pot:BE23UildingNEC",
-    "@type": "pot:Class",
-    "subClassOf": "pot:OtherBuilding",
-    "rdfs:label": [
-      {
-        "@language": "en",
-        "@value": "B+E23uilding n.e.c."
-      },
-      {
-        "@language": "fi",
-        "@value": "Muualla luokittelematon rakennus"
+        "@value": "Maatalousrakennus"
       }
     ],
     "vs:term_status": "unstable",
@@ -4518,7 +2962,7 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:Communications System",
+    "@id": "pot:CommunicationsSystem",
     "@type": "pot:Class",
     "subClassOf": "pot:BuildingSystems",
     "rdfs:label": [
@@ -4537,7 +2981,7 @@
   {
     "@id": "pot:Communication",
     "@type": "pot:Class",
-    "subClassOf": "pot:Communications System",
+    "subClassOf": "pot:CommunicationsSystem",
     "rdfs:label": [
       {
         "@language": "en",
@@ -4554,7 +2998,7 @@
   {
     "@id": "pot:TelephoneNetwork",
     "@type": "pot:Class",
-    "subClassOf": "pot:Communications System",
+    "subClassOf": "pot:CommunicationsSystem",
     "rdfs:label": [
       {
         "@language": "en",
@@ -4571,7 +3015,7 @@
   {
     "@id": "pot:EntryPhone",
     "@type": "pot:Class",
-    "subClassOf": "pot:Communications System",
+    "subClassOf": "pot:CommunicationsSystem",
     "rdfs:label": [
       {
         "@language": "en",
@@ -4588,7 +3032,7 @@
   {
     "@id": "pot:Antenna",
     "@type": "pot:Class",
-    "subClassOf": "pot:Communications System",
+    "subClassOf": "pot:CommunicationsSystem",
     "rdfs:label": [
       {
         "@language": "en",
@@ -4605,7 +3049,7 @@
   {
     "@id": "pot:Sound",
     "@type": "pot:Class",
-    "subClassOf": "pot:Communications System",
+    "subClassOf": "pot:CommunicationsSystem",
     "rdfs:label": [
       {
         "@language": "en",
@@ -4622,7 +3066,7 @@
   {
     "@id": "pot:Video",
     "@type": "pot:Class",
-    "subClassOf": "pot:Communications System",
+    "subClassOf": "pot:CommunicationsSystem",
     "rdfs:label": [
       {
         "@language": "en",
@@ -4639,7 +3083,7 @@
   {
     "@id": "pot:InformationNetwork",
     "@type": "pot:Class",
-    "subClassOf": "pot:Communications System",
+    "subClassOf": "pot:CommunicationsSystem",
     "rdfs:label": [
       {
         "@language": "en",
