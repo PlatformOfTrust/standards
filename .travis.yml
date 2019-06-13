@@ -5,10 +5,13 @@ before_install:
   - docker build -t doc-build .
   - chmod +x docker-run.sh
   - chmod +x build.sh
+  - chmod +x travis-validation.sh
 
 install: true
 
-script: ./docker-run.sh
+script: 
+  - ./travis-validation.sh
+  - ./docker-run.sh
 
 # Deploy to GitHub pages
 deploy:
