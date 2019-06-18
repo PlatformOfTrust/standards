@@ -3,8 +3,8 @@
 set -eo pipefail
 
 readonly CNAME_ADDRESS="standards.oftrust.net"
-readonly WORKDIR="/src"
-readonly ONT_FILE="/src/ontologies/pot.jsonld"
+readonly WORKDIR="/src/v1"
+readonly ONT_FILE="${WORKDIR}/ontology/pot.jsonld"
 readonly OUT_FOLDER="/tmp/html"
 readonly ARTIFACTS="/artifacts"
 readonly THEME="darkly"
@@ -20,7 +20,7 @@ echo 2 | ontodocs "${ONT_FILE}" -o "${OUT_FOLDER}" -t "Platform Of Trust" --them
 cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
 
 # Copy over the ontologies and contexts to GH pages
-cp -R "${WORKDIR}/ontologies" "${ARTIFACTS}"/
-cp -R "${WORKDIR}/contexts" "${ARTIFACTS}"/
-cp -R "${WORKDIR}/vocabularies" "${ARTIFACTS}"/
+cp -R "${WORKDIR}/context" "${ARTIFACTS}"/
+cp -R "${WORKDIR}/vocabulary" "${ARTIFACTS}"/
+cp -R "${WORKDIR}/classdefinitions" "${ARTIFACTS}"/
 echo "${CNAME_ADDRESS}" > "${ARTIFACTS}"/CNAME

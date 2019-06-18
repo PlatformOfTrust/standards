@@ -1,0 +1,184 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "@vocab": "http://verbose.terrikon.co/v1/Vocabulary/Person"
+    },
+    "@id": "http://verbose.terrikon.co/v1/Vocabulary/Person",
+    "pot:supportedClass": {
+        "@id": "dli:Person",
+        "@type": "pot:Class",
+        "subClassOf": "https://standards.oftrust.net/ontologies/pot.jsonld#",
+        "rdfs:label": [
+            {
+                "@language": "en-us",
+                "@value": "Person"
+            }
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable",
+        "pot:supportedAttribute": {
+            "name": {
+                "@id": "pot:name",
+                "@type": "pot:SupportedAttribute",
+                "dli:title": "name",
+                "dli:description": "name",
+                "dli:required": true
+            },
+            "data": {
+                "@id": "dli:data",
+                "@type": "pot:SupportedAttribute",
+                "dli:title": "data",
+                "dli:description": "data",
+                "dli:required": true
+            },
+            "descriptionAdditionalInformation": {
+                "@id": "pot:descriptionAdditionalInformation",
+                "@type": "pot:SupportedAttribute",
+                "dli:title": "Additional information",
+                "dli:required": false,
+                "dli:description": [
+                    {
+                        "@language": "en-us",
+                        "@value": "Additional information"
+                    }
+                ],
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "idBirthdate": {
+                "@id": "pot:idBirthdate",
+                "@type": "pot:SupportedAttribute",
+                "dli:title": "Date of birth",
+                "dli:required": false,
+                "dli:description": [
+                    {
+                        "@language": "en-us",
+                        "@value": "Birthdate of the person"
+                    }
+                ],
+                "dli:valueType": [
+                    "xsd:date"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:date"
+                }
+            },
+            "idNameFirst": {
+                "@id": "pot:idNameFirst",
+                "@type": "pot:SupportedAttribute",
+                "dli:title": "First Name",
+                "dli:required": false,
+                "dli:description": [
+                    {
+                        "@language": "en-us",
+                        "@value": "First name of the person"
+                    }
+                ],
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "idNameLast": {
+                "@id": "pot:idNameLast",
+                "@type": "pot:SupportedAttribute",
+                "dli:title": "Last name",
+                "dli:required": false,
+                "dli:description": [
+                    {
+                        "@language": "en-us",
+                        "@value": "Last name of the person"
+                    }
+                ],
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "idNameMiddle": {
+                "@id": "pot:idNameMiddle",
+                "@type": "pot:SupportedAttribute",
+                "dli:title": "Middle names",
+                "dli:required": false,
+                "dli:description": [
+                    {
+                        "@language": "en-us",
+                        "@value": "Middle names of the person"
+                    }
+                ],
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "idOfficial": {
+                "@id": "pot:idOfficial",
+                "@type": "pot:SupportedAttribute",
+                "dli:title": "Identity number",
+                "dli:required": false,
+                "dli:description": [
+                    {
+                        "@language": "en-us",
+                        "@value": "Official identifier of the person in Finland"
+                    }
+                ],
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:length": "11",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "lifeCycleStatusCurrent": {
+                "@id": "pot:lifeCycleStatusCurrent",
+                "@type": "pot:SupportedAttribute",
+                "dli:title": "Life cycle status",
+                "dli:required": false,
+                "dli:description": [
+                    {
+                        "@language": "en-us",
+                        "@value": "Life cycle status"
+                    }
+                ],
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            }
+        }
+    }
+}
