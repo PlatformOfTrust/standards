@@ -1,64 +1,61 @@
 {
     "@context": {
         "@version": 1.1,
-        "rdf": {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-            "@prefix": true
-        },
-        "rdfs": {
-            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
             "@prefix": true
         },
         "dli": {
-            "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+            "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
             "@prefix": true
         },
         "pot": {
-            "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
-        "@vocab": "http://verbose.terrikon.co/v1/Vocabulary/Virtual/Process"
+        "description": {
+            "@id": "pot:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "pot:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Virtual/Process"
     },
-    "@id": "http://verbose.terrikon.co/v1/Vocabulary/Virtual/Process",
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Virtual/Process",
     "pot:supportedClass": {
         "@id": "dli:Virtual/Process",
-        "@type": "pot:Class",
+        "@type": "dli:Class",
         "subClassOf": "dli:Virtual",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Process"
-            }
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable",
+        "pot:label": {
+            "en-us": "Process"
+        },
         "pot:supportedAttribute": {
-            "name": {
-                "@id": "pot:name",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "name",
-                "dli:description": "name",
-                "dli:required": true
-            },
             "data": {
-                "@id": "dli:data",
+                "@id": "pot:data",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "data",
-                "dli:description": "data",
-                "dli:required": true
+                "pot:title": "data",
+                "pot:description": {
+                    "en-us": "data"
+                },
+                "pot:required": false
             },
             "description": {
                 "@id": "pot:description",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Process description",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Description of the process"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Process description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the process"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -69,15 +66,12 @@
             "idLocal": {
                 "@id": "pot:idLocal",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Process Id",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Locally given identifier for the process instance"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Process Id",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Locally given identifier for the process instance"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -88,15 +82,12 @@
             "idNameLocal": {
                 "@id": "pot:idNameLocal",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Process name - local",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Locally given name (source system name) for the process"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Process name - local",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Locally given name (source system name) for the process"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -107,72 +98,12 @@
             "lifeCycleStatusCurrent": {
                 "@id": "pot:lifeCycleStatusCurrent",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Process status",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Process state"
-                    }
-                ],
-                "dli:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "locationName": {
-                "@id": "pot:locationName",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "Location",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Location where the process is executed"
-                    }
-                ],
-                "dli:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "outputValue": {
-                "@id": "pot:outputValue",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "Output value",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Output value of the process"
-                    }
-                ],
-                "dli:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "outputValueUnit": {
-                "@id": "pot:outputValueUnit",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "Output value unit",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Unit used for the process output value"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Process status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Process state"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -180,18 +111,63 @@
                     "xsd:base": "xsd:string"
                 }
             },
+            "locationName": {
+                "@id": "pot:locationName",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Location",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Location where the process is executed"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "outputValue": {
+                "@id": "pot:outputValue",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Output value",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Output value of the process"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "outputValueUnit": {
+                "@id": "pot:outputValueUnit",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Output value unit",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Unit used for the process output value"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
             "physicalQuantity": {
                 "@id": "pot:physicalQuantity",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Quantity",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Quantity of the processes executed or to be executed"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Quantity",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Quantity of the processes executed or to be executed"
+                },
+                "pot:valueType": [
                     "xsd:int"
                 ],
                 "xsd:restriction": {
@@ -201,15 +177,12 @@
             "timeDuration": {
                 "@id": "pot:timeDuration",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Duration time",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Duration of the process"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Duration time",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Duration of the process"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -220,15 +193,12 @@
             "timeEndTime": {
                 "@id": "pot:timeEndTime",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "End time",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "End time of the process"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "End time",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "End time of the process"
+                },
+                "pot:valueType": [
                     "xsd:dateTime"
                 ],
                 "xsd:restriction": {
@@ -238,15 +208,12 @@
             "timeStartTime": {
                 "@id": "pot:timeStartTime",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Start time",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Start time of the process"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Start time",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Start time of the process"
+                },
+                "pot:valueType": [
                     "xsd:dateTime"
                 ],
                 "xsd:restriction": {

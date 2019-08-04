@@ -1,64 +1,61 @@
 {
     "@context": {
         "@version": 1.1,
-        "rdf": {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-            "@prefix": true
-        },
-        "rdfs": {
-            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
             "@prefix": true
         },
         "dli": {
-            "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+            "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
             "@prefix": true
         },
         "pot": {
-            "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
-        "@vocab": "http://verbose.terrikon.co/v1/Vocabulary/Virtual/Project"
+        "description": {
+            "@id": "pot:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "pot:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Virtual/Project"
     },
-    "@id": "http://verbose.terrikon.co/v1/Vocabulary/Virtual/Project",
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Virtual/Project",
     "pot:supportedClass": {
         "@id": "dli:Virtual/Project",
-        "@type": "pot:Class",
+        "@type": "dli:Class",
         "subClassOf": "dli:Virtual",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Project"
-            }
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable",
+        "pot:label": {
+            "en-us": "Project"
+        },
         "pot:supportedAttribute": {
-            "name": {
-                "@id": "pot:name",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "name",
-                "dli:description": "name",
-                "dli:required": true
-            },
             "data": {
-                "@id": "dli:data",
+                "@id": "pot:data",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "data",
-                "dli:description": "data",
-                "dli:required": true
+                "pot:title": "data",
+                "pot:description": {
+                    "en-us": "data"
+                },
+                "pot:required": false
             },
             "description": {
                 "@id": "pot:description",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Project description",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Description of the project"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Project description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the project"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -69,15 +66,12 @@
             "idLocal": {
                 "@id": "pot:idLocal",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Project Id",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Local identifier for the project"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Project Id",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Local identifier for the project"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -88,15 +82,12 @@
             "idNameLocal": {
                 "@id": "pot:idNameLocal",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Project name",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Locally given name for the project"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Project name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Locally given name for the project"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -107,34 +98,28 @@
             "lifeCycleStatusCurrent": {
                 "@id": "pot:lifeCycleStatusCurrent",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Project status",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Project state"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Project status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Project state"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "timeDuration": {
                 "@id": "pot:timeDuration",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Duration time",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Duration of the project"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Duration time",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Duration of the project"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -145,15 +130,12 @@
             "timeDurationEstimate": {
                 "@id": "pot:timeDurationEstimate",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Estimated duration",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Estimated duration of the project"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Estimated duration",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Estimated duration of the project"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -164,15 +146,12 @@
             "timeEndTime": {
                 "@id": "pot:timeEndTime",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "End time",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "End time of the project"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "End time",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "End time of the project"
+                },
+                "pot:valueType": [
                     "xsd:dateTime"
                 ],
                 "xsd:restriction": {
@@ -182,15 +161,12 @@
             "timeStartTime": {
                 "@id": "pot:timeStartTime",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Start time",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Start time of the project"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Start time",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Start time of the project"
+                },
+                "pot:valueType": [
                     "xsd:dateTime"
                 ],
                 "xsd:restriction": {

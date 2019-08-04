@@ -1,122 +1,97 @@
 {
     "@version": 1.1,
     "pot": {
-        "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+        "@id": "https://standards.oftrust.net/v1/Vocabulary/",
         "@prefix": true
     },
     "dli": {
-        "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+        "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
         "@prefix": true
     },
-    "descriptionAdditionalInformation": {
-        "@id": "pot:descriptionAdditionalInformation",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Additional information"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Lis\u00e4tiedot"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Additional information"
-            }
-        ],
-        "domain": [
-            "dli:Person",
-            "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:System",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+    "rdf": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "@prefix": true
     },
-    "idNameMiddle": {
-        "@id": "pot:idNameMiddle",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Middle names"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Toinen nimi"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Middle names of the person"
-            }
-        ],
-        "domain": [
-            "dli:Person"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+    "rdfs": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "@prefix": true
     },
-    "idBirthdate": {
-        "@id": "pot:idBirthdate",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Syntym\u00e4aika"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Date of birth"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Birthdate of the person"
-            }
-        ],
-        "domain": [
-            "dli:Person"
-        ],
-        "range": [
-            "xsd:date"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+    "owl": {
+        "@id": "http://www.w3.org/2002/07/owl#",
+        "@prefix": true
     },
-    "idNameLast": {
+    "vs": {
+        "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    },
+    "xsd": {
+        "@id": "http://www.w3.org/2001/XMLSchema#",
+        "@prefix": true
+    },
+    "label": {
+        "@id": "pot:label",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "comment": {
+        "@id": "pot:comment",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "Person": {
+        "@id": "dli:Person",
+        "@type": "dli:Class",
+        "pot:label": [
+            {
+                "rdfs:label": {
+                    "@language": "en-us",
+                    "@value": "Person"
+                }
+            }
+        ],
+        "pot:comment": [
+            {
+                "rdfs:comment": {
+                    "@language": "en-us",
+                    "@value": "Human being"
+                }
+            }
+        ],
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT"
+    },
+    "lastName": {
         "@id": "pot:idNameLast",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Sukunimi"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Last name"
-            }
+        "pot:label": {
+            "fi-fi": "Sukunimi",
+            "en-us": "Last name"
+        },
+        "pot:comment": {
+            "en-us": "Last name of the person"
+        },
+        "domain": [
+            "dli:Person"
         ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Last name of the person"
-            }
+        "range": [
+            "xsd:string"
         ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "firstName": {
+        "@id": "pot:idNameFirst",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Etunimi",
+            "en-us": "First Name"
+        },
+        "pot:comment": {
+            "en-us": "First name of the person"
+        },
         "domain": [
             "dli:Person"
         ],
@@ -129,55 +104,18 @@
     "idOfficial": {
         "@id": "pot:idOfficial",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Identity number"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Henkil\u00f6tunnus"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Official identifier of the person in Finland"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Identity number",
+            "fi-fi": "Henkilötunnus"
+        },
+        "pot:comment": {
+            "en-us": "Official identifier of the person in Finland"
+        },
         "domain": [
-            "pot:Room",
-            "pot:RealEstate",
+            "dli:Space",
             "dli:Person",
-            "dli:Space"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idNameFirst": {
-        "@id": "pot:idNameFirst",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "First Name"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Etunimi"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "First name of the person"
-            }
-        ],
-        "domain": [
-            "dli:Person"
+            "pot:RealEstate",
+            "pot:Room"
         ],
         "range": [
             "xsd:string"
@@ -188,38 +126,92 @@
     "lifeCycleStatusCurrent": {
         "@id": "pot:lifeCycleStatusCurrent",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Elinkaari - Status"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Life cycle status",
+            "fi-fi": "Elinkaari - Status"
+        },
+        "pot:comment": {
+            "en-us": "Life cycle status"
+        },
         "domain": [
-            "pot:Case",
-            "dli:Person",
+            "dli:Product",
             "pot:Building",
-            "pot:RealEstate",
             "pot:Organization",
-            "pot:Device",
+            "dli:System",
+            "pot:Case",
+            "dli:Process",
+            "dli:Project",
+            "pot:Story",
             "pot:BuildingElement",
             "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:Project",
-            "dli:System",
+            "dli:Person",
             "pot:Room",
-            "dli:Process"
+            "dli:Space",
+            "pot:Device",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idBirthdate": {
+        "@id": "pot:idBirthdate",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Syntymäaika",
+            "en-us": "Date of birth"
+        },
+        "pot:comment": {
+            "en-us": "Birthdate of the person"
+        },
+        "domain": [
+            "dli:Person"
+        ],
+        "range": [
+            "xsd:date"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "descriptionAdditionalInformation": {
+        "@id": "pot:descriptionAdditionalInformation",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Additional information",
+            "fi-fi": "Lisätiedot"
+        },
+        "pot:comment": {
+            "en-us": "Additional information"
+        },
+        "domain": [
+            "dli:Product",
+            "dli:System",
+            "dli:Person",
+            "dli:Link",
+            "dli:Space",
+            "pot:Story",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "middleName": {
+        "@id": "pot:idNameMiddle",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Toinen nimi",
+            "en-us": "Middle names"
+        },
+        "pot:comment": {
+            "en-us": "Middle names of the person"
+        },
+        "domain": [
+            "dli:Person"
         ],
         "range": [
             "xsd:string"

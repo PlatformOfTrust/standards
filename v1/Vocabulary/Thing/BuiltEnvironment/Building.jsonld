@@ -1,34 +1,88 @@
 {
     "@version": 1.1,
     "pot": {
-        "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+        "@id": "https://standards.oftrust.net/v1/Vocabulary/",
         "@prefix": true
     },
     "dli": {
-        "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+        "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
         "@prefix": true
     },
-    "idOfficialTemporary": {
-        "@id": "pot:idOfficialTemporary",
+    "rdf": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "@prefix": true
+    },
+    "rdfs": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "@prefix": true
+    },
+    "owl": {
+        "@id": "http://www.w3.org/2002/07/owl#",
+        "@prefix": true
+    },
+    "vs": {
+        "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    },
+    "xsd": {
+        "@id": "http://www.w3.org/2001/XMLSchema#",
+        "@prefix": true
+    },
+    "label": {
+        "@id": "pot:label",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "comment": {
+        "@id": "pot:comment",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "Building": {
+        "@id": "pot:Building",
+        "@type": "pot:Class",
+        "subClassOf": "dli:BuiltEnvironment",
+        "pot:label": [
+            {
+                "rdfs:label": {
+                    "@language": "en-us",
+                    "@value": "Building"
+                }
+            }
+        ],
+        "pot:comment": [
+            {
+                "rdfs:comment": {
+                    "@language": "en-us",
+                    "@value": "Building is structure composed of elements (walls, roof, floor) and devices and typically has permanent location"
+                }
+            }
+        ],
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT"
+    },
+    "idIfcGuid": {
+        "@id": "pot:idIfcGuid",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "V\u00e4liaikainen rakennustunnus"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Temporary official Id"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Temporary identifier given officially to the building in Finland"
-            }
-        ],
+        "pot:label": {
+            "en-us": "IFC GUID",
+            "fi-fi": "IFC GUID"
+        },
+        "pot:comment": {
+            "en-us": "IFC standard based Globally Unique Identifier"
+        },
         "domain": [
-            "pot:Building"
+            "pot:Device",
+            "pot:Organization",
+            "pot:Story",
+            "dli:Space",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:BuildingElement"
         ],
         "range": [
             "xsd:string"
@@ -39,22 +93,13 @@
     "lifeCycleInaugurationMomentYear": {
         "@id": "pot:lifeCycleInaugurationMomentYear",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "K\u00e4ytt\u00f6\u00f6nottovuosi"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Inauguration year"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Inauguration year of the building"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Käyttöönottovuosi",
+            "en-us": "Inauguration year"
+        },
+        "pot:comment": {
+            "en-us": "Inauguration year of the building"
+        },
         "domain": [
             "pot:Building"
         ],
@@ -64,58 +109,40 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "categorizationCultureHistorySignificance": {
-        "@id": "pot:categorizationCultureHistorySignificance",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Kulttuurihistoriallisesti merkitt\u00e4v\u00e4"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Cultural or historical significance"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Categorization if building is culturally significant"
-            }
-        ],
-        "domain": [
-            "pot:Building"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
     "physicalAreaSquareMeterFloorNet": {
         "@id": "pot:physicalAreaSquareMeterFloorNet",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Kerrosala - netto"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Floor net square meters"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Net square meters of floor space/area"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Kerrosala - netto",
+            "en-us": "Floor net square meters"
+        },
+        "pot:comment": {
+            "en-us": "Net square meters of floor space/area"
+        },
         "domain": [
             "pot:Building"
         ],
         "range": [
             "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idOfficialTemporary": {
+        "@id": "pot:idOfficialTemporary",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Temporary official Id",
+            "fi-fi": "Väliaikainen rakennustunnus"
+        },
+        "pot:comment": {
+            "en-us": "Temporary identifier given officially to the building in Finland"
+        },
+        "domain": [
+            "pot:Building"
+        ],
+        "range": [
+            "xsd:string"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
@@ -123,22 +150,13 @@
     "physicalAreaSquareMeterLivingNet": {
         "@id": "pot:physicalAreaSquareMeterLivingNet",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Asuin pinta-ala - netto"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Living space net square meters"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Living space net square meters"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Asuin pinta-ala - netto",
+            "en-us": "Living space net square meters"
+        },
+        "pot:comment": {
+            "en-us": "Living space net square meters"
+        },
         "domain": [
             "pot:Building"
         ],
@@ -148,25 +166,16 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "idOfficialPermanent": {
-        "@id": "pot:idOfficialPermanent",
+    "categorizationCultureHistorySignificance": {
+        "@id": "pot:categorizationCultureHistorySignificance",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Permanent official Id"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Pysyv\u00e4 rakennustunnus\u00a0"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Permanent identifier given officially to the building in Finland"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Cultural or historical significance",
+            "fi-fi": "Kulttuurihistoriallisesti merkittävä"
+        },
+        "pot:comment": {
+            "en-us": "Categorization if building is culturally significant"
+        },
         "domain": [
             "pot:Building"
         ],
@@ -176,37 +185,21 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "idIfcGuid": {
-        "@id": "pot:idIfcGuid",
+    "lifeCycleInspectionMomentYear": {
+        "@id": "pot:lifeCycleInspectionMomentYear",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "IFC GUID"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "IFC GUID"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "IFC standard based Globally Unique Identifier"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Loppukatselmus",
+            "en-us": "Inspection year"
+        },
+        "pot:comment": {
+            "en-us": "Inspection year of the building"
+        },
         "domain": [
-            "pot:Storey",
-            "pot:RealEstate",
-            "pot:Organization",
-            "pot:BuildingElement",
-            "pot:Room",
-            "pot:Building",
-            "pot:Device",
-            "dli:Space"
+            "pot:Building"
         ],
         "range": [
-            "xsd:string"
+            "xsd:gYear"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
@@ -214,36 +207,105 @@
     "description": {
         "@id": "pot:description",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Rakennuksen kuvaus"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Building description"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Description of the building"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Building description",
+            "fi-fi": "Rakennuksen kuvaus"
+        },
+        "pot:comment": {
+            "en-us": "Description of the building"
+        },
         "domain": [
-            "pot:Room",
-            "dli:Space",
-            "pot:Case",
-            "dli:Product",
-            "pot:Storey",
-            "dli:Project",
-            "pot:RealEstate",
-            "dli:System",
-            "dli:Process",
             "pot:Device",
+            "pot:Room",
+            "pot:RealEstate",
+            "pot:BuildingElement",
+            "dli:Space",
+            "pot:Story",
+            "dli:Process",
+            "dli:Project",
+            "pot:Case",
+            "pot:Organization",
+            "dli:System",
+            "pot:Building",
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "name": {
+        "@id": "pot:idName",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Building name",
+            "fi-fi": "Rakennuksen nimi"
+        },
+        "pot:comment": {
+            "en-us": "Name of the building"
+        },
+        "domain": [
+            "pot:Organization",
+            "pot:Room",
+            "pot:Device",
+            "pot:BuildingElement",
+            "pot:Building",
+            "dli:System",
+            "dli:Product",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idOfficialPermanent": {
+        "@id": "pot:idOfficialPermanent",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Pysyvä rakennustunnus ",
+            "en-us": "Permanent official Id"
+        },
+        "pot:comment": {
+            "en-us": "Permanent identifier given officially to the building in Finland"
+        },
+        "domain": [
+            "pot:Building"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "lifeCycleStatusCurrent": {
+        "@id": "pot:lifeCycleStatusCurrent",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Elinkaari - Status",
+            "en-us": "Life cycle status"
+        },
+        "pot:comment": {
+            "en-us": "Life cycle status of the building"
+        },
+        "domain": [
+            "dli:Product",
             "pot:Building",
             "pot:Organization",
-            "pot:BuildingElement"
+            "dli:System",
+            "pot:Case",
+            "dli:Process",
+            "dli:Project",
+            "pot:Story",
+            "pot:BuildingElement",
+            "dli:Link",
+            "dli:Person",
+            "pot:Room",
+            "dli:Space",
+            "pot:Device",
+            "pot:RealEstate"
         ],
         "range": [
             "xsd:string"
@@ -254,28 +316,43 @@
     "physicalHeight": {
         "@id": "pot:physicalHeight",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Korkeus"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Height"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Height of the building"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Korkeus",
+            "en-us": "Height"
+        },
+        "pot:comment": {
+            "en-us": "Height of the building"
+        },
         "domain": [
-            "dli:Space",
-            "pot:Room",
-            "pot:BuildingElement",
             "pot:Building",
-            "pot:Device"
+            "pot:Device",
+            "pot:Room",
+            "dli:Space",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "physicalVolume": {
+        "@id": "pot:physicalVolume",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Tilavuus",
+            "en-us": "Volume"
+        },
+        "pot:comment": {
+            "en-us": "Volume of the building"
+        },
+        "domain": [
+            "pot:Room",
+            "pot:Device",
+            "pot:BuildingElement",
+            "dli:Space",
+            "pot:Building",
+            "pot:Story"
         ],
         "range": [
             "xsd:decimal"
@@ -286,165 +363,18 @@
     "lifeCycleCompletionMomentYear": {
         "@id": "pot:lifeCycleCompletionMomentYear",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Valmistumisvuosi\u00a0"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Completion year"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Completion year of the building"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Valmistumisvuosi ",
+            "en-us": "Completion year"
+        },
+        "pot:comment": {
+            "en-us": "Completion year of the building"
+        },
         "domain": [
             "pot:Building"
         ],
         "range": [
             "xsd:gYear"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idName": {
-        "@id": "pot:idName",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Rakennuksen nimi"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Building name"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Name of the building"
-            }
-        ],
-        "domain": [
-            "pot:Room",
-            "pot:Building",
-            "dli:System",
-            "dli:Product",
-            "pot:BuildingElement",
-            "pot:Organization",
-            "pot:RealEstate",
-            "pot:Device"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalVolume": {
-        "@id": "pot:physicalVolume",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Volume"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Tilavuus"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Volume of the building"
-            }
-        ],
-        "domain": [
-            "dli:Space",
-            "pot:BuildingElement",
-            "pot:Storey",
-            "pot:Building",
-            "pot:Device",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "lifeCycleInspectionMomentYear": {
-        "@id": "pot:lifeCycleInspectionMomentYear",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Inspection year"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Loppukatselmus"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Inspection year of the building"
-            }
-        ],
-        "domain": [
-            "pot:Building"
-        ],
-        "range": [
-            "xsd:gYear"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "lifeCycleStatusCurrent": {
-        "@id": "pot:lifeCycleStatusCurrent",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Elinkaari - Status"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status of the building"
-            }
-        ],
-        "domain": [
-            "pot:Case",
-            "dli:Person",
-            "pot:Building",
-            "pot:RealEstate",
-            "pot:Organization",
-            "pot:Device",
-            "pot:BuildingElement",
-            "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:Project",
-            "dli:System",
-            "pot:Room",
-            "dli:Process"
-        ],
-        "range": [
-            "xsd:string"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"

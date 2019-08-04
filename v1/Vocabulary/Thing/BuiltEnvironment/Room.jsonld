@@ -1,39 +1,283 @@
 {
     "@version": 1.1,
     "pot": {
-        "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+        "@id": "https://standards.oftrust.net/v1/Vocabulary/",
         "@prefix": true
     },
     "dli": {
-        "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+        "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
         "@prefix": true
+    },
+    "rdf": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "@prefix": true
+    },
+    "rdfs": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "@prefix": true
+    },
+    "owl": {
+        "@id": "http://www.w3.org/2002/07/owl#",
+        "@prefix": true
+    },
+    "vs": {
+        "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    },
+    "xsd": {
+        "@id": "http://www.w3.org/2001/XMLSchema#",
+        "@prefix": true
+    },
+    "label": {
+        "@id": "pot:label",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "comment": {
+        "@id": "pot:comment",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "Room": {
+        "@id": "pot:Room",
+        "@type": "pot:Class",
+        "subClassOf": "dli:BuiltEnvironment",
+        "pot:label": [
+            {
+                "rdfs:label": {
+                    "@language": "en-us",
+                    "@value": "Room"
+                }
+            }
+        ],
+        "pot:comment": [
+            {
+                "rdfs:comment": {
+                    "@language": "en-us",
+                    "@value": "Room is any space enclosed within four walls to which entry is possible only by a door that connects it either to a passageway to another room, or to the outdoors, that is large enough for several persons to move about, and whose size, fixtures, furnishings, and sometimes placement within the building support the activity to be conducted in it."
+                }
+            }
+        ],
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT"
+    },
+    "physicalPresence": {
+        "@id": "pot:physicalPresence",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Presence",
+            "fi-fi": "Läsnäolo"
+        },
+        "pot:comment": {
+            "en-us": "Presence of a specific object in the room"
+        },
+        "domain": [
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:Boolean"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idOfficial": {
+        "@id": "pot:idOfficial",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Viranomaisen tunniste",
+            "en-us": "Official Id"
+        },
+        "pot:comment": {
+            "en-us": "Officially given identifier for the space"
+        },
+        "domain": [
+            "dli:Space",
+            "dli:Person",
+            "pot:RealEstate",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "categorizationUsageMain": {
+        "@id": "pot:categorizationUsageMain",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Käyttötarkoitus",
+            "en-us": "Main usage purpose"
+        },
+        "pot:comment": {
+            "en-us": "Main usage purpose"
+        },
+        "domain": [
+            "pot:Room",
+            "pot:RealEstate",
+            "dli:Space",
+            "dli:System"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "description": {
+        "@id": "pot:description",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Room description",
+            "fi-fi": "Huoneen kuvaus"
+        },
+        "pot:comment": {
+            "en-us": "Description of the room"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:Room",
+            "pot:RealEstate",
+            "pot:BuildingElement",
+            "dli:Space",
+            "pot:Story",
+            "dli:Process",
+            "dli:Project",
+            "pot:Case",
+            "pot:Organization",
+            "dli:System",
+            "pot:Building",
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "physicalQuantity": {
+        "@id": "pot:physicalQuantity",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Lukumäärä",
+            "en-us": "Quantity"
+        },
+        "pot:comment": {
+            "en-us": "Quantity of specific objects in the room"
+        },
+        "domain": [
+            "pot:Room",
+            "dli:Process"
+        ],
+        "range": [
+            "xsd:int"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "name": {
+        "@id": "pot:idName",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Room name",
+            "fi-fi": "Huoneen nimi"
+        },
+        "pot:comment": {
+            "en-us": "Name of the room"
+        },
+        "domain": [
+            "pot:Organization",
+            "pot:Room",
+            "pot:Device",
+            "pot:BuildingElement",
+            "pot:Building",
+            "dli:System",
+            "dli:Product",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "lifeCycleStatusCurrent": {
+        "@id": "pot:lifeCycleStatusCurrent",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Life cycle status",
+            "fi-fi": "Elinkaari - Status"
+        },
+        "pot:comment": {
+            "en-us": "Life cycle status"
+        },
+        "domain": [
+            "dli:Product",
+            "pot:Building",
+            "pot:Organization",
+            "dli:System",
+            "pot:Case",
+            "dli:Process",
+            "dli:Project",
+            "pot:Story",
+            "pot:BuildingElement",
+            "dli:Link",
+            "dli:Person",
+            "pot:Room",
+            "dli:Space",
+            "pot:Device",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "physicalVolume": {
+        "@id": "pot:physicalVolume",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Volume",
+            "fi-fi": "Tilavuus"
+        },
+        "pot:comment": {
+            "en-us": "Volume of the object"
+        },
+        "domain": [
+            "pot:Room",
+            "pot:Device",
+            "pot:BuildingElement",
+            "dli:Space",
+            "pot:Building",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
     },
     "descriptionAdditionalInformation": {
         "@id": "pot:descriptionAdditionalInformation",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Lis\u00e4tiedot"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Additional information"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Additional information"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Additional information",
+            "fi-fi": "Lisätiedot"
+        },
+        "pot:comment": {
+            "en-us": "Additional information"
+        },
         "domain": [
-            "dli:Person",
-            "dli:Link",
-            "pot:Storey",
-            "dli:Space",
             "dli:Product",
             "dli:System",
+            "dli:Person",
+            "dli:Link",
+            "dli:Space",
+            "pot:Story",
             "pot:Room"
         ],
         "range": [
@@ -45,23 +289,81 @@
     "physicalTemperature": {
         "@id": "pot:physicalTemperature",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Temperature"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "L\u00e4mp\u00f6tila"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Temperature of the room"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Temperature",
+            "fi-fi": "Lämpötila"
+        },
+        "pot:comment": {
+            "en-us": "Temperature of the room"
+        },
         "domain": [
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "physicalSizeAreaLivingAudited": {
+        "@id": "pot:physicalSizeAreaLivingAudited",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Audited living area size",
+            "fi-fi": "Asuinpinta-ala - tarkistusmitattu"
+        },
+        "pot:comment": {
+            "en-us": "Size of audited area suitable for, or used for, living"
+        },
+        "domain": [
+            "pot:Room",
+            "dli:Space",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idIfcGuid": {
+        "@id": "pot:idIfcGuid",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "IFC GUID",
+            "fi-fi": "IFC GUID"
+        },
+        "pot:comment": {
+            "en-us": "IFC standard based Globally Unique Identifier"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:Organization",
+            "pot:Story",
+            "dli:Space",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "physicalSizeAreaFloor": {
+        "@id": "pot:physicalSizeAreaFloor",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Pinta-ala/Kerrosala",
+            "en-us": "Floor area size"
+        },
+        "pot:comment": {
+            "en-us": "Area of the space"
+        },
+        "domain": [
+            "dli:Space",
             "pot:Room"
         ],
         "range": [
@@ -73,57 +375,20 @@
     "categorizationOfficial": {
         "@id": "pot:categorizationOfficial",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Space type - official"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Tilatyyppi - viranomainen"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Space type name derived from official categorization naming"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Space type - official",
+            "fi-fi": "Tilatyyppi - viranomainen"
+        },
+        "pot:comment": {
+            "en-us": "Space type name derived from official categorization naming"
+        },
         "domain": [
-            "pot:Organization",
             "dli:Space",
-            "pot:Room"
+            "pot:Room",
+            "pot:Organization"
         ],
         "range": [
             "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalPresence": {
-        "@id": "pot:physicalPresence",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Presence"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "L\u00e4sn\u00e4olo"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Presence of a specific object in the room"
-            }
-        ],
-        "domain": [
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:Boolean"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
@@ -131,449 +396,16 @@
     "physicalSizeAreaLiving": {
         "@id": "pot:physicalSizeAreaLiving",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Living area size"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Huoneistoala/Asuinpinta-ala"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Size of area suitable for, or used for. living"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Huoneistoala/Asuinpinta-ala",
+            "en-us": "Living area size"
+        },
+        "pot:comment": {
+            "en-us": "Size of area suitable for, or used for. living"
+        },
         "domain": [
             "dli:Space",
-            "pot:Storey",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "description": {
-        "@id": "pot:description",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Room description"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Huoneen kuvaus"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Description of the room"
-            }
-        ],
-        "domain": [
-            "pot:Room",
-            "dli:Space",
-            "pot:Case",
-            "dli:Product",
-            "pot:Storey",
-            "dli:Project",
-            "pot:RealEstate",
-            "dli:System",
-            "dli:Process",
-            "pot:Device",
-            "pot:Building",
-            "pot:Organization",
-            "pot:BuildingElement"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "categorizationUsageMain": {
-        "@id": "pot:categorizationUsageMain",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "K\u00e4ytt\u00f6tarkoitus"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Main usage purpose"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Main usage purpose"
-            }
-        ],
-        "domain": [
-            "dli:System",
-            "pot:Room",
-            "dli:Space",
-            "pot:RealEstate"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idIfcGuid": {
-        "@id": "pot:idIfcGuid",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "IFC GUID"
-            },
-            {
-                "@language": "en-us",
-                "@value": "IFC GUID"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "IFC standard based Globally Unique Identifier"
-            }
-        ],
-        "domain": [
-            "pot:Storey",
-            "pot:RealEstate",
-            "pot:Organization",
-            "pot:BuildingElement",
-            "pot:Room",
-            "pot:Building",
-            "pot:Device",
-            "dli:Space"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalHeight": {
-        "@id": "pot:physicalHeight",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Korkeus"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Height"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Height of the object"
-            }
-        ],
-        "domain": [
-            "dli:Space",
-            "pot:Room",
-            "pot:BuildingElement",
-            "pot:Building",
-            "pot:Device"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalSizeAreaLivingAudited": {
-        "@id": "pot:physicalSizeAreaLivingAudited",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Asuinpinta-ala - tarkistusmitattu"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Audited living area size"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Size of audited area suitable for, or used for, living"
-            }
-        ],
-        "domain": [
-            "pot:Storey",
-            "pot:Room",
-            "dli:Space"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "categorizationLocal": {
-        "@id": "pot:categorizationLocal",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Tilatyyppi - paikallinen"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Space type - local"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Space type name derived from local categorization naming"
-            }
-        ],
-        "domain": [
-            "dli:Space",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idName": {
-        "@id": "pot:idName",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Room name"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Huoneen nimi"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Name of the room"
-            }
-        ],
-        "domain": [
-            "pot:Room",
-            "pot:Building",
-            "dli:System",
-            "dli:Product",
-            "pot:BuildingElement",
-            "pot:Organization",
-            "pot:RealEstate",
-            "pot:Device"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idOfficial": {
-        "@id": "pot:idOfficial",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Official Id"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Viranomaisen tunniste"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Officially given identifier for the space"
-            }
-        ],
-        "domain": [
-            "pot:Room",
-            "pot:RealEstate",
-            "dli:Person",
-            "dli:Space"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "lifeCycleStatusCurrent": {
-        "@id": "pot:lifeCycleStatusCurrent",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Elinkaari - Status"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status"
-            }
-        ],
-        "domain": [
-            "pot:Case",
-            "dli:Person",
-            "pot:Building",
-            "pot:RealEstate",
-            "pot:Organization",
-            "pot:Device",
-            "pot:BuildingElement",
-            "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:Project",
-            "dli:System",
-            "pot:Room",
-            "dli:Process"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalQuantity": {
-        "@id": "pot:physicalQuantity",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Quantity"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Lukum\u00e4\u00e4r\u00e4"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Quantity of specific objects in the room"
-            }
-        ],
-        "domain": [
-            "dli:Process",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:int"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalVolume": {
-        "@id": "pot:physicalVolume",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Tilavuus"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Volume"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Volume of the object"
-            }
-        ],
-        "domain": [
-            "dli:Space",
-            "pot:BuildingElement",
-            "pot:Storey",
-            "pot:Building",
-            "pot:Device",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalCarbonDioxide": {
-        "@id": "pot:physicalCarbonDioxide",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Carbon dioxide"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Hiilidioksidi"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Carbon dioxide level of the room"
-            }
-        ],
-        "domain": [
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalSizeAreaFloor": {
-        "@id": "pot:physicalSizeAreaFloor",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Floor area size"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Pinta-ala/Kerrosala"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Area of the space"
-            }
-        ],
-        "domain": [
-            "dli:Space",
+            "pot:Story",
             "pot:Room"
         ],
         "range": [
@@ -585,29 +417,82 @@
     "idLocal": {
         "@id": "pot:idLocal",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Paikallinen tunniste"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Local Id"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Locally given identifier for the space"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Paikallinen tunniste",
+            "en-us": "Local Id"
+        },
+        "pot:comment": {
+            "en-us": "Locally given identifier for the space"
+        },
         "domain": [
-            "dli:Project",
-            "pot:Case",
             "dli:Space",
-            "pot:Room",
             "dli:Process",
-            "pot:Storey"
+            "pot:Case",
+            "dli:Project",
+            "pot:Story",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "physicalCarbonDioxide": {
+        "@id": "pot:physicalCarbonDioxide",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Hiilidioksidi",
+            "en-us": "Carbon dioxide"
+        },
+        "pot:comment": {
+            "en-us": "Carbon dioxide level of the room"
+        },
+        "domain": [
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "physicalHeight": {
+        "@id": "pot:physicalHeight",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Korkeus",
+            "en-us": "Height"
+        },
+        "pot:comment": {
+            "en-us": "Height of the object"
+        },
+        "domain": [
+            "pot:Building",
+            "pot:Device",
+            "pot:Room",
+            "dli:Space",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "categorizationLocal": {
+        "@id": "pot:categorizationLocal",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Tilatyyppi - paikallinen",
+            "en-us": "Space type - local"
+        },
+        "pot:comment": {
+            "en-us": "Space type name derived from local categorization naming"
+        },
+        "domain": [
+            "pot:Room",
+            "dli:Space"
         ],
         "range": [
             "xsd:string"

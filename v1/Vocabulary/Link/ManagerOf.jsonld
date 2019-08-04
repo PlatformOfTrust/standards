@@ -1,32 +1,78 @@
 {
     "@version": 1.1,
     "pot": {
-        "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+        "@id": "https://standards.oftrust.net/v1/Vocabulary/",
         "@prefix": true
     },
     "dli": {
-        "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+        "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
         "@prefix": true
     },
-    "identity2": {
-        "@id": "pot:identity2",
+    "rdf": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "@prefix": true
+    },
+    "rdfs": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "@prefix": true
+    },
+    "owl": {
+        "@id": "http://www.w3.org/2002/07/owl#",
+        "@prefix": true
+    },
+    "vs": {
+        "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    },
+    "xsd": {
+        "@id": "http://www.w3.org/2001/XMLSchema#",
+        "@prefix": true
+    },
+    "label": {
+        "@id": "pot:label",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "comment": {
+        "@id": "pot:comment",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "ManagerOf": {
+        "@id": "pot:ManagerOf",
+        "@type": "pot:Class",
+        "subClassOf": "dli:Link",
+        "pot:label": [
+            {
+                "rdfs:label": {
+                    "@language": "en-us",
+                    "@value": "Manager of"
+                }
+            }
+        ],
+        "pot:comment": [
+            {
+                "rdfs:comment": {
+                    "@language": "en-us",
+                    "@value": "A role which is a manager relationship "
+                }
+            }
+        ],
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT"
+    },
+    "to": {
+        "@id": "pot:to",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Objekti 2"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Object 2"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Entity which is linked"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Indentity to"
+        },
+        "pot:comment": {
+            "en-us": "Identity which is linked"
+        },
         "domain": [
             "dli:Link"
         ],
@@ -36,64 +82,21 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "descriptionAdditionalInformation": {
-        "@id": "pot:descriptionAdditionalInformation",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Additional information"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Lis\u00e4tiedot"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Additional information"
-            }
-        ],
-        "domain": [
-            "dli:Person",
-            "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:System",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
     "timeStartTime": {
         "@id": "pot:timeStartTime",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Start time"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Aloitusaika"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Start time"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Start time",
+            "fi-fi": "Aloitusaika"
+        },
+        "pot:comment": {
+            "en-us": "Start time"
+        },
         "domain": [
             "pot:Case",
-            "dli:Link",
+            "dli:Project",
             "dli:Process",
-            "dli:Project"
+            "dli:Link"
         ],
         "range": [
             "xsd:dateTime"
@@ -101,25 +104,49 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
+    "lifeCycleStatusCurrent": {
+        "@id": "pot:lifeCycleStatusCurrent",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Lice-cycle status",
+            "fi-fi": "Elinkaari - Status"
+        },
+        "pot:comment": {
+            "en-us": "Life-cycle status"
+        },
+        "domain": [
+            "dli:Product",
+            "pot:Building",
+            "pot:Organization",
+            "dli:System",
+            "pot:Case",
+            "dli:Process",
+            "dli:Project",
+            "pot:Story",
+            "pot:BuildingElement",
+            "dli:Link",
+            "dli:Person",
+            "pot:Room",
+            "dli:Space",
+            "pot:Device",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
     "timeEndTime": {
         "@id": "pot:timeEndTime",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Lopetusaika"
-            },
-            {
-                "@language": "en-us",
-                "@value": "End time"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "End time"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Lopetusaika",
+            "en-us": "End time"
+        },
+        "pot:comment": {
+            "en-us": "End time"
+        },
         "domain": [
             "dli:Project",
             "dli:Process",
@@ -132,25 +159,15 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "identity1": {
-        "@id": "pot:identity1",
+    "from": {
+        "@id": "pot:from",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Object 1"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Objekti 1"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Entity which is linked"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Indentity from"
+        },
+        "pot:comment": {
+            "en-us": "Identity which is linked"
+        },
         "domain": [
             "dli:Link"
         ],
@@ -160,41 +177,24 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "lifeCycleStatusCurrent": {
-        "@id": "pot:lifeCycleStatusCurrent",
+    "descriptionAdditionalInformation": {
+        "@id": "pot:descriptionAdditionalInformation",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Lice-cycle status"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Elinkaari - Status"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Life-cycle status"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Lisätiedot",
+            "en-us": "Additional information"
+        },
+        "pot:comment": {
+            "en-us": "Additional information"
+        },
         "domain": [
-            "pot:Case",
-            "dli:Person",
-            "pot:Building",
-            "pot:RealEstate",
-            "pot:Organization",
-            "pot:Device",
-            "pot:BuildingElement",
-            "dli:Link",
-            "pot:Storey",
-            "dli:Space",
             "dli:Product",
-            "dli:Project",
             "dli:System",
-            "pot:Room",
-            "dli:Process"
+            "dli:Person",
+            "dli:Link",
+            "dli:Space",
+            "pot:Story",
+            "pot:Room"
         ],
         "range": [
             "xsd:string"

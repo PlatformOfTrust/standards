@@ -1,64 +1,61 @@
 {
     "@context": {
         "@version": 1.1,
-        "rdf": {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-            "@prefix": true
-        },
-        "rdfs": {
-            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
             "@prefix": true
         },
         "dli": {
-            "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+            "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
             "@prefix": true
         },
         "pot": {
-            "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
-        "@vocab": "http://verbose.terrikon.co/v1/Vocabulary/Thing/BuiltEnvironment/Room"
+        "description": {
+            "@id": "pot:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "pot:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Thing/BuiltEnvironment/Room"
     },
-    "@id": "http://verbose.terrikon.co/v1/Vocabulary/Thing/BuiltEnvironment/Room",
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Thing/BuiltEnvironment/Room",
     "pot:supportedClass": {
         "@id": "pot:Thing/BuiltEnvironment/Room",
         "@type": "pot:Class",
         "subClassOf": "dli:Thing/BuiltEnvironment",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Room"
-            }
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable",
+        "pot:label": {
+            "en-us": "Room"
+        },
         "pot:supportedAttribute": {
-            "name": {
-                "@id": "pot:name",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "name",
-                "dli:description": "name",
-                "dli:required": true
-            },
             "data": {
-                "@id": "dli:data",
+                "@id": "pot:data",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "data",
-                "dli:description": "data",
-                "dli:required": true
+                "pot:title": "data",
+                "pot:description": {
+                    "en-us": "data"
+                },
+                "pot:required": false
             },
             "categorizationLocal": {
                 "@id": "pot:categorizationLocal",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Space type - local",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Space type name derived from local categorization naming"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Space type - local",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Space type name derived from local categorization naming"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -69,34 +66,28 @@
             "categorizationOfficial": {
                 "@id": "pot:categorizationOfficial",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Space type - official",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Space type name derived from official categorization naming"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Space type - official",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Space type name derived from official categorization naming"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             },
             "categorizationUsageMain": {
                 "@id": "pot:categorizationUsageMain",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Main usage purpose",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Main usage purpose"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Main usage purpose",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Main usage purpose"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -107,15 +98,12 @@
             "description": {
                 "@id": "pot:description",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Room description",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Description of the room"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Room description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the room"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -126,53 +114,44 @@
             "descriptionAdditionalInformation": {
                 "@id": "pot:descriptionAdditionalInformation",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Additional information",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Additional information"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Additional information",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Additional information"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "500",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "500"
                 }
             },
             "idIfcGuid": {
                 "@id": "pot:idIfcGuid",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "IFC GUID",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "IFC standard based Globally Unique Identifier"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "IFC GUID",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:length": "22"
+                    "xsd:length": "22",
+                    "xsd:base": "xsd:string"
                 }
             },
             "idLocal": {
                 "@id": "pot:idLocal",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Local Id",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Locally given identifier for the space"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Local Id",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Locally given identifier for the space"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -180,18 +159,15 @@
                     "xsd:maxLength": "50"
                 }
             },
-            "idName": {
+            "name": {
                 "@id": "pot:idName",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Room name",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Name of the room"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Room name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Name of the room"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -202,53 +178,44 @@
             "idOfficial": {
                 "@id": "pot:idOfficial",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Official Id",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Officially given identifier for the space"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Official Id",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Officially given identifier for the space"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:length": "11",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "11"
                 }
             },
             "lifeCycleStatusCurrent": {
                 "@id": "pot:lifeCycleStatusCurrent",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Life cycle status",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Life cycle status"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Life cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life cycle status"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "physicalCarbonDioxide": {
                 "@id": "pot:physicalCarbonDioxide",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Carbon dioxide",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Carbon dioxide level of the room"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Carbon dioxide",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Carbon dioxide level of the room"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -258,15 +225,12 @@
             "physicalHeight": {
                 "@id": "pot:physicalHeight",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Height",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Height of the object"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Height",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Height of the object"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -276,15 +240,12 @@
             "physicalPresence": {
                 "@id": "pot:physicalPresence",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Presence",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Presence of a specific object in the room"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Presence",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Presence of a specific object in the room"
+                },
+                "pot:valueType": [
                     "xsd:Boolean"
                 ],
                 "xsd:restriction": {
@@ -294,15 +255,12 @@
             "physicalQuantity": {
                 "@id": "pot:physicalQuantity",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Quantity",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Quantity of specific objects in the room"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Quantity",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Quantity of specific objects in the room"
+                },
+                "pot:valueType": [
                     "xsd:int"
                 ],
                 "xsd:restriction": {
@@ -312,15 +270,12 @@
             "physicalSizeAreaFloor": {
                 "@id": "pot:physicalSizeAreaFloor",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Floor area size",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Area of the space"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Floor area size",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Area of the space"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -330,15 +285,12 @@
             "physicalSizeAreaLiving": {
                 "@id": "pot:physicalSizeAreaLiving",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Living area size",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Size of area suitable for, or used for. living"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Living area size",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Size of area suitable for, or used for. living"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -348,15 +300,12 @@
             "physicalSizeAreaLivingAudited": {
                 "@id": "pot:physicalSizeAreaLivingAudited",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Audited living area size",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Size of audited area suitable for, or used for, living"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Audited living area size",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Size of audited area suitable for, or used for, living"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -366,15 +315,12 @@
             "physicalTemperature": {
                 "@id": "pot:physicalTemperature",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Temperature",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Temperature of the room"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Temperature",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Temperature of the room"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -384,15 +330,12 @@
             "physicalVolume": {
                 "@id": "pot:physicalVolume",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Volume",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Volume of the object"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Volume",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Volume of the object"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {

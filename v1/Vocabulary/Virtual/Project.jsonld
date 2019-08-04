@@ -1,137 +1,103 @@
 {
     "@version": 1.1,
     "pot": {
-        "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+        "@id": "https://standards.oftrust.net/v1/Vocabulary/",
         "@prefix": true
     },
     "dli": {
-        "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+        "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
         "@prefix": true
+    },
+    "rdf": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "@prefix": true
+    },
+    "rdfs": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "@prefix": true
+    },
+    "owl": {
+        "@id": "http://www.w3.org/2002/07/owl#",
+        "@prefix": true
+    },
+    "vs": {
+        "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    },
+    "xsd": {
+        "@id": "http://www.w3.org/2001/XMLSchema#",
+        "@prefix": true
+    },
+    "label": {
+        "@id": "pot:label",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "comment": {
+        "@id": "pot:comment",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "Project": {
+        "@id": "dli:Project",
+        "@type": "dli:Class",
+        "subClassOf": "dli:Virtual",
+        "pot:label": [
+            {
+                "rdfs:label": {
+                    "@language": "en-us",
+                    "@value": "Project"
+                }
+            }
+        ],
+        "pot:comment": [
+            {
+                "rdfs:comment": {
+                    "@language": "en-us",
+                    "@value": "Project (or program) any undertaking, carried out individually or collaboratively and  that is carefully planned to achieve a particular aim.  Typically project is long lasting and is combining lots of resouces and contains  lots of processes"
+                }
+            }
+        ],
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT"
     },
     "idNameLocal": {
         "@id": "pot:idNameLocal",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Projektin nimi"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Project name"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Locally given name for the project"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Project name",
+            "fi-fi": "Projektin nimi"
+        },
+        "pot:comment": {
+            "en-us": "Locally given name for the project"
+        },
         "domain": [
-            "pot:Case",
-            "dli:Project",
-            "dli:Process"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "timeDuration": {
-        "@id": "pot:timeDuration",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Duration time"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Kesto"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Duration of the project"
-            }
-        ],
-        "domain": [
-            "pot:Case",
-            "dli:Project",
-            "dli:Process"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "timeStartTime": {
-        "@id": "pot:timeStartTime",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Aloitusaika"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Start time"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Start time of the project"
-            }
-        ],
-        "domain": [
-            "pot:Case",
-            "dli:Link",
             "dli:Process",
+            "pot:Case",
             "dli:Project"
         ],
         "range": [
-            "xsd:dateTime"
+            "xsd:string"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "description": {
-        "@id": "pot:description",
+    "timeDurationEstimate": {
+        "@id": "pot:timeDurationEstimate",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Projektin kuvaus"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Project description"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Description of the project"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Estimated duration",
+            "fi-fi": "Arvioitu kesto"
+        },
+        "pot:comment": {
+            "en-us": "Estimated duration of the project"
+        },
         "domain": [
-            "pot:Room",
-            "dli:Space",
             "pot:Case",
-            "dli:Product",
-            "pot:Storey",
-            "dli:Project",
-            "pot:RealEstate",
-            "dli:System",
-            "dli:Process",
-            "pot:Device",
-            "pot:Building",
-            "pot:Organization",
-            "pot:BuildingElement"
+            "dli:Project"
         ],
         "range": [
             "xsd:string"
@@ -142,29 +108,20 @@
     "idLocal": {
         "@id": "pot:idLocal",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Project Id"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Projektin tunniste"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Local identifier for the project"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Projektin tunniste",
+            "en-us": "Project Id"
+        },
+        "pot:comment": {
+            "en-us": "Local identifier for the project"
+        },
         "domain": [
-            "dli:Project",
-            "pot:Case",
             "dli:Space",
-            "pot:Room",
             "dli:Process",
-            "pot:Storey"
+            "pot:Case",
+            "dli:Project",
+            "pot:Story",
+            "pot:Room"
         ],
         "range": [
             "xsd:string"
@@ -172,30 +129,21 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "timeEndTime": {
-        "@id": "pot:timeEndTime",
+    "timeStartTime": {
+        "@id": "pot:timeStartTime",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "End time"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Lopetusaika"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "End time of the project"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
+        },
+        "pot:comment": {
+            "en-us": "Start time of the project"
+        },
         "domain": [
+            "pot:Case",
             "dli:Project",
             "dli:Process",
-            "dli:Link",
-            "pot:Case"
+            "dli:Link"
         ],
         "range": [
             "xsd:dateTime"
@@ -203,28 +151,51 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "timeDurationEstimate": {
-        "@id": "pot:timeDurationEstimate",
+    "timeDuration": {
+        "@id": "pot:timeDuration",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Estimated duration"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Arvioitu kesto"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Estimated duration of the project"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Kesto",
+            "en-us": "Duration time"
+        },
+        "pot:comment": {
+            "en-us": "Duration of the project"
+        },
         "domain": [
+            "dli:Project",
             "pot:Case",
-            "dli:Project"
+            "dli:Process"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "description": {
+        "@id": "pot:description",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Projektin kuvaus",
+            "en-us": "Project description"
+        },
+        "pot:comment": {
+            "en-us": "Description of the project"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:Room",
+            "pot:RealEstate",
+            "pot:BuildingElement",
+            "dli:Space",
+            "pot:Story",
+            "dli:Process",
+            "dli:Project",
+            "pot:Case",
+            "pot:Organization",
+            "dli:System",
+            "pot:Building",
+            "dli:Product"
         ],
         "range": [
             "xsd:string"
@@ -235,41 +206,54 @@
     "lifeCycleStatusCurrent": {
         "@id": "pot:lifeCycleStatusCurrent",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Project status"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Projektin tila"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Project state"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Project status",
+            "fi-fi": "Projektin tila"
+        },
+        "pot:comment": {
+            "en-us": "Project state"
+        },
         "domain": [
-            "pot:Case",
-            "dli:Person",
+            "dli:Product",
             "pot:Building",
-            "pot:RealEstate",
             "pot:Organization",
-            "pot:Device",
+            "dli:System",
+            "pot:Case",
+            "dli:Process",
+            "dli:Project",
+            "pot:Story",
             "pot:BuildingElement",
             "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:Project",
-            "dli:System",
+            "dli:Person",
             "pot:Room",
-            "dli:Process"
+            "dli:Space",
+            "pot:Device",
+            "pot:RealEstate"
         ],
         "range": [
             "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "timeEndTime": {
+        "@id": "pot:timeEndTime",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Lopetusaika",
+            "en-us": "End time"
+        },
+        "pot:comment": {
+            "en-us": "End time of the project"
+        },
+        "domain": [
+            "dli:Project",
+            "dli:Process",
+            "dli:Link",
+            "pot:Case"
+        ],
+        "range": [
+            "xsd:dateTime"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"

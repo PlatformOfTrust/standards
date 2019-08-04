@@ -27,15 +27,15 @@
                 "@set"
             ]
         },
-        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Virtual/Product"
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Thing/BuiltEnvironment/Story"
     },
-    "@id": "https://standards.oftrust.net/v1/Vocabulary/Virtual/Product",
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Thing/BuiltEnvironment/Story",
     "pot:supportedClass": {
-        "@id": "dli:Virtual/Product",
-        "@type": "dli:Class",
-        "subClassOf": "dli:Virtual",
+        "@id": "pot:Thing/BuiltEnvironment/Story",
+        "@type": "pot:Class",
+        "subClassOf": "dli:Thing/BuiltEnvironment",
         "pot:label": {
-            "en-us": "Product"
+            "en-us": "Story"
         },
         "pot:supportedAttribute": {
             "data": {
@@ -47,29 +47,13 @@
                 },
                 "pot:required": false
             },
-            "categorizationEtim": {
-                "@id": "pot:categorizationEtim",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "ETIM class name",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "ETIM standard product category name "
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
             "description": {
                 "@id": "pot:description",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Product description",
+                "pot:title": "Story description",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Description of the product"
+                    "en-us": "Description of the storey"
                 },
                 "pot:valueType": [
                     "xsd:string"
@@ -95,13 +79,29 @@
                     "xsd:maxLength": "500"
                 }
             },
-            "idCode": {
-                "@id": "pot:idCode",
+            "idIfcGuid": {
+                "@id": "pot:idIfcGuid",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Product code",
+                "pot:title": "IFC GUID",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Unique product code given by manufacturer"
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:length": "22",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "idLocal": {
+                "@id": "pot:idLocal",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Local Id",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Locally given identifier for the storey"
                 },
                 "pot:valueType": [
                     "xsd:string"
@@ -109,102 +109,6 @@
                 "xsd:restriction": {
                     "xsd:base": "xsd:string",
                     "xsd:maxLength": "50"
-                }
-            },
-            "idEan": {
-                "@id": "pot:idEan",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "EAN code",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "EAN standard based identifier"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "100",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "idGTIN": {
-                "@id": "pot:idGTIN",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "GTIN code",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "GTIN standard based identifier"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "100"
-                }
-            },
-            "idGroupCode": {
-                "@id": "pot:idGroupCode",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Product group code",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Unique product group code given by manufacturer"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "idGroupName": {
-                "@id": "pot:idGroupName",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Product group name",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Unique product group name given by manufacturer"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "name": {
-                "@id": "pot:idName",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Product name",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Unique product name given by manufacturer"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "idUrl": {
-                "@id": "pot:idUrl",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Product information link",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "URL address for the product information"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "500",
-                    "xsd:base": "xsd:string"
                 }
             },
             "lifeCycleStatusCurrent": {
@@ -223,13 +127,13 @@
                     "xsd:base": "xsd:string"
                 }
             },
-            "valuePriceCurrent": {
-                "@id": "pot:valuePriceCurrent",
+            "physicalSizeArea": {
+                "@id": "pot:physicalSizeArea",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Estimated price",
+                "pot:title": "Story area size",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Estimated value of the current price"
+                    "en-us": "Area of the storey"
                 },
                 "pot:valueType": [
                     "xsd:decimal"
@@ -238,13 +142,13 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "valuePricePurchase": {
-                "@id": "pot:valuePricePurchase",
+            "physicalSizeAreaLiving": {
+                "@id": "pot:physicalSizeAreaLiving",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Purchase price",
+                "pot:title": "Living area size",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Purchase price of the product"
+                    "en-us": "Size of area suitable for, or used for, living"
                 },
                 "pot:valueType": [
                     "xsd:decimal"
@@ -253,13 +157,43 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "valuePriceSell": {
-                "@id": "pot:valuePriceSell",
+            "physicalSizeAreaLivingAudited": {
+                "@id": "pot:physicalSizeAreaLivingAudited",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Sales price",
+                "pot:title": "Audited living area size",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Sales price of the product"
+                    "en-us": "Size of audited area suitable for, or used for, living"
+                },
+                "pot:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "physicalThickness": {
+                "@id": "pot:physicalThickness",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Thickness",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Thickness of the object"
+                },
+                "pot:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "physicalVolume": {
+                "@id": "pot:physicalVolume",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Volume",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Volume of the object"
                 },
                 "pot:valueType": [
                     "xsd:decimal"

@@ -1,87 +1,77 @@
 {
     "@context": {
         "@version": 1.1,
-        "rdf": {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-            "@prefix": true
-        },
-        "rdfs": {
-            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
             "@prefix": true
         },
         "dli": {
-            "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+            "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
             "@prefix": true
         },
         "pot": {
-            "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
-        "@vocab": "http://verbose.terrikon.co/v1/Vocabulary/Group/Organization"
+        "description": {
+            "@id": "pot:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "pot:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Group/Organization"
     },
-    "@id": "http://verbose.terrikon.co/v1/Vocabulary/Group/Organization",
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Group/Organization",
     "pot:supportedClass": {
         "@id": "pot:Group/Organization",
         "@type": "pot:Class",
         "subClassOf": "dli:Group",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Organization"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "asdfdf"
-            }
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable",
+        "pot:label": {
+            "en-us": "Organization"
+        },
         "pot:supportedAttribute": {
-            "name": {
-                "@id": "pot:name",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "name",
-                "dli:description": "name",
-                "dli:required": true
-            },
             "data": {
-                "@id": "dli:data",
+                "@id": "pot:data",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "data",
-                "dli:description": "data",
-                "dli:required": true
+                "pot:title": "data",
+                "pot:description": {
+                    "en-us": "data"
+                },
+                "pot:required": false
             },
             "categorizationOfficial": {
                 "@id": "pot:categorizationOfficial",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Industry category",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Organization categorization given by official authority"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Industry category",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Organization categorization given by official authority"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             },
             "description": {
                 "@id": "pot:description",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Organization description",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Description of the organization"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Organization description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the organization"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -92,53 +82,44 @@
             "idGovernmentPermanent": {
                 "@id": "pot:idGovernmentPermanent",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Permanent Official Id",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Permanent identifier given by an official authority in Finland"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Permanent Official Id",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Permanent identifier given by an official authority in Finland"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:length": "9",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "9"
                 }
             },
             "idIfcGuid": {
                 "@id": "pot:idIfcGuid",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "IFC GUID",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "IFC standard based Globally Unique Identifier"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "IFC GUID",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:length": "22"
+                    "xsd:length": "22",
+                    "xsd:base": "xsd:string"
                 }
             },
-            "idName": {
+            "name": {
                 "@id": "pot:idName",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Organization name",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Name of the organisation"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Organization name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Name of the organisation"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -149,39 +130,33 @@
             "idTaxVat": {
                 "@id": "pot:idTaxVat",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "VAT code",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Value-added taxation identifier"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "VAT code",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Value-added taxation identifier"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:length": "12"
+                    "xsd:length": "12",
+                    "xsd:base": "xsd:string"
                 }
             },
             "lifeCycleStatusCurrent": {
                 "@id": "pot:lifeCycleStatusCurrent",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Life cycle status",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Life cycle status"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Life cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life cycle status"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             }
         }

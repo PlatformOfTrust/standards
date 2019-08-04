@@ -1,24 +1,66 @@
 {
     "@version": 1.1,
     "pot": {
-        "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+        "@id": "https://standards.oftrust.net/v1/Vocabulary/",
         "@prefix": true
     },
     "dli": {
-        "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+        "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
         "@prefix": true
     },
-    "Room": {
-        "rdfs:subClassOf": {
-            "@id": "dli:Thing/BuiltEnvironment"
-        }
+    "rdf": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "@prefix": true
+    },
+    "rdfs": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "@prefix": true
+    },
+    "owl": {
+        "@id": "http://www.w3.org/2002/07/owl#",
+        "@prefix": true
+    },
+    "vs": {
+        "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    },
+    "xsd": {
+        "@id": "http://www.w3.org/2001/XMLSchema#",
+        "@prefix": true
+    },
+    "BuiltEnvironment": {
+        "@id": "dli:BuiltEnvironment",
+        "@type": "dli:Class",
+        "subClassOf": "dli:Thing",
+        "pot:label": [
+            {
+                "rdfs:label": {
+                    "@language": "en-us",
+                    "@value": "Built Environment"
+                }
+            }
+        ],
+        "pot:comment": [
+            {
+                "rdfs:comment": {
+                    "@language": "en-us",
+                    "@value": "Man-made structures, features, and facilities viewed collectively as an environment in which people live and work, surroundings that provide the setting for human activity."
+                }
+            }
+        ],
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT"
     },
     "Building": {
         "rdfs:subClassOf": {
             "@id": "dli:Thing/BuiltEnvironment"
         }
     },
-    "Storey": {
+    "Room": {
+        "rdfs:subClassOf": {
+            "@id": "dli:Thing/BuiltEnvironment"
+        }
+    },
+    "Story": {
         "rdfs:subClassOf": {
             "@id": "dli:Thing/BuiltEnvironment"
         }

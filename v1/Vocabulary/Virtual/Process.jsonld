@@ -1,193 +1,102 @@
 {
     "@version": 1.1,
     "pot": {
-        "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+        "@id": "https://standards.oftrust.net/v1/Vocabulary/",
         "@prefix": true
     },
     "dli": {
-        "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+        "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
         "@prefix": true
     },
-    "locationName": {
-        "@id": "pot:locationName",
-        "@type": "rdf:Property",
-        "rdfs:label": [
+    "rdf": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "@prefix": true
+    },
+    "rdfs": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "@prefix": true
+    },
+    "owl": {
+        "@id": "http://www.w3.org/2002/07/owl#",
+        "@prefix": true
+    },
+    "vs": {
+        "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    },
+    "xsd": {
+        "@id": "http://www.w3.org/2001/XMLSchema#",
+        "@prefix": true
+    },
+    "label": {
+        "@id": "pot:label",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "comment": {
+        "@id": "pot:comment",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "Process": {
+        "@id": "dli:Process",
+        "@type": "dli:Class",
+        "subClassOf": "dli:Virtual",
+        "pot:label": [
             {
-                "@language": "en-us",
-                "@value": "Location"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Paikka"
+                "rdfs:label": {
+                    "@language": "en-us",
+                    "@value": "Process"
+                }
             }
         ],
-        "rdfs:comment": [
+        "pot:comment": [
             {
-                "@language": "en-us",
-                "@value": "Location where the process is executed"
+                "rdfs:comment": {
+                    "@language": "en-us",
+                    "@value": "A process is a single activity or task set of activities that interact to produce a result."
+                }
             }
         ],
-        "domain": [
-            "dli:Process"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT"
     },
     "idNameLocal": {
         "@id": "pot:idNameLocal",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Prosessin nimi - lokaali"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Process name - local"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Locally given name (source system name) for the process"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Process name - local",
+            "fi-fi": "Prosessin nimi - lokaali"
+        },
+        "pot:comment": {
+            "en-us": "Locally given name (source system name) for the process"
+        },
         "domain": [
-            "pot:Case",
-            "dli:Project",
-            "dli:Process"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "timeDuration": {
-        "@id": "pot:timeDuration",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Duration time"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Kesto"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Duration of the process"
-            }
-        ],
-        "domain": [
-            "pot:Case",
-            "dli:Project",
-            "dli:Process"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "timeStartTime": {
-        "@id": "pot:timeStartTime",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Start time"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Aloitusaika"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Start time of the process"
-            }
-        ],
-        "domain": [
-            "pot:Case",
-            "dli:Link",
             "dli:Process",
+            "pot:Case",
             "dli:Project"
         ],
         "range": [
-            "xsd:dateTime"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "outputValue": {
-        "@id": "pot:outputValue",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Output value"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Tuotoksen arvo"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Output value of the process"
-            }
-        ],
-        "domain": [
-            "dli:Process"
-        ],
-        "range": [
             "xsd:string"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "description": {
-        "@id": "pot:description",
+    "outputValueUnit": {
+        "@id": "pot:outputValueUnit",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Process description"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Prosessin kuvaus"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Description of the process"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Tuotoksen arvon yksikkö",
+            "en-us": "Output value unit"
+        },
+        "pot:comment": {
+            "en-us": "Unit used for the process output value"
+        },
         "domain": [
-            "pot:Room",
-            "dli:Space",
-            "pot:Case",
-            "dli:Product",
-            "pot:Storey",
-            "dli:Project",
-            "pot:RealEstate",
-            "dli:System",
-            "dli:Process",
-            "pot:Device",
-            "pot:Building",
-            "pot:Organization",
-            "pot:BuildingElement"
+            "dli:Process"
         ],
         "range": [
             "xsd:string"
@@ -198,29 +107,146 @@
     "idLocal": {
         "@id": "pot:idLocal",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Prosessin tunniste"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Process Id"
-            }
+        "pot:label": {
+            "en-us": "Process Id",
+            "fi-fi": "Prosessin tunniste"
+        },
+        "pot:comment": {
+            "en-us": "Locally given identifier for the process instance"
+        },
+        "domain": [
+            "dli:Space",
+            "dli:Process",
+            "pot:Case",
+            "dli:Project",
+            "pot:Story",
+            "pot:Room"
         ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Locally given identifier for the process instance"
-            }
+        "range": [
+            "xsd:string"
         ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "timeStartTime": {
+        "@id": "pot:timeStartTime",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Start time",
+            "fi-fi": "Aloitusaika"
+        },
+        "pot:comment": {
+            "en-us": "Start time of the process"
+        },
+        "domain": [
+            "pot:Case",
+            "dli:Project",
+            "dli:Process",
+            "dli:Link"
+        ],
+        "range": [
+            "xsd:dateTime"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "description": {
+        "@id": "pot:description",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Prosessin kuvaus",
+            "en-us": "Process description"
+        },
+        "pot:comment": {
+            "en-us": "Description of the process"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:Room",
+            "pot:RealEstate",
+            "pot:BuildingElement",
+            "dli:Space",
+            "pot:Story",
+            "dli:Process",
+            "dli:Project",
+            "pot:Case",
+            "pot:Organization",
+            "dli:System",
+            "pot:Building",
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "timeDuration": {
+        "@id": "pot:timeDuration",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Kesto",
+            "en-us": "Duration time"
+        },
+        "pot:comment": {
+            "en-us": "Duration of the process"
+        },
         "domain": [
             "dli:Project",
             "pot:Case",
-            "dli:Space",
-            "pot:Room",
+            "dli:Process"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "lifeCycleStatusCurrent": {
+        "@id": "pot:lifeCycleStatusCurrent",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Prosessin tila",
+            "en-us": "Process status"
+        },
+        "pot:comment": {
+            "en-us": "Process state"
+        },
+        "domain": [
+            "dli:Product",
+            "pot:Building",
+            "pot:Organization",
+            "dli:System",
+            "pot:Case",
             "dli:Process",
-            "pot:Storey"
+            "dli:Project",
+            "pot:Story",
+            "pot:BuildingElement",
+            "dli:Link",
+            "dli:Person",
+            "pot:Room",
+            "dli:Space",
+            "pot:Device",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "outputValue": {
+        "@id": "pot:outputValue",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Tuotoksen arvo",
+            "en-us": "Output value"
+        },
+        "pot:comment": {
+            "en-us": "Output value of the process"
+        },
+        "domain": [
+            "dli:Process"
         ],
         "range": [
             "xsd:string"
@@ -231,22 +257,13 @@
     "timeEndTime": {
         "@id": "pot:timeEndTime",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "End time"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Lopetusaika"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "End time of the process"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Lopetusaika",
+            "en-us": "End time"
+        },
+        "pot:comment": {
+            "en-us": "End time of the process"
+        },
         "domain": [
             "dli:Project",
             "dli:Process",
@@ -259,25 +276,16 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "outputValueUnit": {
-        "@id": "pot:outputValueUnit",
+    "locationName": {
+        "@id": "pot:locationName",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Output value unit"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Tuotoksen arvon yksikk\u00f6"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Unit used for the process output value"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Paikka",
+            "en-us": "Location"
+        },
+        "pot:comment": {
+            "en-us": "Location where the process is executed"
+        },
         "domain": [
             "dli:Process"
         ],
@@ -290,70 +298,19 @@
     "physicalQuantity": {
         "@id": "pot:physicalQuantity",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "M\u00e4\u00e4r\u00e4"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Quantity"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Quantity of the processes executed or to be executed"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Määrä",
+            "en-us": "Quantity"
+        },
+        "pot:comment": {
+            "en-us": "Quantity of the processes executed or to be executed"
+        },
         "domain": [
-            "dli:Process",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:int"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "lifeCycleStatusCurrent": {
-        "@id": "pot:lifeCycleStatusCurrent",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Prosessin tila"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Process status"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Process state"
-            }
-        ],
-        "domain": [
-            "pot:Case",
-            "dli:Person",
-            "pot:Building",
-            "pot:RealEstate",
-            "pot:Organization",
-            "pot:Device",
-            "pot:BuildingElement",
-            "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:Project",
-            "dli:System",
             "pot:Room",
             "dli:Process"
         ],
         "range": [
-            "xsd:string"
+            "xsd:int"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"

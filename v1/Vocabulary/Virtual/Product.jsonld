@@ -1,339 +1,79 @@
 {
     "@version": 1.1,
     "pot": {
-        "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+        "@id": "https://standards.oftrust.net/v1/Vocabulary/",
         "@prefix": true
     },
     "dli": {
-        "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+        "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
         "@prefix": true
     },
-    "descriptionAdditionalInformation": {
-        "@id": "pot:descriptionAdditionalInformation",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Lis\u00e4tiedot"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Additional information"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Additional information"
-            }
-        ],
-        "domain": [
-            "dli:Person",
-            "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:System",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+    "rdf": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "@prefix": true
     },
-    "idGroupCode": {
-        "@id": "pot:idGroupCode",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Product group code"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Tuoteryhm\u00e4n tunnus"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Unique product group code given by manufacturer"
-            }
-        ],
-        "domain": [
-            "dli:Product"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+    "rdfs": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "@prefix": true
     },
-    "idUrl": {
-        "@id": "pot:idUrl",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Linkki tuotetietoon"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Product information link"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "URL address for the product information"
-            }
-        ],
-        "domain": [
-            "dli:Product"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+    "owl": {
+        "@id": "http://www.w3.org/2002/07/owl#",
+        "@prefix": true
     },
-    "categorizationEtim": {
-        "@id": "pot:categorizationEtim",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "ETIM luokka"
-            },
-            {
-                "@language": "en-us",
-                "@value": "ETIM class name"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "ETIM standard product category name "
-            }
-        ],
-        "domain": [
-            "dli:Product"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+    "vs": {
+        "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
     },
-    "description": {
-        "@id": "pot:description",
-        "@type": "rdf:Property",
-        "rdfs:label": [
+    "xsd": {
+        "@id": "http://www.w3.org/2001/XMLSchema#",
+        "@prefix": true
+    },
+    "label": {
+        "@id": "pot:label",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "comment": {
+        "@id": "pot:comment",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "Product": {
+        "@id": "dli:Product",
+        "@type": "dli:Class",
+        "subClassOf": "dli:Virtual",
+        "pot:label": [
             {
-                "@language": "fi-fi",
-                "@value": "Tuotekuvaus"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Product description"
+                "rdfs:label": {
+                    "@language": "en-us",
+                    "@value": "Product"
+                }
             }
         ],
-        "rdfs:comment": [
+        "pot:comment": [
             {
-                "@language": "en-us",
-                "@value": "Description of the product"
+                "rdfs:comment": {
+                    "@language": "en-us",
+                    "@value": "a product is an object or system made that can be offered to a market to satisfy the desire or need of a customer. When organisation or person decides to enter into trade they do it through trading products.  Any object or entity can be made into product."
+                }
             }
         ],
-        "domain": [
-            "pot:Room",
-            "dli:Space",
-            "pot:Case",
-            "dli:Product",
-            "pot:Storey",
-            "dli:Project",
-            "pot:RealEstate",
-            "dli:System",
-            "dli:Process",
-            "pot:Device",
-            "pot:Building",
-            "pot:Organization",
-            "pot:BuildingElement"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT"
     },
     "valuePriceSell": {
         "@id": "pot:valuePriceSell",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Myyntihinta"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Sales price"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Sales price of the product"
-            }
-        ],
-        "domain": [
-            "dli:Product"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idEan": {
-        "@id": "pot:idEan",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "EAN code"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "EAN koodi"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "EAN standard based identifier"
-            }
-        ],
-        "domain": [
-            "dli:Product"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idName": {
-        "@id": "pot:idName",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Product name"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Tuotenimi"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Unique product name given by manufacturer"
-            }
-        ],
-        "domain": [
-            "pot:Room",
-            "pot:Building",
-            "dli:System",
-            "dli:Product",
-            "pot:BuildingElement",
-            "pot:Organization",
-            "pot:RealEstate",
-            "pot:Device"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idGTIN": {
-        "@id": "pot:idGTIN",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "GTIN koodi"
-            },
-            {
-                "@language": "en-us",
-                "@value": "GTIN code"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "GTIN standard based identifier"
-            }
-        ],
-        "domain": [
-            "dli:Product"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idCode": {
-        "@id": "pot:idCode",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Product code"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Tuotetunnus"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Unique product code given by manufacturer"
-            }
-        ],
-        "domain": [
-            "pot:Device",
-            "dli:Product",
-            "pot:BuildingElement"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "valuePriceCurrent": {
-        "@id": "pot:valuePriceCurrent",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Estimated price"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Tuotteen arvo"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Estimated value of the current price"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Sales price",
+            "fi-fi": "Myyntihinta"
+        },
+        "pot:comment": {
+            "en-us": "Sales price of the product"
+        },
         "domain": [
             "dli:Product"
         ],
@@ -346,22 +86,13 @@
     "valuePricePurchase": {
         "@id": "pot:valuePricePurchase",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Ostohinta"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Purchase price"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Purchase price of the product"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Ostohinta",
+            "en-us": "Purchase price"
+        },
+        "pot:comment": {
+            "en-us": "Purchase price of the product"
+        },
         "domain": [
             "dli:Product"
         ],
@@ -371,25 +102,170 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
+    "categorizationEtim": {
+        "@id": "pot:categorizationEtim",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "ETIM class name",
+            "fi-fi": "ETIM luokka"
+        },
+        "pot:comment": {
+            "en-us": "ETIM standard product category name "
+        },
+        "domain": [
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idUrl": {
+        "@id": "pot:idUrl",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Linkki tuotetietoon",
+            "en-us": "Product information link"
+        },
+        "pot:comment": {
+            "en-us": "URL address for the product information"
+        },
+        "domain": [
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idCode": {
+        "@id": "pot:idCode",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Tuotetunnus",
+            "en-us": "Product code"
+        },
+        "pot:comment": {
+            "en-us": "Unique product code given by manufacturer"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device",
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idEan": {
+        "@id": "pot:idEan",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "EAN koodi",
+            "en-us": "EAN code"
+        },
+        "pot:comment": {
+            "en-us": "EAN standard based identifier"
+        },
+        "domain": [
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "description": {
+        "@id": "pot:description",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Product description",
+            "fi-fi": "Tuotekuvaus"
+        },
+        "pot:comment": {
+            "en-us": "Description of the product"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:Room",
+            "pot:RealEstate",
+            "pot:BuildingElement",
+            "dli:Space",
+            "pot:Story",
+            "dli:Process",
+            "dli:Project",
+            "pot:Case",
+            "pot:Organization",
+            "dli:System",
+            "pot:Building",
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idGroupCode": {
+        "@id": "pot:idGroupCode",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Tuoteryhmän tunnus",
+            "en-us": "Product group code"
+        },
+        "pot:comment": {
+            "en-us": "Unique product group code given by manufacturer"
+        },
+        "domain": [
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "name": {
+        "@id": "pot:idName",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Product name",
+            "fi-fi": "Tuotenimi"
+        },
+        "pot:comment": {
+            "en-us": "Unique product name given by manufacturer"
+        },
+        "domain": [
+            "pot:Organization",
+            "pot:Room",
+            "pot:Device",
+            "pot:BuildingElement",
+            "pot:Building",
+            "dli:System",
+            "dli:Product",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
     "idGroupName": {
         "@id": "pot:idGroupName",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Tuoteryhm\u00e4n nimi"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Product group name"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Unique product group name given by manufacturer"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Product group name",
+            "fi-fi": "Tuoteryhmän nimi"
+        },
+        "pot:comment": {
+            "en-us": "Unique product group name given by manufacturer"
+        },
         "domain": [
             "dli:Product"
         ],
@@ -402,38 +278,92 @@
     "lifeCycleStatusCurrent": {
         "@id": "pot:lifeCycleStatusCurrent",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Elinkaari - Status"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Elinkaari - Status",
+            "en-us": "Life cycle status"
+        },
+        "pot:comment": {
+            "en-us": "Life cycle status"
+        },
         "domain": [
-            "pot:Case",
-            "dli:Person",
+            "dli:Product",
             "pot:Building",
-            "pot:RealEstate",
             "pot:Organization",
-            "pot:Device",
+            "dli:System",
+            "pot:Case",
+            "dli:Process",
+            "dli:Project",
+            "pot:Story",
             "pot:BuildingElement",
             "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:Project",
-            "dli:System",
+            "dli:Person",
             "pot:Room",
-            "dli:Process"
+            "dli:Space",
+            "pot:Device",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "valuePriceCurrent": {
+        "@id": "pot:valuePriceCurrent",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Estimated price",
+            "fi-fi": "Tuotteen arvo"
+        },
+        "pot:comment": {
+            "en-us": "Estimated value of the current price"
+        },
+        "domain": [
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "descriptionAdditionalInformation": {
+        "@id": "pot:descriptionAdditionalInformation",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Lisätiedot",
+            "en-us": "Additional information"
+        },
+        "pot:comment": {
+            "en-us": "Additional information"
+        },
+        "domain": [
+            "dli:Product",
+            "dli:System",
+            "dli:Person",
+            "dli:Link",
+            "dli:Space",
+            "pot:Story",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idGTIN": {
+        "@id": "pot:idGTIN",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "GTIN koodi",
+            "en-us": "GTIN code"
+        },
+        "pot:comment": {
+            "en-us": "GTIN standard based identifier"
+        },
+        "domain": [
+            "dli:Product"
         ],
         "range": [
             "xsd:string"

@@ -1,83 +1,77 @@
 {
     "@context": {
         "@version": 1.1,
-        "rdf": {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-            "@prefix": true
-        },
-        "rdfs": {
-            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
             "@prefix": true
         },
         "dli": {
-            "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+            "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
             "@prefix": true
         },
         "pot": {
-            "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
-        "@vocab": "http://verbose.terrikon.co/v1/Vocabulary/Thing/BuildingElement/Slab"
+        "description": {
+            "@id": "pot:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "pot:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Thing/BuildingElement/Slab"
     },
-    "@id": "http://verbose.terrikon.co/v1/Vocabulary/Thing/BuildingElement/Slab",
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Thing/BuildingElement/Slab",
     "pot:supportedClass": {
         "@id": "pot:Thing/BuildingElement/Slab",
         "@type": "pot:Class",
         "subClassOf": "pot:Thing/BuildingElement",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Slab"
-            }
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable",
+        "pot:label": {
+            "en-us": "Slab"
+        },
         "pot:supportedAttribute": {
-            "name": {
-                "@id": "pot:name",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "name",
-                "dli:description": "name",
-                "dli:required": true
-            },
             "data": {
-                "@id": "dli:data",
+                "@id": "pot:data",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "data",
-                "dli:description": "data",
-                "dli:required": true
+                "pot:title": "data",
+                "pot:description": {
+                    "en-us": "data"
+                },
+                "pot:required": false
             },
             "categorizationIfcElementName": {
                 "@id": "pot:categorizationIfcElementName",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "IFC element name",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "IFC standard element name"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "IFC element name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard element name"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "categorizationIfcElementType": {
                 "@id": "pot:categorizationIfcElementType",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "IFC element type",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "IFC standard element type"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "IFC element type",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard element type"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -88,34 +82,28 @@
             "categorizationMainLocal": {
                 "@id": "pot:categorizationMainLocal",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Type name given locally",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Categorisation name given locally"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Type name given locally",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Categorisation name given locally"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             },
             "description": {
                 "@id": "pot:description",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Building element description",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Description of the building element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Building element description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the building element"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -126,72 +114,60 @@
             "idCode": {
                 "@id": "pot:idCode",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Local code",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Code given locally for the building element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Local code",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Code given locally for the building element"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             },
             "idIfcGuid": {
                 "@id": "pot:idIfcGuid",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "IFC GUID",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "IFC standard based Globally Unique Identifier"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "IFC GUID",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:length": "22"
+                    "xsd:length": "22",
+                    "xsd:base": "xsd:string"
                 }
             },
             "idInstance": {
                 "@id": "pot:idInstance",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Unique identifier",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Unique identifier for the element instance"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Unique identifier",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Unique identifier for the element instance"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             },
-            "idName": {
+            "null": {
                 "@id": "pot:idName",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Local name",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Name given locally for the building element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Local name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Name given locally for the building element"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -202,34 +178,28 @@
             "lifeCycleStatusCurrent": {
                 "@id": "pot:lifeCycleStatusCurrent",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Life cycle status",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Life cycle status"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Life cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life cycle status"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "physicalAreaGross": {
                 "@id": "pot:physicalAreaGross",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Area - gross",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Gross area of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Area - gross",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Gross area of the element"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -239,15 +209,12 @@
             "physicalAreaNet": {
                 "@id": "pot:physicalAreaNet",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Area - net",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Net area of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Area - net",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Net area of the element"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -257,53 +224,44 @@
             "physicalColorCode": {
                 "@id": "pot:physicalColorCode",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Color code",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Color code of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Color code",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Color code of the element"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "physicalColorName": {
                 "@id": "pot:physicalColorName",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Color",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Color of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Color",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Color of the element"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "physicalHeight": {
                 "@id": "pot:physicalHeight",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Height",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Height of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Height",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Height of the element"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -313,15 +271,12 @@
             "physicalLength": {
                 "@id": "pot:physicalLength",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Length",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Length of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Length",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Length of the element"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -331,15 +286,12 @@
             "physicalThickness": {
                 "@id": "pot:physicalThickness",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Thickness",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Thickness of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Thickness",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Thickness of the element"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -349,15 +301,12 @@
             "physicalVolume": {
                 "@id": "pot:physicalVolume",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Volume",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Volume of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Volume",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Volume of the element"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -367,15 +316,12 @@
             "physicalWeight": {
                 "@id": "pot:physicalWeight",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Weight",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Weight of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Weight",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Weight of the element"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -385,15 +331,12 @@
             "physicalWidth": {
                 "@id": "pot:physicalWidth",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Width",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Width of the element"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Width",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Width of the element"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {

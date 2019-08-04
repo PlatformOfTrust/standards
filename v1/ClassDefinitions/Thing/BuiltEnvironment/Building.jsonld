@@ -1,83 +1,77 @@
 {
     "@context": {
         "@version": 1.1,
-        "rdf": {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-            "@prefix": true
-        },
-        "rdfs": {
-            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
             "@prefix": true
         },
         "dli": {
-            "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+            "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
             "@prefix": true
         },
         "pot": {
-            "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
-        "@vocab": "http://verbose.terrikon.co/v1/Vocabulary/Thing/BuiltEnvironment/Building"
+        "description": {
+            "@id": "pot:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "pot:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Thing/BuiltEnvironment/Building"
     },
-    "@id": "http://verbose.terrikon.co/v1/Vocabulary/Thing/BuiltEnvironment/Building",
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Thing/BuiltEnvironment/Building",
     "pot:supportedClass": {
         "@id": "pot:Thing/BuiltEnvironment/Building",
         "@type": "pot:Class",
         "subClassOf": "dli:Thing/BuiltEnvironment",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Building"
-            }
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable",
+        "pot:label": {
+            "en-us": "Building"
+        },
         "pot:supportedAttribute": {
-            "name": {
-                "@id": "pot:name",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "name",
-                "dli:description": "name",
-                "dli:required": true
-            },
             "data": {
-                "@id": "dli:data",
+                "@id": "pot:data",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "data",
-                "dli:description": "data",
-                "dli:required": true
+                "pot:title": "data",
+                "pot:description": {
+                    "en-us": "data"
+                },
+                "pot:required": false
             },
             "categorizationCultureHistorySignificance": {
                 "@id": "pot:categorizationCultureHistorySignificance",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Cultural or historical significance",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Categorization if building is culturally significant"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Cultural or historical significance",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Categorization if building is culturally significant"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "description": {
                 "@id": "pot:description",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Building description",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Description of the building"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Building description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the building"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -88,34 +82,28 @@
             "idIfcGuid": {
                 "@id": "pot:idIfcGuid",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "IFC GUID",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "IFC standard based Globally Unique Identifier"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "IFC GUID",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:length": "22"
+                    "xsd:length": "22",
+                    "xsd:base": "xsd:string"
                 }
             },
-            "idName": {
+            "name": {
                 "@id": "pot:idName",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Building name",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Name of the building"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Building name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Name of the building"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -126,34 +114,28 @@
             "idOfficialPermanent": {
                 "@id": "pot:idOfficialPermanent",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Permanent official Id",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Permanent identifier given officially to the building in Finland"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Permanent official Id",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Permanent identifier given officially to the building in Finland"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:length": "10"
+                    "xsd:length": "10",
+                    "xsd:base": "xsd:string"
                 }
             },
             "idOfficialTemporary": {
                 "@id": "pot:idOfficialTemporary",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Temporary official Id",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Temporary identifier given officially to the building in Finland"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Temporary official Id",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Temporary identifier given officially to the building in Finland"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -164,15 +146,12 @@
             "lifeCycleCompletionMomentYear": {
                 "@id": "pot:lifeCycleCompletionMomentYear",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Completion year",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Completion year of the building"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Completion year",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Completion year of the building"
+                },
+                "pot:valueType": [
                     "xsd:gYear"
                 ],
                 "xsd:restriction": {
@@ -182,15 +161,12 @@
             "lifeCycleInaugurationMomentYear": {
                 "@id": "pot:lifeCycleInaugurationMomentYear",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Inauguration year",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Inauguration year of the building"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Inauguration year",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Inauguration year of the building"
+                },
+                "pot:valueType": [
                     "xsd:gYear"
                 ],
                 "xsd:restriction": {
@@ -200,15 +176,12 @@
             "lifeCycleInspectionMomentYear": {
                 "@id": "pot:lifeCycleInspectionMomentYear",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Inspection year",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Inspection year of the building"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Inspection year",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Inspection year of the building"
+                },
+                "pot:valueType": [
                     "xsd:gYear"
                 ],
                 "xsd:restriction": {
@@ -218,34 +191,28 @@
             "lifeCycleStatusCurrent": {
                 "@id": "pot:lifeCycleStatusCurrent",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Life cycle status",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Life cycle status of the building"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Life cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life cycle status of the building"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "physicalAreaSquareMeterFloorNet": {
                 "@id": "pot:physicalAreaSquareMeterFloorNet",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Floor net square meters",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Net square meters of floor space/area"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Floor net square meters",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Net square meters of floor space/area"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -255,15 +222,12 @@
             "physicalAreaSquareMeterLivingNet": {
                 "@id": "pot:physicalAreaSquareMeterLivingNet",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Living space net square meters",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Living space net square meters"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Living space net square meters",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Living space net square meters"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -273,15 +237,12 @@
             "physicalHeight": {
                 "@id": "pot:physicalHeight",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Height",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Height of the building"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Height",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Height of the building"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {
@@ -291,15 +252,12 @@
             "physicalVolume": {
                 "@id": "pot:physicalVolume",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Volume",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Volume of the building"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Volume",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Volume of the building"
+                },
+                "pot:valueType": [
                     "xsd:decimal"
                 ],
                 "xsd:restriction": {

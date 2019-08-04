@@ -1,64 +1,61 @@
 {
     "@context": {
         "@version": 1.1,
-        "rdf": {
-            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-            "@prefix": true
-        },
-        "rdfs": {
-            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
             "@prefix": true
         },
         "dli": {
-            "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+            "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
             "@prefix": true
         },
         "pot": {
-            "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
-        "@vocab": "http://verbose.terrikon.co/v1/Vocabulary/Thing/System/BuildingSystems/VentilationSystem"
+        "description": {
+            "@id": "pot:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "pot:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Thing/System/BuildingSystems/VentilationSystem"
     },
-    "@id": "http://verbose.terrikon.co/v1/Vocabulary/Thing/System/BuildingSystems/VentilationSystem",
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Thing/System/BuildingSystems/VentilationSystem",
     "pot:supportedClass": {
         "@id": "pot:Thing/System/BuildingSystems/VentilationSystem",
         "@type": "pot:Class",
         "subClassOf": "pot:Thing/System/BuildingSystems",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Ventilation System"
-            }
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable",
+        "pot:label": {
+            "en-us": "Ventilation System"
+        },
         "pot:supportedAttribute": {
-            "name": {
-                "@id": "pot:name",
-                "@type": "pot:SupportedAttribute",
-                "dli:title": "name",
-                "dli:description": "name",
-                "dli:required": true
-            },
             "data": {
-                "@id": "dli:data",
+                "@id": "pot:data",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "data",
-                "dli:description": "data",
-                "dli:required": true
+                "pot:title": "data",
+                "pot:description": {
+                    "en-us": "data"
+                },
+                "pot:required": false
             },
             "categorizationUsageMain": {
                 "@id": "pot:categorizationUsageMain",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Main usage purpose",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Main usage purpose"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Main usage purpose",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Main usage purpose"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -69,15 +66,12 @@
             "description": {
                 "@id": "pot:description",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "System description",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Description of the system"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "System description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the system"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -88,34 +82,28 @@
             "descriptionAdditionalInformation": {
                 "@id": "pot:descriptionAdditionalInformation",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Additional information",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Additional information"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Additional information",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Additional information"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "500",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "500"
                 }
             },
-            "idName": {
+            "null": {
                 "@id": "pot:idName",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "System name",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Name given to the system"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "System name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Name given to the system"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
@@ -126,34 +114,28 @@
             "lifeCycleStatusCurrent": {
                 "@id": "pot:lifeCycleStatusCurrent",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "Life cycle status",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Life cycle status"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "Life cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life cycle status"
+                },
+                "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "timeEndTimeValidity": {
                 "@id": "pot:timeEndTimeValidity",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "System abolition date",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Valid end time for the system (when system has been terminated)"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "System abolition date",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Valid end time for the system (when system has been terminated)"
+                },
+                "pot:valueType": [
                     "xsd:dateTime"
                 ],
                 "xsd:restriction": {
@@ -163,15 +145,12 @@
             "timeStartTimeValidity": {
                 "@id": "pot:timeStartTimeValidity",
                 "@type": "pot:SupportedAttribute",
-                "dli:title": "System establishment date",
-                "dli:required": false,
-                "dli:description": [
-                    {
-                        "@language": "en-us",
-                        "@value": "Valid start time for the system (when system has been defined)"
-                    }
-                ],
-                "dli:valueType": [
+                "pot:title": "System establishment date",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Valid start time for the system (when system has been defined)"
+                },
+                "pot:valueType": [
                     "xsd:dateTime"
                 ],
                 "xsd:restriction": {

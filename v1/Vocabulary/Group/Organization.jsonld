@@ -1,36 +1,109 @@
 {
     "@version": 1.1,
     "pot": {
-        "@id": "http://verbose.terrikon.co/v1/Vocabulary/",
+        "@id": "https://standards.oftrust.net/v1/Vocabulary/",
         "@prefix": true
     },
     "dli": {
-        "@id": "https://digitalliving.github.io/standards/ontologies/dli.jsonld#",
+        "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
         "@prefix": true
+    },
+    "rdf": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "@prefix": true
+    },
+    "rdfs": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#",
+        "@prefix": true
+    },
+    "owl": {
+        "@id": "http://www.w3.org/2002/07/owl#",
+        "@prefix": true
+    },
+    "vs": {
+        "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    },
+    "xsd": {
+        "@id": "http://www.w3.org/2001/XMLSchema#",
+        "@prefix": true
+    },
+    "label": {
+        "@id": "pot:label",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "comment": {
+        "@id": "pot:comment",
+        "@container": [
+            "@language",
+            "@set"
+        ]
+    },
+    "Organization": {
+        "@id": "pot:Organization",
+        "@type": "pot:Class",
+        "subClassOf": "dli:Group",
+        "pot:label": [
+            {
+                "rdfs:label": {
+                    "@language": "en-us",
+                    "@value": "Organization"
+                }
+            }
+        ],
+        "pot:comment": [
+            {
+                "rdfs:comment": {
+                    "@language": "en-us",
+                    "@value": "An organisation is an entity comprising multiple people, such as a company, institution, association,  foundation or coooperative, that has a particular purpose"
+                }
+            }
+        ],
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT"
+    },
+    "idIfcGuid": {
+        "@id": "pot:idIfcGuid",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "IFC GUID",
+            "en-us": "IFC GUID"
+        },
+        "pot:comment": {
+            "en-us": "IFC standard based Globally Unique Identifier"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:Organization",
+            "pot:Story",
+            "dli:Space",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
     },
     "categorizationOfficial": {
         "@id": "pot:categorizationOfficial",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Toimialaluokka"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Industry category"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Organization categorization given by official authority"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Toimialaluokka",
+            "en-us": "Industry category"
+        },
+        "pot:comment": {
+            "en-us": "Organization categorization given by official authority"
+        },
         "domain": [
-            "pot:Organization",
             "dli:Space",
-            "pot:Room"
+            "pot:Room",
+            "pot:Organization"
         ],
         "range": [
             "xsd:string"
@@ -41,59 +114,15 @@
     "idGovernmentPermanent": {
         "@id": "pot:idGovernmentPermanent",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Permanent Official Id"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Y-tunnus"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Permanent identifier given by an official authority in Finland"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Y-tunnus",
+            "en-us": "Permanent Official Id"
+        },
+        "pot:comment": {
+            "en-us": "Permanent identifier given by an official authority in Finland"
+        },
         "domain": [
             "pot:Organization"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idIfcGuid": {
-        "@id": "pot:idIfcGuid",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "IFC GUID"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "IFC GUID"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "IFC standard based Globally Unique Identifier"
-            }
-        ],
-        "domain": [
-            "pot:Storey",
-            "pot:RealEstate",
-            "pot:Organization",
-            "pot:BuildingElement",
-            "pot:Room",
-            "pot:Building",
-            "pot:Device",
-            "dli:Space"
         ],
         "range": [
             "xsd:string"
@@ -104,36 +133,27 @@
     "description": {
         "@id": "pot:description",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "fi-fi",
-                "@value": "Organisaation kuvaus"
-            },
-            {
-                "@language": "en-us",
-                "@value": "Organization description"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Description of the organization"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Organisaation kuvaus",
+            "en-us": "Organization description"
+        },
+        "pot:comment": {
+            "en-us": "Description of the organization"
+        },
         "domain": [
-            "pot:Room",
-            "dli:Space",
-            "pot:Case",
-            "dli:Product",
-            "pot:Storey",
-            "dli:Project",
-            "pot:RealEstate",
-            "dli:System",
-            "dli:Process",
             "pot:Device",
-            "pot:Building",
+            "pot:Room",
+            "pot:RealEstate",
+            "pot:BuildingElement",
+            "dli:Space",
+            "pot:Story",
+            "dli:Process",
+            "dli:Project",
+            "pot:Case",
             "pot:Organization",
-            "pot:BuildingElement"
+            "dli:System",
+            "pot:Building",
+            "dli:Product"
         ],
         "range": [
             "xsd:string"
@@ -141,62 +161,25 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "idName": {
+    "name": {
         "@id": "pot:idName",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Organization name"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Organisaation nimi"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Name of the organisation"
-            }
-        ],
+        "pot:label": {
+            "fi-fi": "Organisaation nimi",
+            "en-us": "Organization name"
+        },
+        "pot:comment": {
+            "en-us": "Name of the organisation"
+        },
         "domain": [
+            "pot:Organization",
             "pot:Room",
+            "pot:Device",
+            "pot:BuildingElement",
             "pot:Building",
             "dli:System",
             "dli:Product",
-            "pot:BuildingElement",
-            "pot:Organization",
-            "pot:RealEstate",
-            "pot:Device"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idTaxVat": {
-        "@id": "pot:idTaxVat",
-        "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "VAT code"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "ALV-tunnus"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Value-added taxation identifier"
-            }
-        ],
-        "domain": [
-            "pot:Organization"
+            "pot:RealEstate"
         ],
         "range": [
             "xsd:string"
@@ -207,38 +190,48 @@
     "lifeCycleStatusCurrent": {
         "@id": "pot:lifeCycleStatusCurrent",
         "@type": "rdf:Property",
-        "rdfs:label": [
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status"
-            },
-            {
-                "@language": "fi-fi",
-                "@value": "Elinkaari - Status"
-            }
-        ],
-        "rdfs:comment": [
-            {
-                "@language": "en-us",
-                "@value": "Life cycle status"
-            }
-        ],
+        "pot:label": {
+            "en-us": "Life cycle status",
+            "fi-fi": "Elinkaari - Status"
+        },
+        "pot:comment": {
+            "en-us": "Life cycle status"
+        },
         "domain": [
-            "pot:Case",
-            "dli:Person",
+            "dli:Product",
             "pot:Building",
-            "pot:RealEstate",
             "pot:Organization",
-            "pot:Device",
+            "dli:System",
+            "pot:Case",
+            "dli:Process",
+            "dli:Project",
+            "pot:Story",
             "pot:BuildingElement",
             "dli:Link",
-            "pot:Storey",
-            "dli:Space",
-            "dli:Product",
-            "dli:Project",
-            "dli:System",
+            "dli:Person",
             "pot:Room",
-            "dli:Process"
+            "dli:Space",
+            "pot:Device",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idTaxVat": {
+        "@id": "pot:idTaxVat",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "ALV-tunnus",
+            "en-us": "VAT code"
+        },
+        "pot:comment": {
+            "en-us": "Value-added taxation identifier"
+        },
+        "domain": [
+            "pot:Organization"
         ],
         "range": [
             "xsd:string"
