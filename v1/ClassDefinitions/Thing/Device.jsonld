@@ -39,7 +39,7 @@
         },
         "pot:supportedAttribute": {
             "data": {
-                "@id": "pot:data",
+                "@id": "dli:data",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "data",
                 "pot:description": {
@@ -47,88 +47,86 @@
                 },
                 "pot:required": false
             },
-            "categorizationIfcElementName": {
-                "@id": "pot:categorizationIfcElementName",
+            "createdAt": {
+                "@id": "dli:createdAt",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "IFC element name",
+                "pot:title": "dli:createdAt",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "IFC standard element name"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
                     "xsd:base": "xsd:string"
                 }
             },
-            "categorizationIfcElementType": {
-                "@id": "pot:categorizationIfcElementType",
+            "createdBy": {
+                "@id": "dli:createdBy",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "IFC element type",
+                "pot:title": "dli:createdBy",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "IFC standard element type"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
                     "xsd:base": "xsd:string"
                 }
             },
-            "categorizationIndustryDomain": {
-                "@id": "pot:categorizationIndustryDomain",
+            "updatedAt": {
+                "@id": "dli:updatedAt",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Industry sector name",
+                "pot:title": "dli:updatedAt",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "Industry sector name to which the device belongs"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:base": "xsd:string"
                 }
             },
-            "categorizationMainLocal": {
-                "@id": "pot:categorizationMainLocal",
+            "updatedBy": {
+                "@id": "dli:updatedBy",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Type name given locally",
+                "pot:title": "dli:updatedBy",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "Categorisation name given locally"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:base": "xsd:string"
                 }
             },
-            "description": {
-                "@id": "pot:description",
+            "areaGross": {
+                "@id": "pot:areaGross",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Device description",
+                "pot:title": "Area - gross",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Description of the device"
+                    "en-us": "Gross area of the device"
                 },
                 "pot:valueType": [
-                    "xsd:string"
+                    "xsd:decimal"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "500"
+                    "xsd:base": "xsd:decimal"
                 }
             },
-            "idCode": {
-                "@id": "pot:idCode",
+            "areaNet": {
+                "@id": "pot:areaNet",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Area - net",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Net area of the device"
+                },
+                "pot:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "code": {
+                "@id": "pot:code",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Local code",
                 "pot:required": false,
@@ -143,102 +141,8 @@
                     "xsd:maxLength": "50"
                 }
             },
-            "idIfcGuid": {
-                "@id": "pot:idIfcGuid",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "IFC GUID",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "IFC standard based Globally Unique Identifier"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:length": "22",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "name": {
-                "@id": "pot:idName",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Local name",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Name given locally for the device"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "idSerialNumber": {
-                "@id": "pot:idSerialNumber",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Serial number",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Unique identifier for the device instance"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "100",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "lifeCycleStatusCurrent": {
-                "@id": "pot:lifeCycleStatusCurrent",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Life cycle status",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Life cycle status"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "physicalAreaGross": {
-                "@id": "pot:physicalAreaGross",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Area - gross",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Gross area of the device"
-                },
-                "pot:valueType": [
-                    "xsd:decimal"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:decimal"
-                }
-            },
-            "physicalAreaNet": {
-                "@id": "pot:physicalAreaNet",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Area - net",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Net area of the device"
-                },
-                "pot:valueType": [
-                    "xsd:decimal"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:decimal"
-                }
-            },
-            "physicalColorCode": {
-                "@id": "pot:physicalColorCode",
+            "colorCode": {
+                "@id": "pot:colorCode",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Color code",
                 "pot:required": false,
@@ -249,12 +153,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             },
-            "physicalColorName": {
-                "@id": "pot:physicalColorName",
+            "colorName": {
+                "@id": "pot:colorName",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Color",
                 "pot:required": false,
@@ -269,8 +173,24 @@
                     "xsd:base": "xsd:string"
                 }
             },
-            "physicalElectricityCurrent": {
-                "@id": "pot:physicalElectricityCurrent",
+            "description": {
+                "@id": "pot:description",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Device description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the device"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "electricityCurrent": {
+                "@id": "pot:electricityCurrent",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Electric current",
                 "pot:required": false,
@@ -284,8 +204,8 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalHeight": {
-                "@id": "pot:physicalHeight",
+            "height": {
+                "@id": "pot:height",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Height",
                 "pot:required": false,
@@ -299,8 +219,72 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalLength": {
-                "@id": "pot:physicalLength",
+            "ifcElementName": {
+                "@id": "pot:ifcElementName",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "IFC element name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard element name"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "ifcElementType": {
+                "@id": "pot:ifcElementType",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "IFC element type",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard element type"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "ifcGuid": {
+                "@id": "pot:ifcGuid",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "IFC GUID",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "22"
+                }
+            },
+            "industryDomain": {
+                "@id": "pot:industryDomain",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Industry sector name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Industry sector name to which the device belongs"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "length": {
+                "@id": "pot:length",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Length",
                 "pot:required": false,
@@ -314,8 +298,40 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalPower": {
-                "@id": "pot:physicalPower",
+            "mainLocal": {
+                "@id": "pot:mainLocal",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Type name given locally",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Categorisation name given locally"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "name": {
+                "@id": "pot:name",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Local name",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Name given locally for the device"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "power": {
+                "@id": "pot:power",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Power (W)",
                 "pot:required": false,
@@ -329,8 +345,40 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalThickness": {
-                "@id": "pot:physicalThickness",
+            "serialNumber": {
+                "@id": "pot:serialNumber",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Serial number",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Unique identifier for the device instance"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "100",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "statusCurrent": {
+                "@id": "pot:statusCurrent",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Life cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life cycle status"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "thickness": {
+                "@id": "pot:thickness",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Thickness",
                 "pot:required": false,
@@ -344,8 +392,8 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalVolume": {
-                "@id": "pot:physicalVolume",
+            "volume": {
+                "@id": "pot:volume",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Volume",
                 "pot:required": false,
@@ -359,8 +407,8 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalWeight": {
-                "@id": "pot:physicalWeight",
+            "weight": {
+                "@id": "pot:weight",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Weight",
                 "pot:required": false,
@@ -374,8 +422,8 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalWidth": {
-                "@id": "pot:physicalWidth",
+            "width": {
+                "@id": "pot:width",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Width",
                 "pot:required": false,

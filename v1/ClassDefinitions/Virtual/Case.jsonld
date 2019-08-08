@@ -39,13 +39,61 @@
         },
         "pot:supportedAttribute": {
             "data": {
-                "@id": "pot:data",
+                "@id": "dli:data",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "data",
                 "pot:description": {
                     "en-us": "data"
                 },
                 "pot:required": false
+            },
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
             },
             "description": {
                 "@id": "pot:description",
@@ -59,60 +107,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "500"
-                }
-            },
-            "idLocal": {
-                "@id": "pot:idLocal",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Case Id",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Local identifier (system identifier) "
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "idNameLocal": {
-                "@id": "pot:idNameLocal",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Case header",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Locally given name (source system name) "
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "lifeCycleStatusCurrent": {
-                "@id": "pot:lifeCycleStatusCurrent",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Case status",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Case state"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "50",
+                    "xsd:maxLength": "500",
                     "xsd:base": "xsd:string"
                 }
             },
-            "timeDuration": {
-                "@id": "pot:timeDuration",
+            "duration": {
+                "@id": "pot:duration",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Duration",
                 "pot:required": false,
@@ -123,12 +123,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             },
-            "timeDurationEstimate": {
-                "@id": "pot:timeDurationEstimate",
+            "durationEstimate": {
+                "@id": "pot:durationEstimate",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Estimated duration",
                 "pot:required": false,
@@ -143,8 +143,8 @@
                     "xsd:maxLength": "50"
                 }
             },
-            "timeEndTime": {
-                "@id": "pot:timeEndTime",
+            "endTime": {
+                "@id": "pot:endTime",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "End time",
                 "pot:required": false,
@@ -158,8 +158,40 @@
                     "xsd:base": "xsd:dateTime"
                 }
             },
-            "timeStartTime": {
-                "@id": "pot:timeStartTime",
+            "local": {
+                "@id": "pot:local",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Case Id",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Local identifier (system identifier) "
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "nameLocal": {
+                "@id": "pot:nameLocal",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Case header",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Locally given name (source system name) "
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "startTime": {
+                "@id": "pot:startTime",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Start time",
                 "pot:required": false,
@@ -171,6 +203,22 @@
                 ],
                 "xsd:restriction": {
                     "xsd:base": "xsd:dateTime"
+                }
+            },
+            "statusCurrent": {
+                "@id": "pot:statusCurrent",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Case status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Case state"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             }
         }

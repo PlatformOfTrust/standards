@@ -39,7 +39,7 @@
         },
         "pot:supportedAttribute": {
             "data": {
-                "@id": "pot:data",
+                "@id": "dli:data",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "data",
                 "pot:description": {
@@ -47,8 +47,101 @@
                 },
                 "pot:required": false
             },
-            "categorizationCultureHistorySignificance": {
-                "@id": "pot:categorizationCultureHistorySignificance",
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "areaSquareMeterFloorNet": {
+                "@id": "pot:areaSquareMeterFloorNet",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Floor net square meters",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Net square meters of floor space/area"
+                },
+                "pot:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "areaSquareMeterLivingNet": {
+                "@id": "pot:areaSquareMeterLivingNet",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Living space net square meters",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Living space net square meters"
+                },
+                "pot:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "completionMomentYear": {
+                "@id": "pot:completionMomentYear",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Completion year",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Completion year of the building"
+                },
+                "pot:valueType": [
+                    "xsd:gYear"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:gYear"
+                }
+            },
+            "cultureHistorySignificance": {
+                "@id": "pot:cultureHistorySignificance",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Cultural or historical significance",
                 "pot:required": false,
@@ -75,12 +168,27 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "500"
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
                 }
             },
-            "idIfcGuid": {
-                "@id": "pot:idIfcGuid",
+            "height": {
+                "@id": "pot:height",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Height",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Height of the building"
+                },
+                "pot:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "ifcGuid": {
+                "@id": "pot:ifcGuid",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "IFC GUID",
                 "pot:required": false,
@@ -91,12 +199,42 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:length": "22",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "22"
+                }
+            },
+            "inaugurationMomentYear": {
+                "@id": "pot:inaugurationMomentYear",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Inauguration year",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Inauguration year of the building"
+                },
+                "pot:valueType": [
+                    "xsd:gYear"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:gYear"
+                }
+            },
+            "inspectionMomentYear": {
+                "@id": "pot:inspectionMomentYear",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Inspection year",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Inspection year of the building"
+                },
+                "pot:valueType": [
+                    "xsd:gYear"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:gYear"
                 }
             },
             "name": {
-                "@id": "pot:idName",
+                "@id": "pot:name",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Building name",
                 "pot:required": false,
@@ -107,12 +245,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
+                    "xsd:maxLength": "500",
                     "xsd:base": "xsd:string"
                 }
             },
-            "idOfficialPermanent": {
-                "@id": "pot:idOfficialPermanent",
+            "officialPermanent": {
+                "@id": "pot:officialPermanent",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Permanent official Id",
                 "pot:required": false,
@@ -127,8 +265,8 @@
                     "xsd:base": "xsd:string"
                 }
             },
-            "idOfficialTemporary": {
-                "@id": "pot:idOfficialTemporary",
+            "officialTemporary": {
+                "@id": "pot:officialTemporary",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Temporary official Id",
                 "pot:required": false,
@@ -139,57 +277,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
-            "lifeCycleCompletionMomentYear": {
-                "@id": "pot:lifeCycleCompletionMomentYear",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Completion year",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Completion year of the building"
-                },
-                "pot:valueType": [
-                    "xsd:gYear"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:gYear"
-                }
-            },
-            "lifeCycleInaugurationMomentYear": {
-                "@id": "pot:lifeCycleInaugurationMomentYear",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Inauguration year",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Inauguration year of the building"
-                },
-                "pot:valueType": [
-                    "xsd:gYear"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:gYear"
-                }
-            },
-            "lifeCycleInspectionMomentYear": {
-                "@id": "pot:lifeCycleInspectionMomentYear",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Inspection year",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Inspection year of the building"
-                },
-                "pot:valueType": [
-                    "xsd:gYear"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:gYear"
-                }
-            },
-            "lifeCycleStatusCurrent": {
-                "@id": "pot:lifeCycleStatusCurrent",
+            "statusCurrent": {
+                "@id": "pot:statusCurrent",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Life cycle status",
                 "pot:required": false,
@@ -200,57 +293,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             },
-            "physicalAreaSquareMeterFloorNet": {
-                "@id": "pot:physicalAreaSquareMeterFloorNet",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Floor net square meters",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Net square meters of floor space/area"
-                },
-                "pot:valueType": [
-                    "xsd:decimal"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:decimal"
-                }
-            },
-            "physicalAreaSquareMeterLivingNet": {
-                "@id": "pot:physicalAreaSquareMeterLivingNet",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Living space net square meters",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Living space net square meters"
-                },
-                "pot:valueType": [
-                    "xsd:decimal"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:decimal"
-                }
-            },
-            "physicalHeight": {
-                "@id": "pot:physicalHeight",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Height",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Height of the building"
-                },
-                "pot:valueType": [
-                    "xsd:decimal"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:decimal"
-                }
-            },
-            "physicalVolume": {
-                "@id": "pot:physicalVolume",
+            "volume": {
+                "@id": "pot:volume",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Volume",
                 "pot:required": false,

@@ -39,16 +39,80 @@
         },
         "pot:supportedAttribute": {
             "data": {
-                "@id": "pot:data",
+                "@id": "dli:data",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "data",
                 "pot:description": {
                     "en-us": "data"
                 },
-                "pot:required": false
+                "pot:required": true
             },
-            "descriptionAdditionalInformation": {
-                "@id": "pot:descriptionAdditionalInformation",
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "productCode": {
+                "@id": "dli:productCode",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Product code",
+                "pot:required": true,
+                "pot:description": {
+                    "en-us": "Unique identifier of a product"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "30",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "additionalInformation": {
+                "@id": "pot:additionalInformation",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Additional information",
                 "pot:required": false,
@@ -63,36 +127,8 @@
                     "xsd:maxLength": "500"
                 }
             },
-            "from": {
-                "@id": "pot:from",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Indentity from",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Identity which is linked"
-                },
-                "pot:valueType": [
-                    "pot:Class"
-                ]
-            },
-            "lifeCycleStatusCurrent": {
-                "@id": "pot:lifeCycleStatusCurrent",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Lice-cycle status",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Life-cycle status"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "timeEndTime": {
-                "@id": "pot:timeEndTime",
+            "endTime": {
+                "@id": "pot:endTime",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "End time",
                 "pot:required": false,
@@ -106,8 +142,20 @@
                     "xsd:base": "xsd:dateTime"
                 }
             },
-            "timeStartTime": {
-                "@id": "pot:timeStartTime",
+            "from": {
+                "@id": "pot:from",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Identity from",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Entity which is linked"
+                },
+                "pot:valueType": [
+                    "pot:Class"
+                ]
+            },
+            "startTime": {
+                "@id": "pot:startTime",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Start time",
                 "pot:required": false,
@@ -121,13 +169,29 @@
                     "xsd:base": "xsd:dateTime"
                 }
             },
+            "statusCurrent": {
+                "@id": "pot:statusCurrent",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Lice-cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life-cycle status"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
             "to": {
                 "@id": "pot:to",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Indentity to",
+                "pot:title": "Identity to",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Identity which is linked"
+                    "en-us": "Entity which is linked"
                 },
                 "pot:valueType": [
                     "pot:Class"
