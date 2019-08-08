@@ -39,7 +39,7 @@
         },
         "pot:supportedAttribute": {
             "data": {
-                "@id": "pot:data",
+                "@id": "dli:data",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "data",
                 "pot:description": {
@@ -47,24 +47,56 @@
                 },
                 "pot:required": false
             },
-            "description": {
-                "@id": "pot:description",
+            "createdAt": {
+                "@id": "dli:createdAt",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Story description",
+                "pot:title": "dli:createdAt",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "Description of the storey"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "500"
+                    "xsd:base": "xsd:string"
                 }
             },
-            "descriptionAdditionalInformation": {
-                "@id": "pot:descriptionAdditionalInformation",
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "additionalInformation": {
+                "@id": "pot:additionalInformation",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Additional information",
                 "pot:required": false,
@@ -79,8 +111,24 @@
                     "xsd:maxLength": "500"
                 }
             },
-            "idIfcGuid": {
-                "@id": "pot:idIfcGuid",
+            "description": {
+                "@id": "pot:description",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Story description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the story"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "ifcGuid": {
+                "@id": "pot:ifcGuid",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "IFC GUID",
                 "pot:required": false,
@@ -91,33 +139,17 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:length": "22",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "22"
                 }
             },
-            "idLocal": {
-                "@id": "pot:idLocal",
+            "local": {
+                "@id": "pot:local",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Local Id",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Locally given identifier for the storey"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "lifeCycleStatusCurrent": {
-                "@id": "pot:lifeCycleStatusCurrent",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Life cycle status",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Life cycle status"
+                    "en-us": "Locally given identifier for the story"
                 },
                 "pot:valueType": [
                     "xsd:string"
@@ -127,13 +159,13 @@
                     "xsd:base": "xsd:string"
                 }
             },
-            "physicalSizeArea": {
-                "@id": "pot:physicalSizeArea",
+            "sizeArea": {
+                "@id": "pot:sizeArea",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Story area size",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Area of the storey"
+                    "en-us": "Area of the story"
                 },
                 "pot:valueType": [
                     "xsd:decimal"
@@ -142,8 +174,8 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalSizeAreaLiving": {
-                "@id": "pot:physicalSizeAreaLiving",
+            "sizeAreaLiving": {
+                "@id": "pot:sizeAreaLiving",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Living area size",
                 "pot:required": false,
@@ -157,8 +189,8 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalSizeAreaLivingAudited": {
-                "@id": "pot:physicalSizeAreaLivingAudited",
+            "sizeAreaLivingAudited": {
+                "@id": "pot:sizeAreaLivingAudited",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Audited living area size",
                 "pot:required": false,
@@ -172,8 +204,24 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalThickness": {
-                "@id": "pot:physicalThickness",
+            "statusCurrent": {
+                "@id": "pot:statusCurrent",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Life cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life cycle status"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "thickness": {
+                "@id": "pot:thickness",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Thickness",
                 "pot:required": false,
@@ -187,8 +235,8 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalVolume": {
-                "@id": "pot:physicalVolume",
+            "volume": {
+                "@id": "pot:volume",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Volume",
                 "pot:required": false,

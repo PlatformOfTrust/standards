@@ -39,7 +39,7 @@
         },
         "pot:supportedAttribute": {
             "data": {
-                "@id": "pot:data",
+                "@id": "dli:data",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "data",
                 "pot:description": {
@@ -47,72 +47,56 @@
                 },
                 "pot:required": false
             },
-            "categorizationLocal": {
-                "@id": "pot:categorizationLocal",
+            "createdAt": {
+                "@id": "dli:createdAt",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Space type - local",
+                "pot:title": "dli:createdAt",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "Space type name derived from local categorization naming"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
                     "xsd:base": "xsd:string"
                 }
             },
-            "categorizationOfficial": {
-                "@id": "pot:categorizationOfficial",
+            "createdBy": {
+                "@id": "dli:createdBy",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Space type - official",
+                "pot:title": "dli:createdBy",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "Space type name derived from official categorization naming"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:base": "xsd:string"
                 }
             },
-            "categorizationUsageMain": {
-                "@id": "pot:categorizationUsageMain",
+            "updatedAt": {
+                "@id": "dli:updatedAt",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Main usage purpose",
+                "pot:title": "dli:updatedAt",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "Main usage purpose"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:base": "xsd:string"
                 }
             },
-            "description": {
-                "@id": "pot:description",
+            "updatedBy": {
+                "@id": "dli:updatedBy",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Space description",
+                "pot:title": "dli:updatedBy",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "Description of the space"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "500"
+                    "xsd:base": "xsd:string"
                 }
             },
-            "descriptionAdditionalInformation": {
-                "@id": "pot:descriptionAdditionalInformation",
+            "additionalInformation": {
+                "@id": "pot:additionalInformation",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Additional information",
                 "pot:required": false,
@@ -127,8 +111,55 @@
                     "xsd:maxLength": "500"
                 }
             },
-            "descriptionKitchen": {
-                "@id": "pot:descriptionKitchen",
+            "description": {
+                "@id": "pot:description",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Space description",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Description of the space"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "height": {
+                "@id": "pot:height",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Height",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Height of the space"
+                },
+                "pot:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "ifcGuid": {
+                "@id": "pot:ifcGuid",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "IFC GUID",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "22"
+                }
+            },
+            "kitchen": {
+                "@id": "pot:kitchen",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Kitchen type",
                 "pot:required": false,
@@ -143,40 +174,24 @@
                     "xsd:maxLength": "50"
                 }
             },
-            "idIfcGuid": {
-                "@id": "pot:idIfcGuid",
+            "local": {
+                "@id": "pot:local",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "IFC GUID",
+                "pot:title": "Space type - local",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "IFC standard based Globally Unique Identifier"
+                    "en-us": "Space type name derived from local categorization naming"
                 },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:length": "22",
+                    "xsd:maxLength": "50",
                     "xsd:base": "xsd:string"
                 }
             },
-            "idLocal": {
-                "@id": "pot:idLocal",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Local Id",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Locally given identifier for the space"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "idNameApartment": {
-                "@id": "pot:idNameApartment",
+            "name": {
+                "@id": "pot:name",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Apartment name",
                 "pot:required": false,
@@ -187,91 +202,28 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "5",
+                    "xsd:maxLength": "500",
                     "xsd:base": "xsd:string"
                 }
             },
-            "idNameLetterApartment": {
-                "@id": "pot:idNameLetterApartment",
+            "official": {
+                "@id": "pot:official",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Apartment name, letter section",
+                "pot:title": "Space type - official",
                 "pot:required": false,
                 "pot:description": {
-                    "en-us": "Apartment name letter section"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:length": "2",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "idNameNumberApartment": {
-                "@id": "pot:idNameNumberApartment",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Apartment name, number section",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Apartment name number section"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "5",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "idOfficial": {
-                "@id": "pot:idOfficial",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Official Id",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Officially given identifier for the space in Finland"
+                    "en-us": "Space type name derived from official categorization naming"
                 },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
                     "xsd:base": "xsd:string",
-                    "xsd:length": "11"
+                    "xsd:maxLength": "50"
                 }
             },
-            "lifeCycleStatusCurrent": {
-                "@id": "pot:lifeCycleStatusCurrent",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Life cycle status",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Life cycle status"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "physicalHeight": {
-                "@id": "pot:physicalHeight",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Height",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Height of the space"
-                },
-                "pot:valueType": [
-                    "xsd:decimal"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:decimal"
-                }
-            },
-            "physicalRoomAmount": {
-                "@id": "pot:physicalRoomAmount",
+            "roomAmount": {
+                "@id": "pot:roomAmount",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Number of rooms",
                 "pot:required": false,
@@ -282,11 +234,12 @@
                     "xsd:int"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:int"
+                    "xsd:base": "xsd:int",
+                    "xsd:maxLength": "4"
                 }
             },
-            "physicalSizeAreaFloor": {
-                "@id": "pot:physicalSizeAreaFloor",
+            "sizeAreaFloor": {
+                "@id": "pot:sizeAreaFloor",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Floor area size",
                 "pot:required": false,
@@ -300,8 +253,8 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalSizeAreaLiving": {
-                "@id": "pot:physicalSizeAreaLiving",
+            "sizeAreaLiving": {
+                "@id": "pot:sizeAreaLiving",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Living area size",
                 "pot:required": false,
@@ -315,8 +268,8 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalSizeAreaLivingAudited": {
-                "@id": "pot:physicalSizeAreaLivingAudited",
+            "sizeAreaLivingAudited": {
+                "@id": "pot:sizeAreaLivingAudited",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Audited living area size",
                 "pot:required": false,
@@ -330,8 +283,40 @@
                     "xsd:base": "xsd:decimal"
                 }
             },
-            "physicalVolume": {
-                "@id": "pot:physicalVolume",
+            "statusCurrent": {
+                "@id": "pot:statusCurrent",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Life cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life cycle status"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "usageMain": {
+                "@id": "pot:usageMain",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Main usage purpose",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Main usage purpose"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "volume": {
+                "@id": "pot:volume",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Volume",
                 "pot:required": false,

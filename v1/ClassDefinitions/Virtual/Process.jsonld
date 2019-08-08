@@ -39,13 +39,61 @@
         },
         "pot:supportedAttribute": {
             "data": {
-                "@id": "pot:data",
+                "@id": "dli:data",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "data",
                 "pot:description": {
                     "en-us": "data"
                 },
                 "pot:required": false
+            },
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
             },
             "description": {
                 "@id": "pot:description",
@@ -59,12 +107,43 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "500"
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
                 }
             },
-            "idLocal": {
-                "@id": "pot:idLocal",
+            "duration": {
+                "@id": "pot:duration",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Duration time",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Duration of the process"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "endTime": {
+                "@id": "pot:endTime",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "End time",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "End time of the process"
+                },
+                "pot:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "local": {
+                "@id": "pot:local",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Process Id",
                 "pot:required": false,
@@ -75,44 +154,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "idNameLocal": {
-                "@id": "pot:idNameLocal",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Process name - local",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Locally given name (source system name) for the process"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
-            "lifeCycleStatusCurrent": {
-                "@id": "pot:lifeCycleStatusCurrent",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Process status",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Process state"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
                     "xsd:maxLength": "50",
                     "xsd:base": "xsd:string"
                 }
             },
-            "locationName": {
-                "@id": "pot:locationName",
+            "name": {
+                "@id": "pot:name",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Location",
                 "pot:required": false,
@@ -123,12 +170,74 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "nameLocal": {
+                "@id": "pot:nameLocal",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Process name - local",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Locally given name (source system name) for the process"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
                     "xsd:maxLength": "50",
                     "xsd:base": "xsd:string"
                 }
             },
-            "outputValue": {
-                "@id": "pot:outputValue",
+            "quantity": {
+                "@id": "pot:quantity",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Quantity",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Quantity of the processes executed or to be executed"
+                },
+                "pot:valueType": [
+                    "xsd:int"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:int"
+                }
+            },
+            "startTime": {
+                "@id": "pot:startTime",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Start time",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Start time of the process"
+                },
+                "pot:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "statusCurrent": {
+                "@id": "pot:statusCurrent",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Process status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Process state"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "value": {
+                "@id": "pot:value",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Output value",
                 "pot:required": false,
@@ -143,8 +252,8 @@
                     "xsd:base": "xsd:string"
                 }
             },
-            "outputValueUnit": {
-                "@id": "pot:outputValueUnit",
+            "valueUnit": {
+                "@id": "pot:valueUnit",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Output value unit",
                 "pot:required": false,
@@ -157,67 +266,6 @@
                 "xsd:restriction": {
                     "xsd:base": "xsd:string",
                     "xsd:maxLength": "50"
-                }
-            },
-            "physicalQuantity": {
-                "@id": "pot:physicalQuantity",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Quantity",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Quantity of the processes executed or to be executed"
-                },
-                "pot:valueType": [
-                    "xsd:int"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:int"
-                }
-            },
-            "timeDuration": {
-                "@id": "pot:timeDuration",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Duration time",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Duration of the process"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "timeEndTime": {
-                "@id": "pot:timeEndTime",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "End time",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "End time of the process"
-                },
-                "pot:valueType": [
-                    "xsd:dateTime"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:dateTime"
-                }
-            },
-            "timeStartTime": {
-                "@id": "pot:timeStartTime",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Start time",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Start time of the process"
-                },
-                "pot:valueType": [
-                    "xsd:dateTime"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:dateTime"
                 }
             }
         }

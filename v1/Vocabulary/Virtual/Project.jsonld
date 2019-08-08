@@ -64,20 +64,17 @@
         "vs:term_status": "unstable",
         "owl:versionInfo": "DRAFT"
     },
-    "idNameLocal": {
-        "@id": "pot:idNameLocal",
+    "createdAt": {
+        "@id": "dli:createdAt",
         "@type": "rdf:Property",
-        "pot:label": {
-            "en-us": "Project name",
-            "fi-fi": "Projektin nimi"
-        },
-        "pot:comment": {
-            "en-us": "Locally given name for the project"
-        },
         "domain": [
-            "dli:Process",
-            "pot:Case",
-            "dli:Project"
+            "dli:DataProduct",
+            "dli:Thing",
+            "dli:Link",
+            "dli:Person",
+            "dli:Identity",
+            "dli:Group",
+            "dli:Virtual"
         ],
         "range": [
             "xsd:string"
@@ -85,52 +82,8 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "timeDurationEstimate": {
-        "@id": "pot:timeDurationEstimate",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "en-us": "Estimated duration",
-            "fi-fi": "Arvioitu kesto"
-        },
-        "pot:comment": {
-            "en-us": "Estimated duration of the project"
-        },
-        "domain": [
-            "pot:Case",
-            "dli:Project"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idLocal": {
-        "@id": "pot:idLocal",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Projektin tunniste",
-            "en-us": "Project Id"
-        },
-        "pot:comment": {
-            "en-us": "Local identifier for the project"
-        },
-        "domain": [
-            "dli:Space",
-            "dli:Process",
-            "pot:Case",
-            "dli:Project",
-            "pot:Story",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "timeStartTime": {
-        "@id": "pot:timeStartTime",
+    "startTime": {
+        "@id": "pot:startTime",
         "@type": "rdf:Property",
         "pot:label": {
             "fi-fi": "Aloitusaika",
@@ -140,8 +93,120 @@
             "en-us": "Start time of the project"
         },
         "domain": [
+            "dli:Process",
+            "dli:Link",
             "pot:Case",
+            "dli:Project"
+        ],
+        "range": [
+            "xsd:dateTime"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "updatedAt": {
+        "@id": "dli:updatedAt",
+        "@type": "rdf:Property",
+        "domain": [
+            "dli:Virtual",
+            "dli:Group",
+            "dli:DataProduct",
+            "dli:Thing",
+            "dli:Person",
+            "dli:Link",
+            "dli:Identity"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "statusCurrent": {
+        "@id": "pot:statusCurrent",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Project status",
+            "fi-fi": "Projektin tila"
+        },
+        "pot:comment": {
+            "en-us": "Project state"
+        },
+        "domain": [
+            "dli:System",
+            "pot:Room",
+            "pot:Building",
+            "pot:Organization",
+            "dli:Process",
+            "pot:RealEstate",
+            "pot:Story",
+            "pot:Device",
+            "dli:Person",
+            "pot:Case",
+            "pot:BuildingElement",
             "dli:Project",
+            "dli:Link",
+            "dli:Space",
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "duration": {
+        "@id": "pot:duration",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Duration time",
+            "fi-fi": "Kesto"
+        },
+        "pot:comment": {
+            "en-us": "Duration of the project"
+        },
+        "domain": [
+            "dli:Project",
+            "dli:Process",
+            "pot:Case"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "createdBy": {
+        "@id": "dli:createdBy",
+        "@type": "rdf:Property",
+        "domain": [
+            "dli:Identity",
+            "dli:Link",
+            "dli:Person",
+            "dli:DataProduct",
+            "dli:Thing",
+            "dli:Group",
+            "dli:Virtual"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "endTime": {
+        "@id": "pot:endTime",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "End time",
+            "fi-fi": "Lopetusaika"
+        },
+        "pot:comment": {
+            "en-us": "End time of the project"
+        },
+        "domain": [
+            "dli:Project",
+            "pot:Case",
             "dli:Process",
             "dli:Link"
         ],
@@ -151,15 +216,53 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "timeDuration": {
-        "@id": "pot:timeDuration",
+    "updatedBy": {
+        "@id": "dli:updatedBy",
+        "@type": "rdf:Property",
+        "domain": [
+            "dli:Virtual",
+            "dli:Group",
+            "dli:Identity",
+            "dli:Link",
+            "dli:Person",
+            "dli:Thing",
+            "dli:DataProduct"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "durationEstimate": {
+        "@id": "pot:durationEstimate",
         "@type": "rdf:Property",
         "pot:label": {
-            "fi-fi": "Kesto",
-            "en-us": "Duration time"
+            "fi-fi": "Arvioitu kesto",
+            "en-us": "Estimated duration"
         },
         "pot:comment": {
-            "en-us": "Duration of the project"
+            "en-us": "Estimated duration of the project"
+        },
+        "domain": [
+            "dli:Project",
+            "pot:Case"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "nameLocal": {
+        "@id": "pot:nameLocal",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Projektin nimi",
+            "en-us": "Project name"
+        },
+        "pot:comment": {
+            "en-us": "Locally given name for the project"
         },
         "domain": [
             "dli:Project",
@@ -172,88 +275,57 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
+    "local": {
+        "@id": "pot:local",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Project Id",
+            "fi-fi": "Projektin tunniste"
+        },
+        "pot:comment": {
+            "en-us": "Local identifier for the project"
+        },
+        "domain": [
+            "pot:Room",
+            "dli:Process",
+            "dli:Space",
+            "pot:Case",
+            "dli:Project",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
     "description": {
         "@id": "pot:description",
         "@type": "rdf:Property",
         "pot:label": {
-            "fi-fi": "Projektin kuvaus",
-            "en-us": "Project description"
+            "en-us": "Project description",
+            "fi-fi": "Projektin kuvaus"
         },
         "pot:comment": {
             "en-us": "Description of the project"
         },
         "domain": [
+            "pot:BuildingElement",
+            "dli:Process",
+            "dli:Project",
             "pot:Device",
-            "pot:Room",
+            "pot:Case",
+            "pot:Story",
+            "dli:System",
+            "dli:Space",
             "pot:RealEstate",
-            "pot:BuildingElement",
-            "dli:Space",
-            "pot:Story",
-            "dli:Process",
-            "dli:Project",
-            "pot:Case",
-            "pot:Organization",
-            "dli:System",
-            "pot:Building",
-            "dli:Product"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "lifeCycleStatusCurrent": {
-        "@id": "pot:lifeCycleStatusCurrent",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "en-us": "Project status",
-            "fi-fi": "Projektin tila"
-        },
-        "pot:comment": {
-            "en-us": "Project state"
-        },
-        "domain": [
             "dli:Product",
-            "pot:Building",
-            "pot:Organization",
-            "dli:System",
-            "pot:Case",
-            "dli:Process",
-            "dli:Project",
-            "pot:Story",
-            "pot:BuildingElement",
-            "dli:Link",
-            "dli:Person",
             "pot:Room",
-            "dli:Space",
-            "pot:Device",
-            "pot:RealEstate"
+            "pot:Building",
+            "pot:Organization"
         ],
         "range": [
             "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "timeEndTime": {
-        "@id": "pot:timeEndTime",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Lopetusaika",
-            "en-us": "End time"
-        },
-        "pot:comment": {
-            "en-us": "End time of the project"
-        },
-        "domain": [
-            "dli:Project",
-            "dli:Process",
-            "dli:Link",
-            "pot:Case"
-        ],
-        "range": [
-            "xsd:dateTime"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"

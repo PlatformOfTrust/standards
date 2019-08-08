@@ -56,14 +56,149 @@
         "vs:term_status": "unstable",
         "owl:versionInfo": "DRAFT"
     },
-    "to": {
-        "@id": "pot:to",
+    "createdAt": {
+        "@id": "dli:createdAt",
+        "@type": "rdf:Property",
+        "domain": [
+            "dli:DataProduct",
+            "dli:Thing",
+            "dli:Link",
+            "dli:Person",
+            "dli:Identity",
+            "dli:Group",
+            "dli:Virtual"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "additionalInformation": {
+        "@id": "pot:additionalInformation",
         "@type": "rdf:Property",
         "pot:label": {
-            "en-us": "Indentity to"
+            "en-us": "Additional information",
+            "fi-fi": "Lisätiedot"
         },
         "pot:comment": {
-            "en-us": "Identity which is linked"
+            "en-us": "Additional information"
+        },
+        "domain": [
+            "pot:Room",
+            "dli:System",
+            "dli:Product",
+            "dli:Space",
+            "dli:Link",
+            "dli:Person",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "startTime": {
+        "@id": "pot:startTime",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
+        },
+        "pot:comment": {
+            "en-us": "Start time"
+        },
+        "domain": [
+            "dli:Process",
+            "dli:Link",
+            "pot:Case",
+            "dli:Project"
+        ],
+        "range": [
+            "xsd:dateTime"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "updatedAt": {
+        "@id": "dli:updatedAt",
+        "@type": "rdf:Property",
+        "domain": [
+            "dli:Virtual",
+            "dli:Group",
+            "dli:DataProduct",
+            "dli:Thing",
+            "dli:Person",
+            "dli:Link",
+            "dli:Identity"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "productCode": {
+        "@id": "dli:productCode",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Tuotekoodi",
+            "en-us": "Product code"
+        },
+        "pot:comment": {
+            "en-us": "Unique identifier of a product"
+        },
+        "domain": [
+            "dli:PublishedOn"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "statusCurrent": {
+        "@id": "pot:statusCurrent",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Elinkaari - Status",
+            "en-us": "Lice-cycle status"
+        },
+        "pot:comment": {
+            "en-us": "Life-cycle status"
+        },
+        "domain": [
+            "dli:System",
+            "pot:Room",
+            "pot:Building",
+            "pot:Organization",
+            "dli:Process",
+            "pot:RealEstate",
+            "pot:Story",
+            "pot:Device",
+            "dli:Person",
+            "pot:Case",
+            "pot:BuildingElement",
+            "dli:Project",
+            "dli:Link",
+            "dli:Space",
+            "dli:Product"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "from": {
+        "@id": "pot:from",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Identity from"
+        },
+        "pot:comment": {
+            "en-us": "Entity which is linked"
         },
         "domain": [
             "dli:Link"
@@ -74,63 +209,26 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "timeStartTime": {
-        "@id": "pot:timeStartTime",
+    "to": {
+        "@id": "pot:to",
         "@type": "rdf:Property",
         "pot:label": {
-            "en-us": "Start time",
-            "fi-fi": "Aloitusaika"
+            "en-us": "Identity to"
         },
         "pot:comment": {
-            "en-us": "Start time"
+            "en-us": "Entity which is linked"
         },
         "domain": [
-            "pot:Case",
-            "dli:Project",
-            "dli:Process",
             "dli:Link"
         ],
         "range": [
-            "xsd:dateTime"
+            "pot:Class"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "lifeCycleStatusCurrent": {
-        "@id": "pot:lifeCycleStatusCurrent",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "en-us": "Lice-cycle status",
-            "fi-fi": "Elinkaari - Status"
-        },
-        "pot:comment": {
-            "en-us": "Life-cycle status"
-        },
-        "domain": [
-            "dli:Product",
-            "pot:Building",
-            "pot:Organization",
-            "dli:System",
-            "pot:Case",
-            "dli:Process",
-            "dli:Project",
-            "pot:Story",
-            "pot:BuildingElement",
-            "dli:Link",
-            "dli:Person",
-            "pot:Room",
-            "dli:Space",
-            "pot:Device",
-            "pot:RealEstate"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "timeEndTime": {
-        "@id": "pot:timeEndTime",
+    "endTime": {
+        "@id": "pot:endTime",
         "@type": "rdf:Property",
         "pot:label": {
             "fi-fi": "Lopetusaika",
@@ -141,9 +239,9 @@
         },
         "domain": [
             "dli:Project",
+            "pot:Case",
             "dli:Process",
-            "dli:Link",
-            "pot:Case"
+            "dli:Link"
         ],
         "range": [
             "xsd:dateTime"
@@ -151,42 +249,35 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "from": {
-        "@id": "pot:from",
+    "createdBy": {
+        "@id": "dli:createdBy",
         "@type": "rdf:Property",
-        "pot:label": {
-            "en-us": "Indentity from"
-        },
-        "pot:comment": {
-            "en-us": "Identity which is linked"
-        },
         "domain": [
-            "dli:Link"
+            "dli:Identity",
+            "dli:Link",
+            "dli:Person",
+            "dli:DataProduct",
+            "dli:Thing",
+            "dli:Group",
+            "dli:Virtual"
         ],
         "range": [
-            "pot:Class"
+            "xsd:string"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "descriptionAdditionalInformation": {
-        "@id": "pot:descriptionAdditionalInformation",
+    "updatedBy": {
+        "@id": "dli:updatedBy",
         "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Lisätiedot",
-            "en-us": "Additional information"
-        },
-        "pot:comment": {
-            "en-us": "Additional information"
-        },
         "domain": [
-            "dli:Product",
-            "dli:System",
-            "dli:Person",
+            "dli:Virtual",
+            "dli:Group",
+            "dli:Identity",
             "dli:Link",
-            "dli:Space",
-            "pot:Story",
-            "pot:Room"
+            "dli:Person",
+            "dli:Thing",
+            "dli:DataProduct"
         ],
         "range": [
             "xsd:string"

@@ -39,7 +39,7 @@
         },
         "pot:supportedAttribute": {
             "data": {
-                "@id": "pot:data",
+                "@id": "dli:data",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "data",
                 "pot:description": {
@@ -47,20 +47,52 @@
                 },
                 "pot:required": false
             },
-            "categorizationOfficial": {
-                "@id": "pot:categorizationOfficial",
+            "createdAt": {
+                "@id": "dli:createdAt",
                 "@type": "pot:SupportedAttribute",
-                "pot:title": "Industry category",
+                "pot:title": "dli:createdAt",
                 "pot:required": false,
-                "pot:description": {
-                    "en-us": "Organization categorization given by official authority"
-                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:createdBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedAt",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "dli:updatedBy",
+                "pot:required": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
                 }
             },
             "description": {
@@ -75,12 +107,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "500"
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
                 }
             },
-            "idGovernmentPermanent": {
-                "@id": "pot:idGovernmentPermanent",
+            "governmentPermanent": {
+                "@id": "pot:governmentPermanent",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Permanent Official Id",
                 "pot:required": false,
@@ -91,12 +123,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:length": "9"
+                    "xsd:length": "9",
+                    "xsd:base": "xsd:string"
                 }
             },
-            "idIfcGuid": {
-                "@id": "pot:idIfcGuid",
+            "ifcGuid": {
+                "@id": "pot:ifcGuid",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "IFC GUID",
                 "pot:required": false,
@@ -107,12 +139,12 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:length": "22",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "22"
                 }
             },
             "name": {
-                "@id": "pot:idName",
+                "@id": "pot:name",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "Organization name",
                 "pot:required": false,
@@ -123,12 +155,44 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
+                    "xsd:maxLength": "500",
                     "xsd:base": "xsd:string"
                 }
             },
-            "idTaxVat": {
-                "@id": "pot:idTaxVat",
+            "official": {
+                "@id": "pot:official",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Industry category",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Organization categorization given by official authority"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "statusCurrent": {
+                "@id": "pot:statusCurrent",
+                "@type": "pot:SupportedAttribute",
+                "pot:title": "Life cycle status",
+                "pot:required": false,
+                "pot:description": {
+                    "en-us": "Life cycle status"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "taxVat": {
+                "@id": "pot:taxVat",
                 "@type": "pot:SupportedAttribute",
                 "pot:title": "VAT code",
                 "pot:required": false,
@@ -140,22 +204,6 @@
                 ],
                 "xsd:restriction": {
                     "xsd:length": "12",
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "lifeCycleStatusCurrent": {
-                "@id": "pot:lifeCycleStatusCurrent",
-                "@type": "pot:SupportedAttribute",
-                "pot:title": "Life cycle status",
-                "pot:required": false,
-                "pot:description": {
-                    "en-us": "Life cycle status"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:maxLength": "50",
                     "xsd:base": "xsd:string"
                 }
             }

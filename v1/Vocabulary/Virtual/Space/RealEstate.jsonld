@@ -64,8 +64,47 @@
         "vs:term_status": "unstable",
         "owl:versionInfo": "DRAFT"
     },
-    "physicalAreaSquareMeter": {
-        "@id": "pot:physicalAreaSquareMeter",
+    "sizeAreaLivingAudited": {
+        "@id": "pot:sizeAreaLivingAudited",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Audited living area size",
+            "fi-fi": "Asuinpinta-ala - tarkistusmitattu"
+        },
+        "pot:comment": {
+            "en-us": "Size of audited area suitable for, or used for, living"
+        },
+        "domain": [
+            "pot:Room",
+            "pot:Story",
+            "dli:Space"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "updatedAt": {
+        "@id": "dli:updatedAt",
+        "@type": "rdf:Property",
+        "domain": [
+            "dli:Virtual",
+            "dli:Group",
+            "dli:DataProduct",
+            "dli:Thing",
+            "dli:Person",
+            "dli:Link",
+            "dli:Identity"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "areaSquareMeter": {
+        "@id": "pot:areaSquareMeter",
         "@type": "rdf:Property",
         "pot:label": {
             "fi-fi": "Pinta-ala",
@@ -83,170 +122,12 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "idOfficial": {
-        "@id": "pot:idOfficial",
+    "controlRight": {
+        "@id": "pot:controlRight",
         "@type": "rdf:Property",
         "pot:label": {
-            "en-us": "Real estate Id",
-            "fi-fi": "Viranomaisen tunniste"
-        },
-        "pot:comment": {
-            "en-us": "Officially given identifier for the space in Finland"
-        },
-        "domain": [
-            "dli:Space",
-            "dli:Person",
-            "pot:RealEstate",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "categorizationUsageMain": {
-        "@id": "pot:categorizationUsageMain",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Käyttötarkoitus",
-            "en-us": "Main usage purpose"
-        },
-        "pot:comment": {
-            "en-us": "Main usage purpose"
-        },
-        "domain": [
-            "pot:Room",
-            "pot:RealEstate",
-            "dli:Space",
-            "dli:System"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idOfficialUnseparatedLand": {
-        "@id": "pot:idOfficialUnseparatedLand",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Määräalatunnus",
-            "en-us": "Unseparated land Id"
-        },
-        "pot:comment": {
-            "en-us": "Official identifier for the unseparated piece of land in Finland"
-        },
-        "domain": [
-            "pot:RealEstate"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "description": {
-        "@id": "pot:description",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Tilan kuvaus",
-            "en-us": "Space description"
-        },
-        "pot:comment": {
-            "en-us": "Description of the space"
-        },
-        "domain": [
-            "pot:Device",
-            "pot:Room",
-            "pot:RealEstate",
-            "pot:BuildingElement",
-            "dli:Space",
-            "pot:Story",
-            "dli:Process",
-            "dli:Project",
-            "pot:Case",
-            "pot:Organization",
-            "dli:System",
-            "pot:Building",
-            "dli:Product"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "categorizationLocationUnseparatedLand": {
-        "@id": "pot:categorizationLocationUnseparatedLand",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Sijaitsee määräalalla",
-            "en-us": "Location on unseparated piece of land"
-        },
-        "pot:comment": {
-            "en-us": "Real estate is located on an unseparated piece of land"
-        },
-        "domain": [
-            "pot:RealEstate"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "categorizationAreaType": {
-        "@id": "pot:categorizationAreaType",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Kiinteistölaji",
-            "en-us": "Real estate type"
-        },
-        "pot:comment": {
-            "en-us": "Type of land defined officially"
-        },
-        "domain": [
-            "pot:RealEstate"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "name": {
-        "@id": "pot:idName",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "en-us": "Name",
-            "fi-fi": "Kiinteistön nimi"
-        },
-        "pot:comment": {
-            "en-us": "Name of the real estate"
-        },
-        "domain": [
-            "pot:Organization",
-            "pot:Room",
-            "pot:Device",
-            "pot:BuildingElement",
-            "pot:Building",
-            "dli:System",
-            "dli:Product",
-            "pot:RealEstate"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "administrationControlRight": {
-        "@id": "pot:administrationControlRight",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "en-us": "Building permission control category",
-            "fi-fi": "Rakennuspaikan hallintaperustelaji"
+            "fi-fi": "Rakennuspaikan hallintaperustelaji",
+            "en-us": "Building permission control category"
         },
         "pot:comment": {
             "en-us": "Control category for building permission"
@@ -260,12 +141,76 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "categorizationAreaTypeRegistration": {
-        "@id": "pot:categorizationAreaTypeRegistration",
+    "officialUnseparatedLand": {
+        "@id": "pot:officialUnseparatedLand",
         "@type": "rdf:Property",
         "pot:label": {
-            "fi-fi": "Rekisteriyksikkölaji",
-            "en-us": "Registration type"
+            "en-us": "Unseparated land Id",
+            "fi-fi": "Määräalatunnus"
+        },
+        "pot:comment": {
+            "en-us": "Official identifier for the unseparated piece of land in Finland"
+        },
+        "domain": [
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "usageMain": {
+        "@id": "pot:usageMain",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Main usage purpose",
+            "fi-fi": "Käyttötarkoitus"
+        },
+        "pot:comment": {
+            "en-us": "Main usage purpose"
+        },
+        "domain": [
+            "dli:System",
+            "pot:Room",
+            "pot:RealEstate",
+            "dli:Space"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "official": {
+        "@id": "pot:official",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Viranomaisen tunniste",
+            "en-us": "Real estate Id"
+        },
+        "pot:comment": {
+            "en-us": "Space type name derived from official categorization naming"
+        },
+        "domain": [
+            "dli:Person",
+            "dli:Space",
+            "pot:RealEstate",
+            "pot:Organization",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "areaTypeRegistration": {
+        "@id": "pot:areaTypeRegistration",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Registration type",
+            "fi-fi": "Rekisteriyksikkölaji"
         },
         "pot:comment": {
             "en-us": "Land registration type"
@@ -279,31 +224,17 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "lifeCycleStatusCurrent": {
-        "@id": "pot:lifeCycleStatusCurrent",
+    "locationUnseparatedLand": {
+        "@id": "pot:locationUnseparatedLand",
         "@type": "rdf:Property",
         "pot:label": {
-            "en-us": "Life cycle status",
-            "fi-fi": "Elinkaari - Status"
+            "en-us": "Location on unseparated piece of land",
+            "fi-fi": "Sijaitsee määräalalla"
         },
         "pot:comment": {
-            "en-us": "Life cycle status"
+            "en-us": "Real estate is located on an unseparated piece of land"
         },
         "domain": [
-            "dli:Product",
-            "pot:Building",
-            "pot:Organization",
-            "dli:System",
-            "pot:Case",
-            "dli:Process",
-            "dli:Project",
-            "pot:Story",
-            "pot:BuildingElement",
-            "dli:Link",
-            "dli:Person",
-            "pot:Room",
-            "dli:Space",
-            "pot:Device",
             "pot:RealEstate"
         ],
         "range": [
@@ -312,104 +243,8 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "physicalVolume": {
-        "@id": "pot:physicalVolume",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Tilavuus",
-            "en-us": "Volume"
-        },
-        "pot:comment": {
-            "en-us": "Volume of the space"
-        },
-        "domain": [
-            "pot:Room",
-            "pot:Device",
-            "pot:BuildingElement",
-            "dli:Space",
-            "pot:Building",
-            "pot:Story"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "descriptionAdditionalInformation": {
-        "@id": "pot:descriptionAdditionalInformation",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Lisätiedot",
-            "en-us": "Additional information"
-        },
-        "pot:comment": {
-            "en-us": "Additional information"
-        },
-        "domain": [
-            "dli:Product",
-            "dli:System",
-            "dli:Person",
-            "dli:Link",
-            "dli:Space",
-            "pot:Story",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalSizeAreaLivingAudited": {
-        "@id": "pot:physicalSizeAreaLivingAudited",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "en-us": "Audited living area size",
-            "fi-fi": "Asuinpinta-ala - tarkistusmitattu"
-        },
-        "pot:comment": {
-            "en-us": "Size of audited area suitable for, or used for, living"
-        },
-        "domain": [
-            "pot:Room",
-            "dli:Space",
-            "pot:Story"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "idIfcGuid": {
-        "@id": "pot:idIfcGuid",
-        "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "IFC GUID",
-            "en-us": "IFC GUID"
-        },
-        "pot:comment": {
-            "en-us": "IFC standard based Globally Unique Identifier"
-        },
-        "domain": [
-            "pot:Device",
-            "pot:Organization",
-            "pot:Story",
-            "dli:Space",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Building",
-            "pot:BuildingElement"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "physicalSizeAreaFloor": {
-        "@id": "pot:physicalSizeAreaFloor",
+    "sizeAreaFloor": {
+        "@id": "pot:sizeAreaFloor",
         "@type": "rdf:Property",
         "pot:label": {
             "en-us": "Floor area size",
@@ -419,8 +254,8 @@
             "en-us": "Area of the space"
         },
         "domain": [
-            "dli:Space",
-            "pot:Room"
+            "pot:Room",
+            "dli:Space"
         ],
         "range": [
             "xsd:decimal"
@@ -428,20 +263,17 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "categorizationOfficial": {
-        "@id": "pot:categorizationOfficial",
+    "updatedBy": {
+        "@id": "dli:updatedBy",
         "@type": "rdf:Property",
-        "pot:label": {
-            "en-us": "Space type - official",
-            "fi-fi": "Tilatyyppi - viranomainen"
-        },
-        "pot:comment": {
-            "en-us": "Space type name derived from official categorization naming"
-        },
         "domain": [
-            "dli:Space",
-            "pot:Room",
-            "pot:Organization"
+            "dli:Virtual",
+            "dli:Group",
+            "dli:Identity",
+            "dli:Link",
+            "dli:Person",
+            "dli:Thing",
+            "dli:DataProduct"
         ],
         "range": [
             "xsd:string"
@@ -449,12 +281,125 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "physicalSizeAreaLiving": {
-        "@id": "pot:physicalSizeAreaLiving",
+    "local": {
+        "@id": "pot:local",
         "@type": "rdf:Property",
         "pot:label": {
-            "en-us": "Living area size",
-            "fi-fi": "Huoneistoala/Asuinpinta-ala"
+            "fi-fi": "Tilatyyppi - paikallinen",
+            "en-us": "Space type - local"
+        },
+        "pot:comment": {
+            "en-us": "Space type name derived from local categorization naming"
+        },
+        "domain": [
+            "pot:Room",
+            "dli:Process",
+            "dli:Space",
+            "pot:Case",
+            "dli:Project",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "name": {
+        "@id": "pot:name",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Kiinteistön nimi",
+            "en-us": "Name"
+        },
+        "pot:comment": {
+            "en-us": "Name of the real estate"
+        },
+        "domain": [
+            "pot:Apartment",
+            "pot:Organization",
+            "pot:Building",
+            "dli:System",
+            "pot:RealEstate",
+            "dli:Product",
+            "pot:BuildingElement",
+            "dli:Process",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "createdAt": {
+        "@id": "dli:createdAt",
+        "@type": "rdf:Property",
+        "domain": [
+            "dli:DataProduct",
+            "dli:Thing",
+            "dli:Link",
+            "dli:Person",
+            "dli:Identity",
+            "dli:Group",
+            "dli:Virtual"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "additionalInformation": {
+        "@id": "pot:additionalInformation",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Additional information",
+            "fi-fi": "Lisätiedot"
+        },
+        "pot:comment": {
+            "en-us": "Additional information"
+        },
+        "domain": [
+            "pot:Room",
+            "dli:System",
+            "dli:Product",
+            "dli:Space",
+            "dli:Link",
+            "dli:Person",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "areaType": {
+        "@id": "pot:areaType",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Real estate type",
+            "fi-fi": "Kiinteistölaji"
+        },
+        "pot:comment": {
+            "en-us": "Type of land defined officially"
+        },
+        "domain": [
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "sizeAreaLiving": {
+        "@id": "pot:sizeAreaLiving",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Huoneistoala/Asuinpinta-ala",
+            "en-us": "Living area size"
         },
         "pot:comment": {
             "en-us": "Size of area suitable for, or used for, living"
@@ -470,23 +415,17 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "idLocal": {
-        "@id": "pot:idLocal",
+    "createdBy": {
+        "@id": "dli:createdBy",
         "@type": "rdf:Property",
-        "pot:label": {
-            "fi-fi": "Paikallinen tunniste",
-            "en-us": "Local Id"
-        },
-        "pot:comment": {
-            "en-us": "Locally given identifier for the space"
-        },
         "domain": [
-            "dli:Space",
-            "dli:Process",
-            "pot:Case",
-            "dli:Project",
-            "pot:Story",
-            "pot:Room"
+            "dli:Identity",
+            "dli:Link",
+            "dli:Person",
+            "dli:DataProduct",
+            "dli:Thing",
+            "dli:Group",
+            "dli:Virtual"
         ],
         "range": [
             "xsd:string"
@@ -494,8 +433,89 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "physicalHeight": {
-        "@id": "pot:physicalHeight",
+    "ifcGuid": {
+        "@id": "pot:ifcGuid",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "IFC GUID",
+            "fi-fi": "IFC GUID"
+        },
+        "pot:comment": {
+            "en-us": "IFC standard based Globally Unique Identifier"
+        },
+        "domain": [
+            "pot:Story",
+            "pot:Room",
+            "pot:Organization",
+            "pot:Building",
+            "pot:RealEstate",
+            "dli:Space",
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "volume": {
+        "@id": "pot:volume",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "en-us": "Volume",
+            "fi-fi": "Tilavuus"
+        },
+        "pot:comment": {
+            "en-us": "Volume of the space"
+        },
+        "domain": [
+            "pot:Device",
+            "dli:Space",
+            "pot:Story",
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "description": {
+        "@id": "pot:description",
+        "@type": "rdf:Property",
+        "pot:label": {
+            "fi-fi": "Kiinteistön kuvaus",
+            "en-us": "Real estate description"
+        },
+        "pot:comment": {
+            "en-us": "Description of the real estate"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "dli:Process",
+            "dli:Project",
+            "pot:Device",
+            "pot:Case",
+            "pot:Story",
+            "dli:System",
+            "dli:Space",
+            "pot:RealEstate",
+            "dli:Product",
+            "pot:Room",
+            "pot:Building",
+            "pot:Organization"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "height": {
+        "@id": "pot:height",
         "@type": "rdf:Property",
         "pot:label": {
             "en-us": "Height",
@@ -505,10 +525,10 @@
             "en-us": "Height of the space"
         },
         "domain": [
-            "pot:Building",
-            "pot:Device",
             "pot:Room",
+            "pot:Building",
             "dli:Space",
+            "pot:Device",
             "pot:BuildingElement"
         ],
         "range": [
@@ -517,19 +537,32 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "categorizationLocal": {
-        "@id": "pot:categorizationLocal",
+    "statusCurrent": {
+        "@id": "pot:statusCurrent",
         "@type": "rdf:Property",
         "pot:label": {
-            "en-us": "Space type - local",
-            "fi-fi": "Tilatyyppi - paikallinen"
+            "fi-fi": "Elinkaari - Status",
+            "en-us": "Life cycle status"
         },
         "pot:comment": {
-            "en-us": "Space type name derived from local categorization naming"
+            "en-us": "Life cycle status"
         },
         "domain": [
+            "dli:System",
             "pot:Room",
-            "dli:Space"
+            "pot:Building",
+            "pot:Organization",
+            "dli:Process",
+            "pot:RealEstate",
+            "pot:Story",
+            "pot:Device",
+            "dli:Person",
+            "pot:Case",
+            "pot:BuildingElement",
+            "dli:Project",
+            "dli:Link",
+            "dli:Space",
+            "dli:Product"
         ],
         "range": [
             "xsd:string"
