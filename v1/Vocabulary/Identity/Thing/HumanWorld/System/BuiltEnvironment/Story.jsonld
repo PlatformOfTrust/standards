@@ -1,0 +1,403 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "Story": {
+        "@id": "pot:Story",
+        "@type": "pot:Class",
+        "subClassOf": "dli:BuiltEnvironment",
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT",
+        "rdfs:label": {
+            "en-us": "Story"
+        },
+        "rdfs:comment": {
+            "en-us": "A Story is the bottom surface of a room or vehicle (also called floor)"
+        }
+    },
+    "ifcGuid": {
+        "@id": "pot:identifier/ifcGuid",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "IFC GUID",
+            "fi-fi": "IFC GUID"
+        },
+        "rdfs:comment": {
+            "en-us": "IFC standard based Globally Unique Identifier"
+        },
+        "domain": [
+            "pot:Organization",
+            "pot:RealEstate",
+            "pot:Story",
+            "pot:Building",
+            "pot:BuildingElement",
+            "dli:Space",
+            "pot:Room",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "endDateTimeValidity": {
+        "@id": "pot:time/endDateTimeValidity",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Järjestelmän päättymispäivä",
+            "en-us": "System abolition date"
+        },
+        "rdfs:comment": {
+            "en-us": "Valid end time for the system (when system has been terminated)"
+        },
+        "domain": [
+            "dli:System"
+        ],
+        "range": [
+            "xsd:dateTime"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "volume": {
+        "@id": "pot:physical/volume",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Tilavuus",
+            "en-us": "Volume"
+        },
+        "rdfs:comment": {
+            "en-us": "Volume of the object"
+        },
+        "domain": [
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:Story",
+            "dli:Space",
+            "pot:Room",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "additionalInformation": {
+        "@id": "pot:description/additionalInformation",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:description",
+        "rdfs:label": {
+            "fi-fi": "Lisätiedot",
+            "en-us": "Additional information"
+        },
+        "rdfs:comment": {
+            "en-us": "Additional information"
+        },
+        "domain": [
+            "dli:Product",
+            "dli:Link",
+            "dli:System",
+            "dli:Person",
+            "dli:Space",
+            "pot:Room",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "sizeAreaLiving": {
+        "@id": "pot:physical/sizeAreaLiving",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Living area size",
+            "fi-fi": "Huoneistoala/Asuinpinta-ala"
+        },
+        "rdfs:comment": {
+            "en-us": "Size of area suitable for, or used for, living"
+        },
+        "domain": [
+            "dli:Space",
+            "pot:Story",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "startDateTimeValidity": {
+        "@id": "pot:time/startDateTimeValidity",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Järjestelmän perustamispäivä",
+            "en-us": "System establishment date"
+        },
+        "rdfs:comment": {
+            "en-us": "Valid start time for the system (when system has been defined)"
+        },
+        "domain": [
+            "dli:System"
+        ],
+        "range": [
+            "xsd:dateTime"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "name": {
+        "@id": "pot:name",
+        "@type": "rdf:Property",
+        "rdfs:label": {
+            "fi-fi": "Järjestelmän nimi",
+            "en-us": "System name"
+        },
+        "rdfs:comment": {
+            "en-us": "Name given to the system"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "dli:System",
+            "pot:Device",
+            "pot:Apartment",
+            "dli:Product",
+            "pot:RealEstate",
+            "pot:Organization",
+            "pot:Building"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "thickness": {
+        "@id": "pot:physical/thickness",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Paksuus",
+            "en-us": "Thickness"
+        },
+        "rdfs:comment": {
+            "en-us": "Thickness of the object"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Story",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "status": {
+        "@id": "pot:lifeCycle/status",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:lifeCycle",
+        "rdfs:label": {
+            "en-us": "Life cycle status",
+            "fi-fi": "Elinkaari - Status"
+        },
+        "rdfs:comment": {
+            "en-us": "Life cycle status"
+        },
+        "domain": [
+            "pot:Story",
+            "dli:Person",
+            "pot:BuildingElement",
+            "dli:System",
+            "pot:Device",
+            "dli:Space",
+            "dli:Link",
+            "dli:Project",
+            "pot:Case",
+            "pot:RealEstate",
+            "dli:Product",
+            "pot:Organization",
+            "pot:Building",
+            "dli:Process",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "sizeArea": {
+        "@id": "pot:physical/sizeArea",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Pinta-ala/Kerrosala",
+            "en-us": "Story area size"
+        },
+        "rdfs:comment": {
+            "en-us": "Area of the story"
+        },
+        "domain": [
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "sizeAreaLivingAudited": {
+        "@id": "pot:physical/sizeAreaLivingAudited",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Asuinpinta-ala - tarkistusmitattu",
+            "en-us": "Audited living area size"
+        },
+        "rdfs:comment": {
+            "en-us": "Size of audited area suitable for, or used for, living"
+        },
+        "domain": [
+            "pot:Room",
+            "dli:Space",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idlocal": {
+        "@id": "pot:identifier/idlocal",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "fi-fi": "Paikallinen tunniste",
+            "en-us": "Local Id"
+        },
+        "rdfs:comment": {
+            "en-us": "Locally given identifier for the story"
+        },
+        "domain": [
+            "pot:Case",
+            "dli:Project",
+            "dli:Process",
+            "pot:Story",
+            "dli:Space",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "descriptionGeneral": {
+        "@id": "pot:description/descriptionGeneral",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:description",
+        "rdfs:label": {
+            "fi-fi": "Järjestelmän kuvaus",
+            "en-us": "Story description"
+        },
+        "rdfs:comment": {
+            "en-us": "Description of the story"
+        },
+        "domain": [
+            "pot:Story",
+            "pot:BuildingElement",
+            "dli:System",
+            "pot:Device",
+            "dli:Space",
+            "pot:Case",
+            "dli:Project",
+            "pot:RealEstate",
+            "dli:Product",
+            "pot:Organization",
+            "pot:Building",
+            "dli:Process",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "usageMain": {
+        "@id": "pot:categorization/usageMain",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "fi-fi": "Käyttötarkoitus",
+            "en-us": "Main usage purpose"
+        },
+        "rdfs:comment": {
+            "en-us": "Main usage purpose"
+        },
+        "domain": [
+            "dli:Space",
+            "pot:Room",
+            "dli:System",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    }
+}

@@ -1,10 +1,9 @@
 # Platform Of Trust Standards repository
 
-This repository contains everything we need to standardize the Platform Of Trust
-APIs.
+This repository contains data standard all Platform of Trust API should rely on.
 
 The Platform Of Trust core ontology can be found as a JSON-LD
-ontology file under [ontologies/pot.jsonld](ontologies/pot.jsonld).
+viewer under [ontologies/pot.jsonld](ontologies/pot.jsonld).
 
 The HTML version of the ontology documentation is hosted at our 
 [Github Pages](https://standards.oftrust.net/)

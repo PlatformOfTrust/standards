@@ -1,0 +1,205 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://standards.lifeengine.io/ontologies/dli.jsonld#",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "PublishedOn": {
+        "@id": "dli:PublishedOn",
+        "@type": "dli:Class",
+        "subClassOf": "dli:Role",
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT",
+        "rdfs:label": {
+            "en-us": "Published",
+            "fi-fi": "Julkaistu"
+        },
+        "rdfs:comment": {
+            "en-us": "Shows the link in which a digital thing is published",
+            "fi-fi": "Osoittaa linkin jossa digitaalinen asia on julkaistu"
+        }
+    },
+    "startDateTime": {
+        "@id": "pot:time/startDateTime",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
+        },
+        "rdfs:comment": {
+            "en-us": "Start time"
+        },
+        "domain": [
+            "dli:Project",
+            "dli:Process",
+            "dli:Link",
+            "pot:Case"
+        ],
+        "range": [
+            "xsd:dateTime"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "endDateTime": {
+        "@id": "pot:time/endDateTime",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Lopetusaika",
+            "en-us": "End time"
+        },
+        "rdfs:comment": {
+            "en-us": "End time"
+        },
+        "domain": [
+            "pot:Case",
+            "dli:Link",
+            "dli:Process",
+            "dli:Project"
+        ],
+        "range": [
+            "xsd:dateTime"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "to": {
+        "@id": "pot:identifier/to",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Identity to"
+        },
+        "rdfs:comment": {
+            "en-us": "Entity which is linked"
+        },
+        "domain": [
+            "dli:Link"
+        ],
+        "range": [
+            "pot:Class"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "additionalInformation": {
+        "@id": "pot:description/additionalInformation",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:description",
+        "rdfs:label": {
+            "fi-fi": "Lisätiedot",
+            "en-us": "Additional information"
+        },
+        "rdfs:comment": {
+            "en-us": "Additional information"
+        },
+        "domain": [
+            "dli:Product",
+            "dli:Link",
+            "dli:System",
+            "dli:Person",
+            "dli:Space",
+            "pot:Room",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "status": {
+        "@id": "pot:lifeCycle/status",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:lifeCycle",
+        "rdfs:label": {
+            "en-us": "Lice-cycle status",
+            "fi-fi": "Elinkaari - Status"
+        },
+        "rdfs:comment": {
+            "en-us": "Life-cycle status"
+        },
+        "domain": [
+            "pot:Story",
+            "dli:Person",
+            "pot:BuildingElement",
+            "dli:System",
+            "pot:Device",
+            "dli:Space",
+            "dli:Link",
+            "dli:Project",
+            "pot:Case",
+            "pot:RealEstate",
+            "dli:Product",
+            "pot:Organization",
+            "pot:Building",
+            "dli:Process",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "from": {
+        "@id": "pot:identifier/from",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Identity from"
+        },
+        "rdfs:comment": {
+            "en-us": "Entity which is linked"
+        },
+        "domain": [
+            "dli:Link"
+        ],
+        "range": [
+            "pot:Class"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    }
+}
