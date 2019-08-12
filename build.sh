@@ -13,8 +13,7 @@ cd "${WORKDIR}"
 
 mkdir "${OUT_FOLDER}"
 
-echo "Test"
-ontospy gendocs "${ONT_FILE}" -o "${OUT_FOLDER}" -title "Platform Of Trust" --theme="${THEME}" --type 2
+ontospy gendocs "${ONT_FILE}" -o "${OUT_FOLDER}" --title "Platform Of Trust" --theme="${THEME}" --type 2
 
 # Copy the HTML to the artifacts folder.
 cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
