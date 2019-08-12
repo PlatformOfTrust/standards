@@ -14,6 +14,7 @@ readonly THEME="darkly"
 cd "${WORKDIR}"
 
 mkdir "${OUT_FOLDER}"
+mkdir "${ARTIFACTS}"
 
 ontospy gendocs "${ONT_FILE}" -o "${OUT_FOLDER}" --title "Platform Of Trust" --theme="${THEME}" --type 2
 

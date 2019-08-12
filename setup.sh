@@ -1,6 +1,4 @@
 #!/bin/sh
 
 pip install --no-cache-dir --upgrade pip
-pip install --no-cache-dir ontospy==1.9.8.2
-pip install --no-cache-dir django
-pip install --no-cache-dir pygments
+pip install --no-cache-dir ontospy[FULL] -U
