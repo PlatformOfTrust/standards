@@ -2,11 +2,13 @@
 
 set -eo pipefail
 
+readonly VERSION = "v1"
 readonly CNAME_ADDRESS="standards.oftrust.net"
-readonly WORKDIR="/src/v1"
+readonly WORKDIR="/src/{$VERSION}"
 readonly ONT_FILE="${WORKDIR}/Ontology/pot.jsonld"
 readonly OUT_FOLDER="/tmp/html"
-readonly ARTIFACTS="/artifacts"
+readonly ARTIFACTS_ROOT="/artifacts"
+readonly ARTIFACTS="${ARTIFACTS_ROOT}/{$VERSION}"
 readonly THEME="darkly"
 
 cd "${WORKDIR}"
@@ -22,4 +24,4 @@ cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
 cp -R "${WORKDIR}/Context" "${ARTIFACTS}"/
 cp -R "${WORKDIR}/Vocabulary" "${ARTIFACTS}"/
 cp -R "${WORKDIR}/ClassDefinitions" "${ARTIFACTS}"/
-echo "${CNAME_ADDRESS}" > "${ARTIFACTS}"/CNAME
+echo "${CNAME_ADDRESS}" > "${ARTIFACTS_ROOT}"/CNAME
