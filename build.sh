@@ -2,13 +2,13 @@
 
 set -eo pipefail
 
-readonly VERSION = "v1"
+readonly STANDARD_VERSION="v1"
 readonly CNAME_ADDRESS="standards.oftrust.net"
-readonly WORKDIR="/src/${VERSION}"
+readonly WORKDIR="/src/${STANDARD_VERSION}"
 readonly ONT_FILE="${WORKDIR}/Ontology/pot.jsonld"
 readonly OUT_FOLDER="/tmp/html"
 readonly ARTIFACTS_ROOT="/artifacts"
-readonly ARTIFACTS="${ARTIFACTS_ROOT}/${VERSION}"
+readonly ARTIFACTS="${ARTIFACTS_ROOT}/${STANDARD_VERSION}"
 readonly THEME="darkly"
 
 cd "${WORKDIR}"
