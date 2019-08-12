@@ -14,7 +14,7 @@ cd "${WORKDIR}"
 mkdir "${OUT_FOLDER}"
 
 # Need to choose type of export, 2 = Multi-site HTML.
-echo 2 | ontodocs "${ONT_FILE}" -o "${OUT_FOLDER}" -t "Platform Of Trust" --theme="${THEME}"
+echo 2 | ontospy gendocs "${ONT_FILE}" -o "${OUT_FOLDER}" -t "Platform Of Trust" --theme="${THEME}" --type 2
 
 # Copy the HTML to the artifacts folder.
 cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
