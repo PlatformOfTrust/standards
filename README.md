@@ -32,7 +32,7 @@ Class descriptions files URLs have same structure as Context files, but ClassDef
 https://standards.oftrust.net/v1/ClassDefinitions/Identity/Digital/Data/DataProduct
 https://standards.oftrust.net/v1/ClassDefinitions/Identity/Thing/Device/Sensor/TemperatureSensor
 
-Web server is configured to return `JSON-LD` files by appending `.jsonld` to requests. In case of context file it will also remove trailing slash before appending .jsonld extention. In repository respective files can be found in folders following URL logic
+Web server is configured to return `JSON-LD` files by appending `.jsonld` to requests. In case of context file it will also remove trailing slash before appending `.jsonld` extention. In repository respective files can be found in folders following URL logic
 
 ## Versioning
 
