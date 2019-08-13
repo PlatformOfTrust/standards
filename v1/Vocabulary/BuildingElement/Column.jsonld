@@ -1,0 +1,491 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "Column": {
+        "@id": "pot:Column",
+        "@type": "pot:Class",
+        "subClassOf": "pot:BuildingElement",
+        "vs:term_status": "unstable",
+        "owl:versionInfo": "DRAFT",
+        "rdfs:label": {
+            "en-us": "Column"
+        },
+        "rdfs:comment": {
+            "en-us": "An upright pillar (typically cylindrical) supporting an arch, entablature, or other structure"
+        }
+    },
+    "ifcGuid": {
+        "@id": "pot:identifier/ifcGuid",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "IFC GUID",
+            "fi-fi": "IFC GUID"
+        },
+        "rdfs:comment": {
+            "en-us": "IFC standard based Globally Unique Identifier"
+        },
+        "domain": [
+            "pot:Organization",
+            "pot:Story",
+            "pot:RealEstate",
+            "pot:Device",
+            "pot:BuildingElement",
+            "pot:Space",
+            "pot:Building",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "thickness": {
+        "@id": "pot:physical/thickness",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Thickness",
+            "fi-fi": "Paksuus"
+        },
+        "rdfs:comment": {
+            "en-us": "Thickness of the element"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Story",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "ifcElementName": {
+        "@id": "pot:categorization/ifcElementName",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "IFC element name",
+            "fi-fi": "IFC elementti nimi"
+        },
+        "rdfs:comment": {
+            "en-us": "IFC standard element name"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "height": {
+        "@id": "pot:physical/height",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Height",
+            "fi-fi": "Korkeus"
+        },
+        "rdfs:comment": {
+            "en-us": "Height of the element"
+        },
+        "domain": [
+            "pot:Room",
+            "pot:Building",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "weight": {
+        "@id": "pot:physical/weight",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Paino",
+            "en-us": "Weight"
+        },
+        "rdfs:comment": {
+            "en-us": "Weight of the element"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "status": {
+        "@id": "pot:lifeCycle/status",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:lifeCycle",
+        "rdfs:label": {
+            "fi-fi": "Elinkaari - Status",
+            "en-us": "Life cycle status"
+        },
+        "rdfs:comment": {
+            "en-us": "Life cycle status"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement",
+            "pot:Case",
+            "pot:Room",
+            "pot:Space",
+            "pot:Building",
+            "pot:Organization",
+            "pot:Story",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "width": {
+        "@id": "pot:physical/width",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Width",
+            "fi-fi": "Leveys"
+        },
+        "rdfs:comment": {
+            "en-us": "Width of the element"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "volume": {
+        "@id": "pot:physical/volume",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Volume",
+            "fi-fi": "Tilavuus"
+        },
+        "rdfs:comment": {
+            "en-us": "Volume of the element"
+        },
+        "domain": [
+            "pot:Story",
+            "pot:Device",
+            "pot:BuildingElement",
+            "pot:Space",
+            "pot:Building",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "categorizationLocal": {
+        "@id": "pot:categorization/categorizationLocal",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "fi-fi": "Lokaali tyypitys",
+            "en-us": "Type name given locally"
+        },
+        "rdfs:comment": {
+            "en-us": "Categorisation name given locally"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Space",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "ifcElementType": {
+        "@id": "pot:categorization/ifcElementType",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "IFC element type",
+            "fi-fi": "IFC elementti tyyppi"
+        },
+        "rdfs:comment": {
+            "en-us": "IFC standard element type"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "descriptionGeneral": {
+        "@id": "pot:description/descriptionGeneral",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:description",
+        "rdfs:label": {
+            "fi-fi": "Rakennuselementin kuvaus",
+            "en-us": "Building element description"
+        },
+        "rdfs:comment": {
+            "en-us": "Description of the building element"
+        },
+        "domain": [
+            "pot:Organization",
+            "pot:Story",
+            "pot:Room",
+            "pot:Building",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Case",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "colorName": {
+        "@id": "pot:physical/colorName",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Color",
+            "fi-fi": "Väri"
+        },
+        "rdfs:comment": {
+            "en-us": "Color of the element"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "areaNet": {
+        "@id": "pot:physical/areaNet",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Area - net",
+            "fi-fi": "Pinta-ala - netto"
+        },
+        "rdfs:comment": {
+            "en-us": "Net area of the element"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "colorCode": {
+        "@id": "pot:physical/colorCode",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Väritunnus",
+            "en-us": "Color code"
+        },
+        "rdfs:comment": {
+            "en-us": "Color code of the element"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "name": {
+        "@id": "pot:identifier/name",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "fi-fi": "Paikallinen nimi",
+            "en-us": "Local name"
+        },
+        "rdfs:comment": {
+            "en-us": "Name given locally for the building element"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Apartment",
+            "pot:Organization",
+            "pot:Device",
+            "pot:Building",
+            "pot:RealEstate"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "codeLocal": {
+        "@id": "pot:identifier/codeLocal",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "fi-fi": "Paikallinen koodi",
+            "en-us": "Local code"
+        },
+        "rdfs:comment": {
+            "en-us": "Code given locally for the building element"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "length": {
+        "@id": "pot:physical/length",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Pituus",
+            "en-us": "Length"
+        },
+        "rdfs:comment": {
+            "en-us": "Length of the element"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "idInstance": {
+        "@id": "pot:identifier/idInstance",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Unique identifier",
+            "fi-fi": "Yksilöllinen tunnus"
+        },
+        "rdfs:comment": {
+            "en-us": "Unique identifier for the element instance"
+        },
+        "domain": [
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "areaGross": {
+        "@id": "pot:physical/areaGross",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Pinta-ala - brutto",
+            "en-us": "Area - gross"
+        },
+        "rdfs:comment": {
+            "en-us": "Gross area of the element"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    }
+}

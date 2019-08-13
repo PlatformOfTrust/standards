@@ -1,0 +1,364 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "description": {
+            "@id": "dli:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Building"
+    },
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Building",
+    "dli:supportedClass": {
+        "@id": "pot:Building",
+        "@type": "pot:Class",
+        "subClassOf": "dli:BuiltEnvironment",
+        "rdfs:label": {
+            "en-us": "Building"
+        },
+        "dli:supportedAttribute": {
+            "data": {
+                "@id": "dli:data",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Data",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Data container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creation time",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Time when the data is created"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creator",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Creator of and identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "metadata": {
+                "@id": "dli:metadata",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Metadata",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Metadata container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Update time",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Time when the data is updated"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Updater",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Updater of an identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "areaSquareMeterFloorNet": {
+                "@id": "pot:physical/areaSquareMeterFloorNet",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Floor net square meters",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Net square meters of floor space/area"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "areaSquareMeterLivingNet": {
+                "@id": "pot:physical/areaSquareMeterLivingNet",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Living space net square meters",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Living space net square meters"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "completionMomentYear": {
+                "@id": "pot:lifeCycle/completionMomentYear",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:lifeCycle",
+                "dli:title": "Completion year",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Completion year of the building"
+                },
+                "dli:valueType": [
+                    "xsd:gYear"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:gYear"
+                }
+            },
+            "cultureHistorySignificance": {
+                "@id": "pot:categorization/cultureHistorySignificance",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:categorization",
+                "dli:title": "Cultural or historical significance",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Categorization if building is culturally significant"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "descriptionGeneral": {
+                "@id": "pot:description/descriptionGeneral",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:description",
+                "dli:title": "Building description",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Description of the building"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "height": {
+                "@id": "pot:physical/height",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Height",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Height of the building"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "idOfficialPermanent": {
+                "@id": "pot:identifier/idOfficialPermanent",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Permanent official Id",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Permanent identifier given officially to the building in Finland"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "10"
+                }
+            },
+            "idOfficialTemporary": {
+                "@id": "pot:identifier/idOfficialTemporary",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Temporary official Id",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Temporary identifier given officially to the building in Finland"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "ifcGuid": {
+                "@id": "pot:identifier/ifcGuid",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "IFC GUID",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:length": "22",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "inaugurationMomentYear": {
+                "@id": "pot:lifeCycle/inaugurationMomentYear",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:lifeCycle",
+                "dli:title": "Inauguration year",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Inauguration year of the building"
+                },
+                "dli:valueType": [
+                    "xsd:gYear"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:gYear"
+                }
+            },
+            "inspectionMomentYear": {
+                "@id": "pot:lifeCycle/inspectionMomentYear",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:lifeCycle",
+                "dli:title": "Inspection year",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Inspection year of the building"
+                },
+                "dli:valueType": [
+                    "xsd:gYear"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:gYear"
+                }
+            },
+            "name": {
+                "@id": "pot:identifier/name",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Building name",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Name of the building"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:lifeCycle",
+                "dli:title": "Life cycle status",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Life cycle status of the building"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "volume": {
+                "@id": "pot:physical/volume",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Volume",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Volume of the building"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            }
+        }
+    }
+}

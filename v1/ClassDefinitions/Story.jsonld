@@ -1,0 +1,298 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "description": {
+            "@id": "dli:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Story"
+    },
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Story",
+    "dli:supportedClass": {
+        "@id": "pot:Story",
+        "@type": "pot:Class",
+        "subClassOf": "dli:BuiltEnvironment",
+        "rdfs:label": {
+            "en-us": "Story"
+        },
+        "dli:supportedAttribute": {
+            "data": {
+                "@id": "dli:data",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Data",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Data container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creation time",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Time when the data is created"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creator",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Creator of and identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "metadata": {
+                "@id": "dli:metadata",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Metadata",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Metadata container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Update time",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Time when the data is updated"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Updater",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Updater of an identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "additionalInformation": {
+                "@id": "pot:description/additionalInformation",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:description",
+                "dli:title": "Additional information",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Additional information"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "500"
+                }
+            },
+            "descriptionGeneral": {
+                "@id": "pot:description/descriptionGeneral",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:description",
+                "dli:title": "Story description",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Description of the story"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "idlocal": {
+                "@id": "pot:identifier/idlocal",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Local Id",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Locally given identifier for the story"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "ifcGuid": {
+                "@id": "pot:identifier/ifcGuid",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "IFC GUID",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:length": "22",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "sizeArea": {
+                "@id": "pot:physical/sizeArea",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Story area size",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Area of the story"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "sizeAreaLiving": {
+                "@id": "pot:physical/sizeAreaLiving",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Living area size",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Size of area suitable for, or used for, living"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "sizeAreaLivingAudited": {
+                "@id": "pot:physical/sizeAreaLivingAudited",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Audited living area size",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Size of audited area suitable for, or used for, living"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:lifeCycle",
+                "dli:title": "Life cycle status",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Life cycle status"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "thickness": {
+                "@id": "pot:physical/thickness",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Thickness",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Thickness of the object"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "volume": {
+                "@id": "pot:physical/volume",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Volume",
+                "dli:required": false,
+                "dli:description": {
+                    "en-us": "Volume of the object"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            }
+        }
+    }
+}
