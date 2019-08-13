@@ -17,7 +17,6 @@ mkdir "${OUT_FOLDER}"
 mkdir "${ARTIFACTS}"
 
 ontospy gendocs "${ONT_FILE}" -o "${OUT_FOLDER}" --title "Platform Of Trust" --theme="${THEME}" --type 2
-sed -i '1iredirect_from: "/"\n' "${OUT_FOLDER}/index.html"
 
 # Copy the HTML to the artifacts folder.
 cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
