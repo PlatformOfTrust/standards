@@ -43,6 +43,7 @@
                 "@type": "dli:SupportedAttribute",
                 "dli:title": "Data",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Data container"
                 },
@@ -58,6 +59,7 @@
                 "@type": "dli:SupportedAttribute",
                 "dli:title": "Creation time",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Time when the data is created"
                 },
@@ -73,6 +75,7 @@
                 "@type": "dli:SupportedAttribute",
                 "dli:title": "Creator",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Creator of and identity "
                 },
@@ -88,6 +91,7 @@
                 "@type": "dli:SupportedAttribute",
                 "dli:title": "Metadata",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Metadata container"
                 },
@@ -103,6 +107,7 @@
                 "@type": "dli:SupportedAttribute",
                 "dli:title": "Update time",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Time when the data is updated"
                 },
@@ -118,6 +123,7 @@
                 "@type": "dli:SupportedAttribute",
                 "dli:title": "Updater",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Updater of an identity "
                 },
@@ -134,6 +140,7 @@
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Area - gross",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Gross area of the element"
                 },
@@ -150,6 +157,7 @@
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Area - net",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Net area of the element"
                 },
@@ -166,8 +174,27 @@
                 "subPropertyOf": "pot:categorization",
                 "dli:title": "Type name given locally",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Categorisation name given locally"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "codeLocal": {
+                "@id": "pot:identifier/codeLocal",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Local code",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Code given locally for the building element"
                 },
                 "dli:valueType": [
                     "xsd:string"
@@ -177,29 +204,13 @@
                     "xsd:base": "xsd:string"
                 }
             },
-            "codeLocal": {
-                "@id": "pot:identifier/codeLocal",
-                "@type": "dli:SupportedAttribute",
-                "subPropertyOf": "pot:identifier",
-                "dli:title": "Local code",
-                "dli:required": false,
-                "dli:description": {
-                    "en-us": "Code given locally for the building element"
-                },
-                "dli:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
-                }
-            },
             "colorCode": {
                 "@id": "pot:physical/colorCode",
                 "@type": "dli:SupportedAttribute",
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Color code",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Color code of the element"
                 },
@@ -207,8 +218,8 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "colorName": {
@@ -217,6 +228,7 @@
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Color",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Color of the element"
                 },
@@ -234,6 +246,7 @@
                 "subPropertyOf": "pot:description",
                 "dli:title": "Building element description",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Description of the building element"
                 },
@@ -251,6 +264,7 @@
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Height",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Height of the element"
                 },
@@ -267,6 +281,7 @@
                 "subPropertyOf": "pot:identifier",
                 "dli:title": "Unique identifier",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Unique identifier for the element instance"
                 },
@@ -284,6 +299,7 @@
                 "subPropertyOf": "pot:categorization",
                 "dli:title": "IFC element name",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "IFC standard element name"
                 },
@@ -301,6 +317,7 @@
                 "subPropertyOf": "pot:categorization",
                 "dli:title": "IFC element type",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "IFC standard element type"
                 },
@@ -308,8 +325,8 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:base": "xsd:string",
-                    "xsd:maxLength": "50"
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
                 }
             },
             "ifcGuid": {
@@ -318,6 +335,7 @@
                 "subPropertyOf": "pot:identifier",
                 "dli:title": "IFC GUID",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "IFC standard based Globally Unique Identifier"
                 },
@@ -335,6 +353,7 @@
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Length",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Length of the element"
                 },
@@ -351,6 +370,7 @@
                 "subPropertyOf": "pot:identifier",
                 "dli:title": "Local name",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Name given locally for the building element"
                 },
@@ -368,6 +388,7 @@
                 "subPropertyOf": "pot:lifeCycle",
                 "dli:title": "Life cycle status",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Life cycle status"
                 },
@@ -375,8 +396,8 @@
                     "xsd:string"
                 ],
                 "xsd:restriction": {
-                    "xsd:maxLength": "50",
-                    "xsd:base": "xsd:string"
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
                 }
             },
             "thickness": {
@@ -385,6 +406,7 @@
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Thickness",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Thickness of the element"
                 },
@@ -401,6 +423,7 @@
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Volume",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Volume of the element"
                 },
@@ -417,6 +440,7 @@
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Weight",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Weight of the element"
                 },
@@ -433,6 +457,7 @@
                 "subPropertyOf": "pot:physical",
                 "dli:title": "Width",
                 "dli:required": false,
+                "dli:readonly": false,
                 "dli:description": {
                     "en-us": "Width of the element"
                 },

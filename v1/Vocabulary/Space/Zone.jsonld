@@ -56,95 +56,25 @@
             "en-us": "Zone is an area that can be defined by coordinates and polygons or collection of other space types like apartments or rooms"
         }
     },
-    "additionalInformation": {
-        "@id": "pot:description/additionalInformation",
+    "idlocal": {
+        "@id": "pot:identifier/idlocal",
         "@type": "rdf:Property",
-        "subPropertyOf": "pot:description",
+        "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "fi-fi": "Lisätiedot",
-            "en-us": "Additional information"
+            "fi-fi": "Paikallinen tunniste",
+            "en-us": "Local Id"
         },
         "rdfs:comment": {
-            "en-us": "Additional information"
+            "en-us": "Locally given identifier for the space"
         },
         "domain": [
+            "pot:Case",
             "pot:Space",
             "pot:Room",
             "pot:Story"
         ],
         "range": [
             "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "ifcGuid": {
-        "@id": "pot:identifier/ifcGuid",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "fi-fi": "IFC GUID",
-            "en-us": "IFC GUID"
-        },
-        "rdfs:comment": {
-            "en-us": "IFC standard based Globally Unique Identifier"
-        },
-        "domain": [
-            "pot:Organization",
-            "pot:Story",
-            "pot:RealEstate",
-            "pot:Device",
-            "pot:BuildingElement",
-            "pot:Space",
-            "pot:Building",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "usageMain": {
-        "@id": "pot:categorization/usageMain",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:categorization",
-        "rdfs:label": {
-            "en-us": "Main usage purpose",
-            "fi-fi": "Käyttötarkoitus"
-        },
-        "rdfs:comment": {
-            "en-us": "Main usage purpose"
-        },
-        "domain": [
-            "pot:Space",
-            "pot:Room",
-            "pot:RealEstate"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "sizeAreaLiving": {
-        "@id": "pot:physical/sizeAreaLiving",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Living area size",
-            "fi-fi": "Huoneistoala/Asuinpinta-ala"
-        },
-        "rdfs:comment": {
-            "en-us": "Size of area suitable for, or used for, living"
-        },
-        "domain": [
-            "pot:Room",
-            "pot:Story",
-            "pot:Space"
-        ],
-        "range": [
-            "xsd:decimal"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
@@ -161,9 +91,83 @@
             "en-us": "Size of audited area suitable for, or used for, living"
         },
         "domain": [
+            "pot:Space",
             "pot:Room",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "ifcGuid": {
+        "@id": "pot:identifier/ifcGuid",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "fi-fi": "IFC GUID",
+            "en-us": "IFC GUID"
+        },
+        "rdfs:comment": {
+            "en-us": "IFC standard based Globally Unique Identifier"
+        },
+        "domain": [
+            "pot:Room",
+            "pot:Device",
+            "pot:Space",
             "pot:Story",
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:RealEstate",
+            "pot:Organization"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "usageMain": {
+        "@id": "pot:categorization/usageMain",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "fi-fi": "Käyttötarkoitus",
+            "en-us": "Main usage purpose"
+        },
+        "rdfs:comment": {
+            "en-us": "Main usage purpose"
+        },
+        "domain": [
+            "pot:RealEstate",
+            "pot:Room",
             "pot:Space"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "volume": {
+        "@id": "pot:physical/volume",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Volume",
+            "fi-fi": "Tilavuus"
+        },
+        "rdfs:comment": {
+            "en-us": "Volume of the space"
+        },
+        "domain": [
+            "pot:Room",
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Space",
+            "pot:Story"
         ],
         "range": [
             "xsd:decimal"
@@ -183,15 +187,15 @@
             "en-us": "Life cycle status"
         },
         "domain": [
+            "pot:Room",
             "pot:Device",
+            "pot:Space",
             "pot:BuildingElement",
+            "pot:Building",
             "pot:Case",
-            "pot:Room",
-            "pot:Space",
-            "pot:Building",
+            "pot:RealEstate",
             "pot:Organization",
-            "pot:Story",
-            "pot:RealEstate"
+            "pot:Story"
         ],
         "range": [
             "xsd:string"
@@ -199,24 +203,21 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "volume": {
-        "@id": "pot:physical/volume",
+    "sizeAreaLiving": {
+        "@id": "pot:physical/sizeAreaLiving",
         "@type": "rdf:Property",
         "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Tilavuus",
-            "en-us": "Volume"
+            "fi-fi": "Huoneistoala/Asuinpinta-ala",
+            "en-us": "Living area size"
         },
         "rdfs:comment": {
-            "en-us": "Volume of the space"
+            "en-us": "Size of area suitable for, or used for, living"
         },
         "domain": [
-            "pot:Story",
-            "pot:Device",
-            "pot:BuildingElement",
             "pot:Space",
-            "pot:Building",
-            "pot:Room"
+            "pot:Room",
+            "pot:Story"
         ],
         "range": [
             "xsd:decimal"
@@ -224,49 +225,23 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "height": {
-        "@id": "pot:physical/height",
+    "sizeAreaFloor": {
+        "@id": "pot:physical/sizeAreaFloor",
         "@type": "rdf:Property",
         "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Korkeus",
-            "en-us": "Height"
+            "fi-fi": "Pinta-ala/Kerrosala",
+            "en-us": "Floor area size"
         },
         "rdfs:comment": {
-            "en-us": "Height of the space"
+            "en-us": "Area of the space"
         },
         "domain": [
             "pot:Room",
-            "pot:Building",
-            "pot:Space",
-            "pot:BuildingElement",
-            "pot:Device"
+            "pot:Space"
         ],
         "range": [
             "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "categorizationLocal": {
-        "@id": "pot:categorization/categorizationLocal",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:categorization",
-        "rdfs:label": {
-            "en-us": "Space type - local",
-            "fi-fi": "Tilatyyppi - paikallinen"
-        },
-        "rdfs:comment": {
-            "en-us": "Space type name derived from local categorization naming"
-        },
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device",
-            "pot:Space",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
@@ -283,9 +258,32 @@
             "en-us": "Space type name derived from official categorization naming"
         },
         "domain": [
-            "pot:Organization",
             "pot:Room",
+            "pot:Organization",
             "pot:Space"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "categorizationLocal": {
+        "@id": "pot:categorization/categorizationLocal",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "fi-fi": "Tilatyyppi - paikallinen",
+            "en-us": "Space type - local"
+        },
+        "rdfs:comment": {
+            "en-us": "Space type name derived from local categorization naming"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Space",
+            "pot:Room"
         ],
         "range": [
             "xsd:string"
@@ -298,16 +296,16 @@
         "@type": "rdf:Property",
         "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "Official Id",
-            "fi-fi": "Viranomaisen tunniste"
+            "fi-fi": "Viranomaisen tunniste",
+            "en-us": "Official Id"
         },
         "rdfs:comment": {
             "en-us": "Officially given identifier for the space in Finland"
         },
         "domain": [
-            "pot:Room",
             "pot:RealEstate",
-            "pot:Space"
+            "pot:Space",
+            "pot:Room"
         ],
         "range": [
             "xsd:string"
@@ -315,22 +313,45 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "idlocal": {
-        "@id": "pot:identifier/idlocal",
+    "height": {
+        "@id": "pot:physical/height",
         "@type": "rdf:Property",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Paikallinen tunniste",
-            "en-us": "Local Id"
+            "en-us": "Height",
+            "fi-fi": "Korkeus"
         },
         "rdfs:comment": {
-            "en-us": "Locally given identifier for the space"
+            "en-us": "Height of the space"
         },
         "domain": [
-            "pot:Story",
             "pot:Space",
             "pot:Room",
-            "pot:Case"
+            "pot:BuildingElement",
+            "pot:Building",
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "additionalInformation": {
+        "@id": "pot:description/additionalInformation",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:description",
+        "rdfs:label": {
+            "fi-fi": "Lisätiedot",
+            "en-us": "Additional information"
+        },
+        "rdfs:comment": {
+            "en-us": "Additional information"
+        },
+        "domain": [
+            "pot:Room",
+            "pot:Space",
+            "pot:Story"
         ],
         "range": [
             "xsd:string"
@@ -351,38 +372,17 @@
         },
         "domain": [
             "pot:Organization",
-            "pot:Story",
-            "pot:Room",
+            "pot:RealEstate",
             "pot:Building",
-            "pot:Space",
-            "pot:BuildingElement",
-            "pot:Device",
             "pot:Case",
-            "pot:RealEstate"
+            "pot:BuildingElement",
+            "pot:Room",
+            "pot:Device",
+            "pot:Space",
+            "pot:Story"
         ],
         "range": [
             "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "sizeAreaFloor": {
-        "@id": "pot:physical/sizeAreaFloor",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Floor area size",
-            "fi-fi": "Pinta-ala/Kerrosala"
-        },
-        "rdfs:comment": {
-            "en-us": "Area of the space"
-        },
-        "domain": [
-            "pot:Space",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:decimal"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"

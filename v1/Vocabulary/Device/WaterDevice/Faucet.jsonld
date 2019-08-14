@@ -56,6 +56,47 @@
             "en-us": "Device which controls the flow of liquid"
         }
     },
+    "power": {
+        "@id": "pot:physical/power",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Teho (W)",
+            "en-us": "Power (W)"
+        },
+        "rdfs:comment": {
+            "en-us": "Power measured in Watts"
+        },
+        "domain": [
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "length": {
+        "@id": "pot:physical/length",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Length",
+            "fi-fi": "Pituus"
+        },
+        "rdfs:comment": {
+            "en-us": "Length of the device"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
     "ifcGuid": {
         "@id": "pot:identifier/ifcGuid",
         "@type": "rdf:Property",
@@ -68,14 +109,14 @@
             "en-us": "IFC standard based Globally Unique Identifier"
         },
         "domain": [
-            "pot:Organization",
-            "pot:Story",
-            "pot:RealEstate",
+            "pot:Room",
             "pot:Device",
-            "pot:BuildingElement",
             "pot:Space",
+            "pot:Story",
             "pot:Building",
-            "pot:Room"
+            "pot:BuildingElement",
+            "pot:RealEstate",
+            "pot:Organization"
         ],
         "range": [
             "xsd:string"
@@ -88,8 +129,8 @@
         "@type": "rdf:Property",
         "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Paksuus",
-            "en-us": "Thickness"
+            "en-us": "Thickness",
+            "fi-fi": "Paksuus"
         },
         "rdfs:comment": {
             "en-us": "Thickness of the device"
@@ -126,22 +167,18 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "height": {
-        "@id": "pot:physical/height",
+    "electricityCurrent": {
+        "@id": "pot:physical/electricityCurrent",
         "@type": "rdf:Property",
         "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Korkeus",
-            "en-us": "Height"
+            "en-us": "Electric current",
+            "fi-fi": "Sähkövirta"
         },
         "rdfs:comment": {
-            "en-us": "Height of the device"
+            "en-us": "An electric current is the rate of flow of electric charge past a point"
         },
         "domain": [
-            "pot:Room",
-            "pot:Building",
-            "pot:Space",
-            "pot:BuildingElement",
             "pot:Device"
         ],
         "range": [
@@ -155,8 +192,8 @@
         "@type": "rdf:Property",
         "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Paino",
-            "en-us": "Weight"
+            "en-us": "Weight",
+            "fi-fi": "Paino"
         },
         "rdfs:comment": {
             "en-us": "Weight of the device"
@@ -167,34 +204,6 @@
         ],
         "range": [
             "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "status": {
-        "@id": "pot:lifeCycle/status",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:lifeCycle",
-        "rdfs:label": {
-            "en-us": "Life cycle status",
-            "fi-fi": "Elinkaari - Status"
-        },
-        "rdfs:comment": {
-            "en-us": "Life cycle status"
-        },
-        "domain": [
-            "pot:Device",
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Room",
-            "pot:Space",
-            "pot:Building",
-            "pot:Organization",
-            "pot:Story",
-            "pot:RealEstate"
-        ],
-        "range": [
-            "xsd:string"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
@@ -220,88 +229,27 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "electricityCurrent": {
-        "@id": "pot:physical/electricityCurrent",
+    "status": {
+        "@id": "pot:lifeCycle/status",
         "@type": "rdf:Property",
-        "subPropertyOf": "pot:physical",
+        "subPropertyOf": "pot:lifeCycle",
         "rdfs:label": {
-            "en-us": "Electric current",
-            "fi-fi": "Sähkövirta"
+            "en-us": "Life cycle status",
+            "fi-fi": "Elinkaari - Status"
         },
         "rdfs:comment": {
-            "en-us": "An electric current is the rate of flow of electric charge past a point"
+            "en-us": "Life cycle status"
         },
         "domain": [
-            "pot:Device"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "volume": {
-        "@id": "pot:physical/volume",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Volume",
-            "fi-fi": "Tilavuus"
-        },
-        "rdfs:comment": {
-            "en-us": "Volume of the device"
-        },
-        "domain": [
-            "pot:Story",
+            "pot:Room",
             "pot:Device",
-            "pot:BuildingElement",
             "pot:Space",
+            "pot:BuildingElement",
             "pot:Building",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "categorizationLocal": {
-        "@id": "pot:categorization/categorizationLocal",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:categorization",
-        "rdfs:label": {
-            "en-us": "Type name given locally",
-            "fi-fi": "Lokaali tyypitys"
-        },
-        "rdfs:comment": {
-            "en-us": "Categorisation name given locally"
-        },
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device",
-            "pot:Space",
-            "pot:Room"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "ifcElementType": {
-        "@id": "pot:categorization/ifcElementType",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:categorization",
-        "rdfs:label": {
-            "fi-fi": "IFC elementti tyyppi",
-            "en-us": "IFC element type"
-        },
-        "rdfs:comment": {
-            "en-us": "IFC standard element type"
-        },
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device"
+            "pot:Case",
+            "pot:RealEstate",
+            "pot:Organization",
+            "pot:Story"
         ],
         "range": [
             "xsd:string"
@@ -314,22 +262,89 @@
         "@type": "rdf:Property",
         "subPropertyOf": "pot:description",
         "rdfs:label": {
-            "fi-fi": "Laitteen kuvaus",
-            "en-us": "Device description"
+            "en-us": "Device description",
+            "fi-fi": "Laitteen kuvaus"
         },
         "rdfs:comment": {
             "en-us": "Description of the device"
         },
         "domain": [
             "pot:Organization",
-            "pot:Story",
+            "pot:RealEstate",
+            "pot:Building",
+            "pot:Case",
+            "pot:BuildingElement",
+            "pot:Room",
+            "pot:Device",
+            "pot:Space",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "volume": {
+        "@id": "pot:physical/volume",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Tilavuus",
+            "en-us": "Volume"
+        },
+        "rdfs:comment": {
+            "en-us": "Volume of the device"
+        },
+        "domain": [
             "pot:Room",
             "pot:Building",
-            "pot:Space",
             "pot:BuildingElement",
             "pot:Device",
-            "pot:Case",
-            "pot:RealEstate"
+            "pot:Space",
+            "pot:Story"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "areaNet": {
+        "@id": "pot:physical/areaNet",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Pinta-ala - netto",
+            "en-us": "Area - net"
+        },
+        "rdfs:comment": {
+            "en-us": "Net area of the device"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "ifcElementType": {
+        "@id": "pot:categorization/ifcElementType",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "IFC element type",
+            "fi-fi": "IFC elementti tyyppi"
+        },
+        "rdfs:comment": {
+            "en-us": "IFC standard element type"
+        },
+        "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
         ],
         "range": [
             "xsd:string"
@@ -349,75 +364,8 @@
             "en-us": "Color of the device"
         },
         "domain": [
-            "pot:Device",
-            "pot:BuildingElement"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "areaNet": {
-        "@id": "pot:physical/areaNet",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Area - net",
-            "fi-fi": "Pinta-ala - netto"
-        },
-        "rdfs:comment": {
-            "en-us": "Net area of the device"
-        },
-        "domain": [
-            "pot:Device",
-            "pot:BuildingElement"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "colorCode": {
-        "@id": "pot:physical/colorCode",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Color code",
-            "fi-fi": "Väritunnus"
-        },
-        "rdfs:comment": {
-            "en-us": "Color code of the device"
-        },
-        "domain": [
-            "pot:Device",
-            "pot:BuildingElement"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "name": {
-        "@id": "pot:identifier/name",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "fi-fi": "Paikallinen nimi",
-            "en-us": "Local name"
-        },
-        "rdfs:comment": {
-            "en-us": "Name given locally for the device"
-        },
-        "domain": [
             "pot:BuildingElement",
-            "pot:Apartment",
-            "pot:Organization",
-            "pot:Device",
-            "pot:Building",
-            "pot:RealEstate"
+            "pot:Device"
         ],
         "range": [
             "xsd:string"
@@ -446,47 +394,6 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "industryDomain": {
-        "@id": "pot:categorization/industryDomain",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:categorization",
-        "rdfs:label": {
-            "fi-fi": "Tekniikan ala",
-            "en-us": "Industry sector name"
-        },
-        "rdfs:comment": {
-            "en-us": "Industry sector name to which the device belongs"
-        },
-        "domain": [
-            "pot:Device"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "length": {
-        "@id": "pot:physical/length",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Length",
-            "fi-fi": "Pituus"
-        },
-        "rdfs:comment": {
-            "en-us": "Length of the device"
-        },
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device"
-        ],
-        "range": [
-            "xsd:decimal"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
     "serialNumber": {
         "@id": "pot:identifier/serialNumber",
         "@type": "rdf:Property",
@@ -507,6 +414,29 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
+    "categorizationLocal": {
+        "@id": "pot:categorization/categorizationLocal",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "Type name given locally",
+            "fi-fi": "Lokaali tyypitys"
+        },
+        "rdfs:comment": {
+            "en-us": "Categorisation name given locally"
+        },
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Space",
+            "pot:Room"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
     "areaGross": {
         "@id": "pot:physical/areaGross",
         "@type": "rdf:Property",
@@ -519,7 +449,76 @@
             "en-us": "Gross area of the device"
         },
         "domain": [
+            "pot:Device",
+            "pot:BuildingElement"
+        ],
+        "range": [
+            "xsd:decimal"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "industryDomain": {
+        "@id": "pot:categorization/industryDomain",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "fi-fi": "Tekniikan ala",
+            "en-us": "Industry sector name"
+        },
+        "rdfs:comment": {
+            "en-us": "Industry sector name to which the device belongs"
+        },
+        "domain": [
+            "pot:Device"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "name": {
+        "@id": "pot:identifier/name",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Local name",
+            "fi-fi": "Paikallinen nimi"
+        },
+        "rdfs:comment": {
+            "en-us": "Name given locally for the device"
+        },
+        "domain": [
+            "pot:Building",
             "pot:BuildingElement",
+            "pot:Device",
+            "pot:Organization",
+            "pot:RealEstate",
+            "pot:Apartment"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
+    "height": {
+        "@id": "pot:physical/height",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Korkeus",
+            "en-us": "Height"
+        },
+        "rdfs:comment": {
+            "en-us": "Height of the device"
+        },
+        "domain": [
+            "pot:Space",
+            "pot:Room",
+            "pot:BuildingElement",
+            "pot:Building",
             "pot:Device"
         ],
         "range": [
@@ -528,22 +527,23 @@
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"
     },
-    "power": {
-        "@id": "pot:physical/power",
+    "colorCode": {
+        "@id": "pot:physical/colorCode",
         "@type": "rdf:Property",
         "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Teho (W)",
-            "en-us": "Power (W)"
+            "fi-fi": "Väritunnus",
+            "en-us": "Color code"
         },
         "rdfs:comment": {
-            "en-us": "Power measured in Watts"
+            "en-us": "Color code of the device"
         },
         "domain": [
+            "pot:BuildingElement",
             "pot:Device"
         ],
         "range": [
-            "xsd:decimal"
+            "xsd:string"
         ],
         "owl:versionInfo": "DRAFT",
         "vs:term_status": "unstable"

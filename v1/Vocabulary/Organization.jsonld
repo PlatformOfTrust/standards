@@ -56,6 +56,26 @@
             "en-us": "An organization is an entity comprising multiple people, such as a company, institution, association,  foundation or coooperative, that has a particular purpose"
         }
     },
+    "governmentPermanent": {
+        "@id": "pot:identifier/governmentPermanent",
+        "@type": "rdf:Property",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "fi-fi": "Y-tunnus",
+            "en-us": "Permanent Official Id"
+        },
+        "rdfs:comment": {
+            "en-us": "Permanent identifier given by an official authority in Finland"
+        },
+        "domain": [
+            "pot:Organization"
+        ],
+        "range": [
+            "xsd:string"
+        ],
+        "owl:versionInfo": "DRAFT",
+        "vs:term_status": "unstable"
+    },
     "ifcGuid": {
         "@id": "pot:identifier/ifcGuid",
         "@type": "rdf:Property",
@@ -68,14 +88,14 @@
             "en-us": "IFC standard based Globally Unique Identifier"
         },
         "domain": [
-            "pot:Organization",
-            "pot:Story",
-            "pot:RealEstate",
+            "pot:Room",
             "pot:Device",
-            "pot:BuildingElement",
             "pot:Space",
+            "pot:Story",
             "pot:Building",
-            "pot:Room"
+            "pot:BuildingElement",
+            "pot:RealEstate",
+            "pot:Organization"
         ],
         "range": [
             "xsd:string"
@@ -108,36 +128,16 @@
         "@type": "rdf:Property",
         "subPropertyOf": "pot:categorization",
         "rdfs:label": {
-            "en-us": "Industry category",
-            "fi-fi": "Toimialaluokka"
+            "fi-fi": "Toimialaluokka",
+            "en-us": "Industry category"
         },
         "rdfs:comment": {
             "en-us": "Organization categorization given by official authority"
         },
         "domain": [
-            "pot:Organization",
             "pot:Room",
+            "pot:Organization",
             "pot:Space"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "governmentPermanent": {
-        "@id": "pot:identifier/governmentPermanent",
-        "@type": "rdf:Property",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "Permanent Official Id",
-            "fi-fi": "Y-tunnus"
-        },
-        "rdfs:comment": {
-            "en-us": "Permanent identifier given by an official authority in Finland"
-        },
-        "domain": [
-            "pot:Organization"
         ],
         "range": [
             "xsd:string"
@@ -150,19 +150,19 @@
         "@type": "rdf:Property",
         "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "Organization name",
-            "fi-fi": "Organisaation nimi"
+            "fi-fi": "Organisaation nimi",
+            "en-us": "Organization name"
         },
         "rdfs:comment": {
             "en-us": "Name of the organization"
         },
         "domain": [
-            "pot:BuildingElement",
-            "pot:Apartment",
-            "pot:Organization",
-            "pot:Device",
             "pot:Building",
-            "pot:RealEstate"
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Organization",
+            "pot:RealEstate",
+            "pot:Apartment"
         ],
         "range": [
             "xsd:string"
@@ -182,15 +182,15 @@
             "en-us": "Life cycle status"
         },
         "domain": [
-            "pot:Device",
-            "pot:BuildingElement",
-            "pot:Case",
             "pot:Room",
+            "pot:Device",
             "pot:Space",
+            "pot:BuildingElement",
             "pot:Building",
+            "pot:Case",
+            "pot:RealEstate",
             "pot:Organization",
-            "pot:Story",
-            "pot:RealEstate"
+            "pot:Story"
         ],
         "range": [
             "xsd:string"
@@ -211,14 +211,14 @@
         },
         "domain": [
             "pot:Organization",
-            "pot:Story",
-            "pot:Room",
+            "pot:RealEstate",
             "pot:Building",
-            "pot:Space",
-            "pot:BuildingElement",
-            "pot:Device",
             "pot:Case",
-            "pot:RealEstate"
+            "pot:BuildingElement",
+            "pot:Room",
+            "pot:Device",
+            "pot:Space",
+            "pot:Story"
         ],
         "range": [
             "xsd:string"
