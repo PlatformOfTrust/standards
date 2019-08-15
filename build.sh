@@ -12,6 +12,7 @@ readonly ARTIFACTS="${ARTIFACTS_ROOT}/${STANDARD_VERSION}"
 readonly THEME="darkly"
 
 cd "${WORKDIR}"
+python ../githubify.py "${STANDARD_VERSION}"
 
 mkdir "${OUT_FOLDER}"
 mkdir "${ARTIFACTS}"
@@ -26,3 +27,4 @@ cp -R "${WORKDIR}/Context" "${ARTIFACTS}"/
 cp -R "${WORKDIR}/Vocabulary" "${ARTIFACTS}"/
 cp -R "${WORKDIR}/ClassDefinitions" "${ARTIFACTS}"/
 echo "${CNAME_ADDRESS}" > "${ARTIFACTS_ROOT}"/CNAME
+echo -e "plugins:\n  - jekyll-redirect-from" > "${ARTIFACTS_ROOT}"/_config.yml
