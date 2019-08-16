@@ -57,6 +57,52 @@
   "rdfs:seeAlso": "https://github.com/PlatformOfTrust/standards/",
   "defines": [
   {
+    "@id": "pot:LocatedAt",
+    "@type": "pot:Class",
+    "subClassOf": "dli:Role",
+    "dli:label": [
+      {
+        "rdfs:label": {
+          "@language": "en-us",
+          "@value": "Located at"
+        }
+      }
+    ],
+    "dli:comment": [
+      {
+        "rdfs:comment": {
+          "@language": "en-us",
+          "@value": "Object is located somewhere"
+        }
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:BelongsTo",
+    "@type": "pot:Class",
+    "subClassOf": "dli:Role",
+    "dli:label": [
+      {
+        "rdfs:label": {
+          "@language": "en-us",
+          "@value": "Belongs to"
+        }
+      }
+    ],
+    "dli:comment": [
+      {
+        "rdfs:comment": {
+          "@language": "en-us",
+          "@value": "Object belonging to something"
+        }
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
     "@id": "pot:Class",
     "@type": "pot:Class",
     "subClassOf": "rdfs:Class",
@@ -2791,7 +2837,7 @@
     "@type": "rdf:Property",
     "subPropertyOf": "pot:identifier",
     "dli:nested": "data",
-    "dli:required": false,
+    "dli:required": true,
     "dli:readonly": false,
     "dli:label": [
       {
@@ -2877,6 +2923,20 @@
           "@value": "Huoneistotunnus"
         },
         "dli:domain": "pot:Apartment"
+      },
+      {
+        "rdfs:label": {
+          "@language": "en-us",
+          "@value": "Room name"
+        },
+        "dli:domain": "pot:Room"
+      },
+      {
+        "rdfs:label": {
+          "@language": "fi-fi",
+          "@value": "Huoneen nimi"
+        },
+        "dli:domain": "pot:Room"
       }
     ],
     "dli:comment": [
@@ -2921,6 +2981,13 @@
           "@value": "Apartment name"
         },
         "dli:domain": "pot:Apartment"
+      },
+      {
+        "rdfs:comment": {
+          "@language": "en-us",
+          "@value": "Room name"
+        },
+        "dli:domain": "pot:Room"
       }
     ],
     "xsd:restriction": {
@@ -2933,7 +3000,8 @@
       "pot:Device",
       "pot:Organization",
       "pot:RealEstate",
-      "pot:Apartment"
+      "pot:Apartment",
+      "pot:Room"
     ],
     "range": [
       "xsd:string"
@@ -5423,7 +5491,7 @@
     "@type": "rdf:Property",
     "dli:nested": "metadata",
     "dli:required": false,
-    "dli:readonly": false,
+    "dli:readonly": true,
     "dli:label": [
       {
         "rdfs:label": {
@@ -5450,6 +5518,8 @@
       "xsd:base": "xsd:dateTime"
     },
     "domain": [
+      "pot:LocatedAt",
+      "pot:BelongsTo",
       "pot:Class",
       "pot:Space",
       "pot:Organization",
@@ -5515,7 +5585,7 @@
     "@type": "rdf:Property",
     "dli:nested": "metadata",
     "dli:required": false,
-    "dli:readonly": false,
+    "dli:readonly": true,
     "dli:label": [
       {
         "rdfs:label": {
@@ -5542,6 +5612,8 @@
       "xsd:base": "xsd:dateTime"
     },
     "domain": [
+      "pot:LocatedAt",
+      "pot:BelongsTo",
       "pot:Class",
       "pot:Space",
       "pot:Organization",
@@ -5607,7 +5679,7 @@
     "@type": "rdf:Property",
     "dli:nested": "metadata",
     "dli:required": false,
-    "dli:readonly": false,
+    "dli:readonly": true,
     "dli:label": [
       {
         "rdfs:label": {
@@ -5634,6 +5706,8 @@
       "xsd:base": "xsd:string"
     },
     "domain": [
+      "pot:LocatedAt",
+      "pot:BelongsTo",
       "pot:Class",
       "pot:Space",
       "pot:Organization",
@@ -5699,7 +5773,7 @@
     "@type": "rdf:Property",
     "dli:nested": "metadata",
     "dli:required": false,
-    "dli:readonly": false,
+    "dli:readonly": true,
     "dli:label": [
       {
         "rdfs:label": {
@@ -5726,6 +5800,8 @@
       "xsd:base": "xsd:string"
     },
     "domain": [
+      "pot:LocatedAt",
+      "pot:BelongsTo",
       "pot:Class",
       "pot:Space",
       "pot:Organization",
@@ -5789,7 +5865,7 @@
   {
     "@id": "dli:name",
     "@type": "rdf:Property",
-    "dli:required": false,
+    "dli:required": true,
     "dli:readonly": false,
     "dli:label": [
       {
@@ -5826,7 +5902,7 @@
   {
     "@id": "dli:data",
     "@type": "rdf:Property",
-    "dli:required": false,
+    "dli:required": true,
     "dli:readonly": false,
     "dli:label": [
       {
@@ -5848,6 +5924,8 @@
       "xsd:base": "xsd:object"
     },
     "domain": [
+      "pot:LocatedAt",
+      "pot:BelongsTo",
       "pot:Class",
       "pot:Space",
       "pot:Organization",
@@ -5912,7 +5990,7 @@
     "@id": "dli:metadata",
     "@type": "rdf:Property",
     "dli:required": false,
-    "dli:readonly": false,
+    "dli:readonly": true,
     "dli:label": [
       {
         "rdfs:label": {
@@ -5933,6 +6011,8 @@
       "xsd:base": "xsd:object"
     },
     "domain": [
+      "pot:LocatedAt",
+      "pot:BelongsTo",
       "pot:Class",
       "pot:Space",
       "pot:Organization",
@@ -5997,7 +6077,7 @@
     "@id": "dli:from",
     "@type": "rdf:Property",
     "dli:required": false,
-    "dli:readonly": false,
+    "dli:readonly": true,
     "dli:label": [
       {
         "rdfs:label": {
@@ -6015,6 +6095,8 @@
       }
     ],
     "domain": [
+      "pot:LocatedAt",
+      "pot:BelongsTo",
       "pot:TenantAt",
       "pot:OwnerOf",
       "pot:OwnerAt",
@@ -6031,7 +6113,7 @@
     "@id": "dli:to",
     "@type": "rdf:Property",
     "dli:required": false,
-    "dli:readonly": false,
+    "dli:readonly": true,
     "dli:label": [
       {
         "rdfs:label": {
@@ -6049,6 +6131,8 @@
       }
     ],
     "domain": [
+      "pot:LocatedAt",
+      "pot:BelongsTo",
       "pot:TenantAt",
       "pot:OwnerOf",
       "pot:OwnerAt",
@@ -6183,7 +6267,23 @@
     },
     "domain": [],
     "range": [
-      "xsd:string"
+      "xsd:boolean"
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "dli:readonly",
+    "@type": "rdf:Property",
+    "dli:required": false,
+    "dli:readonly": false,
+    "xsd:restriction": {
+      "xsd:base": "xsd:string",
+      "xsd:maxLength": 500
+    },
+    "domain": [],
+    "range": [
+      "xsd:boolean"
     ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
