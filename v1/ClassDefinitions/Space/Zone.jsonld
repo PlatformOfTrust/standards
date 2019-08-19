@@ -1,0 +1,386 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "description": {
+            "@id": "dli:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Space/Zone"
+    },
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Space/Zone",
+    "dli:supportedClass": {
+        "@id": "pot:Space/Zone",
+        "@type": "pot:Class",
+        "subClassOf": "pot:Space",
+        "rdfs:label": {
+            "en-us": "Zone"
+        },
+        "dli:supportedAttribute": {
+            "data": {
+                "@id": "dli:data",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Data",
+                "dli:required": true,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Data container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creation time",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Time when the data is created"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creator",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Creator of and identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "metadata": {
+                "@id": "dli:metadata",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Metadata",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Metadata container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Update time",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Time when the data is updated"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Updater",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Updater of an identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "additionalInformation": {
+                "@id": "pot:description/additionalInformation",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:description",
+                "dli:title": "Additional information",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Additional information"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "categorizationLocal": {
+                "@id": "pot:categorization/categorizationLocal",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:categorization",
+                "dli:title": "Space type - local",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Space type name derived from local categorization naming"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "categorizationOfficial": {
+                "@id": "pot:categorization/categorizationOfficial",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:categorization",
+                "dli:title": "Space type - official",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Space type name derived from official categorization naming"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "descriptionGeneral": {
+                "@id": "pot:description/descriptionGeneral",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:description",
+                "dli:title": "Space description",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Description of the space"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "height": {
+                "@id": "pot:physical/height",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Height",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Height of the space"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "idOfficial": {
+                "@id": "pot:identifier/idOfficial",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Official Id",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Officially given identifier for the space in Finland"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "idlocal": {
+                "@id": "pot:identifier/idlocal",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Local Id",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Locally given identifier for the space"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "ifcGuid": {
+                "@id": "pot:identifier/ifcGuid",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "IFC GUID",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:length": "22",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "sizeAreaFloor": {
+                "@id": "pot:physical/sizeAreaFloor",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Floor area size",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Area of the space"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "sizeAreaLiving": {
+                "@id": "pot:physical/sizeAreaLiving",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Living area size",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Size of area suitable for, or used for, living"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "sizeAreaLivingAudited": {
+                "@id": "pot:physical/sizeAreaLivingAudited",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Audited living area size",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Size of audited area suitable for, or used for, living"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:lifeCycle",
+                "dli:title": "Life cycle status",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Life cycle status"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "usageMain": {
+                "@id": "pot:categorization/usageMain",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:categorization",
+                "dli:title": "Main usage purpose",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Main usage purpose"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "volume": {
+                "@id": "pot:physical/volume",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Volume",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Volume of the space"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            }
+        }
+    }
+}

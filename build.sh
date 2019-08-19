@@ -2,25 +2,29 @@
 
 set -eo pipefail
 
+readonly STANDARD_VERSION="v1"
 readonly CNAME_ADDRESS="standards.oftrust.net"
-readonly WORKDIR="/src"
-readonly ONT_FILE="/src/ontologies/pot.jsonld"
+readonly WORKDIR="/src/${STANDARD_VERSION}"
+readonly ONT_FILE="${WORKDIR}/Ontology/pot.jsonld"
 readonly OUT_FOLDER="/tmp/html"
-readonly ARTIFACTS="/artifacts"
+readonly ARTIFACTS_ROOT="/artifacts"
+readonly ARTIFACTS="${ARTIFACTS_ROOT}/${STANDARD_VERSION}"
 readonly THEME="darkly"
 
 cd "${WORKDIR}"
+python ../githubify.py "${STANDARD_VERSION}"
 
 mkdir "${OUT_FOLDER}"
+mkdir "${ARTIFACTS}"
 
-# Need to choose type of export, 2 = Multi-site HTML.
-echo 2 | ontodocs "${ONT_FILE}" -o "${OUT_FOLDER}" -t "Platform Of Trust" --theme="${THEME}"
+ontospy gendocs "${ONT_FILE}" -o "${OUT_FOLDER}" --title "Platform Of Trust" --theme="${THEME}" --type 2
 
 # Copy the HTML to the artifacts folder.
 cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
 
 # Copy over the ontologies and contexts to GH pages
-cp -R "${WORKDIR}/ontologies" "${ARTIFACTS}"/
-cp -R "${WORKDIR}/contexts" "${ARTIFACTS}"/
-cp -R "${WORKDIR}/vocabularies" "${ARTIFACTS}"/
-echo "${CNAME_ADDRESS}" > "${ARTIFACTS}"/CNAME
+cp -R "${WORKDIR}/Context" "${ARTIFACTS}"/
+cp -R "${WORKDIR}/Vocabulary" "${ARTIFACTS}"/
+cp -R "${WORKDIR}/ClassDefinitions" "${ARTIFACTS}"/
+echo "${CNAME_ADDRESS}" > "${ARTIFACTS_ROOT}"/CNAME
+echo -e "plugins:\n  - jekyll-redirect-from" > "${ARTIFACTS_ROOT}"/_config.yml

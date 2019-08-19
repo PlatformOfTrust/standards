@@ -1,0 +1,473 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "description": {
+            "@id": "dli:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/BuildingElement/Floor"
+    },
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/BuildingElement/Floor",
+    "dli:supportedClass": {
+        "@id": "pot:BuildingElement/Floor",
+        "@type": "pot:Class",
+        "subClassOf": "pot:BuildingElement",
+        "rdfs:label": {
+            "en-us": "Floor"
+        },
+        "dli:supportedAttribute": {
+            "data": {
+                "@id": "dli:data",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Data",
+                "dli:required": true,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Data container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creation time",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Time when the data is created"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creator",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Creator of and identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "metadata": {
+                "@id": "dli:metadata",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Metadata",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Metadata container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Update time",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Time when the data is updated"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Updater",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Updater of an identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "areaGross": {
+                "@id": "pot:physical/areaGross",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Area - gross",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Gross area of the element"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "areaNet": {
+                "@id": "pot:physical/areaNet",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Area - net",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Net area of the element"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "categorizationLocal": {
+                "@id": "pot:categorization/categorizationLocal",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:categorization",
+                "dli:title": "Type name given locally",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Categorisation name given locally"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "codeLocal": {
+                "@id": "pot:identifier/codeLocal",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Local code",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Code given locally for the building element"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "colorCode": {
+                "@id": "pot:physical/colorCode",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Color code",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Color code of the element"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "colorName": {
+                "@id": "pot:physical/colorName",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Color",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Color of the element"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "descriptionGeneral": {
+                "@id": "pot:description/descriptionGeneral",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:description",
+                "dli:title": "Building element description",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Description of the building element"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "500",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "height": {
+                "@id": "pot:physical/height",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Height",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Height of the element"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "idInstance": {
+                "@id": "pot:identifier/idInstance",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Unique identifier",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Unique identifier for the element instance"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "ifcElementName": {
+                "@id": "pot:categorization/ifcElementName",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:categorization",
+                "dli:title": "IFC element name",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "IFC standard element name"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "ifcElementType": {
+                "@id": "pot:categorization/ifcElementType",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:categorization",
+                "dli:title": "IFC element type",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "IFC standard element type"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "ifcGuid": {
+                "@id": "pot:identifier/ifcGuid",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "IFC GUID",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:length": "22",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "length": {
+                "@id": "pot:physical/length",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Length",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Length of the element"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "name": {
+                "@id": "pot:identifier/name",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Local name",
+                "dli:required": true,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Name given locally for the building element"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:lifeCycle",
+                "dli:title": "Life cycle status",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Life cycle status"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "thickness": {
+                "@id": "pot:physical/thickness",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Thickness",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Thickness of the element"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "volume": {
+                "@id": "pot:physical/volume",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Volume",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Volume of the element"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "weight": {
+                "@id": "pot:physical/weight",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Weight",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Weight of the element"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            },
+            "width": {
+                "@id": "pot:physical/width",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:physical",
+                "dli:title": "Width",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Width of the element"
+                },
+                "dli:valueType": [
+                    "xsd:decimal"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:decimal"
+                }
+            }
+        }
+    }
+}
