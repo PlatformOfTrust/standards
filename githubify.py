@@ -18,6 +18,9 @@ if __name__ == "__main__":
 
         file_names = map(lambda x: os.path.splitext(x)[0], files)
         for fname in file_names:
-            if fname not in dirs:
+            if fname not in dirs and fname != 'index':
                 with open(os.path.join(root, fname+'.md'), 'w') as f:
                     f.write(FILE_REDIRECT_TEMPLATE.substitute(redirect_to=os.path.join(root_name, root, fname+'.jsonld')))
+                os.makedirs(os.path.join(root, fname), exist_ok=True)
+                with open(os.path.join(root, fname, 'index.md'), 'w') as f:
+                    f.write(FILE_REDIRECT_TEMPLATE.substitute(redirect_to=os.path.join(root_name, root, '..', fname+'.jsonld')))
