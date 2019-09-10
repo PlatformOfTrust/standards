@@ -23,4 +23,4 @@ if __name__ == "__main__":
                     f.write(FILE_REDIRECT_TEMPLATE.substitute(redirect_to=os.path.join(root_name, root, fname+'.jsonld')))
                 os.makedirs(os.path.join(root, fname), exist_ok=True)
                 with open(os.path.join(root, fname, 'index.md'), 'w') as f:
-                    f.write(FILE_REDIRECT_TEMPLATE.substitute(redirect_to=os.path.join(root_name, root, '..', fname+'.jsonld')))
+                    f.write(FILE_REDIRECT_TEMPLATE.substitute(redirect_to=os.path.join(root_name, root, fname+'.jsonld')))
