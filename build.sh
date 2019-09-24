@@ -28,3 +28,4 @@ cp -R "${WORKDIR}/Vocabulary" "${ARTIFACTS}"/
 cp -R "${WORKDIR}/ClassDefinitions" "${ARTIFACTS}"/
 echo "${CNAME_ADDRESS}" > "${ARTIFACTS_ROOT}"/CNAME
 echo -e "plugins:\n  - jekyll-redirect-from" > "${ARTIFACTS_ROOT}"/_config.yml
+echo -e "---\nredirect_to: \"/v1/\"\n---" > "${ARTIFACTS_ROOT}"/index.md
