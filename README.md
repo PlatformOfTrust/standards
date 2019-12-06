@@ -1,6 +1,6 @@
 ## Structure and definitions
 
-The Standard is split into 3 sections, each having their own directory in the repository.
+The Standard is split into 3 sections, each having their own directory in the repository. 
 
 There are 3 types of JSON-LD files:
 - **Context file** - file describing JSON object structure and referencing Vocabulary and Class definition files for details
