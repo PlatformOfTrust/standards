@@ -6,7 +6,7 @@ There are 3 types of JSON-LD files:
 - **Context file** - file describing JSON object structure and referencing Vocabulary and Class definition files for details
 - **Vocabulary file** - contains standard definition of properties, class and its subclasses in RDF standard
 - **Class definition file** - extention required to specify fields additional properties like mandatory, types, supported values e.t.c. .
-
+//
 ## Contexts
 
 Contexts are laid out in a versioned tree structure. Each specific definition is in a `.jsonld` -file. For every directory under the `contexts` folder, the PARENT folder is expected to have `<folder>.jsonld` that defines the base class for that directory's contents. E.g. if `Context/Identity/Thing/FlowerPot.jsonld` exists, then  `Context/Identity/Thing.jsonld` must exist as well.
