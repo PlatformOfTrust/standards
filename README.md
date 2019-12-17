@@ -1,8 +1,4 @@
 
-## Versioning
-
-Versioning use semantic versions for names, except truncated to significant bits. The patch version is not used for minor changes of e.g. titles and descriptions. Any backwards incompatible change (removal/rename of fields, restructuring) is done in a new major version (e.g. `v2`), and adding fields result in a new minor version (e.g. `v1.1`) as adding new required fields could break something. 
-
 ## Viewer
 
 The raw JSON-LD will be hosted by default, however once the standards viewer has been implemented the server shall be configured so that instead of the raw JSON-LD the server will return a React application if the `Accept` header contains `text/html`. The React application will be built so it understands the same URL structure and will be able to visualize the standards.
