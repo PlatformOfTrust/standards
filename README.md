@@ -1,3 +1,4 @@
+
 ## Versioning
 
 Versioning use semantic versions for names, except truncated to significant bits. The patch version is not used for minor changes of e.g. titles and descriptions. Any backwards incompatible change (removal/rename of fields, restructuring) is done in a new major version (e.g. `v2`), and adding fields result in a new minor version (e.g. `v1.1`) as adding new required fields could break something. 
