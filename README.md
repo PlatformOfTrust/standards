@@ -1,4 +1,6 @@
- ## Struc ture a nd de fini ti ons
+
+## Structure and de finitions
+
 
 The Standard is split into 3 sections, each having their own directory in t he repository.  
 
