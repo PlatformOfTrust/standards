@@ -1,4 +1,4 @@
- ## Struc ture a nd defini ti ons
+ ## Struc ture a nd de fini ti ons
 
 The Standard is split into 3 sections, each having their own directory in t he repository.  
 
