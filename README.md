@@ -1,33 +1,4 @@
 
-
-## Contextsff         
-
- 
-Contexts are laid out in a versioned tree structure. Eaczzh specific definition is in a `.jsonld` -file. For every directory under the `contexts` folder, the PARENT folder is expected to have `<folder>.jsonld` that defines the base class for that directory's contents. E.g. if `Context/Identity/Thing/FlowerPot.jsonld` exists, then  `Context/Identity/Thing.jsonld` must exist as well.
-
-Naming standard is:
-
- - URL friendly (no characters that require % signs in the URL or similar)
- - Human readable
- - U.S. English
- - Pascal case
-
-## URL structure
-
-Context file is available at URL containing base URL + `version` + `/Context/` + class name:
-https://standards.oftrust.net/v1/Context/Identity/Digital/Data/DataProduct/
-https://standards.oftrust.net/v1/Context/Identity/Thing/Device/Sensor/TemperatureSensor/
-
-Vocabulary files URLs have same structure as Context files, but Vocabulary folder should be used instead:
-https://standards.oftrust.net/v1/Vocabulary/Identity/Digital/Data/DataProduct
-https://standards.oftrust.net/v1/Vocabulary/Identity/Thing/Device/Sensor/TemperatureSensor
-
-Class descriptions files URLs have same structure as Context files, but ClassDefinition folder should be used instead
-https://standards.oftrust.net/v1/ClassDefinitions/Identity/Digital/Data/DataProduct
-https://standards.oftrust.net/v1/ClassDefinitions/Identity/Thing/Device/Sensor/TemperatureSensor
-
-Web server is configured to return `JSON-LD` files by appending `.jsonld` to requests. In case of context file it will also remove trailing slash before appending `.jsonld` extention. In repository respective files can be found in folders following URL logic
-
 ## Versioning
 
 Versioning use semantic versions for names, except truncated to significant bits. The patch version is not used for minor changes of e.g. titles and descriptions. Any backwards incompatible change (removal/rename of fields, restructuring) is done in a new major version (e.g. `v2`), and adding fields result in a new minor version (e.g. `v1.1`) as adding new required fields could break something. 
