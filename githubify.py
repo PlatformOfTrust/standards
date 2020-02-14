@@ -14,15 +14,15 @@ if __name__ == "__main__":
         dir_name = os.path.split(root)[-1]
         if dir_name != '' and dir_name not in EXCLUDE_INDEXES:
                 with open(os.path.join(root, 'index.md'), 'w') as f:
-                     if dir_name endswith('/'):
+                     if dir_name.endswith('/'):
                         dir_name = dir_name[:-1]
                     f.write(FILE_REDIRECT_TEMPLATE.substitute(redirect_to=os.path.join(root_name, root, '..', dir_name+'.jsonld')))
 
         file_names = map(lambda x: os.path.splitext(x)[0], files)
         for fname in file_names:
             if fname not in dirs and fname != 'index':
-                 if fname endswith('/'):
-                        fname = dir_name[:-1]
+                 if fname.endswith('/'):
+                        fname = fname[:-1]
                 with open(os.path.join(root, fname+'.md'), 'w') as f:
                     f.write(FILE_REDIRECT_TEMPLATE.substitute(redirect_to=os.path.join(root_name, root, fname+'.jsonld')))
                 os.makedirs(os.path.join(root, fname), exist_ok=True)
