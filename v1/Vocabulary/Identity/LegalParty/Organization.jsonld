@@ -1,0 +1,262 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "categorizationOfficial": {
+        "@id": "pot:categorization/categorizationOfficial",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Organization",
+            "pot:Room",
+            "pot:Space"
+        ]
+    },
+    "taxVatCode": {
+        "@id": "pot:identifier/taxVatCode",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "fi-fi": "ALV-tunnus",
+            "en-us": "VAT code"
+        },
+        "rdfs:comment": {
+            "en-us": "Value-added taxation identifier"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Organization"
+        ]
+    },
+    "governmentPermanent": {
+        "@id": "pot:identifier/governmentPermanent",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Permanent Official Id",
+            "fi-fi": "Y-tunnus"
+        },
+        "rdfs:comment": {
+            "en-us": "Permanent identifier given by an official authority in Finland"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Organization"
+        ]
+    },
+    "name": {
+        "@id": "pot:identifier/name",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Apartment",
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Organization",
+            "pot:Product",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:System"
+        ]
+    },
+    "status": {
+        "@id": "pot:lifeCycle/status",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:lifeCycle",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:Case",
+            "pot:Device",
+            "pot:Organization",
+            "pot:Person",
+            "pot:Process",
+            "pot:Product",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Space",
+            "pot:Storey",
+            "pot:System",
+            "pot:Link"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:Identity"
+        ]
+    },
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "metadata": {
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "ifcGuid": {
+        "@id": "pot:identifier/ifcGuid",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "IFC GUID",
+            "fi-fi": "IFC GUID"
+        },
+        "rdfs:comment": {
+            "en-us": "IFC standard based Globally Unique Identifier"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Organization",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Space",
+            "pot:Storey"
+        ]
+    },
+    "descriptionGeneral": {
+        "@id": "pot:description/descriptionGeneral",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:description",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:Case",
+            "pot:Device",
+            "pot:Organization",
+            "pot:Process",
+            "pot:Product",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Space",
+            "pot:Storey"
+        ]
+    },
+    "Organization": {
+        "@id": "pot:Identity/LegalParty/Organization",
+        "@type": "owl:Class",
+        "subClassOf": "pot:LegalParty",
+        "rdfs:label": {
+            "fi-fi": "Organisaatio",
+            "en-us": "Organization"
+        },
+        "rdfs:comment": {
+            "en-us": "An organisation is an entity comprising multiple people, such as a company, institution, association, foundation or cooperative, and which has a particular purpose.",
+            "fi-fi": "Ryhmä ihmisiä voi muodostaa organisaation kuten yrityksen, instituution, yhdistyksen, säätiön tai osuuskunnan jolla on jokin toimintatavoite."
+        }
+    },
+    "LimitedCompany": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Identity/LegalParty/Organization"
+        }
+    }
+}

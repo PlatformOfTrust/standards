@@ -1,0 +1,309 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "description": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Identity/Structure/Building"
+    },
+    "pot:supportedClass": {
+        "@id": "pot:Identity/Structure/Building",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Structure",
+        "rdfs:label": {
+            "en-us": "Building",
+            "fi-fi": "Rakennus"
+        },
+        "rdfs:comment": {
+            "en-us": "A building is a structure composed of elements (walls, roof, floor) and devices, and typically has a permanent location"
+        },
+        "pot:supportedAttribute": {
+            "areaSquareMeterFloorNet": {
+                "@id": "pot:physical/areaSquareMeterFloorNet",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:physical",
+                "rdfs:label": {
+                    "en-us": "Floor net square meters",
+                    "fi-fi": "Kerrosala - netto"
+                },
+                "rdfs:comment": {
+                    "en-us": "Net square meters of floor space/area"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:decimal"
+                ]
+            },
+            "areaSquareMeterLivingNet": {
+                "@id": "pot:physical/areaSquareMeterLivingNet",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:physical",
+                "rdfs:label": {
+                    "fi-fi": "Asuin pinta-ala - netto",
+                    "en-us": "Living space net square meters"
+                },
+                "rdfs:comment": {
+                    "en-us": "Living space net square meters"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:decimal"
+                ]
+            },
+            "completionMomentYear": {
+                "@id": "pot:lifeCycle/completionMomentYear",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:lifeCycle",
+                "rdfs:label": {
+                    "en-us": "Completion year",
+                    "fi-fi": "Valmistumisvuosi "
+                },
+                "rdfs:comment": {
+                    "en-us": "Completion year of the building"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:gYear"
+                ]
+            },
+            "createdAt": {
+                "@id": "pot:metadata/createdAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "createdBy": {
+                "@id": "pot:metadata/createdBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "cultureHistorySignificance": {
+                "@id": "pot:categorization/cultureHistorySignificance",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:categorization",
+                "rdfs:label": {
+                    "en-us": "Cultural or historical significance",
+                    "fi-fi": "Kulttuurihistoriallisesti merkittävä"
+                },
+                "rdfs:comment": {
+                    "en-us": "Categorization if building is culturally significant"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "data": {
+                "@id": "pot:data",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "pot:required": true,
+                "pot:readonly": false
+            },
+            "descriptionGeneral": {
+                "@id": "pot:description/descriptionGeneral",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:description",
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "height": {
+                "@id": "pot:physical/height",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:physical",
+                "rdfs:label": {
+                    "en-us": "Height",
+                    "fi-fi": "Korkeus"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:decimal"
+                ]
+            },
+            "id": {
+                "@id": "pot:identifier/id",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "pot:required": true,
+                "pot:readonly": false
+            },
+            "idOfficialPermanent": {
+                "@id": "pot:identifier/idOfficialPermanent",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "rdfs:label": {
+                    "en-us": "Permanent official Id",
+                    "fi-fi": "Pysyvä rakennustunnus "
+                },
+                "rdfs:comment": {
+                    "en-us": "Permanent identifier given officially to the building in Finland"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "idOfficialTemporary": {
+                "@id": "pot:identifier/idOfficialTemporary",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "rdfs:label": {
+                    "en-us": "Temporary official Id",
+                    "fi-fi": "Väliaikainen rakennustunnus"
+                },
+                "rdfs:comment": {
+                    "en-us": "Temporary identifier given officially to the building in Finland"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "ifcGuid": {
+                "@id": "pot:identifier/ifcGuid",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "rdfs:label": {
+                    "en-us": "IFC GUID",
+                    "fi-fi": "IFC GUID"
+                },
+                "rdfs:comment": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "inaugurationMomentYear": {
+                "@id": "pot:lifeCycle/inaugurationMomentYear",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:lifeCycle",
+                "rdfs:label": {
+                    "en-us": "Inauguration year",
+                    "fi-fi": "Käyttöönottovuosi"
+                },
+                "rdfs:comment": {
+                    "en-us": "Inauguration year of the building"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:gYear"
+                ]
+            },
+            "inspectionMomentYear": {
+                "@id": "pot:lifeCycle/inspectionMomentYear",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:lifeCycle",
+                "rdfs:label": {
+                    "en-us": "Inspection year",
+                    "fi-fi": "Loppukatselmus"
+                },
+                "rdfs:comment": {
+                    "en-us": "Inspection year of the building"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:gYear"
+                ]
+            },
+            "metadata": {
+                "@id": "pot:metadata",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "name": {
+                "@id": "pot:identifier/name",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:lifeCycle",
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "updatedAt": {
+                "@id": "pot:metadata/updatedAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "updatedBy": {
+                "@id": "pot:metadata/updatedBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "volume": {
+                "@id": "pot:physical/volume",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:physical",
+                "rdfs:label": {
+                    "fi-fi": "Tilavuus",
+                    "en-us": "Volume"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:decimal"
+                ]
+            }
+        }
+    }
+}

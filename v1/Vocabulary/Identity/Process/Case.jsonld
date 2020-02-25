@@ -1,0 +1,351 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "categorizationLocalPriority": {
+        "@id": "pot:categorization/categorizationLocalPriority",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "Case priority",
+            "fi-fi": "Palvelupyynnön kiireellisyysluokka"
+        },
+        "rdfs:comment": {
+            "en-us": "Priority based categorization given locally"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Case"
+        ]
+    },
+    "processTypePoT": {
+        "@id": "pot:categorization/processTypePoT",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "Process type - PoT type",
+            "fi-fi": "Prosessin tyyppi - PoT luokitus"
+        },
+        "rdfs:comment": {
+            "en-us": "PoT defined standard process type"
+        },
+        "domain": [
+            "pot:Process"
+        ]
+    },
+    "status": {
+        "@id": "pot:lifeCycle/status",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:lifeCycle",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:Case",
+            "pot:Device",
+            "pot:Organization",
+            "pot:Person",
+            "pot:Process",
+            "pot:Product",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Space",
+            "pot:Storey",
+            "pot:System",
+            "pot:Link"
+        ]
+    },
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "idLocal": {
+        "@id": "pot:identifier/idLocal",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Case",
+            "pot:Device",
+            "pot:Process",
+            "pot:Project",
+            "pot:Room",
+            "pot:Space",
+            "pot:Storey"
+        ]
+    },
+    "nameLocal": {
+        "@id": "pot:identifier/nameLocal",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Case",
+            "pot:Process",
+            "pot:Project"
+        ]
+    },
+    "processValue": {
+        "@id": "pot:other/processValue",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:other",
+        "rdfs:label": {
+            "en-us": "Output value",
+            "fi-fi": "Tuotoksen arvo"
+        },
+        "rdfs:comment": {
+            "en-us": "Output value of the process"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Process"
+        ]
+    },
+    "executor": {
+        "@id": "pot:executor",
+        "@type": "owl:ObjectProperty",
+        "domain": [
+            "pot:Process"
+        ]
+    },
+    "duration": {
+        "@id": "pot:time/duration",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Case",
+            "pot:Process",
+            "pot:Project"
+        ]
+    },
+    "startDateTime": {
+        "@id": "pot:time/startDateTime",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
+        },
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Case",
+            "pot:Process",
+            "pot:Project",
+            "pot:Link"
+        ]
+    },
+    "function": {
+        "@id": "pot:categorization/function",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "domain": [
+            "pot:Device",
+            "pot:Process"
+        ]
+    },
+    "descriptionGeneral": {
+        "@id": "pot:description/descriptionGeneral",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:description",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Building",
+            "pot:BuildingElement",
+            "pot:Case",
+            "pot:Device",
+            "pot:Organization",
+            "pot:Process",
+            "pot:Product",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Space",
+            "pot:Storey"
+        ]
+    },
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "categorizationLocal": {
+        "@id": "pot:categorization/categorizationLocal",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:comment": {
+            "en-us": "Categorisation name given locally"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Case",
+            "pot:Device",
+            "pot:Room",
+            "pot:Space"
+        ]
+    },
+    "durationEstimate": {
+        "@id": "pot:time/durationEstimate",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Arvioitu kesto",
+            "en-us": "Estimated duration"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Case",
+            "pot:Project"
+        ]
+    },
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:Identity"
+        ]
+    },
+    "metadata": {
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "locationName": {
+        "@id": "pot:lifeCycle/location/locationName",
+        "@type": "owl:ObjectProperty",
+        "subPropertyOf": "pot:lifeCycle/location",
+        "domain": [
+            "pot:Process"
+        ]
+    },
+    "endDateTime": {
+        "@id": "pot:time/endDateTime",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "en-us": "End time",
+            "fi-fi": "Lopetusaika"
+        },
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Case",
+            "pot:Process",
+            "pot:Project"
+        ]
+    },
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "Case": {
+        "@id": "pot:Identity/Process/Case",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Process",
+        "rdfs:label": {
+            "en-us": "Case",
+            "fi-fi": "Palvelupyyntö"
+        },
+        "rdfs:comment": {
+            "en-us": "A case is reactive set of processes where some unexpected occurrence triggers a need for activities.  Typically a case is trying to restore a situation that existed before an event"
+        }
+    }
+}
