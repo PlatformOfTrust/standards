@@ -1,0 +1,274 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "description": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Identity/Space/Zone"
+    },
+    "pot:supportedClass": {
+        "@id": "pot:Identity/Space/Zone",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Space",
+        "rdfs:label": {
+            "fi-fi": "Vyöhyke",
+            "en-us": "Zone"
+        },
+        "rdfs:comment": {
+            "en-us": "A zone is an area that can be defined by coordinates and polygons or collection of other space types like apartments or rooms"
+        },
+        "pot:supportedAttribute": {
+            "categorizationLocal": {
+                "@id": "pot:categorization/categorizationLocal",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:categorization",
+                "rdfs:comment": {
+                    "en-us": "Categorisation name given locally"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "categorizationOfficial": {
+                "@id": "pot:categorization/categorizationOfficial",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:categorization",
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "createdAt": {
+                "@id": "pot:metadata/createdAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "createdBy": {
+                "@id": "pot:metadata/createdBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "data": {
+                "@id": "pot:data",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "pot:required": true,
+                "pot:readonly": false
+            },
+            "descriptionGeneral": {
+                "@id": "pot:description/descriptionGeneral",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:description",
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "height": {
+                "@id": "pot:physical/height",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:physical",
+                "rdfs:label": {
+                    "en-us": "Height",
+                    "fi-fi": "Korkeus"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:decimal"
+                ]
+            },
+            "id": {
+                "@id": "pot:identifier/id",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "pot:required": true,
+                "pot:readonly": false
+            },
+            "idLocal": {
+                "@id": "pot:identifier/idLocal",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "idOfficial": {
+                "@id": "pot:identifier/idOfficial",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "ifcGuid": {
+                "@id": "pot:identifier/ifcGuid",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "rdfs:label": {
+                    "en-us": "IFC GUID",
+                    "fi-fi": "IFC GUID"
+                },
+                "rdfs:comment": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "metadata": {
+                "@id": "pot:metadata",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "sizeAreaFloor": {
+                "@id": "pot:physical/sizeAreaFloor",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:physical",
+                "rdfs:label": {
+                    "en-us": "Floor area size",
+                    "fi-fi": "Pinta-ala/Kerrosala"
+                },
+                "rdfs:comment": {
+                    "en-us": "Area of the space"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:decimal"
+                ]
+            },
+            "sizeAreaLiving": {
+                "@id": "pot:physical/sizeAreaLiving",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:physical",
+                "rdfs:label": {
+                    "fi-fi": "Huoneistoala/Asuinpinta-ala",
+                    "en-us": "Living area size"
+                },
+                "rdfs:comment": {
+                    "en-us": "Size of area suitable for, or used for. living"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:decimal"
+                ]
+            },
+            "sizeAreaLivingAudited": {
+                "@id": "pot:physical/sizeAreaLivingAudited",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:physical",
+                "rdfs:label": {
+                    "fi-fi": "Asuinpinta-ala - tarkistusmitattu",
+                    "en-us": "Audited living area size"
+                },
+                "rdfs:comment": {
+                    "en-us": "Size of audited area suitable for, or used for, living"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:decimal"
+                ]
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:lifeCycle",
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "updatedAt": {
+                "@id": "pot:metadata/updatedAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "updatedBy": {
+                "@id": "pot:metadata/updatedBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "usageMain": {
+                "@id": "pot:categorization/usageMain",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:categorization",
+                "rdfs:label": {
+                    "fi-fi": "Käyttötarkoitus",
+                    "en-us": "Main usage purpose"
+                },
+                "rdfs:comment": {
+                    "en-us": "Main usage purpose"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "volume": {
+                "@id": "pot:physical/volume",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:physical",
+                "rdfs:label": {
+                    "fi-fi": "Tilavuus",
+                    "en-us": "Volume"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:decimal"
+                ]
+            }
+        }
+    }
+}
