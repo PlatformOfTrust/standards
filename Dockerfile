@@ -1,10 +1,15 @@
 FROM library/alpine
 
+ARG standards_version=v1
+ENV standards_version=$standards_version
+
 ENV LC_ALL=C.UTF-8 \
 	LANG=C.UTF-8
 
 
-ADD v1 /var/public/v1
+
+ADD app /var/public
+ADD v1 /var/public/${standards_version}
 ADD docker-entrypoint.sh /opt/
 
 RUN apk add --update --no-cache nginx \

@@ -1,9 +1,8 @@
 import json
 from copy import deepcopy
-import shutil
 from owlready2 import *
-from models import RDFClass
-from const import BASE_DEFFINITION_POT, BASE_IDENTITY_POT, BASE_VOCABULARY_POT, POT_EXPORT
+from models import RDFClass, RDFProperty
+from export_templates import get_definition_pot, get_base_identity_pot, get_vocabulary_pot, POT_EXPORT
 from utils import owl_property_to_python_for_definition, owl_property_context, class_get_full_id,\
     owl_property_to_python_for_vocabulary
 from class_helpers import Link, Identity
@@ -11,9 +10,9 @@ from class_helpers import Link, Identity
 pot = owl_world.get_ontology("https://standard.oftrust.net/")
 
 
-def create_definition_from_rdf_class(rdf_class, context, onto):
-    vocabulary_dict = deepcopy(BASE_DEFFINITION_POT)
-    vocabulary = '{}Vocabulary/{}'.format(POT_EXPORT, context.get('id'))
+def create_definition_from_rdf_class(rdf_class, context, onto, pot_export, template):
+    vocabulary_dict = deepcopy(template)
+    vocabulary = '{}Vocabulary/{}'.format(pot_export, context.get('id'))
     vocabulary_dict['@context']['@vocab'] = vocabulary
     supported_class = rdf_class.to_python(context)
     supported_attrs = {
@@ -50,10 +49,10 @@ def create_definition_from_rdf_class(rdf_class, context, onto):
     return vocabulary_dict
 
 
-def create_identity_from_rdf_class(rdf_class, context, onto):
-    identity_dict = deepcopy(BASE_IDENTITY_POT)
-    vocabulary = '{}ClassDefinitions/{}'.format(POT_EXPORT, context.get('id'))
-    identity_dict['@vocab'] = '{}Vocabulary/{}'.format(POT_EXPORT, context.get('id'))
+def create_identity_from_rdf_class(rdf_class, context, onto, pot_export, template):
+    identity_dict = deepcopy(template)
+    vocabulary = '{}ClassDefinitions/{}'.format(pot_export, context.get('id'))
+    identity_dict['@vocab'] = '{}Vocabulary/{}'.format(pot_export, context.get('id'))
     identity_dict['@classDefinition'] = vocabulary
     total_attributes = set()
     for a in onto.data_properties():
@@ -71,8 +70,8 @@ def create_identity_from_rdf_class(rdf_class, context, onto):
     }
 
 
-def create_vocabulary_from_rdf_class(rdf_class, context, onto):
-    vocabulary_dict = deepcopy(BASE_VOCABULARY_POT)
+def create_vocabulary_from_rdf_class(rdf_class, context, onto, template):
+    vocabulary_dict = deepcopy(template)
     total_attributes = set()
     for a in onto.data_properties():
         if rdf_class.cls.ancestors().intersection(a.domain):
@@ -103,27 +102,36 @@ def create_vocabulary_from_rdf_class(rdf_class, context, onto):
     return vocabulary_dict
 
 
-def parse(fname):
+def parse(fname, export_pot_url):
     onto = get_ontology(fname).load()
-
+    base_identity_template = get_base_identity_pot(export_pot_url)
+    vocabulary_template = get_vocabulary_pot(export_pot_url)
+    definition_template = get_definition_pot(export_pot_url)
     for c in [RDFClass(i) for i in onto.classes()]:
         files = c.get_files()
         for f in files:
             if (Link in c.cls.ancestors() or Identity in c.cls.ancestors()) and (c.cls != Link and c.cls != Identity):
                 os.makedirs(os.path.join(CLASS_DEFINITIONS_DIR, f.get('dir')), exist_ok=True)
-                data_to_dump = create_definition_from_rdf_class(c, f, onto)
+                data_to_dump = create_definition_from_rdf_class(c, f, onto, export_pot_url, definition_template)
                 with open(os.path.join(CLASS_DEFINITIONS_DIR, f.get('dir'), f.get('filename')), 'w', encoding='utf-8') as rf:
                     rf.write(json.dumps(data_to_dump, indent=4, separators=(',', ': '), ensure_ascii=False))
 
                 os.makedirs(os.path.join(CONTEXT_DIR, f.get('dir')), exist_ok=True)
-                data_to_dump = create_identity_from_rdf_class(c, f, onto)
+                data_to_dump = create_identity_from_rdf_class(c, f, onto, export_pot_url, base_identity_template)
                 with open(os.path.join(CONTEXT_DIR, f.get('dir'), f.get('filename')), 'w', encoding='utf-8') as rf:
                     rf.write(json.dumps(data_to_dump, indent=4, separators=(',', ': '), ensure_ascii=False))
 
             os.makedirs(os.path.join(VOCABULARY_DIR, f.get('dir')), exist_ok=True)
-            data_to_dump = create_vocabulary_from_rdf_class(c, f, onto)
+            data_to_dump = create_vocabulary_from_rdf_class(c, f, onto, vocabulary_template)
             with open(os.path.join(VOCABULARY_DIR, f.get('dir'), f.get('filename')), 'w', encoding='utf-8') as rf:
                 rf.write(json.dumps(data_to_dump, indent=4, separators=(',', ': '), ensure_ascii=False))
+
+    for p in [RDFProperty(i) for i in onto.properties()]:
+        files = p.get_files()
+        for f in files:
+            os.makedirs(os.path.join(VOCABULARY_DIR, f.get('dir')), exist_ok=True)
+            with open(os.path.join(VOCABULARY_DIR, f.get('dir'), f.get('filename')), 'w', encoding='utf-8') as rf:
+                rf.write(json.dumps(p.to_python(vocabulary_template), indent=4, separators=(',', ': '), ensure_ascii=False))
 
 
 if __name__ == "__main__":
@@ -136,13 +144,12 @@ if __name__ == "__main__":
         BASE_DIR = sys.argv[2]
     except IndexError:
         BASE_DIR = 'v1'
+    try:
+        _export_pot_url = sys.argv[3]
+    except IndexError:
+        _export_pot_url = POT_EXPORT
+    print(_export_pot_url)
     VOCABULARY_DIR = os.path.join(BASE_DIR, 'Vocabulary')
     CONTEXT_DIR = os.path.join(BASE_DIR, 'Context')
     CLASS_DEFINITIONS_DIR = os.path.join(BASE_DIR, 'ClassDefinitions')
-    parse(filename)
-    try:
-        archive = sys.argv[2]
-        if archive == '-a':
-            shutil.make_archive('generated', 'zip', 'newres')
-    except:
-        pass
+    parse(filename, _export_pot_url)
