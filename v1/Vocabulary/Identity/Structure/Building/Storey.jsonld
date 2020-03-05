@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.oftrust.netVocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -39,19 +39,103 @@
             ]
         }
     },
-    "areaSquareMeterLivingNet": {
-        "@id": "pot:physical/areaSquareMeterLivingNet",
+    "additionalInformation": {
+        "@id": "pot:description/additionalInformation",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:description",
+        "rdfs:label": {
+            "en-us": "Additional information",
+            "fi-fi": "Lisätiedot"
+        },
+        "rdfs:comment": {
+            "en-us": "Additional information"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Product",
+            "pot:System",
+            "pot:Person",
+            "pot:Room",
+            "pot:Storey"
+        ]
+    },
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:Identity"
+        ]
+    },
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "areaSquareMeterFloorNet": {
+        "@id": "pot:physical/areaSquareMeterFloorNet",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Asuin pinta-ala - netto",
-            "en-us": "Living space net square meters"
+            "en-us": "Floor net square meters",
+            "fi-fi": "Kerrosala - netto"
         },
         "rdfs:comment": {
-            "en-us": "Living space net square meters"
+            "en-us": "Net square meters of floor space/area"
         },
         "pot:valueType": [
             "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Building"
+        ]
+    },
+    "sizeArea": {
+        "@id": "pot:physical/sizeArea",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Pinta-ala/Kerrosala",
+            "en-us": "Storey area size"
+        },
+        "rdfs:comment": {
+            "en-us": "Area of the storey"
+        },
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Storey"
+        ]
+    },
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "idOfficialTemporary": {
+        "@id": "pot:identifier/idOfficialTemporary",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Temporary official Id",
+            "fi-fi": "Väliaikainen rakennustunnus"
+        },
+        "rdfs:comment": {
+            "en-us": "Temporary identifier given officially to the building in Finland"
+        },
+        "pot:valueType": [
+            "xsd:string"
         ],
         "domain": [
             "pot:Building"
@@ -75,23 +159,53 @@
             "pot:Building"
         ]
     },
-    "name": {
-        "@id": "pot:identifier/name",
+    "descriptionGeneral": {
+        "@id": "pot:description/descriptionGeneral",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:description",
         "pot:valueType": [
             "xsd:string"
         ],
         "domain": [
-            "pot:Apartment",
-            "pot:Building",
+            "pot:Process",
+            "pot:Product",
+            "pot:Space",
             "pot:BuildingElement",
             "pot:Device",
             "pot:Organization",
-            "pot:Product",
+            "pot:Case",
+            "pot:Project",
             "pot:RealEstate",
             "pot:Room",
-            "pot:System"
+            "pot:Building",
+            "pot:Storey"
+        ]
+    },
+    "inaugurationMomentYear": {
+        "@id": "pot:lifeCycle/inaugurationMomentYear",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:lifeCycle",
+        "rdfs:label": {
+            "en-us": "Inauguration year",
+            "fi-fi": "Käyttöönottovuosi"
+        },
+        "rdfs:comment": {
+            "en-us": "Inauguration year of the building"
+        },
+        "pot:valueType": [
+            "xsd:gYear"
+        ],
+        "domain": [
+            "pot:Building"
+        ]
+    },
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "status": {
@@ -102,97 +216,39 @@
             "xsd:string"
         ],
         "domain": [
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Device",
-            "pot:Organization",
-            "pot:Person",
+            "pot:Link",
             "pot:Process",
             "pot:Product",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:System",
+            "pot:Organization",
+            "pot:Person",
+            "pot:Case",
             "pot:Project",
             "pot:RealEstate",
             "pot:Room",
-            "pot:Space",
-            "pot:Storey",
-            "pot:System",
-            "pot:Link"
+            "pot:Building",
+            "pot:Storey"
         ]
     },
-    "data": {
-        "@id": "pot:data",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "sizeAreaLivingAudited": {
-        "@id": "pot:physical/sizeAreaLivingAudited",
+    "areaSquareMeterLivingNet": {
+        "@id": "pot:physical/areaSquareMeterLivingNet",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Asuinpinta-ala - tarkistusmitattu",
-            "en-us": "Audited living area size"
+            "fi-fi": "Asuin pinta-ala - netto",
+            "en-us": "Living space net square meters"
         },
         "rdfs:comment": {
-            "en-us": "Size of audited area suitable for, or used for, living"
+            "en-us": "Living space net square meters"
         },
         "pot:valueType": [
             "xsd:decimal"
         ],
         "domain": [
-            "pot:Room",
-            "pot:Space",
-            "pot:Storey"
-        ]
-    },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "idLocal": {
-        "@id": "pot:identifier/idLocal",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Device",
-            "pot:Process",
-            "pot:Project",
-            "pot:Room",
-            "pot:Space",
-            "pot:Storey"
-        ]
-    },
-    "sizeAreaLiving": {
-        "@id": "pot:physical/sizeAreaLiving",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "fi-fi": "Huoneistoala/Asuinpinta-ala",
-            "en-us": "Living area size"
-        },
-        "rdfs:comment": {
-            "en-us": "Size of area suitable for, or used for. living"
-        },
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:Room",
-            "pot:Space",
-            "pot:Storey"
+            "pot:Building"
         ]
     },
     "thickness": {
@@ -212,22 +268,52 @@
             "pot:Storey"
         ]
     },
-    "idOfficialPermanent": {
-        "@id": "pot:identifier/idOfficialPermanent",
+    "sizeAreaLiving": {
+        "@id": "pot:physical/sizeAreaLiving",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "en-us": "Permanent official Id",
-            "fi-fi": "Pysyvä rakennustunnus "
+            "fi-fi": "Huoneistoala/Asuinpinta-ala",
+            "en-us": "Living area size"
         },
         "rdfs:comment": {
-            "en-us": "Permanent identifier given officially to the building in Finland"
+            "en-us": "Size of area suitable for, or used for. living"
         },
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Space",
+            "pot:Room",
+            "pot:Storey"
+        ]
+    },
+    "name": {
+        "@id": "pot:identifier/name",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
         "pot:valueType": [
             "xsd:string"
         ],
         "domain": [
+            "pot:Product",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:System",
+            "pot:Organization",
+            "pot:Apartment",
+            "pot:RealEstate",
+            "pot:Room",
             "pot:Building"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "inspectionMomentYear": {
@@ -248,6 +334,24 @@
             "pot:Building"
         ]
     },
+    "idLocal": {
+        "@id": "pot:identifier/idLocal",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Process",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Case",
+            "pot:Project",
+            "pot:Room",
+            "pot:Storey"
+        ]
+    },
     "volume": {
         "@id": "pot:physical/volume",
         "@type": "owl:DatatypeProperty",
@@ -260,138 +364,21 @@
             "xsd:decimal"
         ],
         "domain": [
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Device",
-            "pot:Room",
             "pot:Space",
-            "pot:Storey"
-        ]
-    },
-    "sizeArea": {
-        "@id": "pot:physical/sizeArea",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "fi-fi": "Pinta-ala/Kerrosala",
-            "en-us": "Storey area size"
-        },
-        "rdfs:comment": {
-            "en-us": "Area of the storey"
-        },
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:Storey"
-        ]
-    },
-    "descriptionGeneral": {
-        "@id": "pot:description/descriptionGeneral",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:description",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Device",
-            "pot:Organization",
-            "pot:Process",
-            "pot:Product",
-            "pot:Project",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Space",
-            "pot:Storey"
-        ]
-    },
-    "height": {
-        "@id": "pot:physical/height",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Height",
-            "fi-fi": "Korkeus"
-        },
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:Building",
             "pot:BuildingElement",
             "pot:Device",
             "pot:Room",
-            "pot:Space"
+            "pot:Building",
+            "pot:Storey"
         ]
     },
-    "updatedAt": {
-        "@id": "pot:metadata/updatedAt",
+    "metadata": {
+        "@id": "pot:metadata",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
+        "subPropertyOf": "pot:topDataProperty",
         "domain": [
             "pot:Identity",
             "pot:Link"
-        ]
-    },
-    "additionalInformation": {
-        "@id": "pot:description/additionalInformation",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:description",
-        "rdfs:label": {
-            "en-us": "Additional information",
-            "fi-fi": "Lisätiedot"
-        },
-        "rdfs:comment": {
-            "en-us": "Additional information"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Person",
-            "pot:Product",
-            "pot:Room",
-            "pot:Storey",
-            "pot:System"
-        ]
-    },
-    "areaSquareMeterFloorNet": {
-        "@id": "pot:physical/areaSquareMeterFloorNet",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Floor net square meters",
-            "fi-fi": "Kerrosala - netto"
-        },
-        "rdfs:comment": {
-            "en-us": "Net square meters of floor space/area"
-        },
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:Building"
-        ]
-    },
-    "idOfficialTemporary": {
-        "@id": "pot:identifier/idOfficialTemporary",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "Temporary official Id",
-            "fi-fi": "Väliaikainen rakennustunnus"
-        },
-        "rdfs:comment": {
-            "en-us": "Temporary identifier given officially to the building in Finland"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Building"
         ]
     },
     "ifcGuid": {
@@ -409,13 +396,13 @@
             "xsd:string"
         ],
         "domain": [
-            "pot:Building",
+            "pot:Space",
             "pot:BuildingElement",
             "pot:Device",
             "pot:Organization",
             "pot:RealEstate",
             "pot:Room",
-            "pot:Space",
+            "pot:Building",
             "pot:Storey"
         ]
     },
@@ -437,32 +424,6 @@
             "pot:Building"
         ]
     },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "id": {
-        "@id": "pot:identifier/id",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "domain": [
-            "pot:Identity"
-        ]
-    },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
     "createdAt": {
         "@id": "pot:metadata/createdAt",
         "@type": "owl:DatatypeProperty",
@@ -472,19 +433,58 @@
             "pot:Link"
         ]
     },
-    "inaugurationMomentYear": {
-        "@id": "pot:lifeCycle/inaugurationMomentYear",
+    "sizeAreaLivingAudited": {
+        "@id": "pot:physical/sizeAreaLivingAudited",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:lifeCycle",
+        "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "en-us": "Inauguration year",
-            "fi-fi": "Käyttöönottovuosi"
+            "fi-fi": "Asuinpinta-ala - tarkistusmitattu",
+            "en-us": "Audited living area size"
         },
         "rdfs:comment": {
-            "en-us": "Inauguration year of the building"
+            "en-us": "Size of audited area suitable for, or used for, living"
         },
         "pot:valueType": [
-            "xsd:gYear"
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Space",
+            "pot:Room",
+            "pot:Storey"
+        ]
+    },
+    "height": {
+        "@id": "pot:physical/height",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Height",
+            "fi-fi": "Korkeus"
+        },
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Room",
+            "pot:Building"
+        ]
+    },
+    "idOfficialPermanent": {
+        "@id": "pot:identifier/idOfficialPermanent",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Permanent official Id",
+            "fi-fi": "Pysyvä rakennustunnus "
+        },
+        "rdfs:comment": {
+            "en-us": "Permanent identifier given officially to the building in Finland"
+        },
+        "pot:valueType": [
+            "xsd:string"
         ],
         "domain": [
             "pot:Building"

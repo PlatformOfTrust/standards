@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.oftrust.netVocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -39,8 +39,8 @@
             ]
         }
     },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:metadata",
         "domain": [
@@ -48,8 +48,25 @@
             "pot:Link"
         ]
     },
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:Identity"
+        ]
+    },
     "createdBy": {
         "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:metadata",
         "domain": [
@@ -66,15 +83,6 @@
             "pot:Link"
         ]
     },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
     "metadata": {
         "@id": "pot:metadata",
         "@type": "owl:DatatypeProperty",
@@ -84,16 +92,8 @@
             "pot:Link"
         ]
     },
-    "id": {
-        "@id": "pot:identifier/id",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "domain": [
-            "pot:Identity"
-        ]
-    },
-    "updatedAt": {
-        "@id": "pot:metadata/updatedAt",
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:metadata",
         "domain": [
@@ -104,7 +104,10 @@
     "Measure": {
         "@id": "pot:Identity/Function/Measure",
         "@type": "owl:Class",
-        "subClassOf": "pot:Function"
+        "subClassOf": "pot:Function",
+        "rdfs:label": {
+            "en-us": "Measure"
+        }
     },
     "MeasureAirCO2Level": {
         "rdfs:subClassOf": {
@@ -112,11 +115,6 @@
         }
     },
     "MeasureAirTemperature": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Identity/Function/Measure"
-        }
-    },
-    "MeasureDistance": {
         "rdfs:subClassOf": {
             "@id": "pot:Identity/Function/Measure"
         }
