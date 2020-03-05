@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards-ontotest.oftrust.netVocabulary/",
+            "@id": "https://standards-ontotest.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -115,6 +115,35 @@
         "@type": "owl:ObjectProperty",
         "domain": [
             "pot:Process",
+            "pot:Device"
+        ]
+    },
+    "protectionDegree": {
+        "@id": "pot:functional/protectionDegree",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Luminaire",
+            "pot:SocketOutlet",
+            "pot:Switch"
+        ]
+    },
+    "width": {
+        "@id": "pot:physical/width",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Leveys",
+            "en-us": "Width"
+        },
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:BuildingElement",
             "pot:Device"
         ]
     },
@@ -288,19 +317,39 @@
             "pot:Storey"
         ]
     },
-    "width": {
-        "@id": "pot:physical/width",
+    "categorizationLocal": {
+        "@id": "pot:categorization/categorizationLocal",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "fi-fi": "Leveys",
-            "en-us": "Width"
+        "subPropertyOf": "pot:categorization",
+        "rdfs:comment": {
+            "en-us": "Categorisation name given locally"
         },
         "pot:valueType": [
-            "xsd:decimal"
+            "xsd:string"
         ],
         "domain": [
+            "pot:Space",
             "pot:BuildingElement",
+            "pot:Device",
+            "pot:Case",
+            "pot:Room"
+        ]
+    },
+    "installationTypeAvailable": {
+        "@id": "pot:functional/installationTypeAvailable",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "en-us": "Installation/mounting type available",
+            "fi-fi": "Mahdolliset asennustavat"
+        },
+        "rdfs:comment": {
+            "en-us": "Installation type available"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
             "pot:Device"
         ]
     },
@@ -320,60 +369,6 @@
         ],
         "domain": [
             "pot:Luminaire"
-        ]
-    },
-    "categorizationLocal": {
-        "@id": "pot:categorization/categorizationLocal",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:categorization",
-        "rdfs:comment": {
-            "en-us": "Categorisation name given locally"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Space",
-            "pot:BuildingElement",
-            "pot:Device",
-            "pot:Case",
-            "pot:Room"
-        ]
-    },
-    "controlMode": {
-        "@id": "pot:functional/controlMode",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:functional",
-        "rdfs:label": {
-            "en-us": "Control mode",
-            "fi-fi": "Ohjaustapa"
-        },
-        "rdfs:comment": {
-            "en-us": "Type of control mode"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Luminaire"
-        ]
-    },
-    "installationTypeAvailable": {
-        "@id": "pot:functional/installationTypeAvailable",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:functional",
-        "rdfs:label": {
-            "en-us": "Installation/mounting type available",
-            "fi-fi": "Mahdolliset asennustavat"
-        },
-        "rdfs:comment": {
-            "en-us": "Installation type available"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Device"
         ]
     },
     "areaNet": {
@@ -428,20 +423,33 @@
             "pot:Luminaire"
         ]
     },
-    "serialNumber": {
-        "@id": "pot:identifier/serialNumber",
+    "length": {
+        "@id": "pot:physical/length",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Sarjanumero",
-            "en-us": "Serial number"
-        },
-        "rdfs:comment": {
-            "en-us": "Unique identifier for the device instance"
+            "en-us": "Length",
+            "fi-fi": "Pituus"
         },
         "pot:valueType": [
-            "xsd:string"
+            "xsd:decimal"
         ],
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device"
+        ]
+    },
+    "processCapability": {
+        "@id": "pot:functional/processCapability",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "en-us": "Process capability",
+            "fi-fi": "Prosessikyky"
+        },
+        "rdfs:comment": {
+            "en-us": "Process which device is capable executing to produce output"
+        },
         "domain": [
             "pot:Device"
         ]
@@ -462,21 +470,6 @@
         ],
         "domain": [
             "pot:Luminaire"
-        ]
-    },
-    "processCapability": {
-        "@id": "pot:functional/processCapability",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:functional",
-        "rdfs:label": {
-            "en-us": "Process capability",
-            "fi-fi": "Prosessikyky"
-        },
-        "rdfs:comment": {
-            "en-us": "Process which device is capable executing to produce output"
-        },
-        "domain": [
-            "pot:Device"
         ]
     },
     "ifcElementName": {
@@ -544,22 +537,6 @@
             "pot:Link"
         ]
     },
-    "length": {
-        "@id": "pot:physical/length",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Length",
-            "fi-fi": "Pituus"
-        },
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device"
-        ]
-    },
     "volume": {
         "@id": "pot:physical/volume",
         "@type": "owl:DatatypeProperty",
@@ -580,6 +557,24 @@
             "pot:Storey"
         ]
     },
+    "serialNumber": {
+        "@id": "pot:identifier/serialNumber",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "fi-fi": "Sarjanumero",
+            "en-us": "Serial number"
+        },
+        "rdfs:comment": {
+            "en-us": "Unique identifier for the device instance"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Device"
+        ]
+    },
     "metadata": {
         "@id": "pot:metadata",
         "@type": "owl:DatatypeProperty",
@@ -587,22 +582,6 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
-        ]
-    },
-    "colorName": {
-        "@id": "pot:physical/colorName",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Color",
-            "fi-fi": "Väri"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device"
         ]
     },
     "lampType": {
@@ -655,6 +634,22 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
+        ]
+    },
+    "colorName": {
+        "@id": "pot:physical/colorName",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Color",
+            "fi-fi": "Väri"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device"
         ]
     },
     "lightFlux": {
@@ -710,6 +705,24 @@
         "domain": [
             "pot:BuildingElement",
             "pot:Device"
+        ]
+    },
+    "controlMode": {
+        "@id": "pot:functional/controlMode",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "en-us": "Control mode",
+            "fi-fi": "Ohjaustapa"
+        },
+        "rdfs:comment": {
+            "en-us": "Type of control mode"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Luminaire"
         ]
     },
     "colorCode": {
@@ -779,19 +792,6 @@
         ],
         "domain": [
             "pot:Device"
-        ]
-    },
-    "protectionDegree": {
-        "@id": "pot:functional/protectionDegree",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:functional",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Luminaire",
-            "pot:SocketOutlet",
-            "pot:Switch"
         ]
     },
     "Luminaire": {

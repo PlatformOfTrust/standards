@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards-ontotest.oftrust.netVocabulary/",
+            "@id": "https://standards-ontotest.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -79,6 +79,40 @@
         "@type": "owl:ObjectProperty",
         "domain": [
             "pot:Process",
+            "pot:Device"
+        ]
+    },
+    "industryDomain": {
+        "@id": "pot:categorization/industryDomain",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "Industry sector name",
+            "fi-fi": "Tekniikan ala"
+        },
+        "rdfs:comment": {
+            "en-us": "Industry sector name to which the device belongs"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Device"
+        ]
+    },
+    "width": {
+        "@id": "pot:physical/width",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Leveys",
+            "en-us": "Width"
+        },
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:BuildingElement",
             "pot:Device"
         ]
     },
@@ -179,24 +213,6 @@
             "pot:Cabel"
         ]
     },
-    "acidityLevel": {
-        "@id": "pot:physical/acidityLevel",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Acidity",
-            "fi-fi": "Happamuus"
-        },
-        "rdfs:comment": {
-            "en-us": "Euro class acidity according to EN 13501-6"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Cabel"
-        ]
-    },
     "descriptionGeneral": {
         "@id": "pot:description/descriptionGeneral",
         "@type": "owl:DatatypeProperty",
@@ -263,6 +279,24 @@
             "pot:Cabel"
         ]
     },
+    "acidityLevel": {
+        "@id": "pot:physical/acidityLevel",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Acidity",
+            "fi-fi": "Happamuus"
+        },
+        "rdfs:comment": {
+            "en-us": "Euro class acidity according to EN 13501-6"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Cabel"
+        ]
+    },
     "status": {
         "@id": "pot:lifeCycle/status",
         "@type": "owl:DatatypeProperty",
@@ -286,22 +320,6 @@
             "pot:Room",
             "pot:Building",
             "pot:Storey"
-        ]
-    },
-    "width": {
-        "@id": "pot:physical/width",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "fi-fi": "Leveys",
-            "en-us": "Width"
-        },
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device"
         ]
     },
     "categorizationLocal": {
@@ -444,6 +462,21 @@
             "pot:Device"
         ]
     },
+    "processCapability": {
+        "@id": "pot:functional/processCapability",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "en-us": "Process capability",
+            "fi-fi": "Prosessikyky"
+        },
+        "rdfs:comment": {
+            "en-us": "Process which device is capable executing to produce output"
+        },
+        "domain": [
+            "pot:Device"
+        ]
+    },
     "idLocal": {
         "@id": "pot:identifier/idLocal",
         "@type": "owl:DatatypeProperty",
@@ -460,21 +493,6 @@
             "pot:Project",
             "pot:Room",
             "pot:Storey"
-        ]
-    },
-    "processCapability": {
-        "@id": "pot:functional/processCapability",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:functional",
-        "rdfs:label": {
-            "en-us": "Process capability",
-            "fi-fi": "Prosessikyky"
-        },
-        "rdfs:comment": {
-            "en-us": "Process which device is capable executing to produce output"
-        },
-        "domain": [
-            "pot:Device"
         ]
     },
     "name": {
@@ -590,47 +608,6 @@
             "pot:Link"
         ]
     },
-    "colorName": {
-        "@id": "pot:physical/colorName",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Color",
-            "fi-fi": "Väri"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device"
-        ]
-    },
-    "ifcGuid": {
-        "@id": "pot:identifier/ifcGuid",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "IFC GUID",
-            "fi-fi": "IFC GUID"
-        },
-        "rdfs:comment": {
-            "en-us": "IFC standard based Globally Unique Identifier"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Space",
-            "pot:BuildingElement",
-            "pot:Device",
-            "pot:Organization",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Building",
-            "pot:Storey"
-        ]
-    },
     "amountFibres": {
         "@id": "pot:functional/amountFibres",
         "@type": "owl:DatatypeProperty",
@@ -667,6 +644,31 @@
             "pot:Cabel"
         ]
     },
+    "ifcGuid": {
+        "@id": "pot:identifier/ifcGuid",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "IFC GUID",
+            "fi-fi": "IFC GUID"
+        },
+        "rdfs:comment": {
+            "en-us": "IFC standard based Globally Unique Identifier"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Organization",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:Storey"
+        ]
+    },
     "createdAt": {
         "@id": "pot:metadata/createdAt",
         "@type": "owl:DatatypeProperty",
@@ -674,6 +676,22 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
+        ]
+    },
+    "colorName": {
+        "@id": "pot:physical/colorName",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Color",
+            "fi-fi": "Väri"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device"
         ]
     },
     "fireReaction": {
@@ -779,24 +797,6 @@
         ],
         "domain": [
             "pot:BuildingElement",
-            "pot:Device"
-        ]
-    },
-    "industryDomain": {
-        "@id": "pot:categorization/industryDomain",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:categorization",
-        "rdfs:label": {
-            "en-us": "Industry sector name",
-            "fi-fi": "Tekniikan ala"
-        },
-        "rdfs:comment": {
-            "en-us": "Industry sector name to which the device belongs"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
             "pot:Device"
         ]
     },

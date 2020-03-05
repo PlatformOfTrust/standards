@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards-ontotest.oftrust.netVocabulary/",
+            "@id": "https://standards-ontotest.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -79,6 +79,53 @@
         "@type": "owl:ObjectProperty",
         "domain": [
             "pot:Process",
+            "pot:Device"
+        ]
+    },
+    "industryDomain": {
+        "@id": "pot:categorization/industryDomain",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "Industry sector name",
+            "fi-fi": "Tekniikan ala"
+        },
+        "rdfs:comment": {
+            "en-us": "Industry sector name to which the device belongs"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Device"
+        ]
+    },
+    "protectionDegree": {
+        "@id": "pot:functional/protectionDegree",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Luminaire",
+            "pot:SocketOutlet",
+            "pot:Switch"
+        ]
+    },
+    "width": {
+        "@id": "pot:physical/width",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Leveys",
+            "en-us": "Width"
+        },
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:BuildingElement",
             "pot:Device"
         ]
     },
@@ -210,20 +257,29 @@
             "pot:Storey"
         ]
     },
-    "width": {
-        "@id": "pot:physical/width",
+    "status": {
+        "@id": "pot:lifeCycle/status",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "fi-fi": "Leveys",
-            "en-us": "Width"
-        },
+        "subPropertyOf": "pot:lifeCycle",
         "pot:valueType": [
-            "xsd:decimal"
+            "xsd:string"
         ],
         "domain": [
+            "pot:Link",
+            "pot:Process",
+            "pot:Product",
+            "pot:Space",
             "pot:BuildingElement",
-            "pot:Device"
+            "pot:Device",
+            "pot:System",
+            "pot:Organization",
+            "pot:Person",
+            "pot:Case",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:Storey"
         ]
     },
     "categorizationLocal": {
@@ -296,20 +352,33 @@
             "pot:Device"
         ]
     },
-    "serialNumber": {
-        "@id": "pot:identifier/serialNumber",
+    "length": {
+        "@id": "pot:physical/length",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Sarjanumero",
-            "en-us": "Serial number"
-        },
-        "rdfs:comment": {
-            "en-us": "Unique identifier for the device instance"
+            "en-us": "Length",
+            "fi-fi": "Pituus"
         },
         "pot:valueType": [
-            "xsd:string"
+            "xsd:decimal"
         ],
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device"
+        ]
+    },
+    "processCapability": {
+        "@id": "pot:functional/processCapability",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "en-us": "Process capability",
+            "fi-fi": "Prosessikyky"
+        },
+        "rdfs:comment": {
+            "en-us": "Process which device is capable executing to produce output"
+        },
         "domain": [
             "pot:Device"
         ]
@@ -332,19 +401,23 @@
             "pot:Storey"
         ]
     },
-    "processCapability": {
-        "@id": "pot:functional/processCapability",
+    "name": {
+        "@id": "pot:identifier/name",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:functional",
-        "rdfs:label": {
-            "en-us": "Process capability",
-            "fi-fi": "Prosessikyky"
-        },
-        "rdfs:comment": {
-            "en-us": "Process which device is capable executing to produce output"
-        },
+        "subPropertyOf": "pot:identifier",
+        "pot:valueType": [
+            "xsd:string"
+        ],
         "domain": [
-            "pot:Device"
+            "pot:Product",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:System",
+            "pot:Organization",
+            "pot:Apartment",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building"
         ]
     },
     "ifcElementName": {
@@ -364,25 +437,6 @@
         "domain": [
             "pot:BuildingElement",
             "pot:Device"
-        ]
-    },
-    "name": {
-        "@id": "pot:identifier/name",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Product",
-            "pot:BuildingElement",
-            "pot:Device",
-            "pot:System",
-            "pot:Organization",
-            "pot:Apartment",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Building"
         ]
     },
     "updatedBy": {
@@ -413,22 +467,6 @@
             "pot:Switch"
         ]
     },
-    "length": {
-        "@id": "pot:physical/length",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Length",
-            "fi-fi": "Pituus"
-        },
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device"
-        ]
-    },
     "volume": {
         "@id": "pot:physical/volume",
         "@type": "owl:DatatypeProperty",
@@ -456,22 +494,6 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
-        ]
-    },
-    "colorName": {
-        "@id": "pot:physical/colorName",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Color",
-            "fi-fi": "Väri"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:BuildingElement",
-            "pot:Device"
         ]
     },
     "ifcGuid": {
@@ -506,6 +528,22 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
+        ]
+    },
+    "colorName": {
+        "@id": "pot:physical/colorName",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Color",
+            "fi-fi": "Väri"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:BuildingElement",
+            "pot:Device"
         ]
     },
     "ifcElementType": {
@@ -578,60 +616,22 @@
             "pot:Device"
         ]
     },
-    "industryDomain": {
-        "@id": "pot:categorization/industryDomain",
+    "serialNumber": {
+        "@id": "pot:identifier/serialNumber",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:categorization",
+        "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "Industry sector name",
-            "fi-fi": "Tekniikan ala"
+            "fi-fi": "Sarjanumero",
+            "en-us": "Serial number"
         },
         "rdfs:comment": {
-            "en-us": "Industry sector name to which the device belongs"
+            "en-us": "Unique identifier for the device instance"
         },
         "pot:valueType": [
             "xsd:string"
         ],
         "domain": [
             "pot:Device"
-        ]
-    },
-    "status": {
-        "@id": "pot:lifeCycle/status",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:lifeCycle",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Link",
-            "pot:Process",
-            "pot:Product",
-            "pot:Space",
-            "pot:BuildingElement",
-            "pot:Device",
-            "pot:System",
-            "pot:Organization",
-            "pot:Person",
-            "pot:Case",
-            "pot:Project",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Building",
-            "pot:Storey"
-        ]
-    },
-    "protectionDegree": {
-        "@id": "pot:functional/protectionDegree",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:functional",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Luminaire",
-            "pot:SocketOutlet",
-            "pot:Switch"
         ]
     },
     "Switch": {
