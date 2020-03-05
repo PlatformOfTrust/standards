@@ -148,7 +148,6 @@ if __name__ == "__main__":
         _export_pot_url = sys.argv[3]
     except IndexError:
         _export_pot_url = POT_EXPORT
-    print(_export_pot_url)
     VOCABULARY_DIR = os.path.join(BASE_DIR, 'Vocabulary')
     CONTEXT_DIR = os.path.join(BASE_DIR, 'Context')
     CLASS_DEFINITIONS_DIR = os.path.join(BASE_DIR, 'ClassDefinitions')
