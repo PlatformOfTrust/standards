@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -39,6 +39,37 @@
             ]
         }
     },
+    "descriptionGeneral": {
+        "@id": "pot:description/descriptionGeneral",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:description",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Process",
+            "pot:Product",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Organization",
+            "pot:Case",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:Storey"
+        ]
+    },
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
     "categorizationOfficial": {
         "@id": "pot:categorization/categorizationOfficial",
         "@type": "owl:DatatypeProperty",
@@ -47,27 +78,85 @@
             "xsd:string"
         ],
         "domain": [
+            "pot:Space",
             "pot:Organization",
-            "pot:Room",
-            "pot:Space"
+            "pot:Room"
         ]
     },
-    "taxVatCode": {
-        "@id": "pot:identifier/taxVatCode",
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:Identity"
+        ]
+    },
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "status": {
+        "@id": "pot:lifeCycle/status",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:lifeCycle",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Link",
+            "pot:Process",
+            "pot:Product",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:System",
+            "pot:Organization",
+            "pot:Person",
+            "pot:Case",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:Storey"
+        ]
+    },
+    "ifcGuid": {
+        "@id": "pot:identifier/ifcGuid",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "fi-fi": "ALV-tunnus",
-            "en-us": "VAT code"
+            "en-us": "IFC GUID",
+            "fi-fi": "IFC GUID"
         },
         "rdfs:comment": {
-            "en-us": "Value-added taxation identifier"
+            "en-us": "IFC standard based Globally Unique Identifier"
         },
         "pot:valueType": [
             "xsd:string"
         ],
         "domain": [
-            "pot:Organization"
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Organization",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:Storey"
+        ]
+    },
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "governmentPermanent": {
@@ -88,98 +177,10 @@
             "pot:Organization"
         ]
     },
-    "name": {
-        "@id": "pot:identifier/name",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Apartment",
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Device",
-            "pot:Organization",
-            "pot:Product",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:System"
-        ]
-    },
-    "status": {
-        "@id": "pot:lifeCycle/status",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:lifeCycle",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Device",
-            "pot:Organization",
-            "pot:Person",
-            "pot:Process",
-            "pot:Product",
-            "pot:Project",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Space",
-            "pot:Storey",
-            "pot:System",
-            "pot:Link"
-        ]
-    },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "updatedAt": {
-        "@id": "pot:metadata/updatedAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "id": {
-        "@id": "pot:identifier/id",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "domain": [
-            "pot:Identity"
-        ]
-    },
     "data": {
         "@id": "pot:data",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
         "domain": [
             "pot:Identity",
             "pot:Link"
@@ -194,51 +195,50 @@
             "pot:Link"
         ]
     },
-    "ifcGuid": {
-        "@id": "pot:identifier/ifcGuid",
+    "taxVatCode": {
+        "@id": "pot:identifier/taxVatCode",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "IFC GUID",
-            "fi-fi": "IFC GUID"
+            "fi-fi": "ALV-tunnus",
+            "en-us": "VAT code"
         },
         "rdfs:comment": {
-            "en-us": "IFC standard based Globally Unique Identifier"
+            "en-us": "Value-added taxation identifier"
         },
         "pot:valueType": [
             "xsd:string"
         ],
         "domain": [
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Device",
-            "pot:Organization",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Space",
-            "pot:Storey"
+            "pot:Organization"
         ]
     },
-    "descriptionGeneral": {
-        "@id": "pot:description/descriptionGeneral",
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:description",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "name": {
+        "@id": "pot:identifier/name",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
         "pot:valueType": [
             "xsd:string"
         ],
         "domain": [
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Device",
-            "pot:Organization",
-            "pot:Process",
             "pot:Product",
-            "pot:Project",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:System",
+            "pot:Organization",
+            "pot:Apartment",
             "pot:RealEstate",
             "pot:Room",
-            "pot:Space",
-            "pot:Storey"
+            "pot:Building"
         ]
     },
     "Organization": {

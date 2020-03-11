@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -39,6 +39,122 @@
             ]
         }
     },
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:Identity"
+        ]
+    },
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "startDateTime": {
+        "@id": "pot:time/startDateTime",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
+        },
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Link",
+            "pot:Process",
+            "pot:Case",
+            "pot:Project"
+        ]
+    },
+    "function": {
+        "@id": "pot:function",
+        "@type": "owl:ObjectProperty",
+        "domain": [
+            "pot:Process",
+            "pot:Device"
+        ]
+    },
+    "locationName": {
+        "@id": "pot:location/locationName",
+        "@type": "owl:ObjectProperty",
+        "subPropertyOf": "pot:location",
+        "domain": [
+            "pot:Process"
+        ]
+    },
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "descriptionGeneral": {
+        "@id": "pot:description/descriptionGeneral",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:description",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Process",
+            "pot:Product",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Organization",
+            "pot:Case",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:Storey"
+        ]
+    },
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "status": {
+        "@id": "pot:lifeCycle/status",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:lifeCycle",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Link",
+            "pot:Process",
+            "pot:Product",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:System",
+            "pot:Organization",
+            "pot:Person",
+            "pot:Case",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:Storey"
+        ]
+    },
     "processTypePoT": {
         "@id": "pot:categorization/processTypePoT",
         "@type": "owl:DatatypeProperty",
@@ -54,42 +170,40 @@
             "pot:Process"
         ]
     },
-    "status": {
-        "@id": "pot:lifeCycle/status",
+    "endDateTime": {
+        "@id": "pot:time/endDateTime",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:lifeCycle",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "en-us": "End time",
+            "fi-fi": "Lopetusaika"
+        },
         "pot:valueType": [
-            "xsd:string"
+            "xsd:dateTime"
         ],
         "domain": [
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Device",
-            "pot:Organization",
-            "pot:Person",
             "pot:Process",
-            "pot:Product",
-            "pot:Project",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Space",
-            "pot:Storey",
-            "pot:System",
-            "pot:Link"
+            "pot:Case",
+            "pot:Project"
         ]
     },
-    "data": {
-        "@id": "pot:data",
+    "executor": {
+        "@id": "pot:role/executor",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
+        "subPropertyOf": "pot:role",
+        "rdfs:label": {
+            "en-us": "Process executor",
+            "fi-fi": "Prosessin tekijä"
+        },
+        "rdfs:comment": {
+            "en-us": "Executor of the process (source of the data)"
+        },
         "domain": [
-            "pot:Identity",
-            "pot:Link"
+            "pot:Process"
         ]
     },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:metadata",
         "domain": [
@@ -105,27 +219,32 @@
             "xsd:string"
         ],
         "domain": [
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Device",
             "pot:Process",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:Case",
             "pot:Project",
             "pot:Room",
-            "pot:Space",
             "pot:Storey"
         ]
     },
-    "nameLocal": {
-        "@id": "pot:identifier/nameLocal",
+    "metadata": {
+        "@id": "pot:metadata",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "pot:valueType": [
-            "xsd:string"
-        ],
+        "subPropertyOf": "pot:topDataProperty",
         "domain": [
-            "pot:Case",
-            "pot:Process",
-            "pot:Project"
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "processValue": {
@@ -146,11 +265,17 @@
             "pot:Process"
         ]
     },
-    "executor": {
-        "@id": "pot:executor",
-        "@type": "owl:ObjectProperty",
+    "nameLocal": {
+        "@id": "pot:identifier/nameLocal",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "pot:valueType": [
+            "xsd:string"
+        ],
         "domain": [
-            "pot:Process"
+            "pot:Process",
+            "pot:Case",
+            "pot:Project"
         ]
     },
     "duration": {
@@ -161,127 +286,9 @@
             "xsd:string"
         ],
         "domain": [
-            "pot:Case",
             "pot:Process",
+            "pot:Case",
             "pot:Project"
-        ]
-    },
-    "startDateTime": {
-        "@id": "pot:time/startDateTime",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
-        "rdfs:label": {
-            "fi-fi": "Aloitusaika",
-            "en-us": "Start time"
-        },
-        "pot:valueType": [
-            "xsd:dateTime"
-        ],
-        "domain": [
-            "pot:Case",
-            "pot:Process",
-            "pot:Project",
-            "pot:Link"
-        ]
-    },
-    "updatedAt": {
-        "@id": "pot:metadata/updatedAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "function": {
-        "@id": "pot:categorization/function",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:categorization",
-        "domain": [
-            "pot:Device",
-            "pot:Process"
-        ]
-    },
-    "descriptionGeneral": {
-        "@id": "pot:description/descriptionGeneral",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:description",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Device",
-            "pot:Organization",
-            "pot:Process",
-            "pot:Product",
-            "pot:Project",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Space",
-            "pot:Storey"
-        ]
-    },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "id": {
-        "@id": "pot:identifier/id",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "domain": [
-            "pot:Identity"
-        ]
-    },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "locationName": {
-        "@id": "pot:lifeCycle/location/locationName",
-        "@type": "owl:ObjectProperty",
-        "subPropertyOf": "pot:lifeCycle/location",
-        "domain": [
-            "pot:Process"
-        ]
-    },
-    "endDateTime": {
-        "@id": "pot:time/endDateTime",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
-        "rdfs:label": {
-            "en-us": "End time",
-            "fi-fi": "Lopetusaika"
-        },
-        "pot:valueType": [
-            "xsd:dateTime"
-        ],
-        "domain": [
-            "pot:Case",
-            "pot:Process",
-            "pot:Project"
-        ]
-    },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
         ]
     },
     "Process": {
@@ -302,11 +309,6 @@
         }
     },
     "Project": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Identity/Process"
-        }
-    },
-    "Measure": {
         "rdfs:subClassOf": {
             "@id": "pot:Identity/Process"
         }

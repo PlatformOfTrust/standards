@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -39,51 +39,26 @@
             ]
         }
     },
-    "status": {
-        "@id": "pot:lifeCycle/status",
+    "middleName": {
+        "@id": "pot:identifier/middleName",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:lifeCycle",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Middle names",
+            "fi-fi": "Toinen nimi"
+        },
+        "rdfs:comment": {
+            "en-us": "Middle names of the person"
+        },
         "pot:valueType": [
             "xsd:string"
         ],
         "domain": [
-            "pot:Building",
-            "pot:BuildingElement",
-            "pot:Case",
-            "pot:Device",
-            "pot:Organization",
-            "pot:Person",
-            "pot:Process",
-            "pot:Product",
-            "pot:Project",
-            "pot:RealEstate",
-            "pot:Room",
-            "pot:Space",
-            "pot:Storey",
-            "pot:System",
-            "pot:Link"
-        ]
-    },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
+            "pot:Person"
         ]
     },
     "updatedAt": {
         "@id": "pot:metadata/updatedAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:metadata",
         "domain": [
@@ -106,44 +81,26 @@
             "xsd:string"
         ],
         "domain": [
-            "pot:Person",
             "pot:Product",
+            "pot:System",
+            "pot:Person",
             "pot:Room",
-            "pot:Storey",
-            "pot:System"
+            "pot:Storey"
         ]
     },
-    "middleName": {
-        "@id": "pot:identifier/middleName",
+    "birthdate": {
+        "@id": "pot:identifier/birthdate",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "Middle names",
-            "fi-fi": "Toinen nimi"
+            "en-us": "Date of birth",
+            "fi-fi": "Syntymäaika"
         },
         "rdfs:comment": {
-            "en-us": "Middle names of the person"
+            "en-us": "Birthdate of the person"
         },
         "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Person"
-        ]
-    },
-    "firstName": {
-        "@id": "pot:identifier/firstName",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "fi-fi": "Etunimi",
-            "en-us": "First Name"
-        },
-        "rdfs:comment": {
-            "en-us": "First name of the person"
-        },
-        "pot:valueType": [
-            "xsd:string"
+            "xsd:date"
         ],
         "domain": [
             "pot:Person"
@@ -165,55 +122,10 @@
             "xsd:string"
         ],
         "domain": [
+            "pot:Space",
             "pot:Person",
             "pot:RealEstate",
-            "pot:Room",
-            "pot:Space"
-        ]
-    },
-    "data": {
-        "@id": "pot:data",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "birthdate": {
-        "@id": "pot:identifier/birthdate",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "Date of birth",
-            "fi-fi": "Syntymäaika"
-        },
-        "rdfs:comment": {
-            "en-us": "Birthdate of the person"
-        },
-        "pot:valueType": [
-            "xsd:date"
-        ],
-        "domain": [
-            "pot:Person"
-        ]
-    },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
+            "pot:Room"
         ]
     },
     "lastName": {
@@ -232,6 +144,94 @@
         ],
         "domain": [
             "pot:Person"
+        ]
+    },
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "status": {
+        "@id": "pot:lifeCycle/status",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:lifeCycle",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Link",
+            "pot:Process",
+            "pot:Product",
+            "pot:Space",
+            "pot:BuildingElement",
+            "pot:Device",
+            "pot:System",
+            "pot:Organization",
+            "pot:Person",
+            "pot:Case",
+            "pot:Project",
+            "pot:RealEstate",
+            "pot:Room",
+            "pot:Building",
+            "pot:Storey"
+        ]
+    },
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "metadata": {
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "firstName": {
+        "@id": "pot:identifier/firstName",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "fi-fi": "Etunimi",
+            "en-us": "First Name"
+        },
+        "rdfs:comment": {
+            "en-us": "First name of the person"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Person"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "Person": {

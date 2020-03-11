@@ -6,7 +6,7 @@
             "@prefix": true
         },
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.oftrust.net/v1/Vocabulary/",
             "@prefix": true
         },
         "description": {
@@ -30,7 +30,7 @@
                 "@set"
             ]
         },
-        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Identity/Process"
+        "@vocab": "https://standards-ontotest.oftrust.net/v1/Vocabulary/Identity/Process"
     },
     "pot:supportedClass": {
         "@id": "pot:Identity/Process",
@@ -100,15 +100,22 @@
                 ]
             },
             "executor": {
-                "@id": "pot:executor",
-                "@type": "owl:ObjectProperty"
-            },
-            "function": {
-                "@id": "pot:categorization/function",
+                "@id": "pot:role/executor",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:categorization",
+                "subPropertyOf": "pot:role",
+                "rdfs:label": {
+                    "en-us": "Process executor",
+                    "fi-fi": "Prosessin tekijä"
+                },
+                "rdfs:comment": {
+                    "en-us": "Executor of the process (source of the data)"
+                },
                 "pot:required": false,
                 "pot:readonly": false
+            },
+            "function": {
+                "@id": "pot:function",
+                "@type": "owl:ObjectProperty"
             },
             "id": {
                 "@id": "pot:identifier/id",
@@ -128,9 +135,9 @@
                 ]
             },
             "locationName": {
-                "@id": "pot:lifeCycle/location/locationName",
+                "@id": "pot:location/locationName",
                 "@type": "owl:ObjectProperty",
-                "subPropertyOf": "pot:lifeCycle/location"
+                "subPropertyOf": "pot:location"
             },
             "metadata": {
                 "@id": "pot:metadata",

@@ -1,24 +1,26 @@
 from owlready2 import AnnotationProperty, get_ontology, rdfs, Thing, ThingClass
+ONTO_BASE = "https://standards.oftrust.net/"
+NAMESPACE = "https://standards.oftrust.net/v1/Vocabulary/"
 
 
 class readonly(AnnotationProperty):
-    namespace = get_ontology("https://standard.oftrust.net#").get_namespace("https://standard.oftrust.net/")
+    namespace = get_ontology(ONTO_BASE).get_namespace(NAMESPACE)
 
 
 class required(AnnotationProperty):
-    namespace = get_ontology("https://standard.oftrust.net#").get_namespace("https://standard.oftrust.net/")
+    namespace = get_ontology(ONTO_BASE).get_namespace(NAMESPACE)
 
 
 class nest(AnnotationProperty):
-    namespace = get_ontology("https://standard.oftrust.net#").get_namespace("https://standard.oftrust.net/")
+    namespace = get_ontology(ONTO_BASE).get_namespace(NAMESPACE)
 
 
 class label(AnnotationProperty):
-    namespace = get_ontology("https://standard.oftrust.net#")
+    namespace = get_ontology(ONTO_BASE)
 
 
 class comment(AnnotationProperty):
-    namespace = get_ontology("https://standard.oftrust.net#")
+    namespace = get_ontology(ONTO_BASE)
 
 
 class subPropertyOf(AnnotationProperty):
@@ -42,8 +44,8 @@ class restriction(AnnotationProperty):
 
 
 class Link(Thing):
-    namespace = get_ontology("https://standard.oftrust.net#").get_namespace("https://standard.oftrust.net/")
+    namespace = get_ontology(ONTO_BASE).get_namespace(NAMESPACE)
 
 
 class Identity(Thing):
-    namespace = get_ontology("https://standard.oftrust.net#").get_namespace("https://standard.oftrust.net/")
+    namespace = get_ontology(ONTO_BASE).get_namespace(NAMESPACE)
