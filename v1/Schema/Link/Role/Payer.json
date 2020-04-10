@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "string",
+            "minLength": 1
+        },
+        "@type": {
+            "type": "string",
+            "minLength": 1,
+            "enum": [
+                "Payer"
+            ]
+        },
+        "from": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "startDateTime": {
+                    "title": "Start time",
+                    "description": "",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Project status",
+                    "description": "",
+                    "type": "string"
+                }
+            }
+        },
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                }
+            }
+        },
+        "to": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        }
+    },
+    "required": [
+        "data",
+        "@context",
+        "@type"
+    ]
+}
