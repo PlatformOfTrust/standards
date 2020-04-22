@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "string",
+            "minLength": 1
+        },
+        "@type": {
+            "type": "string",
+            "minLength": 1,
+            "enum": [
+                "LimitedCompany"
+            ]
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "categorizationOfficial": {
+                    "title": "Space type - official",
+                    "description": "",
+                    "type": "string"
+                },
+                "name": {
+                    "title": "Apartment name",
+                    "description": "",
+                    "type": "string"
+                },
+                "governmentPermanent": {
+                    "title": "Permanent Official Id",
+                    "description": "Permanent identifier given by an official authority in Finland",
+                    "type": "string"
+                },
+                "ifcGuid": {
+                    "title": "IFC GUID",
+                    "description": "IFC standard based Globally Unique Identifier",
+                    "type": "string"
+                },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "taxVatCode": {
+                    "title": "VAT code",
+                    "description": "Value-added taxation identifier",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Project status",
+                    "description": "",
+                    "type": "string"
+                }
+            }
+        },
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                }
+            }
+        },
+        "id": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "data",
+        "@context",
+        "@type"
+    ]
+}
