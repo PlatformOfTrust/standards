@@ -4,65 +4,25 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Group/System/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "System"
-            ]
-        },
-        "data": {
-            "title": "",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "startDateTimeValidity": {
-                    "title": "System establishment date",
-                    "description": "Valid start time for the system (when system has been defined)",
-                    "type": "string"
-                },
-                "endDateTimeValidity": {
-                    "title": "System establishment date",
-                    "description": "Valid start time for the system (when system has been defined)",
-                    "type": "string"
-                },
-                "name": {
-                    "title": "Apartment name",
-                    "description": "Name givento the system",
-                    "type": "string"
-                },
-                "additionalInformation": {
-                    "title": "Additional information",
-                    "description": "Additional information",
-                    "type": "string"
-                },
-                "usageMain": {
-                    "title": "Main usage purpose",
-                    "description": "Main usage purpose",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Project status",
-                    "description": "Life cycle status",
-                    "type": "string"
-                }
-            }
+            ],
+            "const": "System"
         },
         "metadata": {
             "title": "Metadata",
             "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
                     "type": "string"
                 },
                 "createdAt": {
@@ -70,10 +30,55 @@
                     "description": "Time when the data is created",
                     "type": "string"
                 },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
                     "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "endDateTimeValidity": {
+                    "title": "System establishment date",
+                    "description": "Valid start time for the system (when system has been defined)",
+                    "type": "string"
+                },
+                "name": {
+                    "title": "Name",
+                    "description": "Name givento the system",
+                    "type": "string"
+                },
+                "usageMain": {
+                    "title": "Main usage purpose",
+                    "description": "Main usage purpose",
+                    "type": "string"
+                },
+                "startDateTimeValidity": {
+                    "title": "System establishment date",
+                    "description": "Valid start time for the system (when system has been defined)",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Process status",
+                    "description": "Life cycle status",
+                    "type": "string"
+                },
+                "additionalInformation": {
+                    "title": "Additional information",
+                    "description": "Additional information",
+                    "type": "string",
+                    "examples": [
+                        "Our laminated logs are glued from two or more planed blanks in a way that the heartwood will stay on the logs surface. This is done to ensure that cracking and bending stay minimal."
+                    ]
                 }
             }
         },
@@ -84,8 +89,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

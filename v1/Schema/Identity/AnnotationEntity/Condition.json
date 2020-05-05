@@ -4,55 +4,25 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/AnnotationEntity/Condition/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "Condition"
-            ]
-        },
-        "data": {
-            "title": "",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "title": "Apartment name",
-                    "description": "Name of the condition",
-                    "type": "string"
-                },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
-                },
-                "categorizationLocal": {
-                    "title": "Space type - local",
-                    "description": "Categorisation name given locally",
-                    "type": "string"
-                },
-                "categorizationPoT": {
-                    "title": "Quality PoT class",
-                    "description": "Categorization class name in PoT standard",
-                    "type": "string"
-                }
-            }
+            ],
+            "const": "Condition"
         },
         "metadata": {
             "title": "Metadata",
             "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
                     "type": "string"
                 },
                 "createdAt": {
@@ -60,9 +30,41 @@
                     "description": "Time when the data is created",
                     "type": "string"
                 },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "categorizationPoT": {
+                    "title": "Quality PoT class",
+                    "description": "Categorization class name in PoT standard",
+                    "type": "string"
+                },
+                "name": {
+                    "title": "Name",
+                    "description": "Name of the condition",
+                    "type": "string"
+                },
+                "categorizationLocal": {
+                    "title": "Case category",
+                    "description": "Categorisation name given locally",
                     "type": "string"
                 }
             }
@@ -74,8 +76,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

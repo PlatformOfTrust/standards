@@ -4,28 +4,57 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Structure/Building/Storey/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "Storey"
-            ]
+            ],
+            "const": "Storey"
+        },
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
         },
         "data": {
             "title": "",
             "description": "",
             "type": "object",
             "properties": {
-                "idLocal": {
-                    "title": "Local identifier",
-                    "description": "Locally given identifier for the storey",
+                "sizeAreaLiving": {
+                    "title": "Living area size",
+                    "description": "Size of area suitable for, or used for. living",
                     "type": "string"
                 },
-                "areaSquareMeterFloorNet": {
-                    "title": "Floor net square meters",
-                    "description": "Net square meters of floor space/area",
+                "areaSquareMeterLivingNet": {
+                    "title": "Living space net square meters",
+                    "description": "Living space net square meters",
                     "type": "string"
                 },
                 "ifcGuid": {
@@ -33,19 +62,19 @@
                     "description": "IFC standard based Globally Unique Identifier",
                     "type": "string"
                 },
-                "cultureHistorySignificance": {
-                    "title": "Cultural or historical significance",
-                    "description": "Categorization if building is culturally significant",
+                "height": {
+                    "title": "Height",
+                    "description": "",
                     "type": "string"
                 },
-                "completionMomentYear": {
-                    "title": "Completion year",
-                    "description": "Completion year of the building",
+                "inaugurationMomentYear": {
+                    "title": "Inauguration year",
+                    "description": "Inauguration year of the building",
                     "type": "string"
                 },
-                "additionalInformation": {
-                    "title": "Additional information",
-                    "description": "Additional information",
+                "name": {
+                    "title": "Name",
+                    "description": "",
                     "type": "string"
                 },
                 "volume": {
@@ -58,19 +87,24 @@
                     "description": "Permanent identifier given officially to the building in Finland",
                     "type": "string"
                 },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "cultureHistorySignificance": {
+                    "title": "Cultural or historical significance",
+                    "description": "Categorization if building is culturally significant",
+                    "type": "string"
+                },
+                "areaSquareMeterFloorNet": {
+                    "title": "Floor net square meters",
+                    "description": "Net square meters of floor space/area",
+                    "type": "string"
+                },
                 "idOfficialTemporary": {
                     "title": "Temporary official Id",
                     "description": "Temporary identifier given officially to the building in Finland",
-                    "type": "string"
-                },
-                "name": {
-                    "title": "Apartment name",
-                    "description": "",
-                    "type": "string"
-                },
-                "height": {
-                    "title": "Height",
-                    "description": "",
                     "type": "string"
                 },
                 "inspectionMomentYear": {
@@ -78,19 +112,14 @@
                     "description": "Inspection year of the building",
                     "type": "string"
                 },
-                "thickness": {
-                    "title": "Thickness",
-                    "description": "Thickness of the object",
+                "completionMomentYear": {
+                    "title": "Completion year",
+                    "description": "Completion year of the building",
                     "type": "string"
                 },
-                "status": {
-                    "title": "Project status",
-                    "description": "Life cycle status",
-                    "type": "string"
-                },
-                "inaugurationMomentYear": {
-                    "title": "Inauguration year",
-                    "description": "Inauguration year of the building",
+                "idLocal": {
+                    "title": "Process Id",
+                    "description": "Locally given identifier for the storey",
                     "type": "string"
                 },
                 "sizeArea": {
@@ -103,47 +132,23 @@
                     "description": "Size of audited area suitable for, or used for, living",
                     "type": "string"
                 },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
+                "status": {
+                    "title": "Process status",
+                    "description": "Life cycle status",
                     "type": "string"
                 },
-                "areaSquareMeterLivingNet": {
-                    "title": "Living space net square meters",
-                    "description": "Living space net square meters",
+                "thickness": {
+                    "title": "Thickness",
+                    "description": "Thickness of the object",
                     "type": "string"
                 },
-                "sizeAreaLiving": {
-                    "title": "Living area size",
-                    "description": "Size of area suitable for, or used for. living",
-                    "type": "string"
-                }
-            }
-        },
-        "metadata": {
-            "title": "Metadata",
-            "description": "Metadata container",
-            "type": "object",
-            "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
-                    "type": "string"
-                },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
-                    "type": "string"
-                },
-                "createdAt": {
-                    "title": "Creation time",
-                    "description": "Time when the data is created",
-                    "type": "string"
+                "additionalInformation": {
+                    "title": "Additional information",
+                    "description": "Additional information",
+                    "type": "string",
+                    "examples": [
+                        "Our laminated logs are glued from two or more planed blanks in a way that the heartwood will stay on the logs surface. This is done to ensure that cracking and bending stay minimal."
+                    ]
                 }
             }
         },
@@ -154,8 +159,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

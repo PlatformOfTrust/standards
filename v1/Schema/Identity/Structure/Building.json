@@ -4,105 +4,30 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Structure/Building/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "Building"
-            ]
-        },
-        "data": {
-            "title": "",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "inaugurationMomentYear": {
-                    "title": "Inauguration year",
-                    "description": "Inauguration year of the building",
-                    "type": "string"
-                },
-                "name": {
-                    "title": "Apartment name",
-                    "description": "Name of the building",
-                    "type": "string"
-                },
-                "completionMomentYear": {
-                    "title": "Completion year",
-                    "description": "Completion year of the building",
-                    "type": "string"
-                },
-                "height": {
-                    "title": "Height",
-                    "description": "Height of the building",
-                    "type": "string"
-                },
-                "areaSquareMeterFloorNet": {
-                    "title": "Floor net square meters",
-                    "description": "Net square meters of floor space/area",
-                    "type": "string"
-                },
-                "ifcGuid": {
-                    "title": "IFC GUID",
-                    "description": "IFC standard based Globally Unique Identifier",
-                    "type": "string"
-                },
-                "volume": {
-                    "title": "Volume",
-                    "description": "Volume of the building",
-                    "type": "string"
-                },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
-                },
-                "inspectionMomentYear": {
-                    "title": "Inspection year",
-                    "description": "Inspection year of the building",
-                    "type": "string"
-                },
-                "idOfficialTemporary": {
-                    "title": "Temporary official Id",
-                    "description": "Temporary identifier given officially to the building in Finland",
-                    "type": "string"
-                },
-                "areaSquareMeterLivingNet": {
-                    "title": "Living space net square meters",
-                    "description": "Living space net square meters",
-                    "type": "string"
-                },
-                "idOfficialPermanent": {
-                    "title": "Permanent official Id",
-                    "description": "Permanent identifier given officially to the building in Finland",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Project status",
-                    "description": "Life cycle status of the building",
-                    "type": "string"
-                },
-                "cultureHistorySignificance": {
-                    "title": "Cultural or historical significance",
-                    "description": "Categorization if building is culturally significant",
-                    "type": "string"
-                }
-            }
+            ],
+            "const": "Building"
         },
         "metadata": {
             "title": "Metadata",
             "description": "Metadata container",
             "type": "object",
             "properties": {
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
                 "updatedAt": {
                     "title": "Update time",
                     "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
                     "type": "string"
                 },
                 "createdAt": {
@@ -110,9 +35,86 @@
                     "description": "Time when the data is created",
                     "type": "string"
                 },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "idOfficialPermanent": {
+                    "title": "Permanent official Id",
+                    "description": "Permanent identifier given officially to the building in Finland",
+                    "type": "string"
+                },
+                "areaSquareMeterLivingNet": {
+                    "title": "Living space net square meters",
+                    "description": "Living space net square meters",
+                    "type": "string"
+                },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "ifcGuid": {
+                    "title": "IFC GUID",
+                    "description": "IFC standard based Globally Unique Identifier",
+                    "type": "string"
+                },
+                "height": {
+                    "title": "Height",
+                    "description": "Height of the building",
+                    "type": "string"
+                },
+                "cultureHistorySignificance": {
+                    "title": "Cultural or historical significance",
+                    "description": "Categorization if building is culturally significant",
+                    "type": "string"
+                },
+                "areaSquareMeterFloorNet": {
+                    "title": "Floor net square meters",
+                    "description": "Net square meters of floor space/area",
+                    "type": "string"
+                },
+                "name": {
+                    "title": "Name",
+                    "description": "Name of the building",
+                    "type": "string"
+                },
+                "idOfficialTemporary": {
+                    "title": "Temporary official Id",
+                    "description": "Temporary identifier given officially to the building in Finland",
+                    "type": "string"
+                },
+                "inaugurationMomentYear": {
+                    "title": "Inauguration year",
+                    "description": "Inauguration year of the building",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Process status",
+                    "description": "Life cycle status of the building",
+                    "type": "string"
+                },
+                "inspectionMomentYear": {
+                    "title": "Inspection year",
+                    "description": "Inspection year of the building",
+                    "type": "string"
+                },
+                "volume": {
+                    "title": "Volume",
+                    "description": "Volume of the building",
+                    "type": "string"
+                },
+                "completionMomentYear": {
+                    "title": "Completion year",
+                    "description": "Completion year of the building",
                     "type": "string"
                 }
             }
@@ -124,8 +126,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

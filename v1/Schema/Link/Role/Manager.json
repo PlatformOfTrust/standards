@@ -4,19 +4,43 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Link/Role/Manager/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "Manager"
-            ]
+            ],
+            "const": "Manager"
         },
-        "from": {
-            "title": "",
-            "description": "",
-            "type": "string"
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
         },
         "data": {
             "title": "",
@@ -29,40 +53,18 @@
                     "type": "string"
                 },
                 "status": {
-                    "title": "Project status",
+                    "title": "Process status",
                     "description": "",
                     "type": "string"
                 }
             }
         },
-        "metadata": {
-            "title": "Metadata",
-            "description": "Metadata container",
-            "type": "object",
-            "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
-                    "type": "string"
-                },
-                "createdAt": {
-                    "title": "Creation time",
-                    "description": "Time when the data is created",
-                    "type": "string"
-                },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
-                    "type": "string"
-                }
-            }
-        },
         "to": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        },
+        "from": {
             "title": "",
             "description": "",
             "type": "string"

@@ -4,43 +4,72 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Space/Zone/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "Zone"
-            ]
+            ],
+            "const": "Zone"
+        },
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                }
+            }
         },
         "data": {
             "title": "",
             "description": "",
             "type": "object",
             "properties": {
-                "idLocal": {
-                    "title": "Local identifier",
-                    "description": "",
-                    "type": "string"
-                },
                 "sizeAreaFloor": {
                     "title": "Floor area size",
                     "description": "Area of the space",
                     "type": "string"
                 },
+                "idLocal": {
+                    "title": "Process Id",
+                    "description": "",
+                    "type": "string"
+                },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "sizeAreaLiving": {
+                    "title": "Living area size",
+                    "description": "Size of area suitable for, or used for. living",
+                    "type": "string"
+                },
                 "categorizationOfficial": {
-                    "title": "Space type - official",
+                    "title": "Industry category",
                     "description": "",
-                    "type": "string"
-                },
-                "height": {
-                    "title": "Height",
-                    "description": "",
-                    "type": "string"
-                },
-                "sizeAreaLivingAudited": {
-                    "title": "Audited living area size",
-                    "description": "Size of audited area suitable for, or used for, living",
                     "type": "string"
                 },
                 "ifcGuid": {
@@ -48,8 +77,13 @@
                     "description": "IFC standard based Globally Unique Identifier",
                     "type": "string"
                 },
-                "volume": {
-                    "title": "Volume",
+                "sizeAreaLivingAudited": {
+                    "title": "Audited living area size",
+                    "description": "Size of audited area suitable for, or used for, living",
+                    "type": "string"
+                },
+                "height": {
+                    "title": "Height",
                     "description": "",
                     "type": "string"
                 },
@@ -58,56 +92,27 @@
                     "description": "Main usage purpose",
                     "type": "string"
                 },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
+                "idOfficial": {
+                    "title": "Identity number",
+                    "description": "",
+                    "type": "string",
+                    "examples": [
+                        22438613
+                    ]
                 },
                 "categorizationLocal": {
-                    "title": "Space type - local",
+                    "title": "Case category",
                     "description": "Categorisation name given locally",
                     "type": "string"
                 },
-                "idOfficial": {
-                    "title": "Official Id",
-                    "description": "",
-                    "type": "string"
-                },
-                "sizeAreaLiving": {
-                    "title": "Living area size",
-                    "description": "Size of area suitable for, or used for. living",
-                    "type": "string"
-                },
                 "status": {
-                    "title": "Project status",
+                    "title": "Process status",
                     "description": "",
                     "type": "string"
-                }
-            }
-        },
-        "metadata": {
-            "title": "Metadata",
-            "description": "Metadata container",
-            "type": "object",
-            "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
                 },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
-                    "type": "string"
-                },
-                "createdAt": {
-                    "title": "Creation time",
-                    "description": "Time when the data is created",
-                    "type": "string"
-                },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
+                "volume": {
+                    "title": "Volume",
+                    "description": "",
                     "type": "string"
                 }
             }
@@ -119,8 +124,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

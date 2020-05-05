@@ -39,60 +39,33 @@
             ]
         }
     },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
+    "Digital": {
+        "@id": "pot:Identity/Digital",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Identity",
         "rdfs:label": {
-            "en-us": "Creator",
-            "fi-fi": "Identiteetin luoja"
+            "fi-fi": "Digitaalinen asia",
+            "en-us": "Digital thing"
         },
         "rdfs:comment": {
-            "en-us": "Creator of and identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
+            "fi-fi": "Digitaaliset asiat, järjestelmät, ohjelmistot ja data",
+            "en-us": "Digital things such as systems, software and data"
+        }
     },
-    "id": {
-        "@id": "pot:identifier/id",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "domain": [
-            "pot:Identity"
-        ]
+    "Data": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Identity/Digital"
+        }
     },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "en-us": "Creation time",
-            "fi-fi": "Luomisaika"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is created"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
+    "DigitalIdentity": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Identity/Digital"
+        }
     },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Metadata"
-        },
-        "rdfs:comment": {
-            "en-us": "Metadata container"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
+    "Software": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Identity/Digital"
+        }
     },
     "data": {
         "@id": "pot:data",
@@ -135,32 +108,60 @@
             "pot:Link"
         ]
     },
-    "Digital": {
-        "@id": "pot:Identity/Digital",
-        "@type": "owl:Class",
-        "subClassOf": "pot:Identity",
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
         "rdfs:label": {
-            "fi-fi": "Digitaalinen asia",
-            "en-us": "Digital thing"
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
         },
         "rdfs:comment": {
-            "fi-fi": "Digitaaliset asiat, järjestelmät, ohjelmistot ja data",
-            "en-us": "Digital things such as systems, software and data"
-        }
+            "en-us": "Creator of and identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "Data": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Identity/Digital"
-        }
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:DataProductParameters",
+            "pot:Identity"
+        ]
     },
-    "DigitalIdentity": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Identity/Digital"
-        }
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "en-us": "Creation time",
+            "fi-fi": "Luomisaika"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is created"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "Software": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Identity/Digital"
-        }
+    "metadata": {
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Metadata"
+        },
+        "rdfs:comment": {
+            "en-us": "Metadata container"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     }
 }
