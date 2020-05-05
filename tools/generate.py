@@ -70,10 +70,6 @@ def build_rdf_clasess(onto, export_onto_url: str) -> NoReturn:
                 data_to_dump = create_context_from_data_product(
                     rdf_class, entity_file, onto, export_onto_url)
                 write_dump_to_file(CONTEXT_DIR, entity_file, data_to_dump)
-                # data_to_dump = create_schema_from_rdf_class(
-                #     rdf_class, entity_file, onto, export_onto_url)
-                # # entity_file['dir'] = '' # Not create nested dirs
-                # write_dump_to_file(SCHEMA_SOURCE_DIR, entity_file, data_to_dump)
 
             if is_link_identity_relations(rdf_class):
                 data_to_dump = create_definition_from_rdf_class(
