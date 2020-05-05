@@ -43,8 +43,13 @@
         "@id": "pot:categorization/categorizationLocal",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "Local category",
+            "fi-fi": "Paikallinen luokitus"
+        },
         "rdfs:comment": {
-            "en-us": "Categorisation name given locally"
+            "en-us": "Categorisation name given locally",
+            "fi-fi": "Paikallinen luokitus (lähdejärjestelmän luokitus)"
         },
         "label": [
             {
@@ -53,17 +58,7 @@
                     "fi-fi": "Palvelupyynnön luokka"
                 },
                 "domain": [
-                    "pot:Case"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Space type - local",
-                    "fi-fi": "Tilatyyppi - paikallinen"
-                },
-                "domain": [
-                    "pot:Space",
-                    "pot:Room"
+                    "pot:Process.Case"
                 ]
             },
             {
@@ -72,7 +67,7 @@
                     "fi-fi": "Ehdon paikallinen luokka"
                 },
                 "domain": [
-                    "pot:Condition"
+                    "pot:https://standards.oftrust.net/v1/Vocabulary/Condition"
                 ]
             },
             {
@@ -81,7 +76,17 @@
                     "en-us": "Quality local class"
                 },
                 "domain": [
-                    "pot:Quality"
+                    "pot:AnnotationEntity.Quality"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Space type - local",
+                    "fi-fi": "Tilatyyppi - paikallinen"
+                },
+                "domain": [
+                    "pot:Identity.Space",
+                    "pot:Space.Room"
                 ]
             },
             {
@@ -90,8 +95,8 @@
                     "en-us": "Type name given locally"
                 },
                 "domain": [
-                    "pot:BuildingElement",
-                    "pot:Device"
+                    "pot:Equipment.BuildingElement",
+                    "pot:Equipment.Device"
                 ]
             }
         ],
@@ -99,9 +104,9 @@
             "xsd:string"
         ],
         "domain": [
-            "pot:Space",
             "pot:Condition",
             "pot:Quality",
+            "pot:Space",
             "pot:BuildingElement",
             "pot:Device",
             "pot:Case",
