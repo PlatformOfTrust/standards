@@ -39,60 +39,27 @@
             ]
         }
     },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
+    "Equipment": {
+        "@id": "pot:Identity/Equipment",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Identity",
         "rdfs:label": {
-            "en-us": "Creator",
-            "fi-fi": "Identiteetin luoja"
+            "en-us": "Equipment",
+            "fi-fi": "Väline"
         },
         "rdfs:comment": {
-            "en-us": "Creator of and identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
+            "en-us": "A physical object"
+        }
     },
-    "id": {
-        "@id": "pot:identifier/id",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "domain": [
-            "pot:Identity"
-        ]
+    "Device": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Identity/Equipment"
+        }
     },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "en-us": "Creation time",
-            "fi-fi": "Luomisaika"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is created"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Metadata"
-        },
-        "rdfs:comment": {
-            "en-us": "Metadata container"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
+    "BuildingElement": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Identity/Equipment"
+        }
     },
     "data": {
         "@id": "pot:data",
@@ -135,26 +102,60 @@
             "pot:Link"
         ]
     },
-    "Equipment": {
-        "@id": "pot:Identity/Equipment",
-        "@type": "owl:Class",
-        "subClassOf": "pot:Identity",
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
         "rdfs:label": {
-            "en-us": "Equipment",
-            "fi-fi": "Väline"
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
         },
         "rdfs:comment": {
-            "en-us": "A physical object"
-        }
+            "en-us": "Creator of and identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "Device": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Identity/Equipment"
-        }
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:DataProductParameters",
+            "pot:Identity"
+        ]
     },
-    "BuildingElement": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Identity/Equipment"
-        }
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "en-us": "Creation time",
+            "fi-fi": "Luomisaika"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is created"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "metadata": {
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Metadata"
+        },
+        "rdfs:comment": {
+            "en-us": "Metadata container"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     }
 }

@@ -4,70 +4,25 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/LegalParty/Organization/LimitedCompany/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "LimitedCompany"
-            ]
-        },
-        "data": {
-            "title": "",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "categorizationOfficial": {
-                    "title": "Space type - official",
-                    "description": "",
-                    "type": "string"
-                },
-                "name": {
-                    "title": "Apartment name",
-                    "description": "",
-                    "type": "string"
-                },
-                "governmentPermanent": {
-                    "title": "Permanent Official Id",
-                    "description": "Permanent identifier given by an official authority in Finland",
-                    "type": "string"
-                },
-                "ifcGuid": {
-                    "title": "IFC GUID",
-                    "description": "IFC standard based Globally Unique Identifier",
-                    "type": "string"
-                },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
-                },
-                "taxVatCode": {
-                    "title": "VAT code",
-                    "description": "Value-added taxation identifier",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Project status",
-                    "description": "",
-                    "type": "string"
-                }
-            }
+            ],
+            "const": "LimitedCompany"
         },
         "metadata": {
             "title": "Metadata",
             "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
                     "type": "string"
                 },
                 "createdAt": {
@@ -75,9 +30,56 @@
                     "description": "Time when the data is created",
                     "type": "string"
                 },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "categorizationOfficial": {
+                    "title": "Industry category",
+                    "description": "",
+                    "type": "string"
+                },
+                "ifcGuid": {
+                    "title": "IFC GUID",
+                    "description": "IFC standard based Globally Unique Identifier",
+                    "type": "string"
+                },
+                "taxVatCode": {
+                    "title": "VAT code",
+                    "description": "Value-added taxation identifier",
+                    "type": "string"
+                },
+                "name": {
+                    "title": "Name",
+                    "description": "",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Process status",
+                    "description": "",
+                    "type": "string"
+                },
+                "governmentPermanent": {
+                    "title": "Permanent Official Id",
+                    "description": "Permanent identifier given by an official authority in Finland",
                     "type": "string"
                 }
             }
@@ -89,8 +91,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

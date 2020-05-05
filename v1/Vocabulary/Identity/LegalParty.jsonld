@@ -39,60 +39,24 @@
             ]
         }
     },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
+    "LegalParty": {
+        "@id": "pot:Identity/LegalParty",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Identity",
         "rdfs:label": {
-            "en-us": "Creator",
-            "fi-fi": "Identiteetin luoja"
-        },
-        "rdfs:comment": {
-            "en-us": "Creator of and identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
+            "en-us": "Legal party",
+            "fi-fi": "Oikeushenkilö"
+        }
     },
-    "id": {
-        "@id": "pot:identifier/id",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "domain": [
-            "pot:Identity"
-        ]
+    "Organization": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Identity/LegalParty"
+        }
     },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "en-us": "Creation time",
-            "fi-fi": "Luomisaika"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is created"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Metadata"
-        },
-        "rdfs:comment": {
-            "en-us": "Metadata container"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
+    "Person": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Identity/LegalParty"
+        }
     },
     "data": {
         "@id": "pot:data",
@@ -135,23 +99,60 @@
             "pot:Link"
         ]
     },
-    "LegalParty": {
-        "@id": "pot:Identity/LegalParty",
-        "@type": "owl:Class",
-        "subClassOf": "pot:Identity",
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
         "rdfs:label": {
-            "en-us": "Legal party",
-            "fi-fi": "Oikeushenkilö"
-        }
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
+        },
+        "rdfs:comment": {
+            "en-us": "Creator of and identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "Organization": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Identity/LegalParty"
-        }
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:DataProductParameters",
+            "pot:Identity"
+        ]
     },
-    "Person": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Identity/LegalParty"
-        }
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "en-us": "Creation time",
+            "fi-fi": "Luomisaika"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is created"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "metadata": {
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Metadata"
+        },
+        "rdfs:comment": {
+            "en-us": "Metadata container"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     }
 }

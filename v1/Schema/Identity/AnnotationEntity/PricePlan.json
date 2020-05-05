@@ -4,70 +4,25 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/AnnotationEntity/PricePlan/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "PricePlan"
-            ]
-        },
-        "data": {
-            "title": "",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "title": "Apartment name",
-                    "description": "Name of the price plan",
-                    "type": "string"
-                },
-                "unitGroup": {
-                    "title": "Unit group",
-                    "description": "Group name of the unit used for rate (price) value",
-                    "type": "string"
-                },
-                "vatPercentage": {
-                    "title": "VAT percentage",
-                    "description": "Percentage value used for VAT taxation",
-                    "type": "string"
-                },
-                "currency": {
-                    "title": "Currency",
-                    "description": "Currency used for rate",
-                    "type": "string"
-                },
-                "unit": {
-                    "title": "Unit",
-                    "description": "Exact name of the unit used for rate (price) value",
-                    "type": "string"
-                },
-                "vatIncluded": {
-                    "title": "VAT included in rate",
-                    "description": "Information if VAT is included in the rate (price)",
-                    "type": "string"
-                },
-                "rate": {
-                    "title": "Rate",
-                    "description": "Rate value for the unit",
-                    "type": "string"
-                }
-            }
+            ],
+            "const": "PricePlan"
         },
         "metadata": {
             "title": "Metadata",
             "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
                     "type": "string"
                 },
                 "createdAt": {
@@ -75,9 +30,56 @@
                     "description": "Time when the data is created",
                     "type": "string"
                 },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "unit": {
+                    "title": "Unit",
+                    "description": "Exact name of the unit used for rate (price) value",
+                    "type": "string"
+                },
+                "rate": {
+                    "title": "Rate",
+                    "description": "Rate value for the unit",
+                    "type": "string"
+                },
+                "unitGroup": {
+                    "title": "Unit group",
+                    "description": "Group name of the unit used for rate (price) value",
+                    "type": "string"
+                },
+                "name": {
+                    "title": "Name",
+                    "description": "Name of the price plan",
+                    "type": "string"
+                },
+                "currency": {
+                    "title": "Currency",
+                    "description": "Currency used for rate",
+                    "type": "string"
+                },
+                "vatPercentage": {
+                    "title": "VAT percentage",
+                    "description": "Percentage value used for VAT taxation",
+                    "type": "string"
+                },
+                "vatIncluded": {
+                    "title": "VAT included in rate",
+                    "description": "Information if VAT is included in the rate (price)",
                     "type": "string"
                 }
             }
@@ -89,8 +91,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

@@ -4,91 +4,21 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Process/Case/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "Case"
-            ]
+            ],
+            "const": "Case"
         },
-        "data": {
+        "function": {
             "title": "",
             "description": "",
-            "type": "object",
-            "properties": {
-                "categorizationLocalPriority": {
-                    "title": "Case priority",
-                    "description": "Priority based categorization given locally",
-                    "type": "string"
-                },
-                "idLocal": {
-                    "title": "Local identifier",
-                    "description": "Local identifier (system identifier)",
-                    "type": "string"
-                },
-                "duration": {
-                    "title": "Duration time",
-                    "description": "",
-                    "type": "string"
-                },
-                "function": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "processValue": {
-                    "title": "Output value",
-                    "description": "Output value of the process",
-                    "type": "string"
-                },
-                "nameLocal": {
-                    "title": "Process name - local",
-                    "description": "Locally given name (source system name)",
-                    "type": "string"
-                },
-                "processTypePoT": {
-                    "title": "Process type - PoT type",
-                    "description": "PoT defined standard process type",
-                    "type": "string"
-                },
-                "startDateTime": {
-                    "title": "Start time",
-                    "description": "Start time of the case",
-                    "type": "string"
-                },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
-                },
-                "endDateTime": {
-                    "title": "End time",
-                    "description": "End time of the case",
-                    "type": "string"
-                },
-                "categorizationLocal": {
-                    "title": "Space type - local",
-                    "description": "Categorisation name given locally",
-                    "type": "string"
-                },
-                "executor": {
-                    "title": "Process executor",
-                    "description": "Executor of the process (source of the data)",
-                    "type": "string"
-                },
-                "durationEstimate": {
-                    "title": "Estimated duration",
-                    "description": "",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Project status",
-                    "description": "Case state",
-                    "type": "string"
-                }
-            }
+            "type": "string"
         },
         "locationName": {
             "title": "",
@@ -100,14 +30,9 @@
             "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
                     "type": "string"
                 },
                 "createdAt": {
@@ -115,19 +40,96 @@
                     "description": "Time when the data is created",
                     "type": "string"
                 },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "idLocal": {
+                    "title": "Process Id",
+                    "description": "Local identifier (system identifier)",
+                    "type": "string"
+                },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "processValue": {
+                    "title": "Output value",
+                    "description": "Output value of the process",
+                    "type": "string"
+                },
+                "nameLocal": {
+                    "title": "Case header - > Case name",
+                    "description": "Locally given name (source system name)",
+                    "type": "string"
+                },
+                "startDateTime": {
+                    "title": "Start time",
+                    "description": "Start time of the case",
+                    "type": "string"
+                },
+                "categorizationLocalPriority": {
+                    "title": "Case priority",
+                    "description": "Priority based categorization given locally",
+                    "type": "string"
+                },
+                "function": {
+                    "title": "Function",
+                    "description": "",
+                    "type": "string"
+                },
+                "duration": {
+                    "title": "Duration time",
+                    "description": "",
+                    "type": "string"
+                },
+                "durationEstimate": {
+                    "title": "Estimated duration",
+                    "description": "",
+                    "type": "string"
+                },
+                "endDateTime": {
+                    "title": "End time",
+                    "description": "End time of the case",
+                    "type": "string"
+                },
+                "categorizationLocal": {
+                    "title": "Case category",
+                    "description": "Categorisation name given locally",
+                    "type": "string"
+                },
+                "processTypePoT": {
+                    "title": "Process type - PoT type",
+                    "description": "PoT defined standard process type",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Process status",
+                    "description": "Case state",
+                    "type": "string"
+                },
+                "executor": {
+                    "title": "Process executor",
+                    "description": "Executor of the process (source of the data)",
                     "type": "string"
                 }
             }
         },
         "executor": {
-            "title": "",
-            "description": "",
-            "type": "string"
-        },
-        "function": {
             "title": "",
             "description": "",
             "type": "string"
@@ -139,8 +141,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]
