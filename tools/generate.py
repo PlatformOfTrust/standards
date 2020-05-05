@@ -15,7 +15,6 @@ from generators.vocabulary_from_rdf_property import create_vocabulary_from_rdf_p
 from generators.schema_from_rdf_class import create_schema_from_rdf_class
 from generators.context_from_data_product import create_context_from_data_product
 from generators.data_example_from_schema import create_data_example_from_schema
-from generators.move_schema import move_schema
 
 
 def is_link_identity_relations(rdf_class) -> bool:
