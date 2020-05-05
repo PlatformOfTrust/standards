@@ -34,7 +34,7 @@ def build_nested_labels(owl_property: Any, PREFIX='pot') -> List[Dict[str, str]]
                 for k, v in nl.items():
                     nested_labels_template['rdfs:label'][k] = v
                 nested_labels_template['domain'] = [
-                    f'{PREFIX}:{d.name}' for d in l.domain]
+                    f'{PREFIX}:{d}' for d in l.domain]
             nested_labels.append(nested_labels_template)
 
     return nested_labels
@@ -58,7 +58,7 @@ def build_nested_comments(owl_property: Any, PREFIX='pot') -> List[Dict[str, str
             for k, v in build_comments(c).items():
                 nested_comments_template['rdfs:comment'][k] = v
             nested_comments_template['domain'] = [
-                f'{PREFIX}:{d.name}' for d in c.domain]
+                f'{PREFIX}:{d}' for d in c.domain]
             nested_comments.append(nested_comments_template)
     return nested_comments
 
