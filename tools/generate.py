@@ -15,6 +15,7 @@ from generators.vocabulary_from_rdf_property import create_vocabulary_from_rdf_p
 from generators.schema_from_rdf_class import create_schema_from_rdf_class
 from generators.context_from_data_product import create_context_from_data_product
 from generators.data_example_from_schema import create_data_example_from_schema
+from generators.move_manual import move_manual
 
 
 def is_link_identity_relations(rdf_class) -> bool:
@@ -29,7 +30,7 @@ def is_link_identity_relations(rdf_class) -> bool:
     return (Link in rdf_class.entity.ancestors() or Identity in rdf_class.entity.ancestors()) and (rdf_class.entity != Link and rdf_class.entity != Identity)
 
 
-def write_dump_to_file(dir_context: str, entity_file: Dict[str, str], data_to_dump: Dict[str, Any]) -> NoReturn:
+def write_dump_to_file(dir_context: str, entity_file: Dict[str, str], data_to_dump: Dict[str, Any], is_json=False) -> NoReturn:
     """Function to write all entities into various stuctured files.
 
         Args:
@@ -43,7 +44,7 @@ def write_dump_to_file(dir_context: str, entity_file: Dict[str, str], data_to_du
         entity_dir_path, entity_file.get('filename'))
     os.makedirs(entity_dir_path, exist_ok=True)
 
-    if data_to_dump.get('$schema'):
+    if is_json:
         entity_file_path = entity_file_path[:-2]
     with open(entity_file_path, 'w', encoding='utf-8') as rf:
         rf.write(json.dumps(data_to_dump, indent=4,
@@ -65,11 +66,14 @@ def build_rdf_clasess(onto, export_onto_url: str) -> NoReturn:
     for rdf_class in rdf_classes:
         files = rdf_class.get_files()
         for entity_file in files:
-
-            if 'DataProduct' in str(rdf_class.entity) and not is_link_identity_relations(rdf_class):
+            if rdf_class.entity.manualSchema:
                 data_to_dump = create_context_from_data_product(
                     rdf_class, entity_file, onto, export_onto_url)
                 write_dump_to_file(CONTEXT_DIR, entity_file, data_to_dump)
+                # data_to_dump = create_schema_from_rdf_class(
+                #     rdf_class, entity_file, onto, export_onto_url)
+                # # entity_file['dir'] = '' # Not create nested dirs
+                # write_dump_to_file(SCHEMA_SOURCE_DIR, entity_file, data_to_dump)
 
             if is_link_identity_relations(rdf_class):
                 data_to_dump = create_definition_from_rdf_class(
@@ -83,11 +87,16 @@ def build_rdf_clasess(onto, export_onto_url: str) -> NoReturn:
 
                 data_to_dump = create_schema_from_rdf_class(
                     rdf_class, entity_file, onto, export_onto_url)
-                write_dump_to_file(SCHEMA_DIR, entity_file, data_to_dump)
+                write_dump_to_file(SCHEMA_DIR, entity_file,
+                                   data_to_dump, is_json=True)
 
             data_to_dump = create_vocabulary_from_rdf_class(
                 rdf_class, entity_file, onto, export_onto_url)
             write_dump_to_file(VOCABULARY_DIR, entity_file, data_to_dump)
+
+            if not rdf_class.entity.manualSchema:
+                data_to_dump = create_data_example_from_schema(
+                    SCHEMA_DIR, DATA_EXAMPLE_DIR, export_onto_url)
 
 
 def build_rdf_properties(onto) -> NoReturn:
@@ -117,8 +126,8 @@ def parse(fname: str, export_onto_url: str) -> NoReturn:
 
     build_rdf_clasess(onto, export_onto_url)
     build_rdf_properties(onto)
-    create_data_example_from_schema(
-        SCHEMA_DIR, DATA_EXAMPLE_DIR, export_onto_url)
+    for base_dir, target_dir in [(SCHEMA_SOURCE_DIR, SCHEMA_DIR), (DATA_EXAMPLE_SOURCE_DIR, DATA_EXAMPLE_DIR)]:
+        move_manual(base_dir, target_dir)
 
 
 if __name__ == "__main__":
@@ -139,5 +148,7 @@ if __name__ == "__main__":
     CLASS_DEFINITIONS_DIR = os.path.join(BASE_DIR, 'ClassDefinitions')
     SCHEMA_DIR = os.path.join(BASE_DIR, 'Schema')
     DATA_EXAMPLE_DIR = os.path.join(BASE_DIR, 'DataExample')
+    DATA_EXAMPLE_SOURCE_DIR = os.path.join(BASE_DIR, 'DataExampleSource')
+    SCHEMA_SOURCE_DIR = os.path.join(BASE_DIR, 'SchemaSource')
 
     parse(filename, export_onto_url)
