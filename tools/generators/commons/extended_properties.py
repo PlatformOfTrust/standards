@@ -1,4 +1,6 @@
 from owlready2 import AnnotationProperty, get_ontology, rdfs, Thing, ThingClass
+
+
 ONTO_BASE = "https://standards.oftrust.net/"
 NAMESPACE = "https://standards.oftrust.net/v1/Vocabulary/"
 
