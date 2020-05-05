@@ -4,81 +4,21 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Process/Project/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "Project"
-            ]
+            ],
+            "const": "Project"
         },
-        "data": {
+        "function": {
             "title": "",
             "description": "",
-            "type": "object",
-            "properties": {
-                "idLocal": {
-                    "title": "Local identifier",
-                    "description": "Local identifier for the project",
-                    "type": "string"
-                },
-                "duration": {
-                    "title": "Duration time",
-                    "description": "Duration of the project",
-                    "type": "string"
-                },
-                "function": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "processValue": {
-                    "title": "Output value",
-                    "description": "Output value of the process",
-                    "type": "string"
-                },
-                "nameLocal": {
-                    "title": "Process name - local",
-                    "description": "Locally given name for the project",
-                    "type": "string"
-                },
-                "processTypePoT": {
-                    "title": "Process type - PoT type",
-                    "description": "PoT defined standard process type",
-                    "type": "string"
-                },
-                "startDateTime": {
-                    "title": "Start time",
-                    "description": "Start time of the project",
-                    "type": "string"
-                },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
-                },
-                "endDateTime": {
-                    "title": "End time",
-                    "description": "End time of the project",
-                    "type": "string"
-                },
-                "executor": {
-                    "title": "Process executor",
-                    "description": "Executor of the process (source of the data)",
-                    "type": "string"
-                },
-                "durationEstimate": {
-                    "title": "Estimated duration",
-                    "description": "",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Project status",
-                    "description": "project state",
-                    "type": "string"
-                }
-            }
+            "type": "string"
         },
         "locationName": {
             "title": "",
@@ -90,14 +30,9 @@
             "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
                     "type": "string"
                 },
                 "createdAt": {
@@ -105,19 +40,86 @@
                     "description": "Time when the data is created",
                     "type": "string"
                 },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "idLocal": {
+                    "title": "Process Id",
+                    "description": "Local identifier for the project",
+                    "type": "string"
+                },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "processValue": {
+                    "title": "Output value",
+                    "description": "Output value of the process",
+                    "type": "string"
+                },
+                "nameLocal": {
+                    "title": "Case header - > Case name",
+                    "description": "Locally given name for the project",
+                    "type": "string"
+                },
+                "startDateTime": {
+                    "title": "Start time",
+                    "description": "Start time of the project",
+                    "type": "string"
+                },
+                "function": {
+                    "title": "Function",
+                    "description": "",
+                    "type": "string"
+                },
+                "duration": {
+                    "title": "Duration time",
+                    "description": "Duration of the project",
+                    "type": "string"
+                },
+                "durationEstimate": {
+                    "title": "Estimated duration",
+                    "description": "",
+                    "type": "string"
+                },
+                "endDateTime": {
+                    "title": "End time",
+                    "description": "End time of the project",
+                    "type": "string"
+                },
+                "processTypePoT": {
+                    "title": "Process type - PoT type",
+                    "description": "PoT defined standard process type",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Process status",
+                    "description": "project state",
+                    "type": "string"
+                },
+                "executor": {
+                    "title": "Process executor",
+                    "description": "Executor of the process (source of the data)",
                     "type": "string"
                 }
             }
         },
         "executor": {
-            "title": "",
-            "description": "",
-            "type": "string"
-        },
-        "function": {
             "title": "",
             "description": "",
             "type": "string"
@@ -129,8 +131,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

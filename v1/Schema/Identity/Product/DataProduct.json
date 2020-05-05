@@ -4,53 +4,77 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Product/DataProduct/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "DataProduct"
-            ]
-        },
-        "parameterContext": {
-            "title": "",
-            "description": "",
-            "type": "string"
+            ],
+            "const": "DataProduct"
         },
         "validTo": {
             "title": "",
             "description": "",
             "type": "string"
         },
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
+        },
         "data": {
             "title": "",
             "description": "",
             "type": "object",
             "properties": {
-                "gTIN": {
-                    "title": "GTIN code",
-                    "description": "GTIN standard based identifier",
-                    "type": "string"
-                },
-                "codeProduct": {
-                    "title": "Product code",
-                    "description": "Unique product code given by manufacturer",
-                    "type": "string"
-                },
                 "categorizationPoT": {
                     "title": "Quality PoT class",
                     "description": "Categorization class name in PoT standard",
                     "type": "string"
                 },
-                "priceCurrent": {
-                    "title": "Estimated price",
-                    "description": "Estimated value of the current price",
+                "imageUrl": {
+                    "title": "Product image",
+                    "description": "Image URL for the product",
                     "type": "string"
                 },
-                "pricePurchase": {
-                    "title": "Purchase price",
-                    "description": "Purchase price of the product",
+                "other": {
+                    "title": "Other",
+                    "description": "",
+                    "type": "string"
+                },
+                "name": {
+                    "title": "Name",
+                    "description": "",
+                    "type": "string"
+                },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
                     "type": "string"
                 },
                 "visibility": {
@@ -58,14 +82,14 @@
                     "description": "Product visibility restriction defined by PoT",
                     "type": "string"
                 },
-                "additionalInformation": {
-                    "title": "Additional information",
-                    "description": "Additional information",
+                "groupName": {
+                    "title": "Product group name",
+                    "description": "Unique product group name given by manufacturer",
                     "type": "string"
                 },
-                "url": {
-                    "title": "Product information link",
-                    "description": "URL address for the product information",
+                "gTIN": {
+                    "title": "GTIN code",
+                    "description": "GTIN standard based identifier",
                     "type": "string"
                 },
                 "groupCode": {
@@ -73,14 +97,9 @@
                     "description": "Unique product group code given by manufacturer",
                     "type": "string"
                 },
-                "ean": {
-                    "title": "EAN code",
-                    "description": "EAN standard based identifier",
-                    "type": "string"
-                },
-                "name": {
-                    "title": "Apartment name",
-                    "description": "",
+                "url": {
+                    "title": "Product information link",
+                    "description": "URL address for the product information",
                     "type": "string"
                 },
                 "priceSell": {
@@ -93,24 +112,14 @@
                     "description": "Version of the product",
                     "type": "string"
                 },
-                "other": {
-                    "title": "Other",
-                    "description": "",
+                "codeProduct": {
+                    "title": "Product code",
+                    "description": "Unique product code given by manufacturer",
                     "type": "string"
                 },
-                "status": {
-                    "title": "Project status",
-                    "description": "",
-                    "type": "string"
-                },
-                "imageUrl": {
-                    "title": "Product image",
-                    "description": "Image URL for the product",
-                    "type": "string"
-                },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
+                "ean": {
+                    "title": "EAN code",
+                    "description": "EAN standard based identifier",
                     "type": "string"
                 },
                 "categorizationETIM": {
@@ -118,51 +127,42 @@
                     "description": "ETIM standard product category name",
                     "type": "string"
                 },
-                "groupName": {
-                    "title": "Product group name",
-                    "description": "Unique product group name given by manufacturer",
+                "priceCurrent": {
+                    "title": "Estimated price",
+                    "description": "Estimated value of the current price",
                     "type": "string"
+                },
+                "pricePurchase": {
+                    "title": "Purchase price",
+                    "description": "Purchase price of the product",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Process status",
+                    "description": "",
+                    "type": "string"
+                },
+                "additionalInformation": {
+                    "title": "Additional information",
+                    "description": "Additional information",
+                    "type": "string",
+                    "examples": [
+                        "Our laminated logs are glued from two or more planed blanks in a way that the heartwood will stay on the logs surface. This is done to ensure that cracking and bending stay minimal."
+                    ]
                 }
             }
-        },
-        "metadata": {
-            "title": "Metadata",
-            "description": "Metadata container",
-            "type": "object",
-            "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
-                    "type": "string"
-                },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
-                    "type": "string"
-                },
-                "createdAt": {
-                    "title": "Creation time",
-                    "description": "Time when the data is created",
-                    "type": "string"
-                }
-            }
-        },
-        "translatorUrl": {
-            "title": "",
-            "description": "",
-            "type": "string"
         },
         "validFrom": {
             "title": "",
             "description": "",
             "type": "string"
         },
-        "organizationPublicKeys": {
+        "translatorUrl": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        },
+        "parameterContext": {
             "title": "",
             "description": "",
             "type": "string"
@@ -171,11 +171,16 @@
             "title": "",
             "description": "",
             "type": "string"
+        },
+        "organizationPublicKeys": {
+            "title": "",
+            "description": "",
+            "type": "string"
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

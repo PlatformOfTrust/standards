@@ -4,100 +4,30 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Space/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "Space"
-            ]
-        },
-        "data": {
-            "title": "",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "idLocal": {
-                    "title": "Local identifier",
-                    "description": "Locally given identifier for the space",
-                    "type": "string"
-                },
-                "sizeAreaFloor": {
-                    "title": "Floor area size",
-                    "description": "Area of the space",
-                    "type": "string"
-                },
-                "categorizationOfficial": {
-                    "title": "Space type - official",
-                    "description": "Space type name derived from official categorization naming",
-                    "type": "string"
-                },
-                "height": {
-                    "title": "Height",
-                    "description": "Height of the space",
-                    "type": "string"
-                },
-                "sizeAreaLivingAudited": {
-                    "title": "Audited living area size",
-                    "description": "Size of audited area suitable for, or used for, living",
-                    "type": "string"
-                },
-                "ifcGuid": {
-                    "title": "IFC GUID",
-                    "description": "IFC standard based Globally Unique Identifier",
-                    "type": "string"
-                },
-                "volume": {
-                    "title": "Volume",
-                    "description": "Volume of the space",
-                    "type": "string"
-                },
-                "usageMain": {
-                    "title": "Main usage purpose",
-                    "description": "Main usage purpose",
-                    "type": "string"
-                },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
-                },
-                "categorizationLocal": {
-                    "title": "Space type - local",
-                    "description": "Categorisation name given locally",
-                    "type": "string"
-                },
-                "idOfficial": {
-                    "title": "Official Id",
-                    "description": "Officially given identifier for the space in Finland",
-                    "type": "string"
-                },
-                "sizeAreaLiving": {
-                    "title": "Living area size",
-                    "description": "Size of area suitable for, or used for. living",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Project status",
-                    "description": "Life cycle status",
-                    "type": "string"
-                }
-            }
+            ],
+            "const": "Space"
         },
         "metadata": {
             "title": "Metadata",
             "description": "Metadata container",
             "type": "object",
             "properties": {
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
                 "updatedAt": {
                     "title": "Update time",
                     "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
                     "type": "string"
                 },
                 "createdAt": {
@@ -105,9 +35,84 @@
                     "description": "Time when the data is created",
                     "type": "string"
                 },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "sizeAreaFloor": {
+                    "title": "Floor area size",
+                    "description": "Area of the space",
+                    "type": "string"
+                },
+                "idLocal": {
+                    "title": "Process Id",
+                    "description": "Locally given identifier for the space",
+                    "type": "string"
+                },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "sizeAreaLiving": {
+                    "title": "Living area size",
+                    "description": "Size of area suitable for, or used for. living",
+                    "type": "string"
+                },
+                "categorizationOfficial": {
+                    "title": "Industry category",
+                    "description": "Space type name derived from official categorization naming",
+                    "type": "string"
+                },
+                "ifcGuid": {
+                    "title": "IFC GUID",
+                    "description": "IFC standard based Globally Unique Identifier",
+                    "type": "string"
+                },
+                "sizeAreaLivingAudited": {
+                    "title": "Audited living area size",
+                    "description": "Size of audited area suitable for, or used for, living",
+                    "type": "string"
+                },
+                "height": {
+                    "title": "Height",
+                    "description": "Height of the space",
+                    "type": "string"
+                },
+                "usageMain": {
+                    "title": "Main usage purpose",
+                    "description": "Main usage purpose",
+                    "type": "string"
+                },
+                "idOfficial": {
+                    "title": "Identity number",
+                    "description": "Officially given identifier for the space in Finland",
+                    "type": "string",
+                    "examples": [
+                        22438613
+                    ]
+                },
+                "categorizationLocal": {
+                    "title": "Case category",
+                    "description": "Categorisation name given locally",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Process status",
+                    "description": "Life cycle status",
+                    "type": "string"
+                },
+                "volume": {
+                    "title": "Volume",
+                    "description": "Volume of the space",
                     "type": "string"
                 }
             }
@@ -119,8 +124,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]

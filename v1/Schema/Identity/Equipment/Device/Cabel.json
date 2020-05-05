@@ -4,38 +4,62 @@
     "properties": {
         "@context": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Equipment/Device/Cabel/"
         },
         "@type": {
             "type": "string",
             "minLength": 1,
             "enum": [
                 "Cabel"
-            ]
+            ],
+            "const": "Cabel"
+        },
+        "function": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        },
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                }
+            }
         },
         "data": {
             "title": "",
             "description": "",
             "type": "object",
             "properties": {
-                "serialNumber": {
-                    "title": "Serial number",
-                    "description": "Unique identifier for the device instance",
+                "typeName": {
+                    "title": "Material",
+                    "description": "Main material which device is composed",
                     "type": "string"
                 },
-                "idLocal": {
-                    "title": "Local identifier",
-                    "description": "",
-                    "type": "string"
-                },
-                "colorCode": {
-                    "title": "Color code",
-                    "description": "",
-                    "type": "string"
-                },
-                "width": {
-                    "title": "Width",
-                    "description": "",
+                "electricityVoltageNominal": {
+                    "title": "Nominal Voltage U",
+                    "description": "Nominal voltage (U)",
                     "type": "string"
                 },
                 "ifcGuid": {
@@ -43,24 +67,24 @@
                     "description": "IFC standard based Globally Unique Identifier",
                     "type": "string"
                 },
-                "protectionTypeStrandingElement": {
-                    "title": "Screen over stranding element",
-                    "description": "Screen type over stranding element",
-                    "type": "string"
-                },
-                "industryDomain": {
-                    "title": "Industry sector name",
-                    "description": "Industry sector name to which the device belongs",
-                    "type": "string"
-                },
-                "protectionCommon": {
-                    "title": "Screen over stranding",
-                    "description": "Screen over stranding",
-                    "type": "string"
-                },
-                "areaGross": {
-                    "title": "Area - gross",
+                "height": {
+                    "title": "Height",
                     "description": "",
+                    "type": "string"
+                },
+                "installationType": {
+                    "title": "Installation/mounting type",
+                    "description": "Actual installation type for the device",
+                    "type": "string"
+                },
+                "fireClassification": {
+                    "title": "Circuit integrity",
+                    "description": "Circuit integrity",
+                    "type": "string"
+                },
+                "processCapability": {
+                    "title": "Process capability",
+                    "description": "Process which device is capable executing to produce output",
                     "type": "string"
                 },
                 "fireFlamingParticlesDevelopment": {
@@ -73,34 +97,34 @@
                     "description": "",
                     "type": "string"
                 },
-                "electricityVoltageNominal": {
-                    "title": "Nominal Voltage U",
-                    "description": "Nominal voltage (U)",
-                    "type": "string"
-                },
-                "typeName": {
-                    "title": "Material",
-                    "description": "Main material which device is composed",
-                    "type": "string"
-                },
-                "electricityCurrent": {
-                    "title": "Electric current",
-                    "description": "An electric current is the rate of flow of electric charge past a point",
-                    "type": "string"
-                },
-                "fireResistanceInsulation": {
-                    "title": "Insulation integrity",
-                    "description": "Insulation integrity",
-                    "type": "string"
-                },
-                "function": {
-                    "title": "",
+                "length": {
+                    "title": "Length",
                     "description": "",
                     "type": "string"
                 },
                 "name": {
-                    "title": "Apartment name",
+                    "title": "Name",
                     "description": "",
+                    "type": "string"
+                },
+                "areaGross": {
+                    "title": "Area - gross",
+                    "description": "",
+                    "type": "string"
+                },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "areaNet": {
+                    "title": "Area - net",
+                    "description": "",
+                    "type": "string"
+                },
+                "categorizationLocal": {
+                    "title": "Case category",
+                    "description": "Categorisation name given locally",
                     "type": "string"
                 },
                 "diameterOuter": {
@@ -108,53 +132,18 @@
                     "description": "Outer diameter (approximately)",
                     "type": "string"
                 },
-                "height": {
-                    "title": "Height",
-                    "description": "",
+                "electricityCurrent": {
+                    "title": "Electric current",
+                    "description": "An electric current is the rate of flow of electric charge past a point",
                     "type": "string"
                 },
-                "thickness": {
-                    "title": "Thickness",
-                    "description": "",
-                    "type": "string"
-                },
-                "processCapability": {
-                    "title": "Process capability",
-                    "description": "Process which device is capable executing to produce output",
-                    "type": "string"
-                },
-                "colorName": {
-                    "title": "Color",
-                    "description": "",
-                    "type": "string"
-                },
-                "power": {
-                    "title": "Power (W)",
-                    "description": "Power measured in Watts",
-                    "type": "string"
-                },
-                "fireClassification": {
-                    "title": "Circuit integrity",
-                    "description": "Circuit integrity",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Project status",
-                    "description": "",
+                "fireReaction": {
+                    "title": "Reaction-to-fire",
+                    "description": "Reaction-to-fire class according to EN 13501-6",
                     "type": "string"
                 },
                 "weight": {
                     "title": "Weight",
-                    "description": "",
-                    "type": "string"
-                },
-                "amountFibres": {
-                    "title": "Number of fibres",
-                    "description": "Number of fibres",
-                    "type": "string"
-                },
-                "areaNet": {
-                    "title": "Area - net",
                     "description": "",
                     "type": "string"
                 },
@@ -163,49 +152,19 @@
                     "description": "Conductor material",
                     "type": "string"
                 },
-                "length": {
-                    "title": "Length",
-                    "description": "",
-                    "type": "string"
-                },
-                "fireReaction": {
-                    "title": "Reaction-to-fire",
-                    "description": "Reaction-to-fire class according to EN 13501-6",
-                    "type": "string"
-                },
-                "installationTypeAvailable": {
-                    "title": "Installation/mounting type available",
-                    "description": "Installation type available",
-                    "type": "string"
-                },
-                "amountCores": {
-                    "title": "Number of cores",
-                    "description": "Number of cores",
-                    "type": "string"
-                },
-                "installationType": {
-                    "title": "Installation/mounting type",
-                    "description": "Actual installation type for the device",
-                    "type": "string"
-                },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
-                },
-                "fireSmokeDevelopment": {
-                    "title": "Smoke development",
-                    "description": "Smoke development class according to EN 13501-6",
-                    "type": "string"
-                },
-                "categorizationLocal": {
-                    "title": "Space type - local",
-                    "description": "Categorisation name given locally",
-                    "type": "string"
-                },
                 "ifcElementName": {
                     "title": "IFC element name",
                     "description": "IFC standard element name",
+                    "type": "string"
+                },
+                "function": {
+                    "title": "Function",
+                    "description": "",
+                    "type": "string"
+                },
+                "industryDomain": {
+                    "title": "Industry sector name",
+                    "description": "Industry sector name to which the device belongs",
                     "type": "string"
                 },
                 "acidityLevel": {
@@ -213,44 +172,87 @@
                     "description": "Euro class acidity according to EN 13501-6",
                     "type": "string"
                 },
+                "colorCode": {
+                    "title": "Color code",
+                    "description": "",
+                    "type": "string"
+                },
                 "ifcElementType": {
                     "title": "IFC element type",
                     "description": "IFC standard element type",
                     "type": "string"
+                },
+                "amountFibres": {
+                    "title": "Number of fibres",
+                    "description": "Number of fibres",
+                    "type": "string"
+                },
+                "fireResistanceInsulation": {
+                    "title": "Insulation integrity",
+                    "description": "Insulation integrity",
+                    "type": "string"
+                },
+                "colorName": {
+                    "title": "Color",
+                    "description": "",
+                    "type": "string"
+                },
+                "idLocal": {
+                    "title": "Process Id",
+                    "description": "",
+                    "type": "string"
+                },
+                "width": {
+                    "title": "Width",
+                    "description": "",
+                    "type": "string"
+                },
+                "serialNumber": {
+                    "title": "Serial number",
+                    "description": "Unique identifier for the device instance",
+                    "type": "string"
+                },
+                "installationTypeAvailable": {
+                    "title": "Installation/mounting type available",
+                    "description": "Installation type available",
+                    "type": "string"
+                },
+                "power": {
+                    "title": "Power (W)",
+                    "description": "Power measured in Watts",
+                    "type": "string"
+                },
+                "protectionCommon": {
+                    "title": "Screen over stranding",
+                    "description": "Screen over stranding",
+                    "type": "string"
+                },
+                "protectionTypeStrandingElement": {
+                    "title": "Screen over stranding element",
+                    "description": "Screen type over stranding element",
+                    "type": "string"
+                },
+                "amountCores": {
+                    "title": "Number of cores",
+                    "description": "Number of cores",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Process status",
+                    "description": "",
+                    "type": "string"
+                },
+                "thickness": {
+                    "title": "Thickness",
+                    "description": "",
+                    "type": "string"
+                },
+                "fireSmokeDevelopment": {
+                    "title": "Smoke development",
+                    "description": "Smoke development class according to EN 13501-6",
+                    "type": "string"
                 }
             }
-        },
-        "metadata": {
-            "title": "Metadata",
-            "description": "Metadata container",
-            "type": "object",
-            "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
-                    "type": "string"
-                },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
-                    "type": "string"
-                },
-                "createdAt": {
-                    "title": "Creation time",
-                    "description": "Time when the data is created",
-                    "type": "string"
-                }
-            }
-        },
-        "function": {
-            "title": "",
-            "description": "",
-            "type": "string"
         },
         "id": {
             "title": "",
@@ -259,8 +261,8 @@
         }
     },
     "required": [
-        "id",
         "data",
+        "id",
         "@context",
         "@type"
     ]
