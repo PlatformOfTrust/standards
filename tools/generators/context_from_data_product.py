@@ -21,7 +21,7 @@ def create_context_from_data_product(rdf_class, entity_file: Dict[str, Any], ont
     context_template = {
         '@version': VERSION,
         rdf_class.entity.name: {"@id": rdf_class.entity.name},
-        '@schema': f"{export_onto_url}Schema/{entity_file.get('id')}/",
+        '@schema': f"{export_onto_url}Schema/{entity_file.get('id')}",
         f'{PREFIX}': {
             '@id': f'{export_onto_url}Vocabulary/',
             '@prefix': True
