@@ -86,13 +86,12 @@ def build_rdf_clasess(onto, export_onto_url: str) -> NoReturn:
                 write_dump_to_file(SCHEMA_DIR, entity_file,
                                    data_to_dump, is_json=True)
 
+                data_to_dump = create_data_example_from_schema(
+                    SCHEMA_DIR, DATA_EXAMPLE_DIR, export_onto_url)
+                    
             data_to_dump = create_vocabulary_from_rdf_class(
                 rdf_class, entity_file, onto, export_onto_url)
             write_dump_to_file(VOCABULARY_DIR, entity_file, data_to_dump)
-
-            if not rdf_class.entity.manualSchema:
-                data_to_dump = create_data_example_from_schema(
-                    SCHEMA_DIR, DATA_EXAMPLE_DIR, export_onto_url)
 
 
 def build_rdf_properties(onto) -> NoReturn:
