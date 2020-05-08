@@ -1,0 +1,108 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://standards-ontotest.oftrust.net/v1/Schema/DataProductParameters/LtifDataProductParameters/",
+    "type": "object",
+    "title": "Ltif data product output schema",
+    "description": "Core schema for validation ltif data product output.",
+    "required": [
+        "@context",
+        "data",
+		"signature"
+    ],
+    "properties": {
+        "@context": {
+            "$id": "#/properties/@context",
+            "type": "string",
+            "title": "JSON-LD context url",
+			"description": "JSON-LD context url with terms required to understand data product content.",
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/DataProductParameters/LtifDataProductParameters/"
+        },
+        "data": {
+            "$id": "#/properties/data",
+            "type": "object",
+            "title": "Data",
+            "description": "Desired data.",
+            "properties": {
+                "period": {
+					"$id": "#/properties/data/properties/period",
+					"type": "string",
+					"title": "Period",
+					"description": "Get data for the desired period.",
+					"examples": [
+						"YearlyLTIF"
+					],
+					"enum": ["YearlyLTIF", "QuarterlyLTIF"]
+				}
+            },
+			"if": {
+				"properties": { "period": { "const": "YearlyLTIF" } }
+			},
+			"then": {
+				"properties": { 
+					"year": { "type": "string", "pattern": "[0-9]{4}" },
+					"periodStartDate": { "type": "string", "format": "date" },
+					"periodEndDate": { "type": "string", "format": "date" },
+					"ltif": { "type": "number" }
+				},
+				"required": ["year", "periodStartDate", "periodEndDate", "ltif"]
+			},
+			"else": {
+				"properties": { 
+					"year": { "type": "string", "pattern": "[0-9]{4}" },
+					"quarter": { "type": "string", "pattern": "Q[1-4]" },
+					"periodStartDate": { "type": "string", "format": "date" },
+					"periodEndDate": { "type": "string", "format": "date" },
+					"ltif": { "type": "number" },
+					"notes": { "type": "string" }
+				},
+				"required": ["year", "quarter", "periodStartDate", "periodEndDate", "ltif"]
+			}
+        },
+		"signature": {
+			"$id": "#/properties/signature",
+			"type": "object",
+			"title": "Signature",
+			"required": [
+				"type",
+				"created",
+				"creator",
+				"signatureValue"
+			],
+			"properties": {
+				"type": {
+					"$id": "#/properties/signature/properties/type",
+					"type": "string",
+					"title": "Signature type",
+					"examples": [
+						"RsaSignature2018"
+					]
+				},
+				"created": {
+					"$id": "#/properties/signature/properties/created",
+					"type": "string",
+					"title": "Signature creation date and time",
+					"format": "date-time",
+					"examples": [
+						"2018-11-22T12:00:00Z"
+					]
+				},
+				"creator": {
+					"$id": "#/properties/signature/properties/creator",
+					"type": "string",
+					"title": "Signature creator",
+					"examples": [
+						"https://example.org/creator/public_key.pub"
+					]
+				},
+				"signatureValue": {
+					"$id": "#/properties/signature/properties/signatureValue",
+					"type": "string",
+					"title": "Generated signature",
+					"examples": [
+						"eyJ0eXAiOiJK...gFWFOEjXk"
+					]
+				}
+			}
+		}
+    }
+}

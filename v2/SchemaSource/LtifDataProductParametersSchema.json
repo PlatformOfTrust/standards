@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://standards-ontotest.oftrust.net/v1/Schema/DataProductOutput/LtifDataProductOutput/",
+    "type": "object",
+    "title": "Ltif product output core schema",
+    "description": "Core schema for general ltif parameters product output.",
+    "required": [
+        "@context",
+        "parameters"
+    ],
+    "properties": {
+        "@context": {
+            "$id": "#/properties/@context",
+            "type": "string",
+            "title": "JSON-LD context url",
+            "description": "JSON-LD context url with terms required to understand data product content.",
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/DataProductOutput/LtifDataProductOutput/"
+        },
+        "parameters": {
+            "$id": "#/properties/parameters",
+            "type": "object",
+            "title": "Data product output",
+            "description": "Output of data product delivered to customers.",
+			"examples": [
+                "YearlyLTIF"
+            ],
+			"properties": {
+				"period": {
+					"type": "string",
+					"enum": ["YearlyLTIF", "QuarterlyLTIF"]
+                }
+			}
+        }
+    }
+}

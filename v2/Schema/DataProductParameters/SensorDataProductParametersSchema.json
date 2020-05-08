@@ -1,0 +1,79 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://standards-ontotest.oftrust.net/v1/Schema/DataProductParameters/SensorDataProductParameters/",
+    "type": "object",
+    "title": "Sensor data product parameters schema",
+    "description": "Core schema for validation sensor data product parameters.",
+    "required": [
+        "@context",
+        "productCode",
+        "timeStamp",
+        "parameters"
+    ],
+    "properties": {
+        "@context": {
+            "$id": "#/properties/@context",
+            "type": "string",
+            "title": "JSON-LD context url",
+			"description": "JSON-LD context url with terms required to understand data product content.",
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/DataProductParameters/SensorDataProductParameters/"
+        },
+        "productCode": {
+            "$id": "#/properties/productCode",
+            "type": "string",
+            "title": "Productcode",
+            "description": "Generated product code.",
+            "examples": [
+                "multidata-product-1"
+            ]
+        },
+        "timeStamp": {
+            "$id": "#/properties/timeStamp",
+            "type": "string",
+            "title": "Date and time of measurement.",
+            "description": "Date and time of measurement.",
+			"format": "date-time",
+            "examples": [
+                "2019-10-19T13:20:09+00:00 "
+            ]
+        },
+        "parameters": {
+            "$id": "#/properties/parameters",
+            "type": "object",
+            "title": "Parameters",
+            "description": "Desired parameters.",
+            "examples": [
+                {
+					"ids": ["1", "35", "090822b8-3b34-454c-aefb-b18bd15a4847"],
+					"startTime": "2019-10-19T13:20:09+00:00",
+					"endTime": "2019-11-19T13:20:09+00:00",
+					"dataTypes": ["MeasureAirTemperatureCelciusDegree"]  
+				}
+            ],
+            "properties": {
+                "ids": {
+				        "type": "array",
+						"items": {
+						    "type": "string"
+					}
+				},
+                "startTime": {
+						"type": "string",
+						"format": "date-time"
+					},
+                "endTime": {
+						"type": "string",
+						"format": "date-time"
+					},
+				"dataTypes": {
+						"type": "array",
+                        "items": {
+							"type": "string",
+							"enum": ["MeasureAirCO2LevelPPM", "MeasureAirTemperatureCelciusDegree", "MeasurePresence"]
+						}
+                    }
+            },
+			"required": ["ids", "startTime", "endTime", "dataTypes"]
+        }
+    }
+}
