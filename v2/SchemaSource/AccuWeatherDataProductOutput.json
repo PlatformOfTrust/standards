@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ForecastResponse",
+  "definitions": {
+    "Forecast": {
+      "required": [
+        "cloudCoverage",
+        "dateTime",
+        "humidity",
+        "rainProbability",
+        "rainVolume",
+        "snowProbability",
+        "snowVolume",
+        "temp",
+        "tempFeel",
+        "tempMax",
+        "tempMaxFeel",
+        "tempMin",
+        "tempMinFeel",
+        "windDirection",
+        "windSpeed"
+      ],
+      "properties": {
+        "cloudCoverage": {
+          "type": "number",
+          "description": "Could coverage as percentage"
+        },
+        "dateTime": {
+          "type": "string",
+          "description": "The time and date the forecast data is applicable",
+          "format": "date-time"
+        },
+        "humidity": {
+          "type": "number",
+          "description": "The relative humidity as percentage"
+        },
+        "rainProbability": {
+          "type": "number",
+          "description": "The probability of rain as percentage"
+        },
+        "rainVolume": {
+          "type": "number"
+        },
+        "snowProbability": {
+          "type": "number",
+          "description": "The probability of snow as percentage"
+        },
+        "snowVolume": {
+          "type": "number",
+          "description": "The cumulative snow volume in mm"
+        },
+        "temp": {
+          "type": "number",
+          "description": "Average temperature in celsius"
+        },
+        "tempFeel": {
+          "type": "number",
+          "description": "Average feels like temperature in celsius"
+        },
+        "tempMax": {
+          "type": "number",
+          "description": "Maximum temperature in celsius"
+        },
+        "tempMaxFeel": {
+          "type": "number",
+          "description": "Maximum feels like temperature in celsius"
+        },
+        "tempMin": {
+          "type": "number",
+          "description": "Minimum temperature in celsius"
+        },
+        "tempMinFeel": {
+          "type": "number",
+          "description": "Minimum feels like temperature in celsius"
+        },
+        "windDirection": {
+          "type": "number",
+          "description": "Wind direction in degrees"
+        },
+        "windSpeed": {
+          "type": "number",
+          "description": "Wind speed in m/s"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ForecastResponse": {
+      "required": [
+        "@context",
+        "data",
+        "signature"
+      ],
+      "properties": {
+        "@context": {
+          "type": "string",
+          "description": "The context to be used for the payload."
+        },
+        "data": {
+          "items": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$ref": "#/definitions/Forecast"
+          },
+          "type": "array"
+        },
+        "signature": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/ForecastSignature"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ForecastSignature": {
+      "required": [
+        "type",
+        "created",
+        "creator",
+        "signatureValue"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "signatureValue": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}
