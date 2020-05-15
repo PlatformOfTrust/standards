@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/LtifDataProductParameters/",
+    "type": "object",
+    "title": "Ltif product output core schema",
+    "description": "Core schema for general ltif parameters product output.",
+    "required": [
+        "@context",
+        "parameters"
+    ],
+    "properties": {
+        "@context": {
+            "$id": "#/properties/@context",
+            "type": "string",
+            "title": "JSON-LD context url",
+            "description": "JSON-LD context url with terms required to understand data product content.",
+            "const": "https://standards-ontotest.oftrust.net/v1/Context/DataProductOutput/LtifDataProductOutput/"
+        },
+        "productCode": {
+            "$id": "#/properties/productCode",
+            "type": "string",
+            "title": "Productcode",
+            "description": "Name of your product.",
+            "examples": [
+                "multidata-product-1"
+            ]
+        },
+        "timeStamp": {
+            "$id": "#/properties/timeStamp",
+            "type": "string",
+            "title": "Measurement date and time",
+            "description": "Date and time of measurement.",
+            "examples": [
+                "2019-10-19T13:20:09+00:00"
+            ]
+        },
+        "parameters": {
+            "$id": "#/properties/parameters",
+            "type": "object",
+            "title": "Data product output",
+            "description": "Output of data product delivered to customers.",
+			"examples": [
+                "YearlyLTIF"
+            ],
+			"properties": {
+				"period": {
+					"type": "string",
+					"enum": ["YearlyLTIF", "QuarterlyLTIF"]
+                }
+			}
+        }
+    }
+}

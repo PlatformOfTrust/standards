@@ -5,7 +5,7 @@
         "@context": {
             "type": "string",
             "minLength": 1,
-            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/LegalParty/Person/"
+            "const": "https://standards-ontotest.oftrust.net/v2/Context/Identity/LegalParty/Person/"
         },
         "@type": {
             "type": "string",
@@ -15,49 +15,17 @@
             ],
             "const": "Person"
         },
-        "id": {
-            "title": "",
-            "description": "",
-            "type": "string"
-        },
-        "metadata": {
-            "title": "",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "updatedAt": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "createdAt": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "createdBy": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                }
-            }
-        },
         "data": {
             "title": "",
             "description": "",
             "type": "object",
             "properties": {
-                "middleName": {
-                    "title": "Middle names",
-                    "description": "Middle names of the person",
+                "lastName": {
+                    "title": "Last name",
+                    "description": "Last name of the person",
                     "type": "string",
                     "examples": [
-                        "Bengt"
+                        "Mölsä"
                     ]
                 },
                 "firstName": {
@@ -68,6 +36,14 @@
                         "Petri"
                     ]
                 },
+                "idOfficial": {
+                    "title": "Official identifier",
+                    "description": "Government (official authority) assigned identifier",
+                    "type": "string",
+                    "examples": [
+                        22438613
+                    ]
+                },
                 "birthdate": {
                     "title": "Date of birth",
                     "description": "Birthdate of the person",
@@ -76,12 +52,17 @@
                         "1977-04-21"
                     ]
                 },
-                "idOfficial": {
-                    "title": "Official identifier",
-                    "description": "Government (official authority) assigned identifier",
+                "status": {
+                    "title": "Life-cycle status",
+                    "description": "Life-cycle status",
+                    "type": "string"
+                },
+                "middleName": {
+                    "title": "Middle names",
+                    "description": "Middle names of the person",
                     "type": "string",
                     "examples": [
-                        22438613
+                        "Bengt"
                     ]
                 },
                 "additionalInformation": {
@@ -91,19 +72,38 @@
                     "examples": [
                         "Our laminated logs are glued from two or more planed blanks in a way that the heartwood will stay on the logs surface. This is done to ensure that cracking and bending stay minimal."
                     ]
-                },
-                "status": {
-                    "title": "Life-cycle status",
-                    "description": "Life-cycle status",
+                }
+            }
+        },
+        "id": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        },
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
                     "type": "string"
                 },
-                "lastName": {
-                    "title": "Last name",
-                    "description": "Last name of the person",
-                    "type": "string",
-                    "examples": [
-                        "Mölsä"
-                    ]
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
                 }
             }
         }

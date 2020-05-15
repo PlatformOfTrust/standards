@@ -5,7 +5,7 @@
         "@context": {
             "type": "string",
             "minLength": 1,
-            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Process/Measure/MeasureAirCO2Level/"
+            "const": "https://standards-ontotest.oftrust.net/v2/Context/Identity/Process/Measure/MeasureAirCO2Level/"
         },
         "@type": {
             "type": "string",
@@ -15,10 +15,94 @@
             ],
             "const": "MeasureAirCO2Level"
         },
-        "id": {
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                },
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                }
+            }
+        },
+        "executor": {
             "title": "",
             "description": "",
             "type": "string"
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "startDateTime": {
+                    "title": "Start time",
+                    "description": "Start time",
+                    "type": "string"
+                },
+                "executor": {
+                    "title": "Process executor",
+                    "description": "Executor of the process (source of the data)",
+                    "type": "string"
+                },
+                "duration": {
+                    "title": "Duration",
+                    "description": "Duration (time)",
+                    "type": "string"
+                },
+                "idLocal": {
+                    "title": "Local identifier",
+                    "description": "Locally given identifier",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Life-cycle status",
+                    "description": "Life-cycle status",
+                    "type": "string"
+                },
+                "processValue": {
+                    "title": "Output value",
+                    "description": "Output value of the process",
+                    "type": "string"
+                },
+                "processTypePoT": {
+                    "title": "Process type - PoT type",
+                    "description": "PoT defined standard process type",
+                    "type": "string"
+                },
+                "nameLocal": {
+                    "title": "Local name",
+                    "description": "Local name",
+                    "type": "string"
+                },
+                "endDateTime": {
+                    "title": "End time",
+                    "description": "End time",
+                    "type": "string"
+                },
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
+                    "type": "string"
+                }
+            }
         },
         "function": {
             "title": "",
@@ -30,99 +114,15 @@
             "description": "",
             "type": "string"
         },
-        "executor": {
+        "id": {
             "title": "",
             "description": "",
             "type": "string"
-        },
-        "metadata": {
-            "title": "",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "updatedAt": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "updatedBy": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "createdAt": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "createdBy": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                }
-            }
-        },
-        "data": {
-            "title": "",
-            "description": "",
-            "type": "object",
-            "properties": {
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
-                },
-                "endDateTime": {
-                    "title": "End time",
-                    "description": "End time",
-                    "type": "string"
-                },
-                "processTypePoT": {
-                    "title": "Process type - PoT type",
-                    "description": "PoT defined standard process type",
-                    "type": "string"
-                },
-                "processValue": {
-                    "title": "Output value",
-                    "description": "Output value of the process",
-                    "type": "string"
-                },
-                "nameLocal": {
-                    "title": "Local name",
-                    "description": "Local name",
-                    "type": "string"
-                },
-                "duration": {
-                    "title": "Duration",
-                    "description": "Duration (time)",
-                    "type": "string"
-                },
-                "executor": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Life-cycle status",
-                    "description": "Life-cycle status",
-                    "type": "string"
-                },
-                "startDateTime": {
-                    "title": "Start time",
-                    "description": "Start time",
-                    "type": "string"
-                },
-                "idLocal": {
-                    "title": "Local identifier",
-                    "description": "Locally given identifier",
-                    "type": "string"
-                }
-            }
         }
     },
     "required": [
-        "data",
         "id",
+        "data",
         "@context",
         "@type"
     ]
