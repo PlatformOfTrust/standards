@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "$ref": "#/definitions/ForecastResponse",
   "definitions": {
     "Forecast": {
@@ -11,12 +11,12 @@
         "rainVolume",
         "snowProbability",
         "snowVolume",
-        "temp",
-        "tempFeel",
-        "tempMax",
-        "tempMaxFeel",
-        "tempMin",
-        "tempMinFeel",
+        "temperature",
+        "temperatureFeel",
+        "temperatureMax",
+        "temperatureFeelMax",
+        "temperatureMin",
+        "temperatureFeelMin",
         "windDirection",
         "windSpeed"
       ],
@@ -49,27 +49,27 @@
           "type": "number",
           "description": "The cumulative snow volume in mm"
         },
-        "temp": {
+        "temperature": {
           "type": "number",
           "description": "Average temperature in celsius"
         },
-        "tempFeel": {
+        "temperatureFeel": {
           "type": "number",
           "description": "Average feels like temperature in celsius"
         },
-        "tempMax": {
+        "temperatureMax": {
           "type": "number",
           "description": "Maximum temperature in celsius"
         },
-        "tempMaxFeel": {
+        "temperatureFeelMax": {
           "type": "number",
           "description": "Maximum feels like temperature in celsius"
         },
-        "tempMin": {
+        "temperatureMin": {
           "type": "number",
           "description": "Minimum temperature in celsius"
         },
-        "tempMinFeel": {
+        "temperatureFeelMin": {
           "type": "number",
           "description": "Minimum feels like temperature in celsius"
         },
@@ -94,17 +94,18 @@
       "properties": {
         "@context": {
           "type": "string",
-          "description": "The context to be used for the payload."
+          "description": "The context to be used for the payload.",
+		  "const": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductOutput/ForecastDataProductOutput/AccuWeatherDataProductOutput"
         },
         "data": {
           "items": {
-            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$schema": "http://json-schema.org/draft-06/schema#",
             "$ref": "#/definitions/Forecast"
           },
           "type": "array"
         },
         "signature": {
-          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$schema": "http://json-schema.org/draft-06/schema#",
           "$ref": "#/definitions/ForecastSignature"
         }
       },
