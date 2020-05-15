@@ -1,0 +1,297 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "description": {
+            "@id": "dli:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Case"
+    },
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Case",
+    "dli:supportedClass": {
+        "@id": "pot:Case",
+        "@type": "pot:Class",
+        "subClassOf": "dli:Virtual",
+        "rdfs:label": {
+            "en-us": "Case"
+        },
+        "dli:supportedAttribute": {
+            "data": {
+                "@id": "dli:data",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Data",
+                "dli:required": true,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Data container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creation time",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Time when the data is created"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creator",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Creator of and identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "metadata": {
+                "@id": "dli:metadata",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Metadata",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Metadata container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "name": {
+                "@id": "dli:name",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Identity name",
+                "dli:required": true,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Name given to the Identity"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Update time",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Time when the data is updated"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Updater",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Updater of an identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "descriptionGeneral": {
+                "@id": "pot:description/descriptionGeneral",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:description",
+                "dli:title": "Case description",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Description of the case"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "500"
+                }
+            },
+            "duration": {
+                "@id": "pot:time/duration",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:time",
+                "dli:title": "Duration",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Duration of the case"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "durationEstimate": {
+                "@id": "pot:time/durationEstimate",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:time",
+                "dli:title": "Estimated duration",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Estimated duration of the case"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "endDateTime": {
+                "@id": "pot:time/endDateTime",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:time",
+                "dli:title": "End time",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "End time of the case"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "idLocal": {
+                "@id": "pot:identifier/idLocal",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Case Id",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Local identifier (system identifier) "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "nameLocal": {
+                "@id": "pot:identifier/nameLocal",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Case header",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Locally given name (source system name) "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "startDateTime": {
+                "@id": "pot:time/startDateTime",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:time",
+                "dli:title": "Start time",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Start time of the case"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:lifeCycle",
+                "dli:title": "Case status",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Case state"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            }
+        }
+    }
+}
