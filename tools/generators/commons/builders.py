@@ -7,6 +7,21 @@ from generators.commons.extended_properties import label as pot_label
 from generators.commons.extended_properties import comment as pot_comment
 
 
+def build_nested_domains(d):
+    parents = {}
+    if d and not isinstance(d, str):
+        for a in d.ancestors():
+            parent, child = str(a).split('.')
+            parents[child] = parent
+
+        domains = []
+        domains.append(d.name)
+        child = d.name
+        while parents[child] != 'pot' and parents[child] != "Vocabulary":
+            domains.append(parents[child])
+            child = parents[child]
+    return domains
+
 
 def build_nested_labels(owl_property: Any, PREFIX='pot') -> List[Dict[str, str]]:
     """Return list of dicts with nested labels.
@@ -30,11 +45,17 @@ def build_nested_labels(owl_property: Any, PREFIX='pot') -> List[Dict[str, str]]
                     })
 
             nested_labels_template = {'rdfs:label': {}}
+
+            domains = list()
+            for d in l.domain:
+                if d and not isinstance(d, str):
+                    domains.append('/'.join(build_nested_domains(d)[::-1]))
+
             for nl in property_nested_labels:
                 for k, v in nl.items():
                     nested_labels_template['rdfs:label'][k] = v
                 nested_labels_template['domain'] = [
-                    f'{PREFIX}:{d}' for d in l.domain]
+                    f'{PREFIX}:{d}' for d in domains]
             nested_labels.append(nested_labels_template)
 
     return nested_labels
@@ -55,10 +76,16 @@ def build_nested_comments(owl_property: Any, PREFIX='pot') -> List[Dict[str, str
     for c in owl_property.comment:
         if c:
             nested_comments_template = {'rdfs:comment': {}}
+
+            domains = list()
+            for d in c.domain:
+                if d and not isinstance(d, str):
+                    domains.append('/'.join(build_nested_domains(d)[::-1]))
+
             for k, v in build_comments(c).items():
                 nested_comments_template['rdfs:comment'][k] = v
             nested_comments_template['domain'] = [
-                f'{PREFIX}:{d}' for d in c.domain]
+                f'{PREFIX}:{d}' for d in domains]
             nested_comments.append(nested_comments_template)
     return nested_comments
 
@@ -206,7 +233,7 @@ def build_domains(owl_property: Any, PREFIX='pot') -> List[str]:
     """
     domains = list()
     for d in domain._get_indirect_values_for_class(owl_property):
-        domains.append(f'{PREFIX}:{d.name}')
+        domains.append(f'{PREFIX}:{"/".join(build_nested_domains(d)[::-1])}')
     return domains
 
 

@@ -66,7 +66,7 @@ def build_rdf_clasess(onto, export_onto_url: str) -> NoReturn:
     for rdf_class in rdf_classes:
         files = rdf_class.get_files()
         for entity_file in files:
-            if rdf_class.entity.manualSchema:
+            if 'DataProduct' in rdf_class.entity.name:
                 data_to_dump = create_context_from_data_product(
                     rdf_class, entity_file, onto, export_onto_url)
                 write_dump_to_file(CONTEXT_DIR, entity_file, data_to_dump)
@@ -88,7 +88,7 @@ def build_rdf_clasess(onto, export_onto_url: str) -> NoReturn:
 
                 data_to_dump = create_data_example_from_schema(
                     SCHEMA_DIR, DATA_EXAMPLE_DIR, export_onto_url)
-                    
+
             data_to_dump = create_vocabulary_from_rdf_class(
                 rdf_class, entity_file, onto, export_onto_url)
             write_dump_to_file(VOCABULARY_DIR, entity_file, data_to_dump)
