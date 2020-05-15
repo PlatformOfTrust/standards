@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards-ontotest.oftrust.net/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.oftrust.net/v2/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -54,21 +54,21 @@
         "label": [
             {
                 "rdfs:label": {
-                    "en-us": "Industry category",
-                    "fi-fi": "Toimialaluokka"
-                },
-                "domain": [
-                    "pot:LegalParty.Organization"
-                ]
-            },
-            {
-                "rdfs:label": {
                     "en-us": "Space type - official",
                     "fi-fi": "Tilatyyppi - viranomainen"
                 },
                 "domain": [
-                    "pot:Identity.Space",
-                    "pot:Space.Room"
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Industry category",
+                    "fi-fi": "Toimialaluokka"
+                },
+                "domain": [
+                    "pot:Identity/LegalParty/Organization"
                 ]
             }
         ],
@@ -79,7 +79,7 @@
                     "fi-fi": "Viranomaisen antama toimialaluokitus"
                 },
                 "domain": [
-                    "pot:LegalParty.Organization"
+                    "pot:Identity/LegalParty/Organization"
                 ]
             },
             {
@@ -88,8 +88,8 @@
                     "fi-fi": "Viranomaisen antama luokitus tilalle"
                 },
                 "domain": [
-                    "pot:Identity.Space",
-                    "pot:Space.Room"
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
                 ]
             }
         ],
@@ -97,9 +97,9 @@
             "xsd:string"
         ],
         "domain": [
-            "pot:Space",
-            "pot:Organization",
-            "pot:Room"
+            "pot:Identity/Space",
+            "pot:Identity/LegalParty/Organization",
+            "pot:Identity/Space/Room"
         ]
     }
 }

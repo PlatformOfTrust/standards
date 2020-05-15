@@ -5,7 +5,7 @@
         "@context": {
             "type": "string",
             "minLength": 1,
-            "const": "https://standards-ontotest.oftrust.net/v1/Context/Identity/Space/Apartment/"
+            "const": "https://standards-ontotest.oftrust.net/v2/Context/Identity/Space/Apartment/"
         },
         "@type": {
             "type": "string",
@@ -15,7 +15,7 @@
             ],
             "const": "Apartment"
         },
-        "id": {
+        "area": {
             "title": "",
             "description": "",
             "type": "string"
@@ -30,64 +30,6 @@
                     "description": "IFC standard based Globally Unique Identifier",
                     "type": "string"
                 },
-                "areaSquareMeter": {
-                    "title": "Area in square meters",
-                    "description": "Area measured in square meters",
-                    "type": "string"
-                },
-                "height": {
-                    "title": "Height",
-                    "description": "Height",
-                    "type": "string"
-                },
-                "roomAmount": {
-                    "title": "Number of rooms",
-                    "description": "Number of rooms",
-                    "type": "string"
-                },
-                "name": {
-                    "title": "Name",
-                    "description": "Name",
-                    "type": "string"
-                },
-                "idOfficial": {
-                    "title": "Official identifier",
-                    "description": "Government (official authority) assigned identifier",
-                    "type": "string",
-                    "examples": [
-                        22438613
-                    ]
-                },
-                "descriptionKitchen": {
-                    "title": "Kitchen type",
-                    "description": "Type of kitchen in the apartment",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Life-cycle status",
-                    "description": "Life-cycle status",
-                    "type": "string"
-                },
-                "volume": {
-                    "title": "Volume",
-                    "description": "Volume of the object",
-                    "type": "string"
-                },
-                "categorizationLocal": {
-                    "title": "Local category",
-                    "description": "Categorisation name given locally",
-                    "type": "string"
-                },
-                "areaSquareMeterLivingNet": {
-                    "title": "Living space net square meters",
-                    "description": "Living space net square meters",
-                    "type": "string"
-                },
-                "categorizationOfficial": {
-                    "title": "Official categorization",
-                    "description": "Categorization based on official (governmental) classification",
-                    "type": "string"
-                },
                 "idLocal": {
                     "title": "Local identifier",
                     "description": "Locally given identifier",
@@ -98,9 +40,34 @@
                     "description": "Description",
                     "type": "string"
                 },
+                "name": {
+                    "title": "Name",
+                    "description": "Name",
+                    "type": "string"
+                },
+                "descriptionKitchen": {
+                    "title": "Kitchen type",
+                    "description": "Type of kitchen in the apartment",
+                    "type": "string"
+                },
+                "usageMain": {
+                    "title": "Main usage purpose",
+                    "description": "Main usage purpose",
+                    "type": "string"
+                },
                 "sizeAreaLivingAudited": {
                     "title": "Audited living area size",
                     "description": "Size of audited area suitable for, or used for, living",
+                    "type": "string"
+                },
+                "roomAmount": {
+                    "title": "Number of rooms",
+                    "description": "Number of rooms",
+                    "type": "string"
+                },
+                "volume": {
+                    "title": "Volume",
+                    "description": "Volume of the object",
                     "type": "string"
                 },
                 "areaSquareMeterFloorNet": {
@@ -108,49 +75,82 @@
                     "description": "Net square meters of floor space/area/storey",
                     "type": "string"
                 },
-                "usageMain": {
-                    "title": "Main usage purpose",
-                    "description": "Main usage purpose",
+                "areaSquareMeterLivingNet": {
+                    "title": "Living space net square meters",
+                    "description": "Living space net square meters",
                     "type": "string"
+                },
+                "status": {
+                    "title": "Life-cycle status",
+                    "description": "Life-cycle status",
+                    "type": "string"
+                },
+                "areaSquareMeter": {
+                    "title": "Area in square meters",
+                    "description": "Area measured in square meters",
+                    "type": "string"
+                },
+                "categorizationLocal": {
+                    "title": "Local category",
+                    "description": "Categorisation name given locally",
+                    "type": "string"
+                },
+                "height": {
+                    "title": "Height",
+                    "description": "Height",
+                    "type": "string"
+                },
+                "categorizationOfficial": {
+                    "title": "Official categorization",
+                    "description": "Categorization based on official (governmental) classification",
+                    "type": "string"
+                },
+                "idOfficial": {
+                    "title": "Official identifier",
+                    "description": "Government (official authority) assigned identifier",
+                    "type": "string",
+                    "examples": [
+                        22438613
+                    ]
                 }
             }
         },
-        "area": {
+        "id": {
             "title": "",
             "description": "",
             "type": "string"
         },
         "metadata": {
-            "title": "",
-            "description": "",
+            "title": "Metadata",
+            "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedBy": {
-                    "title": "",
-                    "description": "",
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
                     "type": "string"
                 },
-                "createdAt": {
-                    "title": "",
-                    "description": "",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
                     "type": "string"
                 },
                 "createdBy": {
-                    "title": "",
-                    "description": "",
+                    "title": "Creator",
+                    "description": "Creator of and identity",
                     "type": "string"
                 },
                 "updatedAt": {
-                    "title": "",
-                    "description": "",
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
                     "type": "string"
                 }
             }
         }
     },
     "required": [
-        "data",
         "id",
+        "data",
         "@context",
         "@type"
     ]
