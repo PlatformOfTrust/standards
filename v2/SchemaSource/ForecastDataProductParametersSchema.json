@@ -2,46 +2,24 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "$ref": "#/definitions/RequestParameters",
   "definitions": {
-    "Location": {
-      "required": [
-        "lat",
-        "lng"
-      ],
-      "properties": {
-        "lat": {
-          "type": "number"
-        },
-        "lng": {
-          "type": "number"
-        }
-      },
-      "additionalProperties": false,
-      "type": "object"
-    },
     "Params": {
       "required": [
-        "timeFrame",
-        "location"
+        "timeFrame"
       ],
       "properties": {
         "timeFrame": {
           "type": "object",
           "description": "Defines the time frame for the forecast."
-        },
-        "location": {
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "$ref": "#/definitions/Location",
-          "description": "The coordinates of the location that the forecast will be fetched. Will find the nearest weather station to this location."
         }
       },
-      "additionalProperties": false,
+      "additionalProperties": true,
       "type": "object"
     },
     "RequestParameters": {
       "required": [
         "@context",
         "timestamp",
-        "product-code",
+        "productCode",
         "parameters"
       ],
       "properties": {
@@ -53,7 +31,7 @@
           "type": "string",
           "format": "date-time"
         },
-        "product-code": {
+        "productCode": {
           "type": "string"
         },
         "parameters": {

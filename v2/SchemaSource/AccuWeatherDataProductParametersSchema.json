@@ -1,17 +1,17 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "$ref": "#/definitions/RequestParameters",
   "definitions": {
     "Location": {
       "required": [
-        "lat",
-        "lng"
+        "latitude",
+        "longitude"
       ],
       "properties": {
-        "lat": {
+        "latitude": {
           "type": "number"
         },
-        "lng": {
+        "longitude": {
           "type": "number"
         }
       },
@@ -36,7 +36,7 @@
           "description": "Defines the time frame for the forecast in days. If set to 0 will return the current weather information. Will fallback to 0 if not provided."
         },
         "location": {
-          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$schema": "http://json-schema.org/draft-06/schema#",
           "$ref": "#/definitions/Location",
           "description": "The coordinates of the location that the forecast will be fetched. Will find the nearest weather station to this location."
         }
@@ -48,23 +48,24 @@
       "required": [
         "@context",
         "timestamp",
-        "product-code",
+        "productCode",
         "parameters"
       ],
       "properties": {
         "@context": {
           "type": "string",
-          "description": "The context to be used for the payload."
+          "description": "The context to be used for the payload.",
+          "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/ForecastDataProductParameters/AccuWeatherDataProductParameters/"
         },
         "timestamp": {
           "type": "string",
           "format": "date-time"
         },
-        "product-code": {
+        "productCode": {
           "type": "string"
         },
         "parameters": {
-          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$schema": "http://json-schema.org/draft-06/schema#",
           "$ref": "#/definitions/Params"
         }
       },
