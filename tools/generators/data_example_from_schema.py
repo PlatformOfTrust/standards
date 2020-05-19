@@ -34,7 +34,7 @@ def create_data_example_from_schema(base_dir, target_dir, export_onto_url):
                         else:
                             data_example[i] = ''
 
-                data_example['@context'] = f'{export_onto_url[:-1]}{path[2:]}/{name[:-5]}/'
+                data_example['@context'] = f'{export_onto_url[:-1]}{path.replace("Schema", "Context")[2:]}/{name[:-5]}/'
 
                 # Build DataExample files
                 data_example_path = path.replace(base_dir, target_dir)

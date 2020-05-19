@@ -20,6 +20,19 @@
             "description": "",
             "type": "object",
             "properties": {
+                "status": {
+                    "title": "Life-cycle status",
+                    "description": "Life-cycle status",
+                    "type": "string"
+                },
+                "middleName": {
+                    "title": "Middle names",
+                    "description": "Middle names of the person",
+                    "type": "string",
+                    "examples": [
+                        "Bengt"
+                    ]
+                },
                 "additionalInformation": {
                     "title": "Additional information",
                     "description": "Additional information",
@@ -27,19 +40,6 @@
                     "examples": [
                         "Our laminated logs are glued from two or more planed blanks in a way that the heartwood will stay on the logs surface. This is done to ensure that cracking and bending stay minimal."
                     ]
-                },
-                "idOfficial": {
-                    "title": "Official identifier",
-                    "description": "Government (official authority) assigned identifier",
-                    "type": "string",
-                    "examples": [
-                        22438613
-                    ]
-                },
-                "status": {
-                    "title": "Life-cycle status",
-                    "description": "Life-cycle status",
-                    "type": "string"
                 },
                 "birthdate": {
                     "title": "Date of birth",
@@ -49,12 +49,12 @@
                         "1977-04-21"
                     ]
                 },
-                "middleName": {
-                    "title": "Middle names",
-                    "description": "Middle names of the person",
+                "lastName": {
+                    "title": "Last name",
+                    "description": "Last name of the person",
                     "type": "string",
                     "examples": [
-                        "Bengt"
+                        "Mölsä"
                     ]
                 },
                 "firstName": {
@@ -65,12 +65,12 @@
                         "Petri"
                     ]
                 },
-                "lastName": {
-                    "title": "Last name",
-                    "description": "Last name of the person",
+                "idOfficial": {
+                    "title": "Official identifier",
+                    "description": "Government (official authority) assigned identifier",
                     "type": "string",
                     "examples": [
-                        "Mölsä"
+                        22438613
                     ]
                 }
             }
@@ -80,24 +80,24 @@
             "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
-                    "type": "string"
-                },
                 "updatedBy": {
                     "title": "Updater",
                     "description": "Updater of an identity",
                     "type": "string"
                 },
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                },
                 "createdAt": {
                     "title": "Creation time",
                     "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
                     "type": "string"
                 }
             }
@@ -109,8 +109,8 @@
         }
     },
     "required": [
-        "data",
         "id",
+        "data",
         "@context",
         "@type"
     ]
