@@ -15,93 +15,95 @@
             "type": "string",
             "title": "JSON-LD context url",
             "description": "JSON-LD context url with terms required to understand sensor data product content.",
-            "const": "https://standards-ontotest.oftrust.net/v1/Context/DataProductOutput/SensorDataProductOutput/"
+            "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductOutput/SensorDataProductOutput/"
         },
         "data": {
             "$id": "#/properties/data",
-            "type": "array",
+            "type": "object",
 			"minItems": 1,
             "title": "Sensor data product output",
             "description": "Output of sensor data product delivered to customers.",
-            "items": {
-                "$id": "#/properties/data/items",
-                "type": "object",
-                "title": "Sensor conditions",
-                "description": "Sensor output conditions.",
-                "required": [
-                    "id",
-                    "measurements"
-                ],
-                "properties": {
-                    "id": {
-                        "$id": "#/properties/data/items/properties/id",
-                        "type": "object",
-                        "title": "Sensor id",
-                        "description": "Id pointing to the desired sensor.",
-						"examples": [
-                            "<JSON Object specified in AtDataProduct link>"
-                        ]
-                    },
-                    "measurements": {
-                        "$id": "#/properties/data/items/properties/measurements",
-                        "type": "array",
-						"minItems": 1,
-                        "title": "Measurements data",
-                        "description": "Measurements output data.",
-						"examples" : [
-							[
-								{
-									"@type": "MeasureAirTemperatureCelciusDegree",
-									"value": 21,
-									"timeStamp": "2018-11-13T20:20:39+00:00"
-								},
-								{
-									"@type": "MeasureAirCO2LevelPPM",
-									"value": 420,
-									"timeStamp": "2018-11-13T20:20:39+00:00"
-								},
-								{
-									"@type": "MeasurePresence",
-									"value": true,
-									"timeStamp": "2018-11-13T20:20:39+00:00"
-								}
+			"properties": {
+				"sensors": {
+					"$id": "#/properties/data/sensors",
+					"type": "array",
+					"title": "Sensor conditions",
+					"description": "Sensor output conditions.",
+					"required": [
+						"id",
+						"measurements"
+					],
+					"properties": {
+						"id": {
+							"$id": "#/properties/data/items/properties/id",
+							"type": "object",
+							"title": "Sensor id",
+							"description": "Id pointing to the desired sensor.",
+							"examples": [
+								"<JSON Object specified in AtDataProduct link>"
 							]
-						],
-                        "items": {
-                            "$id": "#/properties/data/items/properties/measurements/items",
-                            "type": "object",
-                            "title": "Measurements conditions",
-                            "description": "Measurements output conditions.",
-                            "required": [
-                                "@type",
-                                "value",
-                                "timeStamp"
-                            ],
-                            "properties": {
-                                "@type": {
-                                    "$id": "#/properties/data/items/properties/measurements/items/properties/@type",
-                                    "type": "string",
-                                    "title": "Sensor type",
-                                    "description": "Type of measurement",
-                                    "enum": ["MeasureAirTemperatureCelciusDegree", "MeasureAirCO2LevelPPM", "MeasurePresence"]
-                                },
-                                "value": {
-                                    "$id": "#/properties/data/items/properties/measurements/items/properties/value",
-                                    "type": ["integer", "boolean"],
-                                    "title": "Sensor value",
-                                    "description": "Value of measurement"
-                                },
-                                "timeStamp": {
-                                    "$id": "#/properties/data/items/properties/measurements/items/properties/timeStamp",
-                                    "type": "string",
-                                    "title": "Measurement date and time",
-                                    "description": "Date and time of measurement.",
-									"format": "date-time"
-                                }
-                            }
-                        }
-                    }
-                }
+						},
+						"measurements": {
+							"$id": "#/properties/data/items/properties/measurements",
+							"type": "array",
+							"minItems": 1,
+							"title": "Measurements data",
+							"description": "Measurements output data.",
+							"examples" : [
+								[
+									{
+										"@type": "MeasureAirTemperatureCelciusDegree",
+										"value": 21,
+										"timeStamp": "2018-11-13T20:20:39+00:00"
+									},
+									{
+										"@type": "MeasureAirCO2LevelPPM",
+										"value": 420,
+										"timeStamp": "2018-11-13T20:20:39+00:00"
+									},
+									{
+										"@type": "MeasurePresence",
+										"value": true,
+										"timeStamp": "2018-11-13T20:20:39+00:00"
+									}
+								]
+							],
+							"items": {
+								"$id": "#/properties/data/items/properties/measurements/items",
+								"type": "object",
+								"title": "Measurements conditions",
+								"description": "Measurements output conditions.",
+								"required": [
+									"@type",
+									"value",
+									"timeStamp"
+								],
+								"properties": {
+									"@type": {
+										"$id": "#/properties/data/items/properties/measurements/items/properties/@type",
+										"type": "string",
+										"title": "Sensor type",
+										"description": "Type of measurement",
+										"enum": ["MeasureAirTemperatureCelciusDegree", "MeasureAirCO2LevelPPM", "MeasurePresence"]
+									},
+									"value": {
+										"$id": "#/properties/data/items/properties/measurements/items/properties/value",
+										"type": ["integer", "boolean"],
+										"title": "Sensor value",
+										"description": "Value of measurement"
+									},
+									"timeStamp": {
+										"$id": "#/properties/data/items/properties/measurements/items/properties/timeStamp",
+										"type": "string",
+										"title": "Measurement date and time",
+										"description": "Date and time of measurement.",
+										"format": "date-time"
+									}
+								}
+							}
+						}
+					}
+				}
             }
         },
 		"signature": {

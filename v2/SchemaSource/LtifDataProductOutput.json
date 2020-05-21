@@ -15,47 +15,55 @@
             "type": "string",
             "title": "JSON-LD context url",
 			"description": "JSON-LD context url with terms required to understand data product content.",
-            "const": "https://standards-ontotest.oftrust.net/v1/Context/DataProductOutput/LtifDataProductOutput/"
+            "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductOutput/LtifDataProductOutput/"
         },
         "data": {
             "$id": "#/properties/data",
             "type": "object",
             "title": "Data",
             "description": "Desired data.",
-            "properties": {
-                "period": {
-					"$id": "#/properties/data/properties/period",
-					"type": "string",
-					"title": "Period",
-					"description": "Get data for the desired period.",
-					"examples": [
-						"YearlyLTIF"
-					],
-					"enum": ["YearlyLTIF", "QuarterlyLTIF"]
+			"properties": {
+				"calculations": {
+					"$id": "#/properties/data/calculations",
+					"type": "array",
+					"title": "LTIF Calculations",
+					"description": "LTIF Calculations.",
+					"properties": {
+						"period": {
+							"$id": "#/properties/data/properties/period",
+							"type": "string",
+							"title": "Period",
+							"description": "Get data for the desired period.",
+							"examples": [
+								"YearlyLTIF"
+							],
+							"enum": ["YearlyLTIF", "QuarterlyLTIF"]
+						}
+					},
+					"if": {
+						"properties": { "period": { "const": "YearlyLTIF" } }
+					},
+					"then": {
+						"properties": { 
+							"year": { "type": "string", "pattern": "[0-9]{4}" },
+							"periodStartDate": { "type": "string", "format": "date" },
+							"periodEndDate": { "type": "string", "format": "date" },
+							"ltif": { "type": "number" }
+						},
+						"required": ["year", "periodStartDate", "periodEndDate", "ltif"]
+					},
+					"else": {
+						"properties": { 
+							"year": { "type": "string", "pattern": "[0-9]{4}" },
+							"quarter": { "type": "string", "pattern": "Q[1-4]" },
+							"periodStartDate": { "type": "string", "format": "date" },
+							"periodEndDate": { "type": "string", "format": "date" },
+							"ltif": { "type": "number" },
+							"notes": { "type": "string" }
+						},
+						"required": ["year", "quarter", "periodStartDate", "periodEndDate", "ltif"]
+					}
 				}
-            },
-			"if": {
-				"properties": { "period": { "const": "YearlyLTIF" } }
-			},
-			"then": {
-				"properties": { 
-					"year": { "type": "string", "pattern": "[0-9]{4}" },
-					"periodStartDate": { "type": "string", "format": "date" },
-					"periodEndDate": { "type": "string", "format": "date" },
-					"ltif": { "type": "number" }
-				},
-				"required": ["year", "periodStartDate", "periodEndDate", "ltif"]
-			},
-			"else": {
-				"properties": { 
-					"year": { "type": "string", "pattern": "[0-9]{4}" },
-					"quarter": { "type": "string", "pattern": "Q[1-4]" },
-					"periodStartDate": { "type": "string", "format": "date" },
-					"periodEndDate": { "type": "string", "format": "date" },
-					"ltif": { "type": "number" },
-					"notes": { "type": "string" }
-				},
-				"required": ["year", "quarter", "periodStartDate", "periodEndDate", "ltif"]
 			}
         },
 		"signature": {
