@@ -14,15 +14,14 @@ def create_data_example_from_schema(base_dir, target_dir, export_onto_url):
     """
     for path, subdirs, files in os.walk(base_dir):
         for name in files:
-            if 'Output' not in name and 'Parameters' not in name:
+            if "DataProductParameters" not in path and "DataProductOutput" not in path :
                 with open(os.path.join(path, name), 'r') as json_file:
                     data = json.load(json_file)
-
                 # Build data example json based on schema
                 data_example = dict()
                 data_example['@context'] = f'{export_onto_url[:-1]}{path[2:]}/{name[:-5]}/'
                 data_example['@type'] = f'{name[:-5]}'
-                data_example['id'] = ''
+                data_example['@id'] = ''
                 data_example['data'] = ''
                 data_example['metadata'] = ''
 

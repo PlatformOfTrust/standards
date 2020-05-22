@@ -18,6 +18,34 @@ def create_context_from_data_product(rdf_class, entity_file: Dict[str, Any], ont
         Returns:
             context_template (dict of str: Any): Dictionary of required parameters
     """
+    corresponds = {
+        "DataProductContext": "DataProductContext",
+        "DataProductOutput": "DataProductOutput",
+        "DataProductParameters": "DataProductParameters",
+        "DataProductParameters": "DataProductParameters",
+        "WeatherForecastDataProductContext": "Weather",
+        "WeatherForecastDataProductOutput": "Weather",
+        "WeatherForecastDataProductParameters": "Weather",
+        "ForecastDataProductContext": "Forecast",
+        "ForecastDataProductOutput": "Forecast",
+        "ForecastDataProductParameters": "Forecast",
+        "LtifDataProductContext": "Ltif",
+        "LtifDataProductOutput": "Ltif",
+        "LtifDataProductParameters": "Ltif",
+        "SensorDataProductContext": "Sensor",
+        "SensorDataProductOutput": "Sensor",
+        "SensorDataProductParameters": "Sensor",
+        "AccuWeatherForecastDataProductContext": "AccuWeather",
+        "AccuWeatherForecastDataProductOutput": "AccuWeather",
+        "AccuWeatherForecastDataProductParameters": "AccuWeather"
+    }
+    if entity_file.get('id') not in ('DataProductContext', 'DataProductOutput', 'DataProductParameters'):
+        entity_name = entity_file.get('id').split('/')
+        new_path = []
+        for e in entity_name:
+            new_path.append(corresponds[e])
+        entity_file['dir'], entity_file['filename'], entity_file['id'] = '/'.join(new_path[:-1]), f'{new_path[-1]}.jsonld', '/'.join(new_path) 
+        
     context_template = {
         '@version': VERSION,
         rdf_class.entity.name: {"@id": rdf_class.entity.name},
