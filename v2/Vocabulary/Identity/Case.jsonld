@@ -52,38 +52,51 @@
             "fi-fi": "Palvelupyynnön käynnistää jokin tapahtuma tai tarve ja se kokoaa prosessit yhteen jolla asia ratkaistaan."
         }
     },
-    "metadata": {
-        "@id": "pot:metadata",
+    "nameLocal": {
+        "@id": "pot:identifier/nameLocal",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
+        "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "Metadata"
+            "en-us": "Local name",
+            "fi-fi": "Paikallinen nimi"
         },
         "rdfs:comment": {
-            "en-us": "Metadata container",
-            "fi-fi": "Ominaisuuskategoria metatiedolle."
+            "en-us": "Local name",
+            "fi-fi": "Paikallinen nimi"
         },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "endDateTime": {
-        "@id": "pot:time/endDateTime",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
-        "rdfs:label": {
-            "en-us": "End time",
-            "fi-fi": "Lopetusaika"
-        },
-        "rdfs:comment": {
-            "en-us": "End time",
-            "fi-fi": "Lopetusaika (loppumisaika)"
-        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Process name - local",
+                    "fi-fi": "Prosessin nimi - lokaali"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Project name",
+                    "fi-fi": "Projektin nimi"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Case header - > Case name",
+                    "fi-fi": "Palvelupyynnön nimi"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            }
+        ],
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "End time of the case"
+                    "en-us": "Locally given name (source system name)"
                 },
                 "domain": [
                     "pot:Identity/Case"
@@ -91,28 +104,44 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "End time of the project"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "End time of the process"
+                    "en-us": "Locally given name (source system name) for the process"
                 },
                 "domain": [
                     "pot:Identity/Process"
                 ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Locally given name for the project"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
             }
         ],
         "pot:valueType": [
-            "xsd:dateTime"
+            "xsd:string"
         ],
         "domain": [
             "pot:Identity/Case",
             "pot:Identity/Process",
             "pot:Identity/Project"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
+        },
+        "rdfs:comment": {
+            "en-us": "Updater of an identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "createdBy": {
@@ -129,6 +158,40 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
+        ]
+    },
+    "durationEstimate": {
+        "@id": "pot:time/durationEstimate",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Arvioitu kesto",
+            "en-us": "Estimated duration"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Arvioitu kestoaika",
+            "en-us": "Estimated duration time"
+        },
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Estimated duration of the case"
+                },
+                "domain": []
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Estimated duration of the project"
+                },
+                "domain": []
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/Case",
+            "pot:Identity/Project"
         ]
     },
     "status": {
@@ -288,23 +351,23 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "nameLocal": {
-        "@id": "pot:identifier/nameLocal",
+    "duration": {
+        "@id": "pot:time/duration",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:time",
         "rdfs:label": {
-            "en-us": "Local name",
-            "fi-fi": "Paikallinen nimi"
+            "en-us": "Duration",
+            "fi-fi": "Kestoaika"
         },
         "rdfs:comment": {
-            "en-us": "Local name",
-            "fi-fi": "Paikallinen nimi"
+            "en-us": "Duration (time)",
+            "fi-fi": "Kestoaika"
         },
         "label": [
             {
                 "rdfs:label": {
-                    "en-us": "Process name - local",
-                    "fi-fi": "Prosessin nimi - lokaali"
+                    "en-us": "Duration time",
+                    "fi-fi": "Kesto"
                 },
                 "domain": [
                     "pot:Identity/Process"
@@ -312,8 +375,8 @@
             },
             {
                 "rdfs:label": {
-                    "en-us": "Project name",
-                    "fi-fi": "Projektin nimi"
+                    "en-us": "Duration time",
+                    "fi-fi": "Kesto"
                 },
                 "domain": [
                     "pot:Identity/Project"
@@ -321,8 +384,8 @@
             },
             {
                 "rdfs:label": {
-                    "en-us": "Case header - > Case name",
-                    "fi-fi": "Palvelupyynnön nimi"
+                    "en-us": "Duration",
+                    "fi-fi": "Kesto"
                 },
                 "domain": [
                     "pot:Identity/Case"
@@ -332,26 +395,24 @@
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Locally given name (source system name)"
+                    "en-us": "Duration of the project"
                 },
                 "domain": [
-                    "pot:Identity/Case"
+                    "pot:Identity/Project"
                 ]
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Locally given name (source system name) for the process"
+                    "en-us": "Duration of the process"
                 },
                 "domain": [
                     "pot:Identity/Process"
                 ]
             },
             {
-                "rdfs:comment": {
-                    "en-us": "Locally given name for the project"
-                },
+                "rdfs:comment": {},
                 "domain": [
-                    "pot:Identity/Project"
+                    "pot:Identity/Case"
                 ]
             }
         ],
@@ -364,60 +425,88 @@
             "pot:Identity/Project"
         ]
     },
-    "categorizationLocalPriority": {
-        "@id": "pot:categorization/categorizationLocalPriority",
+    "startDateTime": {
+        "@id": "pot:time/startDateTime",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:categorization",
+        "subPropertyOf": "pot:time",
         "rdfs:label": {
-            "fi-fi": "Kiireellisyysluokka",
-            "en-us": "Priority class"
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
         },
         "rdfs:comment": {
-            "fi-fi": "Kategorointi joka perustuu kiireellisyysluokitukseen",
-            "en-us": "Priority based categorization given locally"
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
         },
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time"
+                },
+                "domain": [
+                    "pot:Link"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time of the process"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time of the project"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time of the case"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            }
+        ],
         "pot:valueType": [
-            "xsd:string"
+            "xsd:dateTime"
         ],
         "domain": [
-            "pot:Identity/Case"
+            "pot:Link",
+            "pot:Identity/Case",
+            "pot:Identity/Process",
+            "pot:Identity/Project"
         ]
     },
-    "categorizationLocal": {
-        "@id": "pot:categorization/categorizationLocal",
+    "idLocal": {
+        "@id": "pot:identifier/idLocal",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:categorization",
+        "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "Local category",
-            "fi-fi": "Paikallinen luokitus"
+            "en-us": "Local identifier",
+            "fi-fi": "Paikallinen tunniste"
         },
         "rdfs:comment": {
-            "en-us": "Categorisation name given locally",
-            "fi-fi": "Paikallinen luokitus (lähdejärjestelmän luokitus)"
+            "en-us": "Locally given identifier",
+            "fi-fi": "Paikallinen tunniste"
         },
         "label": [
             {
                 "rdfs:label": {
-                    "fi-fi": "Laatuominaisuuden paikallinen luokka",
-                    "en-us": "Quality local class"
+                    "en-us": "Local code",
+                    "fi-fi": "Paikallinen koodi"
                 },
                 "domain": [
-                    "pot:Annotation/Quality"
+                    "pot:Identity/Element/BuildingElement"
                 ]
             },
             {
                 "rdfs:label": {
-                    "en-us": "Condition local class",
-                    "fi-fi": "Ehdon paikallinen luokka"
-                },
-                "domain": [
-                    "pot:Annotation/Condition"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Case category",
-                    "fi-fi": "Palvelupyynnön luokka"
+                    "en-us": "Case Id",
+                    "fi-fi": "Palvelupyynnön tunniste"
                 },
                 "domain": [
                     "pot:Identity/Case"
@@ -425,8 +514,8 @@
             },
             {
                 "rdfs:label": {
-                    "en-us": "Space type - local",
-                    "fi-fi": "Tilatyyppi - paikallinen"
+                    "en-us": "Local identifier",
+                    "fi-fi": "Paikallinen tunniste"
                 },
                 "domain": [
                     "pot:Identity/Space",
@@ -435,12 +524,97 @@
             },
             {
                 "rdfs:label": {
-                    "fi-fi": "Lokaali tyypitys",
-                    "en-us": "Type name given locally"
+                    "en-us": "Project Id",
+                    "fi-fi": "Projektin tunniste"
                 },
                 "domain": [
-                    "pot:Identity/Element/BuildingElement",
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Process Id",
+                    "fi-fi": "Prosessin tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Local identifier",
+                    "fi-fi": "Paikallinen tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement/Storey"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Local code",
+                    "fi-fi": "Paikallinen koodi"
+                },
+                "domain": [
                     "pot:Identity/Equipment/Device"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Local identifier (system identifier)"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Identifier given locally for the device"
+                },
+                "domain": [
+                    "pot:Identity/Equipment/Device"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Identifier given locally for the building element"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Local identifier for the project"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Locally given identifier for the storey"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement/Storey"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Locally given identifier for the space"
+                },
+                "domain": [
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Locally given identifier for the process instance"
+                },
+                "domain": [
+                    "pot:Identity/Process"
                 ]
             }
         ],
@@ -448,22 +622,14 @@
             "xsd:string"
         ],
         "domain": [
-            "pot:Annotation/Condition",
-            "pot:Annotation/Quality",
             "pot:Identity/Case",
+            "pot:Identity/Process",
+            "pot:Identity/Project",
             "pot:Identity/Space",
             "pot:Identity/Element/BuildingElement",
+            "pot:Identity/Element/BuildingElement/Storey",
             "pot:Identity/Equipment/Device",
             "pot:Identity/Space/Room"
-        ]
-    },
-    "data": {
-        "@id": "pot:data",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
         ]
     },
     "descriptionGeneral": {
@@ -732,157 +898,6 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "idLocal": {
-        "@id": "pot:identifier/idLocal",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "Local identifier",
-            "fi-fi": "Paikallinen tunniste"
-        },
-        "rdfs:comment": {
-            "en-us": "Locally given identifier",
-            "fi-fi": "Paikallinen tunniste"
-        },
-        "label": [
-            {
-                "rdfs:label": {
-                    "en-us": "Local code",
-                    "fi-fi": "Paikallinen koodi"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Case Id",
-                    "fi-fi": "Palvelupyynnön tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Case"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Local identifier",
-                    "fi-fi": "Paikallinen tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Space",
-                    "pot:Identity/Space/Room"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Project Id",
-                    "fi-fi": "Projektin tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Process Id",
-                    "fi-fi": "Prosessin tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Process"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Local identifier",
-                    "fi-fi": "Paikallinen tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement/Storey"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Local code",
-                    "fi-fi": "Paikallinen koodi"
-                },
-                "domain": [
-                    "pot:Identity/Equipment/Device"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Local identifier (system identifier)"
-                },
-                "domain": [
-                    "pot:Identity/Case"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Identifier given locally for the device"
-                },
-                "domain": [
-                    "pot:Identity/Equipment/Device"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Identifier given locally for the building element"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Local identifier for the project"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Locally given identifier for the storey"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement/Storey"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Locally given identifier for the space"
-                },
-                "domain": [
-                    "pot:Identity/Space",
-                    "pot:Identity/Space/Room"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Locally given identifier for the process instance"
-                },
-                "domain": [
-                    "pot:Identity/Process"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity/Case",
-            "pot:Identity/Process",
-            "pot:Identity/Project",
-            "pot:Identity/Space",
-            "pot:Identity/Element/BuildingElement",
-            "pot:Identity/Element/BuildingElement/Storey",
-            "pot:Identity/Equipment/Device",
-            "pot:Identity/Space/Room"
-        ]
-    },
     "id": {
         "@id": "pot:identifier/id",
         "@type": "owl:DatatypeProperty",
@@ -891,72 +906,30 @@
             "pot:Identity"
         ]
     },
-    "durationEstimate": {
-        "@id": "pot:time/durationEstimate",
+    "endDateTime": {
+        "@id": "pot:time/endDateTime",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:time",
         "rdfs:label": {
-            "fi-fi": "Arvioitu kesto",
-            "en-us": "Estimated duration"
+            "en-us": "End time",
+            "fi-fi": "Lopetusaika"
         },
         "rdfs:comment": {
-            "fi-fi": "Arvioitu kestoaika",
-            "en-us": "Estimated duration time"
+            "en-us": "End time",
+            "fi-fi": "Lopetusaika (loppumisaika)"
         },
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Estimated duration of the case"
-                },
-                "domain": []
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Estimated duration of the project"
-                },
-                "domain": []
-            }
-        ],
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity/Case",
-            "pot:Identity/Project"
-        ]
-    },
-    "startDateTime": {
-        "@id": "pot:time/startDateTime",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
-        "rdfs:label": {
-            "fi-fi": "Aloitusaika",
-            "en-us": "Start time"
-        },
-        "rdfs:comment": {
-            "fi-fi": "Aloitusaika",
-            "en-us": "Start time"
-        },
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Start time"
+                    "en-us": "End time of the case"
                 },
                 "domain": [
-                    "pot:Link"
+                    "pot:Identity/Case"
                 ]
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Start time of the process"
-                },
-                "domain": [
-                    "pot:Identity/Process"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Start time of the project"
+                    "en-us": "End time of the project"
                 },
                 "domain": [
                     "pot:Identity/Project"
@@ -964,10 +937,10 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Start time of the case"
+                    "en-us": "End time of the process"
                 },
                 "domain": [
-                    "pot:Identity/Case"
+                    "pot:Identity/Process"
                 ]
             }
         ],
@@ -975,74 +948,69 @@
             "xsd:dateTime"
         ],
         "domain": [
-            "pot:Link",
             "pot:Identity/Case",
             "pot:Identity/Process",
             "pot:Identity/Project"
         ]
     },
-    "duration": {
-        "@id": "pot:time/duration",
+    "categorizationLocal": {
+        "@id": "pot:categorization/categorizationLocal",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
+        "subPropertyOf": "pot:categorization",
         "rdfs:label": {
-            "en-us": "Duration",
-            "fi-fi": "Kestoaika"
+            "en-us": "Local category",
+            "fi-fi": "Paikallinen luokitus"
         },
         "rdfs:comment": {
-            "en-us": "Duration (time)",
-            "fi-fi": "Kestoaika"
+            "en-us": "Categorisation name given locally",
+            "fi-fi": "Paikallinen luokitus (lähdejärjestelmän luokitus)"
         },
         "label": [
             {
                 "rdfs:label": {
-                    "en-us": "Duration time",
-                    "fi-fi": "Kesto"
+                    "fi-fi": "Laatuominaisuuden paikallinen luokka",
+                    "en-us": "Quality local class"
                 },
                 "domain": [
-                    "pot:Identity/Process"
+                    "pot:Annotation/Quality"
                 ]
             },
             {
                 "rdfs:label": {
-                    "en-us": "Duration time",
-                    "fi-fi": "Kesto"
+                    "en-us": "Condition local class",
+                    "fi-fi": "Ehdon paikallinen luokka"
                 },
                 "domain": [
-                    "pot:Identity/Project"
+                    "pot:Annotation/Condition"
                 ]
             },
             {
                 "rdfs:label": {
-                    "en-us": "Duration",
-                    "fi-fi": "Kesto"
+                    "en-us": "Case category",
+                    "fi-fi": "Palvelupyynnön luokka"
                 },
                 "domain": [
                     "pot:Identity/Case"
                 ]
-            }
-        ],
-        "comment": [
+            },
             {
-                "rdfs:comment": {
-                    "en-us": "Duration of the project"
+                "rdfs:label": {
+                    "en-us": "Space type - local",
+                    "fi-fi": "Tilatyyppi - paikallinen"
                 },
                 "domain": [
-                    "pot:Identity/Project"
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
                 ]
             },
             {
-                "rdfs:comment": {
-                    "en-us": "Duration of the process"
+                "rdfs:label": {
+                    "fi-fi": "Lokaali tyypitys",
+                    "en-us": "Type name given locally"
                 },
                 "domain": [
-                    "pot:Identity/Process"
-                ]
-            },
-            {
-                "rdfs:comment": {},
-                "domain": [
-                    "pot:Identity/Case"
+                    "pot:Identity/Element/BuildingElement",
+                    "pot:Identity/Equipment/Device"
                 ]
             }
         ],
@@ -1050,22 +1018,19 @@
             "xsd:string"
         ],
         "domain": [
+            "pot:Annotation/Condition",
+            "pot:Annotation/Quality",
             "pot:Identity/Case",
-            "pot:Identity/Process",
-            "pot:Identity/Project"
+            "pot:Identity/Space",
+            "pot:Identity/Element/BuildingElement",
+            "pot:Identity/Equipment/Device",
+            "pot:Identity/Space/Room"
         ]
     },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
+    "data": {
+        "@id": "pot:data",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "fi-fi": "Identieetin päivittäjä",
-            "en-us": "Updater"
-        },
-        "rdfs:comment": {
-            "en-us": "Updater of an identity"
-        },
+        "subPropertyOf": "pot:topDataProperty",
         "domain": [
             "pot:Identity",
             "pot:Link"
@@ -1097,6 +1062,41 @@
         },
         "rdfs:comment": {
             "en-us": "Time when the data is updated"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "categorizationLocalPriority": {
+        "@id": "pot:categorization/categorizationLocalPriority",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "fi-fi": "Kiireellisyysluokka",
+            "en-us": "Priority class"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Kategorointi joka perustuu kiireellisyysluokitukseen",
+            "en-us": "Priority based categorization given locally"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/Case"
+        ]
+    },
+    "metadata": {
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Metadata"
+        },
+        "rdfs:comment": {
+            "en-us": "Metadata container",
+            "fi-fi": "Ominaisuuskategoria metatiedolle."
         },
         "domain": [
             "pot:Identity",
