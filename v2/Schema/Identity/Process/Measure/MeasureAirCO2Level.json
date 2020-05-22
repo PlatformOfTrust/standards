@@ -15,22 +15,12 @@
             ],
             "const": "MeasureAirCO2Level"
         },
-        "locationName": {
-            "title": "",
-            "description": "",
-            "type": "string"
-        },
         "function": {
             "title": "",
             "description": "",
             "type": "string"
         },
-        "id": {
-            "title": "",
-            "description": "",
-            "type": "string"
-        },
-        "executor": {
+        "locationName": {
             "title": "",
             "description": "",
             "type": "string"
@@ -40,6 +30,16 @@
             "description": "",
             "type": "object",
             "properties": {
+                "duration": {
+                    "title": "Duration",
+                    "description": "Duration (time)",
+                    "type": "string"
+                },
+                "nameLocal": {
+                    "title": "Local name",
+                    "description": "Local name",
+                    "type": "string"
+                },
                 "status": {
                     "title": "Life-cycle status",
                     "description": "Life-cycle status",
@@ -50,24 +50,9 @@
                     "description": "Description",
                     "type": "string"
                 },
-                "startDateTime": {
-                    "title": "Start time",
-                    "description": "Start time",
-                    "type": "string"
-                },
-                "executor": {
-                    "title": "",
-                    "description": "",
-                    "type": "string"
-                },
-                "duration": {
-                    "title": "Duration",
-                    "description": "Duration (time)",
-                    "type": "string"
-                },
-                "processValue": {
-                    "title": "Output value",
-                    "description": "Output value of the process",
+                "endDateTime": {
+                    "title": "End time",
+                    "description": "End time",
                     "type": "string"
                 },
                 "processTypePoT": {
@@ -75,19 +60,24 @@
                     "description": "PoT defined standard process type",
                     "type": "string"
                 },
-                "endDateTime": {
-                    "title": "End time",
-                    "description": "End time",
-                    "type": "string"
-                },
-                "nameLocal": {
-                    "title": "Local name",
-                    "description": "Local name",
+                "processValue": {
+                    "title": "Output value",
+                    "description": "Output value of the process",
                     "type": "string"
                 },
                 "idLocal": {
                     "title": "Local identifier",
                     "description": "Locally given identifier",
+                    "type": "string"
+                },
+                "startDateTime": {
+                    "title": "Start time",
+                    "description": "Start time",
+                    "type": "string"
+                },
+                "executor": {
+                    "title": "Process executor",
+                    "description": "Executor of the process (source of the data)",
                     "type": "string"
                 }
             }
@@ -97,33 +87,43 @@
             "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
-                    "type": "string"
-                },
                 "updatedAt": {
                     "title": "Update time",
                     "description": "Time when the data is updated",
                     "type": "string"
                 },
-                "createdAt": {
-                    "title": "Creation time",
-                    "description": "Time when the data is created",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
                     "type": "string"
                 },
                 "createdBy": {
                     "title": "Creator",
                     "description": "Creator of and identity",
                     "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
                 }
             }
+        },
+        "executor": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        },
+        "@id": {
+            "title": "",
+            "description": "",
+            "type": "string"
         }
     },
     "required": [
         "data",
-        "id",
         "@context",
-        "@type"
+        "@type",
+        "@id"
     ]
 }

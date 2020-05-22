@@ -15,12 +15,39 @@
             ],
             "const": "Product"
         },
-        "version": {
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                },
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                }
+            }
+        },
+        "validTo": {
             "title": "",
             "description": "",
             "type": "string"
         },
-        "validTo": {
+        "validFrom": {
             "title": "",
             "description": "",
             "type": "string"
@@ -30,7 +57,17 @@
             "description": "",
             "type": "string"
         },
-        "id": {
+        "imageUrl": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        },
+        "version": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        },
+        "visibility": {
             "title": "",
             "description": "",
             "type": "string"
@@ -40,9 +77,14 @@
             "description": "",
             "type": "object",
             "properties": {
-                "status": {
-                    "title": "Life-cycle status",
-                    "description": "Life-cycle status",
+                "groupName": {
+                    "title": "Product group name",
+                    "description": "Unique product group name given by manufacturer",
+                    "type": "string"
+                },
+                "groupCode": {
+                    "title": "Product group code",
+                    "description": "Unique product group code given by manufacturer",
                     "type": "string"
                 },
                 "ean": {
@@ -50,34 +92,14 @@
                     "description": "EAN standard based identifier",
                     "type": "string"
                 },
-                "codeProduct": {
-                    "title": "Product code",
-                    "description": "Unique product code given by manufacturer",
+                "priceSell": {
+                    "title": "Sales price",
+                    "description": "Sales price",
                     "type": "string"
                 },
                 "categorizationETIM": {
                     "title": "ETIM class name",
                     "description": "Product category name based on ETIM standard ((European Technical Information Model).",
-                    "type": "string"
-                },
-                "descriptionGeneral": {
-                    "title": "Description",
-                    "description": "Description",
-                    "type": "string"
-                },
-                "groupName": {
-                    "title": "Product group name",
-                    "description": "Unique product group name given by manufacturer",
-                    "type": "string"
-                },
-                "pricePurchase": {
-                    "title": "Purchase price",
-                    "description": "Purchase price",
-                    "type": "string"
-                },
-                "priceCurrent": {
-                    "title": "Estimated price",
-                    "description": "Estimated value of the current price",
                     "type": "string"
                 },
                 "additionalInformation": {
@@ -88,19 +110,24 @@
                         "Our laminated logs are glued from two or more planed blanks in a way that the heartwood will stay on the logs surface. This is done to ensure that cracking and bending stay minimal."
                     ]
                 },
-                "groupCode": {
-                    "title": "Product group code",
-                    "description": "Unique product group code given by manufacturer",
+                "descriptionGeneral": {
+                    "title": "Description",
+                    "description": "Description",
                     "type": "string"
                 },
-                "url": {
-                    "title": "URL address",
-                    "description": "URL address",
+                "priceCurrent": {
+                    "title": "Estimated price",
+                    "description": "Estimated value of the current price",
                     "type": "string"
                 },
-                "priceSell": {
-                    "title": "Sales price",
-                    "description": "Sales price",
+                "pricePurchase": {
+                    "title": "Purchase price",
+                    "description": "Purchase price",
+                    "type": "string"
+                },
+                "gTIN": {
+                    "title": "GTIN code",
+                    "description": "GTIN standard based identifier",
                     "type": "string"
                 },
                 "name": {
@@ -108,51 +135,24 @@
                     "description": "Name",
                     "type": "string"
                 },
-                "gTIN": {
-                    "title": "GTIN code",
-                    "description": "GTIN standard based identifier",
+                "url": {
+                    "title": "URL address",
+                    "description": "URL address",
+                    "type": "string"
+                },
+                "codeProduct": {
+                    "title": "Product code",
+                    "description": "Unique product code given by manufacturer",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Life-cycle status",
+                    "description": "Life-cycle status",
                     "type": "string"
                 }
             }
         },
-        "metadata": {
-            "title": "Metadata",
-            "description": "Metadata container",
-            "type": "object",
-            "properties": {
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
-                    "type": "string"
-                },
-                "updatedAt": {
-                    "title": "Update time",
-                    "description": "Time when the data is updated",
-                    "type": "string"
-                },
-                "createdAt": {
-                    "title": "Creation time",
-                    "description": "Time when the data is created",
-                    "type": "string"
-                },
-                "createdBy": {
-                    "title": "Creator",
-                    "description": "Creator of and identity",
-                    "type": "string"
-                }
-            }
-        },
-        "visibility": {
-            "title": "",
-            "description": "",
-            "type": "string"
-        },
-        "imageUrl": {
-            "title": "",
-            "description": "",
-            "type": "string"
-        },
-        "validFrom": {
+        "@id": {
             "title": "",
             "description": "",
             "type": "string"
@@ -160,8 +160,8 @@
     },
     "required": [
         "data",
-        "id",
         "@context",
-        "@type"
+        "@type",
+        "@id"
     ]
 }

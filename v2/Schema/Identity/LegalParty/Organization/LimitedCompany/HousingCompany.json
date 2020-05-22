@@ -20,29 +20,9 @@
             "description": "",
             "type": "object",
             "properties": {
-                "ifcGuid": {
-                    "title": "IFC GUID",
-                    "description": "IFC standard based Globally Unique Identifier",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Life-cycle status",
-                    "description": "Life-cycle status",
-                    "type": "string"
-                },
                 "descriptionGeneral": {
                     "title": "Description",
                     "description": "Description",
-                    "type": "string"
-                },
-                "governmentPermanent": {
-                    "title": "Permanent Official Id",
-                    "description": "Permanent identifier given by an official authority in Finland",
-                    "type": "string"
-                },
-                "taxVatCode": {
-                    "title": "VAT code",
-                    "description": "Value-added taxation identifier",
                     "type": "string"
                 },
                 "categorizationOfficial": {
@@ -50,9 +30,29 @@
                     "description": "Categorization based on official (governmental) classification",
                     "type": "string"
                 },
+                "governmentPermanent": {
+                    "title": "Permanent Official Id",
+                    "description": "Permanent identifier given by an official authority in Finland",
+                    "type": "string"
+                },
                 "name": {
                     "title": "Name",
                     "description": "Name",
+                    "type": "string"
+                },
+                "taxVatCode": {
+                    "title": "VAT code",
+                    "description": "Value-added taxation identifier",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Life-cycle status",
+                    "description": "Life-cycle status",
+                    "type": "string"
+                },
+                "ifcGuid": {
+                    "title": "IFC GUID",
+                    "description": "IFC standard based Globally Unique Identifier",
                     "type": "string"
                 }
             }
@@ -62,29 +62,29 @@
             "description": "Metadata container",
             "type": "object",
             "properties": {
-                "updatedBy": {
-                    "title": "Updater",
-                    "description": "Updater of an identity",
-                    "type": "string"
-                },
                 "updatedAt": {
                     "title": "Update time",
                     "description": "Time when the data is updated",
                     "type": "string"
                 },
-                "createdAt": {
-                    "title": "Creation time",
-                    "description": "Time when the data is created",
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
                     "type": "string"
                 },
                 "createdBy": {
                     "title": "Creator",
                     "description": "Creator of and identity",
                     "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
                 }
             }
         },
-        "id": {
+        "@id": {
             "title": "",
             "description": "",
             "type": "string"
@@ -92,8 +92,8 @@
     },
     "required": [
         "data",
-        "id",
         "@context",
-        "@type"
+        "@type",
+        "@id"
     ]
 }
