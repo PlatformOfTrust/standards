@@ -1,6 +1,6 @@
 from typing import Any, Dict
 
-from generators.commons.extended_properties import nest
+from generators.commons.extended_properties import nest, Identity
 from generators.commons.builders import prop_get_full_id, build_attributes
 
 
@@ -32,6 +32,8 @@ def create_context_from_rdf_class(rdf_class, entity_file: Dict[str, Any], onto, 
         'data': f'{PREFIX}:data',
         'metadata': f'{PREFIX}:metadata',
     }
+    if Identity in rdf_class.entity.ancestors():
+        context_template["@base"] = "https://api.oftrust.net/identities/v1/"
 
     # Define and fill propeties for each supported attribute
     total_attributes = build_attributes(rdf_class, onto)

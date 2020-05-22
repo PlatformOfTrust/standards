@@ -98,6 +98,10 @@ def create_schema_from_rdf_class(rdf_class, entity_file: Dict[str, Any], onto, e
     required_attrs.append("@context")
     required_attrs.append("@type")
 
+    if 'id' in required_attrs:
+        required_attrs.remove('id')
+        required_attrs.append("@id")
+
     prop_parent = {v[0] for v in properties}
     for i in parents:
         if i in prop_parent:
@@ -118,6 +122,10 @@ def create_schema_from_rdf_class(rdf_class, entity_file: Dict[str, Any], onto, e
                 result[key]["examples"] = examples[key]
             if key in result and examples[v]:
                 result[key]["properties"][v]["examples"] = examples[v]
+    
+    if 'id' in result:
+        result['@id'] = result['id']
+        del result['id']
 
     schema = {
         "$schema": "http://json-schema.org/draft-07/schema",
