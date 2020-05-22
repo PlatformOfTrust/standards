@@ -1,77 +1,56 @@
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
-  "$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Forecast/Weather",
-  "$ref": "#/definitions/RequestParameters",
-  "definitions": {
-    "Location": {
-      "required": [
-        "latitude",
-        "longitude"
-      ],
-      "properties": {
-        "latitude": {
-          "type": "number"
-        },
-        "longitude": {
-          "type": "number"
-        }
+   "$schema":"http://json-schema.org/draft-06/schema#",
+   "$id":"https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Forecast/Weather",
+   "required":[
+      "@context",
+      "timestamp",
+      "productCode",
+      "parameters"
+   ],
+   "properties":{
+      "@context":{
+         "type":"string",
+         "description":"The context to be used for the payload.",
+         "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Forecast/Weather/"
       },
-      "additionalProperties": false,
-      "type": "object"
-    },
-    "Params": {
-      "required": [
-        "timeFrame",
-        "location"
-      ],
-      "properties": {
-        "timeFrame": {
-          "enum": [
-            0,
-            1,
-            5,
-            10,
-            15
-          ],
-          "type": "integer",
-          "description": "Defines the time frame for the forecast in days. If set to 0 will return the current weather information. Will fallback to 0 if not provided."
-        },
-        "location": {
-          "$schema": "http://json-schema.org/draft-06/schema#",
-          "$ref": "#/definitions/Location",
-          "description": "The coordinates of the location that the forecast will be fetched. Will find the nearest weather station to this location."
-        }
+      "timestamp":{
+         "type":"string",
+         "format":"date-time"
       },
-      "additionalProperties": false,
-      "type": "object"
-    },
-    "RequestParameters": {
-      "required": [
-        "@context",
-        "timestamp",
-        "productCode",
-        "parameters"
-      ],
-      "properties": {
-        "@context": {
-          "type": "string",
-          "description": "The context to be used for the payload.",
-          "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/ForecastDataProductParameters/AccuWeatherDataProductParameters/"
-        },
-        "timestamp": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "productCode": {
-          "type": "string"
-        },
-        "parameters": {
-          "$schema": "http://json-schema.org/draft-06/schema#",
-          "$ref": "#/definitions/Params"
-        }
+      "productCode":{
+         "type":"string"
       },
-      "additionalProperties": false,
-      "type": "object"
-    }
-  }
+      "parameters":{
+         "required":[
+            "timeFrame",
+            "location"
+         ],
+         "properties":{
+            "timeFrame":{
+               "type":"number",
+               "description":"Defines the time frame for the forecast in days. If set to 0 will return the current weather information. Will fallback to 0 if not provided."
+            },
+            "location":{
+               "required":[
+                  "latitude",
+                  "longitude"
+               ],
+               "properties":{
+                  "latitude":{
+                     "type":"number"
+                  },
+                  "longitude":{
+                     "type":"number"
+                  }
+               },
+               "additionalProperties":false,
+               "type":"object"
+            }
+         },
+         "additionalProperties":false,
+         "type":"object"
+      }
+   },
+   "additionalProperties":false,
+   "type":"object"
 }
