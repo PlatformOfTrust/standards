@@ -66,7 +66,7 @@ def build_rdf_clasess(onto, export_onto_url: str) -> NoReturn:
     for rdf_class in rdf_classes:
         files = rdf_class.get_files()
         for entity_file in files:
-            if 'DataProduct' in rdf_class.entity.name:
+            if 'DataProduct' in rdf_class.entity.name and not is_link_identity_relations(rdf_class):
                 data_to_dump = create_context_from_data_product(
                     rdf_class, entity_file, onto, export_onto_url)
                 write_dump_to_file(CONTEXT_DIR, entity_file, data_to_dump)
