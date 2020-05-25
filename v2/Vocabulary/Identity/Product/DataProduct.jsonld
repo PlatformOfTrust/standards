@@ -44,17 +44,33 @@
         "@type": "owl:Class",
         "subClassOf": "pot:Product"
     },
-    "gTIN": {
-        "@id": "pot:identifier/gTIN",
+    "validFrom": {
+        "@id": "pot:time/validFrom",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Ensimmäinen voimassaolopäivämäärä",
+            "en-us": "Validity period start time"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Ensimmäinen voimassaolopäivämäärä",
+            "en-us": "Validity period start time"
+        },
+        "domain": [
+            "pot:Identity/Product"
+        ]
+    },
+    "groupCode": {
+        "@id": "pot:identifier/groupCode",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "GTIN code",
-            "fi-fi": "GTIN koodi"
+            "en-us": "Product group code",
+            "fi-fi": "Tuoteryhmän tunnus/koodi"
         },
         "rdfs:comment": {
-            "en-us": "GTIN standard based identifier",
-            "fi-fi": "GTIN standardiin perustuva tunniste"
+            "en-us": "Unique product group code given by manufacturer",
+            "fi-fi": "Valmistajan antama tuoteryhmän koodi tai tunnus"
         },
         "pot:valueType": [
             "xsd:string"
@@ -63,37 +79,78 @@
             "pot:Identity/Product"
         ]
     },
-    "id": {
-        "@id": "pot:identifier/id",
+    "parameterContext": {
+        "@id": "pot:other/parameterContext",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:other",
         "domain": [
-            "pot:Identity"
+            "pot:Identity/Product/DataProduct"
         ]
     },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:metadata",
         "rdfs:label": {
-            "en-us": "Creator",
-            "fi-fi": "Identiteetin luoja"
+            "en-us": "Creation time",
+            "fi-fi": "Luomisaika"
         },
         "rdfs:comment": {
-            "en-us": "Creator of and identity"
+            "en-us": "Time when the data is created"
         },
         "domain": [
             "pot:Identity",
             "pot:Link"
         ]
     },
-    "data": {
-        "@id": "pot:data",
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Päivitysaika",
+            "en-us": "Update time"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is updated"
+        },
         "domain": [
             "pot:Identity",
             "pot:Link"
+        ]
+    },
+    "codeProduct": {
+        "@id": "pot:identifier/codeProduct",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Product code",
+            "fi-fi": "Tuotetunnus"
+        },
+        "rdfs:comment": {
+            "en-us": "Unique product code given by manufacturer",
+            "fi-fi": "Valmistajan antama tuotetunnus"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/Product"
+        ]
+    },
+    "other": {
+        "@id": "pot:other",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Other"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Ominaisuuskategoria tiedoille joilla ei omaa kategoriaa (sekalaiset tiedot)",
+            "en-us": "Property category for information without specific category (miscellaneous information)"
+        },
+        "domain": [
+            "pot:Identity/Product/DataProduct"
         ]
     },
     "categorizationPoT": {
@@ -143,20 +200,187 @@
             "pot:Identity/Product"
         ]
     },
-    "priceSell": {
-        "@id": "pot:financial/priceSell",
+    "status": {
+        "@id": "pot:lifeCycle/status",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:financial",
+        "subPropertyOf": "pot:lifeCycle",
         "rdfs:label": {
-            "fi-fi": "Myyntihinta",
-            "en-us": "Sales price"
+            "fi-fi": "Elinkaaren status",
+            "en-us": "Life-cycle status"
         },
         "rdfs:comment": {
-            "fi-fi": "Myyntihinta",
-            "en-us": "Sales price"
+            "fi-fi": "Elinkaaren status",
+            "en-us": "Life-cycle status"
         },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Process status",
+                    "fi-fi": "Prosessin tila"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Elinkaari - Status",
+                    "en-us": "Life cycle status"
+                },
+                "domain": [
+                    "pot:Identity/Structure/Building"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Product status",
+                    "fi-fi": "Tuotteen status"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Project status",
+                    "fi-fi": "Projektin tila"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Elinkaari - Status",
+                    "en-us": "Life cycle status"
+                },
+                "domain": [
+                    "pot:Link",
+                    "pot:Identity/Space",
+                    "pot:Identity/Element/BuildingElement",
+                    "pot:Identity/Element/BuildingElement/Storey",
+                    "pot:Identity/Equipment/Device",
+                    "pot:Identity/Group/System",
+                    "pot:Identity/LegalParty/Organization",
+                    "pot:Identity/LegalParty/Person",
+                    "pot:Identity/Space/RealEstate",
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Case status",
+                    "fi-fi": "Palvelupyynnön tila"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Process state"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "fi-fi": "Life-cycle status of the product"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Life cycle status of the building"
+                },
+                "domain": [
+                    "pot:Identity/Structure/Building"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Case state"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "project state"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Life cycle status"
+                },
+                "domain": [
+                    "pot:Link",
+                    "pot:Identity/Space",
+                    "pot:Identity/Element/BuildingElement",
+                    "pot:Identity/Element/BuildingElement/Storey",
+                    "pot:Identity/Equipment/Device",
+                    "pot:Identity/Group/System",
+                    "pot:Identity/LegalParty/Organization",
+                    "pot:Identity/LegalParty/Person",
+                    "pot:Identity/Space/RealEstate",
+                    "pot:Identity/Space/Room"
+                ]
+            }
+        ],
         "pot:valueType": [
-            "xsd:decimal"
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Link",
+            "pot:Identity/Case",
+            "pot:Identity/Process",
+            "pot:Identity/Product",
+            "pot:Identity/Project",
+            "pot:Identity/Space",
+            "pot:Identity/Element/BuildingElement",
+            "pot:Identity/Element/BuildingElement/Storey",
+            "pot:Identity/Equipment/Device",
+            "pot:Identity/Group/System",
+            "pot:Identity/LegalParty/Organization",
+            "pot:Identity/LegalParty/Person",
+            "pot:Identity/Space/RealEstate",
+            "pot:Identity/Space/Room",
+            "pot:Identity/Structure/Building"
+        ]
+    },
+    "visibility": {
+        "@id": "pot:other/visibility",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:other",
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Product visibility",
+                    "fi-fi": "Tuotenäkyvyys"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Product visibility restriction defined by PoT"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            }
         ],
         "domain": [
             "pot:Identity/Product"
@@ -182,47 +406,20 @@
             "pot:Identity/Equipment/Device"
         ]
     },
-    "validFrom": {
-        "@id": "pot:time/validFrom",
+    "metadata": {
+        "@id": "pot:metadata",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Ensimmäinen voimassaolopäivämäärä",
-            "en-us": "Validity period start time"
+            "en-us": "Metadata"
         },
         "rdfs:comment": {
-            "fi-fi": "Ensimmäinen voimassaolopäivämäärä",
-            "en-us": "Validity period start time"
+            "en-us": "Metadata container",
+            "fi-fi": "Ominaisuuskategoria metatiedolle."
         },
         "domain": [
-            "pot:Identity/Product"
-        ]
-    },
-    "parameterContext": {
-        "@id": "pot:other/parameterContext",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:other",
-        "domain": [
-            "pot:Identity/Product/DataProduct"
-        ]
-    },
-    "groupName": {
-        "@id": "pot:identifier/groupName",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "Product group name",
-            "fi-fi": "Tuoteryhmän nimi"
-        },
-        "rdfs:comment": {
-            "en-us": "Unique product group name given by manufacturer",
-            "fi-fi": "Valmistajan antama tuoteryhmän nimi"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity/Product"
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "organizationPublicKeys": {
@@ -233,20 +430,23 @@
             "pot:Identity/Product/DataProduct"
         ]
     },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
+    "gTIN": {
+        "@id": "pot:identifier/gTIN",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
+        "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "Creation time",
-            "fi-fi": "Luomisaika"
+            "en-us": "GTIN code",
+            "fi-fi": "GTIN koodi"
         },
         "rdfs:comment": {
-            "en-us": "Time when the data is created"
+            "en-us": "GTIN standard based identifier",
+            "fi-fi": "GTIN standardiin perustuva tunniste"
         },
+        "pot:valueType": [
+            "xsd:string"
+        ],
         "domain": [
-            "pot:Identity",
-            "pot:Link"
+            "pot:Identity/Product"
         ]
     },
     "descriptionGeneral": {
@@ -515,284 +715,23 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "priceCurrent": {
-        "@id": "pot:financial/priceCurrent",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:financial",
-        "rdfs:label": {
-            "en-us": "Estimated price",
-            "fi-fi": "Tuotteen arvo"
-        },
-        "rdfs:comment": {
-            "fi-fi": "Arvioitu arvo nykyiselle hinnalle",
-            "en-us": "Estimated value of the current price"
-        },
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:Identity/Product"
-        ]
-    },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Metadata"
-        },
-        "rdfs:comment": {
-            "en-us": "Metadata container",
-            "fi-fi": "Ominaisuuskategoria metatiedolle."
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "fi-fi": "Identieetin päivittäjä",
-            "en-us": "Updater"
-        },
-        "rdfs:comment": {
-            "en-us": "Updater of an identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "ean": {
-        "@id": "pot:identifier/ean",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "EAN code",
-            "fi-fi": "EAN koodi"
-        },
-        "rdfs:comment": {
-            "en-us": "EAN standard based identifier",
-            "fi-fi": "EAN standardiin perustuva tuotekoodi"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity/Product"
-        ]
-    },
-    "groupCode": {
-        "@id": "pot:identifier/groupCode",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "Product group code",
-            "fi-fi": "Tuoteryhmän tunnus/koodi"
-        },
-        "rdfs:comment": {
-            "en-us": "Unique product group code given by manufacturer",
-            "fi-fi": "Valmistajan antama tuoteryhmän koodi tai tunnus"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity/Product"
-        ]
-    },
-    "status": {
-        "@id": "pot:lifeCycle/status",
+    "version": {
+        "@id": "pot:lifeCycle/version",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:lifeCycle",
         "rdfs:label": {
-            "fi-fi": "Elinkaaren status",
-            "en-us": "Life-cycle status"
+            "en-us": "Version name",
+            "fi-fi": "Version nimi"
         },
         "rdfs:comment": {
-            "fi-fi": "Elinkaaren status",
-            "en-us": "Life-cycle status"
+            "en-us": "Version name",
+            "fi-fi": "Version nimi"
         },
         "label": [
             {
                 "rdfs:label": {
-                    "en-us": "Process status",
-                    "fi-fi": "Prosessin tila"
-                },
-                "domain": [
-                    "pot:Identity/Process"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "fi-fi": "Elinkaari - Status",
-                    "en-us": "Life cycle status"
-                },
-                "domain": [
-                    "pot:Identity/Structure/Building"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Product status",
-                    "fi-fi": "Tuotteen status"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Project status",
-                    "fi-fi": "Projektin tila"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "fi-fi": "Elinkaari - Status",
-                    "en-us": "Life cycle status"
-                },
-                "domain": [
-                    "pot:Link",
-                    "pot:Identity/Space",
-                    "pot:Identity/Element/BuildingElement",
-                    "pot:Identity/Element/BuildingElement/Storey",
-                    "pot:Identity/Equipment/Device",
-                    "pot:Identity/Group/System",
-                    "pot:Identity/LegalParty/Organization",
-                    "pot:Identity/LegalParty/Person",
-                    "pot:Identity/Space/RealEstate",
-                    "pot:Identity/Space/Room"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Case status",
-                    "fi-fi": "Palvelupyynnön tila"
-                },
-                "domain": [
-                    "pot:Identity/Case"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Process state"
-                },
-                "domain": [
-                    "pot:Identity/Process"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "fi-fi": "Life-cycle status of the product"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Life cycle status of the building"
-                },
-                "domain": [
-                    "pot:Identity/Structure/Building"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Case state"
-                },
-                "domain": [
-                    "pot:Identity/Case"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "project state"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Life cycle status"
-                },
-                "domain": [
-                    "pot:Link",
-                    "pot:Identity/Space",
-                    "pot:Identity/Element/BuildingElement",
-                    "pot:Identity/Element/BuildingElement/Storey",
-                    "pot:Identity/Equipment/Device",
-                    "pot:Identity/Group/System",
-                    "pot:Identity/LegalParty/Organization",
-                    "pot:Identity/LegalParty/Person",
-                    "pot:Identity/Space/RealEstate",
-                    "pot:Identity/Space/Room"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Link",
-            "pot:Identity/Case",
-            "pot:Identity/Process",
-            "pot:Identity/Product",
-            "pot:Identity/Project",
-            "pot:Identity/Space",
-            "pot:Identity/Element/BuildingElement",
-            "pot:Identity/Element/BuildingElement/Storey",
-            "pot:Identity/Equipment/Device",
-            "pot:Identity/Group/System",
-            "pot:Identity/LegalParty/Organization",
-            "pot:Identity/LegalParty/Person",
-            "pot:Identity/Space/RealEstate",
-            "pot:Identity/Space/Room",
-            "pot:Identity/Structure/Building"
-        ]
-    },
-    "additionalInformation": {
-        "@id": "pot:description/additionalInformation",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:description",
-        "rdfs:label": {
-            "en-us": "Additional information",
-            "fi-fi": "Lisätiedot"
-        },
-        "rdfs:comment": {
-            "en-us": "Additional information",
-            "fi-fi": "Lisätiedot"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity/Product",
-            "pot:Identity/Element/BuildingElement/Storey",
-            "pot:Identity/Group/System",
-            "pot:Identity/LegalParty/Person",
-            "pot:Identity/Space/Room"
-        ]
-    },
-    "visibility": {
-        "@id": "pot:other/visibility",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:other",
-        "label": [
-            {
-                "rdfs:label": {
-                    "en-us": "Product visibility",
-                    "fi-fi": "Tuotenäkyvyys"
+                    "en-us": "Product version",
+                    "fi-fi": "Tuoteversio"
                 },
                 "domain": [
                     "pot:Identity/Product"
@@ -802,7 +741,7 @@
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Product visibility restriction defined by PoT"
+                    "en-us": "Version of the product"
                 },
                 "domain": [
                     "pot:Identity/Product"
@@ -832,51 +771,73 @@
             "pot:Identity/Product"
         ]
     },
-    "other": {
-        "@id": "pot:other",
+    "id": {
+        "@id": "pot:identifier/id",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Other"
-        },
-        "rdfs:comment": {
-            "fi-fi": "Ominaisuuskategoria tiedoille joilla ei omaa kategoriaa (sekalaiset tiedot)",
-            "en-us": "Property category for information without specific category (miscellaneous information)"
-        },
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:Identity"
+        ]
+    },
+    "translatorUrl": {
+        "@id": "pot:other/translatorUrl",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:other",
         "domain": [
             "pot:Identity/Product/DataProduct"
         ]
     },
-    "updatedAt": {
-        "@id": "pot:metadata/updatedAt",
+    "priceCurrent": {
+        "@id": "pot:financial/priceCurrent",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
+        "subPropertyOf": "pot:financial",
         "rdfs:label": {
-            "fi-fi": "Päivitysaika",
-            "en-us": "Update time"
+            "en-us": "Estimated price",
+            "fi-fi": "Tuotteen arvo"
         },
         "rdfs:comment": {
-            "en-us": "Time when the data is updated"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "codeProduct": {
-        "@id": "pot:identifier/codeProduct",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "Product code",
-            "fi-fi": "Tuotetunnus"
-        },
-        "rdfs:comment": {
-            "en-us": "Unique product code given by manufacturer",
-            "fi-fi": "Valmistajan antama tuotetunnus"
+            "fi-fi": "Arvioitu arvo nykyiselle hinnalle",
+            "en-us": "Estimated value of the current price"
         },
         "pot:valueType": [
-            "xsd:string"
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Identity/Product"
+        ]
+    },
+    "imageUrl": {
+        "@id": "pot:description/imageUrl",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:description",
+        "rdfs:label": {
+            "en-us": "Product image",
+            "fi-fi": "Tuotekuva"
+        },
+        "rdfs:comment": {
+            "en-us": "Link to product image",
+            "fi-fi": "Linkki tuotteen kuvaan"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Product image",
+                    "fi-fi": "Tuotekuva"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Image URL for the product"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            }
         ],
         "domain": [
             "pot:Identity/Product"
@@ -1136,49 +1097,36 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "version": {
-        "@id": "pot:lifeCycle/version",
+    "additionalInformation": {
+        "@id": "pot:description/additionalInformation",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:lifeCycle",
+        "subPropertyOf": "pot:description",
         "rdfs:label": {
-            "en-us": "Version name",
-            "fi-fi": "Version nimi"
+            "en-us": "Additional information",
+            "fi-fi": "Lisätiedot"
         },
         "rdfs:comment": {
-            "en-us": "Version name",
-            "fi-fi": "Version nimi"
+            "en-us": "Additional information",
+            "fi-fi": "Lisätiedot"
         },
-        "label": [
-            {
-                "rdfs:label": {
-                    "en-us": "Product version",
-                    "fi-fi": "Tuoteversio"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Version of the product"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            }
+        "pot:valueType": [
+            "xsd:string"
         ],
         "domain": [
-            "pot:Identity/Product"
+            "pot:Identity/Product",
+            "pot:Identity/Element/BuildingElement/Storey",
+            "pot:Identity/Group/System",
+            "pot:Identity/LegalParty/Person",
+            "pot:Identity/Space/Room"
         ]
     },
-    "translatorUrl": {
-        "@id": "pot:other/translatorUrl",
+    "data": {
+        "@id": "pot:data",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:other",
+        "subPropertyOf": "pot:topDataProperty",
         "domain": [
-            "pot:Identity/Product/DataProduct"
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "validTo": {
@@ -1197,41 +1145,93 @@
             "pot:Identity/Product"
         ]
     },
-    "imageUrl": {
-        "@id": "pot:description/imageUrl",
+    "groupName": {
+        "@id": "pot:identifier/groupName",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:description",
+        "subPropertyOf": "pot:identifier",
         "rdfs:label": {
-            "en-us": "Product image",
-            "fi-fi": "Tuotekuva"
+            "en-us": "Product group name",
+            "fi-fi": "Tuoteryhmän nimi"
         },
         "rdfs:comment": {
-            "en-us": "Link to product image",
-            "fi-fi": "Linkki tuotteen kuvaan"
+            "en-us": "Unique product group name given by manufacturer",
+            "fi-fi": "Valmistajan antama tuoteryhmän nimi"
         },
-        "label": [
-            {
-                "rdfs:label": {
-                    "en-us": "Product image",
-                    "fi-fi": "Tuotekuva"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Image URL for the product"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            }
+        "pot:valueType": [
+            "xsd:string"
         ],
         "domain": [
             "pot:Identity/Product"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
+        },
+        "rdfs:comment": {
+            "en-us": "Updater of an identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "ean": {
+        "@id": "pot:identifier/ean",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "EAN code",
+            "fi-fi": "EAN koodi"
+        },
+        "rdfs:comment": {
+            "en-us": "EAN standard based identifier",
+            "fi-fi": "EAN standardiin perustuva tuotekoodi"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/Product"
+        ]
+    },
+    "priceSell": {
+        "@id": "pot:financial/priceSell",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:financial",
+        "rdfs:label": {
+            "fi-fi": "Myyntihinta",
+            "en-us": "Sales price"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Myyntihinta",
+            "en-us": "Sales price"
+        },
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Identity/Product"
+        ]
+    },
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
+        },
+        "rdfs:comment": {
+            "en-us": "Creator of and identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
         ]
     }
 }
