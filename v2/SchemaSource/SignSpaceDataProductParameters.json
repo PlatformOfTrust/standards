@@ -2,8 +2,8 @@
    "$schema":"http://json-schema.org/draft-07/schema",
    "$id":"https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Document/Signing/SignSpace",
    "type":"object",
-   "title":"Data product core schema",
-   "description":"Core schema for general data product.",
+   "title":"SignSpace data product parameters",
+   "description":"Data product parameters for SignSpace.",
    "required":[
       "@context",
       "productCode",
@@ -16,13 +16,13 @@
          "type":"string",
          "title":"JSON-LD context url",
          "description":"JSON-LD context url with terms required to understand data product content.",
-         "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/"
+         "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Document/Signing/SignSpace/"
       },
       "productCode":{
          "$id":"#/properties/productCode",
          "type":"string",
          "title":"Productcode",
-         "description":"Name of your product.",
+         "description":"Name of the product.",
          "examples":[
             "multidata-product-1"
          ]
@@ -39,22 +39,17 @@
       "parameters":{
          "$id":"#/properties/parameters",
          "type":"object",
-         "title":"The parameters schema",
+         "title":"Actual data product parameters",
          "description":"An explanation about the purpose of this instance.",
-         "default":{
-
-         },
          "required":[
             "idOfficial",
-            "country",
-            "categorizationLocal"
+            "country"
          ],
          "properties":{
             "idOfficial":{
                "$id":"#/properties/parameters/properties/idOfficial",
                "type":"string",
-               "title":"The idOfficial schema",
-               "description":"An explanation about the purpose of this instance.",
+               "title":"Business ID of the organisation",
                "examples":[
                   "5eb8fd3e6cd3aa03980a677d"
                ]
@@ -62,75 +57,49 @@
             "country":{
                "$id":"#/properties/parameters/properties/country",
                "type":"string",
-               "title":"The country schema",
-               "description":"An explanation about the purpose of this instance.",
+               "title":"Country code of the organisation",
                "examples":[
                   "fi"
                ]
             },
-            "categorizationLocal":{
-               "$id":"#/properties/parameters/properties/categorizationLocal",
+            "categorizationSource":{
+               "$id":"#/properties/parameters/properties/categorizationSource",
                "type":"array",
-               "title":"The categorizationLocal schema",
-               "description":"An explanation about the purpose of this instance.",
-               "examples":[
-                  [
-                     "basic",
-                     "signing_request"
-                  ]
-               ],
+               "title":"List of signing process types according to source system to return",
                "items":{
-                  "anyOf":[
-                     {
-                        "$id":"#/properties/parameters/properties/categorizationLocal/items/anyOf/0",
-                        "type":"string",
-                        "title":"The first anyOf schema",
-                        "description":"An explanation about the purpose of this instance.",
-                        "examples":[
-                           "basic",
-                           "signing_request"
-                        ]
-                     }
-                  ],
-                  "$id":"#/properties/parameters/properties/categorizationLocal/items"
+                  "$id":"#/properties/parameters/properties/categorizationLocal/items",
+                  "type":"string",
+                  "title":"The first anyOf schema",
+                  "enum":[
+                     "basic",
+                     "signing_request",
+                     "later voting_request"
+                  ]
                }
             },
             "status":{
                "$id":"#/properties/parameters/properties/status",
                "type":"array",
-               "title":"The status schema",
-               "description":"An explanation about the purpose of this instance.",
-               "examples":[
-                  [
-                     "New",
-                     "In_progress"
-                  ]
-               ],
+               "title":"List of statuses to filter results, by default returns all",
                "items":{
-                  "anyOf":[
-                     {
-                        "$id":"#/properties/parameters/properties/status/items/anyOf/0",
-                        "type":"string",
-                        "title":"The first anyOf schema",
-                        "description":"An explanation about the purpose of this instance.",
-                        "examples":[
-                           "New",
-                           "In_progress",
-                           "Complete",
-                           "Canceled",
-                           "On_hold",
-                           "Overdue"
-                        ]
-                     }
-                  ],
-                  "$id":"#/properties/parameters/properties/status/items"
+                  "$id":"#/properties/parameters/properties/status/items",
+                  "type":"string",
+                  "title":"The first anyOf schema",
+                  "description":"An explanation about the purpose of this instance.",
+                  "enum":[
+                     "New",
+                     "In progress",
+                     "Complete",
+                     "Canceled",
+                     "On hold",
+                     "Overdue"
+                  ]
                }
             },
             "queryText":{
                "$id":"#/properties/parameters/properties/queryText",
                "type":"string",
-               "title":"The queryText schema",
-               "description":"An explanation about the purpose of this instance.",
+               "title":"Return signing processes that match this text",
                "examples":[
                   "Query text"
                ]
@@ -138,49 +107,34 @@
             "filter":{
                "$id":"#/properties/parameters/properties/filter",
                "type":"array",
-               "title":"The filter schema",
-               "description":"An explanation about the purpose of this instance.",
-               "examples":[
-                  [
-                     "1",
-                     "35"
-                  ]
-               ],
+               "title":"List of signing process filters",
                "items":{
-                  "anyOf":[
-                     {
-                        "$id":"#/properties/parameters/properties/filter/items/anyOf/0",
-                        "type":"string",
-                        "title":"The first anyOf schema",
-                        "description":"An explanation about the purpose of this instance.",
-                        "examples":[
-                           "1",
-                           "35"
-                        ]
-                     }
-                  ],
-                  "$id":"#/properties/parameters/properties/filter/items"
+                  "$id":"#/properties/parameters/properties/filter/items",
+                  "type":"object",
+                  "title":"Signing process filter",
                }
             },
             "limit":{
                "$id":"#/properties/parameters/properties/limit",
                "type":"integer",
-               "title":"The limit schema",
-               "description":"An explanation about the purpose of this instance."
+               "title":"Number of signing processes to return. Default is 20"
             },
             "offset":{
                "$id":"#/properties/parameters/properties/offset",
                "type":"integer",
-               "title":"The offset schema",
-               "description":"An explanation about the purpose of this instance."
+               "title":"Number of signing processes to offset. Default is 0"
             },
             "startTime":{
+               "$id":"#/properties/parameters/properties/startTime",
                "type":"string",
-               "format":"date-time"
+               "format":"date-time",
+			   "title":"Return signing processes created after this date"
             },
             "endTime":{
+               "$id":"#/properties/parameters/properties/endTime",
                "type":"string",
-               "format":"date-time"
+               "format":"date-time",
+			   "title":"Returns signing processes created before this date"
             }
          }
       }
