@@ -31,6 +31,15 @@
                "type":"array",
                "title":"Signing process instances",
                "items":{
+                  "$id":"#/properties/data/properties/signing/items",
+                  "type":"object",
+                  "required":[
+                     "name",
+                     "status",
+                     "updated",
+                     "created",
+                     "idSource"
+                  ],
                   "properties":{
                      "name":{
                         "$id":"#/properties/data/properties/signing/properties/name",
@@ -59,11 +68,13 @@
                         "$id":"#/properties/data/properties/signing/properties/parties",
                         "type":"array",
                         "title":"Parties involved in the signing process",
-                        "required":[
-                           "@type",
-                           "name"
-                        ],
                         "items":{
+                           "$id":"#/properties/data/properties/signing/properties/parties/items",
+                           "type":"object",
+                           "required":[
+                              "@type",
+                              "name"
+                           ],
                            "properties":{
                               "@type":{
                                  "$id":"#/properties/data/properties/signing/properties/parties/properties/@type",
@@ -103,11 +114,13 @@
                         "$id":"#/properties/data/properties/signing/properties/documents",
                         "type":"array",
                         "title":"List of documents to sign",
-                        "required":[
-                           "@type",
-                           "name"
-                        ],
                         "items":{
+                           "$id":"#/properties/data/properties/signing/properties/documents/items",
+                           "type":"object",
+                           "required":[
+                              "@type",
+                              "name"
+                           ],
                            "properties":{
                               "@type":{
                                  "$id":"#/properties/data/properties/signing/properties/documents/properties/@type",
@@ -130,11 +143,18 @@
                         "type":"array",
                         "title":"List of digitalSignatures",
                         "items":{
+                           "$id":"#/properties/data/properties/signing/properties/digitalSignatures/items",
+                           "type":"object",
+                           "required":[
+                              "@type",
+                              "executor",
+                              "timestamp"
+                           ],
                            "properties":{
                               "@type":{
                                  "$id":"#/properties/data/properties/signing/properties/digitalSignatures/properties/@type",
                                  "type":"string",
-								 "title":"Digital signature type"
+                                 "title":"Digital signature type",
                                  "enum":[
                                     "DigitalSignature"
                                  ]
@@ -142,13 +162,13 @@
                               "executor":{
                                  "$id":"#/properties/data/properties/signing/properties/digitalSignatures/properties/executor",
                                  "type":"string",
-								 "title":"Signer"
+                                 "title":"Signer"
                               },
                               "timestamp":{
                                  "$id":"#/properties/data/properties/signing/properties/digitalSignatures/properties/timestamp",
                                  "type":"string",
                                  "format":"date-time",
-								 "title":"When digital signature was generated"
+                                 "title":"When digital signature was generated"
                               }
                            }
                         }
