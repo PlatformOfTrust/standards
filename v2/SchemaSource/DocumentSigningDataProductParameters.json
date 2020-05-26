@@ -1,47 +1,188 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Document/Signing",
-    "type": "object",
-    "title": "Data product core schema",
-    "description": "Core schema for general data product.",
-    "required": [
-        "@context",
-        "productCode",
-        "timestamp",
-        "parameters"
-    ],
-    "properties": {
-        "@context": {
-            "$id": "#/properties/@context",
-            "type": "string",
-            "title": "JSON-LD context url",
-            "description": "JSON-LD context url with terms required to understand data product content.",
-            "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/"
-        },
-        "productCode": {
-            "$id": "#/properties/productCode",
-            "type": "string",
-            "title": "Productcode",
-            "description": "Name of your product.",
-            "examples": [
-                "multidata-product-1"
-            ]
-        },
-        "timestamp": {
-            "$id": "#/properties/timestamp",
-            "type": "string",
-            "title": "Timestamp of the request",
-            "description": "Timestamp of the request.",
-            "examples": [
-                "2019-10-19T13:20:09+00:00"
-            ]
-        },
-        "parameters": {
-            "$id": "#/properties/parameters",
-            "type": "object",
-            "title": "Data product parameters",
-            "description": "Parameters of data product.",
-            "additionalProperties": true
-        }
-    }
+   "$schema":"http://json-schema.org/draft-07/schema",
+   "$id":"https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Document/Signing",
+   "type":"object",
+   "title":"Data product core schema",
+   "description":"Core schema for general data product.",
+   "required":[
+      "@context",
+      "productCode",
+      "timestamp",
+      "parameters"
+   ],
+   "properties":{
+      "@context":{
+         "$id":"#/properties/@context",
+         "type":"string",
+         "title":"JSON-LD context url",
+         "description":"JSON-LD context url with terms required to understand data product content.",
+         "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Document/Signing/"
+      },
+      "productCode":{
+         "$id":"#/properties/productCode",
+         "type":"string",
+         "title":"Productcode",
+         "description":"Name of your product.",
+         "examples":[
+            "multidata-product-1"
+         ]
+      },
+      "timestamp":{
+         "$id":"#/properties/timestamp",
+         "type":"string",
+         "title":"Timestamp of the request",
+         "description":"Timestamp of the request.",
+         "examples":[
+            "2019-10-19T13:20:09+00:00"
+         ]
+      },
+      "parameters":{
+         "$id":"#/properties/parameters",
+         "type":"object",
+         "title":"The parameters schema",
+         "description":"An explanation about the purpose of this instance.",
+         "default":{
+
+         },
+         "required":[
+            "idOfficial",
+            "country",
+            "categorizationLocal"
+         ],
+         "properties":{
+            "idOfficial":{
+               "$id":"#/properties/parameters/properties/idOfficial",
+               "type":"string",
+               "title":"The idOfficial schema",
+               "description":"An explanation about the purpose of this instance.",
+               "examples":[
+                  "5eb8fd3e6cd3aa03980a677d"
+               ]
+            },
+            "country":{
+               "$id":"#/properties/parameters/properties/country",
+               "type":"string",
+               "title":"The country schema",
+               "description":"An explanation about the purpose of this instance.",
+               "examples":[
+                  "fi"
+               ]
+            },
+            "categorizationLocal":{
+               "$id":"#/properties/parameters/properties/categorizationLocal",
+               "type":"array",
+               "title":"The categorizationLocal schema",
+               "description":"An explanation about the purpose of this instance.",
+               "examples":[
+                  [
+                     "basic",
+                     "signing_request"
+                  ]
+               ],
+               "items":{
+                  "anyOf":[
+                     {
+                        "$id":"#/properties/parameters/properties/categorizationLocal/items/anyOf/0",
+                        "type":"string",
+                        "title":"The first anyOf schema",
+                        "description":"An explanation about the purpose of this instance.",
+                        "examples":[
+                           "basic",
+                           "signing_request"
+                        ]
+                     }
+                  ],
+                  "$id":"#/properties/parameters/properties/categorizationLocal/items"
+               }
+            },
+            "status":{
+               "$id":"#/properties/parameters/properties/status",
+               "type":"array",
+               "title":"The status schema",
+               "description":"An explanation about the purpose of this instance.",
+               "examples":[
+                  [
+                     "New",
+                     "In_progress"
+                  ]
+               ],
+               "items":{
+                  "anyOf":[
+                     {
+                        "$id":"#/properties/parameters/properties/status/items/anyOf/0",
+                        "type":"string",
+                        "title":"The first anyOf schema",
+                        "description":"An explanation about the purpose of this instance.",
+                        "examples":[
+                           "New",
+                           "In_progress",
+                           "Complete",
+                           "Canceled",
+                           "On_hold",
+                           "Overdue"
+                        ]
+                     }
+                  ],
+                  "$id":"#/properties/parameters/properties/status/items"
+               }
+            },
+            "queryText":{
+               "$id":"#/properties/parameters/properties/queryText",
+               "type":"string",
+               "title":"The queryText schema",
+               "description":"An explanation about the purpose of this instance.",
+               "examples":[
+                  "Query text"
+               ]
+            },
+            "filter":{
+               "$id":"#/properties/parameters/properties/filter",
+               "type":"array",
+               "title":"The filter schema",
+               "description":"An explanation about the purpose of this instance.",
+               "examples":[
+                  [
+                     "1",
+                     "35"
+                  ]
+               ],
+               "items":{
+                  "anyOf":[
+                     {
+                        "$id":"#/properties/parameters/properties/filter/items/anyOf/0",
+                        "type":"string",
+                        "title":"The first anyOf schema",
+                        "description":"An explanation about the purpose of this instance.",
+                        "examples":[
+                           "1",
+                           "35"
+                        ]
+                     }
+                  ],
+                  "$id":"#/properties/parameters/properties/filter/items"
+               }
+            },
+            "limit":{
+               "$id":"#/properties/parameters/properties/limit",
+               "type":"integer",
+               "title":"The limit schema",
+               "description":"An explanation about the purpose of this instance."
+            },
+            "offset":{
+               "$id":"#/properties/parameters/properties/offset",
+               "type":"integer",
+               "title":"The offset schema",
+               "description":"An explanation about the purpose of this instance."
+            },
+            "startTime":{
+               "type":"string",
+               "format":"date-time"
+            },
+            "endTime":{
+               "type":"string",
+               "format":"date-time"
+            }
+         }
+      }
+   }
 }
