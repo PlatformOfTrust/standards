@@ -22,6 +22,50 @@
             "type": "object",
             "title": "Data product output",
             "description": "Output of data product delivered to customers."
+			"required": ["signing"],
+			"properties": {
+				"signing": {
+					"$id": "#/properties/data/properties/signing",
+					"type": "array",
+					"title": "Signing process instances",
+					"items": {
+						"properties": {
+							"name": {
+								"$id": "#/properties/data/properties/signing/properties/name",
+								"type": "string",
+								"title": "Signing process name"
+							},
+							"status": {
+								"$id": "#/properties/data/properties/signing/properties/status",
+								"type": "string",
+								"title": "Signature type",
+								"enum": ["New", "In progress", "Complete", "Canceled", "On hold", "Overdue"]								
+							}
+							"documents": {
+								"$id": "#/properties/data/properties/signing",
+								"type": "array",
+								"title": "List of documents to sign",
+								"required": ["@type", "name"],
+								"properties": {
+									"@type":{
+										"$id":"#/properties/data/items/properties/measurements/items/properties/@type",
+										"type":"string",
+										"title":"Document type",
+										"enum":[
+											"Document"
+										]
+									},
+									"name": {
+										"$id": "#/properties/data/properties/signing/properties/documents/properties/name",
+										"type": "string",
+										"title": "Document name"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
         },
 		"signature": {
 			"$id": "#/properties/signature",
