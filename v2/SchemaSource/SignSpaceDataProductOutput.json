@@ -66,7 +66,7 @@
                         "items":{
                            "properties":{
                               "@type":{
-                                 "$id":"#/properties/data/properties/signing/properties/documents/properties/@type",
+                                 "$id":"#/properties/data/properties/signing/properties/parties/properties/@type",
                                  "type":"string",
                                  "title":"Parties type",
                                  "enum":[
@@ -75,7 +75,7 @@
                                  ]
                               },
                               "name":{
-                                 "$id":"#/properties/data/properties/signing/properties/documents/properties/name",
+                                 "$id":"#/properties/data/properties/signing/properties/parties/properties/name",
                                  "type":"string",
                                  "title":"Parties name"
                               }
@@ -84,12 +84,14 @@
                      },
                      "updated":{
                         "$id":"#/properties/data/properties/signing/properties/updated",
-                        "type":"datetime",
+                        "type":"string",
+                        "format": "date-time",
                         "title":"The updated schema"
                      },
                      "created":{
                         "$id":"#/properties/data/properties/signing/properties/created",
-                        "type":"datetime",
+                        "type":"string",
+                        "format": "date-time",
                         "title":"The created schema"
                      },
                      "idSource":{
@@ -98,16 +100,17 @@
                         "title":"The idSource schema"
                      },
                      "documents":{
-                        "$id":"#/properties/data/properties/signing",
+                        "$id":"#/properties/data/properties/signing/properties/documents",
                         "type":"array",
                         "title":"List of documents to sign",
                         "required":[
                            "@type",
                            "name"
                         ],
-                        "properties":{
+                        "items":{
+                           "properties":{
                            "@type":{
-                              "$id":"#/properties/data/properties/properties/measurements/properties/properties/@type",
+                              "$id":"#/properties/data/properties/signing/properties/documents/properties/@type",
                               "type":"string",
                               "title":"Document type",
                               "enum":[
@@ -120,27 +123,29 @@
                               "title":"Document name"
                            }
                         }
-                     },
+                     }
+                  },
                      "digitalSignatures":{
-                        "$id":"#/properties/data/properties/signing/properties/documents/properties/digitalSignatures",
+                        "$id":"#/properties/data/properties/signing/properties/digitalSignatures",
                         "type":"array",
                         "title":"List of digitalSignatures",
                         "items":{
                            "properties":{
                               "@type":{
-                                 "$id":"#/properties/data/properties/properties/measurements/properties/properties/@type",
+                                 "$id":"#/properties/data/properties/signing/properties/digitalSignatures/properties/@type",
                                  "type":"string",
                                  "enum":[
                                     "DigitalSignature"
                                  ]
                               },
                               "executor":{
-                                 "$id":"#/properties/signature/properties/executor",
+                                 "$id":"#/properties/data/properties/signing/properties/digitalSignatures/properties/executor",
                                  "type":"string"
                               },
                               "timestamp":{
-                                 "$id":"#/properties/signature/properties/timestamp",
-                                 "type":"string"
+                                 "$id":"#/properties/data/properties/signing/properties/digitalSignatures/properties/timestamp",
+                                 "type":"string",
+                                 "format":"date-time"
                               }
                            }
                         }
