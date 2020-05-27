@@ -147,11 +147,12 @@ def build_ranges(owl_property: Any) -> List[str]:
     """
     result_ranges = list()
     for range_type in owl_range._get_indirect_values_for_class(owl_property):
-        if isinstance(range_type, type):
+        # if isinstance(range_type, type):
+        try:
             result_ranges.append(
                 str(default_world._unabbreviate(base._universal_datatype_2_abbrev[range_type])).replace(
                     'http://www.w3.org/2001/XMLSchema#', 'xsd:'))
-        else:
+        except:
             result_ranges.append(str(range_type).replace('XMLSchema.', 'xsd:'))
     return result_ranges
 
