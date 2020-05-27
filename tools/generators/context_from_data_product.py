@@ -37,8 +37,18 @@ def create_context_from_data_product(rdf_class, entity_file: Dict[str, Any], ont
         "SensorDataProductParameters": "Sensor",
         "AccuWeatherForecastDataProductContext": "AccuWeather",
         "AccuWeatherForecastDataProductOutput": "AccuWeather",
-        "AccuWeatherForecastDataProductParameters": "AccuWeather"
+        "AccuWeatherForecastDataProductParameters": "AccuWeather",
+        "DocumentDataProductContext": "Document",
+        "DocumentDataProductOutput": "Document",
+        "DocumentDataProductParameters": "Document",
+        "DocumentSigningDataProductContext": "Signing",
+        "DocumentSigningDataProductOutput": "Signing",
+        "DocumentSigningDataProductParameters": "Signing",
+        "SignSpaceDataProductContext": "SignSpace",
+        "SignSpaceDataProductOutput": "SignSpace",
+        "SignSpaceDataProductParameters": "SignSpace"
     }
+
     if entity_file.get('id') not in ('DataProductContext', 'DataProductOutput', 'DataProductParameters'):
         entity_name = entity_file.get('id').split('/')
         new_path = []
