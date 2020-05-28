@@ -52,17 +52,17 @@
                 "pot:required": true,
                 "pot:readonly": false
             },
-            "url": {
-                "@id": "pot:identifier/url",
+            "usageMain": {
+                "@id": "pot:categorization/usageMain",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:identifier",
+                "subPropertyOf": "pot:categorization",
                 "rdfs:label": {
-                    "en-us": "URL address",
-                    "fi-fi": "URL-osoite"
+                    "fi-fi": "Käyttötarkoitus",
+                    "en-us": "Main usage purpose"
                 },
                 "rdfs:comment": {
-                    "en-us": "URL address",
-                    "fi-fi": "URL-osoite"
+                    "en-us": "Main usage purpose",
+                    "fi-fi": "Pääasiallinen käyttötarkoitus"
                 },
                 "pot:valueType": [
                     "xsd:string"
@@ -84,37 +84,20 @@
                 "pot:required": false,
                 "pot:readonly": true
             },
-            "additionalInformation": {
-                "@id": "pot:description/additionalInformation",
+            "url": {
+                "@id": "pot:identifier/url",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:description",
+                "subPropertyOf": "pot:identifier",
                 "rdfs:label": {
-                    "en-us": "Additional information",
-                    "fi-fi": "Lisätiedot"
+                    "en-us": "URL address",
+                    "fi-fi": "URL-osoite"
                 },
                 "rdfs:comment": {
-                    "en-us": "Additional information",
-                    "fi-fi": "Lisätiedot"
+                    "en-us": "URL address",
+                    "fi-fi": "URL-osoite"
                 },
                 "pot:valueType": [
                     "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
-            },
-            "startDateTimeValidity": {
-                "@id": "pot:time/startDateTimeValidity",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:time",
-                "rdfs:label": {
-                    "fi-fi": "Järjestelmän perustamispäivä",
-                    "en-us": "System establishment date"
-                },
-                "rdfs:comment": {
-                    "en-us": "Valid start time for the system (when system has been defined)"
-                },
-                "pot:valueType": [
-                    "xsd:dateTime"
                 ],
                 "pot:required": false,
                 "pot:readonly": false
@@ -129,66 +112,6 @@
                 },
                 "rdfs:comment": {
                     "en-us": "Time when the data is updated"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "usageMain": {
-                "@id": "pot:categorization/usageMain",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:categorization",
-                "rdfs:label": {
-                    "fi-fi": "Käyttötarkoitus",
-                    "en-us": "Main usage purpose"
-                },
-                "rdfs:comment": {
-                    "en-us": "Main usage purpose",
-                    "fi-fi": "Pääasiallinen käyttötarkoitus"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
-            },
-            "metadata": {
-                "@id": "pot:metadata",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:topDataProperty",
-                "rdfs:label": {
-                    "en-us": "Metadata"
-                },
-                "rdfs:comment": {
-                    "en-us": "Metadata container",
-                    "fi-fi": "Ominaisuuskategoria metatiedolle."
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "createdBy": {
-                "@id": "pot:metadata/createdBy",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
-                "rdfs:label": {
-                    "en-us": "Creator",
-                    "fi-fi": "Identiteetin luoja"
-                },
-                "rdfs:comment": {
-                    "en-us": "Creator of and identity"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "createdAt": {
-                "@id": "pot:metadata/createdAt",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
-                "rdfs:label": {
-                    "en-us": "Creation time",
-                    "fi-fi": "Luomisaika"
-                },
-                "rdfs:comment": {
-                    "en-us": "Time when the data is created"
                 },
                 "pot:required": false,
                 "pot:readonly": true
@@ -417,6 +340,44 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
+            "id": {
+                "@id": "pot:identifier/id",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "pot:required": true,
+                "pot:readonly": false
+            },
+            "createdAt": {
+                "@id": "pot:metadata/createdAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "en-us": "Creation time",
+                    "fi-fi": "Luomisaika"
+                },
+                "rdfs:comment": {
+                    "en-us": "Time when the data is created"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "endDateTimeValidity": {
+                "@id": "pot:time/endDateTimeValidity",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:time",
+                "rdfs:label": {
+                    "fi-fi": "Järjestelmän perustamispäivä",
+                    "en-us": "System establishment date"
+                },
+                "rdfs:comment": {
+                    "en-us": "Valid start time for the system (when system has been defined)"
+                },
+                "pot:valueType": [
+                    "xsd:dateTime"
+                ],
+                "pot:required": false,
+                "pot:readonly": false
+            },
             "status": {
                 "@id": "pot:lifeCycle/status",
                 "@type": "owl:DatatypeProperty",
@@ -559,15 +520,54 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
-            "id": {
-                "@id": "pot:identifier/id",
+            "createdBy": {
+                "@id": "pot:metadata/createdBy",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:identifier",
-                "pot:required": true,
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "en-us": "Creator",
+                    "fi-fi": "Identiteetin luoja"
+                },
+                "rdfs:comment": {
+                    "en-us": "Creator of and identity"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "metadata": {
+                "@id": "pot:metadata",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Metadata"
+                },
+                "rdfs:comment": {
+                    "en-us": "Metadata container",
+                    "fi-fi": "Ominaisuuskategoria metatiedolle."
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "additionalInformation": {
+                "@id": "pot:description/additionalInformation",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:description",
+                "rdfs:label": {
+                    "en-us": "Additional information",
+                    "fi-fi": "Lisätiedot"
+                },
+                "rdfs:comment": {
+                    "en-us": "Additional information",
+                    "fi-fi": "Lisätiedot"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "pot:required": false,
                 "pot:readonly": false
             },
-            "endDateTimeValidity": {
-                "@id": "pot:time/endDateTimeValidity",
+            "startDateTimeValidity": {
+                "@id": "pot:time/startDateTimeValidity",
                 "@type": "owl:DatatypeProperty",
                 "subPropertyOf": "pot:time",
                 "rdfs:label": {
