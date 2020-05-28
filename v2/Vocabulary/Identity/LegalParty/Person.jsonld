@@ -52,45 +52,6 @@
             "fi-fi": "Luonnollinen henkilö"
         }
     },
-    "lastName": {
-        "@id": "pot:identifier/lastName",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "Last name",
-            "fi-fi": "Sukunimi"
-        },
-        "rdfs:comment": {
-            "fi-fi": "Henkilön sukunimi",
-            "en-us": "Last name of the person"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity/LegalParty/Person"
-        ]
-    },
-    "url": {
-        "@id": "pot:identifier/url",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "URL address",
-            "fi-fi": "URL-osoite"
-        },
-        "rdfs:comment": {
-            "en-us": "URL address",
-            "fi-fi": "URL-osoite"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Identity/Product"
-        ]
-    },
     "updatedBy": {
         "@id": "pot:metadata/updatedBy",
         "@type": "owl:DatatypeProperty",
@@ -105,29 +66,6 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
-        ]
-    },
-    "additionalInformation": {
-        "@id": "pot:description/additionalInformation",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:description",
-        "rdfs:label": {
-            "en-us": "Additional information",
-            "fi-fi": "Lisätiedot"
-        },
-        "rdfs:comment": {
-            "en-us": "Additional information",
-            "fi-fi": "Lisätiedot"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity/Product",
-            "pot:Identity/Element/BuildingElement/Storey",
-            "pot:Identity/Group/System",
-            "pot:Identity/LegalParty/Person",
-            "pot:Identity/Space/Room"
         ]
     },
     "idOfficial": {
@@ -224,6 +162,26 @@
             "pot:Identity/Space/Room"
         ]
     },
+    "url": {
+        "@id": "pot:identifier/url",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "URL address",
+            "fi-fi": "URL-osoite"
+        },
+        "rdfs:comment": {
+            "en-us": "URL address",
+            "fi-fi": "URL-osoite"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Identity/Product"
+        ]
+    },
     "updatedAt": {
         "@id": "pot:metadata/updatedAt",
         "@type": "owl:DatatypeProperty",
@@ -240,38 +198,6 @@
             "pot:Link"
         ]
     },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Metadata"
-        },
-        "rdfs:comment": {
-            "en-us": "Metadata container",
-            "fi-fi": "Ominaisuuskategoria metatiedolle."
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "en-us": "Creator",
-            "fi-fi": "Identiteetin luoja"
-        },
-        "rdfs:comment": {
-            "en-us": "Creator of and identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
     "data": {
         "@id": "pot:data",
         "@type": "owl:DatatypeProperty",
@@ -279,6 +205,52 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
+        ]
+    },
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "domain": [
+            "pot:Identity"
+        ]
+    },
+    "middleName": {
+        "@id": "pot:identifier/middleName",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Middle names",
+            "fi-fi": "Toinen nimi"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Henkilön toinen nimi (toiset nimet)",
+            "en-us": "Middle names of the person"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/LegalParty/Person"
+        ]
+    },
+    "lastName": {
+        "@id": "pot:identifier/lastName",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Last name",
+            "fi-fi": "Sukunimi"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Henkilön sukunimi",
+            "en-us": "Last name of the person"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/LegalParty/Person"
         ]
     },
     "createdAt": {
@@ -454,12 +426,20 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "id": {
-        "@id": "pot:identifier/id",
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
+        },
+        "rdfs:comment": {
+            "en-us": "Creator of and identity"
+        },
         "domain": [
-            "pot:Identity"
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "birthdate": {
@@ -481,23 +461,20 @@
             "pot:Identity/LegalParty/Person"
         ]
     },
-    "middleName": {
-        "@id": "pot:identifier/middleName",
+    "metadata": {
+        "@id": "pot:metadata",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Middle names",
-            "fi-fi": "Toinen nimi"
+            "en-us": "Metadata"
         },
         "rdfs:comment": {
-            "fi-fi": "Henkilön toinen nimi (toiset nimet)",
-            "en-us": "Middle names of the person"
+            "en-us": "Metadata container",
+            "fi-fi": "Ominaisuuskategoria metatiedolle."
         },
-        "pot:valueType": [
-            "xsd:string"
-        ],
         "domain": [
-            "pot:Identity/LegalParty/Person"
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "firstName": {
@@ -517,6 +494,29 @@
         ],
         "domain": [
             "pot:Identity/LegalParty/Person"
+        ]
+    },
+    "additionalInformation": {
+        "@id": "pot:description/additionalInformation",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:description",
+        "rdfs:label": {
+            "en-us": "Additional information",
+            "fi-fi": "Lisätiedot"
+        },
+        "rdfs:comment": {
+            "en-us": "Additional information",
+            "fi-fi": "Lisätiedot"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/Product",
+            "pot:Identity/Element/BuildingElement/Storey",
+            "pot:Identity/Group/System",
+            "pot:Identity/LegalParty/Person",
+            "pot:Identity/Space/Room"
         ]
     }
 }
