@@ -2,8 +2,8 @@
    "$schema":"http://json-schema.org/draft-07/schema",
    "$id":"https://standards-ontotest.oftrust.net/v2/Schema/DataProductOutput/Forecast/Price/Electricity",
    "type":"object",
-   "title":"Electricity data product output schema",
-   "description":"Core schema for validation electricity data product output.",
+   "title":"Electricity price data product output schema",
+   "description":"Core schema for validation electricity price data product output.",
    "required":[
       "@context",
       "data",
@@ -20,38 +20,7 @@
       "data":{
          "$id":"#/properties/data",
          "type":"object",
-         "title":"Electricity data product output",
-         "description":"",
-         "examples":[
-            {
-               "forecasts":[
-                  {
-                     "@type":"ForecastElectricityPriceMWH",
-                     "period":"01.01.2015/02.01.2015",
-                     "pricePlans":[
-                        {
-                           "@type":"PricePlan",
-                           "currency":"EUR",
-                           "period":"01.01.2015T00:00/1h",
-                           "rate":"16.5"
-                        },
-                        {
-                           "@type":"PricePlan",
-                           "currency":"EUR",
-                           "period":"01.01.2015T01:00/1h",
-                           "rate":"18.5"
-                        },
-                        {
-                           "@type":"PricePlan",
-                           "currency":"EUR",
-                           "period":"01.01.2015T02:00/1h",
-                           "rate":"14.5"
-                        }
-                     ]
-                  }
-               ]
-            }
-         ],
+         "title":"Electricity price data product output",
          "required":[
             "forecasts"
          ],
@@ -61,7 +30,9 @@
                "type":"array",
                "title":"Forecasts",
                "description":"Actual forecasts.",
-               "properties":{
+               "items":{
+                  "$id":"#/properties/data/properties/forecasts/items",
+                  "type":"object",
                   "required":[
                      "@type",
                      "period",
@@ -73,15 +44,15 @@
                         "type":"string",
                         "title":"Forecasts type",
                         "description":"",
-                        "examples":[
+                        "enum":[
                            "ForecastElectricityPriceMWH"
                         ]
                      },
                      "period":{
                         "$id":"#/properties/data/properties/forecasts/properties/period",
                         "type":"string",
-                        "title":"",
-                        "description":"",
+                        "title":"Period",
+                        "description":"Period of electricity price forecast",
                         "examples":[
                            "01.01.2015/02.01.2015"
                         ]
@@ -90,25 +61,9 @@
                         "$id":"#/properties/data/properties/forecasts/properties/PricePlan",
                         "type":"array",
                         "minproperties":1,
-                        "title":"",
-                        "description":"",
-                        "examples":[
-                           [
-                              {
-                                 "@type":"PricePlan",
-                                 "currency":"EUR",
-                                 "period":"01.01.2015T00:00/1h",
-                                 "rate":"16.5"
-                              },
-                              {
-                                 "@type":"PricePlan",
-                                 "currency":"EUR",
-                                 "period":"01.01.2015T01:00/1h",
-                                 "rate":"18.5"
-                              }
-                           ]
-                        ],
-                        "properties":{
+                        "title":"Price plans",
+                        "description":"Price plans for electricity",
+                        "items":{
                            "$id":"#/properties/data/properties/forecasts/properties/PricePlan/properties",
                            "type":"object",
                            "title":"",
@@ -123,8 +78,8 @@
                               "@type":{
                                  "$id":"#/properties/data/properties/forecasts/properties/PricePlan/properties/@type",
                                  "type":"string",
-                                 "title":"",
-                                 "description":"",
+                                 "title":"Type",
+                                 "description":"Type of the object",
                                  "enum":[
                                     "PricePlan"
                                  ]
@@ -133,17 +88,17 @@
                                  "$id":"#/properties/data/properties/forecasts/properties/PricePlan/properties/currency",
                                  "type":"string",
                                  "title":"Currency",
-                                 "description":"Currency used for rate"
+                                 "description":"ISO currency code used for rate"
                               },
                               "period":{
                                  "$id":"#/properties/data/properties/forecasts/properties/PricePlan/properties/period",
                                  "type":"string",
-                                 "title":"",
-                                 "description":""
+                                 "title":"Period",
+                                 "description":"Price plan period"
                               },
                               "rate":{
                                  "$id":"#/properties/data/properties/forecasts/properties/PricePlan/properties/rate",
-                                 "type":"string",
+                                 "type":"number",
                                  "title":"Rate",
                                  "description":"Rate value"
                               }
