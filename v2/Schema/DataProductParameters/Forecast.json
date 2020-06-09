@@ -1,56 +1,76 @@
 {
    "$schema":"http://json-schema.org/draft-06/schema#",
    "$id":"https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Forecast",
+   "type":"object",
+   "title":"The root schema",
+   "description":"The root schema comprises the entire JSON document.",
    "required":[
       "@context",
       "timestamp",
       "productCode",
       "parameters"
    ],
+   "additionalProperties":false,
    "properties":{
       "@context":{
          "type":"string",
+         "title":"The @context schema",
          "description":"The context to be used for the payload.",
          "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Forecast/"
       },
       "timestamp":{
+         "$id":"#/properties/timestamp",
          "type":"string",
-         "format":"date-time"
+         "title":"The timestamp schema",
+         "description":"Timestamp of the request.",
+         "examples":[
+            "2020-05-08T07:00:00+03:00"
+         ]
       },
       "productCode":{
-         "type":"string"
+         "$id":"#/properties/productCode",
+         "type":"string",
+         "title":"The productCode schema",
+         "description":"Generated product code.",
+         "examples":[
+            "12309843"
+         ]
       },
       "parameters":{
-         "required":[
-            "timeFrame",
-            "location"
-         ],
-         "properties":{
-            "timeFrame":{
-               "type":"number",
-               "description":"Defines the time frame for the forecast in days. If set to 0 will return the current weather information. Will fallback to 0 if not provided."
-            },
-            "location":{
-               "required":[
-                  "latitude",
-                  "longitude"
-               ],
-               "properties":{
-                  "latitude":{
-                     "type":"number"
-                  },
-                  "longitude":{
-                     "type":"number"
-                  }
-               },
-               "additionalProperties":false,
-               "type":"object"
+         "$id":"#/properties/parameters",
+         "type":"object",
+         "title":"The parameters schema",
+         "description":"Desired parameters.",
+         "examples":[
+            {
+               "period":"2015-12-31T23:00Z/2016-12-31T23:00Z",
+               "targetObject":"object id"
             }
-         },
+         ],
+         "required":[
+            "period",
+            "targetObject"
+         ],
          "additionalProperties":false,
-         "type":"object"
+         "properties":{
+            "period":{
+               "$id":"#/properties/parameters/properties/period",
+               "type":"string",
+               "title":"The period schema",
+               "description":"An explanation about the purpose of this instance.",
+               "examples":[
+                  "2015-12-31T23:00Z/2016-12-31T23:00Z"
+               ]
+            },
+            "targetObject":{
+               "$id":"#/properties/parameters/properties/targetObject",
+               "title":"The targetObject schema",
+               "description":"Target object against witch forecast is applied.",
+               "examples":[
+                  "object id"
+               ]
+            }
+         }
       }
-   },
-   "additionalProperties":false,
-   "type":"object"
+   }
 }
