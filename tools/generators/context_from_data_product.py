@@ -46,7 +46,13 @@ def create_context_from_data_product(rdf_class, entity_file: Dict[str, Any], ont
         "DocumentSigningDataProductParameters": "Signing",
         "SignSpaceDataProductContext": "SignSpace",
         "SignSpaceDataProductOutput": "SignSpace",
-        "SignSpaceDataProductParameters": "SignSpace"
+        "SignSpaceDataProductParameters": "SignSpace",
+        "PriceForecastDataProductContext": "Price",
+        "PriceForecastDataProductOutput": "Price",
+        "PriceForecastDataProductParameters": "Price",
+        "ElectricityPriceForecastDataProductContext": "Electricity",
+        "ElectricityPriceForecastDataProductOutput": "Electricity",
+        "ElectricityPriceForecastDataProductParameters": "Electricity"
     }
 
     if entity_file.get('id') not in ('DataProductContext', 'DataProductOutput', 'DataProductParameters'):
@@ -58,7 +64,7 @@ def create_context_from_data_product(rdf_class, entity_file: Dict[str, Any], ont
         
     context_template = {
         '@version': VERSION,
-        rdf_class.entity.name: {"@id": rdf_class.entity.name},
+        rdf_class.entity.name: {"@id": f'pot:{rdf_class.entity.name}'},
         '@schema': f"{export_onto_url}Schema/{entity_file.get('id')}",
         f'{PREFIX}': {
             '@id': f'{export_onto_url}Vocabulary/',
@@ -68,7 +74,7 @@ def create_context_from_data_product(rdf_class, entity_file: Dict[str, Any], ont
 
     # Hard Code for now
     context_template["productCode"] = {"@id": "pot:productCode"}
-    context_template["timeStamp"] = {"@id": "pot:timeStamp"}
+    context_template["timestamp"] = {"@id": "pot:timestamp"}
     context_template["parameters"] = {"@id": "pot:parameters"}
 
     # Define and fill propeties for each supported attribute
