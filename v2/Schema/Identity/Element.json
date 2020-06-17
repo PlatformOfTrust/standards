@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "string",
+            "minLength": 1,
+            "const": "https://standards.oftrust.net/v2/Context/Identity/Element/"
+        },
+        "@type": {
+            "type": "string",
+            "minLength": 1,
+            "enum": [
+                "Element"
+            ],
+            "const": "Element"
+        },
+        "data": {
+            "title": "",
+            "description": "",
+            "type": "object",
+            "properties": {
+                "url": {
+                    "title": "URL address",
+                    "description": "URL address",
+                    "type": "string"
+                }
+            }
+        },
+        "metadata": {
+            "title": "Metadata",
+            "description": "Metadata container",
+            "type": "object",
+            "properties": {
+                "updatedAt": {
+                    "title": "Update time",
+                    "description": "Time when the data is updated",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "title": "Creation time",
+                    "description": "Time when the data is created",
+                    "type": "string"
+                },
+                "createdBy": {
+                    "title": "Creator",
+                    "description": "Creator of and identity",
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "title": "Updater",
+                    "description": "Updater of an identity",
+                    "type": "string"
+                }
+            }
+        },
+        "@id": {
+            "title": "",
+            "description": "",
+            "type": "string"
+        }
+    },
+    "required": [
+        "data",
+        "@context",
+        "@type",
+        "@id"
+    ]
+}
