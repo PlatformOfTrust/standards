@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-content
+spec:
+  selector:
+    matchLabels:
+      app: static-content
+  template:
+    metadata:
+      labels:
+        app: static-content
+    spec:
+      containers:
+        - name: static-content
+          imagePullPolicy: IfNotPresent
+          image: pot-services-static-content:latest
+          env:
+            - name: AZMON_COLLECT_ENV
+              value: 'False'
+            - name: JWT_PUBLIC_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: global-secrets
+                  key: oauth_public_key
+            - name: BROKER_PUBLIC_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: global-secrets
+                  key: public_key
+          ports:
+            - containerPort: 80
+              name: http
+          securityContext:
+            # static-content drops privileges and uses chroot, which requires root,
+            # which is why we don't use the runAs* here.
+            allowPrivilegeEscalation: false
