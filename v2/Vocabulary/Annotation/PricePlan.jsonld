@@ -52,6 +52,46 @@
             "en-us": "Price plan entity contains properties related to pricing mechnanism and price"
         }
     },
+    "rate": {
+        "@id": "pot:financial/rate",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:financial",
+        "rdfs:label": {
+            "en-us": "Rate",
+            "fi-fi": "Yksikköhinta"
+        },
+        "rdfs:comment": {
+            "en-us": "Rate value",
+            "fi-fi": "Yksikköhinnan arvo"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Rate",
+                    "fi-fi": "Yksikköhinta"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Rate value"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Annotation/PricePlan"
+        ]
+    },
     "unit": {
         "@id": "pot:physical/unit",
         "@type": "owl:DatatypeProperty",
@@ -92,23 +132,23 @@
             "pot:Annotation/PricePlan"
         ]
     },
-    "vatPercentage": {
-        "@id": "pot:financial/vatPercentage",
+    "unitGroup": {
+        "@id": "pot:physical/unitGroup",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:financial",
+        "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Arvonlisävero prosentti",
-            "en-us": "VAT percentage"
+            "en-us": "Unit group",
+            "fi-fi": "Yksikköryhmä"
         },
         "rdfs:comment": {
-            "en-us": "Percentage value used for VAT taxation",
-            "fi-fi": "Prosentti jota sovelletaan arvonlisäverossa"
+            "en-us": "Unit group name/definition",
+            "fi-fi": "Yksikköryhmän tunniste/määritys"
         },
         "label": [
             {
                 "rdfs:label": {
-                    "fi-fi": "Arvonlisävero prosentti",
-                    "en-us": "VAT percentage"
+                    "en-us": "Unit group",
+                    "fi-fi": "Yksikköryhmä"
                 },
                 "domain": [
                     "pot:Annotation/PricePlan"
@@ -118,7 +158,7 @@
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Percentage value used for VAT taxation"
+                    "en-us": "Group name of the unit used for rate (price) value"
                 },
                 "domain": [
                     "pot:Annotation/PricePlan"
@@ -126,87 +166,7 @@
             }
         ],
         "pot:valueType": [
-            "xsd:integer"
-        ],
-        "domain": [
-            "pot:Annotation/PricePlan"
-        ]
-    },
-    "vatIncluded": {
-        "@id": "pot:financial/vatIncluded",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:financial",
-        "rdfs:label": {
-            "fi-fi": "Arvonlisävero sisältyy yksikköhintaan",
-            "en-us": "VAT included in rate"
-        },
-        "rdfs:comment": {
-            "en-us": "Information if VAT is included in the rate (price per unit)",
-            "fi-fi": "Tieto jos arvonlisävero (ALV) kuuluu yksikköhintaan"
-        },
-        "label": [
-            {
-                "rdfs:label": {
-                    "fi-fi": "Arvonlisävero sisältyy hintaan",
-                    "en-us": "VAT included in rate"
-                },
-                "domain": [
-                    "pot:Annotation/PricePlan"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Information if VAT is included in the rate (price per unit)"
-                },
-                "domain": [
-                    "pot:Annotation/PricePlan"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:boolean"
-        ],
-        "domain": [
-            "pot:Annotation/PricePlan"
-        ]
-    },
-    "rate": {
-        "@id": "pot:financial/rate",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:financial",
-        "rdfs:label": {
-            "en-us": "Rate",
-            "fi-fi": "Yksikköhinta"
-        },
-        "rdfs:comment": {
-            "en-us": "Rate value",
-            "fi-fi": "Yksikköhinnan arvo"
-        },
-        "label": [
-            {
-                "rdfs:label": {
-                    "en-us": "Rate",
-                    "fi-fi": "Yksikköhinta"
-                },
-                "domain": [
-                    "pot:Annotation/PricePlan"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Rate value"
-                },
-                "domain": [
-                    "pot:Annotation/PricePlan"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:decimal"
+            "xsd:string"
         ],
         "domain": [
             "pot:Annotation/PricePlan"
@@ -490,23 +450,23 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "unitGroup": {
-        "@id": "pot:physical/unitGroup",
+    "vatPercentage": {
+        "@id": "pot:financial/vatPercentage",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
+        "subPropertyOf": "pot:financial",
         "rdfs:label": {
-            "en-us": "Unit group",
-            "fi-fi": "Yksikköryhmä"
+            "fi-fi": "Arvonlisävero prosentti",
+            "en-us": "VAT percentage"
         },
         "rdfs:comment": {
-            "en-us": "Unit group name/definition",
-            "fi-fi": "Yksikköryhmän tunniste/määritys"
+            "en-us": "Percentage value used for VAT taxation",
+            "fi-fi": "Prosentti jota sovelletaan arvonlisäverossa"
         },
         "label": [
             {
                 "rdfs:label": {
-                    "en-us": "Unit group",
-                    "fi-fi": "Yksikköryhmä"
+                    "fi-fi": "Arvonlisävero prosentti",
+                    "en-us": "VAT percentage"
                 },
                 "domain": [
                     "pot:Annotation/PricePlan"
@@ -516,7 +476,7 @@
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Group name of the unit used for rate (price) value"
+                    "en-us": "Percentage value used for VAT taxation"
                 },
                 "domain": [
                     "pot:Annotation/PricePlan"
@@ -524,7 +484,47 @@
             }
         ],
         "pot:valueType": [
-            "xsd:string"
+            "xsd:integer"
+        ],
+        "domain": [
+            "pot:Annotation/PricePlan"
+        ]
+    },
+    "vatIncluded": {
+        "@id": "pot:financial/vatIncluded",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:financial",
+        "rdfs:label": {
+            "fi-fi": "Arvonlisävero sisältyy yksikköhintaan",
+            "en-us": "VAT included in rate"
+        },
+        "rdfs:comment": {
+            "en-us": "Information if VAT is included in the rate (price per unit)",
+            "fi-fi": "Tieto jos arvonlisävero (ALV) kuuluu yksikköhintaan"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "fi-fi": "Arvonlisävero sisältyy hintaan",
+                    "en-us": "VAT included in rate"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Information if VAT is included in the rate (price per unit)"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:boolean"
         ],
         "domain": [
             "pot:Annotation/PricePlan"

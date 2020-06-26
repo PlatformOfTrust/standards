@@ -18,7 +18,7 @@ from generators.data_example_from_schema import create_data_example_from_schema
 from generators.move_manual import move_manual
 
 
-def is_link_identity_relations(rdf_class) -> bool:
+def is_link_related(rdf_class) -> bool:
     """Return is either not rdf_class entity RDF class relations with Link or Identity
 
         Args:
@@ -27,7 +27,19 @@ def is_link_identity_relations(rdf_class) -> bool:
         Returns:
             (bool) : Check result
     """
-    return (Link in rdf_class.entity.ancestors() or Identity in rdf_class.entity.ancestors()) and (rdf_class.entity != Link and rdf_class.entity != Identity)
+    return Link in rdf_class.entity.ancestors() or rdf_class.entity == Link
+
+
+def is_identity_related(rdf_class) -> bool:
+    """Return is either not rdf_class entity RDF class relations with Link or Identity
+
+        Args:
+            rdf_class (models.RDFClass): RDF class.
+
+        Returns:
+            (bool) : Check result
+    """
+    return Identity in rdf_class.entity.ancestors() and rdf_class.entity != Identity
 
 
 def write_dump_to_file(dir_context: str, entity_file: Dict[str, str], data_to_dump: Dict[str, Any], is_json=False) -> NoReturn:
@@ -66,12 +78,12 @@ def build_rdf_clasess(onto, export_onto_url: str) -> NoReturn:
     for rdf_class in rdf_classes:
         files = rdf_class.get_files()
         for entity_file in files:
-            if 'DataProduct' in rdf_class.entity.name and not is_link_identity_relations(rdf_class):
+            if 'DataProduct' in rdf_class.entity.name and not is_identity_related(rdf_class) and not is_link_related(rdf_class):
                 data_to_dump = create_context_from_data_product(
                     rdf_class, entity_file, onto, export_onto_url)
                 write_dump_to_file(CONTEXT_DIR, entity_file, data_to_dump)
 
-            if is_link_identity_relations(rdf_class):
+            if is_link_related(rdf_class) or is_identity_related(rdf_class):
                 data_to_dump = create_definition_from_rdf_class(
                     rdf_class, entity_file, onto, export_onto_url)
                 write_dump_to_file(CLASS_DEFINITIONS_DIR,
