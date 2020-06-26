@@ -83,7 +83,7 @@ def build_rdf_clasess(onto, export_onto_url: str) -> NoReturn:
                     rdf_class, entity_file, onto, export_onto_url)
                 write_dump_to_file(CONTEXT_DIR, entity_file, data_to_dump)
 
-            if is_link_related(rdf_class) and not is_identity_related(rdf_class):
+            if is_link_related(rdf_class) or is_identity_related(rdf_class):
                 data_to_dump = create_definition_from_rdf_class(
                     rdf_class, entity_file, onto, export_onto_url)
                 write_dump_to_file(CLASS_DEFINITIONS_DIR,
