@@ -23,7 +23,7 @@ def create_context_from_rdf_class(rdf_class, entity_file: Dict[str, Any], onto, 
         '@version': VERSION,
         '@vocab': f"{export_onto_url}Vocabulary/{entity_file.get('id')}",
         '@classDefinition': f"{export_onto_url}ClassDefinitions/{entity_file.get('id')}",
-        rdf_class.entity.name: {"@id": rdf_class.entity.name},
+        rdf_class.entity.name: {"@id": f'pot: {rdf_class.entity.name}'},
         '@schema': f"{export_onto_url}Schema/{entity_file.get('id')}",
         f'{PREFIX}': {
             '@id': f'{export_onto_url}Vocabulary/',

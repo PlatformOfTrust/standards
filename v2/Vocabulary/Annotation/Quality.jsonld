@@ -52,42 +52,32 @@
             "en-us": "Quality is an property class that describes how something operates.  Example properties are availability, accuracy, concistency, efficiency, security, etc."
         }
     },
-    "categorizationLocal": {
-        "@id": "pot:categorization/categorizationLocal",
+    "categorizationPoT": {
+        "@id": "pot:categorization/categorizationPoT",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:categorization",
         "rdfs:label": {
-            "en-us": "Local category",
-            "fi-fi": "Paikallinen luokitus"
+            "en-us": "PoT category",
+            "fi-fi": "PoT luokka"
         },
         "rdfs:comment": {
-            "en-us": "Categorisation name given locally",
-            "fi-fi": "Paikallinen luokitus (lähdejärjestelmän luokitus)"
+            "en-us": "Categorization class name in PoT standard",
+            "fi-fi": "Kategorisointi joka perustuu PoT luokitukseen"
         },
         "label": [
             {
                 "rdfs:label": {
-                    "fi-fi": "Lokaali tyypitys",
-                    "en-us": "Type name given locally"
+                    "en-us": "PoT Product category",
+                    "fi-fi": "PoT tuotekategoria"
                 },
                 "domain": [
-                    "pot:Identity/Element/BuildingElement",
-                    "pot:Identity/Equipment/Device"
+                    "pot:Identity/Product"
                 ]
             },
             {
                 "rdfs:label": {
-                    "en-us": "Case category",
-                    "fi-fi": "Palvelupyynnön luokka"
-                },
-                "domain": [
-                    "pot:Identity/Case"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Condition local class",
-                    "fi-fi": "Ehdon paikallinen luokka"
+                    "en-us": "Condition PoT class",
+                    "fi-fi": "Ehdon PoT luokka"
                 },
                 "domain": [
                     "pot:Annotation/Condition"
@@ -95,38 +85,18 @@
             },
             {
                 "rdfs:label": {
-                    "en-us": "Space type - local",
-                    "fi-fi": "Tilatyyppi - paikallinen"
-                },
-                "domain": [
-                    "pot:Identity/Space",
-                    "pot:Identity/Space/Room"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "fi-fi": "Laatuominaisuuden paikallinen luokka",
-                    "en-us": "Quality local class"
+                    "fi-fi": "Laatuominaisuuden PoT luokka",
+                    "en-us": "Quality PoT class"
                 },
                 "domain": [
                     "pot:Annotation/Quality"
                 ]
             }
         ],
-        "pot:valueType": [
-            "xsd:string"
-        ],
         "domain": [
-            "pot:Event",
             "pot:Annotation/Condition",
             "pot:Annotation/Quality",
-            "pot:Annotation/Time/Period",
-            "pot:Identity/Case",
-            "pot:Identity/Process",
-            "pot:Identity/Space",
-            "pot:Identity/Element/BuildingElement",
-            "pot:Identity/Equipment/Device",
-            "pot:Identity/Space/Room"
+            "pot:Identity/Product"
         ]
     },
     "descriptionGeneral": {
@@ -397,32 +367,42 @@
             "pot:Link/Role"
         ]
     },
-    "categorizationPoT": {
-        "@id": "pot:categorization/categorizationPoT",
+    "categorizationLocal": {
+        "@id": "pot:categorization/categorizationLocal",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:categorization",
         "rdfs:label": {
-            "en-us": "PoT category",
-            "fi-fi": "PoT luokka"
+            "en-us": "Local category",
+            "fi-fi": "Paikallinen luokitus"
         },
         "rdfs:comment": {
-            "en-us": "Categorization class name in PoT standard",
-            "fi-fi": "Kategorisointi joka perustuu PoT luokitukseen"
+            "en-us": "Categorisation name given locally",
+            "fi-fi": "Paikallinen luokitus (lähdejärjestelmän luokitus)"
         },
         "label": [
             {
                 "rdfs:label": {
-                    "en-us": "PoT Product category",
-                    "fi-fi": "PoT tuotekategoria"
+                    "fi-fi": "Lokaali tyypitys",
+                    "en-us": "Type name given locally"
                 },
                 "domain": [
-                    "pot:Identity/Product"
+                    "pot:Identity/Element/BuildingElement",
+                    "pot:Identity/Equipment/Device"
                 ]
             },
             {
                 "rdfs:label": {
-                    "en-us": "Condition PoT class",
-                    "fi-fi": "Ehdon PoT luokka"
+                    "en-us": "Case category",
+                    "fi-fi": "Palvelupyynnön luokka"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Condition local class",
+                    "fi-fi": "Ehdon paikallinen luokka"
                 },
                 "domain": [
                     "pot:Annotation/Condition"
@@ -430,18 +410,38 @@
             },
             {
                 "rdfs:label": {
-                    "fi-fi": "Laatuominaisuuden PoT luokka",
-                    "en-us": "Quality PoT class"
+                    "en-us": "Space type - local",
+                    "fi-fi": "Tilatyyppi - paikallinen"
+                },
+                "domain": [
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Laatuominaisuuden paikallinen luokka",
+                    "en-us": "Quality local class"
                 },
                 "domain": [
                     "pot:Annotation/Quality"
                 ]
             }
         ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
         "domain": [
+            "pot:Event",
             "pot:Annotation/Condition",
             "pot:Annotation/Quality",
-            "pot:Identity/Product"
+            "pot:Annotation/Time/Period",
+            "pot:Identity/Case",
+            "pot:Identity/Process",
+            "pot:Identity/Space",
+            "pot:Identity/Element/BuildingElement",
+            "pot:Identity/Equipment/Device",
+            "pot:Identity/Space/Room"
         ]
     }
 }
