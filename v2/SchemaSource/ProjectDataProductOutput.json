@@ -1,0 +1,228 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductOutput/Project",
+    "type": "object",
+    "title": "Data product output core schema",
+    "description": "Core schema for general data product output.",
+    "required": [
+        "@context",
+        "data",
+		"signature"
+    ],
+    "properties": {
+        "@context": {
+            "$id": "#/properties/@context",
+            "type": "string",
+            "title": "JSON-LD context url",
+            "description": "JSON-LD context url with terms required to understand data product content.",
+            "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductOutput/Project/"
+        },
+        "data": {
+            "$id": "#/properties/data",
+            "type": "object",
+            "title": "Data product output",
+            "description": "Output of data product delivered to customers.",
+            "required": [
+                "@type",
+                "idLocal",
+                "name"
+            ],
+            "properties": {
+                "@type": {
+                    "$id": "#/properties/data/properties/%40type",
+                    "type": "string",
+                    "title": "The @type schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "idLocal": {
+                    "$id": "#/properties/data/properties/idLocal",
+                    "type": "integer",
+                    "title": "The idLocal schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "name": {
+                    "$id": "#/properties/data/properties/name",
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "url": {
+                    "$id": "#/properties/data/properties/url",
+                    "type": "string",
+                    "title": "The url schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "categorizationLocal": {
+                    "$id": "#/properties/data/properties/categorizationLocal",
+                    "type": "string",
+                    "title": "The categorizationLocal schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "nameLocal": {
+                    "$id": "#/properties/data/properties/nameLocal",
+                    "type": "string",
+                    "title": "The nameLocal schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "contactStreetAddress": {
+                    "$id": "#/properties/data/properties/contactStreetAddress",
+                    "type": "object",
+                    "title": "The contactStreetAddress schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "streetAddressLine1"
+                    ],
+                    "properties": {
+                        "streetAddressLine1": {
+                            "$id": "#/properties/data/properties/contactStreetAddress/properties/streetAddressLine1",
+                            "type": "string",
+                            "title": "The streetAddressLine1 schema",
+                            "description": "An explanation about the purpose of this instance."
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "buildingPermission": {
+                    "$id": "#/properties/data/properties/buildingPermission",
+                    "type": "object",
+                    "title": "The buildingPermission schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "idOfficial"
+                    ],
+                    "properties": {
+                        "idOfficial": {
+                            "$id": "#/properties/data/properties/buildingPermission/properties/idOfficial",
+                            "type": "string",
+                            "title": "The idOfficial schema",
+                            "description": "An explanation about the purpose of this instance."
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "processes": {
+                    "$id": "#/properties/data/properties/processes",
+                    "type": "array",
+                    "title": "The processes schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "additionalItems": true,
+                    "items": {
+                        "$id": "#/properties/data/properties/processes/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/data/properties/processes/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "required": [
+                                    "@type",
+                                    "idLocal",
+                                    "nameLocal",
+                                    "status"
+                                ],
+                                "properties": {
+                                    "@type": {
+                                        "$id": "#/properties/data/properties/processes/items/anyOf/0/properties/%40type",
+                                        "type": "string",
+                                        "title": "The @type schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "idLocal": {
+                                        "$id": "#/properties/data/properties/processes/items/anyOf/0/properties/idLocal",
+                                        "type": "integer",
+                                        "title": "The idLocal schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "nameLocal": {
+                                        "$id": "#/properties/data/properties/processes/items/anyOf/0/properties/nameLocal",
+                                        "type": "string",
+                                        "title": "The nameLocal schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "categorizationLocal": {
+                                        "$id": "#/properties/data/properties/processes/items/anyOf/0/properties/categorizationLocal",
+                                        "type": "string",
+                                        "title": "The categorizationLocal schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "updated": {
+                                        "$id": "#/properties/data/properties/processes/items/anyOf/0/properties/updated",
+                                        "type": "integer",
+                                        "title": "The updated schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "completed": {
+                                        "$id": "#/properties/data/properties/processes/items/anyOf/0/properties/completed",
+                                        "type": "null",
+                                        "title": "The completed schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "url": {
+                                        "$id": "#/properties/data/properties/processes/items/anyOf/0/properties/url",
+                                        "type": "string",
+                                        "title": "The url schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "status": {
+                                        "$id": "#/properties/data/properties/processes/items/anyOf/0/properties/status",
+                                        "type": "string",
+                                        "title": "The status schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        ]
+                    }
+                }
+            },
+            "additionalProperties": true
+        },
+		"signature": {
+			"$id": "#/properties/signature",
+			"type": "object",
+			"title": "Signature",
+			"required": [
+				"type",
+				"created",
+				"creator",
+				"signatureValue"
+			],
+			"properties": {
+				"type": {
+					"$id": "#/properties/signature/properties/type",
+					"type": "string",
+					"title": "Signature type",
+					"examples": [
+						"RsaSignature2018"
+					]
+				},
+				"created": {
+					"$id": "#/properties/signature/properties/created",
+					"type": "string",
+					"title": "Signature creation date and time",
+					"format": "date-time",
+					"examples": [
+						"2018-11-22T12:00:00Z"
+					]
+				},
+				"creator": {
+					"$id": "#/properties/signature/properties/creator",
+					"type": "string",
+					"title": "Signature creator",
+					"examples": [
+						"https://example.org/creator/public_key.pub"
+					]
+				},
+				"signatureValue": {
+					"$id": "#/properties/signature/properties/signatureValue",
+					"type": "string",
+					"title": "Generated signature",
+					"examples": [
+						"eyJ0eXAiOiJK...gFWFOEjXk"
+					]
+				}
+			}
+		}
+    }
+}
