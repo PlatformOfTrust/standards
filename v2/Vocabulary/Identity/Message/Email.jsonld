@@ -52,49 +52,10 @@
             "fi-fi": "Viesti joka lähetetään elektroonisesti laitteelta toiselle kommunikaatioverkon kautta."
         }
     },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
+    "data": {
+        "@id": "pot:data",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "fi-fi": "Identieetin päivittäjä",
-            "en-us": "Updater"
-        },
-        "rdfs:comment": {
-            "en-us": "Updater of an identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "updatedAt": {
-        "@id": "pot:metadata/updatedAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "fi-fi": "Päivitysaika",
-            "en-us": "Update time"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is updated"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "en-us": "Creator",
-            "fi-fi": "Identiteetin luoja"
-        },
-        "rdfs:comment": {
-            "en-us": "Creator of and identity"
-        },
+        "subPropertyOf": "pot:topDataProperty",
         "domain": [
             "pot:Identity",
             "pot:Link"
@@ -341,25 +302,32 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "data": {
-        "@id": "pot:data",
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Päivitysaika",
+            "en-us": "Update time"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is updated"
+        },
         "domain": [
             "pot:Identity",
             "pot:Link"
         ]
     },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:metadata",
         "rdfs:label": {
-            "en-us": "Creation time",
-            "fi-fi": "Luomisaika"
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
         },
         "rdfs:comment": {
-            "en-us": "Time when the data is created"
+            "en-us": "Creator of and identity"
         },
         "domain": [
             "pot:Identity",
@@ -377,23 +345,20 @@
             "pot:Identity"
         ]
     },
-    "content": {
-        "@id": "pot:description/content",
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:description",
+        "subPropertyOf": "pot:metadata",
         "rdfs:label": {
-            "en-us": "Content",
-            "fi-fi": "Sisältö"
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
         },
         "rdfs:comment": {
-            "en-us": "Content is \"full description\" of something",
-            "fi-fi": "Sisältö on vapaamuotoinen kokonaiskuvaus jostain"
+            "en-us": "Updater of an identity"
         },
-        "pot:valueType": [
-            "xsd:string"
-        ],
         "domain": [
-            "pot:Identity/Message"
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "url": {
@@ -419,6 +384,25 @@
             "pot:Identity/Project"
         ]
     },
+    "content": {
+        "@id": "pot:description/content",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:description",
+        "rdfs:label": {
+            "en-us": "Content",
+            "fi-fi": "Sisältö"
+        },
+        "rdfs:comment": {
+            "en-us": "Content is \"full description\" of something",
+            "fi-fi": "Sisältö on vapaamuotoinen kokonaiskuvaus jostain"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/Message"
+        ]
+    },
     "metadata": {
         "@id": "pot:metadata",
         "@type": "owl:DatatypeProperty",
@@ -429,6 +413,22 @@
         "rdfs:comment": {
             "en-us": "Metadata container",
             "fi-fi": "Ominaisuuskategoria metatiedolle."
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "en-us": "Creation time",
+            "fi-fi": "Luomisaika"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is created"
         },
         "domain": [
             "pot:Identity",

@@ -51,19 +51,23 @@
                 "pot:required": true,
                 "pot:readonly": false
             },
-            "updatedBy": {
-                "@id": "pot:metadata/updatedBy",
+            "governmentPermanent": {
+                "@id": "pot:identifier/governmentPermanent",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
+                "subPropertyOf": "pot:identifier",
                 "rdfs:label": {
-                    "fi-fi": "Identieetin päivittäjä",
-                    "en-us": "Updater"
+                    "en-us": "Permanent Official Id",
+                    "fi-fi": "Y-tunnus"
                 },
                 "rdfs:comment": {
-                    "en-us": "Updater of an identity"
+                    "en-us": "Permanent identifier given by an official authority in Finland",
+                    "fi-fi": "Yritys- ja yhteisötunnus eli Y-tunnus on PRH:n tai Verohallinnon yritykselle ja yhteisölle antama tunnus. Siinä on seitsemän numeroa, väliviiva ja tarkistusmerkki, eli se on muotoa 1234567-8."
                 },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
                 "pot:required": false,
-                "pot:readonly": true
+                "pot:readonly": false
             },
             "registrationCountry": {
                 "@id": "pot:identifier/registrationCountry",
@@ -82,88 +86,18 @@
                 ],
                 "pot:required": false
             },
-            "updatedAt": {
-                "@id": "pot:metadata/updatedAt",
+            "ifcGuid": {
+                "@id": "pot:identifier/ifcGuid",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
+                "subPropertyOf": "pot:identifier",
                 "rdfs:label": {
-                    "fi-fi": "Päivitysaika",
-                    "en-us": "Update time"
+                    "en-us": "IFC GUID",
+                    "fi-fi": "IFC GUID"
                 },
                 "rdfs:comment": {
-                    "en-us": "Time when the data is updated"
+                    "en-us": "IFC standard based Globally Unique Identifier",
+                    "fi-fi": "IFC standardin mukainen tunniste (GUID:  Globally Unique Identifier)"
                 },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "createdBy": {
-                "@id": "pot:metadata/createdBy",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
-                "rdfs:label": {
-                    "en-us": "Creator",
-                    "fi-fi": "Identiteetin luoja"
-                },
-                "rdfs:comment": {
-                    "en-us": "Creator of and identity"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "categorizationOfficial": {
-                "@id": "pot:categorization/categorizationOfficial",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:categorization",
-                "rdfs:label": {
-                    "en-us": "Official categorization",
-                    "fi-fi": "Viranomaisen luokitus"
-                },
-                "rdfs:comment": {
-                    "en-us": "Categorization based on official (governmental) classification",
-                    "fi-fi": "Viranomaisen antama luokitus"
-                },
-                "label": [
-                    {
-                        "rdfs:label": {
-                            "en-us": "Space type - official",
-                            "fi-fi": "Tilatyyppi - viranomainen"
-                        },
-                        "domain": [
-                            "pot:Identity/Space",
-                            "pot:Identity/Space/Room"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Industry category",
-                            "fi-fi": "Toimialaluokka"
-                        },
-                        "domain": [
-                            "pot:Identity/LegalParty/Organization"
-                        ]
-                    }
-                ],
-                "comment": [
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Organization categorization given by official authority",
-                            "fi-fi": "Viranomaisen antama toimialaluokitus"
-                        },
-                        "domain": [
-                            "pot:Identity/LegalParty/Organization"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Space type name derived from official categorization naming",
-                            "fi-fi": "Viranomaisen antama luokitus tilalle"
-                        },
-                        "domain": [
-                            "pot:Identity/Space",
-                            "pot:Identity/Space/Room"
-                        ]
-                    }
-                ],
                 "pot:valueType": [
                     "xsd:string"
                 ],
@@ -394,38 +328,6 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
-            "createdAt": {
-                "@id": "pot:metadata/createdAt",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
-                "rdfs:label": {
-                    "en-us": "Creation time",
-                    "fi-fi": "Luomisaika"
-                },
-                "rdfs:comment": {
-                    "en-us": "Time when the data is created"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "ifcGuid": {
-                "@id": "pot:identifier/ifcGuid",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:identifier",
-                "rdfs:label": {
-                    "en-us": "IFC GUID",
-                    "fi-fi": "IFC GUID"
-                },
-                "rdfs:comment": {
-                    "en-us": "IFC standard based Globally Unique Identifier",
-                    "fi-fi": "IFC standardin mukainen tunniste (GUID:  Globally Unique Identifier)"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
-            },
             "status": {
                 "@id": "pot:lifeCycle/status",
                 "@type": "owl:DatatypeProperty",
@@ -566,6 +468,90 @@
                     "xsd:string"
                 ],
                 "pot:required": false,
+                "pot:readonly": false
+            },
+            "categorizationOfficial": {
+                "@id": "pot:categorization/categorizationOfficial",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:categorization",
+                "rdfs:label": {
+                    "en-us": "Official categorization",
+                    "fi-fi": "Viranomaisen luokitus"
+                },
+                "rdfs:comment": {
+                    "en-us": "Categorization based on official (governmental) classification",
+                    "fi-fi": "Viranomaisen antama luokitus"
+                },
+                "label": [
+                    {
+                        "rdfs:label": {
+                            "en-us": "Space type - official",
+                            "fi-fi": "Tilatyyppi - viranomainen"
+                        },
+                        "domain": [
+                            "pot:Identity/Space",
+                            "pot:Identity/Space/Room"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "en-us": "Industry category",
+                            "fi-fi": "Toimialaluokka"
+                        },
+                        "domain": [
+                            "pot:Identity/LegalParty/Organization"
+                        ]
+                    }
+                ],
+                "comment": [
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Organization categorization given by official authority",
+                            "fi-fi": "Viranomaisen antama toimialaluokitus"
+                        },
+                        "domain": [
+                            "pot:Identity/LegalParty/Organization"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Space type name derived from official categorization naming",
+                            "fi-fi": "Viranomaisen antama luokitus tilalle"
+                        },
+                        "domain": [
+                            "pot:Identity/Space",
+                            "pot:Identity/Space/Room"
+                        ]
+                    }
+                ],
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "pot:required": false,
+                "pot:readonly": false
+            },
+            "createdBy": {
+                "@id": "pot:metadata/createdBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "en-us": "Creator",
+                    "fi-fi": "Identiteetin luoja"
+                },
+                "rdfs:comment": {
+                    "en-us": "Creator of and identity"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "id": {
+                "@id": "pot:identifier/id",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "pot:required": true,
                 "pot:readonly": false
             },
             "descriptionGeneral": {
@@ -820,34 +806,6 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
-            "id": {
-                "@id": "pot:identifier/id",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:identifier",
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "pot:required": true,
-                "pot:readonly": false
-            },
-            "governmentPermanent": {
-                "@id": "pot:identifier/governmentPermanent",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:identifier",
-                "rdfs:label": {
-                    "en-us": "Permanent Official Id",
-                    "fi-fi": "Y-tunnus"
-                },
-                "rdfs:comment": {
-                    "en-us": "Permanent identifier given by an official authority in Finland",
-                    "fi-fi": "Yritys- ja yhteisötunnus eli Y-tunnus on PRH:n tai Verohallinnon yritykselle ja yhteisölle antama tunnus. Siinä on seitsemän numeroa, väliviiva ja tarkistusmerkki, eli se on muotoa 1234567-8."
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
-            },
             "url": {
                 "@id": "pot:identifier/url",
                 "@type": "owl:DatatypeProperty",
@@ -866,6 +824,34 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
+            "updatedAt": {
+                "@id": "pot:metadata/updatedAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "fi-fi": "Päivitysaika",
+                    "en-us": "Update time"
+                },
+                "rdfs:comment": {
+                    "en-us": "Time when the data is updated"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "updatedBy": {
+                "@id": "pot:metadata/updatedBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "fi-fi": "Identieetin päivittäjä",
+                    "en-us": "Updater"
+                },
+                "rdfs:comment": {
+                    "en-us": "Updater of an identity"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
             "metadata": {
                 "@id": "pot:metadata",
                 "@type": "owl:DatatypeProperty",
@@ -876,6 +862,20 @@
                 "rdfs:comment": {
                     "en-us": "Metadata container",
                     "fi-fi": "Ominaisuuskategoria metatiedolle."
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "createdAt": {
+                "@id": "pot:metadata/createdAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "en-us": "Creation time",
+                    "fi-fi": "Luomisaika"
+                },
+                "rdfs:comment": {
+                    "en-us": "Time when the data is created"
                 },
                 "pot:required": false,
                 "pot:readonly": true
