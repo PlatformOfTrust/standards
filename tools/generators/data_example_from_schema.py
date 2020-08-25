@@ -19,7 +19,7 @@ def create_data_example_from_schema(base_dir, target_dir, export_onto_url):
                     data = json.load(json_file)
                 # Build data example json based on schema
                 data_example = dict()
-                data_example['@context'] = f'{export_onto_url[:-1]}{path[2:]}/{name[:-5]}/'
+                data_example['@context'] = f'{export_onto_url}Context/{name[:-5]}/'
                 data_example['@type'] = f'{name[:-5]}'
                 data_example['@id'] = ''
                 data_example['data'] = ''
@@ -32,8 +32,6 @@ def create_data_example_from_schema(base_dir, target_dir, export_onto_url):
                                             if 'examples' in data['properties'][i]['properties'][k] else '' for k in data['properties'][i]['properties']}
                         else:
                             data_example[i] = ''
-
-                data_example['@context'] = f'{export_onto_url[:-1]}{path.replace("Schema", "Context")[2:]}/{name[:-5]}/'
 
                 # Build DataExample files
                 data_example_path = path.replace(base_dir, target_dir)
