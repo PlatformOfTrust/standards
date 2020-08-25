@@ -52,7 +52,10 @@ def create_context_from_data_product(rdf_class, entity_file: Dict[str, Any], ont
         "PriceForecastDataProductParameters": "Price",
         "ElectricityPriceForecastDataProductContext": "Electricity",
         "ElectricityPriceForecastDataProductOutput": "Electricity",
-        "ElectricityPriceForecastDataProductParameters": "Electricity"
+        "ElectricityPriceForecastDataProductParameters": "Electricity",
+        "ProjectDataProductContext": "Project",
+        "ProjectDataProductOutput": "Project",
+        "ProjectDataProductParameters": "Project"
     }
 
     if entity_file.get('id') not in ('DataProductContext', 'DataProductOutput', 'DataProductParameters'):
