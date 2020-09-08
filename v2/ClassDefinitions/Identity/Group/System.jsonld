@@ -52,6 +52,24 @@
                 "pot:required": true,
                 "pot:readonly": false
             },
+            "additionalInformation": {
+                "@id": "pot:description/additionalInformation",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:description",
+                "rdfs:label": {
+                    "en-us": "Additional information",
+                    "fi-fi": "Lisätiedot"
+                },
+                "rdfs:comment": {
+                    "en-us": "Additional information",
+                    "fi-fi": "Lisätiedot"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "pot:required": false,
+                "pot:readonly": false
+            },
             "name": {
                 "@id": "pot:identifier/name",
                 "@type": "owl:DatatypeProperty",
@@ -67,29 +85,20 @@
                 "label": [
                     {
                         "rdfs:label": {
+                            "fi-fi": "Kiinteistön nimi",
+                            "en-us": "Name"
+                        },
+                        "domain": [
+                            "pot:Identity/Space/RealEstate"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
                             "en-us": "Local name",
                             "fi-fi": "Paikallinen nimi"
                         },
                         "domain": [
                             "pot:Identity/Equipment/Device"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "fi-fi": "Huoneen nimi",
-                            "en-us": "Room name"
-                        },
-                        "domain": [
-                            "pot:Identity/Space/Room"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Product name",
-                            "fi-fi": "Tuotenimi"
-                        },
-                        "domain": [
-                            "pot:Identity/Product"
                         ]
                     },
                     {
@@ -103,11 +112,20 @@
                     },
                     {
                         "rdfs:label": {
-                            "fi-fi": "Hinnastonimi",
-                            "en-us": "Price plan name"
+                            "fi-fi": "Laatuominaisuuden nimi",
+                            "en-us": "Quality name"
                         },
                         "domain": [
-                            "pot:Annotation/PricePlan"
+                            "pot:Annotation/Quality"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "fi-fi": "Järjestelmän nimi",
+                            "en-us": "System name"
+                        },
+                        "domain": [
+                            "pot:Identity/Group/System"
                         ]
                     },
                     {
@@ -121,27 +139,29 @@
                     },
                     {
                         "rdfs:label": {
-                            "fi-fi": "Kiinteistön nimi",
-                            "en-us": "Name"
+                            "fi-fi": "Hinnastonimi",
+                            "en-us": "Price plan name"
                         },
                         "domain": [
-                            "pot:Identity/Space/RealEstate"
+                            "pot:Annotation/PricePlan"
                         ]
                     },
                     {
                         "rdfs:label": {
-                            "en-us": "Condition name",
-                            "fi-fi": "Ehdon nimi"
+                            "en-us": "Product name",
+                            "fi-fi": "Tuotenimi"
                         },
-                        "domain": []
+                        "domain": [
+                            "pot:Identity/Product"
+                        ]
                     },
                     {
                         "rdfs:label": {
-                            "fi-fi": "Laatuominaisuuden nimi",
-                            "en-us": "Quality name"
+                            "fi-fi": "Huoneen nimi",
+                            "en-us": "Room name"
                         },
                         "domain": [
-                            "pot:Annotation/Quality"
+                            "pot:Identity/Space/Room"
                         ]
                     },
                     {
@@ -164,12 +184,10 @@
                     },
                     {
                         "rdfs:label": {
-                            "fi-fi": "Järjestelmän nimi",
-                            "en-us": "System name"
+                            "en-us": "Condition name",
+                            "fi-fi": "Ehdon nimi"
                         },
-                        "domain": [
-                            "pot:Identity/Group/System"
-                        ]
+                        "domain": []
                     }
                 ],
                 "comment": [
@@ -183,26 +201,10 @@
                     },
                     {
                         "rdfs:comment": {
-                            "en-us": "Name of the price plan"
+                            "en-us": "Name given locally for the building element"
                         },
                         "domain": [
-                            "pot:Annotation/PricePlan"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Name given locally for the device"
-                        },
-                        "domain": [
-                            "pot:Identity/Equipment/Device"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Name of the real estate"
-                        },
-                        "domain": [
-                            "pot:Identity/Space/RealEstate"
+                            "pot:Identity/Element/BuildingElement"
                         ]
                     },
                     {
@@ -215,34 +217,10 @@
                     },
                     {
                         "rdfs:comment": {
-                            "en-us": "Name of the quality class"
+                            "en-us": "Name givento the system"
                         },
                         "domain": [
-                            "pot:Annotation/Quality"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Unique product name given by manufacturer"
-                        },
-                        "domain": [
-                            "pot:Identity/Product"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Name given locally for the building element"
-                        },
-                        "domain": [
-                            "pot:Identity/Element/BuildingElement"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Apartment name"
-                        },
-                        "domain": [
-                            "pot:Identity/Space/Apartment"
+                            "pot:Identity/Group/System"
                         ]
                     },
                     {
@@ -255,6 +233,46 @@
                     },
                     {
                         "rdfs:comment": {
+                            "en-us": "Name of the price plan"
+                        },
+                        "domain": [
+                            "pot:Annotation/PricePlan"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Unique product name given by manufacturer"
+                        },
+                        "domain": [
+                            "pot:Identity/Product"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Name of the quality class"
+                        },
+                        "domain": [
+                            "pot:Annotation/Quality"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Name of the real estate"
+                        },
+                        "domain": [
+                            "pot:Identity/Space/RealEstate"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Name given locally for the device"
+                        },
+                        "domain": [
+                            "pot:Identity/Equipment/Device"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
                             "en-us": "Name of organisation"
                         },
                         "domain": [
@@ -263,10 +281,10 @@
                     },
                     {
                         "rdfs:comment": {
-                            "en-us": "Name givento the system"
+                            "en-us": "Apartment name"
                         },
                         "domain": [
-                            "pot:Identity/Group/System"
+                            "pot:Identity/Space/Apartment"
                         ]
                     }
                 ],
@@ -300,24 +318,6 @@
                     },
                     {
                         "rdfs:label": {
-                            "en-us": "Case status",
-                            "fi-fi": "Palvelupyynnön tila"
-                        },
-                        "domain": [
-                            "pot:Identity/Case"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Product status",
-                            "fi-fi": "Tuotteen status"
-                        },
-                        "domain": [
-                            "pot:Identity/Product"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
                             "en-us": "Project status",
                             "fi-fi": "Projektin tila"
                         },
@@ -332,6 +332,24 @@
                         },
                         "domain": [
                             "pot:Identity/Process"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "en-us": "Case status",
+                            "fi-fi": "Palvelupyynnön tila"
+                        },
+                        "domain": [
+                            "pot:Identity/Case"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "en-us": "Product status",
+                            "fi-fi": "Tuotteen status"
+                        },
+                        "domain": [
+                            "pot:Identity/Product"
                         ]
                     },
                     {
@@ -418,51 +436,34 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
-            "createdBy": {
-                "@id": "pot:metadata/createdBy",
+            "createdAt": {
+                "@id": "pot:metadata/createdAt",
                 "@type": "owl:DatatypeProperty",
                 "subPropertyOf": "pot:metadata",
                 "rdfs:label": {
-                    "en-us": "Creator",
-                    "fi-fi": "Identiteetin luoja"
+                    "en-us": "Creation time",
+                    "fi-fi": "Luomisaika"
                 },
                 "rdfs:comment": {
-                    "en-us": "Creator of and identity"
+                    "en-us": "Time when the data is created"
                 },
                 "pot:required": false,
                 "pot:readonly": true
             },
-            "additionalInformation": {
-                "@id": "pot:description/additionalInformation",
+            "usageMain": {
+                "@id": "pot:categorization/usageMain",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:description",
+                "subPropertyOf": "pot:categorization",
                 "rdfs:label": {
-                    "en-us": "Additional information",
-                    "fi-fi": "Lisätiedot"
+                    "fi-fi": "Käyttötarkoitus",
+                    "en-us": "Main usage purpose"
                 },
                 "rdfs:comment": {
-                    "en-us": "Additional information",
-                    "fi-fi": "Lisätiedot"
+                    "en-us": "Main usage purpose",
+                    "fi-fi": "Pääasiallinen käyttötarkoitus"
                 },
                 "pot:valueType": [
                     "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
-            },
-            "endDateTimeValidity": {
-                "@id": "pot:time/endDateTimeValidity",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:time",
-                "rdfs:label": {
-                    "fi-fi": "Järjestelmän perustamispäivä",
-                    "en-us": "System establishment date"
-                },
-                "rdfs:comment": {
-                    "en-us": "Valid start time for the system (when system has been defined)"
-                },
-                "pot:valueType": [
-                    "xsd:dateTime"
                 ],
                 "pot:required": false,
                 "pot:readonly": false
@@ -476,6 +477,20 @@
                 ],
                 "pot:required": true,
                 "pot:readonly": false
+            },
+            "metadata": {
+                "@id": "pot:metadata",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Metadata"
+                },
+                "rdfs:comment": {
+                    "en-us": "Metadata container",
+                    "fi-fi": "Ominaisuuskategoria metatiedolle."
+                },
+                "pot:required": false,
+                "pot:readonly": true
             },
             "startDateTimeValidity": {
                 "@id": "pot:time/startDateTimeValidity",
@@ -493,6 +508,34 @@
                 ],
                 "pot:required": false,
                 "pot:readonly": false
+            },
+            "createdBy": {
+                "@id": "pot:metadata/createdBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "en-us": "Creator",
+                    "fi-fi": "Identiteetin luoja"
+                },
+                "rdfs:comment": {
+                    "en-us": "Creator of and identity"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "updatedAt": {
+                "@id": "pot:metadata/updatedAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "fi-fi": "Päivitysaika",
+                    "en-us": "Update time"
+                },
+                "rdfs:comment": {
+                    "en-us": "Time when the data is updated"
+                },
+                "pot:required": false,
+                "pot:readonly": true
             },
             "updatedBy": {
                 "@id": "pot:metadata/updatedBy",
@@ -526,62 +569,19 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
-            "updatedAt": {
-                "@id": "pot:metadata/updatedAt",
+            "endDateTimeValidity": {
+                "@id": "pot:time/endDateTimeValidity",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
+                "subPropertyOf": "pot:time",
                 "rdfs:label": {
-                    "fi-fi": "Päivitysaika",
-                    "en-us": "Update time"
+                    "fi-fi": "Järjestelmän perustamispäivä",
+                    "en-us": "System establishment date"
                 },
                 "rdfs:comment": {
-                    "en-us": "Time when the data is updated"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "metadata": {
-                "@id": "pot:metadata",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:topDataProperty",
-                "rdfs:label": {
-                    "en-us": "Metadata"
-                },
-                "rdfs:comment": {
-                    "en-us": "Metadata container",
-                    "fi-fi": "Ominaisuuskategoria metatiedolle."
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "createdAt": {
-                "@id": "pot:metadata/createdAt",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
-                "rdfs:label": {
-                    "en-us": "Creation time",
-                    "fi-fi": "Luomisaika"
-                },
-                "rdfs:comment": {
-                    "en-us": "Time when the data is created"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "usageMain": {
-                "@id": "pot:categorization/usageMain",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:categorization",
-                "rdfs:label": {
-                    "fi-fi": "Käyttötarkoitus",
-                    "en-us": "Main usage purpose"
-                },
-                "rdfs:comment": {
-                    "en-us": "Main usage purpose",
-                    "fi-fi": "Pääasiallinen käyttötarkoitus"
+                    "en-us": "Valid start time for the system (when system has been defined)"
                 },
                 "pot:valueType": [
-                    "xsd:string"
+                    "xsd:dateTime"
                 ],
                 "pot:required": false,
                 "pot:readonly": false
