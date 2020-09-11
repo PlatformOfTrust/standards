@@ -50,10 +50,10 @@
   "vann:preferredNamespacePrefix": "pot",
   "vann:preferredNamespaceUri": "https://standards.oftrust.net/v1/Vocabulary/",
   "dct:rights": "TODO",
-  "dct:publisher": "Suomen Tilaajavastuu Oy",
+  "dct:publisher": "Platform of Trust Oy",
   "cc:license": "https://tldrlegal.com/license/mit-license",
   "cc:attributionName": "Platform of Trust Core Ontology",
-  "cc:attributionURL": "http://www.tilaajavastuu.fi",
+  "cc:attributionURL": "http://platformoftrust.net",
   "rdfs:seeAlso": "https://github.com/PlatformOfTrust/standards/",
   "defines": [
   {
@@ -119,6 +119,52 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "The class of PoT classes. PoT classes and their instances are dereferenceable resources."
+        }
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:QrCode",
+    "@type": "pot:Class",
+    "subClassOf": "pot:Device",
+    "dli:label": [
+      {
+        "rdfs:label": {
+          "@language": "en-us",
+          "@value": "QR Code"
+        }
+      }
+    ],
+    "dli:comment": [
+      {
+        "rdfs:comment": {
+          "@language": "en-us",
+          "@value": "A machine-readable code consisting of an array of black and white squares, typically used for storing URLs or other information for reading by the camera on a smartphone"
+        }
+      }
+    ],
+    "vs:term_status": "unstable",
+    "owl:versionInfo": "DRAFT"
+  },
+  {
+    "@id": "pot:HumiditySensor",
+    "@type": "pot:Class",
+    "subClassOf": "pot:Sensor",
+    "dli:label": [
+      {
+        "rdfs:label": {
+          "@language": "en-us",
+          "@value": "Humidity Sensor"
+        }
+      }
+    ],
+    "dli:comment": [
+      {
+        "rdfs:comment": {
+          "@language": "en-us",
+          "@value": "A sensor which measures humidity"
         }
       }
     ],
@@ -253,14 +299,14 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:Story",
+    "@id": "pot:Storey",
     "@type": "pot:Class",
     "subClassOf": "dli:BuiltEnvironment",
     "dli:label": [
       {
         "rdfs:label": {
           "@language": "en-us",
-          "@value": "Story"
+          "@value": "Storey"
         }
       }
     ],
@@ -268,7 +314,7 @@
       {
         "rdfs:comment": {
           "@language": "en-us",
-          "@value": "A Story is the bottom surface of a room or vehicle (also called floor)"
+          "@value": "A Storey is the bottom surface of a room or vehicle (also called floor)"
         }
       }
     ],
@@ -912,7 +958,7 @@
       {
         "rdfs:comment": {
           "@language": "en-us",
-          "@value": "Floor is composed of the structural objects which are built on top of story"
+          "@value": "Floor is composed of the structural objects which are built on top of storey"
         }
       }
     ],
@@ -1096,7 +1142,7 @@
       {
         "rdfs:comment": {
           "@language": "en-us",
-          "@value": "A set of steps leading from one story of a building to another"
+          "@value": "A set of steps leading from one storey of a building to another"
         }
       }
     ],
@@ -1509,29 +1555,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "IFC element name"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "IFC elementti nimi"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "IFC element name"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "IFC elementti nimi"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -1539,15 +1569,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "IFC standard element name"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "IFC standard element name"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "xsd:restriction": {
@@ -1576,29 +1598,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "IFC element type"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "IFC elementti tyyppi"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "IFC element type"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "IFC elementti tyyppi"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -1606,15 +1612,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "IFC standard element type"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "IFC standard element type"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "xsd:restriction": {
@@ -1687,34 +1685,6 @@
       {
         "rdfs:label": {
           "@language": "en-us",
-          "@value": "Space type - local"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Tilatyyppi - paikallinen"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Space type - local"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Tilatyyppi - paikallinen"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
           "@value": "Type name given locally"
         },
         "dli:domain": "pot:BuildingElement"
@@ -1739,26 +1709,24 @@
           "@value": "Lokaali tyypitys"
         },
         "dli:domain": "pot:Device"
+      },
+      {
+        "rdfs:label": {
+          "@language": "en-us",
+          "@value": "Space type - local"
+        }
+      },
+      {
+        "rdfs:label": {
+          "@language": "fi-fi",
+          "@value": "Tilatyyppi - paikallinen"
+        }
       }
     ],
     "dli:comment": [
       {
         "rdfs:comment": {
           "@language": "en-us",
-          "@value": "Space type name derived from local categorization naming"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Space type name derived from local categorization naming"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
           "@value": "Categorisation name given locally"
         },
         "dli:domain": "pot:BuildingElement"
@@ -1769,6 +1737,12 @@
           "@value": "Categorisation name given locally"
         },
         "dli:domain": "pot:Device"
+      },
+      {
+        "rdfs:comment": {
+          "@language": "en-us",
+          "@value": "Space type name derived from local categorization naming"
+        }
       }
     ],
     "xsd:restriction": {
@@ -1858,29 +1832,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Space type - official"
-        },
-        "dli:domain": "pot:Room"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Tilatyyppi - viranomainen"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Space type - official"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Tilatyyppi - viranomainen"
-        },
-        "dli:domain": "pot:Space"
+        }
       }
     ],
     "dli:comment": [
@@ -1895,15 +1853,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "Space type name derived from official categorization naming"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Space type name derived from official categorization naming"
-        },
-        "dli:domain": "pot:Space"
+        }
       }
     ],
     "xsd:restriction": {
@@ -1933,43 +1883,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Main usage purpose"
-        },
-        "dli:domain": "pot:RealEstate"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Käyttötarkoitus"
-        },
-        "dli:domain": "pot:RealEstate"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Main usage purpose"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Käyttötarkoitus"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Main usage purpose"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Käyttötarkoitus"
-        },
-        "dli:domain": "pot:Space"
+        }
       }
     ],
     "dli:comment": [
@@ -1977,22 +1897,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "Main usage purpose"
-        },
-        "dli:domain": "pot:RealEstate"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Main usage purpose"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Main usage purpose"
-        },
-        "dli:domain": "pot:Space"
+        }
       }
     ],
     "xsd:restriction": {
@@ -2133,16 +2038,16 @@
       {
         "rdfs:label": {
           "@language": "en-us",
-          "@value": "Story description"
+          "@value": "Storey description"
         },
-        "dli:domain": "pot:Story"
+        "dli:domain": "pot:Storey"
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Kerroksen kuvaus"
         },
-        "dli:domain": "pot:Story"
+        "dli:domain": "pot:Storey"
       }
     ],
     "dli:comment": [
@@ -2205,9 +2110,9 @@
       {
         "rdfs:comment": {
           "@language": "en-us",
-          "@value": "Description of the story"
+          "@value": "Description of the storey"
         },
-        "dli:domain": "pot:Story"
+        "dli:domain": "pot:Storey"
       }
     ],
     "xsd:restriction": {
@@ -2223,7 +2128,7 @@
       "pot:RealEstate",
       "pot:Room",
       "pot:Space",
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:string"
@@ -2243,43 +2148,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Additional information"
-        },
-        "dli:domain": "pot:Room"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Lisätiedot"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Additional information"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Lisätiedot"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Additional information"
-        },
-        "dli:domain": "pot:Story"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Lisätiedot"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "dli:comment": [
@@ -2287,22 +2162,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "Additional information"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Additional information"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Additional information"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "xsd:restriction": {
@@ -2312,7 +2172,7 @@
     "domain": [
       "pot:Room",
       "pot:Space",
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:string"
@@ -2377,29 +2237,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Local code"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Paikallinen koodi"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Local code"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Paikallinen koodi"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -2489,113 +2333,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Building"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Building"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Organization"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Organization"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:RealEstate"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:RealEstate"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Story"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "IFC GUID"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "dli:comment": [
@@ -2603,57 +2347,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "IFC standard based Globally Unique Identifier"
-        },
-        "dli:domain": "pot:Building"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "IFC standard based Globally Unique Identifier"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "IFC standard based Globally Unique Identifier"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "IFC standard based Globally Unique Identifier"
-        },
-        "dli:domain": "pot:Organization"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "IFC standard based Globally Unique Identifier"
-        },
-        "dli:domain": "pot:RealEstate"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "IFC standard based Globally Unique Identifier"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "IFC standard based Globally Unique Identifier"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "IFC standard based Globally Unique Identifier"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "xsd:restriction": {
@@ -2668,7 +2362,7 @@
       "pot:RealEstate",
       "pot:Room",
       "pot:Space",
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:string"
@@ -2722,7 +2416,7 @@
     "owl:versionInfo": "DRAFT"
   },
   {
-    "@id": "pot:idlocal",
+    "@id": "pot:idLocal",
     "@type": "rdf:Property",
     "subPropertyOf": "pot:identifier",
     "dli:nested": "data",
@@ -2747,43 +2441,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Local Id"
-        },
-        "dli:domain": "pot:Room"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Paikallinen tunniste"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Local Id"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Paikallinen tunniste"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Local Id"
-        },
-        "dli:domain": "pot:Story"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Paikallinen tunniste"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "dli:comment": [
@@ -2797,23 +2461,15 @@
       {
         "rdfs:comment": {
           "@language": "en-us",
-          "@value": "Locally given identifier for the space"
+          "@value": "Locally given identifier for the storey"
         },
-        "dli:domain": "pot:Room"
+        "dli:domain": "pot:Storey"
       },
       {
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "Locally given identifier for the space"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Locally given identifier for the story"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "xsd:restriction": {
@@ -2824,7 +2480,7 @@
       "pot:Case",
       "pot:Room",
       "pot:Space",
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:string"
@@ -2853,34 +2509,6 @@
           "@value": "Rakennuksen nimi"
         },
         "dli:domain": "pot:Building"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Local name"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Paikallinen nimi"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Local name"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Paikallinen nimi"
-        },
-        "dli:domain": "pot:Device"
       },
       {
         "rdfs:label": {
@@ -2937,6 +2565,18 @@
           "@value": "Huoneen nimi"
         },
         "dli:domain": "pot:Room"
+      },
+      {
+        "rdfs:label": {
+          "@language": "en-us",
+          "@value": "Local name"
+        }
+      },
+      {
+        "rdfs:label": {
+          "@language": "fi-fi",
+          "@value": "Paikallinen nimi"
+        }
       }
     ],
     "dli:comment": [
@@ -3080,29 +2720,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Official Id"
-        },
-        "dli:domain": "pot:Room"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Viranomaisen tunniste"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Official Id"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Viranomaisen tunniste"
-        },
-        "dli:domain": "pot:Space"
+        }
       }
     ],
     "dli:comment": [
@@ -3511,34 +3135,6 @@
       {
         "rdfs:label": {
           "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Building"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Elinkaari - Status"
-        },
-        "dli:domain": "pot:Building"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Elinkaari - Status"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
           "@value": "Case status"
         },
         "dli:domain": "pot:Case"
@@ -3554,99 +3150,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Device"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Elinkaari - Status"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Organization"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Elinkaari - Status"
-        },
-        "dli:domain": "pot:Organization"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:RealEstate"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Elinkaari - Status"
-        },
-        "dli:domain": "pot:RealEstate"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Elinkaari - Status"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Elinkaari - Status"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Elinkaari - Status"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Story"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Elinkaari - Status"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "dli:comment": [
@@ -3660,13 +3170,6 @@
       {
         "rdfs:comment": {
           "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
           "@value": "Case state"
         },
         "dli:domain": "pot:Case"
@@ -3675,50 +3178,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Organization"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:RealEstate"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Life cycle status"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "xsd:restriction": {
@@ -3735,7 +3195,7 @@
       "pot:Room",
       "pot:Space",
       "pot:Space",
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:string"
@@ -3755,29 +3215,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Area - gross"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Pinta-ala - brutto"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Area - gross"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Pinta-ala - brutto"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -3821,29 +3265,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Area - net"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Pinta-ala - netto"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Area - net"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Pinta-ala - netto"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -4063,29 +3491,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Color code"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Väritunnus"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Color code"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Väritunnus"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -4130,29 +3542,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Color"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Väri"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Color"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Väri"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -4241,71 +3637,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Height"
-        },
-        "dli:domain": "pot:Building"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Korkeus"
-        },
-        "dli:domain": "pot:Building"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Height"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Korkeus"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Height"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Korkeus"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Height"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Korkeus"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Height"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Korkeus"
-        },
-        "dli:domain": "pot:Space"
+        }
       }
     ],
     "dli:comment": [
@@ -4373,29 +3711,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Length"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Pituus"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Length"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Pituus"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -4615,32 +3937,32 @@
       {
         "rdfs:label": {
           "@language": "en-us",
-          "@value": "Story area size"
+          "@value": "Storey area size"
         },
-        "dli:domain": "pot:Story"
+        "dli:domain": "pot:Storey"
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Pinta-ala/Kerrosala"
         },
-        "dli:domain": "pot:Story"
+        "dli:domain": "pot:Storey"
       }
     ],
     "dli:comment": [
       {
         "rdfs:comment": {
           "@language": "en-us",
-          "@value": "Area of the story"
+          "@value": "Area of the storey"
         },
-        "dli:domain": "pot:Story"
+        "dli:domain": "pot:Storey"
       }
     ],
     "xsd:restriction": {
       "xsd:base": "xsd:decimal"
     },
     "domain": [
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:decimal"
@@ -4660,29 +3982,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Floor area size"
-        },
-        "dli:domain": "pot:Room"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Pinta-ala/Kerrosala"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Floor area size"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Pinta-ala/Kerrosala"
-        },
-        "dli:domain": "pot:Space"
+        }
       }
     ],
     "dli:comment": [
@@ -4690,15 +3996,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "Area of the space"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Area of the space"
-        },
-        "dli:domain": "pot:Space"
+        }
       }
     ],
     "xsd:restriction": {
@@ -4726,43 +4024,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Living area size"
-        },
-        "dli:domain": "pot:Room"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Huoneistoala/Asuinpinta-ala"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Living area size"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Huoneistoala/Asuinpinta-ala"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Living area size"
-        },
-        "dli:domain": "pot:Story"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Huoneistoala/Asuinpinta-ala"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "dli:comment": [
@@ -4777,15 +4045,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "Size of area suitable for, or used for, living"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Size of area suitable for, or used for, living"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "xsd:restriction": {
@@ -4794,7 +4054,7 @@
     "domain": [
       "pot:Room",
       "pot:Space",
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:decimal"
@@ -4814,43 +4074,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Audited living area size"
-        },
-        "dli:domain": "pot:Room"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Asuinpinta-ala - tarkistusmitattu"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Audited living area size"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Asuinpinta-ala - tarkistusmitattu"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Audited living area size"
-        },
-        "dli:domain": "pot:Story"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Asuinpinta-ala - tarkistusmitattu"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "dli:comment": [
@@ -4858,22 +4088,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "Size of audited area suitable for, or used for, living"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Size of audited area suitable for, or used for, living"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
-          "@value": "Size of audited area suitable for, or used for, living"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "xsd:restriction": {
@@ -4882,7 +4097,7 @@
     "domain": [
       "pot:Room",
       "pot:Space",
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:decimal"
@@ -4946,43 +4161,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Thickness"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Paksuus"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Thickness"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Paksuus"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Thickness"
-        },
-        "dli:domain": "pot:Story"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Paksuus"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "dli:comment": [
@@ -5005,7 +4190,7 @@
           "@language": "en-us",
           "@value": "Thickness of the object"
         },
-        "dli:domain": "pot:Story"
+        "dli:domain": "pot:Storey"
       }
     ],
     "xsd:restriction": {
@@ -5014,7 +4199,7 @@
     "domain": [
       "pot:BuildingElement",
       "pot:Device",
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:decimal"
@@ -5034,29 +4219,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Weight"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Paino"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Weight"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Paino"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -5100,29 +4269,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Width"
-        },
-        "dli:domain": "pot:BuildingElement"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Leveys"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Width"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Leveys"
-        },
-        "dli:domain": "pot:Device"
+        }
       }
     ],
     "dli:comment": [
@@ -5166,85 +4319,13 @@
         "rdfs:label": {
           "@language": "en-us",
           "@value": "Volume"
-        },
-        "dli:domain": "pot:Building"
+        }
       },
       {
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Tilavuus"
-        },
-        "dli:domain": "pot:Building"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Volume"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Tilavuus"
-        },
-        "dli:domain": "pot:BuildingElement"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Volume"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Tilavuus"
-        },
-        "dli:domain": "pot:Device"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Volume"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Tilavuus"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Volume"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Tilavuus"
-        },
-        "dli:domain": "pot:Space"
-      },
-      {
-        "rdfs:label": {
-          "@language": "en-us",
-          "@value": "Volume"
-        },
-        "dli:domain": "pot:Story"
-      },
-      {
-        "rdfs:label": {
-          "@language": "fi-fi",
-          "@value": "Tilavuus"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "dli:comment": [
@@ -5272,13 +4353,6 @@
       {
         "rdfs:comment": {
           "@language": "en-us",
-          "@value": "Volume of the object"
-        },
-        "dli:domain": "pot:Room"
-      },
-      {
-        "rdfs:comment": {
-          "@language": "en-us",
           "@value": "Volume of the space"
         },
         "dli:domain": "pot:Space"
@@ -5287,8 +4361,7 @@
         "rdfs:comment": {
           "@language": "en-us",
           "@value": "Volume of the object"
-        },
-        "dli:domain": "pot:Story"
+        }
       }
     ],
     "xsd:restriction": {
@@ -5300,7 +4373,7 @@
       "pot:Device",
       "pot:Room",
       "pot:Space",
-      "pot:Story"
+      "pot:Storey"
     ],
     "range": [
       "xsd:decimal"
@@ -5523,51 +4596,13 @@
       "pot:Class",
       "pot:Space",
       "pot:Organization",
-      "pot:LimitedCompany",
-      "pot:HousingCooperative",
       "pot:Building",
-      "pot:Story",
+      "pot:Storey",
       "pot:Room",
       "pot:BuildingSystems",
-      "pot:HeatingSystem",
-      "pot:VentilationSystem",
-      "pot:AirConditioningSystem",
-      "pot:SewageSystem",
-      "pot:PowerSystem",
-      "pot:SecuritySystem",
-      "pot:LightingSystem",
-      "pot:BuildingAutomationSystem",
-      "pot:VideoSurveillanceSystem",
       "pot:Device",
-      "pot:Sensor",
-      "pot:TemperatureSensor",
-      "pot:CarbonDioxideSensor",
-      "pot:QuantitySensor",
-      "pot:PresenceSensor",
-      "pot:AirFilteringDevice",
-      "pot:AirConditioningDevice",
-      "pot:VentilationDevice",
-      "pot:HeatingDevice",
-      "pot:Radiator",
-      "pot:PowerDevice",
-      "pot:WaterDevice",
-      "pot:Faucet",
-      "pot:SecurityDevice",
       "pot:BuildingElement",
-      "pot:Floor",
-      "pot:Column",
-      "pot:Slab",
-      "pot:Beam",
-      "pot:Wall",
-      "pot:Window",
-      "pot:Door",
-      "pot:CurtainWall",
-      "pot:Stair",
-      "pot:Roof",
       "pot:Case",
-      "pot:RealEstate",
-      "pot:Apartment",
-      "pot:Zone",
       "pot:TenantAt",
       "pot:OwnerOf",
       "pot:OwnerAt",
@@ -5617,51 +4652,13 @@
       "pot:Class",
       "pot:Space",
       "pot:Organization",
-      "pot:LimitedCompany",
-      "pot:HousingCooperative",
       "pot:Building",
-      "pot:Story",
+      "pot:Storey",
       "pot:Room",
       "pot:BuildingSystems",
-      "pot:HeatingSystem",
-      "pot:VentilationSystem",
-      "pot:AirConditioningSystem",
-      "pot:SewageSystem",
-      "pot:PowerSystem",
-      "pot:SecuritySystem",
-      "pot:LightingSystem",
-      "pot:BuildingAutomationSystem",
-      "pot:VideoSurveillanceSystem",
       "pot:Device",
-      "pot:Sensor",
-      "pot:TemperatureSensor",
-      "pot:CarbonDioxideSensor",
-      "pot:QuantitySensor",
-      "pot:PresenceSensor",
-      "pot:AirFilteringDevice",
-      "pot:AirConditioningDevice",
-      "pot:VentilationDevice",
-      "pot:HeatingDevice",
-      "pot:Radiator",
-      "pot:PowerDevice",
-      "pot:WaterDevice",
-      "pot:Faucet",
-      "pot:SecurityDevice",
       "pot:BuildingElement",
-      "pot:Floor",
-      "pot:Column",
-      "pot:Slab",
-      "pot:Beam",
-      "pot:Wall",
-      "pot:Window",
-      "pot:Door",
-      "pot:CurtainWall",
-      "pot:Stair",
-      "pot:Roof",
       "pot:Case",
-      "pot:RealEstate",
-      "pot:Apartment",
-      "pot:Zone",
       "pot:TenantAt",
       "pot:OwnerOf",
       "pot:OwnerAt",
@@ -5711,51 +4708,13 @@
       "pot:Class",
       "pot:Space",
       "pot:Organization",
-      "pot:LimitedCompany",
-      "pot:HousingCooperative",
       "pot:Building",
-      "pot:Story",
+      "pot:Storey",
       "pot:Room",
       "pot:BuildingSystems",
-      "pot:HeatingSystem",
-      "pot:VentilationSystem",
-      "pot:AirConditioningSystem",
-      "pot:SewageSystem",
-      "pot:PowerSystem",
-      "pot:SecuritySystem",
-      "pot:LightingSystem",
-      "pot:BuildingAutomationSystem",
-      "pot:VideoSurveillanceSystem",
       "pot:Device",
-      "pot:Sensor",
-      "pot:TemperatureSensor",
-      "pot:CarbonDioxideSensor",
-      "pot:QuantitySensor",
-      "pot:PresenceSensor",
-      "pot:AirFilteringDevice",
-      "pot:AirConditioningDevice",
-      "pot:VentilationDevice",
-      "pot:HeatingDevice",
-      "pot:Radiator",
-      "pot:PowerDevice",
-      "pot:WaterDevice",
-      "pot:Faucet",
-      "pot:SecurityDevice",
       "pot:BuildingElement",
-      "pot:Floor",
-      "pot:Column",
-      "pot:Slab",
-      "pot:Beam",
-      "pot:Wall",
-      "pot:Window",
-      "pot:Door",
-      "pot:CurtainWall",
-      "pot:Stair",
-      "pot:Roof",
       "pot:Case",
-      "pot:RealEstate",
-      "pot:Apartment",
-      "pot:Zone",
       "pot:TenantAt",
       "pot:OwnerOf",
       "pot:OwnerAt",
@@ -5805,51 +4764,13 @@
       "pot:Class",
       "pot:Space",
       "pot:Organization",
-      "pot:LimitedCompany",
-      "pot:HousingCooperative",
       "pot:Building",
-      "pot:Story",
+      "pot:Storey",
       "pot:Room",
       "pot:BuildingSystems",
-      "pot:HeatingSystem",
-      "pot:VentilationSystem",
-      "pot:AirConditioningSystem",
-      "pot:SewageSystem",
-      "pot:PowerSystem",
-      "pot:SecuritySystem",
-      "pot:LightingSystem",
-      "pot:BuildingAutomationSystem",
-      "pot:VideoSurveillanceSystem",
       "pot:Device",
-      "pot:Sensor",
-      "pot:TemperatureSensor",
-      "pot:CarbonDioxideSensor",
-      "pot:QuantitySensor",
-      "pot:PresenceSensor",
-      "pot:AirFilteringDevice",
-      "pot:AirConditioningDevice",
-      "pot:VentilationDevice",
-      "pot:HeatingDevice",
-      "pot:Radiator",
-      "pot:PowerDevice",
-      "pot:WaterDevice",
-      "pot:Faucet",
-      "pot:SecurityDevice",
       "pot:BuildingElement",
-      "pot:Floor",
-      "pot:Column",
-      "pot:Slab",
-      "pot:Beam",
-      "pot:Wall",
-      "pot:Window",
-      "pot:Door",
-      "pot:CurtainWall",
-      "pot:Stair",
-      "pot:Roof",
       "pot:Case",
-      "pot:RealEstate",
-      "pot:Apartment",
-      "pot:Zone",
       "pot:TenantAt",
       "pot:OwnerOf",
       "pot:OwnerAt",
@@ -5892,7 +4813,18 @@
     "xsd:restriction": {
       "xsd:base": "xsd:string"
     },
-    "domain": [],
+    "domain": [
+      "pot:Space",
+      "pot:Organization",
+      "pot:Building",
+      "pot:Storey",
+      "pot:Room",
+      "pot:BuildingSystems",
+      "pot:Device",
+      "pot:BuildingElement",
+      "pot:Case",
+      "dli:SupportedAttribute"
+    ],
     "range": [
       "xsd:string"
     ],
@@ -5929,51 +4861,13 @@
       "pot:Class",
       "pot:Space",
       "pot:Organization",
-      "pot:LimitedCompany",
-      "pot:HousingCooperative",
       "pot:Building",
-      "pot:Story",
+      "pot:Storey",
       "pot:Room",
       "pot:BuildingSystems",
-      "pot:HeatingSystem",
-      "pot:VentilationSystem",
-      "pot:AirConditioningSystem",
-      "pot:SewageSystem",
-      "pot:PowerSystem",
-      "pot:SecuritySystem",
-      "pot:LightingSystem",
-      "pot:BuildingAutomationSystem",
-      "pot:VideoSurveillanceSystem",
       "pot:Device",
-      "pot:Sensor",
-      "pot:TemperatureSensor",
-      "pot:CarbonDioxideSensor",
-      "pot:QuantitySensor",
-      "pot:PresenceSensor",
-      "pot:AirFilteringDevice",
-      "pot:AirConditioningDevice",
-      "pot:VentilationDevice",
-      "pot:HeatingDevice",
-      "pot:Radiator",
-      "pot:PowerDevice",
-      "pot:WaterDevice",
-      "pot:Faucet",
-      "pot:SecurityDevice",
       "pot:BuildingElement",
-      "pot:Floor",
-      "pot:Column",
-      "pot:Slab",
-      "pot:Beam",
-      "pot:Wall",
-      "pot:Window",
-      "pot:Door",
-      "pot:CurtainWall",
-      "pot:Stair",
-      "pot:Roof",
       "pot:Case",
-      "pot:RealEstate",
-      "pot:Apartment",
-      "pot:Zone",
       "pot:TenantAt",
       "pot:OwnerOf",
       "pot:OwnerAt",
@@ -6016,51 +4910,13 @@
       "pot:Class",
       "pot:Space",
       "pot:Organization",
-      "pot:LimitedCompany",
-      "pot:HousingCooperative",
       "pot:Building",
-      "pot:Story",
+      "pot:Storey",
       "pot:Room",
       "pot:BuildingSystems",
-      "pot:HeatingSystem",
-      "pot:VentilationSystem",
-      "pot:AirConditioningSystem",
-      "pot:SewageSystem",
-      "pot:PowerSystem",
-      "pot:SecuritySystem",
-      "pot:LightingSystem",
-      "pot:BuildingAutomationSystem",
-      "pot:VideoSurveillanceSystem",
       "pot:Device",
-      "pot:Sensor",
-      "pot:TemperatureSensor",
-      "pot:CarbonDioxideSensor",
-      "pot:QuantitySensor",
-      "pot:PresenceSensor",
-      "pot:AirFilteringDevice",
-      "pot:AirConditioningDevice",
-      "pot:VentilationDevice",
-      "pot:HeatingDevice",
-      "pot:Radiator",
-      "pot:PowerDevice",
-      "pot:WaterDevice",
-      "pot:Faucet",
-      "pot:SecurityDevice",
       "pot:BuildingElement",
-      "pot:Floor",
-      "pot:Column",
-      "pot:Slab",
-      "pot:Beam",
-      "pot:Wall",
-      "pot:Window",
-      "pot:Door",
-      "pot:CurtainWall",
-      "pot:Stair",
-      "pot:Roof",
       "pot:Case",
-      "pot:RealEstate",
-      "pot:Apartment",
-      "pot:Zone",
       "pot:TenantAt",
       "pot:OwnerOf",
       "pot:OwnerAt",
@@ -6199,7 +5055,9 @@
       "xsd:base": "xsd:string",
       "xsd:maxLength": 500
     },
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "range": [
       "xsd:string"
     ],
@@ -6216,7 +5074,9 @@
       "xsd:base": "xsd:string",
       "xsd:maxLength": 500
     },
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "range": [
       "xsd:string"
     ],
@@ -6233,7 +5093,9 @@
       "xsd:base": "xsd:string",
       "xsd:maxLength": 500
     },
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "range": [
       "xsd:string"
     ],
@@ -6249,7 +5111,9 @@
       "xsd:base": "xsd:string",
       "xsd:maxLength": 500
     },
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "range": [
       "xsd:string"
     ],
@@ -6265,7 +5129,9 @@
       "xsd:base": "xsd:string",
       "xsd:maxLength": 500
     },
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "range": [
       "xsd:boolean"
     ],
@@ -6281,7 +5147,9 @@
       "xsd:base": "xsd:string",
       "xsd:maxLength": 500
     },
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "range": [
       "xsd:boolean"
     ],
@@ -6297,7 +5165,9 @@
       "xsd:base": "xsd:string",
       "xsd:maxLength": 500
     },
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "range": [
       "xsd:string"
     ],
@@ -6314,7 +5184,8 @@
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Tuetut luokat"
-        }
+        },
+        "dli:domain": "dli:SupportedClass"
       }
     ],
     "dli:comment": [
@@ -6322,14 +5193,17 @@
         "rdfs:comment": {
           "@language": "fi-fi",
           "@value": "Luokat jotka tiedetään kuuluvan identiteettiin"
-        }
+        },
+        "dli:domain": "dli:SupportedClass"
       }
     ],
     "xsd:restriction": {
       "xsd:base": "xsd:string",
       "xsd:maxLength": 500
     },
-    "domain": [],
+    "domain": [
+      "dli:SupportedClass"
+    ],
     "range": [
       "xsd:string"
     ],
@@ -6346,7 +5220,8 @@
         "rdfs:label": {
           "@language": "fi-fi",
           "@value": "Tuetut attribuutit"
-        }
+        },
+        "dli:domain": "dli:SupportedAttribute"
       }
     ],
     "dli:comment": [
@@ -6354,14 +5229,17 @@
         "rdfs:comment": {
           "@language": "fi-fi",
           "@value": "Attribuutit jotka tiedetään liittyvän identiteettiin"
-        }
+        },
+        "dli:domain": "dli:SupportedAttribute"
       }
     ],
     "xsd:restriction": {
       "xsd:base": "xsd:string",
       "xsd:maxLength": 500
     },
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "range": [
       "xsd:string"
     ],
@@ -6373,7 +5251,9 @@
     "@type": "rdf:Property",
     "dli:required": false,
     "dli:readonly": false,
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
@@ -6382,7 +5262,9 @@
     "@type": "rdf:Property",
     "dli:required": false,
     "dli:readonly": false,
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
@@ -6391,7 +5273,9 @@
     "@type": "rdf:Property",
     "dli:required": false,
     "dli:readonly": false,
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
@@ -6400,7 +5284,9 @@
     "@type": "rdf:Property",
     "dli:required": false,
     "dli:readonly": false,
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
@@ -6409,7 +5295,9 @@
     "@type": "rdf:Property",
     "dli:required": false,
     "dli:readonly": false,
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
@@ -6418,7 +5306,9 @@
     "@type": "rdf:Property",
     "dli:required": false,
     "dli:readonly": false,
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   },
@@ -6427,7 +5317,9 @@
     "@type": "rdf:Property",
     "dli:required": false,
     "dli:readonly": false,
-    "domain": [],
+    "domain": [
+      "dli:SupportedAttribute"
+    ],
     "vs:term_status": "unstable",
     "owl:versionInfo": "DRAFT"
   }
