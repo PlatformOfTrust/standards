@@ -99,16 +99,16 @@
             "@id": "pot:Link/Role"
         }
     },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
+    "metadata": {
+        "@id": "pot:metadata",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Identieetin päivittäjä",
-            "en-us": "Updater"
+            "en-us": "Metadata"
         },
         "rdfs:comment": {
-            "en-us": "Updater of an identity"
+            "en-us": "Metadata container",
+            "fi-fi": "Ominaisuuskategoria metatiedolle."
         },
         "domain": [
             "pot:Identity",
@@ -147,6 +147,22 @@
             "pot:Link"
         ]
     },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
+        },
+        "rdfs:comment": {
+            "en-us": "Updater of an identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
     "createdAt": {
         "@id": "pot:metadata/createdAt",
         "@type": "owl:DatatypeProperty",
@@ -163,69 +179,18 @@
             "pot:Link"
         ]
     },
-    "to": {
-        "@id": "pot:to",
+    "from": {
+        "@id": "pot:from",
         "@type": "owl:ObjectProperty",
         "domain": [
             "pot:Link"
         ]
     },
-    "startDateTime": {
-        "@id": "pot:time/startDateTime",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
-        "rdfs:label": {
-            "fi-fi": "Aloitusaika",
-            "en-us": "Start time"
-        },
-        "rdfs:comment": {
-            "fi-fi": "Aloitusaika",
-            "en-us": "Start time"
-        },
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Start time of the process"
-                },
-                "domain": [
-                    "pot:Identity/Process"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Start time"
-                },
-                "domain": [
-                    "pot:Link"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Start time of the case"
-                },
-                "domain": [
-                    "pot:Identity/Case"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Start time of the project"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:dateTime"
-        ],
+    "to": {
+        "@id": "pot:to",
+        "@type": "owl:ObjectProperty",
         "domain": [
-            "pot:Link",
-            "pot:Annotation/Time/Period",
-            "pot:Identity/Case",
-            "pot:Identity/Event",
-            "pot:Identity/Process",
-            "pot:Identity/Project"
+            "pot:Link"
         ]
     },
     "status": {
@@ -386,29 +351,6 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Metadata"
-        },
-        "rdfs:comment": {
-            "en-us": "Metadata container",
-            "fi-fi": "Ominaisuuskategoria metatiedolle."
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "from": {
-        "@id": "pot:from",
-        "@type": "owl:ObjectProperty",
-        "domain": [
-            "pot:Link"
-        ]
-    },
     "data": {
         "@id": "pot:data",
         "@type": "owl:DatatypeProperty",
@@ -416,6 +358,64 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
+        ]
+    },
+    "startDateTime": {
+        "@id": "pot:time/startDateTime",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
+        },
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time of the process"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time"
+                },
+                "domain": [
+                    "pot:Link"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time of the case"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time of the project"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Link",
+            "pot:Annotation/Time/Period",
+            "pot:Identity/Case",
+            "pot:Identity/Event",
+            "pot:Identity/Process",
+            "pot:Identity/Project"
         ]
     }
 }
