@@ -44,16 +44,16 @@
                 "pot:required": true,
                 "pot:readonly": false
             },
-            "updatedBy": {
-                "@id": "pot:metadata/updatedBy",
+            "metadata": {
+                "@id": "pot:metadata",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
+                "subPropertyOf": "pot:topDataProperty",
                 "rdfs:label": {
-                    "fi-fi": "Identieetin päivittäjä",
-                    "en-us": "Updater"
+                    "en-us": "Metadata"
                 },
                 "rdfs:comment": {
-                    "en-us": "Updater of an identity"
+                    "en-us": "Metadata container",
+                    "fi-fi": "Ominaisuuskategoria metatiedolle."
                 },
                 "pot:required": false,
                 "pot:readonly": true
@@ -86,6 +86,20 @@
                 "pot:required": false,
                 "pot:readonly": true
             },
+            "updatedBy": {
+                "@id": "pot:metadata/updatedBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "fi-fi": "Identieetin päivittäjä",
+                    "en-us": "Updater"
+                },
+                "rdfs:comment": {
+                    "en-us": "Updater of an identity"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
             "createdAt": {
                 "@id": "pot:metadata/createdAt",
                 "@type": "owl:DatatypeProperty",
@@ -100,62 +114,15 @@
                 "pot:required": false,
                 "pot:readonly": true
             },
+            "from": {
+                "@id": "pot:from",
+                "@type": "owl:ObjectProperty",
+                "pot:required": false
+            },
             "to": {
                 "@id": "pot:to",
                 "@type": "owl:ObjectProperty",
                 "pot:required": false
-            },
-            "startDateTime": {
-                "@id": "pot:time/startDateTime",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:time",
-                "rdfs:label": {
-                    "fi-fi": "Aloitusaika",
-                    "en-us": "Start time"
-                },
-                "rdfs:comment": {
-                    "fi-fi": "Aloitusaika",
-                    "en-us": "Start time"
-                },
-                "comment": [
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Start time of the process"
-                        },
-                        "domain": [
-                            "pot:Identity/Process"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Start time"
-                        },
-                        "domain": [
-                            "pot:Link"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Start time of the case"
-                        },
-                        "domain": [
-                            "pot:Identity/Case"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Start time of the project"
-                        },
-                        "domain": [
-                            "pot:Identity/Project"
-                        ]
-                    }
-                ],
-                "pot:valueType": [
-                    "xsd:dateTime"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
             },
             "status": {
                 "@id": "pot:lifeCycle/status",
@@ -299,24 +266,57 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
-            "metadata": {
-                "@id": "pot:metadata",
+            "startDateTime": {
+                "@id": "pot:time/startDateTime",
                 "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:topDataProperty",
+                "subPropertyOf": "pot:time",
                 "rdfs:label": {
-                    "en-us": "Metadata"
+                    "fi-fi": "Aloitusaika",
+                    "en-us": "Start time"
                 },
                 "rdfs:comment": {
-                    "en-us": "Metadata container",
-                    "fi-fi": "Ominaisuuskategoria metatiedolle."
+                    "fi-fi": "Aloitusaika",
+                    "en-us": "Start time"
                 },
+                "comment": [
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Start time of the process"
+                        },
+                        "domain": [
+                            "pot:Identity/Process"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Start time"
+                        },
+                        "domain": [
+                            "pot:Link"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Start time of the case"
+                        },
+                        "domain": [
+                            "pot:Identity/Case"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Start time of the project"
+                        },
+                        "domain": [
+                            "pot:Identity/Project"
+                        ]
+                    }
+                ],
+                "pot:valueType": [
+                    "xsd:dateTime"
+                ],
                 "pot:required": false,
-                "pot:readonly": true
-            },
-            "from": {
-                "@id": "pot:from",
-                "@type": "owl:ObjectProperty",
-                "pot:required": false
+                "pot:readonly": false
             }
         }
     }
