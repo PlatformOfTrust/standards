@@ -110,19 +110,24 @@ def create_schema_from_rdf_class(rdf_class, entity_file: Dict[str, Any], onto, e
             result[i] = {"title": "", "description": "", "type": "string"}
 
     for key, values in properties_dict.items():
-        for v in values:
-            result[key]["title"] = labels[key]
-            result[key]["description"] = comments[key]
-            result[key]["properties"][v] = {
-                "title": labels[v] if v in labels else '',
-                "description": comments[v] if v in comments else '',
-                "type": "string"
-            }
-            if examples[key]:
-                result[key]["examples"] = examples[key]
-            if key in result and examples[v]:
-                result[key]["properties"][v]["examples"] = examples[v]
-    
+        if values:
+            for v in values:
+                result[key]["title"] = labels[key]
+                result[key]["description"] = comments[key]
+                result[key]["properties"][v] = {
+                    "title": labels[v] if v in labels else '',
+                    "description": comments[v] if v in comments else '',
+                    "type": "string"
+                }
+                if examples[key]:
+                    result[key]["examples"] = examples[key]
+                if key in result and examples[v]:
+                    result[key]["properties"][v]["examples"] = examples[v]
+        else:
+            if key in labels and key in comments:
+                result[key]["title"] = labels[key]
+                result[key]["description"] = comments[key]
+
     if 'id' in result:
         result['@id'] = result['id']
         del result['id']
