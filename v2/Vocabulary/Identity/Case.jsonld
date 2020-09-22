@@ -244,6 +244,25 @@
             "pot:Identity/Project"
         ]
     },
+    "categorizationLocalPriority": {
+        "@id": "pot:categorization/categorizationLocalPriority",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "fi-fi": "Kiireellisyysluokka",
+            "en-us": "Priority class"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Kategorointi joka perustuu kiireellisyysluokitukseen.",
+            "en-us": "Priority based categorization given locally."
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/Case"
+        ]
+    },
     "status": {
         "@id": "pot:lifeCycle/status",
         "@type": "owl:DatatypeProperty",
@@ -400,41 +419,6 @@
             "pot:Identity/Space/RealEstate",
             "pot:Identity/Space/Room",
             "pot:Identity/Structure/Building"
-        ]
-    },
-    "categorizationLocalPriority": {
-        "@id": "pot:categorization/categorizationLocalPriority",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:categorization",
-        "rdfs:label": {
-            "fi-fi": "Kiireellisyysluokka",
-            "en-us": "Priority class"
-        },
-        "rdfs:comment": {
-            "fi-fi": "Kategorointi joka perustuu kiireellisyysluokitukseen.",
-            "en-us": "Priority based categorization given locally."
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity/Case"
-        ]
-    },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "fi-fi": "Identieetin päivittäjä",
-            "en-us": "Updater"
-        },
-        "rdfs:comment": {
-            "en-us": "Updater of an identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
         ]
     },
     "categorizationLocal": {
@@ -988,6 +972,22 @@
             "pot:Identity/Structure/Building"
         ]
     },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
+        },
+        "rdfs:comment": {
+            "en-us": "Updater of an identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
     "duration": {
         "@id": "pot:time/duration",
         "@type": "owl:DatatypeProperty",
@@ -1064,6 +1064,15 @@
             "pot:Identity/Project"
         ]
     },
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
     "startDateTime": {
         "@id": "pot:time/startDateTime",
         "@type": "owl:DatatypeProperty",
@@ -1120,15 +1129,6 @@
             "pot:Identity/Event",
             "pot:Identity/Process",
             "pot:Identity/Project"
-        ]
-    },
-    "data": {
-        "@id": "pot:data",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
         ]
     },
     "updatedAt": {

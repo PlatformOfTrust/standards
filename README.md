@@ -85,3 +85,6 @@ Next data examples work correctly based on [JSON-LD Playground](https://json-ld.
   }
 }
 ```
+
+## Generate Ontology
+python tools/generate.py v2/Ontology/pot.owl v2 https://standards-ontotest.oftrust.net/v2/

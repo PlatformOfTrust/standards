@@ -177,6 +177,101 @@
             "pot:Identity/Project"
         ]
     },
+    "idOfficial": {
+        "@id": "pot:identifier/idOfficial",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Official identifier",
+            "fi-fi": "Viranomaisen tunniste"
+        },
+        "rdfs:comment": {
+            "en-us": "Government (official authority) assigned identifier",
+            "fi-fi": "Viranomaisen myöntämä tunniste"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Official Id",
+                    "fi-fi": "Viranomaisen tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Kiinteistötunnus",
+                    "en-us": "Real estate Id"
+                },
+                "domain": [
+                    "pot:Identity/Space/RealEstate"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Official Id",
+                    "fi-fi": "Viranomaisen tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Space"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Henkilötunnus",
+                    "en-us": "Identity number"
+                },
+                "domain": [
+                    "pot:Identity/LegalParty/Person"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Officially given identifier for the space in Finland"
+                },
+                "domain": [
+                    "pot:Identity/Space"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Officially given identifier for the space"
+                },
+                "domain": [
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Real estate identifier for the land in Finland"
+                },
+                "domain": [
+                    "pot:Identity/Space/RealEstate"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Official identifier of the person in Finland"
+                },
+                "domain": [
+                    "pot:Identity/LegalParty/Person"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:BuildingPermission",
+            "pot:Identity/Space",
+            "pot:Identity/LegalParty/Person",
+            "pot:Identity/Space/RealEstate",
+            "pot:Identity/Space/Room"
+        ]
+    },
     "status": {
         "@id": "pot:lifeCycle/status",
         "@type": "owl:DatatypeProperty",
@@ -333,117 +428,6 @@
             "pot:Identity/Space/RealEstate",
             "pot:Identity/Space/Room",
             "pot:Identity/Structure/Building"
-        ]
-    },
-    "idOfficial": {
-        "@id": "pot:identifier/idOfficial",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "Official identifier",
-            "fi-fi": "Viranomaisen tunniste"
-        },
-        "rdfs:comment": {
-            "en-us": "Government (official authority) assigned identifier",
-            "fi-fi": "Viranomaisen myöntämä tunniste"
-        },
-        "label": [
-            {
-                "rdfs:label": {
-                    "en-us": "Official Id",
-                    "fi-fi": "Viranomaisen tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Space/Room"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "fi-fi": "Kiinteistötunnus",
-                    "en-us": "Real estate Id"
-                },
-                "domain": [
-                    "pot:Identity/Space/RealEstate"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Official Id",
-                    "fi-fi": "Viranomaisen tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Space"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "fi-fi": "Henkilötunnus",
-                    "en-us": "Identity number"
-                },
-                "domain": [
-                    "pot:Identity/LegalParty/Person"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Officially given identifier for the space in Finland"
-                },
-                "domain": [
-                    "pot:Identity/Space"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Officially given identifier for the space"
-                },
-                "domain": [
-                    "pot:Identity/Space/Room"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Real estate identifier for the land in Finland"
-                },
-                "domain": [
-                    "pot:Identity/Space/RealEstate"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Official identifier of the person in Finland"
-                },
-                "domain": [
-                    "pot:Identity/LegalParty/Person"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:BuildingPermission",
-            "pot:Identity/Space",
-            "pot:Identity/LegalParty/Person",
-            "pot:Identity/Space/RealEstate",
-            "pot:Identity/Space/Room"
-        ]
-    },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "fi-fi": "Identieetin päivittäjä",
-            "en-us": "Updater"
-        },
-        "rdfs:comment": {
-            "en-us": "Updater of an identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
         ]
     },
     "idLocal": {
@@ -623,24 +607,20 @@
             "pot:Identity/Project"
         ]
     },
-    "created": {
-        "@id": "pot:time/created",
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
+        "subPropertyOf": "pot:metadata",
         "rdfs:label": {
-            "en-us": "Created",
-            "fi-fi": "Luotu"
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
         },
         "rdfs:comment": {
-            "fi-fi": "Ajankohta jolloin luotu",
-            "en-us": "Creation time"
+            "en-us": "Updater of an identity"
         },
-        "pot:valueType": [
-            "xsd:dateTime"
-        ],
         "domain": [
-            "pot:Contract",
-            "pot:Identity/Process"
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "id": {
@@ -939,27 +919,28 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "endDateTimeValidity": {
-        "@id": "pot:time/endDateTimeValidity",
+    "created": {
+        "@id": "pot:time/created",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:time",
         "rdfs:label": {
-            "fi-fi": "Järjestelmän perustamispäivä",
-            "en-us": "System establishment date"
+            "en-us": "Created",
+            "fi-fi": "Luotu"
         },
         "rdfs:comment": {
-            "en-us": "Valid start time for the system (when system has been defined)"
+            "fi-fi": "Ajankohta jolloin luotu",
+            "en-us": "Creation time"
         },
         "pot:valueType": [
             "xsd:dateTime"
         ],
         "domain": [
             "pot:Contract",
-            "pot:Identity/Group/System"
+            "pot:Identity/Process"
         ]
     },
-    "startDateTimeValidity": {
-        "@id": "pot:time/startDateTimeValidity",
+    "endDateTimeValidity": {
+        "@id": "pot:time/endDateTimeValidity",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:time",
         "rdfs:label": {
@@ -984,6 +965,25 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
+        ]
+    },
+    "startDateTimeValidity": {
+        "@id": "pot:time/startDateTimeValidity",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Järjestelmän perustamispäivä",
+            "en-us": "System establishment date"
+        },
+        "rdfs:comment": {
+            "en-us": "Valid start time for the system (when system has been defined)"
+        },
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Contract",
+            "pot:Identity/Group/System"
         ]
     },
     "updatedAt": {
