@@ -52,22 +52,30 @@
             "fi-fi": "Ajan pituus kahden ajankohdan välillä"
         }
     },
-    "endDateTime": {
-        "@id": "pot:time/endDateTime",
+    "startDateTime": {
+        "@id": "pot:time/startDateTime",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:time",
         "rdfs:label": {
-            "en-us": "End time",
-            "fi-fi": "Lopetusaika"
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
         },
         "rdfs:comment": {
-            "en-us": "End time",
-            "fi-fi": "Lopetusaika (loppumisaika)"
+            "fi-fi": "Aloitusaika",
+            "en-us": "Start time"
         },
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "End time of the process"
+                    "en-us": "Start time"
+                },
+                "domain": [
+                    "pot:Link"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time of the process"
                 },
                 "domain": [
                     "pot:Identity/Process"
@@ -75,23 +83,100 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "End time of the case"
+                    "en-us": "Start time of the project"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time of the case"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Link",
+            "pot:Annotation/Time/Period",
+            "pot:Identity/Case",
+            "pot:Identity/Event",
+            "pot:Identity/Process",
+            "pot:Identity/Project"
+        ]
+    },
+    "duration": {
+        "@id": "pot:time/duration",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "en-us": "Duration",
+            "fi-fi": "Kestoaika"
+        },
+        "rdfs:comment": {
+            "en-us": "Duration (time)",
+            "fi-fi": "Kestoaika"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Duration time",
+                    "fi-fi": "Kesto"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Duration",
+                    "fi-fi": "Kesto"
                 },
                 "domain": [
                     "pot:Identity/Case"
                 ]
             },
             {
+                "rdfs:label": {
+                    "en-us": "Duration time",
+                    "fi-fi": "Kesto"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {},
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            },
+            {
                 "rdfs:comment": {
-                    "en-us": "End time of the project"
+                    "en-us": "Duration of the project"
                 },
                 "domain": [
                     "pot:Identity/Project"
                 ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Duration of the process"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
             }
         ],
         "pot:valueType": [
-            "xsd:dateTime"
+            "xsd:string"
         ],
         "domain": [
             "pot:Annotation/Time/Period",
@@ -342,82 +427,6 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "duration": {
-        "@id": "pot:time/duration",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
-        "rdfs:label": {
-            "en-us": "Duration",
-            "fi-fi": "Kestoaika"
-        },
-        "rdfs:comment": {
-            "en-us": "Duration (time)",
-            "fi-fi": "Kestoaika"
-        },
-        "label": [
-            {
-                "rdfs:label": {
-                    "en-us": "Duration time",
-                    "fi-fi": "Kesto"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Duration",
-                    "fi-fi": "Kesto"
-                },
-                "domain": [
-                    "pot:Identity/Case"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Duration time",
-                    "fi-fi": "Kesto"
-                },
-                "domain": [
-                    "pot:Identity/Process"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {},
-                "domain": [
-                    "pot:Identity/Case"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Duration of the project"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Duration of the process"
-                },
-                "domain": [
-                    "pot:Identity/Process"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Annotation/Time/Period",
-            "pot:Identity/Case",
-            "pot:Identity/Event",
-            "pot:Identity/Process",
-            "pot:Identity/Project"
-        ]
-    },
     "categorizationLocal": {
         "@id": "pot:categorization/categorizationLocal",
         "@type": "owl:DatatypeProperty",
@@ -496,30 +505,22 @@
             "pot:Identity/Space/Room"
         ]
     },
-    "startDateTime": {
-        "@id": "pot:time/startDateTime",
+    "endDateTime": {
+        "@id": "pot:time/endDateTime",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:time",
         "rdfs:label": {
-            "fi-fi": "Aloitusaika",
-            "en-us": "Start time"
+            "en-us": "End time",
+            "fi-fi": "Lopetusaika"
         },
         "rdfs:comment": {
-            "fi-fi": "Aloitusaika",
-            "en-us": "Start time"
+            "en-us": "End time",
+            "fi-fi": "Lopetusaika (loppumisaika)"
         },
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Start time"
-                },
-                "domain": [
-                    "pot:Link"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Start time of the process"
+                    "en-us": "End time of the process"
                 },
                 "domain": [
                     "pot:Identity/Process"
@@ -527,18 +528,18 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Start time of the project"
+                    "en-us": "End time of the case"
                 },
                 "domain": [
-                    "pot:Identity/Project"
+                    "pot:Identity/Case"
                 ]
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Start time of the case"
+                    "en-us": "End time of the project"
                 },
                 "domain": [
-                    "pot:Identity/Case"
+                    "pot:Identity/Project"
                 ]
             }
         ],
@@ -546,7 +547,6 @@
             "xsd:dateTime"
         ],
         "domain": [
-            "pot:Link",
             "pot:Annotation/Time/Period",
             "pot:Identity/Case",
             "pot:Identity/Event",
