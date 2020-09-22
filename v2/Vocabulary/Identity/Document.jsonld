@@ -57,38 +57,6 @@
             "@id": "pot:Identity/Document"
         }
     },
-    "createdBy": {
-        "@id": "pot:metadata/createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "en-us": "Creator",
-            "fi-fi": "Identiteetin luoja"
-        },
-        "rdfs:comment": {
-            "en-us": "Creator of and identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "createdAt": {
-        "@id": "pot:metadata/createdAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "en-us": "Creation time",
-            "fi-fi": "Luomisaika"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is created"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
     "updated": {
         "@id": "pot:time/updated",
         "@type": "owl:DatatypeProperty",
@@ -111,6 +79,89 @@
             "pot:Identity/Process",
             "pot:Identity/Product",
             "pot:Identity/Project"
+        ]
+    },
+    "url": {
+        "@id": "pot:identifier/url",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "URL address",
+            "fi-fi": "URL-osoite"
+        },
+        "rdfs:comment": {
+            "en-us": "URL address.",
+            "fi-fi": "URL-osoite."
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Contract",
+            "pot:Identity",
+            "pot:Identity/Document",
+            "pot:Identity/Process",
+            "pot:Identity/Product",
+            "pot:Identity/Project"
+        ]
+    },
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity"
+        ]
+    },
+    "metadata": {
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Metadata"
+        },
+        "rdfs:comment": {
+            "en-us": "Metadata container",
+            "fi-fi": "Ominaisuuskategoria metatiedolle."
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
+        },
+        "rdfs:comment": {
+            "en-us": "Updater of an identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Päivitysaika",
+            "en-us": "Update time"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is updated"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "name": {
@@ -354,67 +405,32 @@
             "pot:Identity/Structure/Building"
         ]
     },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
+    "createdBy": {
+        "@id": "pot:metadata/createdBy",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:metadata",
         "rdfs:label": {
-            "fi-fi": "Identieetin päivittäjä",
-            "en-us": "Updater"
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
         },
         "rdfs:comment": {
-            "en-us": "Updater of an identity"
+            "en-us": "Creator of and identity"
         },
         "domain": [
             "pot:Identity",
             "pot:Link"
         ]
     },
-    "url": {
-        "@id": "pot:identifier/url",
+    "createdAt": {
+        "@id": "pot:metadata/createdAt",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
+        "subPropertyOf": "pot:metadata",
         "rdfs:label": {
-            "en-us": "URL address",
-            "fi-fi": "URL-osoite"
+            "en-us": "Creation time",
+            "fi-fi": "Luomisaika"
         },
         "rdfs:comment": {
-            "en-us": "URL address.",
-            "fi-fi": "URL-osoite."
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Contract",
-            "pot:Identity",
-            "pot:Identity/Document",
-            "pot:Identity/Process",
-            "pot:Identity/Product",
-            "pot:Identity/Project"
-        ]
-    },
-    "id": {
-        "@id": "pot:identifier/id",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity"
-        ]
-    },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Metadata"
-        },
-        "rdfs:comment": {
-            "en-us": "Metadata container",
-            "fi-fi": "Ominaisuuskategoria metatiedolle."
+            "en-us": "Time when the data is created"
         },
         "domain": [
             "pot:Identity",
@@ -425,22 +441,6 @@
         "@id": "pot:data",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "updatedAt": {
-        "@id": "pot:metadata/updatedAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "fi-fi": "Päivitysaika",
-            "en-us": "Update time"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is updated"
-        },
         "domain": [
             "pot:Identity",
             "pot:Link"
