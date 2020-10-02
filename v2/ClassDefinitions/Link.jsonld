@@ -43,148 +43,6 @@
                 "pot:required": true,
                 "pot:readonly": false
             },
-            "status": {
-                "@id": "pot:lifeCycle/status",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:lifeCycle",
-                "rdfs:label": {
-                    "fi-fi": "Elinkaaren status",
-                    "en-us": "Life-cycle status"
-                },
-                "rdfs:comment": {
-                    "fi-fi": "Elinkaaren status",
-                    "en-us": "Life-cycle status"
-                },
-                "label": [
-                    {
-                        "rdfs:label": {
-                            "fi-fi": "Elinkaari - Status",
-                            "en-us": "Life cycle status"
-                        },
-                        "domain": [
-                            "pot:Identity/Structure/Building"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "fi-fi": "Elinkaari - Status",
-                            "en-us": "Life cycle status"
-                        },
-                        "domain": [
-                            "pot:Link",
-                            "pot:Identity/Space",
-                            "pot:Identity/Element/BuildingElement",
-                            "pot:Identity/Element/BuildingElement/Storey",
-                            "pot:Identity/Equipment/Device",
-                            "pot:Identity/Group/System",
-                            "pot:Identity/LegalParty/Organization",
-                            "pot:Identity/LegalParty/Person",
-                            "pot:Identity/Space/RealEstate",
-                            "pot:Identity/Space/Room"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Project status",
-                            "fi-fi": "Projektin tila"
-                        },
-                        "domain": [
-                            "pot:Identity/Project"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Process status",
-                            "fi-fi": "Prosessin tila"
-                        },
-                        "domain": [
-                            "pot:Identity/Process"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Product status",
-                            "fi-fi": "Tuotteen status"
-                        },
-                        "domain": [
-                            "pot:Identity/Product"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Case status",
-                            "fi-fi": "Palvelupyynnön tila"
-                        },
-                        "domain": [
-                            "pot:Identity/Case"
-                        ]
-                    }
-                ],
-                "comment": [
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Process state"
-                        },
-                        "domain": [
-                            "pot:Identity/Process"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "fi-fi": "Life-cycle status of the product"
-                        },
-                        "domain": [
-                            "pot:Identity/Product"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Life cycle status"
-                        },
-                        "domain": [
-                            "pot:Link",
-                            "pot:Identity/Space",
-                            "pot:Identity/Element/BuildingElement",
-                            "pot:Identity/Element/BuildingElement/Storey",
-                            "pot:Identity/Equipment/Device",
-                            "pot:Identity/Group/System",
-                            "pot:Identity/LegalParty/Organization",
-                            "pot:Identity/LegalParty/Person",
-                            "pot:Identity/Space/RealEstate",
-                            "pot:Identity/Space/Room"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "project state"
-                        },
-                        "domain": [
-                            "pot:Identity/Project"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Case state"
-                        },
-                        "domain": [
-                            "pot:Identity/Case"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Life cycle status of the building"
-                        },
-                        "domain": [
-                            "pot:Identity/Structure/Building"
-                        ]
-                    }
-                ],
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
-            },
             "startDateTime": {
                 "@id": "pot:time/startDateTime",
                 "@type": "owl:DatatypeProperty",
@@ -200,18 +58,10 @@
                 "comment": [
                     {
                         "rdfs:comment": {
-                            "en-us": "Start time"
+                            "en-us": "Start time of the case"
                         },
                         "domain": [
-                            "pot:Link"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Start time of the process"
-                        },
-                        "domain": [
-                            "pot:Identity/Process"
+                            "pot:Identity/Case"
                         ]
                     },
                     {
@@ -224,10 +74,18 @@
                     },
                     {
                         "rdfs:comment": {
-                            "en-us": "Start time of the case"
+                            "en-us": "Start time of the process"
                         },
                         "domain": [
-                            "pot:Identity/Case"
+                            "pot:Identity/Process"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Start time"
+                        },
+                        "domain": [
+                            "pot:Link"
                         ]
                     }
                 ],
@@ -236,6 +94,11 @@
                 ],
                 "pot:required": false,
                 "pot:readonly": false
+            },
+            "to": {
+                "@id": "pot:to",
+                "@type": "owl:ObjectProperty",
+                "pot:required": false
             },
             "metadata": {
                 "@id": "pot:metadata",
@@ -250,6 +113,148 @@
                 },
                 "pot:required": false,
                 "pot:readonly": true
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:lifeCycle",
+                "rdfs:label": {
+                    "fi-fi": "Elinkaaren status",
+                    "en-us": "Life-cycle status"
+                },
+                "rdfs:comment": {
+                    "fi-fi": "Elinkaaren status",
+                    "en-us": "Life-cycle status"
+                },
+                "label": [
+                    {
+                        "rdfs:label": {
+                            "en-us": "Product status",
+                            "fi-fi": "Tuotteen status"
+                        },
+                        "domain": [
+                            "pot:Identity/Product"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "en-us": "Process status",
+                            "fi-fi": "Prosessin tila"
+                        },
+                        "domain": [
+                            "pot:Identity/Process"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "en-us": "Project status",
+                            "fi-fi": "Projektin tila"
+                        },
+                        "domain": [
+                            "pot:Identity/Project"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "fi-fi": "Elinkaari - Status",
+                            "en-us": "Life cycle status"
+                        },
+                        "domain": [
+                            "pot:Link",
+                            "pot:Identity/Space",
+                            "pot:Identity/Element/BuildingElement",
+                            "pot:Identity/Element/BuildingElement/Storey",
+                            "pot:Identity/Equipment/Device",
+                            "pot:Identity/Group/System",
+                            "pot:Identity/LegalParty/Organization",
+                            "pot:Identity/LegalParty/Person",
+                            "pot:Identity/Space/RealEstate",
+                            "pot:Identity/Space/Room"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "en-us": "Case status",
+                            "fi-fi": "Palvelupyynnön tila"
+                        },
+                        "domain": [
+                            "pot:Identity/Case"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "fi-fi": "Elinkaari - Status",
+                            "en-us": "Life cycle status"
+                        },
+                        "domain": [
+                            "pot:Identity/Structure/Building"
+                        ]
+                    }
+                ],
+                "comment": [
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Life cycle status of the building"
+                        },
+                        "domain": [
+                            "pot:Identity/Structure/Building"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Case state"
+                        },
+                        "domain": [
+                            "pot:Identity/Case"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "project state"
+                        },
+                        "domain": [
+                            "pot:Identity/Project"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Life cycle status"
+                        },
+                        "domain": [
+                            "pot:Link",
+                            "pot:Identity/Space",
+                            "pot:Identity/Element/BuildingElement",
+                            "pot:Identity/Element/BuildingElement/Storey",
+                            "pot:Identity/Equipment/Device",
+                            "pot:Identity/Group/System",
+                            "pot:Identity/LegalParty/Organization",
+                            "pot:Identity/LegalParty/Person",
+                            "pot:Identity/Space/RealEstate",
+                            "pot:Identity/Space/Room"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "fi-fi": "Life-cycle status of the product"
+                        },
+                        "domain": [
+                            "pot:Identity/Product"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Process state"
+                        },
+                        "domain": [
+                            "pot:Identity/Process"
+                        ]
+                    }
+                ],
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "pot:required": false,
+                "pot:readonly": false
             },
             "updatedBy": {
                 "@id": "pot:metadata/updatedBy",
@@ -279,11 +284,6 @@
                 "pot:required": false,
                 "pot:readonly": true
             },
-            "from": {
-                "@id": "pot:from",
-                "@type": "owl:ObjectProperty",
-                "pot:required": false
-            },
             "createdBy": {
                 "@id": "pot:metadata/createdBy",
                 "@type": "owl:DatatypeProperty",
@@ -298,8 +298,8 @@
                 "pot:required": false,
                 "pot:readonly": true
             },
-            "to": {
-                "@id": "pot:to",
+            "from": {
+                "@id": "pot:from",
                 "@type": "owl:ObjectProperty",
                 "pot:required": false
             },

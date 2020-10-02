@@ -1,0 +1,305 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards-ontotest.oftrust.net/v2/Vocabulary/",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "TransportationRoute": {
+        "@id": "pot:Annotation/Location/TransportationRoute",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Location",
+        "rdfs:label": {
+            "fi-fi": "Kuljetusreitti",
+            "en-us": "Transportation Route"
+        },
+        "rdfs:comment": {
+            "en-us": "A transportation route is the regular path that is followed by a movement of people or goods.",
+            "fi-fi": "Kuljetusreitti on säännöllinen reitti jolla kuljetetaan tavaroita tai ihmisiä."
+        }
+    },
+    "idLocal": {
+        "@id": "pot:identifier/idLocal",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Local identifier",
+            "fi-fi": "Paikallinen tunniste"
+        },
+        "rdfs:comment": {
+            "en-us": "Locally given identifier",
+            "fi-fi": "Paikallinen tunniste"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Case Id",
+                    "fi-fi": "Palvelupyynnön tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Local code",
+                    "fi-fi": "Paikallinen koodi"
+                },
+                "domain": [
+                    "pot:Identity/Equipment/Device"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Local identifier",
+                    "fi-fi": "Paikallinen tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement/Storey"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Project Id",
+                    "fi-fi": "Projektin tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Local identifier",
+                    "fi-fi": "Paikallinen tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Local code",
+                    "fi-fi": "Paikallinen koodi"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Process Id",
+                    "fi-fi": "Prosessin tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Local identifier (system identifier)"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Locally given identifier for the process instance"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Locally given identifier for the storey"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement/Storey"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Local identifier for the project"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Identifier given locally for the building element"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Identifier given locally for the device"
+                },
+                "domain": [
+                    "pot:Identity/Equipment/Device"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Locally given identifier for the space"
+                },
+                "domain": [
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Contract",
+            "pot:TransportationRoute",
+            "pot:TransportationTrip",
+            "pot:Vehicle",
+            "pot:Identity/Case",
+            "pot:Identity/Process",
+            "pot:Identity/Project",
+            "pot:Identity/Space",
+            "pot:Identity/Element/BuildingElement",
+            "pot:Identity/Element/BuildingElement/Storey",
+            "pot:Identity/Equipment/Device",
+            "pot:Identity/Space/Room"
+        ]
+    },
+    "country": {
+        "@id": "pot:address/country",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:address",
+        "rdfs:label": {
+            "en-us": "Country",
+            "fi-fi": "Maa"
+        },
+        "rdfs:comment": {
+            "en-us": "Location country name",
+            "fi-fi": "Sijainnin maan nimi"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Location"
+        ]
+    },
+    "longitude": {
+        "@id": "pot:location/longitude",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:location",
+        "rdfs:label": {
+            "en-us": "Longitude",
+            "fi-fi": "Pituusaste"
+        },
+        "rdfs:comment": {
+            "en-us": "Angular distance east or west on the earth's surface, measured by the angle contained between the meridian of a particular place and some prime meridian, as that of Greenwich, England, and expressed either in degrees or by some corresponding difference in time (WGS 84).",
+            "fi-fi": "Pituusaste on sijaintipaikan ja nollameridiaanin eli Greenwichin meridiaanin välinen kulmaero (WGS 84)."
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Location"
+        ]
+    },
+    "direction": {
+        "@id": "pot:physical/direction",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Direction",
+            "fi-fi": "Suunta (vapaa määritelmä)"
+        },
+        "rdfs:comment": {
+            "en-us": "Direction indicated by some known value (can be specific to a standard).",
+            "fi-fi": "Suuntaa määrittävä arvo (voi olla spesifinen jonkun standardin mukaan)."
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:TransportationRoute"
+        ]
+    },
+    "latitude": {
+        "@id": "pot:location/latitude",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:location",
+        "rdfs:label": {
+            "en-us": "Latitude",
+            "fi-fi": "Leveysaste"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Leveysaste ilmaisee pisteen etäisyyden päiväntasaajalta. Leveysasteella tarkoitetaan pisteen kautta kulkevan ellipsoidipinnan normaalin ja päiväntasaajan määrittelemän tason välistä kulmaa (WGS 84).",
+            "en-us": "The angular distance north or south from the equator of a point on the earth's surface, measured on the meridian of the point (WGS 84)."
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Location"
+        ]
+    },
+    "congestionLevel": {
+        "@id": "pot:categorization/congestionLevel",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "Congestion level",
+            "fi-fi": "Ruuhkataso"
+        },
+        "rdfs:comment": {
+            "en-us": "Congestion level",
+            "fi-fi": "Ruuhkataso"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Location"
+        ]
+    }
+}

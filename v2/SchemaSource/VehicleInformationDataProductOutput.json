@@ -29,8 +29,8 @@
             "transportationRoute":{
                "$id":"#/properties/data/properties/route",
                "type":"array",
-               "title":"The route schema",
-               "description":"An explanation about the purpose of this instance.",
+               "title":"Transportation Route",
+               "description":"A transportation route is the regular path that is followed by a movement of people or goods.",
                "items":{
                   "$id":"#/properties/data/properties/route/items",
                   "anyOf":[
@@ -48,20 +48,20 @@
                            "@type":{
                               "$id":"#/properties/data/properties/route/items/anyOf/0/properties/%40type",
                               "type":"string",
-                              "title":"The @type schema",
-                              "description":"An explanation about the purpose of this instance."
+                              "title":"Type of the TransportationRoute",
+                              "description":"Root object type for vehicle information."
                            },
                            "idLocal":{
                               "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/idLocal",
                               "type":"string",
-                              "title":"The idLocal schema",
-                              "description":"An explanation about the purpose of this instance."
+                              "title":"Local identifier",
+                              "description":"Locally given identifier."
                            },
                            "direction":{
                               "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/direction",
-                              "type":"integer",
-                              "title":"The direction schema",
-                              "description":"An explanation about the purpose of this instance."
+                              "type":"string",
+                              "title":"Direction",
+                              "description":"Direction indicated by some known value (can be specific to a standard)."
                            },
                            "operator":{
                               "$id":"#/properties/data/properties/route/items/anyOf/0/properties/operator",
@@ -90,26 +90,26 @@
                            "transportationTrip":{
                               "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/transportationTrip",
                               "type":"object",
-                              "title":"The transportationTrip schema",
-                              "description":"An explanation about the purpose of this instance.",
+                              "title":"Transportation Trip",
+                              "description":"Transportation trip is specific occasion which occurs typically on transportation route. Typically transporation route has scheduled transportation trips.",
                               "properties":{
                                  "idlocal":{
                                     "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/transportationTrip/properties/idlocal",
                                     "type":"string",
-                                    "title":"The idlocal schema",
-                                    "description":"An explanation about the purpose of this instance."
+                                    "title":"Local identifier",
+                                    "description":"Locally given identifier."
                                  },
-                                 "startDateTime":{
+                                 "startTime":{
                                     "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/transportationTrip/properties/startDateTime",
                                     "type":"string",
-                                    "title":"The startDateTime schema",
-                                    "description":"An explanation about the purpose of this instance."
+                                    "title":"Start date and time",
+                                    "description":"Start date and time."
                                  },
                                  "scheduleType":{
                                     "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/transportationTrip/properties/scheduleType",
                                     "type":"string",
-                                    "title":"The scheduleType schema",
-                                    "description":"An explanation about the purpose of this instance."
+                                    "title":"Schedule type",
+                                    "description":"Schedule type."
                                  }
                               }
                            },
@@ -129,6 +129,12 @@
                                     "title":"Vehicle type",
                                     "description":"Type of vehicle."
                                  },
+                                 "exactTime":{
+                                    "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/exactTime",
+                                    "type":"string",
+                                    "title":"Exact time",
+                                    "description":"Exact time."
+                                 },
                                  "idLocal":{
                                     "$id":"#/properties/parameters/properties/vehicle/properties/idLocal",
                                     "type":"string",
@@ -138,14 +144,14 @@
                                  "idHeadsign":{
                                     "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/properties/idHeadsign",
                                     "type":"string",
-                                    "title":"The idHeadsign schema",
-                                    "description":"An explanation about the purpose of this instance."
+                                    "title":"Headsign",
+                                    "description":"The sign on the front of a bus or train (any vehicle) indicating its direction, destination, route number, or other pertinent information.."
                                  },
                                  "idOfficial":{
                                     "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/properties/idOfficial",
                                     "type":"string",
-                                    "title":"The idOfficial schema",
-                                    "description":"An explanation about the purpose of this instance."
+                                    "title":"License plate",
+                                    "description":"Government (official authority) assigned identifier."
                                  },
                                  "location":{
                                     "$id":"#/properties/data/properties/route/items/anyOf/0/properties/vehicle/properties/location",
@@ -177,16 +183,16 @@
                                        "bearing":{
                                           "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/properties/location/properties/bearing",
                                           "type":"number",
-                                          "title":"The bearing schema",
-                                          "description":"An explanation about the purpose of this instance."
+                                          "title":"Bearing (compass direction)",
+                                          "description":"Bearing is used to give direction in aviation. It is defined as a positive angle from 0 to 360 measured clockwise with respect to the north.."
                                        }
                                     }
                                  },
                                  "speed":{
                                     "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/properties/speed",
                                     "type":"number",
-                                    "title":"The speed schema",
-                                    "description":"An explanation about the purpose of this instance."
+                                    "title":"Speed",
+                                    "description":"Speed has the dimensions of distance divided by time. The SI unit of speed is the metre per second, but the most common unit of speed in everyday usage is the kilometre per hour or, in the US and the UK, miles per hour. For air and marine travel the knot is commonly used."
                                  }
                               }
                            }
