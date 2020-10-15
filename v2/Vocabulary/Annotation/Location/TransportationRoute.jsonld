@@ -52,20 +52,58 @@
             "fi-fi": "Kuljetusreitti on säännöllinen reitti jolla kuljetetaan tavaroita tai ihmisiä."
         }
     },
-    "accepted": {
-        "@id": "pot:time/accepted",
+    "categorizationVehicleType": {
+        "@id": "pot:categorization/categorizationVehicleType",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
+        "subPropertyOf": "pot:categorization",
         "rdfs:label": {
-            "en-us": "Accepted time",
-            "fi-fi": "Hyväksymisaika"
+            "fi-fi": "Kulkuvälinetyyppi",
+            "en-us": "Vehicle type"
         },
         "rdfs:comment": {
-            "fi-fi": "Ajankohta jolloin hyväksyminen on tapahtunut",
-            "en-us": "Time when acceptance has occurred"
+            "fi-fi": "Kulkuvälinetyyppi",
+            "en-us": "Vehicle Type"
         },
         "pot:valueType": [
-            "xsd:dateTime"
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:TransportationRoute"
+        ]
+    },
+    "country": {
+        "@id": "pot:address/country",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:address",
+        "rdfs:label": {
+            "en-us": "Country",
+            "fi-fi": "Maa"
+        },
+        "rdfs:comment": {
+            "en-us": "Location country name",
+            "fi-fi": "Sijainnin maan nimi"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Location"
+        ]
+    },
+    "direction": {
+        "@id": "pot:physical/direction",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Direction",
+            "fi-fi": "Suunta (vapaa määritelmä)"
+        },
+        "rdfs:comment": {
+            "en-us": "Direction indicated by some known value (can be specific to a standard).",
+            "fi-fi": "Suuntaa määrittävä arvo (voi olla spesifinen jonkun standardin mukaan)."
+        },
+        "pot:valueType": [
+            "xsd:string"
         ],
         "domain": [
             "pot:TransportationRoute"
@@ -90,20 +128,45 @@
             "pot:TransportationRoute"
         ]
     },
-    "operator": {
-        "@id": "pot:topObjectProperty/role/operator",
-        "@type": "owl:ObjectProperty",
-        "subPropertyOf": "pot:topObjectProperty/role",
+    "version": {
+        "@id": "pot:lifeCycle/version",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:lifeCycle",
         "rdfs:label": {
-            "fi-fi": "Operaattori",
-            "en-us": "Operator"
+            "en-us": "Version name",
+            "fi-fi": "Version nimi"
         },
         "rdfs:comment": {
-            "en-us": "Responsible for operating something (typically process or process task)",
-            "fi-fi": "Vastuullinen operoija jollekin (yleensä prosessille tai prosessin tehtävälle)"
+            "en-us": "Version name",
+            "fi-fi": "Version nimi"
         },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Product version",
+                    "fi-fi": "Tuoteversio"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Version of the product"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
         "domain": [
-            "pot:TransportationRoute"
+            "pot:TransportationRoute",
+            "pot:Identity/Product"
         ]
     },
     "congestionLevel": {
@@ -123,6 +186,22 @@
         ],
         "domain": [
             "pot:Annotation/Location"
+        ]
+    },
+    "operator": {
+        "@id": "pot:topObjectProperty/role/operator",
+        "@type": "owl:ObjectProperty",
+        "subPropertyOf": "pot:topObjectProperty/role",
+        "rdfs:label": {
+            "fi-fi": "Operaattori",
+            "en-us": "Operator"
+        },
+        "rdfs:comment": {
+            "en-us": "Responsible for operating something (typically process or process task)",
+            "fi-fi": "Vastuullinen operoija jollekin (yleensä prosessille tai prosessin tehtävälle)"
+        },
+        "domain": [
+            "pot:TransportationRoute"
         ]
     },
     "categorizationLocal": {
@@ -400,99 +479,20 @@
             "pot:Annotation/Location"
         ]
     },
-    "country": {
-        "@id": "pot:address/country",
+    "accepted": {
+        "@id": "pot:time/accepted",
         "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:address",
+        "subPropertyOf": "pot:time",
         "rdfs:label": {
-            "en-us": "Country",
-            "fi-fi": "Maa"
+            "en-us": "Accepted time",
+            "fi-fi": "Hyväksymisaika"
         },
         "rdfs:comment": {
-            "en-us": "Location country name",
-            "fi-fi": "Sijainnin maan nimi"
+            "fi-fi": "Ajankohta jolloin hyväksyminen on tapahtunut",
+            "en-us": "Time when acceptance has occurred"
         },
         "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Annotation/Location"
-        ]
-    },
-    "direction": {
-        "@id": "pot:physical/direction",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Direction",
-            "fi-fi": "Suunta (vapaa määritelmä)"
-        },
-        "rdfs:comment": {
-            "en-us": "Direction indicated by some known value (can be specific to a standard).",
-            "fi-fi": "Suuntaa määrittävä arvo (voi olla spesifinen jonkun standardin mukaan)."
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:TransportationRoute"
-        ]
-    },
-    "version": {
-        "@id": "pot:lifeCycle/version",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:lifeCycle",
-        "rdfs:label": {
-            "en-us": "Version name",
-            "fi-fi": "Version nimi"
-        },
-        "rdfs:comment": {
-            "en-us": "Version name",
-            "fi-fi": "Version nimi"
-        },
-        "label": [
-            {
-                "rdfs:label": {
-                    "en-us": "Product version",
-                    "fi-fi": "Tuoteversio"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Version of the product"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:TransportationRoute",
-            "pot:Identity/Product"
-        ]
-    },
-    "categorizationVehicleType": {
-        "@id": "pot:categorization/categorizationVehicleType",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:categorization",
-        "rdfs:label": {
-            "fi-fi": "Kulkuvälinetyyppi",
-            "en-us": "Vehicle type"
-        },
-        "rdfs:comment": {
-            "fi-fi": "Kulkuvälinetyyppi",
-            "en-us": "Vehicle Type"
-        },
-        "pot:valueType": [
-            "xsd:string"
+            "xsd:dateTime"
         ],
         "domain": [
             "pot:TransportationRoute"

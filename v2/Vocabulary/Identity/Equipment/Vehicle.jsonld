@@ -52,6 +52,22 @@
             "fi-fi": "Kulkuväline tai kulkuneuvo on paikasta toiseen kulkemiseen tarkoitettu laite. Se kuljettaa matkustajia, tavaroita tai molempia. Kulkuvälineitä ovat muun muassa polkupyörät, rullaluistimet, moottoripyörät, autot, veneet, laivat, lentokoneet, helikopterit, junat ja raitiovaunut."
         }
     },
+    "updatedAt": {
+        "@id": "pot:metadata/updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Päivitysaika",
+            "en-us": "Update time"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is updated"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
     "idHeadsign": {
         "@id": "pot:identifier/idHeadsign",
         "@type": "owl:DatatypeProperty",
@@ -87,6 +103,30 @@
             "pot:Link"
         ]
     },
+    "id": {
+        "@id": "pot:identifier/id",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity"
+        ]
+    },
+    "exactTime": {
+        "@id": "pot:time/exactTime",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Status",
+            "pot:Vehicle",
+            "pot:Identity/Process"
+        ]
+    },
     "createdAt": {
         "@id": "pot:metadata/createdAt",
         "@type": "owl:DatatypeProperty",
@@ -101,19 +141,6 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
-        ]
-    },
-    "exactTime": {
-        "@id": "pot:time/exactTime",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:time",
-        "pot:valueType": [
-            "xsd:dateTime"
-        ],
-        "domain": [
-            "pot:Status",
-            "pot:Vehicle",
-            "pot:Identity/Process"
         ]
     },
     "data": {
@@ -322,17 +349,6 @@
             "pot:Identity/Project"
         ]
     },
-    "id": {
-        "@id": "pot:identifier/id",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity"
-        ]
-    },
     "speed": {
         "@id": "pot:physical/speed",
         "@type": "owl:DatatypeProperty",
@@ -362,22 +378,6 @@
         },
         "rdfs:comment": {
             "en-us": "Updater of an identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "updatedAt": {
-        "@id": "pot:metadata/updatedAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "fi-fi": "Päivitysaika",
-            "en-us": "Update time"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is updated"
         },
         "domain": [
             "pot:Identity",
