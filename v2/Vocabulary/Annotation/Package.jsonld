@@ -52,6 +52,114 @@
             "fi-fi": "Pakkaustiedot"
         }
     },
+    "amountPerPackage": {
+        "@id": "pot:functional/amountPerPackage",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "en-us": "Package size",
+            "fi-fi": "Paukkauskoko"
+        },
+        "rdfs:comment": {
+            "en-us": "Amount of products (goods) in the package",
+            "fi-fi": "Paukkauksen sisältämä määrä tuotteita tai tavaroita"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Package"
+        ]
+    },
+    "gTIN": {
+        "@id": "pot:identifier/gTIN",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "GTIN code",
+            "fi-fi": "GTIN koodi"
+        },
+        "rdfs:comment": {
+            "en-us": "GTIN standard based identifier",
+            "fi-fi": "GTIN standardiin perustuva tunniste"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Package",
+            "pot:Identity/Product"
+        ]
+    },
+    "volume": {
+        "@id": "pot:physical/volume",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Tilavuus",
+            "en-us": "Volume"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Objektin tilavuus",
+            "en-us": "Volume of the object"
+        },
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the building"
+                },
+                "domain": [
+                    "pot:Identity/Structure/Building"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the device"
+                },
+                "domain": [
+                    "pot:Identity/Equipment/Device"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the space"
+                },
+                "domain": [
+                    "pot:Identity/Space"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the element"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the object"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement/Storey",
+                    "pot:Identity/Space/Room"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Package",
+            "pot:Identity/Product",
+            "pot:Identity/Space",
+            "pot:Identity/Element/BuildingElement",
+            "pot:Identity/Element/BuildingElement/Storey",
+            "pot:Identity/Equipment/Device",
+            "pot:Identity/Space/Room",
+            "pot:Identity/Structure/Building"
+        ]
+    },
     "width": {
         "@id": "pot:physical/width",
         "@type": "owl:DatatypeProperty",
@@ -172,95 +280,6 @@
             "pot:Identity/Equipment/Device"
         ]
     },
-    "gTIN": {
-        "@id": "pot:identifier/gTIN",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:identifier",
-        "rdfs:label": {
-            "en-us": "GTIN code",
-            "fi-fi": "GTIN koodi"
-        },
-        "rdfs:comment": {
-            "en-us": "GTIN standard based identifier",
-            "fi-fi": "GTIN standardiin perustuva tunniste"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Package",
-            "pot:Identity/Product"
-        ]
-    },
-    "volume": {
-        "@id": "pot:physical/volume",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "fi-fi": "Tilavuus",
-            "en-us": "Volume"
-        },
-        "rdfs:comment": {
-            "fi-fi": "Objektin tilavuus",
-            "en-us": "Volume of the object"
-        },
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Volume of the building"
-                },
-                "domain": [
-                    "pot:Identity/Structure/Building"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Volume of the device"
-                },
-                "domain": [
-                    "pot:Identity/Equipment/Device"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Volume of the space"
-                },
-                "domain": [
-                    "pot:Identity/Space"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Volume of the element"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Volume of the object"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement/Storey",
-                    "pot:Identity/Space/Room"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:Package",
-            "pot:Identity/Product",
-            "pot:Identity/Space",
-            "pot:Identity/Element/BuildingElement",
-            "pot:Identity/Element/BuildingElement/Storey",
-            "pot:Identity/Equipment/Device",
-            "pot:Identity/Space/Room",
-            "pot:Identity/Structure/Building"
-        ]
-    },
     "height": {
         "@id": "pot:physical/height",
         "@type": "owl:DatatypeProperty",
@@ -326,25 +345,6 @@
             "pot:Identity/Equipment/Device",
             "pot:Identity/Space/Room",
             "pot:Identity/Structure/Building"
-        ]
-    },
-    "amountPerPackage": {
-        "@id": "pot:functional/amountPerPackage",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:functional",
-        "rdfs:label": {
-            "en-us": "Package size",
-            "fi-fi": "Paukkauskoko"
-        },
-        "rdfs:comment": {
-            "en-us": "Amount of products (goods) in the package",
-            "fi-fi": "Paukkauksen sisältämä määrä tuotteita tai tavaroita"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Package"
         ]
     }
 }
