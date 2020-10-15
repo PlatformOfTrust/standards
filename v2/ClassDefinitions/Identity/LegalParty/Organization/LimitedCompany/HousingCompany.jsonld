@@ -51,6 +51,38 @@
                 "pot:required": true,
                 "pot:readonly": false
             },
+            "governmentPermanent": {
+                "@id": "pot:identifier/governmentPermanent",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "rdfs:label": {
+                    "en-us": "Permanent Official Id",
+                    "fi-fi": "Y-tunnus"
+                },
+                "rdfs:comment": {
+                    "en-us": "Permanent identifier given by an official authority in Finland",
+                    "fi-fi": "Yritys- ja yhteisötunnus eli Y-tunnus on PRH:n tai Verohallinnon yritykselle ja yhteisölle antama tunnus. Siinä on seitsemän numeroa, väliviiva ja tarkistusmerkki, eli se on muotoa 1234567-8."
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "pot:required": false,
+                "pot:readonly": false
+            },
+            "updatedAt": {
+                "@id": "pot:metadata/updatedAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "fi-fi": "Päivitysaika",
+                    "en-us": "Update time"
+                },
+                "rdfs:comment": {
+                    "en-us": "Time when the data is updated"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
             "categorizationOfficial": {
                 "@id": "pot:categorization/categorizationOfficial",
                 "@type": "owl:DatatypeProperty",
@@ -102,190 +134,6 @@
                         },
                         "domain": [
                             "pot:Identity/LegalParty/Organization"
-                        ]
-                    }
-                ],
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
-            },
-            "createdBy": {
-                "@id": "pot:metadata/createdBy",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
-                "rdfs:label": {
-                    "en-us": "Creator",
-                    "fi-fi": "Identiteetin luoja"
-                },
-                "rdfs:comment": {
-                    "en-us": "Creator of and identity"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "createdAt": {
-                "@id": "pot:metadata/createdAt",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
-                "rdfs:label": {
-                    "en-us": "Creation time",
-                    "fi-fi": "Luomisaika"
-                },
-                "rdfs:comment": {
-                    "en-us": "Time when the data is created"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "updatedAt": {
-                "@id": "pot:metadata/updatedAt",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
-                "rdfs:label": {
-                    "fi-fi": "Päivitysaika",
-                    "en-us": "Update time"
-                },
-                "rdfs:comment": {
-                    "en-us": "Time when the data is updated"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
-            "status": {
-                "@id": "pot:lifeCycle/status",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:lifeCycle",
-                "rdfs:label": {
-                    "fi-fi": "Elinkaaren status",
-                    "en-us": "Life-cycle status"
-                },
-                "rdfs:comment": {
-                    "fi-fi": "Elinkaaren status",
-                    "en-us": "Life-cycle status"
-                },
-                "label": [
-                    {
-                        "rdfs:label": {
-                            "en-us": "Product status",
-                            "fi-fi": "Tuotteen status"
-                        },
-                        "domain": [
-                            "pot:Identity/Product"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Process status",
-                            "fi-fi": "Prosessin tila"
-                        },
-                        "domain": [
-                            "pot:Identity/Process"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Project status",
-                            "fi-fi": "Projektin tila"
-                        },
-                        "domain": [
-                            "pot:Identity/Project"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "fi-fi": "Elinkaari - Status",
-                            "en-us": "Life cycle status"
-                        },
-                        "domain": [
-                            "pot:Link",
-                            "pot:Identity/Space",
-                            "pot:Identity/Element/BuildingElement",
-                            "pot:Identity/Element/BuildingElement/Storey",
-                            "pot:Identity/Equipment/Device",
-                            "pot:Identity/Group/System",
-                            "pot:Identity/LegalParty/Organization",
-                            "pot:Identity/LegalParty/Person",
-                            "pot:Identity/Space/RealEstate",
-                            "pot:Identity/Space/Room"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "en-us": "Case status",
-                            "fi-fi": "Palvelupyynnön tila"
-                        },
-                        "domain": [
-                            "pot:Identity/Case"
-                        ]
-                    },
-                    {
-                        "rdfs:label": {
-                            "fi-fi": "Elinkaari - Status",
-                            "en-us": "Life cycle status"
-                        },
-                        "domain": [
-                            "pot:Identity/Structure/Building"
-                        ]
-                    }
-                ],
-                "comment": [
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Life cycle status of the building"
-                        },
-                        "domain": [
-                            "pot:Identity/Structure/Building"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Case state"
-                        },
-                        "domain": [
-                            "pot:Identity/Case"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "project state"
-                        },
-                        "domain": [
-                            "pot:Identity/Project"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Life cycle status"
-                        },
-                        "domain": [
-                            "pot:Link",
-                            "pot:Identity/Space",
-                            "pot:Identity/Element/BuildingElement",
-                            "pot:Identity/Element/BuildingElement/Storey",
-                            "pot:Identity/Equipment/Device",
-                            "pot:Identity/Group/System",
-                            "pot:Identity/LegalParty/Organization",
-                            "pot:Identity/LegalParty/Person",
-                            "pot:Identity/Space/RealEstate",
-                            "pot:Identity/Space/Room"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "fi-fi": "Life-cycle status of the product"
-                        },
-                        "domain": [
-                            "pot:Identity/Product"
-                        ]
-                    },
-                    {
-                        "rdfs:comment": {
-                            "en-us": "Process state"
-                        },
-                        "domain": [
-                            "pot:Identity/Process"
                         ]
                     }
                 ],
@@ -547,6 +395,62 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
+            "id": {
+                "@id": "pot:identifier/id",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "pot:required": true,
+                "pot:readonly": false
+            },
+            "createdBy": {
+                "@id": "pot:metadata/createdBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "en-us": "Creator",
+                    "fi-fi": "Identiteetin luoja"
+                },
+                "rdfs:comment": {
+                    "en-us": "Creator of and identity"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "taxVatCode": {
+                "@id": "pot:identifier/taxVatCode",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:identifier",
+                "rdfs:label": {
+                    "fi-fi": "ALV-tunnus",
+                    "en-us": "VAT code"
+                },
+                "rdfs:comment": {
+                    "fi-fi": "Alv-numero muodostetaan Y-tunnuksesta 1234567-8 lisäämällä sen alkuun kaksikirjaiminen maatunnus FI ja jättämällä tunnuksesta väliviiva pois: FI12345678.",
+                    "en-us": "Value-added taxation identifier"
+                },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "pot:required": false,
+                "pot:readonly": false
+            },
+            "createdAt": {
+                "@id": "pot:metadata/createdAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "en-us": "Creation time",
+                    "fi-fi": "Luomisaika"
+                },
+                "rdfs:comment": {
+                    "en-us": "Time when the data is created"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
             "metadata": {
                 "@id": "pot:metadata",
                 "@type": "owl:DatatypeProperty",
@@ -785,24 +689,6 @@
                 "pot:required": false,
                 "pot:readonly": false
             },
-            "ifcGuid": {
-                "@id": "pot:identifier/ifcGuid",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:identifier",
-                "rdfs:label": {
-                    "en-us": "IFC GUID",
-                    "fi-fi": "IFC GUID"
-                },
-                "rdfs:comment": {
-                    "en-us": "IFC standard based Globally Unique Identifier",
-                    "fi-fi": "IFC standardin mukainen tunniste (GUID:  Globally Unique Identifier)"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
-            },
             "url": {
                 "@id": "pot:identifier/url",
                 "@type": "owl:DatatypeProperty",
@@ -815,6 +701,148 @@
                     "en-us": "URL address.",
                     "fi-fi": "URL-osoite."
                 },
+                "pot:valueType": [
+                    "xsd:string"
+                ],
+                "pot:required": false,
+                "pot:readonly": false
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:lifeCycle",
+                "rdfs:label": {
+                    "fi-fi": "Elinkaaren status",
+                    "en-us": "Life-cycle status"
+                },
+                "rdfs:comment": {
+                    "fi-fi": "Elinkaaren status",
+                    "en-us": "Life-cycle status"
+                },
+                "label": [
+                    {
+                        "rdfs:label": {
+                            "en-us": "Product status",
+                            "fi-fi": "Tuotteen status"
+                        },
+                        "domain": [
+                            "pot:Identity/Product"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "en-us": "Process status",
+                            "fi-fi": "Prosessin tila"
+                        },
+                        "domain": [
+                            "pot:Identity/Process"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "en-us": "Project status",
+                            "fi-fi": "Projektin tila"
+                        },
+                        "domain": [
+                            "pot:Identity/Project"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "fi-fi": "Elinkaari - Status",
+                            "en-us": "Life cycle status"
+                        },
+                        "domain": [
+                            "pot:Link",
+                            "pot:Identity/Space",
+                            "pot:Identity/Element/BuildingElement",
+                            "pot:Identity/Element/BuildingElement/Storey",
+                            "pot:Identity/Equipment/Device",
+                            "pot:Identity/Group/System",
+                            "pot:Identity/LegalParty/Organization",
+                            "pot:Identity/LegalParty/Person",
+                            "pot:Identity/Space/RealEstate",
+                            "pot:Identity/Space/Room"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "en-us": "Case status",
+                            "fi-fi": "Palvelupyynnön tila"
+                        },
+                        "domain": [
+                            "pot:Identity/Case"
+                        ]
+                    },
+                    {
+                        "rdfs:label": {
+                            "fi-fi": "Elinkaari - Status",
+                            "en-us": "Life cycle status"
+                        },
+                        "domain": [
+                            "pot:Identity/Structure/Building"
+                        ]
+                    }
+                ],
+                "comment": [
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Life cycle status of the building"
+                        },
+                        "domain": [
+                            "pot:Identity/Structure/Building"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Case state"
+                        },
+                        "domain": [
+                            "pot:Identity/Case"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "project state"
+                        },
+                        "domain": [
+                            "pot:Identity/Project"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Life cycle status"
+                        },
+                        "domain": [
+                            "pot:Link",
+                            "pot:Identity/Space",
+                            "pot:Identity/Element/BuildingElement",
+                            "pot:Identity/Element/BuildingElement/Storey",
+                            "pot:Identity/Equipment/Device",
+                            "pot:Identity/Group/System",
+                            "pot:Identity/LegalParty/Organization",
+                            "pot:Identity/LegalParty/Person",
+                            "pot:Identity/Space/RealEstate",
+                            "pot:Identity/Space/Room"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "fi-fi": "Life-cycle status of the product"
+                        },
+                        "domain": [
+                            "pot:Identity/Product"
+                        ]
+                    },
+                    {
+                        "rdfs:comment": {
+                            "en-us": "Process state"
+                        },
+                        "domain": [
+                            "pot:Identity/Process"
+                        ]
+                    }
+                ],
                 "pot:valueType": [
                     "xsd:string"
                 ],
@@ -838,14 +866,36 @@
                 ],
                 "pot:required": false
             },
-            "id": {
-                "@id": "pot:identifier/id",
+            "updatedBy": {
+                "@id": "pot:metadata/updatedBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:metadata",
+                "rdfs:label": {
+                    "fi-fi": "Identieetin päivittäjä",
+                    "en-us": "Updater"
+                },
+                "rdfs:comment": {
+                    "en-us": "Updater of an identity"
+                },
+                "pot:required": false,
+                "pot:readonly": true
+            },
+            "ifcGuid": {
+                "@id": "pot:identifier/ifcGuid",
                 "@type": "owl:DatatypeProperty",
                 "subPropertyOf": "pot:identifier",
+                "rdfs:label": {
+                    "en-us": "IFC GUID",
+                    "fi-fi": "IFC GUID"
+                },
+                "rdfs:comment": {
+                    "en-us": "IFC standard based Globally Unique Identifier",
+                    "fi-fi": "IFC standardin mukainen tunniste (GUID:  Globally Unique Identifier)"
+                },
                 "pot:valueType": [
                     "xsd:string"
                 ],
-                "pot:required": true,
+                "pot:required": false,
                 "pot:readonly": false
             },
             "codeShort": {
@@ -865,38 +915,6 @@
                 ],
                 "pot:required": false
             },
-            "taxVatCode": {
-                "@id": "pot:identifier/taxVatCode",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:identifier",
-                "rdfs:label": {
-                    "fi-fi": "ALV-tunnus",
-                    "en-us": "VAT code"
-                },
-                "rdfs:comment": {
-                    "fi-fi": "Alv-numero muodostetaan Y-tunnuksesta 1234567-8 lisäämällä sen alkuun kaksikirjaiminen maatunnus FI ja jättämällä tunnuksesta väliviiva pois: FI12345678.",
-                    "en-us": "Value-added taxation identifier"
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
-            },
-            "updatedBy": {
-                "@id": "pot:metadata/updatedBy",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:metadata",
-                "rdfs:label": {
-                    "fi-fi": "Identieetin päivittäjä",
-                    "en-us": "Updater"
-                },
-                "rdfs:comment": {
-                    "en-us": "Updater of an identity"
-                },
-                "pot:required": false,
-                "pot:readonly": true
-            },
             "registrationCountry": {
                 "@id": "pot:identifier/registrationCountry",
                 "@type": "owl:DatatypeProperty",
@@ -913,24 +931,6 @@
                     "xsd:string"
                 ],
                 "pot:required": false
-            },
-            "governmentPermanent": {
-                "@id": "pot:identifier/governmentPermanent",
-                "@type": "owl:DatatypeProperty",
-                "subPropertyOf": "pot:identifier",
-                "rdfs:label": {
-                    "en-us": "Permanent Official Id",
-                    "fi-fi": "Y-tunnus"
-                },
-                "rdfs:comment": {
-                    "en-us": "Permanent identifier given by an official authority in Finland",
-                    "fi-fi": "Yritys- ja yhteisötunnus eli Y-tunnus on PRH:n tai Verohallinnon yritykselle ja yhteisölle antama tunnus. Siinä on seitsemän numeroa, väliviiva ja tarkistusmerkki, eli se on muotoa 1234567-8."
-                },
-                "pot:valueType": [
-                    "xsd:string"
-                ],
-                "pot:required": false,
-                "pot:readonly": false
             }
         }
     }
