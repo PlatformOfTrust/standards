@@ -90,25 +90,6 @@
             "pot:Annotation/Location"
         ]
     },
-    "direction": {
-        "@id": "pot:physical/direction",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "en-us": "Direction",
-            "fi-fi": "Suunta (vapaa määritelmä)"
-        },
-        "rdfs:comment": {
-            "en-us": "Direction indicated by some known value (can be specific to a standard).",
-            "fi-fi": "Suuntaa määrittävä arvo (voi olla spesifinen jonkun standardin mukaan)."
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:TransportationRoute"
-        ]
-    },
     "timetableType": {
         "@id": "pot:time/timetableType",
         "@type": "owl:DatatypeProperty",
@@ -128,45 +109,20 @@
             "pot:TransportationRoute"
         ]
     },
-    "version": {
-        "@id": "pot:lifeCycle/version",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:lifeCycle",
+    "operator": {
+        "@id": "pot:topObjectProperty/role/operator",
+        "@type": "owl:ObjectProperty",
+        "subPropertyOf": "pot:topObjectProperty/role",
         "rdfs:label": {
-            "en-us": "Version name",
-            "fi-fi": "Version nimi"
+            "fi-fi": "Operaattori",
+            "en-us": "Operator"
         },
         "rdfs:comment": {
-            "en-us": "Version name",
-            "fi-fi": "Version nimi"
+            "en-us": "Responsible for operating something (typically process or process task)",
+            "fi-fi": "Vastuullinen operoija jollekin (yleensä prosessille tai prosessin tehtävälle)"
         },
-        "label": [
-            {
-                "rdfs:label": {
-                    "en-us": "Product version",
-                    "fi-fi": "Tuoteversio"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            }
-        ],
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Version of the product"
-                },
-                "domain": [
-                    "pot:Identity/Product"
-                ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:string"
-        ],
         "domain": [
-            "pot:TransportationRoute",
-            "pot:Identity/Product"
+            "pot:TransportationRoute"
         ]
     },
     "congestionLevel": {
@@ -188,18 +144,21 @@
             "pot:Annotation/Location"
         ]
     },
-    "operator": {
-        "@id": "pot:topObjectProperty/role/operator",
-        "@type": "owl:ObjectProperty",
-        "subPropertyOf": "pot:topObjectProperty/role",
+    "direction": {
+        "@id": "pot:physical/direction",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Operaattori",
-            "en-us": "Operator"
+            "en-us": "Direction",
+            "fi-fi": "Suunta (vapaa määritelmä)"
         },
         "rdfs:comment": {
-            "en-us": "Responsible for operating something (typically process or process task)",
-            "fi-fi": "Vastuullinen operoija jollekin (yleensä prosessille tai prosessin tehtävälle)"
+            "en-us": "Direction indicated by some known value (can be specific to a standard).",
+            "fi-fi": "Suuntaa määrittävä arvo (voi olla spesifinen jonkun standardin mukaan)."
         },
+        "pot:valueType": [
+            "xsd:string"
+        ],
         "domain": [
             "pot:TransportationRoute"
         ]
@@ -219,20 +178,21 @@
         "label": [
             {
                 "rdfs:label": {
-                    "en-us": "Case category",
-                    "fi-fi": "Palvelupyynnön luokka"
+                    "fi-fi": "Lokaali tyypitys",
+                    "en-us": "Type name given locally"
                 },
                 "domain": [
-                    "pot:Identity/Case"
+                    "pot:Identity/Element/BuildingElement",
+                    "pot:Identity/Equipment/Device"
                 ]
             },
             {
                 "rdfs:label": {
-                    "en-us": "Condition local class",
-                    "fi-fi": "Ehdon paikallinen luokka"
+                    "fi-fi": "Laatuominaisuuden paikallinen luokka",
+                    "en-us": "Quality local class"
                 },
                 "domain": [
-                    "pot:Annotation/Condition"
+                    "pot:Annotation/Quality"
                 ]
             },
             {
@@ -247,21 +207,20 @@
             },
             {
                 "rdfs:label": {
-                    "fi-fi": "Laatuominaisuuden paikallinen luokka",
-                    "en-us": "Quality local class"
+                    "en-us": "Condition local class",
+                    "fi-fi": "Ehdon paikallinen luokka"
                 },
                 "domain": [
-                    "pot:Annotation/Quality"
+                    "pot:Annotation/Condition"
                 ]
             },
             {
                 "rdfs:label": {
-                    "fi-fi": "Lokaali tyypitys",
-                    "en-us": "Type name given locally"
+                    "en-us": "Case category",
+                    "fi-fi": "Palvelupyynnön luokka"
                 },
                 "domain": [
-                    "pot:Identity/Element/BuildingElement",
-                    "pot:Identity/Equipment/Device"
+                    "pot:Identity/Case"
                 ]
             }
         ],
@@ -303,44 +262,7 @@
                     "fi-fi": "Paikallinen koodi"
                 },
                 "domain": [
-                    "pot:Identity/Equipment/Device"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Local identifier",
-                    "fi-fi": "Paikallinen tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement/Storey"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Process Id",
-                    "fi-fi": "Prosessin tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Process"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Project Id",
-                    "fi-fi": "Projektin tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Local identifier",
-                    "fi-fi": "Paikallinen tunniste"
-                },
-                "domain": [
-                    "pot:Identity/Space",
-                    "pot:Identity/Space/Room"
+                    "pot:Identity/Element/BuildingElement"
                 ]
             },
             {
@@ -358,14 +280,13 @@
                     "fi-fi": "Paikallinen koodi"
                 },
                 "domain": [
-                    "pot:Identity/Element/BuildingElement"
+                    "pot:Identity/Equipment/Device"
                 ]
-            }
-        ],
-        "comment": [
+            },
             {
-                "rdfs:comment": {
-                    "en-us": "Locally given identifier for the space"
+                "rdfs:label": {
+                    "en-us": "Local identifier",
+                    "fi-fi": "Paikallinen tunniste"
                 },
                 "domain": [
                     "pot:Identity/Space",
@@ -373,19 +294,40 @@
                 ]
             },
             {
-                "rdfs:comment": {
-                    "en-us": "Locally given identifier for the process instance"
+                "rdfs:label": {
+                    "en-us": "Project Id",
+                    "fi-fi": "Projektin tunniste"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Process Id",
+                    "fi-fi": "Prosessin tunniste"
                 },
                 "domain": [
                     "pot:Identity/Process"
                 ]
             },
             {
-                "rdfs:comment": {
-                    "en-us": "Locally given identifier for the storey"
+                "rdfs:label": {
+                    "en-us": "Local identifier",
+                    "fi-fi": "Paikallinen tunniste"
                 },
                 "domain": [
                     "pot:Identity/Element/BuildingElement/Storey"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Local identifier (system identifier)"
+                },
+                "domain": [
+                    "pot:Identity/Case"
                 ]
             },
             {
@@ -398,10 +340,26 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Local identifier (system identifier)"
+                    "en-us": "Locally given identifier for the storey"
                 },
                 "domain": [
-                    "pot:Identity/Case"
+                    "pot:Identity/Element/BuildingElement/Storey"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Locally given identifier for the process instance"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Identifier given locally for the building element"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
                 ]
             },
             {
@@ -414,10 +372,11 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Identifier given locally for the building element"
+                    "en-us": "Locally given identifier for the space"
                 },
                 "domain": [
-                    "pot:Identity/Element/BuildingElement"
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
                 ]
             }
         ],
@@ -458,6 +417,47 @@
         ],
         "domain": [
             "pot:Annotation/Location"
+        ]
+    },
+    "version": {
+        "@id": "pot:lifeCycle/version",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:lifeCycle",
+        "rdfs:label": {
+            "en-us": "Version name",
+            "fi-fi": "Version nimi"
+        },
+        "rdfs:comment": {
+            "en-us": "Version name",
+            "fi-fi": "Version nimi"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Product version",
+                    "fi-fi": "Tuoteversio"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Version of the product"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:TransportationRoute",
+            "pot:Identity/Product"
         ]
     },
     "latitude": {

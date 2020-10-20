@@ -43,11 +43,6 @@
         "@id": "pot:Link",
         "@type": "owl:Class"
     },
-    "Role": {
-        "rdfs:subClassOf": {
-            "@id": "pot:Link"
-        }
-    },
     "AtDataProduct": {
         "rdfs:subClassOf": {
             "@id": "pot:Link"
@@ -64,6 +59,11 @@
         }
     },
     "PublishedOn": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Link"
+        }
+    },
+    "Role": {
         "rdfs:subClassOf": {
             "@id": "pot:Link"
         }
@@ -94,6 +94,22 @@
         },
         "rdfs:comment": {
             "en-us": "Creator of and identity"
+        },
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:metadata/updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:metadata",
+        "rdfs:label": {
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
+        },
+        "rdfs:comment": {
+            "en-us": "Updater of an identity"
         },
         "domain": [
             "pot:Identity",
@@ -141,22 +157,6 @@
             "pot:Link"
         ]
     },
-    "updatedBy": {
-        "@id": "pot:metadata/updatedBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:metadata",
-        "rdfs:label": {
-            "fi-fi": "Identieetin päivittäjä",
-            "en-us": "Updater"
-        },
-        "rdfs:comment": {
-            "en-us": "Updater of an identity"
-        },
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
     "startDateTime": {
         "@id": "pot:time/startDateTime",
         "@type": "owl:DatatypeProperty",
@@ -172,18 +172,10 @@
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Start time of the case"
+                    "en-us": "Start time"
                 },
                 "domain": [
-                    "pot:Identity/Case"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Start time of the project"
-                },
-                "domain": [
-                    "pot:Identity/Project"
+                    "pot:Link"
                 ]
             },
             {
@@ -196,10 +188,18 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Start time"
+                    "en-us": "Start time of the project"
                 },
                 "domain": [
-                    "pot:Link"
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Start time of the case"
+                },
+                "domain": [
+                    "pot:Identity/Case"
                 ]
             }
         ],
@@ -245,20 +245,20 @@
         "label": [
             {
                 "rdfs:label": {
-                    "en-us": "Product status",
-                    "fi-fi": "Tuotteen status"
+                    "fi-fi": "Elinkaari - Status",
+                    "en-us": "Life cycle status"
                 },
                 "domain": [
-                    "pot:Identity/Product"
-                ]
-            },
-            {
-                "rdfs:label": {
-                    "en-us": "Process status",
-                    "fi-fi": "Prosessin tila"
-                },
-                "domain": [
-                    "pot:Identity/Process"
+                    "pot:Link",
+                    "pot:Identity/Space",
+                    "pot:Identity/Element/BuildingElement",
+                    "pot:Identity/Element/BuildingElement/Storey",
+                    "pot:Identity/Equipment/Device",
+                    "pot:Identity/Group/System",
+                    "pot:Identity/LegalParty/Organization",
+                    "pot:Identity/LegalParty/Person",
+                    "pot:Identity/Space/RealEstate",
+                    "pot:Identity/Space/Room"
                 ]
             },
             {
@@ -272,20 +272,29 @@
             },
             {
                 "rdfs:label": {
+                    "en-us": "Process status",
+                    "fi-fi": "Prosessin tila"
+                },
+                "domain": [
+                    "pot:Identity/Process"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Product status",
+                    "fi-fi": "Tuotteen status"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            },
+            {
+                "rdfs:label": {
                     "fi-fi": "Elinkaari - Status",
                     "en-us": "Life cycle status"
                 },
                 "domain": [
-                    "pot:Link",
-                    "pot:Identity/Space",
-                    "pot:Identity/Element/BuildingElement",
-                    "pot:Identity/Element/BuildingElement/Storey",
-                    "pot:Identity/Equipment/Device",
-                    "pot:Identity/Group/System",
-                    "pot:Identity/LegalParty/Organization",
-                    "pot:Identity/LegalParty/Person",
-                    "pot:Identity/Space/RealEstate",
-                    "pot:Identity/Space/Room"
+                    "pot:Identity/Structure/Building"
                 ]
             },
             {
@@ -296,57 +305,15 @@
                 "domain": [
                     "pot:Identity/Case"
                 ]
-            },
-            {
-                "rdfs:label": {
-                    "fi-fi": "Elinkaari - Status",
-                    "en-us": "Life cycle status"
-                },
-                "domain": [
-                    "pot:Identity/Structure/Building"
-                ]
             }
         ],
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Life cycle status of the building"
+                    "en-us": "Process state"
                 },
                 "domain": [
-                    "pot:Identity/Structure/Building"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Case state"
-                },
-                "domain": [
-                    "pot:Identity/Case"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "project state"
-                },
-                "domain": [
-                    "pot:Identity/Project"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Life cycle status"
-                },
-                "domain": [
-                    "pot:Link",
-                    "pot:Identity/Space",
-                    "pot:Identity/Element/BuildingElement",
-                    "pot:Identity/Element/BuildingElement/Storey",
-                    "pot:Identity/Equipment/Device",
-                    "pot:Identity/Group/System",
-                    "pot:Identity/LegalParty/Organization",
-                    "pot:Identity/LegalParty/Person",
-                    "pot:Identity/Space/RealEstate",
-                    "pot:Identity/Space/Room"
+                    "pot:Identity/Process"
                 ]
             },
             {
@@ -359,10 +326,43 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Process state"
+                    "en-us": "Life cycle status"
                 },
                 "domain": [
-                    "pot:Identity/Process"
+                    "pot:Link",
+                    "pot:Identity/Space",
+                    "pot:Identity/Element/BuildingElement",
+                    "pot:Identity/Element/BuildingElement/Storey",
+                    "pot:Identity/Equipment/Device",
+                    "pot:Identity/Group/System",
+                    "pot:Identity/LegalParty/Organization",
+                    "pot:Identity/LegalParty/Person",
+                    "pot:Identity/Space/RealEstate",
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "project state"
+                },
+                "domain": [
+                    "pot:Identity/Project"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Case state"
+                },
+                "domain": [
+                    "pot:Identity/Case"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Life cycle status of the building"
+                },
+                "domain": [
+                    "pot:Identity/Structure/Building"
                 ]
             }
         ],

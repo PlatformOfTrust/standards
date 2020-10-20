@@ -67,26 +67,10 @@
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Height of the element"
+                    "en-us": "Height of the building"
                 },
                 "domain": [
-                    "pot:Identity/Element/BuildingElement"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Height of the object"
-                },
-                "domain": [
-                    "pot:Identity/Space/Room"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Height of the device"
-                },
-                "domain": [
-                    "pot:Identity/Equipment/Device"
+                    "pot:Identity/Structure/Building"
                 ]
             },
             {
@@ -99,10 +83,26 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Height of the building"
+                    "en-us": "Height of the device"
                 },
                 "domain": [
-                    "pot:Identity/Structure/Building"
+                    "pot:Identity/Equipment/Device"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Height of the object"
+                },
+                "domain": [
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Height of the element"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
                 ]
             }
         ],
@@ -158,30 +158,22 @@
             "pot:Identity/Product"
         ]
     },
-    "volume": {
-        "@id": "pot:physical/volume",
+    "weight": {
+        "@id": "pot:physical/weight",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:physical",
         "rdfs:label": {
-            "fi-fi": "Tilavuus",
-            "en-us": "Volume"
+            "fi-fi": "Paino",
+            "en-us": "Weight"
         },
         "rdfs:comment": {
-            "fi-fi": "Objektin tilavuus",
-            "en-us": "Volume of the object"
+            "en-us": "Object weight",
+            "fi-fi": "Objektin paino"
         },
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Volume of the building"
-                },
-                "domain": [
-                    "pot:Identity/Structure/Building"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Volume of the device"
+                    "en-us": "Weight of the device"
                 },
                 "domain": [
                     "pot:Identity/Equipment/Device"
@@ -189,27 +181,10 @@
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Volume of the space"
-                },
-                "domain": [
-                    "pot:Identity/Space"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Volume of the element"
+                    "en-us": "Weight of the element"
                 },
                 "domain": [
                     "pot:Identity/Element/BuildingElement"
-                ]
-            },
-            {
-                "rdfs:comment": {
-                    "en-us": "Volume of the object"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement/Storey",
-                    "pot:Identity/Space/Room"
                 ]
             }
         ],
@@ -219,12 +194,8 @@
         "domain": [
             "pot:Package",
             "pot:Identity/Product",
-            "pot:Identity/Space",
             "pot:Identity/Element/BuildingElement",
-            "pot:Identity/Element/BuildingElement/Storey",
-            "pot:Identity/Equipment/Device",
-            "pot:Identity/Space/Room",
-            "pot:Identity/Structure/Building"
+            "pot:Identity/Equipment/Device"
         ]
     },
     "width": {
@@ -242,58 +213,18 @@
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Width of the element"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement"
-                ]
-            },
-            {
-                "rdfs:comment": {
                     "en-us": "Width of the device"
                 },
                 "domain": [
                     "pot:Identity/Equipment/Device"
                 ]
-            }
-        ],
-        "pot:valueType": [
-            "xsd:decimal"
-        ],
-        "domain": [
-            "pot:Package",
-            "pot:Identity/Product",
-            "pot:Identity/Element/BuildingElement",
-            "pot:Identity/Equipment/Device"
-        ]
-    },
-    "weight": {
-        "@id": "pot:physical/weight",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:physical",
-        "rdfs:label": {
-            "fi-fi": "Paino",
-            "en-us": "Weight"
-        },
-        "rdfs:comment": {
-            "en-us": "Object weight",
-            "fi-fi": "Objektin paino"
-        },
-        "comment": [
-            {
-                "rdfs:comment": {
-                    "en-us": "Weight of the element"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement"
-                ]
             },
             {
                 "rdfs:comment": {
-                    "en-us": "Weight of the device"
+                    "en-us": "Width of the element"
                 },
                 "domain": [
-                    "pot:Identity/Equipment/Device"
+                    "pot:Identity/Element/BuildingElement"
                 ]
             }
         ],
@@ -322,18 +253,18 @@
         "comment": [
             {
                 "rdfs:comment": {
-                    "en-us": "Length of the element"
-                },
-                "domain": [
-                    "pot:Identity/Element/BuildingElement"
-                ]
-            },
-            {
-                "rdfs:comment": {
                     "en-us": "Length of the device"
                 },
                 "domain": [
                     "pot:Identity/Equipment/Device"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Length of the element"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
                 ]
             }
         ],
@@ -345,6 +276,75 @@
             "pot:Identity/Product",
             "pot:Identity/Element/BuildingElement",
             "pot:Identity/Equipment/Device"
+        ]
+    },
+    "volume": {
+        "@id": "pot:physical/volume",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "fi-fi": "Tilavuus",
+            "en-us": "Volume"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Objektin tilavuus",
+            "en-us": "Volume of the object"
+        },
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the object"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement/Storey",
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the element"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the space"
+                },
+                "domain": [
+                    "pot:Identity/Space"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the device"
+                },
+                "domain": [
+                    "pot:Identity/Equipment/Device"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Volume of the building"
+                },
+                "domain": [
+                    "pot:Identity/Structure/Building"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Package",
+            "pot:Identity/Product",
+            "pot:Identity/Space",
+            "pot:Identity/Element/BuildingElement",
+            "pot:Identity/Element/BuildingElement/Storey",
+            "pot:Identity/Equipment/Device",
+            "pot:Identity/Space/Room",
+            "pot:Identity/Structure/Building"
         ]
     }
 }
