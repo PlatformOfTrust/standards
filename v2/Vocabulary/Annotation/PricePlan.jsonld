@@ -1,0 +1,533 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards.oftrust.net/v2/Vocabulary/",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "PricePlan": {
+        "@id": "pot:Annotation/PricePlan",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Annotation",
+        "rdfs:label": {
+            "fi-fi": "Hinnoittelu",
+            "en-us": "Price Plan"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Hinnoittelu entiteetti sisältää ominaisuudet joilla määritellään hinnoittelumalli ja hinta",
+            "en-us": "Price plan entity contains properties related to pricing mechnanism and price"
+        }
+    },
+    "vatPercentage": {
+        "@id": "pot:financial/vatPercentage",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:financial",
+        "rdfs:label": {
+            "fi-fi": "Arvonlisävero prosentti",
+            "en-us": "VAT percentage"
+        },
+        "rdfs:comment": {
+            "en-us": "Percentage value used for VAT taxation",
+            "fi-fi": "Prosentti jota sovelletaan arvonlisäverossa"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "fi-fi": "Arvonlisävero prosentti",
+                    "en-us": "VAT percentage"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Percentage value used for VAT taxation"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:integer"
+        ],
+        "domain": [
+            "pot:Annotation/PricePlan"
+        ]
+    },
+    "unitGroup": {
+        "@id": "pot:physical/unitGroup",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Unit group",
+            "fi-fi": "Yksikköryhmä"
+        },
+        "rdfs:comment": {
+            "en-us": "Unit group name/definition",
+            "fi-fi": "Yksikköryhmän tunniste/määritys"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Unit group",
+                    "fi-fi": "Yksikköryhmä"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Group name of the unit used for rate (price) value"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/PricePlan"
+        ]
+    },
+    "vatIncluded": {
+        "@id": "pot:financial/vatIncluded",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:financial",
+        "rdfs:label": {
+            "fi-fi": "Arvonlisävero sisältyy yksikköhintaan",
+            "en-us": "VAT included in rate"
+        },
+        "rdfs:comment": {
+            "en-us": "Information if VAT is included in the rate (price per unit)",
+            "fi-fi": "Tieto jos arvonlisävero (ALV) kuuluu yksikköhintaan"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "fi-fi": "Arvonlisävero sisältyy hintaan",
+                    "en-us": "VAT included in rate"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Information if VAT is included in the rate (price per unit)"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:boolean"
+        ],
+        "domain": [
+            "pot:Annotation/PricePlan"
+        ]
+    },
+    "name": {
+        "@id": "pot:identifier/name",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "en-us": "Name",
+            "fi-fi": "Nimi"
+        },
+        "rdfs:comment": {
+            "en-us": "Name",
+            "fi-fi": "Nimi"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "fi-fi": "Kiinteistön nimi",
+                    "en-us": "Name"
+                },
+                "domain": [
+                    "pot:Identity/Space/RealEstate"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Apartment name",
+                    "fi-fi": "Huoneistotunnus"
+                },
+                "domain": [
+                    "pot:Identity/Space/Apartment"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Building name",
+                    "fi-fi": "Rakennuksen nimi"
+                },
+                "domain": [
+                    "pot:Identity/Structure/Building"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Local name",
+                    "fi-fi": "Paikallinen nimi"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Product name",
+                    "fi-fi": "Tuotenimi"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Organisaation nimi",
+                    "en-us": "Organization name"
+                },
+                "domain": [
+                    "pot:Identity/LegalParty/Organization"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Local name",
+                    "fi-fi": "Paikallinen nimi"
+                },
+                "domain": [
+                    "pot:Identity/Equipment/Device"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Huoneen nimi",
+                    "en-us": "Room name"
+                },
+                "domain": [
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Järjestelmän nimi",
+                    "en-us": "System name"
+                },
+                "domain": [
+                    "pot:Identity/Group/System"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Hinnastonimi",
+                    "en-us": "Price plan name"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "fi-fi": "Laatuominaisuuden nimi",
+                    "en-us": "Quality name"
+                },
+                "domain": [
+                    "pot:Annotation/Quality"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Condition name",
+                    "fi-fi": "Ehdon nimi"
+                },
+                "domain": []
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Name given locally for the building element"
+                },
+                "domain": [
+                    "pot:Identity/Element/BuildingElement"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Name of the condition"
+                },
+                "domain": [
+                    "pot:Annotation/Condition"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Name given locally for the device"
+                },
+                "domain": [
+                    "pot:Identity/Equipment/Device"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Name of the real estate"
+                },
+                "domain": [
+                    "pot:Identity/Space/RealEstate"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Name of the quality class"
+                },
+                "domain": [
+                    "pot:Annotation/Quality"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Room name"
+                },
+                "domain": [
+                    "pot:Identity/Space/Room"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Name givento the system"
+                },
+                "domain": [
+                    "pot:Identity/Group/System"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Name of organisation"
+                },
+                "domain": [
+                    "pot:Identity/LegalParty/Organization"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Name of the building"
+                },
+                "domain": [
+                    "pot:Identity/Structure/Building"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Name of the price plan"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Unique product name given by manufacturer"
+                },
+                "domain": [
+                    "pot:Identity/Product"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Apartment name"
+                },
+                "domain": [
+                    "pot:Identity/Space/Apartment"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Event",
+            "pot:Annotation/Condition",
+            "pot:Annotation/PricePlan",
+            "pot:Annotation/Time/Period",
+            "pot:Identity/Document",
+            "pot:Identity/Product",
+            "pot:Identity/Element/BuildingElement",
+            "pot:Identity/Equipment/Device",
+            "pot:Identity/Group/System",
+            "pot:Identity/LegalParty/Organization",
+            "pot:Identity/Space/Apartment",
+            "pot:Identity/Space/RealEstate",
+            "pot:Identity/Space/Room",
+            "pot:Identity/Structure/Building"
+        ]
+    },
+    "rate": {
+        "@id": "pot:financial/rate",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:financial",
+        "rdfs:label": {
+            "en-us": "Rate",
+            "fi-fi": "Yksikköhinta"
+        },
+        "rdfs:comment": {
+            "en-us": "Rate value",
+            "fi-fi": "Yksikköhinnan arvo"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Rate",
+                    "fi-fi": "Yksikköhinta"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Rate value"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:decimal"
+        ],
+        "domain": [
+            "pot:Annotation/PricePlan"
+        ]
+    },
+    "unit": {
+        "@id": "pot:physical/unit",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:physical",
+        "rdfs:label": {
+            "en-us": "Unit",
+            "fi-fi": "Yksikkö"
+        },
+        "rdfs:comment": {
+            "en-us": "Unit used (Defines unit which is used)",
+            "fi-fi": "Yksikön määritetty suure"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Unit",
+                    "fi-fi": "Yksikkö"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Exact name of the unit used for rate (price) value"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/PricePlan"
+        ]
+    },
+    "currency": {
+        "@id": "pot:financial/currency",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:financial",
+        "rdfs:label": {
+            "en-us": "Currency",
+            "fi-fi": "Valuutta"
+        },
+        "rdfs:comment": {
+            "en-us": "Currency used for rate",
+            "fi-fi": "Valuutta jota käytetään yksikköhinnassa"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Currency",
+                    "fi-fi": "Valuutta"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Currency used for rate"
+                },
+                "domain": [
+                    "pot:Annotation/PricePlan"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/PricePlan"
+        ]
+    }
+}

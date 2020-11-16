@@ -1,0 +1,59 @@
+{
+   "$schema":"http://json-schema.org/draft-06/schema#",
+   "$id":"https://standards.oftrust.net/v2/Schema/DataProductOutput/Forecast",
+   "required":[
+      "@context",
+      "data",
+      "signature"
+   ],
+   "properties":{
+      "@context":{
+         "type":"string",
+         "description":"The context to be used for the payload.",
+         "const":"https://standards.oftrust.net/v2/Context/DataProductOutput/Forecast/"
+      },
+      "data":{
+         "required": ["forecasts"],
+         "properties":{
+            "forecasts":{
+               "type":"array",
+               "description":"Actual forecasts.",
+               "items":{
+                  "required":[],
+                  "properties":{},
+                  "additionalProperties":true,
+                  "type":"object"
+               }
+            }
+         },
+         "type":"object"
+      },
+      "signature":{
+         "required":[
+            "type",
+            "created",
+            "creator",
+            "signatureValue"
+         ],
+         "properties":{
+            "type":{
+               "type":"string"
+            },
+            "created":{
+               "type":"string",
+               "format":"date-time"
+            },
+            "creator":{
+               "type":"string"
+            },
+            "signatureValue":{
+               "type":"string"
+            }
+         },
+         "additionalProperties":true,
+         "type":"object"
+      }
+   },
+   "additionalProperties":true,
+   "type":"object"
+}
