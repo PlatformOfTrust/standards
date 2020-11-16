@@ -7,11 +7,23 @@ from generators.commons.extended_properties import label as pot_label
 from generators.commons.extended_properties import comment as pot_comment
 
 
-# TODO. Hardcoded PREFIX required for entity files
-PREFIX = 'pot'
+def build_nested_domains(d):
+    parents = {}
+    if d and not isinstance(d, str):
+        for a in d.ancestors():
+            parent, child = str(a).split('.')
+            parents[child] = parent
+
+        domains = []
+        domains.append(d.name)
+        child = d.name
+        while parents[child] != 'pot' and parents[child] != "Vocabulary":
+            domains.append(parents[child])
+            child = parents[child]
+    return domains
 
 
-def build_nested_labels(owl_property: Any) -> List[Dict[str, str]]:
+def build_nested_labels(owl_property: Any, PREFIX='pot') -> List[Dict[str, str]]:
     """Return list of dicts with nested labels.
 
         Args:
@@ -33,17 +45,23 @@ def build_nested_labels(owl_property: Any) -> List[Dict[str, str]]:
                     })
 
             nested_labels_template = {'rdfs:label': {}}
+
+            domains = list()
+            for d in l.domain:
+                if d and not isinstance(d, str):
+                    domains.append('/'.join(build_nested_domains(d)[::-1]))
+
             for nl in property_nested_labels:
                 for k, v in nl.items():
                     nested_labels_template['rdfs:label'][k] = v
                 nested_labels_template['domain'] = [
-                    f'{PREFIX}:{d.name}' for d in l.domain]
+                    f'{PREFIX}:{d}' for d in domains]
             nested_labels.append(nested_labels_template)
 
     return nested_labels
 
 
-def build_nested_comments(owl_property: Any) -> List[Dict[str, str]]:
+def build_nested_comments(owl_property: Any, PREFIX='pot') -> List[Dict[str, str]]:
     """Return list of dicts with nested comments.
 
         Args:
@@ -58,10 +76,16 @@ def build_nested_comments(owl_property: Any) -> List[Dict[str, str]]:
     for c in owl_property.comment:
         if c:
             nested_comments_template = {'rdfs:comment': {}}
+
+            domains = list()
+            for d in c.domain:
+                if d and not isinstance(d, str):
+                    domains.append('/'.join(build_nested_domains(d)[::-1]))
+
             for k, v in build_comments(c).items():
                 nested_comments_template['rdfs:comment'][k] = v
             nested_comments_template['domain'] = [
-                f'{PREFIX}:{d.name}' for d in c.domain]
+                f'{PREFIX}:{d}' for d in domains]
             nested_comments.append(nested_comments_template)
     return nested_comments
 
@@ -123,11 +147,12 @@ def build_ranges(owl_property: Any) -> List[str]:
     """
     result_ranges = list()
     for range_type in owl_range._get_indirect_values_for_class(owl_property):
-        if isinstance(range_type, type):
+        # if isinstance(range_type, type):
+        try:
             result_ranges.append(
                 str(default_world._unabbreviate(base._universal_datatype_2_abbrev[range_type])).replace(
                     'http://www.w3.org/2001/XMLSchema#', 'xsd:'))
-        else:
+        except:
             result_ranges.append(str(range_type).replace('XMLSchema.', 'xsd:'))
     return result_ranges
 
@@ -197,16 +222,23 @@ def build_required(owl_property: Any) -> bool:
     return False
 
 
-def build_domains(owl_property):
+def build_domains(owl_property: Any, PREFIX='pot') -> List[str]:
+    """Return list of property domains.
+
+        Args:
+            owl_property (Any):                 
+                Property of entity.
+                Can be: ObjectPropertyClass, AnnotationPropertyClass, DataPropertyClass.
+        Returns:
+            domains (list of str): List of property domains.
+    """
     domains = list()
     for d in domain._get_indirect_values_for_class(owl_property):
-        domains.append(f'{PREFIX}:{d.name}')
-    if domains:
-        return domains
-    return None
+        domains.append(f'{PREFIX}:{"/".join(build_nested_domains(d)[::-1])}')
+    return domains
 
 
-def build_subclass(owl_property):
+def build_subclass(owl_property: Any) -> List[Any]:
     """Return list of subclasses of entity.
 
         Args:
@@ -219,7 +251,7 @@ def build_subclass(owl_property):
     return list(subClassOf._get_indirect_values_for_class(owl_property))
 
 
-def build_subproperty(owl_property):
+def build_subproperty(owl_property: Any) -> List[Any]:
     """Return list of subproperties of entity.
 
         Args:
@@ -263,53 +295,3 @@ def class_get_full_id(entity: Any) -> str:
     if subclass and subclass[0] != Thing:
         class_id = f'{class_get_full_id(subclass[0])}/'
     return f'{class_id}{entity.name}'
-
-
-def owl_property_to_python_base(owl_property: Any) -> Dict[str, Any]:
-    """Return dict of generated parameters using property.
-
-        Args:
-            owl_property (Any):
-                Property of entity.
-                Can be: ObjectPropertyClass, AnnotationPropertyClass, DataPropertyClass.
-
-        Returns:
-            result (dict of str: Any): Dict of generated parameters.
-    """
-    result = dict()
-    result['@id'] = f'{PREFIX}:{prop_get_full_id(owl_property)}'
-    result['@type'] = default_world._unabbreviate(owl_property._owl_type).replace(
-        'http://www.w3.org/2002/07/owl#', 'owl:')
-
-    subproperties = build_subproperty(owl_property)
-    if subproperties:
-        result['subPropertyOf'] = f'{PREFIX}:{prop_get_full_id(subproperties[0])}'
-
-    # TODO
-    labels = build_labels(owl_property)
-    if labels.items():
-        result["rdfs:label"] = labels
-
-    # TODO
-    comments = build_comments(owl_property)
-    if comments.items():
-        result["rdfs:comment"] = comments
-
-    # TODO
-    nested_labes = build_nested_labels(owl_property)
-    if nested_labes:
-        result["label"] = nested_labes
-
-    # TODO
-    nested_comments = build_nested_comments(owl_property)
-    if nested_comments:
-        result["comment"] = nested_comments
-
-    ranges = build_ranges(owl_property)
-    if ranges:
-        result[f'{PREFIX}:valueType'] = ranges
-
-    restrictions = build_restrictions(owl_property)
-    if restrictions:
-        result['xsd:restriction'] = restrictions
-    return result

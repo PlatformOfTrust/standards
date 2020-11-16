@@ -1,0 +1,105 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards-ontotest.oftrust.net/v2/Vocabulary/",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "categorizationOfficial": {
+        "@id": "pot:categorization/categorizationOfficial",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "Official categorization",
+            "fi-fi": "Viranomaisen luokitus"
+        },
+        "rdfs:comment": {
+            "en-us": "Categorization based on official (governmental) classification.",
+            "fi-fi": "Viranomaisen antama luokitus"
+        },
+        "label": [
+            {
+                "rdfs:label": {
+                    "en-us": "Industry category.",
+                    "fi-fi": "Toimialaluokka."
+                },
+                "domain": [
+                    "pot:Identity/LegalParty/Organization"
+                ]
+            },
+            {
+                "rdfs:label": {
+                    "en-us": "Space type - official.",
+                    "fi-fi": "Tilatyyppi - viranomainen."
+                },
+                "domain": [
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
+                ]
+            }
+        ],
+        "comment": [
+            {
+                "rdfs:comment": {
+                    "en-us": "Organization categorization given by official authority.",
+                    "fi-fi": "Viranomaisen antama toimialaluokitus."
+                },
+                "domain": [
+                    "pot:Identity/LegalParty/Organization"
+                ]
+            },
+            {
+                "rdfs:comment": {
+                    "en-us": "Space type name derived from official categorization naming.",
+                    "fi-fi": "Viranomaisen antama luokitus tilalle."
+                },
+                "domain": [
+                    "pot:Identity/Space",
+                    "pot:Identity/Space/Room"
+                ]
+            }
+        ],
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity/Space",
+            "pot:Identity/LegalParty/Organization",
+            "pot:Identity/Space/Room"
+        ]
+    }
+}

@@ -1,0 +1,136 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards-ontotest.oftrust.net/v2/Vocabulary/",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "Location": {
+        "@id": "pot:Annotation/Location",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Annotation",
+        "rdfs:label": {
+            "en-us": "Location",
+            "fi-fi": "Sijainti"
+        },
+        "rdfs:comment": {
+            "en-us": "Location describes geographical position of an object (Identity)",
+            "fi-fi": "Sijainti kuvaa maantieteellistä objektin (Identity) paikkaa"
+        }
+    },
+    "TransportationRoute": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Annotation/Location"
+        }
+    },
+    "longitude": {
+        "@id": "pot:location/longitude",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:location",
+        "rdfs:label": {
+            "en-us": "Longitude",
+            "fi-fi": "Pituusaste"
+        },
+        "rdfs:comment": {
+            "en-us": "Angular distance east or west on the earth's surface, measured by the angle contained between the meridian of a particular place and some prime meridian, as that of Greenwich, England, and expressed either in degrees or by some corresponding difference in time (WGS 84).",
+            "fi-fi": "Pituusaste on sijaintipaikan ja nollameridiaanin eli Greenwichin meridiaanin välinen kulmaero (WGS 84)."
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Location"
+        ]
+    },
+    "latitude": {
+        "@id": "pot:location/latitude",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:location",
+        "rdfs:label": {
+            "en-us": "Latitude",
+            "fi-fi": "Leveysaste"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Leveysaste ilmaisee pisteen etäisyyden päiväntasaajalta. Leveysasteella tarkoitetaan pisteen kautta kulkevan ellipsoidipinnan normaalin ja päiväntasaajan määrittelemän tason välistä kulmaa (WGS 84).",
+            "en-us": "The angular distance north or south from the equator of a point on the earth's surface, measured on the meridian of the point (WGS 84)."
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Location"
+        ]
+    },
+    "congestionLevel": {
+        "@id": "pot:categorization/congestionLevel",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "en-us": "Congestion level",
+            "fi-fi": "Ruuhkataso"
+        },
+        "rdfs:comment": {
+            "en-us": "Congestion level",
+            "fi-fi": "Ruuhkataso"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Location"
+        ]
+    },
+    "country": {
+        "@id": "pot:address/country",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:address",
+        "rdfs:label": {
+            "en-us": "Country",
+            "fi-fi": "Maa"
+        },
+        "rdfs:comment": {
+            "en-us": "Location country name",
+            "fi-fi": "Sijainnin maan nimi"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Location"
+        ]
+    }
+}

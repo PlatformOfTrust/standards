@@ -1,0 +1,136 @@
+{
+   "$schema":"http://json-schema.org/draft-06/schema#",
+   "$id":"https://standards-ontotest.oftrust.net/v2/Schema/DataProductOutput/Forecast/Weather/AccuWeather",
+   "required":[
+      "@context",
+      "data",
+      "signature"
+   ],
+   "properties":{
+      "@context":{
+         "type":"string",
+         "description":"The context to be used for the payload.",
+         "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductOutput/Forecast/Weather/AccuWeather/"
+      },
+      "data":{
+         "required": ["forecasts"],
+         "properties":{
+            "forecasts":{
+               "type":"array",
+               "description":"Actual forecasts.",
+               "items":{
+                  "required":[
+                     "cloudCoverage",
+                     "dateTime",
+                     "humidity",
+                     "rainProbability",
+                     "rainVolume",
+                     "snowProbability",
+                     "snowVolume",
+                     "temperature",
+                     "temperatureFeel",
+                     "temperatureMax",
+                     "temperatureFeelMax",
+                     "temperatureMin",
+                     "temperatureFeelMin",
+                     "windDirection",
+                     "windSpeed"
+                  ],
+                  "properties":{
+                     "cloudCoverage":{
+                        "type":"number",
+                        "description":"Could coverage as percentage"
+                     },
+                     "dateTime":{
+                        "type":"string",
+                        "description":"The time and date the forecast data is applicable",
+                        "format":"date-time"
+                     },
+                     "humidity":{
+                        "type":"number",
+                        "description":"The relative humidity as percentage"
+                     },
+                     "rainProbability":{
+                        "type":"number",
+                        "description":"The probability of rain as percentage"
+                     },
+                     "rainVolume":{
+                        "type":"number"
+                     },
+                     "snowProbability":{
+                        "type":"number",
+                        "description":"The probability of snow as percentage"
+                     },
+                     "snowVolume":{
+                        "type":"number",
+                        "description":"The cumulative snow volume in mm"
+                     },
+                     "temperature":{
+                        "type":"number",
+                        "description":"Average temperature in celsius"
+                     },
+                     "temperatureFeel":{
+                        "type":"number",
+                        "description":"Average feels like temperature in celsius"
+                     },
+                     "temperatureMax":{
+                        "type":"number",
+                        "description":"Maximum temperature in celsius"
+                     },
+                     "temperatureFeelMax":{
+                        "type":"number",
+                        "description":"Maximum feels like temperature in celsius"
+                     },
+                     "temperatureMin":{
+                        "type":"number",
+                        "description":"Minimum temperature in celsius"
+                     },
+                     "temperatureFeelMin":{
+                        "type":"number",
+                        "description":"Minimum feels like temperature in celsius"
+                     },
+                     "windDirection":{
+                        "type":"number",
+                        "description":"Wind direction in degrees"
+                     },
+                     "windSpeed":{
+                        "type":"number",
+                        "description":"Wind speed in m/s"
+                     }
+                  },
+                  "additionalProperties":false,
+                  "type":"object"
+               }
+            }
+         },
+         "type":"object"
+      },
+      "signature":{
+         "required":[
+            "type",
+            "created",
+            "creator",
+            "signatureValue"
+         ],
+         "properties":{
+            "type":{
+               "type":"string"
+            },
+            "created":{
+               "type":"string",
+               "format":"date-time"
+            },
+            "creator":{
+               "type":"string"
+            },
+            "signatureValue":{
+               "type":"string"
+            }
+         },
+         "additionalProperties":false,
+         "type":"object"
+      }
+   },
+   "additionalProperties":false,
+   "type":"object"
+}

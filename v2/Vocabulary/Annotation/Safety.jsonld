@@ -1,0 +1,216 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards-ontotest.oftrust.net/v2/Vocabulary/",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "Safety": {
+        "@id": "pot:Annotation/Safety",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Annotation",
+        "rdfs:label": {
+            "en-us": "Safety information",
+            "fi-fi": "Turvallisuustiedot"
+        },
+        "rdfs:comment": {
+            "en-us": "Safety related information",
+            "fi-fi": "Turvallisuuteen liittyvät tiedot"
+        }
+    },
+    "safetyUsageIntended": {
+        "@id": "pot:functional/safetyUsageIntended",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "en-us": "Intended usage purpose",
+            "fi-fi": "Käyttötarkoitus"
+        },
+        "rdfs:comment": {
+            "en-us": "Intended usage of the product",
+            "fi-fi": "Tuotteen tai materiaalin käyttötarkoitus"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Safety"
+        ]
+    },
+    "safetyPreventionAndProtection": {
+        "@id": "pot:functional/safetyPreventionAndProtection",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Safety"
+        ]
+    },
+    "updated": {
+        "@id": "pot:time/updated",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:time",
+        "rdfs:label": {
+            "fi-fi": "Päivitetty",
+            "en-us": "Update time"
+        },
+        "rdfs:comment": {
+            "en-us": "Last update time",
+            "fi-fi": "Viimeisin päivitetty ajankohta"
+        },
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Contract",
+            "pot:Safety",
+            "pot:Identity/Document",
+            "pot:Identity/Process",
+            "pot:Identity/Product",
+            "pot:Identity/Project"
+        ]
+    },
+    "safetyNameDocument": {
+        "@id": "pot:functional/safetyNameDocument",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "en-us": "Safety document name",
+            "fi-fi": "Turvallisuustiedon dokumentin nimi"
+        },
+        "rdfs:comment": {
+            "en-us": "Safety document name",
+            "fi-fi": "Turvallisuustiedon dokumentin nimi"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Safety"
+        ]
+    },
+    "safetyNameCommercial": {
+        "@id": "pot:functional/safetyNameCommercial",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "fi-fi": "Kaupallinen nimi",
+            "en-us": "Safety commercial name"
+        },
+        "rdfs:comment": {
+            "en-us": "Safety document commercial name",
+            "fi-fi": "Turvallisuustiedon kaupallinen nimi"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Safety"
+        ]
+    },
+    "safetyFirstAidInstructions": {
+        "@id": "pot:functional/safetyFirstAidInstructions",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "fi-fi": "Ensiapuohjeet",
+            "en-us": "First aid instructions"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Ensiapuohjeet",
+            "en-us": "First aid instructions"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Safety"
+        ]
+    },
+    "idSystemLocal": {
+        "@id": "pot:identifier/idSystemLocal",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:identifier",
+        "rdfs:label": {
+            "fi-fi": "Lähdejärjestelmän tunnus",
+            "en-us": "Source system id"
+        },
+        "rdfs:comment": {
+            "en-us": "Id given by source system",
+            "fi-fi": "Lähdejärjestelmän antama tunnus"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Safety",
+            "pot:Identity/Product"
+        ]
+    },
+    "safetyDisposalInstructions": {
+        "@id": "pot:functional/safetyDisposalInstructions",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Safety"
+        ]
+    },
+    "safetyCasNumber": {
+        "@id": "pot:functional/safetyCasNumber",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:functional",
+        "rdfs:label": {
+            "en-us": "CAS number",
+            "fi-fi": "CAS-numero"
+        },
+        "rdfs:comment": {
+            "en-us": "CAS number.",
+            "fi-fi": "CAS-numero."
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Safety"
+        ]
+    }
+}

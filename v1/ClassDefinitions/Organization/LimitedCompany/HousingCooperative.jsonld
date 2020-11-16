@@ -1,0 +1,265 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "dli": {
+            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@prefix": true
+        },
+        "description": {
+            "@id": "dli:description",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards.oftrust.net/v1/Vocabulary/Organization/LimitedCompany/HousingCooperative"
+    },
+    "@id": "https://standards.oftrust.net/v1/Vocabulary/Organization/LimitedCompany/HousingCooperative",
+    "dli:supportedClass": {
+        "@id": "pot:Organization/LimitedCompany/HousingCooperative",
+        "@type": "pot:Class",
+        "subClassOf": "pot:Organization/LimitedCompany",
+        "rdfs:label": {
+            "en-us": "Housing Cooperative"
+        },
+        "dli:supportedAttribute": {
+            "data": {
+                "@id": "dli:data",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Data",
+                "dli:required": true,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Data container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "createdAt": {
+                "@id": "dli:createdAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creation time",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Time when the data is created"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "createdBy": {
+                "@id": "dli:createdBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Creator",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Creator of and identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "metadata": {
+                "@id": "dli:metadata",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Metadata",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Metadata container"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:object"
+                }
+            },
+            "name": {
+                "@id": "pot:identifier/name",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Organization name",
+                "dli:required": true,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Name of the organization"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "updatedAt": {
+                "@id": "dli:updatedAt",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Update time",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Time when the data is updated"
+                },
+                "dli:valueType": [
+                    "xsd:dateTime"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:dateTime"
+                }
+            },
+            "updatedBy": {
+                "@id": "dli:updatedBy",
+                "@type": "dli:SupportedAttribute",
+                "dli:title": "Updater",
+                "dli:required": false,
+                "dli:readonly": true,
+                "dli:description": {
+                    "en-us": "Updater of an identity "
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "categorizationOfficial": {
+                "@id": "pot:categorization/categorizationOfficial",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:categorization",
+                "dli:title": "Industry category",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Organization categorization given by official authority"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:maxLength": "50",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "descriptionGeneral": {
+                "@id": "pot:description/descriptionGeneral",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:description",
+                "dli:title": "Organization description",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Description of the organization"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "500"
+                }
+            },
+            "governmentPermanent": {
+                "@id": "pot:identifier/governmentPermanent",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "Permanent Official Id",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Permanent identifier given by an official authority in Finland"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:length": "9",
+                    "xsd:base": "xsd:string"
+                }
+            },
+            "ifcGuid": {
+                "@id": "pot:identifier/ifcGuid",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "IFC GUID",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "IFC standard based Globally Unique Identifier"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "22"
+                }
+            },
+            "status": {
+                "@id": "pot:lifeCycle/status",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:lifeCycle",
+                "dli:title": "Life cycle status",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Life cycle status"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:maxLength": "50"
+                }
+            },
+            "taxVatCode": {
+                "@id": "pot:identifier/taxVatCode",
+                "@type": "dli:SupportedAttribute",
+                "subPropertyOf": "pot:identifier",
+                "dli:title": "VAT code",
+                "dli:required": false,
+                "dli:readonly": false,
+                "dli:description": {
+                    "en-us": "Value-added taxation identifier"
+                },
+                "dli:valueType": [
+                    "xsd:string"
+                ],
+                "xsd:restriction": {
+                    "xsd:base": "xsd:string",
+                    "xsd:length": "12"
+                }
+            }
+        }
+    }
+}

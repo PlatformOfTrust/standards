@@ -1,0 +1,77 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "pot": {
+            "@id": "https://standards-ontotest.oftrust.net/v2/Vocabulary/",
+            "@prefix": true
+        },
+        "rdf": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "@prefix": true
+        },
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#",
+            "@prefix": true
+        },
+        "owl": {
+            "@id": "http://www.w3.org/2002/07/owl#",
+            "@prefix": true
+        },
+        "vs": {
+            "@id": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        },
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
+    },
+    "ContactPhone": {
+        "@id": "pot:Annotation/Contact/ContactPhone",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Contact"
+    },
+    "usageType": {
+        "@id": "pot:categorization/usageType",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:categorization",
+        "rdfs:label": {
+            "fi-fi": "Käyttötarkoitus",
+            "en-us": "Usage purpose"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Käyttötarkoitukset.",
+            "en-us": "Usage purpose or type."
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Contact"
+        ]
+    },
+    "phoneNumber": {
+        "@id": "pot:address/phoneNumber",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:address",
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Annotation/Contact/ContactPhone"
+        ]
+    }
+}
