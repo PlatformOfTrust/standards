@@ -1,0 +1,253 @@
+{
+   "$schema":"http://json-schema.org/draft-07/schema",
+   "$id":"https://standards-ontotest.oftrust.net/v2/Schema/DataProductOutput/VehicleInformation",
+   "type":"object",
+   "title":"Data product output core schema",
+   "description":"Core schema for general data product output.",
+   "required":[
+      "@context",
+      "data",
+      "signature"
+   ],
+   "properties":{
+      "@context":{
+         "$id":"#/properties/@context",
+         "type":"string",
+         "title":"JSON-LD context url",
+         "description":"JSON-LD context url with terms required to understand data product content.",
+         "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductOutput/VehicleInformation/"
+      },
+      "data":{
+         "$id":"#/properties/data",
+         "type":"object",
+         "title":"Data product output",
+         "description":"Output of data product delivered to customers.",
+         "required":[
+            "transportationRoute"
+         ],
+         "properties":{
+            "transportationRoute":{
+               "$id":"#/properties/data/properties/route",
+               "type":"array",
+               "title":"Transportation Route",
+               "description":"A transportation route is the regular path that is followed by a movement of people or goods.",
+               "items":{
+                  "$id":"#/properties/data/properties/route/items",
+                  "anyOf":[
+                     {
+                        "$id":"#/properties/data/properties/route/items/anyOf/0",
+                        "type":"object",
+                        "title":"The first anyOf schema",
+                        "description":"An explanation about the purpose of this instance.",
+                        "required":[
+                           "@type",
+                           "operator",
+                           "vehicle"
+                        ],
+                        "properties":{
+                           "@type":{
+                              "$id":"#/properties/data/properties/route/items/anyOf/0/properties/%40type",
+                              "type":"string",
+                              "title":"Type of the TransportationRoute",
+                              "description":"Root object type for vehicle information."
+                           },
+                           "idLocal":{
+                              "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/idLocal",
+                              "type":"string",
+                              "title":"Local identifier",
+                              "description":"Locally given identifier."
+                           },
+                           "direction":{
+                              "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/direction",
+                              "type":"string",
+                              "title":"Direction",
+                              "description":"Direction indicated by some known value (can be specific to a standard)."
+                           },
+                           "operator":{
+                              "$id":"#/properties/data/properties/route/items/anyOf/0/properties/operator",
+                              "type":"object",
+                              "title":"Operator",
+                              "description":"Operator of some object.",
+                              "required":[
+                                 "@type",
+                                 "idLocal"
+                              ],
+                              "properties":{
+                                 "@type":{
+                                    "$id":"#/properties/data/items/properties/measurements/items/properties/@type",
+                                    "type":"string",
+                                    "title":"Operator type",
+                                    "description":"Type of operator."
+                                 },
+                                 "idLocal":{
+                                    "$id":"#/properties/parameters/properties/operator/properties/idLocal",
+                                    "type":"string",
+                                    "title":"Local identifier",
+                                    "description":"Locally given identifier."
+                                 }
+                              }
+                           },
+                           "transportationTrip":{
+                              "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/transportationTrip",
+                              "type":"object",
+                              "title":"Transportation Trip",
+                              "description":"Transportation trip is specific occasion which occurs typically on transportation route. Typically transporation route has scheduled transportation trips.",
+                              "properties":{
+                                 "idLocal":{
+                                    "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/transportationTrip/properties/idLocal",
+                                    "type":"string",
+                                    "title":"Local identifier",
+                                    "description":"Locally given identifier."
+                                 },
+                                 "startTime":{
+                                    "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/transportationTrip/properties/startDateTime",
+                                    "type":"string",
+                                    "title":"Start date and time",
+                                    "description":"Start date and time."
+                                 },
+                                 "scheduleType":{
+                                    "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/transportationTrip/properties/scheduleType",
+                                    "type":"string",
+                                    "title":"Schedule type",
+                                    "description":"Schedule type."
+                                 }
+                              }
+                           },
+                           "vehicle":{
+                              "$id":"#/properties/data/properties/route/items/anyOf/0/properties/vehicle",
+                              "type":"object",
+                              "title":"Vehicle",
+                              "description":"Vehicle.",
+                              "required":[
+                                 "@type",
+                                 "idLocal"
+                              ],
+                              "properties":{
+                                 "@type":{
+                                    "$id":"#/properties/data/items/properties/measurements/items/properties/@type",
+                                    "type":"string",
+                                    "title":"Vehicle type",
+                                    "description":"Type of vehicle."
+                                 },
+                                 "exactTime":{
+                                    "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/exactTime",
+                                    "type":"string",
+                                    "title":"Exact time",
+                                    "description":"Exact time."
+                                 },
+                                 "idLocal":{
+                                    "$id":"#/properties/parameters/properties/vehicle/properties/idLocal",
+                                    "type":"string",
+                                    "title":"Local identifier",
+                                    "description":"Locally given identifier."
+                                 },
+                                 "idHeadsign":{
+                                    "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/properties/idHeadsign",
+                                    "type":"string",
+                                    "title":"Headsign",
+                                    "description":"The sign on the front of a bus or train (any vehicle) indicating its direction, destination, route number, or other pertinent information.."
+                                 },
+                                 "idOfficial":{
+                                    "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/properties/idOfficial",
+                                    "type":"string",
+                                    "title":"License plate",
+                                    "description":"Government (official authority) assigned identifier."
+                                 },
+                                 "location":{
+                                    "$id":"#/properties/data/properties/route/items/anyOf/0/properties/vehicle/properties/location",
+                                    "type":"object",
+                                    "title":"Location",
+                                    "description":"Location describes geographical position of an object (Identity).",
+                                    "required":[
+                                       "@type"
+                                    ],
+                                    "properties":{
+                                       "@type":{
+                                          "$id":"#/properties/data/properties/route/items/anyOf/0/properties/vehicle/properties/location/properties/%40type",
+                                          "type":"string",
+                                          "title":"Location type",
+                                          "description":"Type of location."
+                                       },
+                                       "latitude":{
+                                          "$id":"#/properties/data/properties/route/items/anyOf/0/properties/vehicle/properties/location/properties/latitude",
+                                          "type":"number",
+                                          "title":"Latitude",
+                                          "description":"The angular distance north or south from the equator of a point on the earth's surface, measured on the meridian of the point (WGS 84)."
+                                       },
+                                       "longitude":{
+                                          "$id":"#/properties/data/properties/route/items/anyOf/0/properties/vehicle/properties/location/properties/longitude",
+                                          "type":"number",
+                                          "title":"Longitude",
+                                          "description":"Angular distance east or west on the earth's surface, measured by the angle contained between the meridian of a particular place and some prime meridian, as that of Greenwich, England, and expressed either in degrees or by some corresponding difference in time (WGS 84)."
+                                       },
+                                       "bearing":{
+                                          "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/properties/location/properties/bearing",
+                                          "type":"number",
+                                          "title":"Bearing (compass direction)",
+                                          "description":"Bearing is used to give direction in aviation. It is defined as a positive angle from 0 to 360 measured clockwise with respect to the north.."
+                                       }
+                                    }
+                                 },
+                                 "speed":{
+                                    "$id":"#/properties/data/properties/transportationRoute/items/anyOf/0/properties/vehicle/properties/speed",
+                                    "type":"number",
+                                    "title":"Speed",
+                                    "description":"Speed has the dimensions of distance divided by time. The SI unit of speed is the metre per second, but the most common unit of speed in everyday usage is the kilometre per hour or, in the US and the UK, miles per hour. For air and marine travel the knot is commonly used."
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  ]
+               }
+            }
+         }
+      },
+      "signature":{
+         "$id":"#/properties/signature",
+         "type":"object",
+         "title":"Signature",
+         "required":[
+            "type",
+            "created",
+            "creator",
+            "signatureValue"
+         ],
+         "properties":{
+            "type":{
+               "$id":"#/properties/signature/properties/type",
+               "type":"string",
+               "title":"Signature type",
+               "examples":[
+                  "RsaSignature2018"
+               ]
+            },
+            "created":{
+               "$id":"#/properties/signature/properties/created",
+               "type":"string",
+               "title":"Signature creation date and time",
+               "format":"date-time",
+               "examples":[
+                  "2018-11-22T12:00:00Z"
+               ]
+            },
+            "creator":{
+               "$id":"#/properties/signature/properties/creator",
+               "type":"string",
+               "title":"Signature creator",
+               "examples":[
+                  "https://example.org/creator/public_key.pub"
+               ]
+            },
+            "signatureValue":{
+               "$id":"#/properties/signature/properties/signatureValue",
+               "type":"string",
+               "title":"Generated signature",
+               "examples":[
+                  "eyJ0eXAiOiJK...gFWFOEjXk"
+               ]
+            }
+         }
+      }
+   }
+}
