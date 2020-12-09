@@ -1,0 +1,75 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Process/Measure",
+	"type": "object",
+	"title": "The root schema",
+	"description": "The root schema comprises the entire JSON document.",
+	"required": [
+		"@context",
+		"timestamp",
+		"productCode",
+		"parameters"
+	],
+	"properties": {
+		"@context": {
+			"type": "string",
+			"title": "The @context schema",
+			"description": "The context to be used for the payload.",
+			"const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Process/Measure/?v=2.0"
+		},
+		"timestamp": {
+			"$id": "#/properties/timestamp",
+			"type": "string",
+			"title": "The timestamp schema",
+			"description": "Timestamp of the request.",
+			"examples": [
+				"2020-05-08T07:00:00+03:00"
+			]
+		},
+		"productCode": {
+			"$id": "#/properties/productCode",
+			"type": "string",
+			"title": "The productCode schema",
+			"description": "Generated product code.",
+			"examples": [
+				"12309843"
+			]
+		},
+		"parameters": {
+			"$id": "#/properties/parameters",
+			"type": "object",
+			"title": "The parameters schema",
+			"description": "Desired parameters.",
+			"examples": [
+				{
+					"period": "2015-12-31T23:00Z/2016-12-31T23:00Z",
+					"targetObject": "object id"
+				}
+			],
+			"required": [
+				"period",
+				"targetObject"
+			],
+			"properties": {
+				"period": {
+					"$id": "#/properties/parameters/properties/period",
+					"type": "string",
+					"title": "The period schema",
+					"description": "An explanation about the purpose of this instance.",
+					"examples": [
+						"2015-12-31T23:00Z/2016-12-31T23:00Z"
+					]
+				},
+				"targetObject": {
+					"$id": "#/properties/parameters/properties/targetObject",
+					"title": "The targetObject schema",
+					"description": "Target object against witch forecast is applied.",
+					"examples": [
+						"object id"
+					]
+				}
+			}
+		}
+	},
+	"version": "2.0"
+}
