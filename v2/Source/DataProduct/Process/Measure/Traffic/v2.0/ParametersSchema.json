@@ -1,75 +1,87 @@
 {
-	"$schema": "http://json-schema.org/draft-06/schema#",
-	"$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Process/Measure/Traffic",
-	"type": "object",
-	"title": "The root schema",
-	"description": "The root schema comprises the entire JSON document.",
-	"required": [
-		"@context",
-		"timestamp",
-		"productCode",
-		"parameters"
-	],
-	"properties": {
-		"@context": {
-			"type": "string",
-			"title": "The @context schema",
-			"description": "The context to be used for the payload.",
-			"const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Process/Measure/Traffic/"
-		},
-		"timestamp": {
-			"$id": "#/properties/timestamp",
-			"type": "string",
-			"title": "The timestamp schema",
-			"description": "Timestamp of the request.",
-			"examples": [
-				"2020-05-08T07:00:00+03:00"
-			]
-		},
-		"productCode": {
-			"$id": "#/properties/productCode",
-			"type": "string",
-			"title": "The productCode schema",
-			"description": "Generated product code.",
-			"examples": [
-				"12309843"
-			]
-		},
-		"parameters": {
-			"$id": "#/properties/parameters",
-			"type": "object",
-			"title": "The parameters schema",
-			"description": "Desired parameters.",
-			"examples": [
-				{
-					"period": "2015-12-31T23:00Z/2016-12-31T23:00Z",
-					"targetObject": "object id"
-				}
-			],
-			"required": [
-				"period",
-				"targetObject"
-			],
-			"properties": {
-				"period": {
-					"$id": "#/properties/parameters/properties/period",
-					"type": "string",
-					"title": "The period schema",
-					"description": "An explanation about the purpose of this instance.",
-					"examples": [
-						"2015-12-31T23:00Z/2016-12-31T23:00Z"
-					]
-				},
-				"targetObject": {
-					"$id": "#/properties/parameters/properties/targetObject",
-					"title": "The targetObject schema",
-					"description": "Target object against witch forecast is applied.",
-					"examples": [
-						"object id"
-					]
-				}
-			}
-		}
-	},
-	"version": "2.0"
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Process/Measure/Traffic",
+    "type": "object",
+    "required": [],
+    "properties": {
+        "@context": {
+            "$id": "#/properties/@context",
+            "type": "string",
+            "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Process/Measure/Traffic/",
+            "title": "JSON-LD context url",
+            "description": "JSON-LD context url with terms required to understand data product content."
+        },
+        "timestamp": {
+            "$id": "#/properties/timestamp",
+            "type": "string",
+            "title": "Time stamp",
+            "description": "Time stamp."
+        },
+        "productCode": {
+            "$id": "#/properties/productCode",
+            "type": "string",
+            "title": "Product code",
+            "description": "Product code."
+        },
+        "parameters": {
+            "$id": "#/properties/parameters",
+            "type": "object",
+            "title": "Data product parameters",
+            "description": "Parameters of data product.",
+            "required": [],
+            "properties": {
+                "period": {
+                    "$id": "#/properties/parameters/properties/period",
+                    "type": "string",
+                    "title": "Period",
+                    "description": "Period."
+                },
+                "targetObject": {
+                    "$id": "#/properties/parameters/properties/targetObject",
+                    "type": "object",
+                    "title": "Target object",
+                    "description": "Target object.",
+                    "required": [],
+                    "properties": {
+                        "@type": {
+                            "$id": "#/properties/parameters/properties/targetObject/properties/@type",
+                            "type": "string",
+                            "title": "Identity type",
+                            "description": "Type of identity."
+                        },
+                        "lowLeftCornerCoordinateAxis1": {
+                            "$id": "#/properties/parameters/properties/targetObject/properties/lowLeftCornerCoordinateAxis1",
+                            "type": "number",
+                            "title": "Low left corner coordinate axis 1",
+                            "description": "Low left corner coordinate axis 1."
+                        },
+                        "lowLeftCornerCoordinateAxis2": {
+                            "$id": "#/properties/parameters/properties/targetObject/properties/lowLeftCornerCoordinateAxis2",
+                            "type": "number",
+                            "title": "Low left corner coordinate axis 2",
+                            "description": "Low left corner coordinate axis 2."
+                        },
+                        "upperRightCornerCoordinateAxis1": {
+                            "$id": "#/properties/parameters/properties/targetObject/properties/upperRightCornerCoordinateAxis1",
+                            "type": "number",
+                            "title": "Upper right corner coordinate axis 1",
+                            "description": "Upper right corner coordinate axis 1."
+                        },
+                        "upperRightCornerCoordinateAxis2": {
+                            "$id": "#/properties/parameters/properties/targetObject/properties/upperRightCornerCoordinateAxis2",
+                            "type": "number",
+                            "title": "Upper right corner coordinate axis 2",
+                            "description": "Upper right corner coordinate axis 2."
+                        },
+                        "coordinateReferenceSystem": {
+                            "$id": "#/properties/parameters/properties/targetObject/properties/coordinateReferenceSystem",
+                            "type": "string",
+                            "title": "Coordinate reference system",
+                            "description": "Coordinate reference system."
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
