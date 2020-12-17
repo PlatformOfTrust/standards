@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/BuildingInformation",
+    "type": "object",
+    "title": "Data product core schema",
+    "description": "Core schema for general data product.",
+    "required": [
+        "@context",
+        "productCode",
+        "timestamp",
+        "parameters"
+    ],
+    "properties": {
+        "@context": {
+            "$id": "#/properties/@context",
+            "type": "string",
+            "title": "JSON-LD context url",
+            "description": "JSON-LD context url with terms required to understand data product content.",
+            "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/BuildingInformation/"
+        },
+        "productCode": {
+            "$id": "#/properties/productCode",
+            "type": "string",
+            "title": "Productcode",
+            "description": "Name of your product.",
+            "examples": [
+                "multidata-product-1"
+            ]
+        },
+        "timestamp": {
+            "$id": "#/properties/timestamp",
+            "type": "string",
+            "title": "Timestamp of the request",
+            "description": "Timestamp of the request.",
+            "examples": [
+                "2019-10-19T13:20:09+00:00"
+            ]
+        },
+        "parameters": {
+            "$id": "#/properties/parameters",
+            "type": "object",
+            "title": "Data product parameters",
+            "description": "Parameters of data product.",
+            "additionalProperties": true
+        }
+    }
+}
