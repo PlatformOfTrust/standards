@@ -424,6 +424,15 @@
     
 
 
+    <!-- https://standards.oftrust.net/v2/Vocabulary/contractor -->
+
+    <owl:ObjectProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/contractor">
+        <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/role"/>
+        <rdfs:range rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://standards.oftrust.net/v2/Vocabulary/coordinateE -->
 
     <owl:ObjectProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/coordinateE">
@@ -588,6 +597,7 @@
 
     <owl:ObjectProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/project">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Project"/>
     </owl:ObjectProperty>
     
 
@@ -922,6 +932,20 @@
     
 
 
+    <!-- https://standards.oftrust.net/v2/Vocabulary/actionRequired -->
+
+    <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/actionRequired">
+        <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/description"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en-us">Actions or activities required or planned to be taken</rdfs:comment>
+        <rdfs:comment xml:lang="fi-fi">Kuvaus suunnitelluista toimenpiteistä</rdfs:comment>
+        <rdfs:label xml:lang="en-us">Desriptions of actions</rdfs:label>
+        <rdfs:label xml:lang="fi-fi">Kuvaus toimenpiteistä</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://standards.oftrust.net/v2/Vocabulary/address -->
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/address">
@@ -954,6 +978,48 @@
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
         <readonly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</readonly>
         <required rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</required>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://standards.oftrust.net/v2/Vocabulary/categorizationLocal2 -->
+
+    <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/categorizationLocal2">
+        <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/categorization"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en-us">Additional categorization given locally (source system)</rdfs:comment>
+        <rdfs:comment xml:lang="fi-fi">Toinen paikallinen luokitus (lähdejärjestelmän luokitus)</rdfs:comment>
+        <rdfs:label xml:lang="en-us">Second local category</rdfs:label>
+        <rdfs:label xml:lang="fi-fi">Toinen paikallinen luokitus</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://standards.oftrust.net/v2/Vocabulary/categorizationLocal3 -->
+
+    <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/categorizationLocal3">
+        <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/categorization"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fi-fi">Kolmas paikallinen luokitus</rdfs:comment>
+        <rdfs:comment xml:lang="en-us">Third local category</rdfs:comment>
+        <rdfs:label xml:lang="fi-fi">Kolmas paikallinen luokitus</rdfs:label>
+        <rdfs:label xml:lang="en-us">Third local category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://standards.oftrust.net/v2/Vocabulary/completionRequired -->
+
+    <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/completionRequired">
+        <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/time"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en-us">Completition required (due time)</rdfs:comment>
+        <rdfs:comment xml:lang="fi-fi">Vaadittu valmistumisaika</rdfs:comment>
+        <rdfs:label xml:lang="en-us">Completition required</rdfs:label>
+        <rdfs:label xml:lang="fi-fi">Vaadittu valmistumisaika</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1278,6 +1344,34 @@
     
 
 
+    <!-- https://standards.oftrust.net/v2/Vocabulary/visibleEnd -->
+
+    <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/visibleEnd">
+        <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/time"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="fi-fi">Näkyvyyden loppuaika ilmaisee koska tiedon näkyvyys loppuu.</rdfs:comment>
+        <rdfs:comment xml:lang="en-us">Visibility end time defines when visibility of information ends.</rdfs:comment>
+        <rdfs:label xml:lang="fi-fi">Näkyvyyden loppuaika</rdfs:label>
+        <rdfs:label xml:lang="en-us">Visibility end time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://standards.oftrust.net/v2/Vocabulary/visibleStart -->
+
+    <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/visibleStart">
+        <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/time"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="fi-fi">Näkyvyyden alkamisaika kertoo tiedon näkyvyyden alkamisajankohtaa.</rdfs:comment>
+        <rdfs:comment xml:lang="en-us">Visibility start time defines when visibility of information starts.</rdfs:comment>
+        <rdfs:label xml:lang="fi-fi">Näkyvyyden alkamisaika</rdfs:label>
+        <rdfs:label xml:lang="en-us">Visibility start time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://standards.oftrust.net/v2/Vocabulary/address/addressEmail -->
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/address/addressEmail">
@@ -1452,6 +1546,7 @@
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/categorization/categorizationLocal">
         <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/categorization"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Condition"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Location"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Quality"/>
@@ -1488,14 +1583,6 @@
         </label>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Lokaali tyypitys</rdfs:label>
-                <rdfs:label xml:lang="en-us">Type name given locally</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
                 <rdfs:label xml:lang="fi-fi">Laatuominaisuuden paikallinen luokka</rdfs:label>
                 <rdfs:label xml:lang="en-us">Quality local class</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Quality"/>
@@ -1506,6 +1593,14 @@
                 <rdfs:label xml:lang="en-us">Condition local class</rdfs:label>
                 <rdfs:label xml:lang="fi-fi">Ehdon paikallinen luokka</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Condition"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="fi-fi">Lokaali tyypitys</rdfs:label>
+                <rdfs:label xml:lang="en-us">Type name given locally</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
             </rdf:Description>
         </label>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -1519,6 +1614,7 @@
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/categorization/categorizationLocalPriority">
         <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/categorization"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="fi-fi">Kategorointi joka perustuu kiireellisyysluokitukseen.</rdfs:comment>
@@ -1680,13 +1776,6 @@
         <rdfs:label xml:lang="fi-fi">PoT luokka</rdfs:label>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Laatuominaisuuden PoT luokka</rdfs:label>
-                <rdfs:label xml:lang="en-us">Quality PoT class</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Quality"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
                 <rdfs:label xml:lang="en-us">Condition PoT class</rdfs:label>
                 <rdfs:label xml:lang="fi-fi">Ehdon PoT luokka</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Condition"/>
@@ -1697,6 +1786,13 @@
                 <rdfs:label xml:lang="en-us">PoT Product category</rdfs:label>
                 <rdfs:label xml:lang="fi-fi">PoT tuotekategoria</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="fi-fi">Laatuominaisuuden PoT luokka</rdfs:label>
+                <rdfs:label xml:lang="en-us">Quality PoT class</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Quality"/>
             </rdf:Description>
         </label>
     </owl:DatatypeProperty>
@@ -2143,6 +2239,7 @@
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/description/descriptionGeneral">
         <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/description"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Condition"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Quality"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Service"/>
@@ -2169,18 +2266,6 @@
         <rdfs:label xml:lang="fi-fi">Kuvaus</rdfs:label>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Description of the organisation.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty/Organization"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Description of the space.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Description of the building.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
             </rdf:Description>
@@ -2205,6 +2290,42 @@
         </comment>
         <comment>
             <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Description of the room.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Description of the real estate.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/RealEstate"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Description of the organisation.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty/Organization"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Description of the system.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Group/System"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Description of the space.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Description of the product.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Description of the case.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
             </rdf:Description>
@@ -2221,35 +2342,25 @@
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement/Storey"/>
             </rdf:Description>
         </comment>
-        <comment>
+        <label>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Description of the room.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
+                <rdfs:label xml:lang="en-us">Process description</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Prosessin kuvaus</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
             </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Description of the real estate.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/RealEstate"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Description of the system.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Group/System"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Description of the product.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
-            </rdf:Description>
-        </comment>
+        </label>
         <label>
             <rdf:Description>
                 <rdfs:label xml:lang="en-us">Project description</rdfs:label>
                 <rdfs:label xml:lang="fi-fi">Projektin kuvaus</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Project"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="en-us">Space description</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Tilan kuvaus</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
             </rdf:Description>
         </label>
         <label>
@@ -2261,38 +2372,17 @@
         </label>
         <label>
             <rdf:Description>
+                <rdfs:label xml:lang="fi-fi">Organisaation kuvaus</rdfs:label>
+                <rdfs:label xml:lang="en-us">Organization description</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty/Organization"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Description.</rdfs:comment>
                 <rdfs:label xml:lang="en-us">Description</rdfs:label>
                 <rdfs:label xml:lang="fi-fi">Kuvaus</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Quality"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="en-us">Building element description</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Rakennuselementin kuvaus</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Kerroksen kuvaus</rdfs:label>
-                <rdfs:label xml:lang="en-us">Storey description</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement/Storey"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Huoneen kuvaus</rdfs:label>
-                <rdfs:label xml:lang="en-us">Room description</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="en-us">Case description</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Palvelupyynnön kuvaus</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
             </rdf:Description>
         </label>
         <label>
@@ -2325,23 +2415,30 @@
         </label>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="en-us">Space description</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Tilan kuvaus</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
+                <rdfs:label xml:lang="en-us">Building element description</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Rakennuselementin kuvaus</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
             </rdf:Description>
         </label>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Organisaation kuvaus</rdfs:label>
-                <rdfs:label xml:lang="en-us">Organization description</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty/Organization"/>
+                <rdfs:label xml:lang="fi-fi">Kerroksen kuvaus</rdfs:label>
+                <rdfs:label xml:lang="en-us">Storey description</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement/Storey"/>
             </rdf:Description>
         </label>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="en-us">Process description</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Prosessin kuvaus</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
+                <rdfs:label xml:lang="fi-fi">Huoneen kuvaus</rdfs:label>
+                <rdfs:label xml:lang="en-us">Room description</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="en-us">Case description</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Palvelupyynnön kuvaus</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
             </rdf:Description>
         </label>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -2372,6 +2469,7 @@
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/description/header">
         <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/description"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en-us">Header for thing, subject or event.</rdfs:comment>
@@ -3367,6 +3465,7 @@
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/identifier/idLocal">
         <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/identifier"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Location"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/OrderLine"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Status"/>
@@ -3396,15 +3495,8 @@
         <rdfs:label xml:lang="fi-fi">Paikallinen tunniste</rdfs:label>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Locally given identifier for the space.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Identifier given locally for the device.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
+                <rdfs:comment xml:lang="en-us">Identifier given locally for the building element.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
             </rdf:Description>
         </comment>
         <comment>
@@ -3433,8 +3525,15 @@
         </comment>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Identifier given locally for the building element.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
+                <rdfs:comment xml:lang="en-us">Locally given identifier for the space.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Identifier given locally for the device.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
             </rdf:Description>
         </comment>
         <label>
@@ -3449,6 +3548,13 @@
                 <rdfs:label xml:lang="en-us">Local code</rdfs:label>
                 <rdfs:label xml:lang="fi-fi">Paikallinen koodi</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="en-us">Process Id</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Prosessin tunniste</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
             </rdf:Description>
         </label>
         <label>
@@ -3478,13 +3584,6 @@
                 <rdfs:label xml:lang="fi-fi">Paikallinen tunniste</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="en-us">Process Id</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Prosessin tunniste</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
             </rdf:Description>
         </label>
         <label>
@@ -3534,12 +3633,6 @@
         <rdfs:label xml:lang="fi-fi">Viranomaisen tunniste</rdfs:label>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Official identifier of the person in Finland.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty/Person"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Officially given identifier for the space in Finland.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
             </rdf:Description>
@@ -3556,7 +3649,20 @@
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
             </rdf:Description>
         </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Official identifier of the person in Finland.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty/Person"/>
+            </rdf:Description>
+        </comment>
         <example rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22438613</example>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="en-us">License plate</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Rekisterikilpi</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Vehicle"/>
+            </rdf:Description>
+        </label>
         <label>
             <rdf:Description>
                 <rdfs:label xml:lang="en-us">Official Id</rdfs:label>
@@ -3583,13 +3689,6 @@
                 <rdfs:label xml:lang="fi-fi">Kiinteistötunnus</rdfs:label>
                 <rdfs:label xml:lang="en-us">Real estate Id</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/RealEstate"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="en-us">License plate</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Rekisterikilpi</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Vehicle"/>
             </rdf:Description>
         </label>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -3668,6 +3767,7 @@
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/identifier/idSystemLocal">
         <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/identifier"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Safety"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
@@ -3771,38 +3871,20 @@
         <categorizationDomain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/DPL"/>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Name of the price plan.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/PricePlan"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Name of the condition.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Condition"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Name of the real estate.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/RealEstate"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Unique product name given by manufacturer.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
             </rdf:Description>
         </comment>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Apartment name.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Apartment"/>
+                <rdfs:comment xml:lang="en-us">Name givento the system.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Group/System"/>
             </rdf:Description>
         </comment>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Name given locally for the building element.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
+                <rdfs:comment xml:lang="en-us">Name given locally for the device.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
             </rdf:Description>
         </comment>
         <comment>
@@ -3831,49 +3913,53 @@
         </comment>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Name givento the system.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Group/System"/>
+                <rdfs:comment xml:lang="en-us">Apartment name.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Apartment"/>
             </rdf:Description>
         </comment>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Name given locally for the device.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
+                <rdfs:comment xml:lang="en-us">Name given locally for the building element.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Name of the price plan.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/PricePlan"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Name of the condition.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Condition"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Name of the real estate.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/RealEstate"/>
             </rdf:Description>
         </comment>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Järjestelmän nimi</rdfs:label>
-                <rdfs:label xml:lang="en-us">System name</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Group/System"/>
+                <rdfs:label xml:lang="en-us">Local name</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Paikallinen nimi</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
             </rdf:Description>
         </label>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Organisaation nimi</rdfs:label>
-                <rdfs:label xml:lang="en-us">Organization name</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty/Organization"/>
+                <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Condition"/>
+                <rdfs:label xml:lang="en-us">Condition name</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Ehdon nimi</rdfs:label>
             </rdf:Description>
         </label>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Huoneen nimi</rdfs:label>
-                <rdfs:label xml:lang="en-us">Room name</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Laatuominaisuuden nimi</rdfs:label>
-                <rdfs:label xml:lang="en-us">Quality name</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Quality"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="en-us">Apartment name</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Huoneistotunnus</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Apartment"/>
+                <rdfs:label xml:lang="en-us">Local name</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Paikallinen nimi</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
             </rdf:Description>
         </label>
         <label>
@@ -3906,23 +3992,37 @@
         </label>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="en-us">Local name</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Paikallinen nimi</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
+                <rdfs:label xml:lang="fi-fi">Huoneen nimi</rdfs:label>
+                <rdfs:label xml:lang="en-us">Room name</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
             </rdf:Description>
         </label>
         <label>
             <rdf:Description>
-                <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Condition"/>
-                <rdfs:label xml:lang="en-us">Condition name</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Ehdon nimi</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Laatuominaisuuden nimi</rdfs:label>
+                <rdfs:label xml:lang="en-us">Quality name</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Annotation/Quality"/>
             </rdf:Description>
         </label>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="en-us">Local name</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Paikallinen nimi</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
+                <rdfs:label xml:lang="en-us">Apartment name</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Huoneistotunnus</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Apartment"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="fi-fi">Järjestelmän nimi</rdfs:label>
+                <rdfs:label xml:lang="en-us">System name</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Group/System"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="fi-fi">Organisaation nimi</rdfs:label>
+                <rdfs:label xml:lang="en-us">Organization name</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty/Organization"/>
             </rdf:Description>
         </label>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -3979,13 +4079,6 @@
         </comment>
         <label>
             <rdf:Description>
-                <rdfs:label xml:lang="en-us">Project name</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Projektin nimi</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Project"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
                 <rdfs:label xml:lang="en-us">Case header - &gt; Case name</rdfs:label>
                 <rdfs:label xml:lang="fi-fi">Palvelupyynnön nimi</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
@@ -3996,6 +4089,13 @@
                 <rdfs:label xml:lang="en-us">Process name - local</rdfs:label>
                 <rdfs:label xml:lang="fi-fi">Prosessin nimi - lokaali</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="en-us">Project name</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Projektin nimi</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Project"/>
             </rdf:Description>
         </label>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -4192,6 +4292,7 @@
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/lifeCycle/status">
         <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/lifeCycle"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Link"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Contract"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Event"/>
@@ -4215,18 +4316,6 @@
         <rdfs:label xml:lang="en-us">Life-cycle status</rdfs:label>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="fi-fi">Life-cycle status of the product.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">project state.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Project"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Process state.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
             </rdf:Description>
@@ -4248,8 +4337,14 @@
         </comment>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Life cycle status of the building.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
+                <rdfs:comment xml:lang="fi-fi">Life-cycle status of the product.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">project state.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Project"/>
             </rdf:Description>
         </comment>
         <comment>
@@ -4258,27 +4353,12 @@
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
             </rdf:Description>
         </comment>
-        <label>
+        <comment>
             <rdf:Description>
-                <rdfs:label xml:lang="en-us">Process status</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Prosessin tila</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
+                <rdfs:comment xml:lang="en-us">Life cycle status of the building.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
             </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="en-us">Product status</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Tuotteen status</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
-            </rdf:Description>
-        </label>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="en-us">Case status</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Palvelupyynnön tila</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
-            </rdf:Description>
-        </label>
+        </comment>
         <label>
             <rdf:Description>
                 <rdfs:label xml:lang="fi-fi">Elinkaari - Status</rdfs:label>
@@ -4307,6 +4387,27 @@
                 <rdfs:label xml:lang="fi-fi">Elinkaari - Status</rdfs:label>
                 <rdfs:label xml:lang="en-us">Life cycle status</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="en-us">Process status</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Prosessin tila</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="en-us">Product status</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Tuotteen status</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
+            </rdf:Description>
+        </label>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="en-us">Case status</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Palvelupyynnön tila</rdfs:label>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
             </rdf:Description>
         </label>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -5032,6 +5133,18 @@
         <rdfs:label xml:lang="fi-fi">Korkeus</rdfs:label>
         <comment>
             <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Height of the space.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Height of the element.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Height of the object.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
             </rdf:Description>
@@ -5046,18 +5159,6 @@
             <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Height of the building.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Height of the space.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Height of the element.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
             </rdf:Description>
         </comment>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -5423,6 +5524,12 @@
         <rdfs:label xml:lang="en-us">Volume</rdfs:label>
         <comment>
             <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Volume of the device.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Volume of the element.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
             </rdf:Description>
@@ -5444,12 +5551,6 @@
                 <rdfs:comment xml:lang="en-us">Volume of the object.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement/Storey"/>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space/Room"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Volume of the device.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
             </rdf:Description>
         </comment>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -5506,14 +5607,14 @@
         <rdfs:label xml:lang="en-us">Width</rdfs:label>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Width of the device.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
+                <rdfs:comment xml:lang="en-us">Width of the element.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
             </rdf:Description>
         </comment>
         <comment>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Width of the element.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Element/BuildingElement"/>
+                <rdfs:comment xml:lang="en-us">Width of the device.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
             </rdf:Description>
         </comment>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -5858,6 +5959,12 @@
         <rdfs:label xml:lang="fi-fi">Lopetusaika</rdfs:label>
         <comment>
             <rdf:Description>
+                <rdfs:comment xml:lang="en-us">End time of the case.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">End time of the process.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
             </rdf:Description>
@@ -5866,12 +5973,6 @@
             <rdf:Description>
                 <rdfs:comment xml:lang="en-us">End time of the project.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Project"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">End time of the case.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
             </rdf:Description>
         </comment>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -6026,6 +6127,12 @@
         <rdfs:label xml:lang="en-us">Start time</rdfs:label>
         <comment>
             <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Start time.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Link"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Start time of the case.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
             </rdf:Description>
@@ -6040,12 +6147,6 @@
             <rdf:Description>
                 <rdfs:comment xml:lang="en-us">Start time of the project.</rdfs:comment>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Project"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Start time.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Link"/>
             </rdf:Description>
         </comment>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
@@ -6110,6 +6211,7 @@
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/time/validFrom">
         <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/time"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="fi-fi">Ensimmäinen voimassaolopäivämäärä.</rdfs:comment>
@@ -6124,6 +6226,7 @@
 
     <owl:DatatypeProperty rdf:about="https://standards.oftrust.net/v2/Vocabulary/time/validTo">
         <rdfs:subPropertyOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/time"/>
+        <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Note"/>
         <rdfs:domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="en-us">Validity period end time.</rdfs:comment>
@@ -6193,6 +6296,14 @@
     <!-- https://standards.oftrust.net/v2/Vocabulary/Link -->
 
     <owl:Class rdf:about="https://standards.oftrust.net/v2/Vocabulary/Link"/>
+    
+
+
+    <!-- https://standards.oftrust.net/v2/Vocabulary/Note -->
+
+    <owl:Class rdf:about="https://standards.oftrust.net/v2/Vocabulary/Note">
+        <rdfs:subClassOf rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity"/>
+    </owl:Class>
     
 
 
@@ -12404,8 +12515,113 @@ can be ambigous and would be better if the metric units was used directly. .</rd
         <rdf:type rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Order"/>
     </rdf:Description>
     <rdf:Description>
-        <rdfs:label xml:lang="en-us">Space type - official</rdfs:label>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
+        <rdfs:comment xml:lang="en-us">Class or degree of protection (IP).</rdfs:comment>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/Luminaire"/>
+    </rdf:Description>
+    <rdf:Description>
+        <comment xml:lang="en-us">Duration of the process</comment>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
+        <label xml:lang="en-us">Duration time</label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Description of the room.</rdfs:comment>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Room"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Life cycle status of the building.</rdfs:comment>
+        <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
+    </rdf:Description>
+    <rdf:Description>
+        <comment xml:lang="en-us">Weight of the device</comment>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="en-us">Degree of protection (IP)</rdfs:label>
+        <rdfs:label xml:lang="fi-fi">Kotelointiluokka (IP)</rdfs:label>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/SocketOutlet"/>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/Switch"/>
+    </rdf:Description>
+    <rdf:Description>
+        <label>
+            <rdf:Description>
+                <rdfs:label xml:lang="fi-fi">Elinkaari - Status</rdfs:label>
+                <label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
+            </rdf:Description>
+        </label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="fi-fi">Toimialaluokka</rdfs:label>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="en-us">Degree of protection</rdfs:label>
+        <rdfs:label xml:lang="fi-fi">Kotelointiluokka</rdfs:label>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/Luminaire"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
+        <rdfs:label xml:lang="en-us">Life cycle status</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <comment xml:lang="en-us">Life cycle status of the building</comment>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
+        <label xml:lang="fi-fi">Elinkaari - Status</label>
+    </rdf:Description>
+    <rdf:Description>
+        <comment xml:lang="en-us">Description of the storey</comment>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building/Storey"/>
+    </rdf:Description>
+    <rdf:Description>
+        <label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
+        <label xml:lang="fi-fi">Elinkaari - Status</label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="en-us">Industry category</rdfs:label>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
+    </rdf:Description>
+    <rdf:Description>
+        <comment rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
+        <comment xml:lang="en-us">Thickness of the device</comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process/Case"/>
+    </rdf:Description>
+    <rdf:Description>
+        <comment xml:lang="en-us">Life cycle status</comment>
+        <comment xml:lang="en-us">Life cycle status of the building</comment>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
+    </rdf:Description>
+    <rdf:Description>
+        <comment xml:lang="en-us">Weight of the element</comment>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/BuildingElement"/>
+    </rdf:Description>
+    <rdf:Description>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="en-us">Condition name</rdfs:label>
+        <rdfs:label xml:lang="fi-fi">Ehdon nimi</rdfs:label>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Condition"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Degree of protection (IP).</rdfs:comment>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/SocketOutlet"/>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/Switch"/>
+    </rdf:Description>
+    <rdf:Description>
+        <label>
+            <rdf:Description>
+                <rdfs:comment rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
+                <rdfs:label xml:lang="fi-fi">Elinkaari - Status</rdfs:label>
+            </rdf:Description>
+        </label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building/Storey"/>
+        <rdfs:label xml:lang="fi-fi">Kerrosala</rdfs:label>
     </rdf:Description>
     <rdf:Description>
         <label>
@@ -12431,152 +12647,11 @@ can be ambigous and would be better if the metric units was used directly. .</rd
         <label xml:lang="fi-fi">Kesto</label>
     </rdf:Description>
     <rdf:Description>
-        <label>
-            <rdf:Description>
-                <rdfs:comment rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
-                <rdfs:label xml:lang="fi-fi">Elinkaari - Status</rdfs:label>
-            </rdf:Description>
-        </label>
+        <rdfs:label xml:lang="en-us">Space type - official</rdfs:label>
+        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
     </rdf:Description>
     <rdf:Description>
-        <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building/Storey"/>
-        <rdfs:label xml:lang="fi-fi">Kerrosala</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <comment xml:lang="en-us">Life cycle status of the building</comment>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
-        <label xml:lang="fi-fi">Elinkaari - Status</label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">Condition name</rdfs:label>
-        <rdfs:label xml:lang="fi-fi">Ehdon nimi</rdfs:label>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Condition"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Degree of protection (IP).</rdfs:comment>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/SocketOutlet"/>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/Switch"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process/Case"/>
-    </rdf:Description>
-    <rdf:Description>
-        <comment xml:lang="en-us">Life cycle status</comment>
-        <comment xml:lang="en-us">Life cycle status of the building</comment>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
-    </rdf:Description>
-    <rdf:Description>
-        <comment xml:lang="en-us">Weight of the element</comment>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/BuildingElement"/>
-    </rdf:Description>
-    <rdf:Description>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
-    </rdf:Description>
-    <rdf:Description>
-        <comment xml:lang="en-us">Description of the storey</comment>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building/Storey"/>
-    </rdf:Description>
-    <rdf:Description>
-        <label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
-        <label xml:lang="fi-fi">Elinkaari - Status</label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">Industry category</rdfs:label>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
-    </rdf:Description>
-    <rdf:Description>
-        <comment rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
-        <comment xml:lang="en-us">Thickness of the device</comment>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="fi-fi">Toimialaluokka</rdfs:label>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">Degree of protection</rdfs:label>
-        <rdfs:label xml:lang="fi-fi">Kotelointiluokka</rdfs:label>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/Luminaire"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
-        <rdfs:label xml:lang="en-us">Life cycle status</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <comment xml:lang="en-us">Weight of the device</comment>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">Degree of protection (IP)</rdfs:label>
-        <rdfs:label xml:lang="fi-fi">Kotelointiluokka (IP)</rdfs:label>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/SocketOutlet"/>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/Switch"/>
-    </rdf:Description>
-    <rdf:Description>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="fi-fi">Elinkaari - Status</rdfs:label>
-                <label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
-            </rdf:Description>
-        </label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Description of the room.</rdfs:comment>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Room"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Life cycle status of the building.</rdfs:comment>
-        <rdfs:label rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure/Building"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Class or degree of protection (IP).</rdfs:comment>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device/Luminaire"/>
-    </rdf:Description>
-    <rdf:Description>
-        <comment xml:lang="en-us">Duration of the process</comment>
-        <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
-        <label xml:lang="en-us">Duration time</label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Time when the data is created.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">Update time</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Categorisation class name in PoT standard.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="fi-fi">Päivitysaika</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Information if VAT is included in the rate (price).</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Creator of and identity.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Time when the data is updated.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="fi-fi">Luomisaika</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="fi-fi">Arvonlisävero prosentti</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">Rate</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">VAT percentage</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="fi-fi">Identiteetin luoja</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="fi-fi">Lifeenginen päälle rakennettu data operaattorialusta.</rdfs:comment>
+        <rdfs:label xml:lang="fi-fi">Alusta</rdfs:label>
     </rdf:Description>
     <rdf:Description>
         <comment xml:lang="en-us">End time of the case</comment>
@@ -12591,13 +12666,72 @@ can be ambigous and would be better if the metric units was used directly. .</rd
         <rdfs:comment xml:lang="en-us">Life cycle status of the building.</rdfs:comment>
     </rdf:Description>
     <rdf:Description>
-        <rdfs:label xml:lang="fi-fi">Alusta</rdfs:label>
+        <rdfs:label xml:lang="en-us">Rate</rdfs:label>
     </rdf:Description>
     <rdf:Description>
-        <rdfs:label xml:lang="fi-fi">Arvonlisävero sisältyy hintaan</rdfs:label>
+        <rdfs:label xml:lang="en-us">VAT percentage</rdfs:label>
     </rdf:Description>
     <rdf:Description>
-        <rdfs:label xml:lang="fi-fi">Valuutta</rdfs:label>
+        <rdfs:label xml:lang="fi-fi">Identiteetin luoja</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="fi-fi">Lifeenginen päälle rakennettu data operaattorialusta.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="fi-fi">Arvonlisävero prosentti</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Time when the data is updated.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="fi-fi">Luomisaika</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Categorisation class name in PoT standard.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="fi-fi">Päivitysaika</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Information if VAT is included in the rate (price).</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Creator of and identity.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Time when the data is created.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="en-us">Update time</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="fi-fi">Identieetin päivittäjä</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="en-us">Currency</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="en-us">Updater</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">A data operator platform running on top of LifeEngine.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Quality is an attribute that describes how something operates.  Example attributes are availability, accuracy, concistency, efficiency, security, etc.</rdfs:comment>
+        <rdfs:label xml:lang="fi-fi">Laatu</rdfs:label>
+        <rdfs:label xml:lang="en-us">Quality</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="en-us">Creation time</rdfs:label>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Updater of an identity.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment xml:lang="en-us">Metadata container.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="en-us">Creator</rdfs:label>
     </rdf:Description>
     <rdf:Description>
         <rdfs:label xml:lang="fi-fi">Yksikköhinta</rdfs:label>
@@ -12614,33 +12748,10 @@ can be ambigous and would be better if the metric units was used directly. .</rd
         <rdfs:label xml:lang="fi-fi">Yksikköryhmä</rdfs:label>
     </rdf:Description>
     <rdf:Description>
-        <rdfs:label xml:lang="en-us">Creation time</rdfs:label>
+        <rdfs:label xml:lang="fi-fi">Arvonlisävero sisältyy hintaan</rdfs:label>
     </rdf:Description>
     <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Updater of an identity.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Metadata container.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">Creator</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">Updater</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">A data operator platform running on top of LifeEngine.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:comment xml:lang="en-us">Quality is an attribute that describes how something operates.  Example attributes are availability, accuracy, concistency, efficiency, security, etc.</rdfs:comment>
-        <rdfs:label xml:lang="fi-fi">Laatu</rdfs:label>
-        <rdfs:label xml:lang="en-us">Quality</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="fi-fi">Identieetin päivittäjä</rdfs:label>
-    </rdf:Description>
-    <rdf:Description>
-        <rdfs:label xml:lang="en-us">Currency</rdfs:label>
+        <rdfs:label xml:lang="fi-fi">Valuutta</rdfs:label>
     </rdf:Description>
     
 
@@ -12654,8 +12765,8 @@ can be ambigous and would be better if the metric units was used directly. .</rd
      -->
 
     <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/coordinateE">
-        <rdfs:label xml:lang="en-us">E-coordinate</rdfs:label>
         <rdfs:label xml:lang="fi-fi">E-koordinaatti</rdfs:label>
+        <rdfs:label xml:lang="en-us">E-coordinate</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/coordinateN">
         <rdfs:label xml:lang="fi-fi">N-koordinaatti</rdfs:label>
@@ -12674,8 +12785,8 @@ can be ambigous and would be better if the metric units was used directly. .</rd
         <rdfs:comment xml:lang="fi-fi">Lastausaika.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/location">
-        <rdfs:comment xml:lang="en-us">Property category for location related information.</rdfs:comment>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
+        <rdfs:comment xml:lang="en-us">Property category for location related information.</rdfs:comment>
         <rdfs:label xml:lang="fi-fi">Sijainti</rdfs:label>
         <rdfs:comment xml:lang="fi-fi">Ominaisuuskategoria sijaintia kuvaavalle tiedolle.</rdfs:comment>
         <rdfs:label xml:lang="en-us">Location</rdfs:label>
@@ -12722,16 +12833,21 @@ can be ambigous and would be better if the metric units was used directly. .</rd
         <rdfs:label xml:lang="fi-fi">Osavaltio</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/categorization/function">
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Function which process is executing.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
+            </rdf:Description>
+        </comment>
+        <comment>
+            <rdf:Description>
+                <rdfs:comment xml:lang="en-us">Process which device is capable executing.</rdfs:comment>
+                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
+            </rdf:Description>
+        </comment>
         <required rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</required>
         <readonly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</readonly>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
-        <label>
-            <rdf:Description>
-                <rdfs:label xml:lang="en-us">Function</rdfs:label>
-                <rdfs:label xml:lang="fi-fi">Toiminnallisuus</rdfs:label>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
-            </rdf:Description>
-        </label>
         <label>
             <rdf:Description>
                 <rdfs:label xml:lang="en-us">Process function</rdfs:label>
@@ -12739,18 +12855,13 @@ can be ambigous and would be better if the metric units was used directly. .</rd
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
             </rdf:Description>
         </label>
-        <comment>
+        <label>
             <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Process which device is capable executing.</rdfs:comment>
-                <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment/Device"/>
-            </rdf:Description>
-        </comment>
-        <comment>
-            <rdf:Description>
-                <rdfs:comment xml:lang="en-us">Function which process is executing.</rdfs:comment>
+                <rdfs:label xml:lang="en-us">Function</rdfs:label>
+                <rdfs:label xml:lang="fi-fi">Toiminnallisuus</rdfs:label>
                 <domain rdf:resource="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
             </rdf:Description>
-        </comment>
+        </label>
     </rdf:Description>
     <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/location/latitude">
         <rdfs:comment xml:lang="fi-fi">Leveysaste ilmaisee pisteen etäisyyden päiväntasaajalta. Leveysasteella tarkoitetaan pisteen kautta kulkevan ellipsoidipinnan normaalin ja päiväntasaajan määrittelemän tason välistä kulmaa (WGS 84).</rdfs:comment>
@@ -12759,8 +12870,8 @@ can be ambigous and would be better if the metric units was used directly. .</rd
         <rdfs:label xml:lang="en-us">Latitude</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/location/locationName">
-        <rdfs:comment xml:lang="fi-fi">Sijainnin nimi.</rdfs:comment>
         <rdfs:label xml:lang="fi-fi">Sijainnin nimi</rdfs:label>
+        <rdfs:comment xml:lang="fi-fi">Sijainnin nimi.</rdfs:comment>
         <rdfs:comment xml:lang="en-us">Location name.</rdfs:comment>
         <rdfs:label xml:lang="en-us">Location name</rdfs:label>
     </rdf:Description>
@@ -12778,6 +12889,39 @@ can be ambigous and would be better if the metric units was used directly. .</rd
         <rdfs:comment xml:lang="en-us">Executor of the process (source of the data).</rdfs:comment>
         <nest rdf:resource="https://standards.oftrust.net/v2/Vocabulary/data"/>
         <rdfs:label xml:lang="en-us">Process executor</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Note"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Case"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Contract"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Digital"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Document"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Element"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Equipment"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Event"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Group"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/LegalParty"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Message"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Order"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Process"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Product"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Project"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Space"/>
+            <rdf:Description rdf:about="https://standards.oftrust.net/v2/Vocabulary/Identity/Structure"/>
+        </owl:members>
     </rdf:Description>
 </rdf:RDF>
 
