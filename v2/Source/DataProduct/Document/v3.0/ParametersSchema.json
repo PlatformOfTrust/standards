@@ -1,40 +1,29 @@
 {
-   "$schema":"http://json-schema.org/draft-07/schema",
+   "$schema":"http://json-schema.org/draft-06/schema#",
    "$id":"https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Document",
    "type":"object",
-   "title":"Document data product parameters",
-   "description":"Data product parameters for Document.",
    "required":[
-      "@context",
-      "productCode",
-      "timestamp",
-      "parameters"
+      
    ],
    "properties":{
       "@context":{
          "$id":"#/properties/@context",
          "type":"string",
+         "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Document/",
          "title":"JSON-LD context url",
-         "description":"JSON-LD context url with terms required to understand data product content.",
-         "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Document/"
+         "description":"JSON-LD context url with terms required to understand data product content."
       },
       "productCode":{
          "$id":"#/properties/productCode",
          "type":"string",
          "title":"Productcode",
-         "description":"Name of the product.",
-         "examples":[
-            "multidata-product-1"
-         ]
+         "description":"Name of the product."
       },
       "timestamp":{
          "$id":"#/properties/timestamp",
          "type":"string",
          "title":"Timestamp of the request",
-         "description":"Timestamp of the request.",
-         "examples":[
-            "2019-10-19T13:20:09+00:00"
-         ]
+         "description":"Timestamp of the request."
       },
       "parameters":{
          "$id":"#/properties/parameters",
@@ -42,84 +31,32 @@
          "title":"Actual data product parameters",
          "description":"An explanation about the purpose of this instance.",
          "required":[
-            "idOfficial",
-            "country"
+            
          ],
          "properties":{
-            "idOfficial":{
-               "$id":"#/properties/parameters/properties/idOfficial",
+            "targetObject":{
+               "$id":"#/properties/parameters/properties/targetObject",
                "type":"string",
-               "title":"Business ID of the organisation",
-               "examples":[
-                  "5eb8fd3e6cd3aa03980a677d"
-               ]
+               "title":"Target object",
+               "description":"Target object."
             },
-            "country":{
-               "$id":"#/properties/parameters/properties/country",
+            "period":{
+               "$id":"#/properties/parameters/properties/period",
                "type":"string",
-               "title":"Country code of the organisation",
-               "examples":[
-                  "fi"
-               ]
-            },
-            "status":{
-               "$id":"#/properties/parameters/properties/status",
-               "type":"array",
-               "title":"List of statuses to filter results, by default returns all",
-               "items":{
-                  "$id":"#/properties/parameters/properties/status/items",
-                  "type":"string",
-                  "title":"The first anyOf schema",
-                  "description":"An explanation about the purpose of this instance.",
-                  "enum":[
-                     "New",
-                     "In progress",
-                     "Complete",
-                     "Canceled",
-                     "On hold",
-                     "Overdue"
-                  ]
-               }
-            },
-            "queryText":{
-               "$id":"#/properties/parameters/properties/queryText",
-               "type":"string",
-               "title":"Return signing processes that match this text",
-               "examples":[
-                  "Query text"
-               ]
-            },
-            "filter":{
-               "$id":"#/properties/parameters/properties/filter",
-               "type":"array",
-               "title":"List of signing process filters",
-               "items":{
-                  "$id":"#/properties/parameters/properties/filter/items",
-                  "type":"object",
-                  "title":"Signing process filter"
-               }
+               "title":"Period",
+               "description":"Period"
             },
             "limit":{
                "$id":"#/properties/parameters/properties/limit",
                "type":"integer",
-               "title":"Number of signing processes to return. Default is 20"
+               "title":"Limit",
+               "description":"Limit."
             },
             "offset":{
                "$id":"#/properties/parameters/properties/offset",
                "type":"integer",
-               "title":"Number of signing processes to offset. Default is 0"
-            },
-            "startTime":{
-               "$id":"#/properties/parameters/properties/startTime",
-               "type":"string",
-               "format":"date-time",
-			   "title":"Return signing processes created after this date"
-            },
-            "endTime":{
-               "$id":"#/properties/parameters/properties/endTime",
-               "type":"string",
-               "format":"date-time",
-			   "title":"Returns signing processes created before this date"
+               "title":"Offset",
+               "description":"Number of signing processes to offset. Default is 0."
             }
          }
       }
