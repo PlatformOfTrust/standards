@@ -1,79 +1,75 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Sensor",
-    "type": "object",
-    "title": "Sensor data product parameters schema",
-    "description": "Core schema for validation sensor data product parameters.",
-    "required": [
-        "@context",
-        "productCode",
-        "timestamp",
-        "parameters"
-    ],
-    "properties": {
-        "@context": {
-            "$id": "#/properties/@context",
-            "type": "string",
-            "title": "JSON-LD context url",
-			"description": "JSON-LD context url with terms required to understand data product content.",
-            "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Sensor/"
-        },
-        "productCode": {
-            "$id": "#/properties/productCode",
-            "type": "string",
-            "title": "Productcode",
-            "description": "Generated product code.",
-            "examples": [
-                "multidata-product-1"
-            ]
-        },
-        "timestamp": {
-            "$id": "#/properties/timestamp",
-            "type": "string",
-            "title": "Timestamp of the request",
-            "description": "Timestamp of the request.",
-			"format": "date-time",
-            "examples": [
-                "2019-10-19T13:20:09+00:00 "
-            ]
-        },
-        "parameters": {
-            "$id": "#/properties/parameters",
-            "type": "object",
-            "title": "Parameters",
-            "description": "Desired parameters.",
-            "examples": [
-                {
-					"ids": ["1", "35", "090822b8-3b34-454c-aefb-b18bd15a4847"],
-					"startTime": "2019-10-19T13:20:09+00:00",
-					"endTime": "2019-11-19T13:20:09+00:00",
-					"dataTypes": ["MeasureAirTemperatureCelsiusDegree"]  
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductParameters/Report",
+	"type": "object",
+	"title": "The root schema",
+	"description": "The root schema comprises the entire JSON document.",
+	"required": [
+		"@context",
+		"timestamp",
+		"productCode",
+		"parameters"
+	],
+	"properties": {
+		"@context": {
+			"type": "string",
+			"title": "The @context schema",
+			"description": "The context to be used for the payload.",
+			"const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductParameters/Report/"
+		},
+		"timestamp": {
+			"$id": "#/properties/timestamp",
+			"type": "string",
+			"title": "The timestamp schema",
+			"description": "Timestamp of the request.",
+			"examples": [
+				"2020-05-08T07:00:00+03:00"
+			]
+		},
+		"productCode": {
+			"$id": "#/properties/productCode",
+			"type": "string",
+			"title": "The productCode schema",
+			"description": "Generated product code.",
+			"examples": [
+				"12309843"
+			]
+		},
+		"parameters": {
+			"$id": "#/properties/parameters",
+			"type": "object",
+			"title": "The parameters schema",
+			"description": "Desired parameters.",
+			"examples": [
+				{
+					"period": "2015-12-31T23:00Z/2016-12-31T23:00Z",
+					"targetObject": "object id"
 				}
-            ],
-            "properties": {
-                "ids": {
-				        "type": "array",
-						"items": {
-						    "type": ["object", "string"]
-					}
+			],
+			"required": [
+				"period",
+				"targetObject"
+			],
+			"properties": {
+				"period": {
+					"$id": "#/properties/parameters/properties/period",
+					"type": "string",
+					"title": "The period schema",
+					"description": "An explanation about the purpose of this instance.",
+					"examples": [
+						"2015-12-31T23:00Z/2016-12-31T23:00Z"
+					]
 				},
-                "startTime": {
-						"type": "string",
-						"format": "date-time"
-					},
-                "endTime": {
-						"type": "string",
-						"format": "date-time"
-					},
-				"dataTypes": {
-						"type": "array",
-                        "items": {
-							"type": "string",
-							"enum": ["MeasureAirCO2LevelPPM", "MeasureAirTemperatureCelsiusDegree", "MeasurePresence"]
-						}
-                    }
-            },
-			"required": ["ids", "dataTypes"]
-        }
-    }
+				"targetObject": {
+					"$id": "#/properties/parameters/properties/targetObject",
+					"title": "The targetObject schema",
+					"description": "Target object against witch forecast is applied.",
+					"examples": [
+						"object id"
+					]
+				}
+			}
+		}
+	},
+	"version": "2.0"
 }
