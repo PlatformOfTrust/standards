@@ -140,7 +140,6 @@
 			font-size: 15px;
 		}
 
-
     /* dropdown open on hover */
 
     @media (min-width: 979px) {
@@ -281,7 +280,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
        
 
 
-                <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
         <li ><a href="entities-tree-dataproducts.html">Data Products</a></li>
         
@@ -335,7 +334,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
             <li class="second-level" style="line-height: 20px;" id="sd_dp_1"><a  href="class-multisensor.html">:Multisensor</a></li>
             
-            <li class="second-level" style="line-height: 20px;" id="sd_dp_1"><a  href="class-feedback.html">:Feedback</a></li>
+            <li class="second-level" style="line-height: 20px;" id="sd_dp_2"><a  href="class-feedback.html">:Feedback</a></li>
 
         
           <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (65)</a>
@@ -780,32 +779,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
                 :Feedback
                   
-
             </h1>
             <hr>
 
-
-
-            <div class="tree-container">
-            <div class="tree">
-                <ul>
-                    
-
-                        
-
-                        <li><a href="entities-tree-dataproducts.html">owl:Thing</a>
-
-                            <ul>
-                                <li><a style="font-weight: bold;" title="'Feedback' - This document describes the request and output parameters of feedback dataproduct fetch.">:Feedback</a></li>
-                            </ul>
-                        </li>
-                        
-
-                    
-
-                </ul>
-            </div>
-            </div>
 
 
            
@@ -815,7 +791,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Label</h3>
             </div>
             <div class="panel-body">
-                Feedback
+                Feedback dataproduct
             </div>
           </div>
            </div></div>
@@ -841,10 +817,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
            <div class="row"><div class="col-md-12">
               <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Implementation</h3>
+              <h3 class="panel-title">Implementation &nbsp;<button id="copy-btn" type="button" class="btn btn-primary btn-sm">Copy</button></h3>
             </div>
             <div class="panel-body implementation-panel">
-<pre>
+<pre id="implementation_code">
 {
     "openapi": "3.0.1",
     "info": {
@@ -1202,6 +1178,20 @@ $('#search-input-sidebar').keyup(function() {
   }).hide();
 });
 
+</script>
+
+<script type="text/javascript">
+    var copyBtn = $('#copy-btn');
+
+    copyBtn.on('click', function() {
+        var copyText = $('#implementation_code');
+        navigator.clipboard.writeText(copyText.html());
+        copyBtn.html('Copied');
+
+        setTimeout(function() {
+            copyBtn.html('Copy')
+        }, 1000);
+    });
 </script>
 
 
