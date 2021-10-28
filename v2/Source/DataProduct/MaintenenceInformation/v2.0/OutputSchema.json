@@ -56,7 +56,7 @@
                                 "$id": "#/properties/data/properties/maintenanceInformation/items/properties/plannedEnd",
                                 "type": "string",
                                 "title": "Planned end time",
-                                "description": "Planned end time."
+                                "description": "When something can be started.  Typically used when something is scheduled to happen within certain period."
                             },
                             "canStart": {
                                 "$id": "#/properties/data/properties/maintenanceInformation/items/properties/canStart",
@@ -94,23 +94,55 @@
                                 "title": "Duration",
                                 "description": "Duration (time)."
                             },
-                            "schedule": {
-                                "$id": "#/properties/data/properties/maintenanceInformation/items/properties/schedule",
-                                "type": "string",
-                                "title": "Schedule",
-                                "description": "Schedule."
-                            },
                             "status": {
                                 "$id": "#/properties/data/properties/maintenanceInformation/items/properties/status",
-                                "type": "string",
+                                "type": "array",
                                 "title": "Life-cycle status",
-                                "description": "Life-cycle status."
+                                "description": "Life-cycle status.",
+                                "items": {
+                                    "$id": "#/properties/data/properties/maintenanceInformation/items/properties/status/items",
+                                    "type": "object",
+                                    "required": [],
+                                    "properties": {
+                                        "@type": {
+                                            "$id": "#/properties/data/properties/maintenanceInformation/items/properties/status/items/properties/@type",
+                                            "type": "string",
+                                            "title": "Identity type",
+                                            "description": "Type of identity."
+                                        },
+                                        "Status": {
+                                            "$id": "#/properties/data/properties/maintenanceInformation/items/properties/status/items/properties/Status",
+                                            "type": "string",
+                                            "title": "Life-cycle status",
+                                            "description": "Life-cycle status.  Status name."
+                                        }
+                                    }
+                                }
                             },
                             "statusCode": {
                                 "$id": "#/properties/data/properties/maintenanceInformation/items/properties/statusCode",
-                                "type": "string",
+                                "type": "array",
                                 "title": "Life-cycle status code",
-                                "description": "Life-cycle status code."
+                                "description": "Life-cycle status code.",
+                                "items": {
+                                    "$id": "#/properties/data/properties/maintenanceInformation/items/properties/statusCode/items",
+                                    "type": "object",
+                                    "required": [],
+                                    "properties": {
+                                        "@type": {
+                                            "$id": "#/properties/data/properties/maintenanceInformation/items/properties/statusCode/items/properties/@type",
+                                            "type": "string",
+                                            "title": "Identity type",
+                                            "description": "Type of identity."
+                                        },
+                                        "statusCode": {
+                                            "$id": "#/properties/data/properties/maintenanceInformation/items/properties/statusCode/items/properties/statusCode",
+                                            "type": "string",
+                                            "title": "Life-cycle status code",
+                                            "description": "Life-cycle status code."
+                                        }
+                                    }
+                                }
                             },
                             "executor": {
                                 "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor",
@@ -136,108 +168,114 @@
                                         "type": "string",
                                         "title": "Name",
                                         "description": "Name."
+                                    }
+                                }
+                            },
+                            "schedule": {
+                                "$id": "#/properties/data/properties/maintenanceInformation/items/properties/schedule",
+                                "type": "object",
+                                "title": "Schedule",
+                                "description": "Schedule.",
+                                "required": [],
+                                "properties": {
+                                    "@type": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/schedule/properties/@type",
+                                        "type": "string",
+                                        "title": "Identity type",
+                                        "description": "Type of identity."
+                                    },
+                                    "idLocal": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/schedule/properties/idLocal",
+                                        "type": "string",
+                                        "title": "Local identifier",
+                                        "description": "Locally given identifier."
                                     },
                                     "schedule": {
-                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule",
-                                        "type": "object",
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/schedule/properties/schedule",
+                                        "type": "string",
                                         "title": "Schedule",
-                                        "description": "Schedule.",
-                                        "required": [],
-                                        "properties": {
-                                            "@type": {
-                                                "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/@type",
-                                                "type": "string",
-                                                "title": "Identity type",
-                                                "description": "Type of identity."
-                                            },
-                                            "idLocal": {
-                                                "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/idLocal",
-                                                "type": "string",
-                                                "title": "Local identifier",
-                                                "description": "Locally given identifier."
-                                            },
-                                            "processTarget": {
-                                                "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget",
-                                                "type": "object",
-                                                "title": "Process target",
-                                                "description": "Object into which process (verb) is targeted.",
-                                                "required": [],
-                                                "properties": {
-                                                    "@type": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/@type",
-                                                        "type": "string",
-                                                        "title": "Identity type",
-                                                        "description": "Type of identity."
-                                                    },
-                                                    "idLocal": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/idLocal",
-                                                        "type": "string",
-                                                        "title": "Local identifier",
-                                                        "description": "Locally given identifier."
-                                                    },
-                                                    "idExternal": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/idExternal",
-                                                        "type": "string",
-                                                        "title": "External system Id",
-                                                        "description": "External system identifier."
-                                                    },
-                                                    "name": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/name",
-                                                        "type": "string",
-                                                        "title": "Name",
-                                                        "description": "Name."
-                                                    },
-                                                    "codeLong": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/codeLong",
-                                                        "type": "string",
-                                                        "title": "Long Code",
-                                                        "description": "Long version of code type identifier."
-                                                    },
-                                                    "nameLong": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/nameLong",
-                                                        "type": "string",
-                                                        "title": "Long name",
-                                                        "description": "Long name."
-                                                    },
-                                                    "nameCombined": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/nameCombined",
-                                                        "type": "string",
-                                                        "title": "Combined name",
-                                                        "description": "Combined name which is formed using other names and/or codes."
-                                                    },
-                                                    "nameLabel": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/nameLabel",
-                                                        "type": "string",
-                                                        "title": "Label name",
-                                                        "description": "Label name."
-                                                    },
-                                                    "categorizationName": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/categorizationName",
-                                                        "type": "string",
-                                                        "title": "Category name",
-                                                        "description": "Name of the categorization class/type."
-                                                    },
-                                                    "categorizztionCode": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/categorizztionCode",
-                                                        "type": "string",
-                                                        "title": "Category code",
-                                                        "description": "Code of the categorization class/type."
-                                                    },
-                                                    "position1": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/position1",
-                                                        "type": "string",
-                                                        "title": "Position 1",
-                                                        "description": "Information which describes position."
-                                                    },
-                                                    "position2": {
-                                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/executor/properties/schedule/properties/processTarget/properties/position2",
-                                                        "type": "string",
-                                                        "title": "Position 2",
-                                                        "description": "Information which describes position."
-                                                    }
-                                                }
-                                            }
-                                        }
+                                        "description": "Schedule."
+                                    }
+                                }
+                            },
+                            "processTarget": {
+                                "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget",
+                                "type": "object",
+                                "title": "Process target",
+                                "description": "Object into which process (verb) is targeted.",
+                                "required": [],
+                                "properties": {
+                                    "@type": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/@type",
+                                        "type": "string",
+                                        "title": "Identity type",
+                                        "description": "Type of identity."
+                                    },
+                                    "idLocal": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/idLocal",
+                                        "type": "string",
+                                        "title": "Local identifier",
+                                        "description": "Locally given identifier."
+                                    },
+                                    "idExternal": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/idExternal",
+                                        "type": "string",
+                                        "title": "External system Id",
+                                        "description": "External system identifier."
+                                    },
+                                    "name": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/name",
+                                        "type": "string",
+                                        "title": "Name",
+                                        "description": "Name."
+                                    },
+                                    "codeLong": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/codeLong",
+                                        "type": "string",
+                                        "title": "Long Code",
+                                        "description": "Long version of code type identifier."
+                                    },
+                                    "nameLong": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/nameLong",
+                                        "type": "string",
+                                        "title": "Long name",
+                                        "description": "Long name."
+                                    },
+                                    "nameCombined": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/nameCombined",
+                                        "type": "string",
+                                        "title": "Combined name",
+                                        "description": "Combined name which is formed using other names and/or codes."
+                                    },
+                                    "nameLabel": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/nameLabel",
+                                        "type": "string",
+                                        "title": "Label name",
+                                        "description": "Label name."
+                                    },
+                                    "categorizationName": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/categorizationName",
+                                        "type": "string",
+                                        "title": "Category name",
+                                        "description": "Name of the categorization class/type."
+                                    },
+                                    "categorizztionCode": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/categorizztionCode",
+                                        "type": "string",
+                                        "title": "Category code",
+                                        "description": "Code of the categorization class/type."
+                                    },
+                                    "position1": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/position1",
+                                        "type": "string",
+                                        "title": "Position 1",
+                                        "description": "Information which describes position."
+                                    },
+                                    "position2": {
+                                        "$id": "#/properties/data/properties/maintenanceInformation/items/properties/processTarget/properties/position2",
+                                        "type": "string",
+                                        "title": "Position 2",
+                                        "description": "Information which describes position."
                                     }
                                 }
                             }
@@ -245,32 +283,32 @@
                     }
                 },
                 "signature": {
-                    "$id": "#/properties/data/properties/signature",
+                    "$id": "#/properties/signature",
                     "type": "object",
                     "title": "Signature",
                     "description": "Signature.",
                     "required": [],
                     "properties": {
                         "type": {
-                            "$id": "#/properties/data/properties/signature/properties/type",
+                            "$id": "#/properties/signature/properties/type",
                             "type": "string",
                             "title": "Type",
                             "description": "Type."
                         },
                         "created": {
-                            "$id": "#/properties/data/properties/signature/properties/created",
+                            "$id": "#/properties/signature/properties/created",
                             "type": "string",
                             "title": "Created",
                             "description": "Creation time."
                         },
                         "creator": {
-                            "$id": "#/properties/data/properties/signature/properties/creator",
+                            "$id": "#/properties/signature/properties/creator",
                             "type": "string",
                             "title": "Creator",
-                            "description": "Party who has created the file or information."
+                            "description": "Creator."
                         },
                         "signatureValue": {
-                            "$id": "#/properties/data/properties/signature/properties/signatureValue",
+                            "$id": "#/properties/signature/properties/signatureValue",
                             "type": "string",
                             "title": "Signature value",
                             "description": "Signature value."
