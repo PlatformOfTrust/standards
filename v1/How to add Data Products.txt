@@ -1,0 +1,68 @@
+1) Add new menu item in <div id="navbar"> in all html files: 
+        <li><a href="entities-az.html">Entities A-Z</a></li>
+        <li><a href="entities-tree-dataproducts.html">Data Products</a></li>
+        <li><a href="entities-tree-classes.html">Classes</a></li>
+        <li><a href="entities-tree-properties.html">Properties</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+
+
+2) Add new tree item in sidebar <div id="sidebar-wrapper"> in all html files:
+    CTRL + H: <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (65)</a>
+    </li> (important: inside entities-tree-classes.html li.-second-level contains <a class="active" href=...) 
+
+   <li class="-second-level" id="sd_dataproducts"><a href="entities-tree-dataproducts.html">Data Products (2)</a></li>
+     <li class="second-level" style="line-height: 20px;" id="sd_dp_1"><a class="active" href="class-multisensor.html">:Multisensor</a></li>
+     <li class="second-level" style="line-height: 20px;" id="sd_dp_2"><a  href="class-userfeedback.html">:UserFeedback</a></li>
+ attributes: 
+   - id - sd_dp_{dataproduct_num}
+   - href - class-{dataproduct_name}.html
+   - class="active" - current item active
+
+
+3) Create new file for Data Products tree - entities-tree-dataproducts.html:
+  - Title page - Data Products Tree (in <div class="page-header">)
+  - In entities list add table data, for example:
+    <td class="tc" colspan=4><a title="Multisensor" class="treelinks" href="class-multisensor.html">:Multisensor</a></td>
+attributes:
+- href - class-{dataproduct_name}.html 
+
+
+4) Add in breadcrumb new breadcrumb item in Data Products html files: 
+For example:     
+    <li>
+        <a href="index.html">Home</a>
+    </li>
+    <li>
+        <a href="entities-az.html">Entities</a>
+    </li>
+    <li class="active">
+        Data Products
+    </li>
+
+
+5) Data Products html files must contain these content blocks:
+   - Label - {title value from JSON}
+   - Description - {description value from JSON}
+   - Implementation - {All content from JSON file in inside tag <pre>}.
+For example Implementation:
+   header: <h3 class="panel-title">Implementation &nbsp;<button id="copy-btn" type="button" class="btn btn-primary btn-sm">Copy</button></h3>
+   content: 
+      <pre id="implementation_code">
+         All content from JSON file here
+      </pre>
+
+
+6) Add script in Data Products html files for copy button:
+<script type="text/javascript">
+    var copyBtn = $('#copy-btn');
+
+    copyBtn.on('click', function() {
+        var copyText = $('#implementation_code');
+        navigator.clipboard.writeText(copyText.html());
+        copyBtn.html('Copied');
+
+        setTimeout(function() {
+            copyBtn.html('Copy')
+        }, 1000);
+    });
+</script> 
