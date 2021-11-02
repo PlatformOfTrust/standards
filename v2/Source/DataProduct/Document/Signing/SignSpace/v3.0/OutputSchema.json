@@ -1,238 +1,199 @@
 {
-   "$schema":"http://json-schema.org/draft-07/schema",
-   "$id":"https://standards-ontotest.oftrust.net/v2/Schema/DataProductOutput/Document/Signing/SignSpace",
-   "type":"object",
-   "title":"SignSpace output schema",
-   "description":"Schema for SignSpace data product output.",
-   "required":[
-      "@context",
-      "data",
-      "signature"
-   ],
-   "properties":{
-      "@context":{
-         "$id":"#/properties/@context",
-         "type":"string",
-         "title":"JSON-LD context url",
-         "description":"JSON-LD context url with terms required to understand data product content.",
-         "const":"https://standards-ontotest.oftrust.net/v2/Context/DataProductOutput/Document/Signing/SignSpace/"
-      },
-      "data":{
-         "$id":"#/properties/data",
-         "type":"object",
-         "title":"Data product output",
-         "description":"Output of data product delivered to customers.",
-         "required":[
-            "signing"
-         ],
-         "properties":{
-            "signing":{
-               "$id":"#/properties/data/properties/signing",
-               "type":"array",
-               "title":"Signing process instances",
-               "items":{
-                  "$id":"#/properties/data/properties/signing/items",
-                  "type":"object",
-                  "required":[
-                     "name",
-                     "status",
-                     "updated",
-                     "created",
-                     "idSource"
-                  ],
-                  "properties":{
-                     "name":{
-                        "$id":"#/properties/data/properties/signing/properties/name",
-                        "type":"string",
-                        "title":"Signing process name"
-                     },
-                     "url":{
-                        "$id":"#/properties/data/properties/signing/properties/url",
-                        "type":"string",
-                        "title":"URL address"
-                     },
-                     "status":{
-                        "$id":"#/properties/data/properties/signing/properties/status",
-                        "type":"string",
-                        "title":"Signing process status",
-                        "enum":[
-                           "New",
-                           "In progress",
-                           "Complete",
-                           "Canceled",
-                           "On hold",
-                           "Overdue"
-                        ]
-                     },
-                     "parties":{
-                        "$id":"#/properties/data/properties/signing/properties/parties",
-                        "type":"array",
-                        "title":"Parties involved in the signing process",
-                        "items":{
-                           "$id":"#/properties/data/properties/signing/properties/parties/items",
-                           "type":"object",
-                           "required":[
-                              "@type",
-                              "name"
-                           ],
-                           "properties":{
-                              "@type":{
-                                 "$id":"#/properties/data/properties/signing/properties/parties/properties/@type",
-                                 "type":"string",
-                                 "title":"Party type",
-                                 "enum":[
-                                    "Person",
-                                    "Organization"
-                                 ]
-                              },
-                              "name":{
-                                 "$id":"#/properties/data/properties/signing/properties/parties/properties/name",
-                                 "type":"string",
-                                 "title":"Party name"
-                              }
+   "$schema": "http://json-schema.org/draft-06/schema#",
+   "$id": "https://standards-ontotest.oftrust.net/v2/Schema/DataProductOutput/Document/Signing/SignSpace",
+   "type": "object",
+   "required": [],
+   "properties": {
+       "@context": {
+           "$id": "#/properties/@context",
+           "type": "string",
+           "const": "https://standards-ontotest.oftrust.net/v2/Context/DataProductOutput/Document/Signing/SignSpace/",
+           "title": "JSON-LD context url",
+           "description": "JSON-LD context url with terms required to understand data product content."
+       },
+       "data": {
+           "$id": "#/properties/data",
+           "type": "object",
+           "title": "Data product output",
+           "description": "Output of data product delivered to customers.",
+           "required": [],
+           "properties": {
+               "signing": {
+                   "$id": "#/properties/data/properties/signing",
+                   "type": "array",
+                   "title": "Signing",
+                   "description": "Signing process output is signature or autograph which is written format of a name typically placed into document as proof of persons identity and will.",
+                   "items": {
+                       "$id": "#/properties/data/properties/signing/items",
+                       "type": "object",
+                       "required": [],
+                       "properties": {
+                           "name": {
+                               "$id": "#/properties/data/properties/signing/items/properties/name",
+                               "type": "string",
+                               "title": "Name",
+                               "description": "Name."
+                           },
+                           "url": {
+                               "$id": "#/properties/data/properties/signing/items/properties/url",
+                               "type": "string",
+                               "title": "URL address",
+                               "description": "URL address."
+                           },
+                           "status": {
+                               "$id": "#/properties/data/properties/signing/items/properties/status",
+                               "type": "string",
+                               "title": "Life-cycle status",
+                               "description": "Life-cycle status."
+                           },
+                           "parties": {
+                               "$id": "#/properties/data/properties/signing/items/properties/parties",
+                               "type": "array",
+                               "title": "Parties",
+                               "description": "Parties.",
+                               "items": {
+                                   "$id": "#/properties/data/properties/signing/items/properties/parties/items",
+                                   "type": "object",
+                                   "required": [],
+                                   "properties": {
+                                       "@type": {
+                                           "$id": "#/properties/data/properties/signing/items/properties/parties/items/properties/@type",
+                                           "type": "string",
+                                           "title": "Identity type",
+                                           "description": "Type of identity."
+                                       },
+                                       "name": {
+                                           "$id": "#/properties/data/properties/signing/items/properties/parties/items/properties/name",
+                                           "type": "string",
+                                           "title": "Name",
+                                           "description": "Name."
+                                       }
+                                   }
+                               }
+                           },
+                           "updated": {
+                               "$id": "#/properties/data/properties/signing/items/properties/updated",
+                               "type": "string",
+                               "title": "Update time",
+                               "description": "Last update time."
+                           },
+                           "created": {
+                               "$id": "#/properties/data/properties/signing/items/properties/created",
+                               "type": "string",
+                               "title": "Created",
+                               "description": "Creation time."
+                           },
+                           "digitalSignaturesRequestedCount": {
+                               "$id": "#/properties/data/properties/signing/items/properties/digitalSignaturesRequestedCount",
+                               "type": "integer",
+                               "title": "Digital siganture request count",
+                               "description": "Digital siganture request count."
+                           },
+                           "digitalSignaturesCompletedCount": {
+                               "$id": "#/properties/data/properties/signing/items/properties/digitalSignaturesCompletedCount",
+                               "type": "integer",
+                               "title": "Digital signature completed count",
+                               "description": "Digital signature completed count."
+                           },
+                           "idSource": {
+                               "$id": "#/properties/data/properties/signing/items/properties/idSource",
+                               "type": "string",
+                               "title": "Source identifier",
+                               "description": "Source identifier."
+                           },
+                           "document": {
+                               "$id": "#/properties/data/properties/signing/items/properties/document",
+                               "type": "array",
+                               "title": "Document",
+                               "description": "An original or official paper (or other format) relied on as the basis, proof, or support of something.",
+                               "items": {
+                                   "$id": "#/properties/data/properties/signing/items/properties/document/items",
+                                   "type": "object",
+                                   "required": [],
+                                   "properties": {
+                                       "@type": {
+                                           "$id": "#/properties/data/properties/signing/items/properties/document/items/properties/@type",
+                                           "type": "string",
+                                           "title": "Identity type",
+                                           "description": "Type of identity."
+                                       },
+                                       "name": {
+                                           "$id": "#/properties/data/properties/signing/items/properties/document/items/properties/name",
+                                           "type": "string",
+                                           "title": "Name",
+                                           "description": "Name."
+                                       }
+                                   }
+                               }
+                           },
+                           "digitalSignature": {
+                               "$id": "#/properties/data/properties/signing/items/properties/digitalSignature",
+                               "type": "array",
+                               "title": "Digital signature",
+                               "description": "Creating digital signature.",
+                               "items": {
+                                   "$id": "#/properties/data/properties/signing/items/properties/digitalSignature/items",
+                                   "type": "object",
+                                   "required": [],
+                                   "properties": {
+                                       "@type": {
+                                           "$id": "#/properties/data/properties/signing/items/properties/digitalSignature/items/properties/@type",
+                                           "type": "string",
+                                           "title": "Identity type",
+                                           "description": "Type of identity."
+                                       },
+                                       "executor": {
+                                           "$id": "#/properties/data/properties/signing/items/properties/digitalSignature/items/properties/executor",
+                                           "type": "string",
+                                           "title": "Process executor",
+                                           "description": "Executor of the process (source of the data)."
+                                       },
+                                       "timestamp": {
+                                           "$id": "#/properties/data/properties/signing/items/properties/digitalSignature/items/properties/timestamp",
+                                           "type": "string",
+                                           "title": "Timestamp",
+                                           "description": "Timestamp."
+                                       }
+                                   }
+                               }
                            }
-                        }
-                     },
-                     "updated":{
-                        "$id":"#/properties/data/properties/signing/properties/updated",
-                        "type":"string",
-                        "format":"date-time",
-                        "title":"When signing process was updated"
-                     },
-                     "created":{
-                        "$id":"#/properties/data/properties/signing/properties/created",
-                        "type":"string",
-                        "format":"date-time",
-                        "title":"When signing process was created"
-                     },
-					 "digitalSignaturesRequestedCount":{
-                        "$id":"#/properties/data/properties/signing/properties/digitalSignaturesRequestedCount",
-                        "type":"integer",
-                        "title":"Number of digital signatures requested"
-                     },
-                     "digitalSignaturesCompletedCount":{
-                        "$id":"#/properties/data/properties/signing/properties/digitalSignaturesCompletedCount",
-                        "type":"integer",
-                        "title":"Number of digital signatures completed"
-                     },
-                     "idSource":{
-                        "$id":"#/properties/data/properties/signing/properties/idSource",
-                        "type":"string",
-                        "title":"Id in the source system"
-                     },
-                     "documents":{
-                        "$id":"#/properties/data/properties/signing/properties/documents",
-                        "type":"array",
-                        "title":"List of documents to sign",
-                        "items":{
-                           "$id":"#/properties/data/properties/signing/properties/documents/items",
-                           "type":"object",
-                           "required":[
-                              "@type",
-                              "name"
-                           ],
-                           "properties":{
-                              "@type":{
-                                 "$id":"#/properties/data/properties/signing/properties/documents/properties/@type",
-                                 "type":"string",
-                                 "title":"Document type",
-                                 "enum":[
-                                    "Document"
-                                 ]
-                              },
-                              "name":{
-                                 "$id":"#/properties/data/properties/signing/properties/documents/properties/name",
-                                 "type":"string",
-                                 "title":"Document name"
-                              }
-                           }
-                        }
-                     },
-                     "digitalSignatures":{
-                        "$id":"#/properties/data/properties/signing/properties/digitalSignatures",
-                        "type":"array",
-                        "title":"List of digitalSignatures",
-                        "items":{
-                           "$id":"#/properties/data/properties/signing/properties/digitalSignatures/items",
-                           "type":"object",
-                           "required":[
-                              "@type",
-                              "executor",
-                              "timestamp"
-                           ],
-                           "properties":{
-                              "@type":{
-                                 "$id":"#/properties/data/properties/signing/properties/digitalSignatures/properties/@type",
-                                 "type":"string",
-                                 "title":"Digital signature type",
-                                 "enum":[
-                                    "DigitalSignature"
-                                 ]
-                              },
-                              "executor":{
-                                 "$id":"#/properties/data/properties/signing/properties/digitalSignatures/properties/executor",
-                                 "type":"string",
-                                 "title":"Signer"
-                              },
-                              "timestamp":{
-                                 "$id":"#/properties/data/properties/signing/properties/digitalSignatures/properties/timestamp",
-                                 "type":"string",
-                                 "format":"date-time",
-                                 "title":"When digital signature was generated"
-                              }
-                           }
-                        }
-                     }
-                  }
+                       }
+                   }
                }
-            }
-         }
-      },
-      "signature":{
-         "$id":"#/properties/signature",
-         "type":"object",
-         "title":"Signature",
-         "required":[
-            "type",
-            "created",
-            "creator",
-            "signatureValue"
-         ],
-         "properties":{
-            "type":{
-               "$id":"#/properties/signature/properties/type",
-               "type":"string",
-               "title":"Signature type",
-               "examples":[
-                  "RsaSignature2018"
-               ]
-            },
-            "created":{
-               "$id":"#/properties/signature/properties/created",
-               "type":"string",
-               "title":"Signature creation date and time",
-               "format":"date-time",
-               "examples":[
-                  "2018-11-22T12:00:00Z"
-               ]
-            },
-            "creator":{
-               "$id":"#/properties/signature/properties/creator",
-               "type":"string",
-               "title":"Signature creator",
-               "examples":[
-                  "https://example.org/creator/public_key.pub"
-               ]
-            },
-            "signatureValue":{
-               "$id":"#/properties/signature/properties/signatureValue",
-               "type":"string",
-               "title":"Generated signature",
-               "examples":[
-                  "eyJ0eXAiOiJK...gFWFOEjXk"
-               ]
-            }
-         }
-      }
+           }
+       },
+       "signature": {
+           "$id": "#/properties/signature",
+           "type": "object",
+           "title": "Signature",
+           "description": "Signature.",
+           "required": [],
+           "properties": {
+               "type": {
+                   "$id": "#/properties/signature/properties/type",
+                   "type": "string",
+                   "title": "Type",
+                   "description": "Type."
+               },
+               "created": {
+                   "$id": "#/properties/signature/properties/created",
+                   "type": "string",
+                   "title": "Created",
+                   "description": "Creation time."
+               },
+               "creator": {
+                   "$id": "#/properties/signature/properties/creator",
+                   "type": "string",
+                   "title": "Creator",
+                   "description": "Party who has created the file or information."
+               },
+               "signatureValue": {
+                   "$id": "#/properties/signature/properties/signatureValue",
+                   "type": "string",
+                   "title": "Signature value",
+                   "description": "Signature value."
+               }
+           }
+       }
    }
 }

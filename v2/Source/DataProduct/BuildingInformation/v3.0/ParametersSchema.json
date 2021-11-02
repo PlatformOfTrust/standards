@@ -14,8 +14,8 @@
         "productCode": {
             "$id": "#/properties/productCode",
             "type": "string",
-            "title": "Product Code",
-            "description": "Product Code."
+            "title": "Product code",
+            "description": "Code of the product."
         },
         "timestamp": {
             "$id": "#/properties/timestamp",
@@ -32,22 +32,26 @@
             "properties": {
                 "targetObject": {
                     "$id": "#/properties/parameters/properties/targetObject",
-                    "type": "object",
+                    "type": "array",
                     "title": "Target object",
                     "description": "Target object.",
-                    "required": [],
-                    "properties": {
-                        "@type": {
-                            "$id": "#/properties/parameters/properties/targetObject/properties/@type",
-                            "type": "string",
-                            "title": "Identity type",
-                            "description": "Type of identity."
-                        },
-                        "idLocal": {
-                            "$id": "#/properties/parameters/properties/targetObject/properties/idLocal",
-                            "type": "string",
-                            "title": "Local identifier",
-                            "description": "Locally given identifier."
+                    "items": {
+                        "$id": "#/properties/parameters/properties/targetObject/items",
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "@type": {
+                                "$id": "#/properties/parameters/properties/targetObject/items/properties/@type",
+                                "type": "string",
+                                "title": "Identity type",
+                                "description": "Type of identity."
+                            },
+                            "idLocal": {
+                                "$id": "#/properties/parameters/properties/targetObject/items/properties/idLocal",
+                                "type": "string",
+                                "title": "Local identifier",
+                                "description": "Locally given identifier."
+                            }
                         }
                     }
                 }
